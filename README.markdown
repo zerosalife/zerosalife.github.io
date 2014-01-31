@@ -1,3 +1,7 @@
+## Sourcecode for [zero's a life](http://zerosalife.github.io)
+
+## Stock Octopress README follows...
+
 ## What is Octopress?
 
 Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
