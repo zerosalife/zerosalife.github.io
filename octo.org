@@ -1,0 +1,240 @@
+
+* Setting up octopress
+** Clone into the octopress repo
+#+BEGIN_EXAMPLE
+git clone git://github.com/imathis/octopress.git zerosalife.github.io
+#+END_EXAMPLE
+
+** Install dependencies and setup github pages
+
+#+BEGIN_EXAMPLE
+bundle install
+rake install
+
+#+END_EXAMPLE
+
+Make sure git is set up to use the correct user information.
+
+#+BEGIN_EXAMPLE
+git config --list
+#+END_EXAMPLE
+
+
+#+BEGIN_EXAMPLE
+rake setup_github_pages
+#+END_EXAMPLE
+
+** Su wu
+#+BEGIN_EXAMPLE
+/su:zerosalife@machine:
+#+END_EXAMPLE
+
+** Add image to header
+[[http://blog.bigdinosaur.org/changing-octopresss-header/]]
+
+** Add about page
+[[http://gangmax.me/blog/2012/05/04/add-about-page-in-octopress/]]
+
+** Code blocks in octopress
+[[http://octopress.org/docs/plugins/codeblock/]]
+
+** Markdown cheatsheet
+[[http://ddloeffler.blogspot.com/2013/04/keybindings-for-emacs-markdown-mode.html]]
+
+[[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet]]
+
+** Favicon editor
+[[http://favicon-generator.org/editor/]]
+0
+** Read more
+Use the =<!--more-->= tag.
+
+[[http://octopress.org/docs/blogging/plugins/]]
+
+* Chrono Trigger Random Number Generator               :analysis:R:mechanics:
+** Introduction
+#+CAPTION: from wikipedia.org
+[[http://upload.wikimedia.org/wikipedia/en/d/d5/ChronoTriggerInside.PNG]]
+
+I recently revisited [[http://en.wikipedia.org/wiki/Chrono_Trigger][Chrono Trigger]], a 20-year-old Square role playing
+game (RPG) for the SNES.  I was inspired by a [[http://www.youtube.com/watch?v%3DV_SFck-xeGM][speed run]] from [[http://gamesdonequick.com/][Awesome
+Games Done Quick]] 2012, a charity fundraiser featuring speed runs of
+old and new school games.  If [[https://twitter.com/EssentiaFour][Essentia]] could [[http://speeddemosarchive.com/ChronoTrigger.html][beat the game in 5 hours]],
+surely, copying her strategies, I could finish it in a reasonable
+amount of time.
+
+In the course of my play-through I grew curious about the underlying
+mechanics of the Chrono Trigger battle system.  In order to optimize
+speed running strategies, Chrono Trigger's mechanics have been
+scrutinized to an obsessive degree.  There are numerous guides, one of
+which is [[http://strategywiki.org/wiki/Chrono_Trigger/Formulae][here]].  But, none of the guides I found could clearly identify
+the mechanics behind Chrono Trigger's [[http://en.wikipedia.org/wiki/Random_number_generation][random number generator]] (RNG).
+
+Most likely, under the hood, the RNG is a variation of a [[http://en.wikipedia.org/wiki/Linear_feedback_shift_register][linear
+feedback shift register]].  I recently came across a similar RNG in an
+[[http://meatfighter.com/nintendotetrisai/#Picking_Tetriminos][in-depth article about the mechanics of NES Tetris]]. But I'm not
+concerned with how the programmers implemented a good RNG.  I'm
+concerned with the rules governing how that RNG interacts with the
+battle system.
+
+I'm gonna get a little pedantic here, bear with me. In an RPG combat
+system, the RNG introduces an element of luck, which makes battles
+more interesting and potentially ruining speed runs if not properly
+understood.  The speed runners apparently compensate for any
+variability of the RNG, but its mechanics have not been laid out.  So
+I set out to investigate the mechanics of the RNG in Chrono Trigger,
+using basic R commands to tease apart its underlying algorithms.
+
+** A brief note on the choice of R
+There was no good reason to choose R for this analysis.  I chose R
+because I was comfortable using it to quickly do the statistical
+analyses summarizing a data set.
+
+** Chrono Trigger's battle system
+
+Chrono Trigger's battle system has two types of attacks: *[[http://chrono.wikia.com/wiki/Tech][Tech]]*
+(including magic) and *[[http://chrono.wikia.com/wiki/List_of_Chrono_Trigger_weapons][weapon attacks]]*.  The Tech system is more
+complicated than the basic weapon attack system, so I'll focus on
+weapon attacks for now.
+
+Crono's basic weapon attacks use the formula:
+
+#+BEGIN_EXAMPLE
+Attack = ((Power * 4/3) + (Weapon * 5/9))
+#+END_EXAMPLE
+
+Some of the other characters' attacks use different formulas.  For the
+sake of simplicity, I'm going to focus my analysis on Crono.
+
+The parameters *Power (PWR)* and *Weapon* determine the base
+amount of damage dealt when a weapon hits, using the formula:
+
+#+BEGIN_EXAMPLE
+Damage  = ((Attack * 2) + (Random))
+#+END_EXAMPLE
+
+So the base damage Crono can deal, assuming *Random* is 0, is his
+double *Attack* value.  This gives us a stable mark to observe the
+variability of the RNG.
+
+How is the random number determined?  To answer that question, I
+set out to carefully analyze empirical data, accounting for the known
+parameters of the *Damage* formula.  That's a fancy way of saying, I
+hit the same enemies with the same weapons a bunch of times.  I kept
+track of the damage dealt each time.
+
+** Analysis and Observations
+Crono begins the game with 5 *PWR* and his weapon is a Wood Sword,
+which has a *Weapon* value of 3. Crono's *Attack* value is:
+
+#+BEGIN_EXAMPLE
+Attack = ((5 * 4/3) + (3 * 5/9))
+#+END_EXAMPLE
+
+So his *Attack* is 8⅓, which is rounded down to 8.  I think the
+rounding down is equivalent to a [[http://en.wikipedia.org/wiki/Floor_and_ceiling_functions][=floor= function]] because, in cases
+where the calculated *Attack* value would have a fractional component
+above half, the game always rounds down.
+
+
+
+** Summary
+There are still questions that remain unanswered.
+
+What RNG parameters govern levels 2 and 3?
+
+Is the RNG governing the Tech system similar?
+
+Can I provide a concrete example of the *Attack* value rounding down
+when its fractional value would be calculated to be above ½?
+
+All told, it took me a little North of 12 hours to beat the game,
+using Essentia's strategies.  I'm no speed runner.
+
+* Some thoughts on Attack of the Friday Monsters       :review:3DS:mechanics:
+It's hard to say anything new about Attack of the Friday Monsters, a
+game that splashed on the scene months ago.  The work of its creator
+was lovingly lauded by [[https://twitter.com/rdbaaa][Ray Barnholt]]--a noted /[[http://en.wikipedia.org/wiki/Boku_no_Natsuyasumi][Boku no Natsuyami]]/
+fanatic--in such a reverent way in his [[http://scroll.vg/issues/10][SCROLL magazine]] that it's
+almost sacrilegious try to write more.  So instead of doing a
+point-by-point review, I'll mention some details that stand out to me,
+personally.
+
+I played through most of Attack of the Friday Monsters on a flight the
+day after I watched Miyazaki's [[http://en.wikipedia.org/wiki/Arrietty][Secret World of Arrietty]].  Sure one had
+beautiful water colors and amazing visual tricks mimicking real
+camerawork and the other used pre-rendered backgrounds with blocky
+polygonal actors on the stage, but these art styles complimented one
+and other.  They didn't clash.
+
+I was struck by the ambient sounds that bring the pre-rendered
+backgrounds and polygonal characters to life. The periodic train
+sounds, presaging the arrival of a in-engine rendered train, sort of
+quirky and quaint today, that persists as you move throughout the
+region, remind me of a previous exposure to Japanese culture, the
+first time I watched [[http://en.wikipedia.org/wiki/Neon_Genesis_Evangelion][Neon Genesis Evangelion]] as a teenager.  There are
+the ubiquitous cricket or cicada sounds that were also present in Eva,
+but for me, they hearken back to a youth spent in the rural South.
+The drone of cicadas in the sticky heat of the summer reminds me of
+falling asleep in a Mississippi home, of walking into cool woods after
+standing in a sunny meadow.
+
+The whole game engine is full of quirks and reminders of the PS1 era
+of gaming.  But one of the mechanics seems rather novel, an addition
+seemingly for its own sake, with little influence on actual plot or
+gameplay.  I'm talking about the spell casting mechanic, reminiscent
+of games children used to play in 70s Japan, the time in which Attack
+of the Friday Monsters takes place.
+
+If you win the sometimes annoying, somewhat forgettable,
+rock-paper-scissors card game, fueled by collectibles strewn
+throughout the world, you gain the ability to cast spells on your
+buddies, knocking them down.  It has no bearing on the outcome of the
+story.  The spell system is simply decoration that deepens the story
+by providing a more complete world, accurately capturing what it feels
+like to grow up as a child in Japan during the 70s.
+
+You are allowed to pick, and reorder, the phrases of the spell your
+character speaks.  This type of cosmetic customization is typical in
+modern games, and in Attack of the Friday Monsters it's nothing more
+than cosmetic, but it could have been used in surprising ways.
+
+I realized the potential depth of this mechanic during a phone
+conversation with my brother. As I told him about the spell casting,
+he mentioned a Kickstarted pen and paper RPG called [[http://www.magiciansrpg.com/][Magicians]].
+Magicians uses spells spoken in another language as both an impulse
+toward learning the language and a mechanic for determining the
+success or failure of an action. The game my brother described
+involved a Harry Potter-esque international school for magicians in
+Korea.
+
+To use magic, the characters, and players, have to learn to correctly
+speak Korean words--at least correct enough to satisfy the
+voice-recognition system of an online translation service.  This sets
+up the potential for a rather clever scenario in which characters'
+/[[http://en.wikipedia.org/wiki/Bildungsroman][Bildungsroman]]/ stories are echoed by the players' acquisition of the
+language.
+
+At present, on the 3DS, the kind of voice recognition required for
+this sort of play may not work.  But it's certainly possible on more
+powerful platforms.
+
+One way to exploit the 3DS, and other devices with touch interfaces,
+involves learning written language, such as Japanese /[[http://en.wikipedia.org/wiki/Hiragana][hiragana]]/ or
+/[[http://en.wikipedia.org/wiki/Katakana][katakana/]].  I can imagine a cool magic mechanic involving correctly
+writing scrolls, where the fidelity of the calligraphic strokes
+determines the strength and efficacy of the scrolls.
+
+Another approach may be to build up language comprehension by
+constructing words out of syllables.  Given several options, choose
+the correct syllable to complete the correct word, and perform an
+action or cast a spell.  A similar sort of approach would work for
+learning syntax, completing or building a sentence with the correct
+words.
+
+Attack of the Friday Monsters is a quick experience, but the depth of
+its design has made it a memorable one.  It has certainly given me
+somethings to think about.  If you'd like to learn more about the game
+and its creator, you can check out [[http://scroll.vg/extras/summer-vacation-confidential/#a][this interview]] by Ray Barnholt,
+which covers Attack of the Friday Monsters and other games by creator
+Kaz Ayube.
