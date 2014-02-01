@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[zero's a life]]></title>
-  <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: mechanics | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
   <updated>2014-02-01T08:46:44-06:00</updated>
   <id>http://zerosalife.github.io/</id>
@@ -33,7 +33,7 @@ camerawork and the other used pre-rendered backgrounds with blocky
 polygonal actors on the stage, but these art styles complimented one
 another.  They didn&rsquo;t clash.</p>
 
-<p><a href="http://zerosalife.github.io/images/aotfm.JPG"><img src="http://zerosalife.github.io/images/aotfm.JPG" width="320" height="320"></a></p>
+<p><a href="/images/aotfm.JPG"><img src="/images/aotfm.JPG" width="320" height="320"></a></p>
 
 <p>I was struck by the ambient sounds that bring the pre-rendered
 backgrounds and polygonal characters to life. The periodic train
@@ -79,8 +79,8 @@ Korea.</p>
 <p>To use magic, the characters, and thus the players, have to correctly
 speak Korean words&#x2013;at least accurately enough to satisfy the
 voice-recognition system of an online translation service.  This sets
-up the potential for a rather clever scenario in which characters&#8217;
-<em><a href="http://en.wikipedia.org/wiki/Bildungsroman">Bildungsroman</a></em> stories are echoed by the players&#8217; acquisition of the
+up the potential for a rather clever scenario in which characters'
+<em><a href="http://en.wikipedia.org/wiki/Bildungsroman">Bildungsroman</a></em> stories are echoed by the players' acquisition of the
 language.</p>
 
 <p>At present, on the 3DS, the kind of voice recognition required for
