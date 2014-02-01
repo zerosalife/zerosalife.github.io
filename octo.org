@@ -50,11 +50,17 @@ rake setup_github_pages
 Use the =<!--more-->= tag.
 
 [[http://octopress.org/docs/blogging/plugins/]]
+** Image resizer
+[[http://valhallaisland.com/blog/2012/octopress-image-resizer/]]
 
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
+categories:
+- analysis
+- R
+- mechanics
+
 ** Introduction
-#+CAPTION: from wikipedia.org
-[[http://upload.wikimedia.org/wikipedia/en/d/d5/ChronoTriggerInside.PNG]]
+[[http://en.wikipedia.org/wiki/File:ChronoTriggerInside.PNG][{% img http://upload.wikimedia.org/wikipedia/en/d/d5/ChronoTriggerInside.PNG %}]]
 
 I recently revisited [[http://en.wikipedia.org/wiki/Chrono_Trigger][Chrono Trigger]], a 20-year-old Square role playing
 game (RPG) for the SNES.  I was inspired by a [[http://www.youtube.com/watch?v%3DV_SFck-xeGM][speed run]] from [[http://gamesdonequick.com/][Awesome
@@ -84,6 +90,8 @@ understood.  The speed runners apparently compensate for any
 variability of the RNG, but its mechanics have not been laid out.  So
 I set out to investigate the mechanics of the RNG in Chrono Trigger,
 using basic R commands to tease apart its underlying algorithms.
+
+<!--more-->
 
 ** A brief note on the choice of R
 There was no good reason to choose R for this analysis.  I chose R
@@ -136,7 +144,58 @@ rounding down is equivalent to a [[http://en.wikipedia.org/wiki/Floor_and_ceilin
 where the calculated *Attack* value would have a fractional component
 above half, the game always rounds down.
 
+I store Crono's *Attack* power in a variable called =apwr=.
 
+#+BEGIN_SRC R
+  c.apwr <- 8
+
+#+END_SRC
+
+That means his base damage per hit is double that:
+
+#+BEGIN_SRC R
+  calculated.hit <- 16
+
+#+END_SRC
+
+Now we observe a bunch of hits using these parameters.  This is no
+simple task because Crono levels up after a few battles, changing the
+value of his *Attack* parameter.  I kept the values consistent by
+reloading, starting from scratch, each time Crono leveled up.
+
+#+BEGIN_SRC R :session
+  ## Crono Level 1, Attack Power 8
+  raw.hits <- c(32, 17, 16, 17, 17, 17, 17, 16, 32, 17, 17, 17, 16, 16,
+                17, 32, 32, 17, 16, 17, 17, 16, 16, 17, 16, 34, 16, 17,
+                16, 17, 16, 17, 16)
+
+#+END_SRC
+
+Here we've got a collection that samples XXX hits by Crono at level 1.
+
+We can get summary statistics:
+
+#+BEGIN_SRC R :session
+  summary(raw.hits)
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+> summary(raw.hits)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+  16.00   16.00   17.00   18.97   17.00   34.00
+#+END_EXAMPLE
+
+So, the majority of hits did 16 or 17 damage.  A few were much higher
+than that.  The hits doing 32 or 34 damage represent critical hits,
+which I failed to realize, would contaminate my data set.  Critical
+hits simply deal double damage, a fact you can see by the lack of hits
+dealing 33 damage.
+
+A critical hit dealing 33 damage would require raw damage of 16.5,
+which would require representing floating point numbers.  Given what
+we previously observed about the *Attack* calculation above, it should
+come as no surprise that Chrono Trigger's battle system uses integers
+only.
 
 ** Summary
 There are still questions that remain unanswered.
@@ -145,6 +204,8 @@ What RNG parameters govern levels 2 and 3?
 
 Is the RNG governing the Tech system similar?
 
+How does evasion work?  I haven't seen much information about missed hits.
+
 Can I provide a concrete example of the *Attack* value rounding down
 when its fractional value would be calculated to be above ½?
 
@@ -152,11 +213,16 @@ All told, it took me a little North of 12 hours to beat the game,
 using Essentia's strategies.  I'm no speed runner.
 
 * Some thoughts on Attack of the Friday Monsters       :review:3DS:mechanics:
+categories:
+- review
+- 3DS
+- mechanics
+
 It's hard to say anything new about Attack of the Friday Monsters, a
 game that splashed on the scene months ago.  The work of its creator
 was lovingly lauded by [[https://twitter.com/rdbaaa][Ray Barnholt]]--a noted /[[http://en.wikipedia.org/wiki/Boku_no_Natsuyasumi][Boku no Natsuyami]]/
 fanatic--in such a reverent way in his [[http://scroll.vg/issues/10][SCROLL magazine]] that it's
-almost sacrilegious try to write more.  So instead of doing a
+almost sacrilegious to try to write more.  So instead of doing a
 point-by-point review, I'll mention some details that stand out to me,
 personally.
 
@@ -165,19 +231,21 @@ day after I watched Miyazaki's [[http://en.wikipedia.org/wiki/Arrietty][Secret W
 beautiful water colors and amazing visual tricks mimicking real
 camerawork and the other used pre-rendered backgrounds with blocky
 polygonal actors on the stage, but these art styles complimented one
-and other.  They didn't clash.
+another.  They didn't clash.
+
+[[http:///images/aotfm.JPG][{% img center /images/aotfm.JPG 320 320 %}]]
 
 I was struck by the ambient sounds that bring the pre-rendered
 backgrounds and polygonal characters to life. The periodic train
-sounds, presaging the arrival of a in-engine rendered train, sort of
-quirky and quaint today, that persists as you move throughout the
-region, remind me of a previous exposure to Japanese culture, the
-first time I watched [[http://en.wikipedia.org/wiki/Neon_Genesis_Evangelion][Neon Genesis Evangelion]] as a teenager.  There are
-the ubiquitous cricket or cicada sounds that were also present in Eva,
-but for me, they hearken back to a youth spent in the rural South.
-The drone of cicadas in the sticky heat of the summer reminds me of
-falling asleep in a Mississippi home, of walking into cool woods after
-standing in a sunny meadow.
+sounds, presaging the arrival of an in-engine rendered train--sort of
+quirky and quaint with today's game engines powerful enough to render
+both background and foreground objects--remind me of a previous
+exposure to Japanese culture: the first time I watched [[http://en.wikipedia.org/wiki/Neon_Genesis_Evangelion][Neon Genesis
+Evangelion]] as a teenager.  There are the ubiquitous cricket or cicada
+sounds that were also present in Eva, but for me, they hearken back to
+a youth spent in the rural South.  The drone of cicadas in the sticky
+summer heat reminds me of falling asleep in a Mississippi home, of
+walking into cool woods after standing in a sunny meadow.
 
 The whole game engine is full of quirks and reminders of the PS1 era
 of gaming.  But one of the mechanics seems rather novel, an addition
@@ -208,33 +276,38 @@ success or failure of an action. The game my brother described
 involved a Harry Potter-esque international school for magicians in
 Korea.
 
-To use magic, the characters, and players, have to learn to correctly
-speak Korean words--at least correct enough to satisfy the
+To use magic, the characters, and thus the players, have to correctly
+speak Korean words--at least accurately enough to satisfy the
 voice-recognition system of an online translation service.  This sets
 up the potential for a rather clever scenario in which characters'
 /[[http://en.wikipedia.org/wiki/Bildungsroman][Bildungsroman]]/ stories are echoed by the players' acquisition of the
 language.
 
 At present, on the 3DS, the kind of voice recognition required for
-this sort of play may not work.  But it's certainly possible on more
+this sort of is [[http://www.gamefaqs.com/boards/997781-/58911600][immature]].  But it's certainly possible on more
 powerful platforms.
 
 One way to exploit the 3DS, and other devices with touch interfaces,
 involves learning written language, such as Japanese /[[http://en.wikipedia.org/wiki/Hiragana][hiragana]]/ or
-/[[http://en.wikipedia.org/wiki/Katakana][katakana/]].  I can imagine a cool magic mechanic involving correctly
-writing scrolls, where the fidelity of the calligraphic strokes
-determines the strength and efficacy of the scrolls.
+/[[http://en.wikipedia.org/wiki/Katakana][katakana/]].  I can imagine a magic mechanic that involves correctly
+writing scrolls, where the fidelity of the player's calligraphic
+strokes determines the strength and efficacy of the scrolls.
 
-Another approach may be to build up language comprehension by
-constructing words out of syllables.  Given several options, choose
-the correct syllable to complete the correct word, and perform an
-action or cast a spell.  A similar sort of approach would work for
-learning syntax, completing or building a sentence with the correct
-words.
+Another possible approach is to build up language comprehension by
+constructing words out of syllables.  Given several options, one would
+choose the correct syllable to complete the necessary word, in order
+to perform an action or cast a spell.  A similar sort of approach
+would work for learning syntax, completing or building a sentence with
+the appropriate words.
 
 Attack of the Friday Monsters is a quick experience, but the depth of
-its design has made it a memorable one.  It has certainly given me
-somethings to think about.  If you'd like to learn more about the game
-and its creator, you can check out [[http://scroll.vg/extras/summer-vacation-confidential/#a][this interview]] by Ray Barnholt,
-which covers Attack of the Friday Monsters and other games by creator
-Kaz Ayube.
+its design has made it a memorable one.  If you'd like to learn more
+about the game and its creator, you can check out [[http://scroll.vg/extras/summer-vacation-confidential/#a][this interview]] by
+Ray Barnholt, which covers Attack of the Friday Monsters and other
+games by creator, Kaz Ayabe.
+
+* Visualizing Zelda Dungeons                              :design:CommonLisp:
+
+* An entity component system for Pygame :design:python:pygame:entity:component:
+
+* What's in a name?
