@@ -10,7 +10,7 @@ categories:
 ---
 It's hard to say anything new about Attack of the Friday Monsters, a
 game that splashed on the scene months ago.  The work of its creator
-was lovingly lauded by [Ray Barnholt](https://twitter.com/rdbaaa)&#x2013;a noted *[Boku no Natsuyami](http://en.wikipedia.org/wiki/Boku_no_Natsuyasumi)*
+was lovingly lauded by [Ray Barnholt](https://twitter.com/rdbaaa)&#x2013;a noted *[Boku no Natsuyasumi](http://en.wikipedia.org/wiki/Boku_no_Natsuyasumi)*
 fanatic&#x2013;in such a reverent way in his [SCROLL magazine](http://scroll.vg/issues/10) that it's
 almost sacrilegious to try to write more.  So instead of doing a
 point-by-point review, I'll mention some details that stand out to me,
@@ -23,7 +23,7 @@ camerawork and the other used pre-rendered backgrounds with blocky
 polygonal actors on the stage, but these art styles complimented one
 another.  They didn't clash.
 
-[{% img center /images/aotfm.JPG 320 320 %}](/images/aotfm.JPG)
+[{% img center /images/assets/aotfm.JPG 320 320 %}](/images/assets/aotfm.JPG)
 
 I was struck by the ambient sounds that bring the pre-rendered
 backgrounds and polygonal characters to life. The periodic train
@@ -60,6 +60,7 @@ than cosmetic, but it could have been used in surprising ways.
 I realized the potential depth of this mechanic during a phone
 conversation with my brother. As I told him about the spell casting,
 he mentioned a Kickstarted pen and paper RPG called [Magicians](http://www.magiciansrpg.com/).
+
 Magicians uses spells spoken in another language as both an impulse
 toward learning the language and a mechanic for determining the
 success or failure of an action. The game my brother described
@@ -67,11 +68,11 @@ involved a Harry Potter-esque international school for magicians in
 Korea.
 
 To use magic, the characters, and thus the players, have to correctly
-speak Korean words&#x2013;at least accurately enough to satisfy the
+speak Korean words&#x2013;at least with enough accuracy to satisfy the
 voice-recognition system of an online translation service.  This sets
 up the potential for a rather clever scenario in which characters'
-*[Bildungsroman](http://en.wikipedia.org/wiki/Bildungsroman)* stories are echoed by the players' acquisition of the
-language.
+*[Bildungsroman](http://en.wikipedia.org/wiki/Bildungsroman)* stories
+are echoed by the players' acquisition of the language.
 
 At present, on the 3DS, the kind of voice recognition required for
 this sort of is [immature](http://www.gamefaqs.com/boards/997781-/58911600).  But it's certainly possible on more
