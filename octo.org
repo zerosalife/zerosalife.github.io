@@ -50,17 +50,27 @@ rake setup_github_pages
 Use the =<!--more-->= tag.
 
 [[http://octopress.org/docs/blogging/plugins/]]
-** Image resizer
-[[http://valhallaisland.com/blog/2012/octopress-image-resizer/]]
+** Center text
+you can center text by surrounding it with the =-> text <-= symbols
+
+** Modal dialogs in octopress
+Modal content
+
+[[http://octopressthemes.com/blog/2012/11/10/adding-a-modal-dialog-to-octopress-with-foundation-zurb/]]
+
+Even better:
+[[https://github.com/rayfaddis/octopress-BootstrapModal]]
 
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
 categories:
 - analysis
+- algorithms
 - R
 - mechanics
 
 ** Introduction
-[[http://en.wikipedia.org/wiki/File:ChronoTriggerInside.PNG][{% img http://upload.wikimedia.org/wikipedia/en/d/d5/ChronoTriggerInside.PNG %}]]
+[[http://en.wikipedia.org/wiki/File:ChronoTriggerInside.PNG][{% img http://upload.wikimedia.org/wikipedia/en/d/d5/ChronoTriggerInside.PNG from Wikipedia%}]]
+Image from [[http://en.wikipedia.org/wiki/Chrono_Trigger][wikipedia.org]].
 
 I recently revisited [[http://en.wikipedia.org/wiki/Chrono_Trigger][Chrono Trigger]], a 20-year-old Square role playing
 game (RPG) for the SNES.  I was inspired by a [[http://www.youtube.com/watch?v%3DV_SFck-xeGM][speed run]] from [[http://gamesdonequick.com/][Awesome
@@ -171,7 +181,7 @@ reloading, starting from scratch, each time Crono leveled up.
 
 #+END_SRC
 
-Here we've got a collection that samples XXX hits by Crono at level 1.
+Here we've got a collection that samples 33 hits by Crono at level 1.
 
 We can get summary statistics:
 
@@ -197,7 +207,29 @@ we previously observed about the *Attack* calculation above, it should
 come as no surprise that Chrono Trigger's battle system uses integers
 only.
 
+We'll ignore critical hits for now.
+
+Crono's calculated damage value is 16.  We see that the hits vary
+between 16 and 17.  So the added *Random* modifier is either 0 or 1.
+
+The modifiers occur with about the same frequency, given the tiny sample
+size:
+
+#+BEGIN_SRC R :session
+  table(raw.hits)
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+> table(raw.hits)
+raw.hits
+16 17 32 34
+12 16  4  1
+#+END_EXAMPLE
+
+
+
 ** Summary
+
 There are still questions that remain unanswered.
 
 What RNG parameters govern levels 2 and 3?
@@ -308,6 +340,43 @@ games by creator, Kaz Ayabe.
 
 * Visualizing Zelda Dungeons                              :design:CommonLisp:
 
+* Visualizing Zelda Dungeons in Clojure                      :design:Clojure:
+"Port it to Clojure, dogg.  There's a nice library by [[https://github.com/ztellman][Zachary Tellman]]
+called [[https://github.com/ztellman/rhizome][Rhizome]]," read my notes.  It'll be easy, I think.
+
 * An entity component system for Pygame :design:python:pygame:entity:component:
 
 * What's in a name?
+
+* An in-depth tour of Tetris
+categories:
+- AI
+- design
+- mechanics
+- NES
+
+{% img center
+http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png %}
+Image from [[http://en.wikipedia.org/wiki/Tetris][wikipedia.org]].
+
+This week I've spent quite some time reading [[http://meatfighter.com/nintendotetrisai/][this article]] on
+[[http://meatfighter.com/][MeatFighter.com]].  The article reverse engineers the inner-workings of
+[[http://en.wikipedia.org/wiki/Tetris#NES][NES Tetris]].  With great visual aids, the author, [o__1] [1], surveys
+the mechanics and data structures used to implement Tetris on the NES.
+Then o__1 designs and implements an AI script to play Tetris with
+super-human speed and precision.  o__1 even describes how to try it at
+home, providing instructions and the necessary Lua scripts to run the
+AI on your own copy of Tetris.
+
+I hope to see more articles looking back on classic games with this
+tremendous attention to detail.  An older [[http://home.comcast.net/~jpittman2/pacman/pacmandossier.html][article looking at Pac-man
+AI]] shows similar obsessive depth.  Articles like these help supplement
+our appreciation of these games as works of art by documenting the
+essential technical complexities underlying these games.  I think
+that's a good thing for everyone from hobby developers to professional
+developers, as well as designers and fans.
+
+[1]: I'm referring to the author by the contact email listed on the
+website.
+
+* What's an LFSR? :design:algorithm:mechanics:Clojure:
