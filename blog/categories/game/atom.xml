@@ -4,7 +4,7 @@
   <title><![CDATA[Category: game | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/game/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-02-15T08:51:14-06:00</updated>
+  <updated>2014-02-15T09:03:52-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -18,28 +18,17 @@
     <link href="http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/"/>
     <updated>2014-02-15T08:40:03-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam</id>
-    <content type="html"><![CDATA[<p><img class="center <a" src="href="http://github.com/zerosalife/bunnies-dont-surf/blob/master/screenshot.png">http://github.com/zerosalife/bunnies-dont-surf/blob/master/screenshot.png</a>"></p>
+    <content type="html"><![CDATA[<p><img class="center <a" src="href="https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png">https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png</a>"></p>
 
-<p>Here&rsquo;s a WIP FlappyBird-like game prototype for <a href="http://itch.io/jam/flappyjam">#flappyjam</a>: <a href="https://github.com/zerosalife/bunnies-dont-surf">Bunnies
-Don&rsquo;t Surf</a>.  You are an unfortunate rabbit whose warren is being
-flooded by a passing thunderstorm.  You have to navigate the
-tunnels of the warren, propelled by the wave of water flooding
-your home.  There&rsquo;s only one problem: Bunnies Don&rsquo;t Surf.  So you&rsquo;re
-stuck hopping up and down in a futile attempt to survive.</p>
+<p>Here&rsquo;s a WIP FlappyBird-like game prototype for <a href="http://itch.io/jam/flappyjam">#flappyjam</a>: <a href="https://github.com/zerosalife/bunnies-dont-surf">Bunnies Don&rsquo;t Surf</a>. You are an unfortunate rabbit whose warren is being flooded by a passing thunderstorm.  You have to navigate the tunnels of the warren, propelled by the wave of water flooding your home.  There&rsquo;s only one problem: Bunnies Don&rsquo;t Surf.  So you&rsquo;re stuck hopping up and down in a futile attempt to survive.</p>
 
 <p>Bunnies Don&rsquo;t Surf requires <a href="http://www.python.org/">Python</a> and <a href="http://pygame.org/news.html">pygame</a> (<a href="http://pygame.org/download.shtml">version 1.9.1</a>) to play.</p>
 
-<p>Tap <code>SPACE</code> to hop. That&rsquo;s about all there is to say about the
-controls.</p>
+<p>Tap <code>SPACE</code> to hop. That&rsquo;s about all there is to say about the controls.</p>
 
-<p>As I&rsquo;m sure you can see, the game is in dire need of art assets, sound
-assets, and some sort of high score system.  I&rsquo;ll do my best to add
-these, once time allows. If anyone has feedback or art design ideas,
-please let me know in the comments section or on Twitter.  I&rsquo;d love to
-hear it.</p>
+<p>As I&rsquo;m sure you can see, the game is in dire need of art assets, sound assets, and some sort of high score system.  I&rsquo;ll do my best to add these, once time allows. If anyone has feedback or art design ideas, please let me know in the comments section or on Twitter.  I&rsquo;d love to hear it.</p>
 
-<p>I&rsquo;ll post updates as the game progresses, and officially submit it to
-<a href="http://itch.io/jam/flappyjam">#flappyjam</a> if it&rsquo;s done before the jam ends on February 24.</p>
+<p>I&rsquo;ll post updates as the game progresses, and officially submit it to <a href="http://itch.io/jam/flappyjam">#flappyjam</a> if it&rsquo;s done before the jam ends on February 24.</p>
 ]]></content>
   </entry>
   
