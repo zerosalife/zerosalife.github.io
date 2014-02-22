@@ -61,6 +61,20 @@ Modal content
 Even better:
 [[https://github.com/rayfaddis/octopress-BootstrapModal]]
 
+** Embedded gists using the gist-tag plugin
+Something's horribly broken with the gist-tag plugin on my computer.
+It throws =300= errors when trying to embed gists.  I found a couple
+of unhelpful github issues that didn't solve the problem.
+
+[[https://github.com/imathis/octopress/issues/904][This issue suggests that there isn't a problem.]]  They advise to
+uninstall and reinstall ruby and all gems...
+
+[[https://gist.github.com/imathis/1104557][This issue gives instructions for uninstalling and reinstalling ruby
+and all gems.]]
+
+
+My solution was to use githubs embed code to embed the gist the hard
+way.
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
 categories:
 - analysis
@@ -338,15 +352,7 @@ about the game and its creator, you can check out [[http://scroll.vg/extras/summ
 Ray Barnholt, which covers Attack of the Friday Monsters and other
 games by creator, Kaz Ayabe.
 
-* Visualizing Zelda Dungeons                              :design:CommonLisp:
-
-* Visualizing Zelda Dungeons in Clojure                      :design:Clojure:
-"Port it to Clojure, dogg.  There's a nice library by [[https://github.com/ztellman][Zachary Tellman]]
-called [[https://github.com/ztellman/rhizome][Rhizome]]," read my notes.  It'll be easy, I think.
-
 * An entity component system for Pygame :design:python:pygame:entity:component:
-
-* What's in a name?
 
 * An in-depth tour of Tetris
 categories:
@@ -379,4 +385,77 @@ developers, as well as designers and fans.
 [1]: I'm referring to the author by the contact email listed on the
 website.
 
+* Bunnies Don't Surf [[http://itch.io/jam/flappyjam][#flappyjam]]
+Categories:
+- design
+- python
+- pygame
+- game
+
+{% img center https://github.com/zerosalife/bunnies-dont-surf/blob/master/screenshot.png %}
+
+Here's a WIP FlappyBird-like game prototype for [[http://itch.io/jam/flappyjam][#flappyjam]]: [[https://github.com/zerosalife/bunnies-dont-surf][Bunnies
+Don't Surf]].  You are an unfortunate rabbit whose warren is being
+flooded by a passing thunderstorm.  You have to navigate the
+tunnels of the warren, propelled by the wave of water flooding
+your home.  There's only one problem: Bunnies Don't Surf.  So you're
+stuck hopping up and down in a futile attempt to survive.
+
+Bunnies Don't Surf requires [[http://www.python.org/][Python]] and [[http://pygame.org/news.html][pygame]] ([[http://pygame.org/download.shtml][version 1.9.1]]) to play.
+
+Tap =space= to hop. That's about all there is to say about the
+controls.
+
+As I'm sure you can see, the game is in dire need of art assets, sound
+assets, and some sort of high score system.  I'll do my best to add
+these, once time allows. If anyone has feedback or art design ideas,
+please let me know in the comments section or on Twitter.  I'd love to
+hear it.
+
+I'll post updates as the game progresses, and officially submit it to
+#flappyjam  if it's done before the jam ends on February 24.
+
+* Visualizing Zelda Dungeons in Clojure                      :design:Clojure:
+"Port it to Clojure, dogg.  There's a nice library by [[https://github.com/ztellman][Zachary Tellman]]
+called [[https://github.com/ztellman/rhizome][Rhizome]]," read my notes.  It'll be easy, I think.
+
+* Visualizing Zelda Dungeons                              :design:CommonLisp:
+
+* What's in a name?
+
+The name of this blog comes from that reassuring sense that you have
+an extra chance.  Don't worry, zero's a life.
+
 * What's an LFSR? :design:algorithm:mechanics:Clojure:
+
+* Setting up Emacs-like key bindings in MonoDevelop
+Categories:
+- tools
+
+I'm playing around with Unity to try to learn how it works.  Shout out
+to Infinite Ammo for the excellent video tutorials. Since I don't know
+much about Unity, I'm reluctantly using their included MonoDevelop
+IDE.  While I heard that Emacs-like key bindings were included, in the
+build I installed they weren't present.
+
+MonoDevelop does not make it easy to import new key binding schemes
+(the blog post linked here suggests submitting a bug report to suggest
+new key bindings...).  So, I did a little digging around on github and
+found the [[https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml][default emacs key binding scheme]] that I imagine should have
+been included in the MonoDevelop build I installed.
+
+There was no way to add this key binding scheme to my available key
+bindings in MonoDevelop, so I hacked my Custom key binding file
+located at =~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml=.
+
+I started with some simple copypasta.  But then I found some useful
+navigation features were lacking.  So, I added key binds that
+immediately came to mind, like =Alt-f= for moving forward one word and
+=Alt-b= for backward word.  Yes, I know these are =M-f= in Emacs, but
+I'm using MonoDevelop's syntax here.
+
+My key bindings are available in the gist below.  I'll update this
+gist when I add key bindings, to keep a current working version
+available.
+
+{% gist 9096788 %}
