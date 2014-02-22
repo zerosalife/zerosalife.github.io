@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tools | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://zerosalife.github.io/"/>
+  <updated>2014-02-22T10:03:06-06:00</updated>
+  <id>http://zerosalife.github.io/</id>
+  <author>
+    <name><![CDATA[zerosalife]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up Emacs-like key bindings in MonoDevelop]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/"/>
+    <updated>2014-02-22T08:14:40-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
+
+<p>Since I don&rsquo;t know much about Unity, I&rsquo;m reluctantly using their included <a href="http://monodevelop.com/">MonoDevelop IDE</a>.  While I&rsquo;d heard that Emacs-like key bindings were included, in the build I installed they weren&rsquo;t present.</p>
+
+<p>MonoDevelop does not make it easy to import new key binding schemes (the <a href="http://mjhutchinson.com/journal/2011/02/06/key_bindings">blog post linked here</a> suggests submitting a bug report to propose new key bindings&#x2026;).  So, I did a little digging around on github and found the <a href="https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml">default emacs key binding scheme</a> that I imagine should have been included in the MonoDevelop build I installed.</p>
+
+<p>There was no way to add this key binding scheme to my available key bindings in MonoDevelop, so I hacked my Custom key binding file located at <code>~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml</code>.</p>
+
+<p>I started with some simple copypasta.  But then I found some useful
+navigation features were lacking.  So, I added key binds that
+immediately came to mind, like <code>Alt-f</code> for moving forward one word and
+<code>Alt-b</code> for backward word.  Yes, I know these are <code>M-f</code> in Emacs, but
+I&rsquo;m using MonoDevelop&rsquo;s syntax here.</p>
+
+<p>My key bindings are available in the gist below.  I&rsquo;ll update this
+gist when I add key bindings, to keep a current working version
+available.</p>
+
+<script src="https://gist.github.com/zerosalife/9096788.js"></script>
+
+]]></content>
+  </entry>
+  
+</feed>
