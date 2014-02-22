@@ -26,8 +26,9 @@ instructions and the necessary Lua scripts to run the AI on your own
 copy of Tetris.
 
 I hope to see more articles looking back on classic games with this
-tremendous attention to detail.  An older [article looking at Pac-man
-AI](http://home.comcast.net/~jpittman2/pacman/pacmandossier.html) shows similar obsessive depth.  Articles like these help supplement
+tremendous attention to detail.  An older
+[article looking at Pac-man AI](http://home.comcast.net/~jpittman2/pacman/pacmandossier.html)
+shows similar obsessive depth.  Articles like these help supplement
 our appreciation of these games as works of art by documenting the
 essential technical complexities underlying these games.  I think
 that's a good thing for everyone from hobby developers to professional
