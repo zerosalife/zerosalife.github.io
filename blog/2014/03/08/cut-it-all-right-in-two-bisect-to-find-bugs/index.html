@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: review - zero's a life</title>
+  <title>Cut it all right in two: bisect to find bugs - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Category: review">
+  <meta name="description" content="Imagine there&rsquo;s a lion in a desert. You need to cage the lion or you
+will be eaten. In this example the desert is your code and the lion
+is a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.ioblog/categories/review">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -66,36 +68,118 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Review</h1>
+    
+      <h1 class="entry-title">Cut It All Right in Two: Bisect to Find Bugs</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-08T10:25:02-06:00" pubdate data-updated="true">Mar 8<span>th</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Imagine there&rsquo;s a lion in a desert.  You need to cage the lion or you
+will be eaten.  In this example the desert is your code and the lion
+is a bug that you&rsquo;re having a hard time pinning down.</p>
 
-  
-  <h2>2014</h2>
+<p>There are many ways to trap a lion.  Here&rsquo;s one.</p>
 
-<article>
-  
-<h1><a href="/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/">Some thoughts on Attack of the Friday Monsters</a></h1>
-<time datetime="2014-02-01T08:32:40-06:00" pubdate><span class='month'>Feb</span> <span class='day'>01</span> <span class='year'>2014</span></time>
+<p>Build a fence dividing the desert in half going North to South.
+Assuming the lion is not in the South section, divide the North
+section in half with a fence going East to West.  Repeat the process
+until your fence is arbitrarily small and has become a cage trapping
+the lion.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/3ds/'>3DS</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>, <a class='category' href='/blog/categories/review/'>review</a></span>
-</footer>
+<p>But how does this relate to code?</p>
 
+<p>Say you have a relatively large file that executes fine, but
+introduces a bug into your larger system.  You suspect that something
+has gone wrong with the large file, but you&rsquo;re not getting an error
+implicating a specific line.</p>
 
-</article>
+<p>Cut it all right in two.</p>
 
+<p>Comment out half the code in your large file and try to reproduce the
+bug.  If you reproduce the bug, repeat the process as necessary until
+you isolate the line producing the problem.</p>
+
+<p>I learned about this approach for bugsleuthing from the <a href="https://gist.github.com/stardiviner/8109774#file-temp-txt-L26">bot in #emacs on freenode</a>.  It&rsquo;s particularly useful for tracking down bugs in large configuration files.  There&rsquo;s a list of humorous lion-trapping algorithm examples <a href="http://faculty.smu.edu/yzhou/humor/lion.htm">here</a>.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-08T10:25:02-06:00" pubdate data-updated="true">Mar 8<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/03/01/whats-in-a-name/" title="Previous Post: What's in a name?">&laquo; What's in a name?</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 
 </div>
@@ -181,7 +265,10 @@
       var disqus_shortname = 'zerosalife';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

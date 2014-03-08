@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: algorithm | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
+  <link href="http://zerosalife.github.io/"/>
+  <updated>2014-03-08T10:32:25-06:00</updated>
+  <id>http://zerosalife.github.io/</id>
+  <author>
+    <name><![CDATA[zerosalife]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cut it all right in two: bisect to find bugs]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/"/>
+    <updated>2014-03-08T10:25:02-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs</id>
+    <content type="html"><![CDATA[<p>Imagine there&rsquo;s a lion in a desert.  You need to cage the lion or you
+will be eaten.  In this example the desert is your code and the lion
+is a bug that you&rsquo;re having a hard time pinning down.</p>
+
+<p>There are many ways to trap a lion.  Here&rsquo;s one.</p>
+
+<p>Build a fence dividing the desert in half going North to South.
+Assuming the lion is not in the South section, divide the North
+section in half with a fence going East to West.  Repeat the process
+until your fence is arbitrarily small and has become a cage trapping
+the lion.</p>
+
+<p>But how does this relate to code?</p>
+
+<p>Say you have a relatively large file that executes fine, but
+introduces a bug into your larger system.  You suspect that something
+has gone wrong with the large file, but you&rsquo;re not getting an error
+implicating a specific line.</p>
+
+<p>Cut it all right in two.</p>
+
+<p>Comment out half the code in your large file and try to reproduce the
+bug.  If you reproduce the bug, repeat the process as necessary until
+you isolate the line producing the problem.</p>
+
+<p>I learned about this approach for bugsleuthing from the <a href="https://gist.github.com/stardiviner/8109774#file-temp-txt-L26">bot in #emacs on freenode</a>.  It&rsquo;s particularly useful for tracking down bugs in large configuration files.  There&rsquo;s a list of humorous lion-trapping algorithm examples <a href="http://faculty.smu.edu/yzhou/humor/lion.htm">here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
