@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-03-08T10:32:25-06:00</updated>
+  <updated>2014-03-15T09:05:30-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Cut it all right in two: bisect to find bugs]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/"/>
-    <updated>2014-03-08T10:25:02-06:00</updated>
+    <updated>2014-03-08T11:25:02-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs</id>
     <content type="html"><![CDATA[<p>Imagine there&rsquo;s a lion in a desert.  You need to cage the lion or you
 will be eaten.  In this example the desert is your code and the lion
