@@ -13,7 +13,7 @@ zero's a life
 ### An extra chance.
 
 
-A blog.
+A blog.  I wrote about the name in a [post](/blog/2014/03/01/whats-in-a-name/).
 
 The source code of this blog and other projects can be found on [Github](http://github.com/zerosalife).
 
