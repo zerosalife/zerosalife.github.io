@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-03-15T09:05:30-04:00</updated>
+  <updated>2014-03-22T09:46:53-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Upgrading to Mavericks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/"/>
-    <updated>2014-03-15T09:03:27-04:00</updated>
+    <updated>2014-03-15T08:03:27-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks</id>
     <content type="html"><![CDATA[<p>This week I upgraded to <a href="https://www.apple.com/osx/">Mac OS X 10.9 Mavericks</a>.  To keep <a href="http://octopress.org/">octopress</a> working, I had to uninstall and reinstall <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
 
@@ -31,7 +31,7 @@
   <entry>
     <title type="html"><![CDATA[Cut it all right in two: bisect to find bugs]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/"/>
-    <updated>2014-03-08T11:25:02-05:00</updated>
+    <updated>2014-03-08T10:25:02-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs</id>
     <content type="html"><![CDATA[<p>Imagine there&rsquo;s a lion in a desert.  You need to cage the lion or you
 will be eaten.  In this example the desert is your code and the lion
@@ -65,7 +65,7 @@ you isolate the line producing the problem.</p>
   <entry>
     <title type="html"><![CDATA[Setting up Emacs-like key bindings in MonoDevelop]]></title>
     <link href="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/"/>
-    <updated>2014-02-22T09:14:40-05:00</updated>
+    <updated>2014-02-22T08:14:40-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop</id>
     <content type="html"><![CDATA[<p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
 
