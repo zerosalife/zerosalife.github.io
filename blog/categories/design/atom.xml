@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-03-29T10:06:00-05:00</updated>
+  <updated>2014-04-05T10:08:09-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Don't Fear Lack of Content]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content/"/>
+    <updated>2014-04-05T09:59:37-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content</id>
+    <content type="html"><![CDATA[<p>Came across a <a href="http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/">nice article</a> on <a href="http://www.egometry.com/">Ben McGraw&rsquo;s blog, Egometry</a>. Using Super Mario Bros. as a model, Ben explains why merely increasing content quantity is less desirable than increasing content substance.  The title of this post is lifted from a quote in his article.</p>
+
+<p>Sometimes exercising a bit of restraint, keeping the focus of your content simple, can still allow for an interesting and engaging player experience.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Bunnies Don't Surf #flappyjam]]></title>
