@@ -9,7 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Zoyə Street wrote a summary of an interesting PhD thesis by Jonathan Lessard. Lessard examines the history of adventure games, to see whence they& &hellip;">
+  <meta name="description" content="And now for something completely different: a markov chain text generation twitter bot. Styxebooks tweets random text generated from a corpus of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,49 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/19/styx-ebooks/">Styx_ebooks</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-19T14:05:03-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2014</time>
+        
+         | <a href="/blog/2014/04/19/styx-ebooks/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx<sub>ebooks</sub> tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.
+I forked it from an earlier project by <a href="https://github.com/jiko">@jiko</a>, <a href="https://github.com/jiko/lovecraft_ebooks">lovecraft<sub>ebooks</sub></a>.  There were some minor implementation hurdles, mainly related to Twitter&rsquo;s API and oauth.  Reading the <a href="https://pypi.python.org/pypi/twitter">python <code>twitter</code> package</a> <code>twitter.oauth</code> docstring set me straight.  You can check out the code in <a href="https://github.com/zerosalife/styx_ebooks">my fork on github</a>.
+This sort of text generation algorithm isn&rsquo;t just useful for making annoying twitter bots.  You could alter some of the in-game text or dialog based on a corpus fed into a markov chain text generator. Especially in the case of a Lovecraftian horror game, I can see how this text could serve a thematic purpose in the story.
+Say you&rsquo;ve got a Lovecraftian horror game in which the player is an investigator who is trying to figure out what is happening to citizens of Innsmouth.  By interacting with NPCs, the player encounters hand written dialog, with occasional markov-generated gibberish thrown in. The amount of gibberish depends on how corrupted the individual denizens of Innsmouth are becoming.  If the player is not clever enough to determine who is corrupt, the player will be killed.  If the player determines the source of the corruption, the player wins.
+Along the same line of reasoning, the concept I&rsquo;m describing here mimics the game <a href="http://www.newgrounds.com/portal/view/634905">ALZ</a>, a touching short, playable in 2 or 3 minutes, which uses glitchy graphics to convey a sense of what it&rsquo;s like to live with Alzheimer&rsquo;s disease to the player.  I came across Dylan Carter&rsquo;s ALZ in a <a href="http://www.animalnewyork.com/2014/making-alz-glitch-fueled-game-alzheimers/">post on the ANIMAL blog</a>.  This approach of literally altering the player&rsquo;s experience of the game world to mimic the subjective experience of characters in the game is ripe for exploration.  I&rsquo;d love to hear about more examples.
+You can check out my bot, <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>, on twitter, happily tweeting the day away.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -509,75 +552,6 @@ available.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/08/an-in-depth-tour-of-tetris/">An In-depth Tour of Tetris</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-08T08:34:35-06:00" pubdate data-updated="true">Feb 8<span>th</span>, 2014</time>
-        
-         | <a href="/blog/2014/02/08/an-in-depth-tour-of-tetris/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="center" src="http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png"></p>
-
-<p style="text-align:center;"> Image from <a href="http://en.wikipedia.org/wiki/Tetris">wikipedia.org</a>.</p>
-
-<p>This week I&rsquo;ve spent quite some time reading
-<a href="http://meatfighter.com/nintendotetrisai/">this article</a> on
-<a href="http://meatfighter.com/">MeatFighter.com</a>.  The article reverse
-engineers the inner-workings of
-<a href="http://en.wikipedia.org/wiki/Tetris#NES">NES Tetris</a>.  With superb
-visual aids, the author, o__1<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> , surveys the mechanics and data
-structures used to implement Tetris on the NES.  Then o__1 designs
-and implements an AI script to play Tetris with super-human speed and
-precision.  o__1 even describes how to try it at home, providing
-instructions and the necessary Lua scripts to run the AI on your own
-copy of Tetris.</p>
-
-<p>I hope to see more articles looking back on classic games with this
-tremendous attention to detail.  An older
-<a href="http://home.comcast.net/~jpittman2/pacman/pacmandossier.html">article looking at Pac-man AI</a>
-shows similar obsessive depth.  Articles like these help supplement
-our appreciation of these games as works of art by documenting the
-essential technical complexities underlying these games.  I think
-that&rsquo;s a good thing for everyone from hobby developers to professional
-developers, as well as designers and fans.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>I&rsquo;m referring to the author by the contact email listed on the website.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -593,6 +567,10 @@ developers, as well as designers and fans.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/04/19/styx-ebooks/">styx_ebooks</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/04/12/the-fate-of-adventure-games/">The Fate of Adventure Games</a>
       </li>
     
@@ -606,10 +584,6 @@ developers, as well as designers and fans.</p>
     
       <li class="post">
         <a href="/blog/2014/03/22/ice-ice-baby/">ICE ICE Baby</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/15/upgrading-to-mavericks/">Upgrading to Mavericks</a>
       </li>
     
   </ul>

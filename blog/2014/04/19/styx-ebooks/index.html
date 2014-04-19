@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Upgrading to Mavericks - zero's a life</title>
+  <title>styx_ebooks - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="This week I upgraded to Mac OS X 10.9 Mavericks. To keep octopress working, I had to uninstall and reinstall Ruby. Upon trying a rake generate task, &hellip;">
+  <meta name="description" content="And now for something completely different: a markov chain text generation twitter bot. Styxebooks tweets random text generated from a corpus of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Upgrading to Mavericks</h1>
+      <h1 class="entry-title">Styx_ebooks</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-03-15T08:03:27-05:00" pubdate data-updated="true">Mar 15<span>th</span>, 2014</time>
+<time datetime="2014-04-19T14:05:03-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2014</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,13 +95,12 @@
   </header>
 
 
-<div class="entry-content"><p>This week I upgraded to <a href="https://www.apple.com/osx/">Mac OS X 10.9 Mavericks</a>.  To keep <a href="http://octopress.org/">octopress</a> working, I had to uninstall and reinstall <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
-
-<p>Upon trying a <code>rake generate</code> task, I saw errors in the Ruby gems for processing <a href="http://www.yaml.org/">YAML</a>.  I assume this is due to the fact that I built them on the older OS X install.</p>
-
-<p>Interestingly, <a href="https://rvm.io/">RVM</a> survived the upgrade and seems to be working just fine.</p>
-
-<p>I followed the instructions <a href="https://gist.github.com/imathis/1104557">here</a> to uninstall and reinstall Ruby, the bundler, and all bundled gems for my octopress install.  The instructions mention a specific problem for OS X Lion, but these steps solved the problem for me.</p>
+<div class="entry-content"><p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx<sub>ebooks</sub> tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.
+I forked it from an earlier project by <a href="https://github.com/jiko">@jiko</a>, <a href="https://github.com/jiko/lovecraft_ebooks">lovecraft<sub>ebooks</sub></a>.  There were some minor implementation hurdles, mainly related to Twitter&rsquo;s API and oauth.  Reading the <a href="https://pypi.python.org/pypi/twitter">python <code>twitter</code> package</a> <code>twitter.oauth</code> docstring set me straight.  You can check out the code in <a href="https://github.com/zerosalife/styx_ebooks">my fork on github</a>.
+This sort of text generation algorithm isn&rsquo;t just useful for making annoying twitter bots.  You could alter some of the in-game text or dialog based on a corpus fed into a markov chain text generator. Especially in the case of a Lovecraftian horror game, I can see how this text could serve a thematic purpose in the story.
+Say you&rsquo;ve got a Lovecraftian horror game in which the player is an investigator who is trying to figure out what is happening to citizens of Innsmouth.  By interacting with NPCs, the player encounters hand written dialog, with occasional markov-generated gibberish thrown in. The amount of gibberish depends on how corrupted the individual denizens of Innsmouth are becoming.  If the player is not clever enough to determine who is corrupt, the player will be killed.  If the player determines the source of the corruption, the player wins.
+Along the same line of reasoning, the concept I&rsquo;m describing here mimics the game <a href="http://www.newgrounds.com/portal/view/634905">ALZ</a>, a touching short, playable in 2 or 3 minutes, which uses glitchy graphics to convey a sense of what it&rsquo;s like to live with Alzheimer&rsquo;s disease to the player.  I came across Dylan Carter&rsquo;s ALZ in a <a href="http://www.animalnewyork.com/2014/making-alz-glitch-fueled-game-alzheimers/">post on the ANIMAL blog</a>.  This approach of literally altering the player&rsquo;s experience of the game world to mimic the subjective experience of characters in the game is ripe for exploration.  I&rsquo;d love to hear about more examples.
+You can check out my bot, <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>, on twitter, happily tweeting the day away.</p>
 </div>
 
 
@@ -124,12 +123,12 @@
   
 
 
-<time datetime="2014-03-15T08:03:27-05:00" pubdate data-updated="true">Mar 15<span>th</span>, 2014</time>
+<time datetime="2014-04-19T14:05:03-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2014</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/os-x/'>OS X</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
+    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/game/'>game</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>, <a class='category' href='/blog/categories/procedural-generation/'>procedural generation</a>
   
 </span>
 
@@ -138,7 +137,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/" >Tweet</a>
   
   
   
@@ -147,10 +146,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/" title="Previous Post: Cut it all right in two: bisect to find bugs">&laquo; Cut it all right in two: bisect to find bugs</a>
+        <a class="basic-alignment left" href="/blog/2014/04/12/the-fate-of-adventure-games/" title="Previous Post: The Fate of Adventure Games">&laquo; The Fate of Adventure Games</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/03/22/ice-ice-baby/" title="Next Post: ICE ICE Baby">ICE ICE Baby &raquo;</a>
       
     </p>
   </footer>
@@ -247,8 +244,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/';
         var disqus_script = 'embed.js';
       
     (function () {
