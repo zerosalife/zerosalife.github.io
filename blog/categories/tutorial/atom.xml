@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tutorial | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tutorial/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-04-26T10:03:43-05:00</updated>
+  <updated>2014-04-26T10:12:53-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -18,15 +18,11 @@
     <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
     <updated>2014-04-26T09:47:18-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by paredit, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
-
-<p>The existing Rhizome documentation shows simple examples for labeling the nodes of a directed graph.  In order to show the relationship between nodes on the graph, I&rsquo;d like to also label the edges, or the arrows connecting the nodes.</p>
-
-<p>Rhizome provides a keyword argument <code>:edge-&gt;descriptor</code> to most of its functions.  Consulting the source code and the tests for the Rhizome package, I learned that the functions expect <code>:edge-&gt;descriptor</code> to be a function accepting two arguments for each edge: <code>src</code>, the source node, and <code>dst</code>, the destination node.  In order to label the edges, the anonymous function I&rsquo;m binding to <code>:edge-&gt;descriptor</code> will return a dictionary containing the key <code>:label</code> and the value for the edge&rsquo;s label.</p>
-
-<p>Here&rsquo;s an example using the simple graph from the Rhizome documentation:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+    <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.
+The existing Rhizome documentation shows simple examples for labeling the nodes of a directed graph.  In order to show the relationship between nodes on the graph, I&rsquo;d like to also label the edges, or the arrows connecting the nodes.
+Rhizome provides a keyword argument <code>:edge-&gt;descriptor</code> to most of its functions.  Consulting the source code and the tests for the Rhizome package, I learned that the functions expect <code>:edge-&gt;descriptor</code> to be a function accepting two arguments for each edge: <code>src</code>, the source node, and <code>dst</code>, the destination node.  In order to label the edges, the anonymous function I&rsquo;m binding to <code>:edge-&gt;descriptor</code> will return a dictionary containing the key <code>:label</code> and the value for the edge&rsquo;s label.
+Here&rsquo;s an example using the simple graph from the Rhizome documentation:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -40,10 +36,8 @@
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="o">&amp;</span><span class="nv">lsquo</span><span class="c1">;rhizome.viz)&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="k">def </span><span class="nv">g&lt;/p&gt;</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="o">&amp;</span><span class="nv">lsquo</span><span class="c1">;rhizome.viz)</span>
+</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">g&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">{</span><span class="ss">:a</span> <span class="p">[</span><span class="ss">:b</span> <span class="ss">:c</span><span class="p">]</span>
 </span><span class='line'> <span class="ss">:b</span> <span class="p">[</span><span class="ss">:c</span><span class="p">]</span>
@@ -56,13 +50,10 @@
 </span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p><img src="/images/assets/graph-unlabeled-edges.png"></p>
-
-<p>Now, I&rsquo;ll use a dictionary of dictionaries to associate the source and destination nodes with a label for each edge.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<img src="/images/assets/graph-unlabeled-edges.png">
+Now, I&rsquo;ll use a dictionary of dictionaries to associate the source and destination nodes with a label for each edge.
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -77,7 +68,6 @@
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-<span class='line-number'>16</span>
 </pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">g-edges</span>
 </span><span class='line'>  <span class="p">{</span><span class="ss">:a</span> <span class="p">{</span><span class="ss">:b</span> <span class="ss">:makes&lt;/p&gt;</span>
 </span><span class='line'>
@@ -85,20 +75,17 @@
 </span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">&lt;p&gt;</span>   <span class="ss">:b</span> <span class="p">{</span><span class="ss">:c</span> <span class="ss">:takes</span><span class="p">}</span>
-</span><span class='line'>   <span class="ss">:c</span> <span class="p">{</span><span class="ss">:a</span> <span class="ss">:makes</span><span class="p">}})</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nf">view-graph</span> <span class="p">(</span><span class="nb">keys </span><span class="nv">g</span><span class="p">)</span> <span class="nv">g&lt;/p&gt;</span>
+</span><span class='line'>   <span class="ss">:c</span> <span class="p">{</span><span class="ss">:a</span> <span class="ss">:makes</span><span class="p">}})</span>
+</span><span class='line'><span class="p">(</span><span class="nf">view-graph</span> <span class="p">(</span><span class="nb">keys </span><span class="nv">g</span><span class="p">)</span> <span class="nv">g&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>        <span class="ss">:node-</span><span class="o">&amp;</span><span class="nv">gt</span><span class="c1">;descriptor (fn [n] {:label n})</span>
 </span><span class='line'>        <span class="ss">:edge-</span><span class="o">&amp;</span><span class="nv">gt</span><span class="c1">;descriptor (fn [src dst] {:label (dst (src g-edges))}))</span>
 </span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p><img src="/images/assets/graph-labeled-edges.png"></p>
-
-<p>I&rsquo;ve submitted a <a href="https://github.com/ztellman/rhizome/pull/8">pull request</a> to Rhizome to add this example to the documentation.</p>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<img src="/images/assets/graph-labeled-edges.png">
+I&rsquo;ve submitted a <a href="https://github.com/ztellman/rhizome/pull/8">pull request</a> to Rhizome to add this example to the documentation.</p>
 ]]></content>
   </entry>
   
