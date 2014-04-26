@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: design | zero's a life]]></title>
-  <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Clojure | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/clojure/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
   <updated>2014-04-26T10:03:43-05:00</updated>
   <id>http://zerosalife.github.io/</id>
@@ -99,70 +99,6 @@
 <p><img src="/images/assets/graph-labeled-edges.png"></p>
 
 <p>I&rsquo;ve submitted a <a href="https://github.com/ztellman/rhizome/pull/8">pull request</a> to Rhizome to add this example to the documentation.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[styx_ebooks]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T14:05:03-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
-    <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
-
-<p>I forked it from an earlier project by <a href="https://github.com/jiko">@jiko</a>, <a href="https://github.com/jiko/lovecraft_ebooks">lovecraft_ebooks</a>.  There were some minor implementation hurdles, mainly related to Twitter&rsquo;s API and oauth.  Reading the <a href="https://pypi.python.org/pypi/twitter">python <code>twitter</code> package</a> <code>twitter.oauth</code> docstring set me straight.  You can check out the code in <a href="https://github.com/zerosalife/styx_ebooks">my fork on github</a>.</p>
-
-<p>This sort of text generation algorithm isn&rsquo;t just useful for making annoying twitter bots.  You could alter some of the in-game text or dialog based on a corpus fed into a markov chain text generator. Especially in the case of a Lovecraftian horror game, I can see how this text could serve a thematic purpose in the story.</p>
-
-<p>Say you&rsquo;ve got a Lovecraftian horror game in which the player is an investigator who is trying to figure out what is happening to citizens of Innsmouth.  By interacting with NPCs, the player encounters hand written dialog, with occasional markov-generated gibberish thrown in. The amount of gibberish depends on how corrupted the individual denizens of Innsmouth are becoming.  If the player is not clever enough to determine who is corrupt, the player will be killed.  If the player determines the source of the corruption, the player wins.</p>
-
-<p>Along the same line of reasoning, the concept I&rsquo;m describing here mimics the game <a href="http://www.newgrounds.com/portal/view/634905">ALZ</a>, a touching short, playable in 2 or 3 minutes, which uses glitchy graphics to convey a sense of what it&rsquo;s like to live with Alzheimer&rsquo;s disease to the player.  I came across Dylan Carter&rsquo;s ALZ in a <a href="http://www.animalnewyork.com/2014/making-alz-glitch-fueled-game-alzheimers/">post on the ANIMAL blog</a>.  This approach of literally altering the player&rsquo;s experience of the game world to mimic the subjective experience of characters in the game is ripe for exploration.  I&rsquo;d love to hear about more examples.</p>
-
-<p>You can check out my bot, <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>, on twitter, happily tweeting the day away.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Fate of Adventure Games]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/"/>
-    <updated>2014-04-12T09:16:59-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games</id>
-    <content type="html"><![CDATA[<p>Zoyə Street wrote a <a href="https://medium.com/p/3e3c1e20cfd0">summary</a> of an interesting <a href="http://www.omnsh.org/ressources/527/histoire-formelle-du-jeu-daventure-sur-ordinateur-le-cas-de-lamerique-du-nord-de-1976">PhD thesis by Jonathan Lessard</a>.  Lessard examines the history of adventure games, to see whence they&rsquo;ve come and where they&rsquo;ve gone.  Like Street, I think this approach to thinking about video game design and genre provides useful perspective.</p>
-
-<p>Lessard concludes that the adventure game genre didn&rsquo;t vanish, it sublimated into, and was subsumed by, other modern multi-genre games.</p>
-
-<p>For example, consider 3d RPGs incorporating first-person shooter perspective and playstyle.  I could be describing Skyrim or Titanfall, two dramatically different games.</p>
-
-<p>Lessard and Street argue, convincingly, that these sorts of games have all the hallmarks of adventure games, while evolving new forms and structures of play.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Don't Fear Lack of Content]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content/"/>
-    <updated>2014-04-05T09:59:37-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content</id>
-    <content type="html"><![CDATA[<p>Came across a <a href="http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/">nice article</a> on <a href="http://www.egometry.com/">Ben McGraw&rsquo;s blog, Egometry</a>. Using Super Mario Bros. as a model, Ben explains why merely increasing content quantity is less desirable than increasing content substance.  The title of this post is lifted from a quote in his article.</p>
-
-<p>Sometimes exercising a bit of restraint, keeping the focus of your content simple, can still allow for an interesting and engaging player experience.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bunnies Don't Surf #flappyjam]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/"/>
-    <updated>2014-02-15T08:40:03-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam</id>
-    <content type="html"><![CDATA[<p><img class="center <a" src="href="https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png">https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png</a>"></p>
-
-<p>Here&rsquo;s a WIP FlappyBird-like game prototype for <a href="http://itch.io/jam/flappyjam">#flappyjam</a>: <a href="https://github.com/zerosalife/bunnies-dont-surf">Bunnies Don&rsquo;t Surf</a>. You are an unfortunate rabbit whose warren is being flooded by a passing thunderstorm.  You have to navigate the tunnels of the warren, propelled by the wave of water flooding your home.  There&rsquo;s only one problem: Bunnies Don&rsquo;t Surf.  So you&rsquo;re stuck hopping up and down in a futile attempt to survive.</p>
-
-<p>Bunnies Don&rsquo;t Surf requires <a href="http://www.python.org/">Python</a> and <a href="http://pygame.org/news.html">pygame</a> (<a href="http://pygame.org/download.shtml">version 1.9.1</a>) to play.</p>
-
-<p>Tap <code>SPACE</code> to hop. That&rsquo;s about all there is to say about the controls.</p>
-
-<p>As I&rsquo;m sure you can see, the game is in dire need of art assets, sound assets, and some sort of high score system.  I&rsquo;ll do my best to add these, once time allows. If anyone has feedback or art design ideas, please let me know in the comments section or on Twitter.  I&rsquo;d love to hear it.</p>
-
-<p>I&rsquo;ll post updates as the game progresses, and officially submit it to <a href="http://itch.io/jam/flappyjam">#flappyjam</a> if it&rsquo;s done before the jam ends on February 24.</p>
 ]]></content>
   </entry>
   
