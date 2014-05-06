@@ -75,6 +75,546 @@ and all gems.]]
 
 My solution was to use githubs embed code to embed the gist the hard
 way.
+
+** Embedding tweets
+Using the [[https://github.com/scottwb/jekyll-tweet-tag]] plugin.
+
+Had to patch it per this pull request:
+[[https://github.com/scottwb/jekyll-tweet-tag/pull/7]]
+
+* PUBLISHED
+** Some thoughts on Attack of the Friday Monsters      :review:3DS:mechanics:
+categories:
+- review
+- 3DS
+- mechanics
+
+It's hard to say anything new about Attack of the Friday Monsters, a
+game that splashed on the scene months ago.  The work of its creator
+was lovingly lauded by [[https://twitter.com/rdbaaa][Ray Barnholt]]--a noted /[[http://en.wikipedia.org/wiki/Boku_no_Natsuyasumi][Boku no Natsuyami]]/
+fanatic--in such a reverent way in his [[http://scroll.vg/issues/10][SCROLL magazine]] that it's
+almost sacrilegious to try to write more.  So instead of doing a
+point-by-point review, I'll mention some details that stand out to me,
+personally.
+
+I played through most of Attack of the Friday Monsters on a flight the
+day after I watched Miyazaki's [[http://en.wikipedia.org/wiki/Arrietty][Secret World of Arrietty]].  Sure one had
+beautiful water colors and amazing visual tricks mimicking real
+camerawork and the other used pre-rendered backgrounds with blocky
+polygonal actors on the stage, but these art styles complimented one
+another.  They didn't clash.
+
+[[http:///images/aotfm.JPG][{% img center /images/aotfm.JPG 320 320 %}]]
+
+I was struck by the ambient sounds that bring the pre-rendered
+backgrounds and polygonal characters to life. The periodic train
+sounds, presaging the arrival of an in-engine rendered train--sort of
+quirky and quaint with today's game engines powerful enough to render
+both background and foreground objects--remind me of a previous
+exposure to Japanese culture: the first time I watched [[http://en.wikipedia.org/wiki/Neon_Genesis_Evangelion][Neon Genesis
+Evangelion]] as a teenager.  There are the ubiquitous cricket or cicada
+sounds that were also present in Eva, but for me, they hearken back to
+a youth spent in the rural South.  The drone of cicadas in the sticky
+summer heat reminds me of falling asleep in a Mississippi home, of
+walking into cool woods after standing in a sunny meadow.
+
+The whole game engine is full of quirks and reminders of the PS1 era
+of gaming.  But one of the mechanics seems rather novel, an addition
+seemingly for its own sake, with little influence on actual plot or
+gameplay.  I'm talking about the spell casting mechanic, reminiscent
+of games children used to play in 70s Japan, the time in which Attack
+of the Friday Monsters takes place.
+
+If you win the sometimes annoying, somewhat forgettable,
+rock-paper-scissors card game, fueled by collectibles strewn
+throughout the world, you gain the ability to cast spells on your
+buddies, knocking them down.  It has no bearing on the outcome of the
+story.  The spell system is simply decoration that deepens the story
+by providing a more complete world, accurately capturing what it feels
+like to grow up as a child in Japan during the 70s.
+
+You are allowed to pick, and reorder, the phrases of the spell your
+character speaks.  This type of cosmetic customization is typical in
+modern games, and in Attack of the Friday Monsters it's nothing more
+than cosmetic, but it could have been used in surprising ways.
+
+I realized the potential depth of this mechanic during a phone
+conversation with my brother. As I told him about the spell casting,
+he mentioned a Kickstarted pen and paper RPG called [[http://www.magiciansrpg.com/][Magicians]].
+Magicians uses spells spoken in another language as both an impulse
+toward learning the language and a mechanic for determining the
+success or failure of an action. The game my brother described
+involved a Harry Potter-esque international school for magicians in
+Korea.
+
+To use magic, the characters, and thus the players, have to correctly
+speak Korean words--at least accurately enough to satisfy the
+voice-recognition system of an online translation service.  This sets
+up the potential for a rather clever scenario in which characters'
+/[[http://en.wikipedia.org/wiki/Bildungsroman][Bildungsroman]]/ stories are echoed by the players' acquisition of the
+language.
+
+At present, on the 3DS, the kind of voice recognition required for
+this sort of is [[http://www.gamefaqs.com/boards/997781-/58911600][immature]].  But it's certainly possible on more
+powerful platforms.
+
+One way to exploit the 3DS, and other devices with touch interfaces,
+involves learning written language, such as Japanese /[[http://en.wikipedia.org/wiki/Hiragana][hiragana]]/ or
+/[[http://en.wikipedia.org/wiki/Katakana][katakana/]].  I can imagine a magic mechanic that involves correctly
+writing scrolls, where the fidelity of the player's calligraphic
+strokes determines the strength and efficacy of the scrolls.
+
+Another possible approach is to build up language comprehension by
+constructing words out of syllables.  Given several options, one would
+choose the correct syllable to complete the necessary word, in order
+to perform an action or cast a spell.  A similar sort of approach
+would work for learning syntax, completing or building a sentence with
+the appropriate words.
+
+Attack of the Friday Monsters is a quick experience, but the depth of
+its design has made it a memorable one.  If you'd like to learn more
+about the game and its creator, you can check out [[http://scroll.vg/extras/summer-vacation-confidential/#a][this interview]] by
+Ray Barnholt, which covers Attack of the Friday Monsters and other
+games by creator, Kaz Ayabe.
+
+** An entity component system for Pygame :design:python:pygame:entity:component:
+
+** An in-depth tour of Tetris
+categories:
+- AI
+- design
+- mechanics
+- NES
+
+{% img center
+http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png %}
+Image from [[http://en.wikipedia.org/wiki/Tetris][wikipedia.org]].
+
+This week I've spent quite some time reading [[http://meatfighter.com/nintendotetrisai/][this article]] on
+[[http://meatfighter.com/][MeatFighter.com]].  The article reverse engineers the inner-workings of
+[[http://en.wikipedia.org/wiki/Tetris#NES][NES Tetris]].  With great visual aids, the author, [o__1] [1], surveys
+the mechanics and data structures used to implement Tetris on the NES.
+Then o__1 designs and implements an AI script to play Tetris with
+super-human speed and precision.  o__1 even describes how to try it at
+home, providing instructions and the necessary Lua scripts to run the
+AI on your own copy of Tetris.
+
+I hope to see more articles looking back on classic games with this
+tremendous attention to detail.  An older [[http://home.comcast.net/~jpittman2/pacman/pacmandossier.html][article looking at Pac-man
+AI]] shows similar obsessive depth.  Articles like these help supplement
+our appreciation of these games as works of art by documenting the
+essential technical complexities underlying these games.  I think
+that's a good thing for everyone from hobby developers to professional
+developers, as well as designers and fans.
+
+[1]: I'm referring to the author by the contact email listed on the
+website.
+
+** Bunnies Don't Surf [[http://itch.io/jam/flappyjam][#flappyjam]]
+Categories:
+- design
+- python
+- pygame
+- game
+
+{% img center https://github.com/zerosalife/bunnies-dont-surf/blob/master/screenshot.png %}
+
+Here's a WIP FlappyBird-like game prototype for [[http://itch.io/jam/flappyjam][#flappyjam]]: [[https://github.com/zerosalife/bunnies-dont-surf][Bunnies
+Don't Surf]].  You are an unfortunate rabbit whose warren is being
+flooded by a passing thunderstorm.  You have to navigate the
+tunnels of the warren, propelled by the wave of water flooding
+your home.  There's only one problem: Bunnies Don't Surf.  So you're
+stuck hopping up and down in a futile attempt to survive.
+
+Bunnies Don't Surf requires [[http://www.python.org/][Python]] and [[http://pygame.org/news.html][pygame]] ([[http://pygame.org/download.shtml][version 1.9.1]]) to play.
+
+Tap =space= to hop. That's about all there is to say about the
+controls.
+
+As I'm sure you can see, the game is in dire need of art assets, sound
+assets, and some sort of high score system.  I'll do my best to add
+these, once time allows. If anyone has feedback or art design ideas,
+please let me know in the comments section or on Twitter.  I'd love to
+hear it.
+
+I'll post updates as the game progresses, and officially submit it to
+#flappyjam  if it's done before the jam ends on February 24.
+
+** What's in a name?
+Growing up, the seemingly interminable school-week gave way to an
+anxious car drive home from the rental store with the weekend's score.
+You remember those, right?
+
+Usually the rental would include the instruction manual.  On the ride
+home, I'd pour over the manual, trying to glean useful information to
+supplement my Nintendo Power-fueled strategies to maximize my fun in
+the limited time I had with the game.  Often I'd get so engrossed with
+the manual, learning the universe for the game, I'd let my brother or
+a friend play the game first.
+
+The looming question, not covered in the manual, was always: When will
+my turn end?  When will my brother run out of lives, so I can get a
+turn?
+
+We developed a vocabulary to deal with the count down to game over. On
+your first play-through it was unclear whether the last life was when
+your stock counter read 1 or 0.  If you had one life left, you could
+play extra hard, using a rush of adrenaline to try to stay alive
+longer.
+
+Sometimes, it was game over when the stock counter ticked over from 1
+to 0.  In other games, when the stock counter reads 0, zero is a life.
+
+The name of this blog comes from that reassuring sense that you have
+an extra chance.  "Don't worry, zero's a life."
+
+** Setting up Emacs-like key bindings in MonoDevelop
+Categories:
+- tools
+
+I'm playing around with Unity to try to learn how it works.  Shout out
+to Infinite Ammo for the excellent video tutorials. Since I don't know
+much about Unity, I'm reluctantly using their included MonoDevelop
+IDE.  While I heard that Emacs-like key bindings were included, in the
+build I installed they weren't present.
+
+MonoDevelop does not make it easy to import new key binding schemes
+(the blog post linked here suggests submitting a bug report to suggest
+new key bindings...).  So, I did a little digging around on github and
+found the [[https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml][default emacs key binding scheme]] that I imagine should have
+been included in the MonoDevelop build I installed.
+
+There was no way to add this key binding scheme to my available key
+bindings in MonoDevelop, so I hacked my Custom key binding file
+located at =~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml=.
+
+I started with some simple copypasta.  But then I found some useful
+navigation features were lacking.  So, I added key binds that
+immediately came to mind, like =Alt-f= for moving forward one word and
+=Alt-b= for backward word.  Yes, I know these are =M-f= in Emacs, but
+I'm using MonoDevelop's syntax here.
+
+My key bindings are available in the gist below.  I'll update this
+gist when I add key bindings, to keep a current working version
+available.
+
+{% gist 9096788 %}
+
+** Cut it all right in two: bisect to find bugs
+- algorithm
+- tools
+
+Imagine there's a lion in a desert.  You need to cage the lion or you
+will be eaten.  In this example the desert is your code and the lion
+is a bug that you're having a hard time pinning down.
+
+There are many ways to trap a lion.  Here's one.
+
+Build a fence dividing the desert in half going North to South.
+Assuming the lion is not in the South section, divide the North
+section in half with a fence going East to West.  Repeat the process
+until your fence is arbitrarily small and has become a cage trapping
+the lion.
+
+But how does this relate to code?
+
+Say you have a relatively large file that executes fine, but
+introduces a bug into your larger system.  You suspect that something
+has gone wrong with the large file, but you're not getting an error
+implicating a specific line.
+
+Cut it all right in two.
+
+Comment out half the code in your large file and try to reproduce the
+bug.  If you reproduce the bug, repeat the process as necessary until
+you isolate the line producing the problem.
+
+I learned about this approach for bugsleuthing from the [[https://gist.github.com/stardiviner/8109774#file-temp-txt-L26][bot in #emacs
+on freenode]].  It's particularly useful for tracking down bugs in large
+configuration files.  There's a list of humorous lion-trapping
+algorithm examples [[http://faculty.smu.edu/yzhou/humor/lion.htm][here]].
+** Upgrading to Mavericks
+- tools
+- OS X
+
+This week I upgraded to [[https://www.apple.com/osx/][Mac OS X 10.9 Mavericks]].  To keep [[http://octopress.org/][octopress]]
+working, I had to uninstall and reinstall [[https://www.ruby-lang.org/][Ruby]].
+
+Upon trying a =rake generate= task, I saw errors in the Ruby gems for
+processing [[http://www.yaml.org/][YAML]].  I assume this is due to the fact that I built them
+on the older OS X install.
+
+Interestingly, [[https://rvm.io/][RVM]] survived the upgrade and seems to be working just
+fine.
+
+I followed the instructions [[https://gist.github.com/imathis/1104557][here]] to uninstall and reinstall Ruby, the
+bundler, and all bundled gems for my octopress install.  The
+instructions mention a specific problem for OS X Lion, but these steps
+solved the problem for me.
+
+** ICE ICE Baby
+- game
+- cyberpunk
+- cyberpunkjam
+- review
+- twine
+
+[[http://www.thegia.com/author/avestal/][Andrew Vestal]] of [[http://www.thegia.com/][the GIA]] wrote a [[http://twinery.org/][Twine]] game for [[http://itch.io/jam/cyberpunk-jam][#cyberpunkjam]] called
+[[http://www.thegia.com/avestal/iceicebaby.html][ICE ICE Baby]].  It's playable in a quick ten minutes.  Parts of the
+game remind me of the sorts imagination games I would play growing
+up. This is quite a nice conceit for a text adventure, and it works
+well here.  I especially like the use of color to mark the transitions
+between meatspace and cyberspace.
+
+[[http://www.thegia.com/author/nmaragos/][Nich Maragos]] wrote more thorough [[http://www.thegia.com/2014/03/05/appetite-for-destruction-ice-ice-baby/][critical review]] on the GIA.
+
+** A Twine Tutorial in Twine
+- game
+- twine
+- tutorial
+- tools
+
+[[http://ryanscasey.com/][Ryan S. Casey]] incepted a Twine tutorial in a Twine game.  Awesome.
+Take a look at it [[http://ryanscasey.com/twine/][here]].
+
+** Don't Fear Lack of Content
+Don't Fear Lack of Content - Wisdom from @bengrue
+- design
+- mechanics
+
+Came across a [[http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/][nice article]] on [[http://www.egometry.com/][Ben McGraw's blog, Egometry]]. Using Super
+Mario Bros. as a model, Ben explains why merely increasing content
+quantity is less desirable than increasing content substance.  The
+title of this post is lifted from a quote in his article.
+
+Sometimes exercising a bit of restraint, keeping the focus of your
+content simple, can still allow for an interesting and engaging player
+experience.
+
+** The Fate of Adventure Games
+- adventure games
+- design
+
+Zoyə Street wrote a [[https://medium.com/p/3e3c1e20cfd0][summary]] of an interesting [[http://www.omnsh.org/ressources/527/histoire-formelle-du-jeu-daventure-sur-ordinateur-le-cas-de-lamerique-du-nord-de-1976][PhD thesis by Jonathan
+Lessard]].  Lessard examines the history of adventure games, to see
+whence they've come and where they've gone.  Like Street, I think this
+approach to thinking about video game design and genre provides useful
+perspective.
+
+Lessard concludes that the adventure game genre didn't vanish, it
+sublimated into, and was subsumed by, other modern multi-genre
+games.
+
+For example, consider 3d RPGs incorporating first-person shooter
+perspective and playstyle.  I could be describing Skyrim or Titanfall,
+two dramatically different games.
+
+Lessard and Street argue, convincingly, that these sorts of games have
+all the hallmarks of adventure games, while evolving new forms and
+structures of play.
+
+** styx_ebooks
+- design
+- mechanics
+- procedural generation
+- game
+
+And now for something completely different: a [[http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators][markov chain text
+generation]] twitter bot.  Styx_ebooks tweets random text generated from
+a corpus of Bangsian fantasy novels.  Its name comes from [[http://en.wikipedia.org/wiki/John_Kendrick_Bangs][John
+Kendrick Bangs]]' novel /[[http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx][A House-boat on the Styx]]/ and the general
+[[http://knowyourmeme.com/memes/horse_ebooks][twitter ebooks meme]].
+
+I forked it from an earlier project by [[https://github.com/jiko][@jiko]], [[https://github.com/jiko/lovecraft_ebooks][lovecraft_ebooks]].  There
+were some minor implementation hurdles, mainly related to Twitter's
+API and oauth.  Reading the [[https://pypi.python.org/pypi/twitter][python =twitter= package]] =twitter.oauth=
+docstring set me straight.  You can check out the code in [[https://github.com/zerosalife/styx_ebooks][my fork on
+github]].
+
+This sort of text generation algorithm isn't just useful for making
+annoying twitter bots.  You could alter some of the in-game text or
+dialog based on a corpus fed into a markov chain text generator.
+Especially in the case of a Lovecraftian horror game, I can see how
+this text could serve a thematic purpose in the story.
+
+Say you've got a Lovecraftian horror game in which the player is an
+investigator who is trying to figure out what is happening to citizens
+of Innsmouth.  By interacting with NPCs, the player encounters hand
+written dialog, with occasional markov-generated gibberish thrown in.
+The amount of gibberish depends on how corrupted the individual
+denizens of Innsmouth are becoming.  If the player is not clever
+enough to determine who is corrupt, the player will be killed.  If the
+player determines the source of the corruption, the player wins.
+
+Along the same line of reasoning, the concept I'm describing here
+mimics the game [[http://www.newgrounds.com/portal/view/634905][ALZ]], a touching short, playable in 2 or 3 minutes,
+which uses glitchy graphics to convey a sense of what it's like to
+live with Alzheimer's disease to the player.  I came across Dylan
+Carter's ALZ in a [[http://www.animalnewyork.com/2014/making-alz-glitch-fueled-game-alzheimers/][post on the ANIMAL blog]].  This approach of literally
+altering the player's experience of the game world to mimic the
+subjective experience of characters in the game is ripe for
+exploration.  I'd love to hear about more examples.
+
+You can check out my bot, [[https://twitter.com/styx_ebooks][@styx_ebooks]], on twitter, happily tweeting
+the day away.
+
+** Clojure Rhizome Labeled Edge Tutorial
+- algorithm
+- tutorial
+- design
+- tools
+- Clojure
+
+I'm using the [[https://github.com/ztellman/rhizome][Rhizome package]] for Clojure to rapidly prototype the
+dependency graph for a crafting system.  It's nice to be able to add
+and remove components while generating visualizations on-the-fly.
+Clojure's simple, composable syntax, aided by paredit, makes shuffling
+around key-value pairs, and even whole dictionaries, quick and easy.
+
+The existing Rhizome documentation shows simple examples for labeling
+the nodes of a directed graph.  In order to show the relationship
+between nodes on the graph, I'd like to also label the edges, or the
+arrows connecting the nodes.
+
+Rhizome provides a keyword argument =:edge->descriptor= to most of its
+functions.  Consulting the source code and the tests for the Rhizome
+package, I learned that the functions expect =:edge->descriptor= to be
+a function accepting two arguments for each edge: =src=, the source
+node, and =dst=, the destination node.  In order to label the edges,
+the anonymous function I'm binding to =:edge->descriptor= will return
+a dictionary containing the key =:label= and the value for the edge's
+label.
+
+Here's an example using the simple graph from the Rhizome
+documentation:
+
+#+BEGIN_SRC clojure
+  (use 'rhizome.viz)
+
+  (def g
+      {:a [:b :c]
+       :b [:c]
+       :c [:a]})
+
+  (view-graph (keys g) g
+              :node->descriptor (fn [n] {:label n}))
+
+#+END_SRC
+
+{% img graph-unlabeled-edges.png %}
+
+Now, I'll use a dictionary of dictionaries to associate the source and
+destination nodes with a label for each edge.
+
+#+BEGIN_SRC clojure
+  (def g-edges
+    {:a {:b :makes
+         :c :takes}
+     :b {:c :takes}
+     :c {:a :makes}})
+
+  (view-graph (keys g) g
+              :node->descriptor (fn [n] {:label n})
+              :edge->descriptor (fn [src dst] {:label (dst (src g-edges))}))
+
+#+END_SRC
+
+{% img graph-labeled-edges.png %}
+
+I've submitted a [[https://github.com/ztellman/rhizome/pull/8][pull request]] to Rhizome to add this example to the
+documentation.
+
+** Why are caves central to so many games?
+My 2¢ in response to @psysal's question: Why are caves central to so
+many games?
+- design
+
+
+On twitter, [[https://twitter.com/psysal][@psysal]] posed this question to the game dev community:
+
+{% tweet https://twitter.com/psysal/statuses/456314611428372480 %}
+
+You can see all the responses by following the link to the original
+tweet.
+
+The consensus is that caves are essential features for games for three
+reasons.
+
+1) Linearity
+2) Repeatability of composition
+3) Curiosity
+
+<!--more-->
+
+*** Caves are linear
+
+In terms of their schematic representation in the design of a game,
+caves can boil down to one enclosed 'area' or room with a single
+entrance.  This doesn't account for some of the amazing environments
+in intricately designed games like [[http://en.wikipedia.org/wiki/Super_Metroid][Super Metroid]], recently broken down
+by [[https://twitter.com/gamespite][@gamespite]] in [[http://www.anatomyofgames.com/2013/12/08/the-anatomy-of-super-metroid-01-moving-pictures/][the Anatomy of Games series]].
+
+But, at the most basic level, a cave must have a mouth, or an
+entrance, and at least one room.  This simplifies the representation
+of the critical path of play, because once the cave has been fully
+explored there are no possible branches that the player could have
+taken to leave the cave.  The single entrance is also a single exit.
+Even if there are many internal rooms, this representation holds true,
+as long as there are ultimately no 'back doors' out of the cave.
+
+The designer can rely on the fact that once the player has received
+any rewards for exploring the cave, the player can reasonably be
+expected to pop out of the entrance of the cave looking for the next
+available challenge surmountable with any freshly acquired toys.
+
+*** Caves offer repeatable composition
+
+For whatever atavistic significance they hold in our psyches, caves do
+not have to rely on realistic representations in game design.  Any old
+hole in some rock will almost invariably create a believable sense of
+cave-ness.  Yeah, I said cave-ness. You know cave-ocity, general
+cave-itude.
+
+Since we don't spend much time in caves, day-to-day, we don't hold
+them to the same level of fidelity to which we would hold, say,
+buildings or automobiles.  The same architectural details necessary to
+represent a house in a video game can be painted in broad strokes to
+represent a cave.
+
+In tile-based games, this means that a designer can reuse tiles over
+and over again to craft a general shape without worrying too much
+about players noticing, or being bothered by, the similarities.  Caves
+are thus more defined by the space created rather than the graphics
+used to define them.  This sense of space is what drives the third
+essential feature of caves in game design, a sense of curiosity, the
+drive to explore.
+
+*** Caves are inherently curious
+
+I'm not sure I buy the argument that we have some evolutionary
+instinct that drives us to explore caves, but the fact remains.
+Something about caves begs exploration.
+
+Call it the /Will to Spelunk/.
+
+Once a space has been created, the player wants to explore every nook
+and cranny for collectible power ups or items.  Certainly the rewards
+are powerful motivators.  But there is something to the exploration
+for exploration's sake.  Simply completing one's mental map of the
+space becomes a goal in itself.
+
+*** Coda
+
+It's intriguing that caves are such a fixture in the established
+vocabulary of game design.  The three features highlighted in this
+post make it clear that caves remain a useful game design pattern
+because they serve an essential purpose in the ludic lexicon of games.
+
+* Visualizing Zelda Dungeons in Clojure                      :design:Clojure:
+"Port it to Clojure, dogg.  There's a nice library by [[https://github.com/ztellman][Zachary Tellman]]
+called [[https://github.com/ztellman/rhizome][Rhizome]]," read my notes.  It'll be easy, I think.
+
+* Visualizing Zelda Dungeons                              :design:CommonLisp:
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
 categories:
 - analysis
@@ -258,282 +798,750 @@ when its fractional value would be calculated to be above ½?
 All told, it took me a little North of 12 hours to beat the game,
 using Essentia's strategies.  I'm no speed runner.
 
-* Some thoughts on Attack of the Friday Monsters       :review:3DS:mechanics:
-categories:
-- review
-- 3DS
-- mechanics
-
-It's hard to say anything new about Attack of the Friday Monsters, a
-game that splashed on the scene months ago.  The work of its creator
-was lovingly lauded by [[https://twitter.com/rdbaaa][Ray Barnholt]]--a noted /[[http://en.wikipedia.org/wiki/Boku_no_Natsuyasumi][Boku no Natsuyami]]/
-fanatic--in such a reverent way in his [[http://scroll.vg/issues/10][SCROLL magazine]] that it's
-almost sacrilegious to try to write more.  So instead of doing a
-point-by-point review, I'll mention some details that stand out to me,
-personally.
-
-I played through most of Attack of the Friday Monsters on a flight the
-day after I watched Miyazaki's [[http://en.wikipedia.org/wiki/Arrietty][Secret World of Arrietty]].  Sure one had
-beautiful water colors and amazing visual tricks mimicking real
-camerawork and the other used pre-rendered backgrounds with blocky
-polygonal actors on the stage, but these art styles complimented one
-another.  They didn't clash.
-
-[[http:///images/aotfm.JPG][{% img center /images/aotfm.JPG 320 320 %}]]
-
-I was struck by the ambient sounds that bring the pre-rendered
-backgrounds and polygonal characters to life. The periodic train
-sounds, presaging the arrival of an in-engine rendered train--sort of
-quirky and quaint with today's game engines powerful enough to render
-both background and foreground objects--remind me of a previous
-exposure to Japanese culture: the first time I watched [[http://en.wikipedia.org/wiki/Neon_Genesis_Evangelion][Neon Genesis
-Evangelion]] as a teenager.  There are the ubiquitous cricket or cicada
-sounds that were also present in Eva, but for me, they hearken back to
-a youth spent in the rural South.  The drone of cicadas in the sticky
-summer heat reminds me of falling asleep in a Mississippi home, of
-walking into cool woods after standing in a sunny meadow.
-
-The whole game engine is full of quirks and reminders of the PS1 era
-of gaming.  But one of the mechanics seems rather novel, an addition
-seemingly for its own sake, with little influence on actual plot or
-gameplay.  I'm talking about the spell casting mechanic, reminiscent
-of games children used to play in 70s Japan, the time in which Attack
-of the Friday Monsters takes place.
-
-If you win the sometimes annoying, somewhat forgettable,
-rock-paper-scissors card game, fueled by collectibles strewn
-throughout the world, you gain the ability to cast spells on your
-buddies, knocking them down.  It has no bearing on the outcome of the
-story.  The spell system is simply decoration that deepens the story
-by providing a more complete world, accurately capturing what it feels
-like to grow up as a child in Japan during the 70s.
-
-You are allowed to pick, and reorder, the phrases of the spell your
-character speaks.  This type of cosmetic customization is typical in
-modern games, and in Attack of the Friday Monsters it's nothing more
-than cosmetic, but it could have been used in surprising ways.
-
-I realized the potential depth of this mechanic during a phone
-conversation with my brother. As I told him about the spell casting,
-he mentioned a Kickstarted pen and paper RPG called [[http://www.magiciansrpg.com/][Magicians]].
-Magicians uses spells spoken in another language as both an impulse
-toward learning the language and a mechanic for determining the
-success or failure of an action. The game my brother described
-involved a Harry Potter-esque international school for magicians in
-Korea.
-
-To use magic, the characters, and thus the players, have to correctly
-speak Korean words--at least accurately enough to satisfy the
-voice-recognition system of an online translation service.  This sets
-up the potential for a rather clever scenario in which characters'
-/[[http://en.wikipedia.org/wiki/Bildungsroman][Bildungsroman]]/ stories are echoed by the players' acquisition of the
-language.
-
-At present, on the 3DS, the kind of voice recognition required for
-this sort of is [[http://www.gamefaqs.com/boards/997781-/58911600][immature]].  But it's certainly possible on more
-powerful platforms.
-
-One way to exploit the 3DS, and other devices with touch interfaces,
-involves learning written language, such as Japanese /[[http://en.wikipedia.org/wiki/Hiragana][hiragana]]/ or
-/[[http://en.wikipedia.org/wiki/Katakana][katakana/]].  I can imagine a magic mechanic that involves correctly
-writing scrolls, where the fidelity of the player's calligraphic
-strokes determines the strength and efficacy of the scrolls.
-
-Another possible approach is to build up language comprehension by
-constructing words out of syllables.  Given several options, one would
-choose the correct syllable to complete the necessary word, in order
-to perform an action or cast a spell.  A similar sort of approach
-would work for learning syntax, completing or building a sentence with
-the appropriate words.
-
-Attack of the Friday Monsters is a quick experience, but the depth of
-its design has made it a memorable one.  If you'd like to learn more
-about the game and its creator, you can check out [[http://scroll.vg/extras/summer-vacation-confidential/#a][this interview]] by
-Ray Barnholt, which covers Attack of the Friday Monsters and other
-games by creator, Kaz Ayabe.
-
-* An entity component system for Pygame :design:python:pygame:entity:component:
-
-* An in-depth tour of Tetris
-categories:
-- AI
-- design
-- mechanics
-- NES
-
-{% img center
-http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png %}
-Image from [[http://en.wikipedia.org/wiki/Tetris][wikipedia.org]].
-
-This week I've spent quite some time reading [[http://meatfighter.com/nintendotetrisai/][this article]] on
-[[http://meatfighter.com/][MeatFighter.com]].  The article reverse engineers the inner-workings of
-[[http://en.wikipedia.org/wiki/Tetris#NES][NES Tetris]].  With great visual aids, the author, [o__1] [1], surveys
-the mechanics and data structures used to implement Tetris on the NES.
-Then o__1 designs and implements an AI script to play Tetris with
-super-human speed and precision.  o__1 even describes how to try it at
-home, providing instructions and the necessary Lua scripts to run the
-AI on your own copy of Tetris.
-
-I hope to see more articles looking back on classic games with this
-tremendous attention to detail.  An older [[http://home.comcast.net/~jpittman2/pacman/pacmandossier.html][article looking at Pac-man
-AI]] shows similar obsessive depth.  Articles like these help supplement
-our appreciation of these games as works of art by documenting the
-essential technical complexities underlying these games.  I think
-that's a good thing for everyone from hobby developers to professional
-developers, as well as designers and fans.
-
-[1]: I'm referring to the author by the contact email listed on the
-website.
-
-* Bunnies Don't Surf [[http://itch.io/jam/flappyjam][#flappyjam]]
-Categories:
-- design
-- python
-- pygame
-- game
-
-{% img center https://github.com/zerosalife/bunnies-dont-surf/blob/master/screenshot.png %}
-
-Here's a WIP FlappyBird-like game prototype for [[http://itch.io/jam/flappyjam][#flappyjam]]: [[https://github.com/zerosalife/bunnies-dont-surf][Bunnies
-Don't Surf]].  You are an unfortunate rabbit whose warren is being
-flooded by a passing thunderstorm.  You have to navigate the
-tunnels of the warren, propelled by the wave of water flooding
-your home.  There's only one problem: Bunnies Don't Surf.  So you're
-stuck hopping up and down in a futile attempt to survive.
-
-Bunnies Don't Surf requires [[http://www.python.org/][Python]] and [[http://pygame.org/news.html][pygame]] ([[http://pygame.org/download.shtml][version 1.9.1]]) to play.
-
-Tap =space= to hop. That's about all there is to say about the
-controls.
-
-As I'm sure you can see, the game is in dire need of art assets, sound
-assets, and some sort of high score system.  I'll do my best to add
-these, once time allows. If anyone has feedback or art design ideas,
-please let me know in the comments section or on Twitter.  I'd love to
-hear it.
-
-I'll post updates as the game progresses, and officially submit it to
-#flappyjam  if it's done before the jam ends on February 24.
-
-* What's in a name?
-Growing up, the seemingly interminable school-week gave way to an
-anxious car drive home from the rental store with the weekend's score.
-You remember those, right?
-
-Usually the rental would include the instruction manual.  On the ride
-home, I'd pour over the manual, trying to glean useful information to
-supplement my Nintendo Power-fueled strategies to maximize my fun in
-the limited time I had with the game.  Often I'd get so engrossed with
-the manual, learning the universe for the game, I'd let my brother or
-a friend play the game first.
-
-The looming question, not covered in the manual, was always: When will
-my turn end?  When will my brother run out of lives, so I can get a
-turn?
-
-We developed a vocabulary to deal with the count down to game over. On
-your first play-through it was unclear whether the last life was when
-your stock counter read 1 or 0.  If you had one life left, you could
-play extra hard, using a rush of adrenaline to try to stay alive
-longer.
-
-Sometimes, it was game over when the stock counter ticked over from 1
-to 0.  In other games, when the stock counter reads 0, zero is a life.
-
-The name of this blog comes from that reassuring sense that you have
-an extra chance.  "Don't worry, zero's a life."
-
-* Setting up Emacs-like key bindings in MonoDevelop
-Categories:
-- tools
-
-I'm playing around with Unity to try to learn how it works.  Shout out
-to Infinite Ammo for the excellent video tutorials. Since I don't know
-much about Unity, I'm reluctantly using their included MonoDevelop
-IDE.  While I heard that Emacs-like key bindings were included, in the
-build I installed they weren't present.
-
-MonoDevelop does not make it easy to import new key binding schemes
-(the blog post linked here suggests submitting a bug report to suggest
-new key bindings...).  So, I did a little digging around on github and
-found the [[https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml][default emacs key binding scheme]] that I imagine should have
-been included in the MonoDevelop build I installed.
-
-There was no way to add this key binding scheme to my available key
-bindings in MonoDevelop, so I hacked my Custom key binding file
-located at =~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml=.
-
-I started with some simple copypasta.  But then I found some useful
-navigation features were lacking.  So, I added key binds that
-immediately came to mind, like =Alt-f= for moving forward one word and
-=Alt-b= for backward word.  Yes, I know these are =M-f= in Emacs, but
-I'm using MonoDevelop's syntax here.
-
-My key bindings are available in the gist below.  I'll update this
-gist when I add key bindings, to keep a current working version
-available.
-
-{% gist 9096788 %}
-
-* Cut it all right in two: bisect to find bugs
-- algorithm
-- tools
-
-Imagine there's a lion in a desert.  You need to cage the lion or you
-will be eaten.  In this example the desert is your code and the lion
-is a bug that you're having a hard time pinning down.
-
-There are many ways to trap a lion.  Here's one.
-
-Build a fence dividing the desert in half going North to South.
-Assuming the lion is not in the South section, divide the North
-section in half with a fence going East to West.  Repeat the process
-until your fence is arbitrarily small and has become a cage trapping
-the lion.
-
-But how does this relate to code?
-
-Say you have a relatively large file that executes fine, but
-introduces a bug into your larger system.  You suspect that something
-has gone wrong with the large file, but you're not getting an error
-implicating a specific line.
-
-Cut it all right in two.
-
-Comment out half the code in your large file and try to reproduce the
-bug.  If you reproduce the bug, repeat the process as necessary until
-you isolate the line producing the problem.
-
-I learned about this approach for bugsleuthing from the [[https://gist.github.com/stardiviner/8109774#file-temp-txt-L26][bot in #emacs
-on freenode]].  It's particularly useful for tracking down bugs in large
-configuration files.  There's a list of humorous lion-trapping
-algorithm examples [[http://faculty.smu.edu/yzhou/humor/lion.htm][here]].
-
-* Visualizing Zelda Dungeons in Clojure                      :design:Clojure:
-"Port it to Clojure, dogg.  There's a nice library by [[https://github.com/ztellman][Zachary Tellman]]
-called [[https://github.com/ztellman/rhizome][Rhizome]]," read my notes.  It'll be easy, I think.
-
-* Visualizing Zelda Dungeons                              :design:CommonLisp:
-
 * What's an LFSR? :design:algorithm:mechanics:Clojure:
 
 * Messaging in Unity
 See [[file:~/org/personal/gd.org::*Messaging][Messaging]]
-* Upgrading to Mavericks
+
+* Game Development Performed
+[[http://gamasutra.com/view/news/213339/Vlambeers_Performative_Game_Development__the_way_of_the_future.php]]
+
+[[http://kotaku.com/we-made-this-game-when-we-were-angry-1553875111]]
+
+Potential for platforms to become involved prior to release, free
+advertising for devs and possible for platform owners to sell ads.  As
+it stands, may make more money from straight up advertising splits
+with existing streaming platforms, but no pre-order it now button
+incorporated with system.  Potential for more sales may outweigh
+advertising revenue for devs.
+
+I've noticed a trend toward livestreaming development emerging among
+projects I follow on twitter.  Devs will announce on twitter that they
+are going to develop for a few hours, often working on a specific
+system or feature.  This is a win-win situation because interested
+parties can watch and interact with the dev; and because the developer
+is held accountable to work, without goofing off on twitter, while
+simultaneously marketing to the core audience.  There are, of course,
+costs, and the gamasutra article by Brandon Sheffield does a good job
+pointing these out.
+
+* Creating a Dictionary of Lists in Unity JavaScript
+- JavaScript
+- Unity
 - tools
-- OS X
+- algorithms
 
-This week I upgraded to [[https://www.apple.com/osx/][Mac OS X 10.9 Mavericks]].  To keep [[http://octopress.org/][octopress]]
-working, I had to uninstall and reinstall [[https://www.ruby-lang.org/][Ruby]].
+I ran into a few problems trying to create a [[http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_Dictionary][Dictionary]] of [[http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_List][Lists]] in
+Unity JavaScript.  So I thought I'd share some of the tips I learned
+here.
 
-Upon trying a =rake generate= task, I saw errors in the Ruby gems for
-processing [[http://www.yaml.org/][YAML]].  I assume this is due to the fact that I built them
-on the older OS X install.
+I'm interested in creating a Dictionary to hold Markov Chain
+information to generate text.  So I'd like to be able to create a
+Dictionary holding a variable length of items for each of its Keys.
+I'd also like to be able to update the mapping at runtime.
 
-Interestingly, [[https://rvm.io/][RVM]] survived the upgrade and seems to be working just
-fine.
+It would look something like this:
+- Key1 :: Item1, Item2, Item3
+- Key2 :: Item4
 
-I followed the instructions [[https://gist.github.com/imathis/1104557][here]] to uninstall and reinstall Ruby, the
-bundler, and all bundled gems for my octopress install.  The
-instructions mention a specific problem for OS X Lion, but these steps
-solved the problem for me.
+At runtime, I'd like to be able to say: "Append =Item5= to =Key2=."
+
+Here's what I came up with in Unity JavaScript.  I started out by
+initializing a =table= in my script prior to the =Start= function. The
+var =table= holds our mapping of Keys of type =String= to Values of
+type =List.<int>=, or Lists of integers.
+
+#+BEGIN_SRC javascript start:3
+  import System.Collections.Generic;
+  // White space matters.
+  var table:Dictionary.<String,List.<int> > = new Dictionary.<String,List.<int> >();
+#+END_SRC
+
+The first hiccup I ran into is that [[http://forum.unity3d.com/threads/80227-Creating-a-Dictionary-of-Lists-in-Javascript?p%3D513471&viewfull%3D1#post513471][white space matters]], when creating
+Generics in Unity JavaScript.  The compiler will throw an error if it
+sees two =>>= in a row.
+
+Then I fill the table with our test mappings.
+
+
+#+BEGIN_SRC javascript start:9
+  // Fill our table with Lists containing ints using Arrays to intialize
+  // the Lists.
+  table["a"] = new List.<int>([1]);
+  table["b"] = new List.<int>([2]);
+  table["c"] = new List.<int>([3]);
+
+#+END_SRC
+
+
+As you can see, you can [[http://answers.unity3d.com/questions/221476/javascript-array-to-generic-list.html][construct a List from an Array]].  Cool.
+
+In the =Start= function, I iterate over the Keys in the Dictionary,
+Add the item =4= to the Value of Key =c=, and print out the first item
+of each of the Values.  Finally, we check to see whether =4= was
+appended to the desired entry.
+
+#+BEGIN_SRC javascript start:13
+function Start () {
+    // Iterate over the Keys in our Dictionary.
+    for(var str:String in table.Keys) {
+        // Get the value for our Key.
+        var value:List.<int> = table[str];
+
+        // If the Key is our desired Key, append to its list.
+        if (str == "c") {
+            value.Add(4);
+        }
+
+        // Print the first item in each of the Lists.
+        print(value[0]);
+    }
+
+    // Print the appended item to see that it worked.
+    print(table["c"][1]);
+
+}
+#+END_SRC
+
+Then I attach this script to the Main Camera for testing purposes.
+Bada bing, bada boom.
+
+This was all relatively straightforward, after I understood some of
+the quirks of Unity's JavaScript syntax.  On my github account, you
+can find a repository of an example Unity project using this code
+here.
+
+* Probabilistic Entity Spawning in Unity JavaScript
+- JavaScript
+- Unity
+- tools
+- algorithms
+
+The Unity documentation has an example showing how to generate random
+indexes satisfying a distribution of probabilities.  In this post I'll
+show you how to use a similar approach to generate random items with
+specific probabilities dictated by the environment.
+
+I want to be able to generate an item code, say =Red=, =Green=, or
+=Black=, given a list of floating point probabilities dictated by the
+current area, for example =desert= or =grassland=.
+
+Varying the probability of encountering items will give each area a
+unique flavor.  If the player needs a =Red= item, the player will need
+to seek out areas in which the probability for encountering =Red=
+items is high.  I hope this will drive player exploration and
+investigation.
+
+I'll start by defining an array of possible item types.  (According to
+[[http://wiki.unity3d.com/index.php/Head_First_into_Unity_with_UnityScript#Use_enum][this introduction to Unity JavaScript]], I should prefer =enum=.)
+
+#+BEGIN_SRC javascript start:5
+  var ents : String[] = ["Red", "Green", "Black", "Orange"];
+#+END_SRC
+
+Then I define a Dictionary =areas= of Lists of floating point
+probabilities.  These areas correspond to terrains that contain unique
+distributions of items. The =areas= Dictionary accepts =strings=
+specifying the desired terrain.
+
+It's important to note that the order of the probabilities correspond
+to the order of the item types in =ents=.
+
+#+BEGIN_SRC javascript start:7
+  var areas = new Dictionary.<String, List.<float> >();
+  areas["desert"] = new List.<float>([0.1, 0.05, 0.425, 0.425]);
+  areas["grassland"] = new List.<float>([0.3, 0.35, 0.1, 0.25]);
+#+END_SRC
+
+So, in the =grassland= area, there will be a 30% chance of choosing a
+=Red= item.
+
+Now that we've defined our data, we need a function to choose the
+appropriate index given a List of probabilities.  This function is
+lifted with minor modifications from the [[http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html][Unity Documentation]].
+
+#+BEGIN_SRC javascript start:11
+  function Choose(probs : List.<float>) : int {
+      // Returns the index of a probabilistically determined random
+      // entity, given by the probability distributions in probs.
+      // e.g.:
+      // probs : List.<float>([0.5, 0.2, 0.1, 0.2]);
+      // entity = entities[Choose(probs)];
+      //
+      // See [[http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html]]
+
+      // Watch out!  If you fail to specify total's type as float, it
+      // will add the probs using integer addition.  This will floor
+      // each of the probs to 0.
+      var total : float = 0;
+
+      for (x in probs) {
+          total += x;
+      }
+
+      var randomPoint = Random.value * total;
+
+      for(var i = 0; i < probs.Count; i++) {
+          if (randomPoint < probs[i])
+              return i;
+          else
+              // Shift the strip down, adjusting the random point's
+              // value to see whether it falls within the next prob.
+              randomPoint -= probs[i];
+      }
+      // Take care of possibility that randomPoint is 1.0 or 100% by
+      // returning the last element of probs.  Avoids allowing Choose to
+      // return a 0 probability event (which would be possible using the
+      // <= test).
+      return probs.Count - 1;
+
+  }
+#+END_SRC
+
+Now to choose an item:
+
+#+BEGIN_SRC javascript start:48
+  var item = ents[Choose(areas["grassland"])];
+  Debug.Log(item);
+#+END_SRC
+
+That's all there is to it. I've put an example Unity project with this
+code on github.
+
+
+* Mario makes you smarter.
+The average person will spend about 10,000 hours playing video games
+by age 21.  Take that, Malcolm Gladwell.
+
+[[http://www.nature.com/mp/journal/v19/n2/full/mp2013120a.html]]
+
+
+
+* Quarries of Scred Roadmap
+[[http://www.indiedb.com/games/quarries-of-scred/news/quarries-of-scred-rolling-down-the-roadmap]]
+
+* Grim Fandango Design Documents
+
+* Full Throttle Critical Path Checklist
+
+* Procedural Terrain in Unity
+[[http://alastaira.wordpress.com/2013/11/14/procedural-terrain-splatmapping/]]
+
+[[http://www.big-robot.com/2012/07/02/procedural-british-countryside-generation/]]
+
+[[http://forum.unity3d.com/threads/68807-Infinite-Terrain-Free-Project-Source]]
+
+* Nobody wants a released game
+What follows is a conversation about marketing and the effervescence
+of created buzz.
+
+@smestorp [[https://twitter.com/smestorp/status/451717623123030016][lamented]]:
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p>nobody wants a released game</p>&mdash; Michael Brough (@smestorp) <a href="https://twitter.com/smestorp/statuses/451717654894882816">April 3, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p>i don&#39;t know, i just regret releasing it then and not doing the nidhogg thing of restricting it to events until it was famous</p>&mdash; Michael Brough (@smestorp) <a href="https://twitter.com/smestorp/statuses/451717623123030016">April 3, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+@emacsbro saw where @smestorp was headed:
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/smestorp">@smestorp</a> On the other hand, everyone wants a game they can&#39;t have.</p>&mdash; Mr. Fancy Baby (@emacsbro) <a href="https://twitter.com/emacsbro/statuses/451717723442413568">April 3, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+@McFunkypants weighs in and @mtrc responds:
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/McFunkypants">@McFunkypants</a> <a href="https://twitter.com/smestorp">@smestorp</a> My (probably cynical) impression is that it&#39;s a pretty good route to some degree of success.</p>&mdash; Michael Cook (@mtrc) <a href="https://twitter.com/mtrc/statuses/451723850578149376">April 3, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/McFunkypants">@McFunkypants</a> <a href="https://twitter.com/smestorp">@smestorp</a> Nidhogg and Joust (e.g.) are great games, but they also benefit from feelings of exclusivity and secrecy I think.</p>&mdash; Michael Cook (@mtrc) <a href="https://twitter.com/mtrc/statuses/451723994082050048">April 3, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/McFunkypants">@McFunkypants</a> <a href="https://twitter.com/smestorp">@smestorp</a> Obviously this assumes you have a good game in the first place, I&#39;m not suggesting anything otherwise &gt;_&gt;</p>&mdash; Michael Cook (@mtrc) <a href="https://twitter.com/mtrc/statuses/451724097660399616">April 3, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Apologies for the Tweeticle, but this conversation was intriguing.
+
+* Sharing philosophy
+
+[[http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code][This interview]] with Sam Aaron.
+
+
+#+BEGIN_QUOTE
+
+We believe that most value in the world comes through sharing, and
+that music is no exception. One of the benefits of sharing is that it
+makes learning much easier. For example, we often hear amazing sounds
+on albums and wonder how they were made. However, musicians rarely
+share their production methods. We release all the software we write,
+which includes our synthesiser designs, interaction abstractions, and
+compositional structures, under an open source license, and we
+distribute it to everyone through GitHub. This makes it free and easy
+for anybody to copy and recreate any aspect of our work. For example,
+when one of our fans is interested in the sound of one of the synths
+we're using, they can go to GitHub and download the synth design as
+text. They can email it to their friends, read it, study it, copy it,
+modify it and run it to recreate the exact sound.
+
+#+END_QUOTE
+
+- Sam Aaron
+* Shaders Primer
+[[http://notes.underscorediscovery.com/shaders-a-primer/]]
+* Simple Mind-reading Machine in Unity JavaScript
+
+- AI
+- algorithm
+- mechanics
+- Unity
+- JavaScript
+
+
+[[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/]]
+
+[[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html]]
+
+[[http://answers.unity3d.com/questions/54695/how-to-declare-and-initialize-multidimensional-arr.html]]
+
+[[http://csharptutorial.blogspot.com/2006/05/question-mark-ternary-operator.html]]
+
+I ported a cool toy from [[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/][Alastair Atchison's blog]] to Unity
+JavaScript.  The toy implements a simple 'mind-reading' algorithm that
+attempts to guess whether the player will choose Left (by pressing the
+left arrow key) or Right (by pressing the right arrow key).
+
+<!--more-->
+
+** How does it work?
+
+Atchison's blog post describes how it works:
+#+BEGIN_QUOTE
+How does it work? Not by mind-reading, obviously, but by exploiting
+the fact that humans do not behave as "randomly" as they think they
+do. The computer maintains a very simple memory that records the
+pattern of results of the last two rounds – whether the player won or
+lost, whether they switched strategy, and then whether they then won
+or last the following round. The computer then uses this to choose its
+own best strategy based on the way the player behaved last time the
+current pattern occurred. If the computer loses twice in a row using
+the current strategy, it picks a random response in the next round.
+#+END_QUOTE
+
+The original idea came from some AI work by [[http://en.wikipedia.org/wiki/Claude_Shannon][Claude Shannon]]
+and D. W. Hagelbarger.  [[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html][They describe the internal memory of the toy
+mind-reader]] that we will model using a multidimensional array =v=:
+
+#+BEGIN_QUOTE
+There are 8 possible situations and two things the player can do at each one:
+
+1) player wins, plays same, wins. Then same or differently.
+2) player wins, plays same, loses. Then same or differently.
+3) player wins, plays differently, wins. Then same or differently.
+4) player wins, plays differently, loses.Then same or differently.
+5) player loses, plays same, wins.Then same or differently.
+6) player loses, plays same, loses.Then same or differently.
+7) player loses, plays differently, wins.Then same or differently.
+8) player loses, plays differently, loses.Then same or differently.
+#+END_QUOTE
+
+** Why port it?
+Why not just take a straightforward approach, running
+his code myself? First, I wanted to fully understand the algorithm the
+hard way, by coding it line for line myself. And second, I wanted to
+better familiarize myself with Unity JavaScript, including its
+differences from C#.
+
+The port was relatively simple, except for two small hiccups.  First,
+as far as I know, Unity JavaScript doesn't allow for initializing a
+multidimensional array.  So I looped over the cells in the array,
+filling them that way.  I have a hunch that the cells are initialized
+to the =int= =0= by default, but I wanted to be explicit.  Please let
+me know in the comments or [[https://twitter.com/zerosalife][via twitter]] if I'm way off base.
+
+#+BEGIN_SRC javascript
+  var v : int[2, 2, 2];
+  for(var cell in v) {
+      cell = 0;
+  }
+
+#+END_SRC
+
+I also encountered some unfamiliar syntax: the sonorously named Elvis
+operator, [[http://en.wikipedia.org/wiki/Conditional_operator][?:]].  It's also called the [[http://en.wikipedia.org/wiki/Ternary_operation][ternary operator]], when it's used
+with 3 arguments, as I've used it here.  In C-like languages it allows
+for succinctly stating these kinds of conditional expressions. The
+example below illustrates how it's used.
+
+#+BEGIN_SRC javascript
+  // Is the current player's choice the same as the previous player's
+  // choice?
+  //
+  // if (playerChoice == lastChoice)
+  //     sameChoice = True;
+  // else
+  //     sameChoice = False;
+  //
+  // Using ternary operator:
+  v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
+
+#+END_SRC
+
+** The code
+The ported code for the mind-reader is reproduced below.  A full
+example project is available on my github here.
+
+
+* Why you should start simple.
+My thoughts on a long-read from @hobbygamedev on why you should start
+simple.
+
+- design
+- mechanics
+
+[[http://www.hobbygamedev.com/beg/incremental-learning/]]
+
+
+* Object reuse in Unity
+[[https://twitter.com/mikegeig/status/453239221885480960/photo/1]]
+
+<blockquote class="twitter-tweet" lang="en"><p>Everything you ever needed to know about object pooling. <a href="https://twitter.com/search?q=%23unity3d&amp;src=hash">#unity3d</a> <a href="http://t.co/dGxRaxktqo">pic.twitter.com/dGxRaxktqo</a></p>&mdash; Mike Geig (@mikegeig) <a href="https://twitter.com/mikegeig/statuses/453239221885480960">April 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+[[http://unitypatterns.com/resource/objectpool/]]
+* Mobile Frame Football Association
+** Football games
+*** Duration of play
+Mobile Frame Football Association (MFFA) sanctioned games last 12
+turns, consisting of two equal 6-turn halves.  MFFA rules do not allow
+for the countdown mechanic from the vanilla Mobile Frame Zero (MF0)
+rules.
+
+*** Objective
+When time expires, the player with the highest number of goals scored
+wins.
+
+*** Teams
+Games are played between teams consisting of equal numbers of frames.
+Frames may have up to 4 systems installed, with the usual vanilla MF0
+benefits for fewer than 4 installed systems (see, e.g., p. 64).
+
+*** Field of Play
+The game field should be approximately the size of a normal MF0 table,
+with goals the size of 1 /movement scale/ on each end of the field.
+Lines should be laid out to clearly mark the in bounds/out of bounds
+boundary.  There should be at least 1" of space on the sidelines, to
+allow for units to be positioned outside of the field during out of
+bounds situations.
+
+The size of your available Field of Play can dictate the Movement and
+Shooting Scales for your game.  The suggested defaults are based on a
+normal MF0 table, your mileage may vary.
+
+** Deployment
+During the deployment phase, you may place your units anywhere on the
+field in a legal formation.
+
+*** Beginning of play
+At the beginning of the game, at the beginning of the second half, or
+at a kickoff following a goal, players take turns placing units in
+bounds, in the half of the field that has been assigned (See:
+[[*Determining%20possession][Determining possession]]).  The player in possession of the ball, the
+/offensive player/, goes first.  The ball, represented by a d12, is
+placed at the center of the field. The offensive player must place a
+unit next to the ball, this unit is said to be in possession of the
+ball.
+
+**** Determining possession
+A coin flip determines possession at the beginning of the game, with
+the winning player electing to be on offense or defense first.  The
+losing player gets to determine the side of the field in which to
+deploy.
+
+At the half, the possession and sides switch.  Following a scored
+goal, the player who was scored on gains possession of the ball at the
+kickoff.
+
+*** After a dead ball situation
+Play is stopped due to a foul, an out of bounds ball. This is called
+a /dead ball/ situation.
+
+**** Out of bounds
+Out of bounds balls force a turnover of possession. The ball is placed
+on the sideline where it went out of bounds.
+
+Both players may redeploy their units, however the offensive player
+may not place a unit beyond the defensive unit closest to the goal.
+The defensive player places first, and must move the unit closest to
+the goal first, if it will be moved in the redeployment.  Players
+alternate placing units.  The offensive player must place a unit next
+to the ball.
+
+After the offensive player redeploys the last unit, play resumes with
+the unit next to the ball immediately taking its turn, regardless of
+its initiative roll.  If the unit next to the ball has an initiative
+die, remove it.
+
+***** Corner Kicks and Goal Kicks
+Corner kicks occur when a defending unit kicks the ball out of bounds
+on the sideline running on its own 'goal' side of the field.  The ball
+is placed on the corner sideline on the side it went out of bounds.
+
+Goal kicks occur when an offensive unit kicks the ball out of bounds
+on the sideline of the defensive units' 'goal' side of the field.  The
+ball is placed in front of the goal.
+
+**** Fouls
+Fouls do not force a turnover of possession.  Redeployment following a
+foul occurs the same as in the [[*Out%20of%20bounds][Out of bounds]] situation.
+
+**** Redeployment and units that have already taken turns
+Redeployment does not normally reset whether a unit has taken its
+turn.  If the unit placed next to the ball in a dead ball situation
+has already taken its turn, it gets a free turn taken immediately
+following deployment, when play resumes.
+
+** Initiative
+For the time being, MFFA uses the older per-unit turn order from MF0
+(p. 136).  Enough with the hutching bellyaching, you yabbies.
+
+Players roll 1d10 for each unit, placing the die next to the unit.
+Initiative starts at 1 and counts up.  When you reach a unit's
+initiative roll in the count, remove the initiative die next to the
+unit, that unit takes its turn.
+
+If two units have the same roll, when their number is reached, reroll
+the initiative dice. Lowest roll goes first with the next highest
+reroll going immediately after.  Once all of the rerolled ties have
+been resolved, the initiative count continues as normal.
+
+In a dead ball situation, the initiative count does not reset.
+
+*** Coaching
+Coaching adds a layer of complexity to initiative determination.  It
+may slow down the game a bit, but it allows for extra tactical
+decisions.
+
+Coaching allows players to take control of the assignment of
+initiative to each of their units.  Both players roll a number of
+initiative dice equal to their units, then take turns assigning to
+initiative dice to their units. The defensive player chooses first.
+After initiatives are assigned, the initiative count starts and counts
+up as normal.
+
+
+** Dice systems
+As in MF0, frames have 2 white dice representing the frame chassis
+plus other dice representing up to 4 additional systems.  Frames get
+the usual vanilla MF0 benefits for having fewer than 4 installed
+systems (see, e.g., p. 64).
+
+*** Red dice
+Red dice represent the ability of a frame to shoot or pass the ball on
+offensive.  Unlike the vanilla MF0 rules, there are two legal ranges
+for red dice on offense: direct and artillery.  Systems granting hand
+to hand dice are not rolled on offense.
+
+When shooting, you must score a successful hit on the goal using the
+difficulty table from MF0 to score a goal.  When passing you must
+score a successful hit on your ally to successfully pass the ball. You
+must declare the range you will be targeting at the beginning of your
+turn.
+
+On defense, red dice represent steals (hand to hand range) and slide
+tackles (direct range).  Systems granting artillery dice are not
+rolled on defense.
+
+Red dice use a special scale that is different from the movement
+scale.  See [[*Movement%20Scale%20and%20Shooting%20scale][Movement Scale and Shooting Scale]]
+
+**** Passing and shooting
+When in range for a shot or a pass, the player must roll a number of
+/hit dice/ equal to the /shot value/ minus the blue /defense value/ of
+any units in the line of fire.  Any units in the line of the pass or
+shot act as cover, using the normal MF0 cover rules.  If there is
+doubt, consult the MF0 cover rules to determine if a unit is in the
+line of fire.
+
+If the rolled hit dice successfully /score a hit/, then the ball goes
+where the offensive player wants, into the goal or into the possession
+of another unit.  Use Damage chart 2 from the MF0 rules (Hit target on
+a 5 or 6) if there is no other unit between the shooter and the
+target.  Use Damage chart 4 if there is a unit between the shooter and
+the target. (Hit target on a 6)
+
+Failure to score a hit is called a /fumble/, and causes the ball to go
+wide somewhere in the range of the shot at the opposing player's
+discretion (be reasonable here, it's not going to /fly backwards/).
+This may cause the ball to go out of bounds, into the possession of a
+unit, into the goal, or into the field of play.
+
+**** Stealing and slide tackling
+When stealing or slide tackling, /scoring a hit/ results in the ball
+coming into the stealing or tackling unit's possession.  The stealing
+or tackling unit's player rolls a number of /hit dice/ equal to its
+red /shot value/ for the steal or tackle attack minus the blue
+/defense value/ of the unit in possession of the ball.
+
+Always use Damage chart 2 for stealing and slide tackling. On a roll
+of 5 or 6, the steal or slide tackle scores a hit.
+
+Failure to score a hit is a /fumble/.  Nothing special happens, unless
+the player rolls a 1 on one of the hit dice.
+
+Rolling a 1 on a hit die during a fumble results in a foul.  See
+/Fouls/.
+
+*** Blue Dice
+Blue dice systems remain the same as blue dice systems in the normal
+MF0 rules.  However, rather than representing armor, they represent
+the ability of a unit to gain or maintain control of the ball.
+
+*** Yellow Dice and Green Dice
+Yellow and green dice systems remain the same as vanilla MF0.
+
+** Taking a turn
+Taking a turn begins with target declaration.  For the defensive units
+this will generally be the unit in possession of the ball.  For the
+offensive unit in possession of the ball, this could be targeting a
+fellow offensive unit for a pass or targeting the opposing goal.
+
+Attacks don't do anything to units without the ball.  Save that
+animosity for the war.
+
+The turn proceeds as per the vanilla MF0 rules. Any unit that would be
+activated with the normal MF0 turn rules, i.e. the target of a steal
+attempt or a pass, takes its turn as per those rules.
+
+** Movement Scale and Shooting Scale
+
+Normal vanilla MF0 scale is 2".  /Shooting scale/ for MFFA is 2".
+/Movement scale/ is double that, 4", to represent the agility of these
+hot-rodded sportsframes.
+
+Using two different colored rulers (e.g., 1 red for shooting and 1
+green for movement) is a good way to distinguish /movement scale/ and
+/shooting scale/.
+
+* Follow-up to the centrality of caves
+- design
+
+
+My post last week about why caves are essential features in most games
+struck a nerve.  I received a lot of encouraging retweets and
+favorites.  I also received some great feedback.
+
+Paul Diaz points out one design constraint granted by caves that I
+hadn't considered.
+
+{% tweet https://twitter.com/sleepytearyeyed/status/462624220447391744 %}
+
+I think Paul is right, that this falls within the scope of caves'
+linearity.  I've been thinking a bit about a possible taxonomy of cave
+environments in games, but for the purposes of these posts I'll keep
+it more general.  A cave is a cave, right?  [[http://en.wikipedia.org/wiki/I_know_it_when_I_see_it][We know it when we see
+it.]]
+
+Any old screen in a game can be cave-like in the way its environmental
+design constraints fit into the game world.  Here I'm using 'screen'
+to refer to a room in a metroid-like game or a level in other sorts of
+games--some atomic unit of division of the game environment
+constituting a discrete area.
+
+For the purpose of argument, Paul's point forces us to think of the
+most cave-y of caves, which I think was the intent behind the original
+question in the first place.  Because caves are dark environments,
+dank environments, /interior/ environments, they lack the uniform
+lighting that typically characterizes the exterior 'overworld' in
+games.  As Paul states, lighting cues can serve as guideposts for the
+player, directing attention toward the critical path.
+
+I view this example as a manifestation of the fundamental reduction in
+degrees of freedom of play achieved by the interiority, and thus,
+linearity of caves.  The fact that there are more walls, and therefore
+fewer possible places for the player to go, allows for the designer,
+using careful construction, to communicate intent to the player
+through the environment itself.  I don't mean to say here that such
+communication is impossible outside of caves, just that caves are one
+simple and straightforward way to achieve this constrained,
+communicative sort of design.  This vocabulary of design showed up
+early on in the history of games, it worked, and it has persisted.
+
+Thanks and shout outs to Paul Diaz for inspiring this follow-up post.
+
+
+* Game design patterns
+[[http://gameprogrammingpatterns.com/index.html]]
+
+* .gitignore for Unity projects
+I found a solution on the [[http://answers.unity3d.com/questions/369755/unity-on-github.html][Unity website]] that pointed me toward [[http://t-machine.org/index.php/2012/07/03/unity-git-source-control-a-basic-gitignore/][this
+blogpost]].  But a better solution is out there.  The Double Fine Game
+Club's Bad Golf Community Edition [[https://github.com/Double-Fine-Game-Club/bad-golf-community-edition/blob/master/.gitignore][.gitignore]] looks like this:
+
+#+BEGIN_ASCII
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+build_Data/
+
+# Autogenerated VS/MD solution and project files
+*.csproj
+*.unityproj
+*.sln
+*.exe
+*.userprefs
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.[Ss]potlight-V100
+.[Tt]rashes
+[Ee]hthumbs.db
+[Tt]humbs.db
+*~
+*#*
+#+END_ASCII
+
+This is the =.gitignore= I'm currently using in my projects.
+
+* Proportion Types
+- design
+[[http://androidarts.com/misc/proportions_types.jpg]]
+
+
+** Ninja Star
+- Bravely Default
+- Fire Emblem
+** Cross
+- Call of Duty Advanced Warfare
+** Maltese cross
+
+* Simulation Sandbox vs Theme Park
+This quote from the artist @sougwen resonates with me because I feel
+it encapsulates some aspect of game design.
+
+{% tweet https://twitter.com/sougwen/status/462994273898872832 %}
+
+I don't mean to simply say that sougwen is talking about art and games
+are art, so this quote resonates.  No.  I think that there is
+something to this carving-out-of-allowed-play that is fundamental to
+games.
+
+** Deep simulation vs. superficial simulation
+
+* Improvisation vs Preparation
+Or preparation as play.
+
+* Level experience progressions
+
+** Solar 2
+Growth Requirements
+A Planet - 20 Mass
+A Life Sustaining Planet - 80 Mass
+A Small Star - 180 Mass
+A Medium Star - 1,500 Mass
+A Large Star - 2,000 Mass
+A Black Hole - 3,000 Mass
+The Big Crunch - 1,000,000 Mass
+
+[[http://forums.steampowered.com/forums/showthread.php?t%3D1935621][Source.]]
