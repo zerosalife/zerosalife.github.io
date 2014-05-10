@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-05-03T10:18:21-05:00</updated>
+  <updated>2014-05-10T10:34:31-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Follow-up to the centrality of caves]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/"/>
+    <updated>2014-05-10T10:27:49-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves</id>
+    <content type="html"><![CDATA[<p>My <a href="file:///blog/2014/05/03/why-are-caves-central-to-so-many-games/">post last week</a> about caves struck a nerve.  I received a lot of encouraging retweets and favorites.  I also received some great feedback.</p>
+
+<p>Paul Diaz points out one design constraint granted by caves that I hadn&rsquo;t considered.</p>
+
+<div class='embed tweet'><blockquote class="twitter-tweet"><p><a href="https://twitter.com/psysal">@psysal</a> <a href="https://twitter.com/ZerosALife">@ZerosALife</a> very nice. One that supports linearity and design is cave&#39;s are dark. Helps direct attention w/ lighting/effects.</p>&mdash; Paul Diaz (@SleepyTearyEyed) <a href="https://twitter.com/SleepyTearyEyed/statuses/462624220447391744">May 3, 2014</a></blockquote>
+<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+<p>I think Paul is right, that this falls within the scope of caves&#8217; linearity.  I&rsquo;ve been thinking a bit about a possible taxonomy of cave environments in games, but for the purposes of these posts I&rsquo;ll keep it more general.  A cave is a cave, right?  <a href="http://en.wikipedia.org/wiki/I_know_it_when_I_see_it">We know it when we see it.</a></p>
+
+<p>Any old screen in a game can be cave-like in the way its environmental design constraints fit into the game world.  Here I&rsquo;m using &lsquo;screen&rsquo; to refer to a room in a metroid-like game or a level in other sorts of games&#x2013;some arbitrary atomic unit of division of the game environment constituting a discrete area.</p>
+
+<p>For the purpose of argument, Paul&rsquo;s point forces us to think of the most cave-y of caves, which I think was the intent behind the original question in the first place.  Because caves are dark environments, dank environments, <em>interior</em> environments, they lack the uniform lighting that typically characterizes the exterior &lsquo;overworld&rsquo; in games.  As Paul states, lighting cues can serve as guideposts for the player, directing attention toward the critical path.</p>
+
+<p>I view this example as a manifestation of the fundamental reduction in degrees of freedom of play achieved by the interiority, and thus, linearity of caves.  The fact that there are more walls, and therefore fewer possible places for the player to go, allows for the designer, using careful construction, to communicate intent to the player through the environment itself.  I don&rsquo;t mean to say here that such communication is impossible outside of caves, just that caves are one simple and straightforward way to achieve this constrained, communicative sort of design.  This vocabulary of design showed up early on in the history of games, it worked, and it has persisted.</p>
+
+<p>Thanks and shout outs to <a href="https://twitter.com/sleepytearyeyed">Paul Diaz</a>, whose feedback inspired this follow-up post.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Why are caves central to so many games?]]></title>
