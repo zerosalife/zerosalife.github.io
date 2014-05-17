@@ -4,7 +4,7 @@
   <title><![CDATA[Category: version control | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/version-control/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-05-17T11:53:16-05:00</updated>
+  <updated>2014-05-17T11:56:14-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -19,8 +19,6 @@
     <updated>2014-05-17T11:48:06-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects</id>
     <content type="html"><![CDATA[<p>I found a solution on the <a href="http://answers.unity3d.com/questions/369755/unity-on-github.html">Unity website</a> that pointed me toward <a href="http://t-machine.org/index.php/2012/07/03/unity-git-source-control-a-basic-gitignore/">this blogpost</a>.  But a better solution is out there.  The Double Fine Game Club&rsquo;s Bad Golf Community Edition <a href="https://github.com/Double-Fine-Game-Club/bad-golf-community-edition/blob/master/.gitignore">.gitignore</a> looks like this:</p>
-
-<p>This is the <code>.gitignore</code> I&rsquo;m currently using in my projects:</p>
 
 <p>```sh
 [Ll]ibrary/
@@ -50,6 +48,8 @@ build_Data/</p>
 </em>~
 <em>#</em>
 ```</p>
+
+<p>This is the <code>.gitignore</code> I&rsquo;m currently using in my projects.</p>
 ]]></content>
   </entry>
   
