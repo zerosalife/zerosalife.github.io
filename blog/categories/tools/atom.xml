@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-05-24T15:53:10-05:00</updated>
+  <updated>2014-05-31T11:32:59-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
+    <updated>2014-05-31T11:28:40-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
+    <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
+
+<!--more-->
+
+
+<p>Hickey&rsquo;s advice is to wait for it.  Wait overnight.  Get good rest and make sure that you are sleeping well.  Then you will be able to think about the clearly on the next day.  If you are lucky perhaps you will receive inspiration from a dream and wake up with the problem solved.  This sort of inspiration is what Hickey means by leveraging background processing.</p>
+
+<p>Hickey mentions working on more than one project.  By having multiple projects, you avoid the problems of creative block, or writer&rsquo;s block.  You can be productive simply by working on another project.  One drawback is that frantically flitting from project to project can lead to problems finishing any single project.  I am often guilty of this.</p>
+
+<p>Eventually, I plan on writing about properly scoping projects to make it possible to get them to a finished state.  One method that works for me is getting something to the point that I can write a blog post about it.  Even if it&rsquo;s not &lsquo;finished&rsquo; finished, I get some satisfaction with putting it out there in a relatively well thought out and complete form.</p>
+
+<p>My solution is to <strong>record, record, record</strong>.  I keep lots of notes, both in more structured form on this blog and in more sketchy form in files on my computer.  I also draw out visual design ideas in a notebook.  Sometimes I will set up skeleton game projects simply to test out an idea.  If I have some sudden insight into a problem, then all of these ideas are available later.</p>
+
+<p>Hickey says to avoid being stuck, switch.  That is why having multiple projects can help.  Hickey also mentions a great suggestion of talking about design hiccups and problems with other people.  Tweet about your design roadblocks.  Write a blog post about them.  Telepathically communicate about them before you go to sleep, so magical dream elves can come and solve them for you.</p>
+
+<p>Unless you are Rich Hickey or&#x2013;I dunno&#x2013;Gary Gygax, simply thinking about a problem <em>a priori</em> will not result in a great game.  There is still something to be said for getting your hands dirty and iterating on a design.  However the techniques highlighted in Hickey&rsquo;s talk can be useful when you are stuck on a design problem.</p>
+
+<p>Hit me up in the comments or on the <a href="https://twitter.com/zerosalife">tweet tweet</a> if you have any great Hammock Driven Design tips that I haven&rsquo;t covered here.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
@@ -157,34 +183,6 @@ bug.  If you reproduce the bug, repeat the process as necessary until
 you isolate the line producing the problem.</p>
 
 <p>I learned about this approach for bugsleuthing from the <a href="https://gist.github.com/stardiviner/8109774#file-temp-txt-L26">bot in #emacs on freenode</a>.  It&rsquo;s particularly useful for tracking down bugs in large configuration files.  There&rsquo;s a list of humorous lion-trapping algorithm examples <a href="http://faculty.smu.edu/yzhou/humor/lion.htm">here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Setting up Emacs-like key bindings in MonoDevelop]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/"/>
-    <updated>2014-02-22T08:14:40-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
-
-<p>Since I don&rsquo;t know much about Unity, I&rsquo;m reluctantly using their included <a href="http://monodevelop.com/">MonoDevelop IDE</a>.  While I&rsquo;d heard that Emacs-like key bindings were included, in the build I installed they weren&rsquo;t present.</p>
-
-<p>MonoDevelop does not make it easy to import new key binding schemes (the <a href="http://mjhutchinson.com/journal/2011/02/06/key_bindings">blog post linked here</a> suggests submitting a bug report to propose new key bindings&#x2026;).  So, I did a little digging around on github and found the <a href="https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml">default emacs key binding scheme</a> that I imagine should have been included in the MonoDevelop build I installed.</p>
-
-<p>There was no way to add this key binding scheme to my available key bindings in MonoDevelop, so I hacked my Custom key binding file located at <code>~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml</code>.</p>
-
-<p>I started with some simple copypasta.  But then I found some useful
-navigation features were lacking.  So, I added key binds that
-immediately came to mind, like <code>Alt-f</code> for moving forward one word and
-<code>Alt-b</code> for backward word.  Yes, I know these are <code>M-f</code> in Emacs, but
-I&rsquo;m using MonoDevelop&rsquo;s syntax here.</p>
-
-<p>My key bindings are available in the gist below.  I&rsquo;ll update this
-gist when I add key bindings, to keep a current working version
-available.</p>
-
-<script src="https://gist.github.com/zerosalife/9096788.js"></script>
-
 ]]></content>
   </entry>
   
