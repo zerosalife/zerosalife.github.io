@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-05-31T11:32:59-05:00</updated>
+  <updated>2014-05-31T11:37:57-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -23,7 +23,11 @@
 <!--more-->
 
 
+<h2>Wait</h2>
+
 <p>Hickey&rsquo;s advice is to wait for it.  Wait overnight.  Get good rest and make sure that you are sleeping well.  Then you will be able to think about the clearly on the next day.  If you are lucky perhaps you will receive inspiration from a dream and wake up with the problem solved.  This sort of inspiration is what Hickey means by leveraging background processing.</p>
+
+<h2>Multiply</h2>
 
 <p>Hickey mentions working on more than one project.  By having multiple projects, you avoid the problems of creative block, or writer&rsquo;s block.  You can be productive simply by working on another project.  One drawback is that frantically flitting from project to project can lead to problems finishing any single project.  I am often guilty of this.</p>
 
@@ -31,7 +35,15 @@
 
 <p>My solution is to <strong>record, record, record</strong>.  I keep lots of notes, both in more structured form on this blog and in more sketchy form in files on my computer.  I also draw out visual design ideas in a notebook.  Sometimes I will set up skeleton game projects simply to test out an idea.  If I have some sudden insight into a problem, then all of these ideas are available later.</p>
 
+<h2>Switch</h2>
+
 <p>Hickey says to avoid being stuck, switch.  That is why having multiple projects can help.  Hickey also mentions a great suggestion of talking about design hiccups and problems with other people.  Tweet about your design roadblocks.  Write a blog post about them.  Telepathically communicate about them before you go to sleep, so magical dream elves can come and solve them for you.</p>
+
+<h2>Final Thoughts</h2>
+
+<blockquote><p>Summary: There is no summary.  This is a rant.</p></blockquote>
+
+<p>-Rich Hickey</p>
 
 <p>Unless you are Rich Hickey or&#x2013;I dunno&#x2013;Gary Gygax, simply thinking about a problem <em>a priori</em> will not result in a great game.  There is still something to be said for getting your hands dirty and iterating on a design.  However the techniques highlighted in Hickey&rsquo;s talk can be useful when you are stuck on a design problem.</p>
 
