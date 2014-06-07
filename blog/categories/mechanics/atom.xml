@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-05-31T11:37:57-05:00</updated>
+  <updated>2014-06-07T15:06:24-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,35 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Why you should start simple]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
+    <updated>2014-06-07T14:58:34-04:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
+    <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
+
+<!--more-->
+
+
+<p>In a response to a doubting tweeter, HGD advocates starting modestly to slowly build skills, so that you can tackle more complicated projects later on.  Avoiding overambitious projects that are way outside of your comfort zone is one of the stumbling points for novice and hobby game developers, like myself.</p>
+
+<p>In the <a href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/">previous post about Hammock Driven Creativity</a>, I highlighted Rich Hickey&rsquo;s suggestion to keep multiple projects going in order to avoid stagnation.  While I agree with this, it&rsquo;s important to judge the scope of those projects with a critical eye.</p>
+
+<p>Far too often, my ideas start, at least in my mind, with ambitious artwork, animation, and multiple complex combinations of mechanics.  I am neither talented nor skilled enough to pull these projects off.  So it&rsquo;s easy to get stuck.</p>
+
+<p>I often find myself implementing some ad-hoc animation system, spending time reinventing the frame-based or skeletal wheel, as it were.  Animation shouldn&rsquo;t take priority, especially considering that my best artwork is derivative and possibly one step above programmer art.  I should focus on creating compelling prototypes, and worry about polish later.</p>
+
+<p>To build your skillset, HGD suggests starting out by remaking historical games.  By implementing tried-and-true mechanics that are necessarily simple in scope given their ancient hardware, you can confront the problems involved in creating a full game rather than a half-finished proof-of-concept.</p>
+
+<p>By half-finished, I&rsquo;m thinking of a time where I completely abandoned a concept because I was hung-up on optimizing a tile-based room system.  Rather than making the actual gameplay fun and complete, I was focusing all of my time figuring out how to make walls.  Walls are nice in a finished game, and you could make the case that they are required constraints to achieve good gameplay, but they are not where the fun is.  As HGD and my previous post point out, you can keep trying to work on these overly ambitious projects, but your productivity will suffer.</p>
+
+<p>Best to reap the rewards that come from continued productivity and, as HGD says, pick a fight you can win.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[styx_ebooks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T14:05:03-05:00</updated>
+    <updated>2014-04-19T15:05:03-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
     <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
 
@@ -35,7 +61,7 @@
   <entry>
     <title type="html"><![CDATA[Don't Fear Lack of Content]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content/"/>
-    <updated>2014-04-05T09:59:37-05:00</updated>
+    <updated>2014-04-05T10:59:37-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content</id>
     <content type="html"><![CDATA[<p>Came across a <a href="http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/">nice article</a> on <a href="http://www.egometry.com/">Ben McGraw&rsquo;s blog, Egometry</a>. Using Super Mario Bros. as a model, Ben explains why merely increasing content quantity is less desirable than increasing content substance.  The title of this post is lifted from a quote in his article.</p>
 
@@ -46,7 +72,7 @@
   <entry>
     <title type="html"><![CDATA[An in-depth tour of Tetris]]></title>
     <link href="http://zerosalife.github.io/blog/2014/02/08/an-in-depth-tour-of-tetris/"/>
-    <updated>2014-02-08T08:34:35-06:00</updated>
+    <updated>2014-02-08T09:34:35-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/08/an-in-depth-tour-of-tetris</id>
     <content type="html"><![CDATA[<p><img class="center <a" src="href="http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png">http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png</a>"></p>
 
@@ -86,7 +112,7 @@ developers, as well as designers and fans.</p>
   <entry>
     <title type="html"><![CDATA[Some thoughts on Attack of the Friday Monsters]]></title>
     <link href="http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/"/>
-    <updated>2014-02-01T08:32:40-06:00</updated>
+    <updated>2014-02-01T09:32:40-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters</id>
     <content type="html"><![CDATA[<p>It&rsquo;s hard to say anything new about Attack of the Friday Monsters, a
 game that splashed on the scene months ago.  The work of its creator

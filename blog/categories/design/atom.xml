@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-05-31T11:37:57-05:00</updated>
+  <updated>2014-06-07T15:06:24-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,35 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Why you should start simple]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
+    <updated>2014-06-07T14:58:34-04:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
+    <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
+
+<!--more-->
+
+
+<p>In a response to a doubting tweeter, HGD advocates starting modestly to slowly build skills, so that you can tackle more complicated projects later on.  Avoiding overambitious projects that are way outside of your comfort zone is one of the stumbling points for novice and hobby game developers, like myself.</p>
+
+<p>In the <a href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/">previous post about Hammock Driven Creativity</a>, I highlighted Rich Hickey&rsquo;s suggestion to keep multiple projects going in order to avoid stagnation.  While I agree with this, it&rsquo;s important to judge the scope of those projects with a critical eye.</p>
+
+<p>Far too often, my ideas start, at least in my mind, with ambitious artwork, animation, and multiple complex combinations of mechanics.  I am neither talented nor skilled enough to pull these projects off.  So it&rsquo;s easy to get stuck.</p>
+
+<p>I often find myself implementing some ad-hoc animation system, spending time reinventing the frame-based or skeletal wheel, as it were.  Animation shouldn&rsquo;t take priority, especially considering that my best artwork is derivative and possibly one step above programmer art.  I should focus on creating compelling prototypes, and worry about polish later.</p>
+
+<p>To build your skillset, HGD suggests starting out by remaking historical games.  By implementing tried-and-true mechanics that are necessarily simple in scope given their ancient hardware, you can confront the problems involved in creating a full game rather than a half-finished proof-of-concept.</p>
+
+<p>By half-finished, I&rsquo;m thinking of a time where I completely abandoned a concept because I was hung-up on optimizing a tile-based room system.  Rather than making the actual gameplay fun and complete, I was focusing all of my time figuring out how to make walls.  Walls are nice in a finished game, and you could make the case that they are required constraints to achieve good gameplay, but they are not where the fun is.  As HGD and my previous post point out, you can keep trying to work on these overly ambitious projects, but your productivity will suffer.</p>
+
+<p>Best to reap the rewards that come from continued productivity and, as HGD says, pick a fight you can win.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T11:28:40-05:00</updated>
+    <updated>2014-05-31T12:28:40-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -54,7 +80,7 @@
   <entry>
     <title type="html"><![CDATA[Quarries of Scred Roadmap]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap/"/>
-    <updated>2014-05-24T15:49:08-05:00</updated>
+    <updated>2014-05-24T16:49:08-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap</id>
     <content type="html"><![CDATA[<p>The <a href="http://darkestkale.itch.io/quarries-of-scred">Quarries of Scred</a> <a href="https://twitter.com/darkestkale">developer</a> released an image showing the overview of Scred&rsquo;s 14-day game development.  I find it informative for a couple of reasons.  First it&rsquo;s not limited to the core features of the game, Kale&rsquo;s also included public relations and marketing information.  Second, the fact that it&rsquo;s incomplete shows how Kale&rsquo;s prioritized critical elements of the game.</p>
 
@@ -112,7 +138,7 @@
   <entry>
     <title type="html"><![CDATA[Follow-up to the centrality of caves]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/"/>
-    <updated>2014-05-10T10:27:49-05:00</updated>
+    <updated>2014-05-10T11:27:49-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves</id>
     <content type="html"><![CDATA[<p>My <a href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/">post last week</a> about caves struck a nerve.  I received a lot of encouraging retweets and favorites.  I also received some great feedback.</p>
 
@@ -135,7 +161,7 @@
   <entry>
     <title type="html"><![CDATA[Why are caves central to so many games?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/"/>
-    <updated>2014-05-03T09:46:11-05:00</updated>
+    <updated>2014-05-03T10:46:11-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games</id>
     <content type="html"><![CDATA[<p>On twitter, <a href="https://twitter.com/psysal">@psysal</a> posed this question to the game dev community:</p>
 
@@ -182,95 +208,6 @@
 <h2>Coda</h2>
 
 <p>It&rsquo;s intriguing that caves are such a fixture in the established vocabulary of game design.  The three features highlighted in this post make it clear that caves remain a useful game design pattern because they serve an essential purpose in the ludic lexicon of games.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
-    <updated>2014-04-26T09:47:18-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
-
-<p>The existing Rhizome documentation shows simple examples for labeling the nodes of a directed graph.  In order to show the relationship between nodes on the graph, I&rsquo;d like to also label the edges, or the arrows connecting the nodes.</p>
-
-<p>Rhizome provides a keyword argument <code>:edge-&gt;descriptor</code> to most of its functions.  Consulting the source code and the tests for the Rhizome package, I learned that the functions expect <code>:edge-&gt;descriptor</code> to be a function accepting two arguments for each edge: <code>src</code>, the source node, and <code>dst</code>, the destination node.  In order to label the edges, the anonymous function I&rsquo;m binding to <code>:edge-&gt;descriptor</code> will return a dictionary containing the key <code>:label</code> and the value for the edge&rsquo;s label.</p>
-
-<p>Here&rsquo;s an example using the simple graph from the Rhizome documentation:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="o">&amp;</span><span class="nv">lsquo</span><span class="c1">;rhizome.viz)&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="k">def </span><span class="nv">g&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">{</span><span class="ss">:a</span> <span class="p">[</span><span class="ss">:b</span> <span class="ss">:c</span><span class="p">]</span>
-</span><span class='line'> <span class="ss">:b</span> <span class="p">[</span><span class="ss">:c</span><span class="p">]</span>
-</span><span class='line'> <span class="ss">:c</span> <span class="p">[</span><span class="ss">:a</span><span class="p">]})</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nf">view-graph</span> <span class="p">(</span><span class="nb">keys </span><span class="nv">g</span><span class="p">)</span> <span class="nv">g&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>        <span class="ss">:node-</span><span class="o">&amp;</span><span class="nv">gt</span><span class="c1">;descriptor (fn [n] {:label n}))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p><img src="/images/assets/graph-unlabeled-edges.png"></p>
-
-<p>Now, I&rsquo;ll use a dictionary of dictionaries to associate the source and destination nodes with a label for each edge.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">g-edges</span>
-</span><span class='line'>  <span class="p">{</span><span class="ss">:a</span> <span class="p">{</span><span class="ss">:b</span> <span class="ss">:makes&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>   <span class="ss">:c</span> <span class="ss">:takes</span><span class="p">}</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>   <span class="ss">:b</span> <span class="p">{</span><span class="ss">:c</span> <span class="ss">:takes</span><span class="p">}</span>
-</span><span class='line'>   <span class="ss">:c</span> <span class="p">{</span><span class="ss">:a</span> <span class="ss">:makes</span><span class="p">}})</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nf">view-graph</span> <span class="p">(</span><span class="nb">keys </span><span class="nv">g</span><span class="p">)</span> <span class="nv">g&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>        <span class="ss">:node-</span><span class="o">&amp;</span><span class="nv">gt</span><span class="c1">;descriptor (fn [n] {:label n})</span>
-</span><span class='line'>        <span class="ss">:edge-</span><span class="o">&amp;</span><span class="nv">gt</span><span class="c1">;descriptor (fn [src dst] {:label (dst (src g-edges))}))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p><img src="/images/assets/graph-labeled-edges.png"></p>
-
-<p>I&rsquo;ve submitted a <a href="https://github.com/ztellman/rhizome/pull/8">pull request</a> to Rhizome to add this example to the documentation.</p>
 ]]></content>
   </entry>
   
