@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-06-07T15:06:24-04:00</updated>
+  <updated>2014-06-21T10:23:43-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,24 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Playable Call For Papers]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/"/>
+    <updated>2014-06-21T10:20:23-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers</id>
+    <content type="html"><![CDATA[<p><a href="http://www.twitter.com/mtrc">Michael Cook</a> made a &ldquo;needlessly interactive&rdquo; <a href="http://www.exag.org/playablecfp/">playable call for papers</a> for the <a href="http://www.exag.org/">Experimental AI in Games conference</a>, taking place in October in Raleigh, NC.  It&rsquo;s a minimally expressive Twine story, with really one simple interactive experience of role-playing the interaction a recipient feels upon receiving yet another CFP email, <em>click</em>.</p>
+
+<p>It&rsquo;s a tricky thing to get right.  While it makes sense for a game-related conference to have a text adventure announcement, I don&rsquo;t want to have to play a game of Frogger to purchase movie tickets from the automated kiosk at the movie theater.  It would be nice if the playable CFP included prominent and consistent links to exit the game, in order to read the ordinary CFP on the conference website.</p>
+
+<p>I believe the motivating idea is sound.  Turning banal daily routine into a playful interactive experience is a worthy goal for game design.  It has the ability to startle the player into paying more attention to mundane activities, which I think is the intended goal&mdash;for a CFP to stand out from piles of other CFP emails.</p>
+
+<p>Let me know if you&rsquo;ve come across games in strange places.  I don&rsquo;t mean finding a boxed copy of Mario Kart at the flea market&mdash;I mean conceptually strange places.  Hit me up on twitter if you&rsquo;ve got ideas like this to discuss, because I think this approach of creating small play experiences to &ldquo;gamify&rdquo; mundane tasks is an emerging theme of design.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Why you should start simple]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T14:58:34-04:00</updated>
+    <updated>2014-06-07T13:58:34-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
 
@@ -42,7 +57,7 @@
   <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T12:28:40-04:00</updated>
+    <updated>2014-05-31T11:28:40-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -80,7 +95,7 @@
   <entry>
     <title type="html"><![CDATA[Quarries of Scred Roadmap]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap/"/>
-    <updated>2014-05-24T16:49:08-04:00</updated>
+    <updated>2014-05-24T15:49:08-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap</id>
     <content type="html"><![CDATA[<p>The <a href="http://darkestkale.itch.io/quarries-of-scred">Quarries of Scred</a> <a href="https://twitter.com/darkestkale">developer</a> released an image showing the overview of Scred&rsquo;s 14-day game development.  I find it informative for a couple of reasons.  First it&rsquo;s not limited to the core features of the game, Kale&rsquo;s also included public relations and marketing information.  Second, the fact that it&rsquo;s incomplete shows how Kale&rsquo;s prioritized critical elements of the game.</p>
 
@@ -138,7 +153,7 @@
   <entry>
     <title type="html"><![CDATA[Follow-up to the centrality of caves]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/"/>
-    <updated>2014-05-10T11:27:49-04:00</updated>
+    <updated>2014-05-10T10:27:49-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves</id>
     <content type="html"><![CDATA[<p>My <a href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/">post last week</a> about caves struck a nerve.  I received a lot of encouraging retweets and favorites.  I also received some great feedback.</p>
 
@@ -155,59 +170,6 @@
 <p>I view this example as a manifestation of the fundamental reduction in degrees of freedom of play achieved by the interiority, and thus, linearity of caves.  The fact that there are more walls, and therefore fewer possible places for the player to go, allows for the designer, using careful construction, to communicate intent to the player through the environment itself.  I don&rsquo;t mean to say here that such communication is impossible outside of caves, just that caves are one simple and straightforward way to achieve this constrained, communicative sort of design.  This vocabulary of design showed up early on in the history of games, it worked, and it has persisted.</p>
 
 <p>Thanks and shout outs to <a href="https://twitter.com/sleepytearyeyed">Paul Diaz</a>, whose feedback inspired this follow-up post.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Why are caves central to so many games?]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/"/>
-    <updated>2014-05-03T10:46:11-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games</id>
-    <content type="html"><![CDATA[<p>On twitter, <a href="https://twitter.com/psysal">@psysal</a> posed this question to the game dev community:</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p>You can see all the responses by following the link to the original tweet.</p>
-
-<p>The consensus is that caves are essential features for games for three reasons.</p>
-
-<ol>
-<li>Linearity</li>
-<li>Repeatability of composition</li>
-<li>Curiosity</li>
-</ol>
-
-
-<!--more-->
-
-
-<h2>Caves are linear</h2>
-
-<p>In terms of their schematic representation in the design of a game, caves can boil down to one enclosed &lsquo;area&rsquo; or room with a single entrance.  This doesn&rsquo;t account for some of the amazing environments in intricately designed games like <a href="http://en.wikipedia.org/wiki/Super_Metroid">Super Metroid</a>, recently broken down by <a href="https://twitter.com/gamespite">@gamespite</a> in <a href="http://www.anatomyofgames.com/2013/12/08/the-anatomy-of-super-metroid-01-moving-pictures/">the Anatomy of Games series</a>.</p>
-
-<p>But, at the most basic level, a cave must have a mouth, or an entrance, and at least one room.  This simplifies the representation of the critical path of play, because once the cave has been fully explored there are no possible branches that the player could have taken to leave the cave.  The single entrance is also a single exit.  Even if there are many internal rooms, this representation holds true, as long as there are ultimately no &lsquo;back doors&rsquo; out of the cave.</p>
-
-<p>The designer can rely on the fact that once the player has received any rewards for exploring the cave, the player can reasonably be expected to pop out of the entrance of the cave looking for the next available challenge surmountable with any freshly acquired toys.</p>
-
-<h2>Caves offer repeatable composition</h2>
-
-<p>For whatever atavistic significance they hold in our psyches, caves do not have to rely on realistic representations in game design.  Any old hole in some rock will almost invariably create a believable sense of cave-ness.  Yeah, I said cave-ness. You know cave-ocity, general cave-itude.</p>
-
-<p>Since we don&rsquo;t spend much time in caves, day-to-day, we don&rsquo;t hold them to the same level of fidelity to which we would hold, say, buildings or automobiles.  The same architectural details necessary to represent a house in a video game can be painted in broad strokes to represent a cave.</p>
-
-<p>In tile-based games, this means that a designer can reuse tiles over and over again to craft a general shape without worrying too much about players noticing, or being bothered by, the similarities.  Caves are thus more defined by the space created rather than the graphics used to define them.  This sense of space is what drives the third essential feature of caves in game design, a sense of curiosity, the drive to explore.</p>
-
-<h2>Caves are inherently curious</h2>
-
-<p>I&rsquo;m not sure I buy the argument that we have some evolutionary instinct that drives us to explore caves, but the fact remains.  Something about caves begs exploration.</p>
-
-<p>Call it the <em>Will to Spelunk</em>.</p>
-
-<p>Once a space has been created, the player wants to explore every nook and cranny for collectible power ups or items.  Certainly the rewards are powerful motivators.  But there is something to the exploration for exploration&rsquo;s sake.  Simply completing one&rsquo;s mental map of the space becomes a goal in itself.</p>
-
-<h2>Coda</h2>
-
-<p>It&rsquo;s intriguing that caves are such a fixture in the established vocabulary of game design.  The three features highlighted in this post make it clear that caves remain a useful game design pattern because they serve an essential purpose in the ludic lexicon of games.</p>
 ]]></content>
   </entry>
   
