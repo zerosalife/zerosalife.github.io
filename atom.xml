@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-06-21T10:23:43-05:00</updated>
+  <updated>2014-07-19T10:44:59-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
+    <updated>2014-07-19T10:42:35-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
+    <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
+
+<p>One quick note before we go on.  It looks like <em>Jodorowsky&rsquo;s Dune</em> has hit Netflix on DVD, and seems a likely candidate to be available for streaming.  So you can check it out for yourself to see if you agree with my take.</p>
+
+<!--more-->
+
+
+<h2>Pitching</h2>
+
+<p>Jodorowsky looks back, with good-natured humor, on a massively overambitious project for its time.  Aside from the amazing concept art and avant-garde stylings, I took away two messages from the documentary that I would like to share.  The first deals with the art of pitching your ideas and the second with locating oneself in close to proximity to the best and the brightest potential collaborators.</p>
+
+<p>Jodorowsky set out to create a huge book&mdash;more of a cinder block.  It&rsquo;s probably what we could call a design bible today, which would be delivered to production companies in order to secure funding.  By creating a book of storyboards and character designs, Jodorowsky wanted to show that the project was large in scope but feasible, because it had been so intricately planned.</p>
+
+<p>Jodorowsky reached out to a variety of concept artists to help with the design of the movie.  To visual and technical artists, Jodorowsky made impassioned pitches, claiming that they would become &ldquo;spiritual warriors&rdquo; for their collective vision, and implored them to come live and work (for little or no pay) in Paris.</p>
+
+<p>What stands out is the strength of Jodorowsky&rsquo;s pitch.  At a time when artists like <a href="http://www.chrisfossart.com/">Chris Foss</a>, <a href="http://en.wikipedia.org/wiki/Jean_Giraud">Moebius</a>, and <a href="http://www.hrgiger.com/">H.R. Giger</a> were each becoming established in their own rights, Jodorowsky was able, through the sheer strength of an imagined story, to convince them to devote years of effort to the project.  That takes a lot of gumption.  It didn&rsquo;t hurt that Jodorowsky had a strong track record of visually and thematically impressive avant-garde cinema.  Even still, Jodorowsky is great at selling the idea, and that is something that game designers must do, to communicate ideas to others in order to capitalize on the individual talents and assemble a great team.</p>
+
+<h2>Placement</h2>
+
+<p>The second message I took away deals with putting yourself into the right place at the right time.  It&rsquo;s also about leveraging that placement to connect and collaborate.</p>
+
+<p>The documentary showed a curious problem of the movie&rsquo;s mid-Seventies inception.  How do you find people to collaborate with, or even people at all, before the Internet?</p>
+
+<p>The solution: go to Paris.  That&rsquo;s where all the intelligentsia congregate.  This was more or less true for several hundred years before the Internet.</p>
+
+<p>If you want <a href="http://en.wikipedia.org/wiki/Salvador_Dal%25C3%25AD">Salvador Dali</a> in your movie, playing the <a href="http://dune.wikia.com/wiki/Padishah_Emperor">Emperor of the Known Universe</a>, go to Paris and you&rsquo;ll probably run into Dali.</p>
+
+<p>Now we all live in our decentralized <a href="http://en.wikipedia.org/wiki/Temporary_Autonomous_Zone">temporary autonomous zones</a>.  But for as much as they can fragment, social media have the ability to connect disparate artists and thinkers.</p>
+
+<p>I think that Twitter is a platform that serves as a modern Paris, for like-minded people to seek each other out and communicate.  Go congregate with the intelligentsia and let your ideas speak for themselves.  Hit me up on the proverbial tweets, and let me hear your ideas and pitches.  I&rsquo;m constantly working on mine&mdash;writing here, trying to refine my skills.  Maybe we are both looking for the talents that we can provide.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Playable Call For Papers]]></title>
@@ -591,102 +629,6 @@ developers, as well as designers and fans.</p>
 </ol>
 </div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Some thoughts on Attack of the Friday Monsters]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/"/>
-    <updated>2014-02-01T08:32:40-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s hard to say anything new about Attack of the Friday Monsters, a
-game that splashed on the scene months ago.  The work of its creator
-was lovingly lauded by <a href="https://twitter.com/rdbaaa">Ray Barnholt</a>&#x2013;a noted <em><a href="http://en.wikipedia.org/wiki/Boku_no_Natsuyasumi">Boku no Natsuyasumi</a></em>
-fanatic&#x2013;in such a reverent way in his <a href="http://scroll.vg/issues/10">SCROLL magazine</a> that it&rsquo;s
-almost sacrilegious to try to write more.  So instead of doing a
-point-by-point review, I&rsquo;ll mention some details that stand out to me,
-personally.</p>
-
-<p>I played through most of Attack of the Friday Monsters on a flight the
-day after I watched Miyazaki&rsquo;s <a href="http://en.wikipedia.org/wiki/Arrietty">Secret World of Arrietty</a>.  Sure one had
-beautiful water colors and amazing visual tricks mimicking real
-camerawork and the other used pre-rendered backgrounds with blocky
-polygonal actors on the stage, but these art styles complimented one
-another.  They didn&rsquo;t clash.</p>
-
-<p><a href="http://zerosalife.github.io/images/assets/aotfm.JPG"><img class="center" src="http://zerosalife.github.io/images/assets/aotfm.JPG" width="320" height="320"></a></p>
-
-<p>I was struck by the ambient sounds that bring the pre-rendered
-backgrounds and polygonal characters to life. The periodic train
-sounds, presaging the arrival of an in-engine rendered train&#x2013;sort of
-quirky and quaint with today&rsquo;s game engines powerful enough to render
-both background and foreground objects&#x2013;remind me of a previous
-exposure to Japanese culture: the first time I watched <a href="http://en.wikipedia.org/wiki/Neon_Genesis_Evangelion">Neon Genesis
-Evangelion</a> as a teenager.  There are the ubiquitous cricket or cicada
-sounds that were also present in Eva, but for me, they hearken back to
-a youth spent in the rural South.  The drone of cicadas in the sticky
-summer heat reminds me of falling asleep in a Mississippi home, of
-walking into cool woods after standing in a sunny meadow.</p>
-
-<p>The whole game engine is full of quirks and reminders of the PS1 era
-of gaming.  But one of the mechanics seems rather novel, an addition
-seemingly for its own sake, with little influence on actual plot or
-gameplay.  I&rsquo;m talking about the spell casting mechanic, reminiscent
-of games children used to play in 70s Japan, the time in which Attack
-of the Friday Monsters takes place.</p>
-
-<p>If you win the sometimes annoying, somewhat forgettable,
-rock-paper-scissors card game, fueled by collectibles strewn
-throughout the world, you gain the ability to cast spells on your
-buddies, knocking them down.  It has no bearing on the outcome of the
-story.  The spell system is simply decoration that deepens the story
-by providing a more complete world, accurately capturing what it feels
-like to grow up as a child in Japan during the 70s.</p>
-
-<p>You are allowed to pick, and reorder, the phrases of the spell your
-character speaks.  This type of cosmetic customization is typical in
-modern games, and in Attack of the Friday Monsters it&rsquo;s nothing more
-than cosmetic, but it could have been used in surprising ways.</p>
-
-<p>I realized the potential depth of this mechanic during a phone
-conversation with my brother. As I told him about the spell casting,
-he mentioned a Kickstarted pen and paper RPG called <a href="http://www.magiciansrpg.com/">Magicians</a>.</p>
-
-<p>Magicians uses spells spoken in another language as both an impulse
-toward learning the language and a mechanic for determining the
-success or failure of an action. The game my brother described
-involved a Harry Potter-esque international school for magicians in
-Korea.</p>
-
-<p>To use magic, the characters, and thus the players, have to correctly
-speak Korean words&#x2013;at least with enough accuracy to satisfy the
-voice-recognition system of an online translation service.  This sets
-up the potential for a rather clever scenario in which characters&#8217;
-<em><a href="http://en.wikipedia.org/wiki/Bildungsroman">Bildungsroman</a></em> stories
-are echoed by the players&#8217; acquisition of the language.</p>
-
-<p>At present, on the 3DS, the kind of voice recognition required for
-this sort of is <a href="http://www.gamefaqs.com/boards/997781-/58911600">immature</a>.  But it&rsquo;s certainly possible on more
-powerful platforms.</p>
-
-<p>One way to exploit the 3DS, and other devices with touch interfaces,
-involves learning written language, such as Japanese <em><a href="http://en.wikipedia.org/wiki/Hiragana">hiragana</a></em> or
-<em><a href="http://en.wikipedia.org/wiki/Katakana">katakana</a></em>.  I can imagine a magic mechanic that involves correctly
-writing scrolls, where the fidelity of the player&rsquo;s calligraphic
-strokes determines the strength and efficacy of the scrolls.</p>
-
-<p>Another possible approach is to build up language comprehension by
-constructing words out of syllables.  Given several options, one would
-choose the correct syllable to complete the necessary word, in order
-to perform an action or cast a spell.  A similar sort of approach
-would work for learning syntax, completing or building a sentence with
-the appropriate words.</p>
-
-<p>Attack of the Friday Monsters is a quick experience, but the depth of
-its design has made it a memorable one.  If you&rsquo;d like to learn more
-about the game and its creator, you can check out <a href="http://scroll.vg/extras/summer-vacation-confidential/#a">this interview</a> by
-Ray Barnholt, which covers Attack of the Friday Monsters and other
-games by creator, Kaz Ayabe.</p>
 ]]></content>
   </entry>
   
