@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-07-19T10:47:03-05:00</updated>
+  <updated>2014-07-26T09:15:25-07:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,28 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Space Is Read]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
+    <updated>2014-07-26T09:08:44-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
+    <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
+
+<p>On the spectrum of play, these sorts of games are loosely analogous to Choose Your Own Adventure books.  Just as a Choose Your Own Adventure book expects the player to turn to a given page according to the rules laid out at the bottom of the pages to proceed in a consistent, logical fashion, the tropes of a visual novel require the player to interact with the game in order for the story to proceed.  A novel will proceed with the only &lsquo;player&rsquo; interaction consisting of turning to the next page.  I&rsquo;m oversimplifying the difference between <em>real choices</em>, as I would argue, Choose Your Own Adventure Books allow, and <em>mere interactivity</em>, like turning the page of a novel, but you get what I mean.</p>
+
+<p>Visual novels can have real choices and interactivity.  In this case, I&rsquo;d argue that Space Is Red is only interactive.  There are no real choices, short of figuring out the next bit to tap on in order to move the story along.  For me, it&rsquo;s the music that makes the experience gel as something more than an animated e-book.</p>
+
+<p>I don&rsquo;t mean to be presumptuous in my analysis of Space Is Red&rsquo;s gameplay, don&rsquo;t get me wrong.  I&rsquo;m not interested in arguments about merit simply based on A <strong>is</strong> a game but B <strong>isn&rsquo;t</strong>, so A is better.  I just think it&rsquo;s important to think about these sorts of things when considering the underlying design.</p>
+
+<p>I left the game looping <a href="https://soundcloud.com/postpre">PostPre&rsquo;s</a> driving soundtrack for 15 minutes, even though my first play-through lasted only 2 or 3.  Maybe that&rsquo;s the benefit of interactivity and choices, to extend and prolong the mindshare of some experience or product with the player.  I don&rsquo;t necessarily mean that in a cynical way, although the typical model of play can be subverted for more manipulative means (and, of course, it is!).</p>
+
+<p>For me, Space Is Red hit all the right notes and left me with something to think about.  That is what I call a successful gamejam game.  You can see Space Is Red and the other #spacecowboygamejam entries <a href="http://itch.io/jam/space-cowboy-jam">here</a>.  If you&rsquo;re interested in learning more about Space Is Red&rsquo;s creator <a href="http://toddluke.com/">Todd Luke</a>, you can find an interview <a href="http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php">here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
-    <updated>2014-07-19T10:42:35-05:00</updated>
+    <updated>2014-07-19T08:42:35-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
     <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
 
@@ -52,7 +71,7 @@
   <entry>
     <title type="html"><![CDATA[Playable Call For Papers]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/"/>
-    <updated>2014-06-21T10:20:23-05:00</updated>
+    <updated>2014-06-21T08:20:23-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers</id>
     <content type="html"><![CDATA[<p><a href="http://www.twitter.com/mtrc">Michael Cook</a> made a &ldquo;needlessly interactive&rdquo; <a href="http://www.exag.org/playablecfp/">playable call for papers</a> for the <a href="http://www.exag.org/">Experimental AI in Games conference</a>, taking place in October in Raleigh, NC.  It&rsquo;s a minimally expressive Twine story, with really one simple interactive experience of role-playing the interaction a recipient feels upon receiving yet another CFP email, <em>click</em>.</p>
 
@@ -67,7 +86,7 @@
   <entry>
     <title type="html"><![CDATA[Why you should start simple]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T13:58:34-05:00</updated>
+    <updated>2014-06-07T11:58:34-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
 
@@ -93,7 +112,7 @@
   <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T11:28:40-05:00</updated>
+    <updated>2014-05-31T09:28:40-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -131,7 +150,7 @@
   <entry>
     <title type="html"><![CDATA[Quarries of Scred Roadmap]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap/"/>
-    <updated>2014-05-24T15:49:08-05:00</updated>
+    <updated>2014-05-24T13:49:08-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap</id>
     <content type="html"><![CDATA[<p>The <a href="http://darkestkale.itch.io/quarries-of-scred">Quarries of Scred</a> <a href="https://twitter.com/darkestkale">developer</a> released an image showing the overview of Scred&rsquo;s 14-day game development.  I find it informative for a couple of reasons.  First it&rsquo;s not limited to the core features of the game, Kale&rsquo;s also included public relations and marketing information.  Second, the fact that it&rsquo;s incomplete shows how Kale&rsquo;s prioritized critical elements of the game.</p>
 
@@ -189,7 +208,7 @@
   <entry>
     <title type="html"><![CDATA[.gitignore for Unity projects]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/"/>
-    <updated>2014-05-17T11:48:06-05:00</updated>
+    <updated>2014-05-17T09:48:06-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects</id>
     <content type="html"><![CDATA[<p>I found a solution on the <a href="http://answers.unity3d.com/questions/369755/unity-on-github.html">Unity website</a> that pointed me toward <a href="http://t-machine.org/index.php/2012/07/03/unity-git-source-control-a-basic-gitignore/">this blogpost</a>.  But a better solution is out there.  The Double Fine Game Club&rsquo;s Bad Golf Community Edition <a href="https://github.com/Double-Fine-Game-Club/bad-golf-community-edition/blob/master/.gitignore">.gitignore</a> looks like this:</p>
 
@@ -249,7 +268,7 @@
   <entry>
     <title type="html"><![CDATA[Follow-up to the centrality of caves]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/"/>
-    <updated>2014-05-10T10:27:49-05:00</updated>
+    <updated>2014-05-10T08:27:49-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves</id>
     <content type="html"><![CDATA[<p>My <a href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/">post last week</a> about caves struck a nerve.  I received a lot of encouraging retweets and favorites.  I also received some great feedback.</p>
 
@@ -274,7 +293,7 @@
   <entry>
     <title type="html"><![CDATA[Why are caves central to so many games?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/"/>
-    <updated>2014-05-03T09:46:11-05:00</updated>
+    <updated>2014-05-03T07:46:11-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games</id>
     <content type="html"><![CDATA[<p>On twitter, <a href="https://twitter.com/psysal">@psysal</a> posed this question to the game dev community:</p>
 
@@ -329,7 +348,7 @@
   <entry>
     <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
-    <updated>2014-04-26T09:47:18-05:00</updated>
+    <updated>2014-04-26T07:47:18-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
     <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
 
@@ -394,7 +413,7 @@
   <entry>
     <title type="html"><![CDATA[styx_ebooks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T14:05:03-05:00</updated>
+    <updated>2014-04-19T12:05:03-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
     <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
 
@@ -413,7 +432,7 @@
   <entry>
     <title type="html"><![CDATA[The Fate of Adventure Games]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/"/>
-    <updated>2014-04-12T09:16:59-05:00</updated>
+    <updated>2014-04-12T07:16:59-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games</id>
     <content type="html"><![CDATA[<p>Zoyə Street wrote a <a href="https://medium.com/p/3e3c1e20cfd0">summary</a> of an interesting <a href="http://www.omnsh.org/ressources/527/histoire-formelle-du-jeu-daventure-sur-ordinateur-le-cas-de-lamerique-du-nord-de-1976">PhD thesis by Jonathan Lessard</a>.  Lessard examines the history of adventure games, to see whence they&rsquo;ve come and where they&rsquo;ve gone.  Like Street, I think this approach to thinking about video game design and genre provides useful perspective.</p>
 
@@ -428,7 +447,7 @@
   <entry>
     <title type="html"><![CDATA[Don't Fear Lack of Content]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content/"/>
-    <updated>2014-04-05T09:59:37-05:00</updated>
+    <updated>2014-04-05T07:59:37-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content</id>
     <content type="html"><![CDATA[<p>Came across a <a href="http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/">nice article</a> on <a href="http://www.egometry.com/">Ben McGraw&rsquo;s blog, Egometry</a>. Using Super Mario Bros. as a model, Ben explains why merely increasing content quantity is less desirable than increasing content substance.  The title of this post is lifted from a quote in his article.</p>
 
@@ -439,7 +458,7 @@
   <entry>
     <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
-    <updated>2014-03-29T10:04:05-05:00</updated>
+    <updated>2014-03-29T08:04:05-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
     <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
 ]]></content>
@@ -448,7 +467,7 @@
   <entry>
     <title type="html"><![CDATA[ICE ICE Baby]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/"/>
-    <updated>2014-03-22T09:17:31-05:00</updated>
+    <updated>2014-03-22T07:17:31-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby</id>
     <content type="html"><![CDATA[<p><a href="http://www.thegia.com/author/avestal/">Andrew Vestal</a> of <a href="http://www.thegia.com/">the GIA</a> wrote a <a href="http://twinery.org/">Twine</a> game for <a href="http://itch.io/jam/cyberpunk-jam">#cyberpunkjam</a> called <a href="http://www.thegia.com/avestal/iceicebaby.html">ICE ICE Baby</a>.</p>
 
@@ -463,7 +482,7 @@
   <entry>
     <title type="html"><![CDATA[Upgrading to Mavericks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/"/>
-    <updated>2014-03-15T08:03:27-05:00</updated>
+    <updated>2014-03-15T06:03:27-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks</id>
     <content type="html"><![CDATA[<p>This week I upgraded to <a href="https://www.apple.com/osx/">Mac OS X 10.9 Mavericks</a>.  To keep <a href="http://octopress.org/">octopress</a> working, I had to uninstall and reinstall <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
 
@@ -478,7 +497,7 @@
   <entry>
     <title type="html"><![CDATA[Cut it all right in two: bisect to find bugs]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/"/>
-    <updated>2014-03-08T10:25:02-06:00</updated>
+    <updated>2014-03-08T08:25:02-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs</id>
     <content type="html"><![CDATA[<p>Imagine there&rsquo;s a lion in a desert.  You need to cage the lion or you
 will be eaten.  In this example the desert is your code and the lion
@@ -512,7 +531,7 @@ you isolate the line producing the problem.</p>
   <entry>
     <title type="html"><![CDATA[What's in a name?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/01/whats-in-a-name/"/>
-    <updated>2014-03-01T12:09:41-06:00</updated>
+    <updated>2014-03-01T10:09:41-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/01/whats-in-a-name</id>
     <content type="html"><![CDATA[<p>Growing up, the seemingly interminable school-week gave way to an
 anxious car drive home from the rental store with the weekend&rsquo;s score.
@@ -546,7 +565,7 @@ an extra chance.  &ldquo;Don&rsquo;t worry, zero&rsquo;s a life.&rdquo;</p>
   <entry>
     <title type="html"><![CDATA[Setting up Emacs-like key bindings in MonoDevelop]]></title>
     <link href="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/"/>
-    <updated>2014-02-22T08:14:40-06:00</updated>
+    <updated>2014-02-22T06:14:40-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop</id>
     <content type="html"><![CDATA[<p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
 
@@ -574,7 +593,7 @@ available.</p>
   <entry>
     <title type="html"><![CDATA[Bunnies Don't Surf #flappyjam]]></title>
     <link href="http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/"/>
-    <updated>2014-02-15T08:40:03-06:00</updated>
+    <updated>2014-02-15T06:40:03-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam</id>
     <content type="html"><![CDATA[<p><img class="center" src="https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png"></p>
 
@@ -587,46 +606,6 @@ available.</p>
 <p>As I&rsquo;m sure you can see, the game is in dire need of art assets, sound assets, and some sort of high score system.  I&rsquo;ll do my best to add these, once time allows. If anyone has feedback or art design ideas, please let me know in the comments section or on Twitter.  I&rsquo;d love to hear it.</p>
 
 <p>I&rsquo;ll post updates as the game progresses, and officially submit it to <a href="http://itch.io/jam/flappyjam">#flappyjam</a> if it&rsquo;s done before the jam ends on February 24.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An in-depth tour of Tetris]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/02/08/an-in-depth-tour-of-tetris/"/>
-    <updated>2014-02-08T08:34:35-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/02/08/an-in-depth-tour-of-tetris</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png"></p>
-
-<p style="text-align:center;"> Image from <a href="http://en.wikipedia.org/wiki/Tetris">wikipedia.org</a>.</p>
-
-<p>This week I&rsquo;ve spent quite some time reading
-<a href="http://meatfighter.com/nintendotetrisai/">this article</a> on
-<a href="http://meatfighter.com/">MeatFighter.com</a>.  The article reverse
-engineers the inner-workings of
-<a href="http://en.wikipedia.org/wiki/Tetris#NES">NES Tetris</a>.  With superb
-visual aids, the author, o__1<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> , surveys the mechanics and data
-structures used to implement Tetris on the NES.  Then o__1 designs
-and implements an AI script to play Tetris with super-human speed and
-precision.  o__1 even describes how to try it at home, providing
-instructions and the necessary Lua scripts to run the AI on your own
-copy of Tetris.</p>
-
-<p>I hope to see more articles looking back on classic games with this
-tremendous attention to detail.  An older
-<a href="http://home.comcast.net/~jpittman2/pacman/pacmandossier.html">article looking at Pac-man AI</a>
-shows similar obsessive depth.  Articles like these help supplement
-our appreciation of these games as works of art by documenting the
-essential technical complexities underlying these games.  I think
-that&rsquo;s a good thing for everyone from hobby developers to professional
-developers, as well as designers and fans.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>I&rsquo;m referring to the author by the contact email listed on the website.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
 ]]></content>
   </entry>
   

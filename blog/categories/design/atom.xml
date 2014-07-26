@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-07-19T10:47:03-05:00</updated>
+  <updated>2014-07-26T09:15:25-07:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,28 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Space Is Read]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
+    <updated>2014-07-26T09:08:44-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
+    <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
+
+<p>On the spectrum of play, these sorts of games are loosely analogous to Choose Your Own Adventure books.  Just as a Choose Your Own Adventure book expects the player to turn to a given page according to the rules laid out at the bottom of the pages to proceed in a consistent, logical fashion, the tropes of a visual novel require the player to interact with the game in order for the story to proceed.  A novel will proceed with the only &lsquo;player&rsquo; interaction consisting of turning to the next page.  I&rsquo;m oversimplifying the difference between <em>real choices</em>, as I would argue, Choose Your Own Adventure Books allow, and <em>mere interactivity</em>, like turning the page of a novel, but you get what I mean.</p>
+
+<p>Visual novels can have real choices and interactivity.  In this case, I&rsquo;d argue that Space Is Red is only interactive.  There are no real choices, short of figuring out the next bit to tap on in order to move the story along.  For me, it&rsquo;s the music that makes the experience gel as something more than an animated e-book.</p>
+
+<p>I don&rsquo;t mean to be presumptuous in my analysis of Space Is Red&rsquo;s gameplay, don&rsquo;t get me wrong.  I&rsquo;m not interested in arguments about merit simply based on A <strong>is</strong> a game but B <strong>isn&rsquo;t</strong>, so A is better.  I just think it&rsquo;s important to think about these sorts of things when considering the underlying design.</p>
+
+<p>I left the game looping <a href="https://soundcloud.com/postpre">PostPre&rsquo;s</a> driving soundtrack for 15 minutes, even though my first play-through lasted only 2 or 3.  Maybe that&rsquo;s the benefit of interactivity and choices, to extend and prolong the mindshare of some experience or product with the player.  I don&rsquo;t necessarily mean that in a cynical way, although the typical model of play can be subverted for more manipulative means (and, of course, it is!).</p>
+
+<p>For me, Space Is Red hit all the right notes and left me with something to think about.  That is what I call a successful gamejam game.  You can see Space Is Red and the other #spacecowboygamejam entries <a href="http://itch.io/jam/space-cowboy-jam">here</a>.  If you&rsquo;re interested in learning more about Space Is Red&rsquo;s creator <a href="http://toddluke.com/">Todd Luke</a>, you can find an interview <a href="http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php">here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
-    <updated>2014-07-19T10:42:35-05:00</updated>
+    <updated>2014-07-19T08:42:35-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
     <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
 
@@ -52,7 +71,7 @@
   <entry>
     <title type="html"><![CDATA[Playable Call For Papers]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/"/>
-    <updated>2014-06-21T10:20:23-05:00</updated>
+    <updated>2014-06-21T08:20:23-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers</id>
     <content type="html"><![CDATA[<p><a href="http://www.twitter.com/mtrc">Michael Cook</a> made a &ldquo;needlessly interactive&rdquo; <a href="http://www.exag.org/playablecfp/">playable call for papers</a> for the <a href="http://www.exag.org/">Experimental AI in Games conference</a>, taking place in October in Raleigh, NC.  It&rsquo;s a minimally expressive Twine story, with really one simple interactive experience of role-playing the interaction a recipient feels upon receiving yet another CFP email, <em>click</em>.</p>
 
@@ -67,7 +86,7 @@
   <entry>
     <title type="html"><![CDATA[Why you should start simple]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T13:58:34-05:00</updated>
+    <updated>2014-06-07T11:58:34-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
 
@@ -93,7 +112,7 @@
   <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T11:28:40-05:00</updated>
+    <updated>2014-05-31T09:28:40-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -125,64 +144,6 @@
 <p>Unless you are Rich Hickey or&#x2013;I dunno&#x2013;Gary Gygax, simply thinking about a problem <em>a priori</em> will not result in a great game.  There is still something to be said for getting your hands dirty and iterating on a design.  However the techniques highlighted in Hickey&rsquo;s talk can be useful when you are stuck on a design problem.</p>
 
 <p>Hit me up in the comments or on the <a href="https://twitter.com/zerosalife">tweet tweet</a> if you have any great Hammock Driven Design tips that I haven&rsquo;t covered here.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Quarries of Scred Roadmap]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap/"/>
-    <updated>2014-05-24T15:49:08-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap</id>
-    <content type="html"><![CDATA[<p>The <a href="http://darkestkale.itch.io/quarries-of-scred">Quarries of Scred</a> <a href="https://twitter.com/darkestkale">developer</a> released an image showing the overview of Scred&rsquo;s 14-day game development.  I find it informative for a couple of reasons.  First it&rsquo;s not limited to the core features of the game, Kale&rsquo;s also included public relations and marketing information.  Second, the fact that it&rsquo;s incomplete shows how Kale&rsquo;s prioritized critical elements of the game.</p>
-
-<p>Rather than blatantly stealing the <a href="http://www.indiedb.com/games/quarries-of-scred/images/quarries-of-scred-roadmap-2013-11-28-01">roadmap for Quarries of Scred</a>, I&rsquo;ll give you a few seconds to go and capture an eidetic mental image.  Got it?  Great.  I guess all you cheaters who opened it another tab can follow along too.</p>
-
-<!--more-->
-
-
-<h2>Core Gameplay</h2>
-
-<p>Looking at the presumably completed &lsquo;green light&rsquo; items, Core Gameplay is almost finished.  And it should be.  Without Core Gameplay, there&rsquo;s not much game to be played.</p>
-
-<p>It looks like they have not included actual aspects of the core mechanic implementation on this roadmap.  However, they&rsquo;re using the roadmap as a method of cataloging oft-overlooked features that add polish to the final game.</p>
-
-<p>They have a milestone for implementing a persistent high score system.  This hurdle is easy to imagine, since we see it in almost every game we play.  But it can be tricky to implement in a robust and efficient manner.</p>
-
-<p>Several elements of UI are included on the roadmap.  They could be neglected in a prototype, these UI elements can make a finished game welcoming for new players and compelling enough to replay.  Info screens can clarify the world for tyros and explicitly show unique challenge states to experienced players.  Death information, like gravestones in Nethack, provides potentially entertaining feedback for the players attempting to hone their skills at the game.</p>
-
-<p>I&rsquo;m not sure whether they finished implementing rocket ship building gameplay in Quarries of Scred, but this should be a goal for every game.</p>
-
-<h2>PR</h2>
-
-<p>Marketing is an aspect of game development that is easy to overlook as an inexperienced indie or hobby gamedev with a few gamejams under your belt.  The pressure to simply finish a game, any shippable game, overshadows what to do with it once it&rsquo;s released.</p>
-
-<p>Setting up an IndieDB page to track the progress is a great idea.  And, since it doesn&rsquo;t necessarily require a finished product, it can be done early on in the development process.  The priorities of creating an IndieDB Icon, Header Image, and Preview Image show Kale&rsquo;s clearly interested in branding Scred as a marketable indie title.</p>
-
-<p>I can confirm that a <a href="https://www.youtube.com/watch?v%3DBrZ_POiKJO4">Trailer</a>, <a href="http://darkestkale.itch.io/quarries-of-scred">Website</a>, and <a href="http://img.itch.io/aW1hZ2UvODc0LzQ0MTIucG5n/original/Npan5L.png">Box Art</a> came along in due time.  The inclusion of Box Art in a download only indie title is particularly charming, even in an atmosphere awash with these things, the art for Scred&rsquo;s box is fun and quaint, in a good way.</p>
-
-<h2>Further Content</h2>
-
-<p>Further Content looks like features that would directly build on those already implemented in the game.  Rather than being classified as Fluff, these extra features would complement the content and features already implemented in the game.</p>
-
-<p>It&rsquo;s important to have the courage to &lsquo;kill your darlings&rsquo; in cases like this.  Some of the items under Fluff like pretty important to making a good game, but if they are too demanding to fit in the schedule allotted to create the game, they have to go.</p>
-
-<p>One of the buildings has made it in.  And I think the second building is in the final game. Not sure whether the Rare Flower survived.</p>
-
-<h2>Bookending</h2>
-
-<p>The Bookending category looks like a lot of the UI improvements I talked about above.  They certainly improve players' experience, but they may not be absolutely necessary to get the game out the door.</p>
-
-<p>I can only speculate that configurable keys are highlighted in gray because it would be silly not to include them.  For that matter, everything except troubleshooting info adds delicious spice to the well-seasoned dish that the Core Gameplay milestones create.</p>
-
-<h2>Fluff</h2>
-
-<p>It looks like the Fluff category represents additional features that aren&rsquo;t required to make a working game.  The ability to select a seed is probably a new system that requires designing and implementing, much like the UI stuff in the Bookending category.  New Sprites and Death Animation are probably a similar story.</p>
-
-<p>You may argue that music and sound are critical for a completed game.  But if you are not a musically inclined person, the shear amount of work required to get something that sounds like the death-throes of a thousand Gameboys (note: this is not a good thing) could double your production time.  The New Sprites mentioned in the previous paragraph are probably a similar case of requiring too much time that could be more productively devoted elsewhere in the project.</p>
-
-<h2>Closing Thoughts</h2>
-
-<p>This kind of frank openness about game design is unusual to get prior to the publication of a game.  It&rsquo;s really great to see the design documents behind a game, even if it comes out years after release.  It&rsquo;s especially informative to see an in-progress version where the developer is unafraid to lay the goals out there, to show where the project succeeds and possibly falls short.</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: game | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/game/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-07-19T10:47:03-05:00</updated>
+  <updated>2014-07-26T09:15:25-07:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,28 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Space Is Read]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
+    <updated>2014-07-26T09:08:44-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
+    <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
+
+<p>On the spectrum of play, these sorts of games are loosely analogous to Choose Your Own Adventure books.  Just as a Choose Your Own Adventure book expects the player to turn to a given page according to the rules laid out at the bottom of the pages to proceed in a consistent, logical fashion, the tropes of a visual novel require the player to interact with the game in order for the story to proceed.  A novel will proceed with the only &lsquo;player&rsquo; interaction consisting of turning to the next page.  I&rsquo;m oversimplifying the difference between <em>real choices</em>, as I would argue, Choose Your Own Adventure Books allow, and <em>mere interactivity</em>, like turning the page of a novel, but you get what I mean.</p>
+
+<p>Visual novels can have real choices and interactivity.  In this case, I&rsquo;d argue that Space Is Red is only interactive.  There are no real choices, short of figuring out the next bit to tap on in order to move the story along.  For me, it&rsquo;s the music that makes the experience gel as something more than an animated e-book.</p>
+
+<p>I don&rsquo;t mean to be presumptuous in my analysis of Space Is Red&rsquo;s gameplay, don&rsquo;t get me wrong.  I&rsquo;m not interested in arguments about merit simply based on A <strong>is</strong> a game but B <strong>isn&rsquo;t</strong>, so A is better.  I just think it&rsquo;s important to think about these sorts of things when considering the underlying design.</p>
+
+<p>I left the game looping <a href="https://soundcloud.com/postpre">PostPre&rsquo;s</a> driving soundtrack for 15 minutes, even though my first play-through lasted only 2 or 3.  Maybe that&rsquo;s the benefit of interactivity and choices, to extend and prolong the mindshare of some experience or product with the player.  I don&rsquo;t necessarily mean that in a cynical way, although the typical model of play can be subverted for more manipulative means (and, of course, it is!).</p>
+
+<p>For me, Space Is Red hit all the right notes and left me with something to think about.  That is what I call a successful gamejam game.  You can see Space Is Red and the other #spacecowboygamejam entries <a href="http://itch.io/jam/space-cowboy-jam">here</a>.  If you&rsquo;re interested in learning more about Space Is Red&rsquo;s creator <a href="http://toddluke.com/">Todd Luke</a>, you can find an interview <a href="http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php">here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[styx_ebooks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T14:05:03-05:00</updated>
+    <updated>2014-04-19T12:05:03-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
     <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
 
@@ -35,7 +54,7 @@
   <entry>
     <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
-    <updated>2014-03-29T10:04:05-05:00</updated>
+    <updated>2014-03-29T08:04:05-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
     <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
 ]]></content>
@@ -44,7 +63,7 @@
   <entry>
     <title type="html"><![CDATA[ICE ICE Baby]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/"/>
-    <updated>2014-03-22T09:17:31-05:00</updated>
+    <updated>2014-03-22T07:17:31-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby</id>
     <content type="html"><![CDATA[<p><a href="http://www.thegia.com/author/avestal/">Andrew Vestal</a> of <a href="http://www.thegia.com/">the GIA</a> wrote a <a href="http://twinery.org/">Twine</a> game for <a href="http://itch.io/jam/cyberpunk-jam">#cyberpunkjam</a> called <a href="http://www.thegia.com/avestal/iceicebaby.html">ICE ICE Baby</a>.</p>
 
@@ -59,7 +78,7 @@
   <entry>
     <title type="html"><![CDATA[Bunnies Don't Surf #flappyjam]]></title>
     <link href="http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/"/>
-    <updated>2014-02-15T08:40:03-06:00</updated>
+    <updated>2014-02-15T06:40:03-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam</id>
     <content type="html"><![CDATA[<p><img class="center <a" src="href="https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png">https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png</a>"></p>
 

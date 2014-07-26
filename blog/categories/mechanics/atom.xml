@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-07-19T10:47:03-05:00</updated>
+  <updated>2014-07-26T09:15:25-07:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,28 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Space Is Read]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
+    <updated>2014-07-26T09:08:44-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
+    <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
+
+<p>On the spectrum of play, these sorts of games are loosely analogous to Choose Your Own Adventure books.  Just as a Choose Your Own Adventure book expects the player to turn to a given page according to the rules laid out at the bottom of the pages to proceed in a consistent, logical fashion, the tropes of a visual novel require the player to interact with the game in order for the story to proceed.  A novel will proceed with the only &lsquo;player&rsquo; interaction consisting of turning to the next page.  I&rsquo;m oversimplifying the difference between <em>real choices</em>, as I would argue, Choose Your Own Adventure Books allow, and <em>mere interactivity</em>, like turning the page of a novel, but you get what I mean.</p>
+
+<p>Visual novels can have real choices and interactivity.  In this case, I&rsquo;d argue that Space Is Red is only interactive.  There are no real choices, short of figuring out the next bit to tap on in order to move the story along.  For me, it&rsquo;s the music that makes the experience gel as something more than an animated e-book.</p>
+
+<p>I don&rsquo;t mean to be presumptuous in my analysis of Space Is Red&rsquo;s gameplay, don&rsquo;t get me wrong.  I&rsquo;m not interested in arguments about merit simply based on A <strong>is</strong> a game but B <strong>isn&rsquo;t</strong>, so A is better.  I just think it&rsquo;s important to think about these sorts of things when considering the underlying design.</p>
+
+<p>I left the game looping <a href="https://soundcloud.com/postpre">PostPre&rsquo;s</a> driving soundtrack for 15 minutes, even though my first play-through lasted only 2 or 3.  Maybe that&rsquo;s the benefit of interactivity and choices, to extend and prolong the mindshare of some experience or product with the player.  I don&rsquo;t necessarily mean that in a cynical way, although the typical model of play can be subverted for more manipulative means (and, of course, it is!).</p>
+
+<p>For me, Space Is Red hit all the right notes and left me with something to think about.  That is what I call a successful gamejam game.  You can see Space Is Red and the other #spacecowboygamejam entries <a href="http://itch.io/jam/space-cowboy-jam">here</a>.  If you&rsquo;re interested in learning more about Space Is Red&rsquo;s creator <a href="http://toddluke.com/">Todd Luke</a>, you can find an interview <a href="http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php">here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Why you should start simple]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T13:58:34-05:00</updated>
+    <updated>2014-06-07T11:58:34-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
 
@@ -42,7 +61,7 @@
   <entry>
     <title type="html"><![CDATA[styx_ebooks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T14:05:03-05:00</updated>
+    <updated>2014-04-19T12:05:03-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
     <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
 
@@ -61,7 +80,7 @@
   <entry>
     <title type="html"><![CDATA[Don't Fear Lack of Content]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content/"/>
-    <updated>2014-04-05T09:59:37-05:00</updated>
+    <updated>2014-04-05T07:59:37-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content</id>
     <content type="html"><![CDATA[<p>Came across a <a href="http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/">nice article</a> on <a href="http://www.egometry.com/">Ben McGraw&rsquo;s blog, Egometry</a>. Using Super Mario Bros. as a model, Ben explains why merely increasing content quantity is less desirable than increasing content substance.  The title of this post is lifted from a quote in his article.</p>
 
@@ -72,7 +91,7 @@
   <entry>
     <title type="html"><![CDATA[An in-depth tour of Tetris]]></title>
     <link href="http://zerosalife.github.io/blog/2014/02/08/an-in-depth-tour-of-tetris/"/>
-    <updated>2014-02-08T08:34:35-06:00</updated>
+    <updated>2014-02-08T06:34:35-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/08/an-in-depth-tour-of-tetris</id>
     <content type="html"><![CDATA[<p><img class="center <a" src="href="http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png">http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png</a>"></p>
 
@@ -106,102 +125,6 @@ developers, as well as designers and fans.</p>
 </ol>
 </div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Some thoughts on Attack of the Friday Monsters]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/"/>
-    <updated>2014-02-01T08:32:40-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s hard to say anything new about Attack of the Friday Monsters, a
-game that splashed on the scene months ago.  The work of its creator
-was lovingly lauded by <a href="https://twitter.com/rdbaaa">Ray Barnholt</a>&#x2013;a noted <em><a href="http://en.wikipedia.org/wiki/Boku_no_Natsuyasumi">Boku no Natsuyasumi</a></em>
-fanatic&#x2013;in such a reverent way in his <a href="http://scroll.vg/issues/10">SCROLL magazine</a> that it&rsquo;s
-almost sacrilegious to try to write more.  So instead of doing a
-point-by-point review, I&rsquo;ll mention some details that stand out to me,
-personally.</p>
-
-<p>I played through most of Attack of the Friday Monsters on a flight the
-day after I watched Miyazaki&rsquo;s <a href="http://en.wikipedia.org/wiki/Arrietty">Secret World of Arrietty</a>.  Sure one had
-beautiful water colors and amazing visual tricks mimicking real
-camerawork and the other used pre-rendered backgrounds with blocky
-polygonal actors on the stage, but these art styles complimented one
-another.  They didn&rsquo;t clash.</p>
-
-<p><a href="/images/assets/aotfm.JPG"><img class="center" src="/images/assets/aotfm.JPG" width="320" height="320"></a></p>
-
-<p>I was struck by the ambient sounds that bring the pre-rendered
-backgrounds and polygonal characters to life. The periodic train
-sounds, presaging the arrival of an in-engine rendered train&#x2013;sort of
-quirky and quaint with today&rsquo;s game engines powerful enough to render
-both background and foreground objects&#x2013;remind me of a previous
-exposure to Japanese culture: the first time I watched <a href="http://en.wikipedia.org/wiki/Neon_Genesis_Evangelion">Neon Genesis
-Evangelion</a> as a teenager.  There are the ubiquitous cricket or cicada
-sounds that were also present in Eva, but for me, they hearken back to
-a youth spent in the rural South.  The drone of cicadas in the sticky
-summer heat reminds me of falling asleep in a Mississippi home, of
-walking into cool woods after standing in a sunny meadow.</p>
-
-<p>The whole game engine is full of quirks and reminders of the PS1 era
-of gaming.  But one of the mechanics seems rather novel, an addition
-seemingly for its own sake, with little influence on actual plot or
-gameplay.  I&rsquo;m talking about the spell casting mechanic, reminiscent
-of games children used to play in 70s Japan, the time in which Attack
-of the Friday Monsters takes place.</p>
-
-<p>If you win the sometimes annoying, somewhat forgettable,
-rock-paper-scissors card game, fueled by collectibles strewn
-throughout the world, you gain the ability to cast spells on your
-buddies, knocking them down.  It has no bearing on the outcome of the
-story.  The spell system is simply decoration that deepens the story
-by providing a more complete world, accurately capturing what it feels
-like to grow up as a child in Japan during the 70s.</p>
-
-<p>You are allowed to pick, and reorder, the phrases of the spell your
-character speaks.  This type of cosmetic customization is typical in
-modern games, and in Attack of the Friday Monsters it&rsquo;s nothing more
-than cosmetic, but it could have been used in surprising ways.</p>
-
-<p>I realized the potential depth of this mechanic during a phone
-conversation with my brother. As I told him about the spell casting,
-he mentioned a Kickstarted pen and paper RPG called <a href="http://www.magiciansrpg.com/">Magicians</a>.</p>
-
-<p>Magicians uses spells spoken in another language as both an impulse
-toward learning the language and a mechanic for determining the
-success or failure of an action. The game my brother described
-involved a Harry Potter-esque international school for magicians in
-Korea.</p>
-
-<p>To use magic, the characters, and thus the players, have to correctly
-speak Korean words&#x2013;at least with enough accuracy to satisfy the
-voice-recognition system of an online translation service.  This sets
-up the potential for a rather clever scenario in which characters'
-<em><a href="http://en.wikipedia.org/wiki/Bildungsroman">Bildungsroman</a></em> stories
-are echoed by the players' acquisition of the language.</p>
-
-<p>At present, on the 3DS, the kind of voice recognition required for
-this sort of is <a href="http://www.gamefaqs.com/boards/997781-/58911600">immature</a>.  But it&rsquo;s certainly possible on more
-powerful platforms.</p>
-
-<p>One way to exploit the 3DS, and other devices with touch interfaces,
-involves learning written language, such as Japanese <em><a href="http://en.wikipedia.org/wiki/Hiragana">hiragana</a></em> or
-<em><a href="http://en.wikipedia.org/wiki/Katakana">katakana</a></em>.  I can imagine a magic mechanic that involves correctly
-writing scrolls, where the fidelity of the player&rsquo;s calligraphic
-strokes determines the strength and efficacy of the scrolls.</p>
-
-<p>Another possible approach is to build up language comprehension by
-constructing words out of syllables.  Given several options, one would
-choose the correct syllable to complete the necessary word, in order
-to perform an action or cast a spell.  A similar sort of approach
-would work for learning syntax, completing or building a sentence with
-the appropriate words.</p>
-
-<p>Attack of the Friday Monsters is a quick experience, but the depth of
-its design has made it a memorable one.  If you&rsquo;d like to learn more
-about the game and its creator, you can check out <a href="http://scroll.vg/extras/summer-vacation-confidential/#a">this interview</a> by
-Ray Barnholt, which covers Attack of the Friday Monsters and other
-games by creator, Kaz Ayabe.</p>
 ]]></content>
   </entry>
   
