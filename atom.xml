@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-07-26T09:20:43-07:00</updated>
+  <updated>2014-08-02T12:55:25-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,24 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Static and Dynamic Colliders in Unity]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity/"/>
+    <updated>2014-08-02T12:54:15-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity</id>
+    <content type="html"><![CDATA[<p>According to the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">Ray Wenderlich Unity 2D tutorial</a> by <a href="http://www.raywenderlich.com/u/clapollo">Christopher LaPollo</a>, Unity&rsquo;s physics engine builds a simulation based on the <a href="http://docs.unity3d.com/Manual/CollidersOverview.html">Colliders</a> present in a scene.  If some those <code>Colliders</code> are declared to be <code>static</code>, then the entire simulation is rebuilt when those colliders move.  Of course, rebuilding a physics simulation when it&rsquo;s unnecessary is inefficient.  By declaring objects to have <code>dynamic</code> <code>Colliders</code>, the physics engine does not have to rebuild the simulation at runtime, that is to say when the game is running.</p>
+
+<p>As with a lot of things in Unity, it is not immediately apparent how you should go about declaring a collider to be <code>static</code> or <code>dynamic</code>.  It would be great if there were just a checkbox in the <code>Collider</code> component.  But there isn&rsquo;t.  It appears that there are some complex things going on under the hood that preclude a simple declaration.</p>
+
+<p>By default a <code>GameObject</code> with a <code>Collider</code> component attached is treated as <code>static</code> by Unity&rsquo;s physics engine.  This would work for a non-moving wall or impassable bit of scenery, but for moving objects like enemies we need to mark them as <code>dynamic</code>.  In order for a <code>GameObject</code>&rsquo;s <code>Collider</code> to qualify as <code>dynamic</code> it requires a <a href="http://docs.unity3d.com/Manual/class-Rigidbody.html"><code>Rigidbody</code> component</a>.  If you don&rsquo;t want the normal features of the <code>Rigidbody</code>, i.e. conferring control of the <code>GameObject</code>&rsquo;s position to the physics system, then you can check the <code>Is Kinematic</code> checkbox.  A kinematic object&rsquo;s position is under the control of the attached scripts, rather than the physics system.</p>
+
+<p>One other trick from the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">tutorial</a> is to set the <code>Collider</code> component&rsquo;s <code>isTrigger</code> property to <code>true</code>.  This prevents the <code>Collider</code> from being treated as a solid object in the physics simulation, which could lead to unintended bumping and pushing among various <code>Colliders</code> in a scene.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Space Is Read]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
-    <updated>2014-07-26T09:08:44-07:00</updated>
+    <updated>2014-07-26T11:08:44-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
     <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
 
@@ -38,7 +53,7 @@
   <entry>
     <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
-    <updated>2014-07-19T08:42:35-07:00</updated>
+    <updated>2014-07-19T10:42:35-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
     <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
 
@@ -74,7 +89,7 @@
   <entry>
     <title type="html"><![CDATA[Playable Call For Papers]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/"/>
-    <updated>2014-06-21T08:20:23-07:00</updated>
+    <updated>2014-06-21T10:20:23-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers</id>
     <content type="html"><![CDATA[<p><a href="http://www.twitter.com/mtrc">Michael Cook</a> made a &ldquo;needlessly interactive&rdquo; <a href="http://www.exag.org/playablecfp/">playable call for papers</a> for the <a href="http://www.exag.org/">Experimental AI in Games conference</a>, taking place in October in Raleigh, NC.  It&rsquo;s a minimally expressive Twine story, with really one simple interactive experience of role-playing the interaction a recipient feels upon receiving yet another CFP email, <em>click</em>.</p>
 
@@ -89,7 +104,7 @@
   <entry>
     <title type="html"><![CDATA[Why you should start simple]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T11:58:34-07:00</updated>
+    <updated>2014-06-07T13:58:34-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
 
@@ -115,7 +130,7 @@
   <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T09:28:40-07:00</updated>
+    <updated>2014-05-31T11:28:40-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -153,7 +168,7 @@
   <entry>
     <title type="html"><![CDATA[Quarries of Scred Roadmap]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap/"/>
-    <updated>2014-05-24T13:49:08-07:00</updated>
+    <updated>2014-05-24T15:49:08-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap</id>
     <content type="html"><![CDATA[<p>The <a href="http://darkestkale.itch.io/quarries-of-scred">Quarries of Scred</a> <a href="https://twitter.com/darkestkale">developer</a> released an image showing the overview of Scred&rsquo;s 14-day game development.  I find it informative for a couple of reasons.  First it&rsquo;s not limited to the core features of the game, Kale&rsquo;s also included public relations and marketing information.  Second, the fact that it&rsquo;s incomplete shows how Kale&rsquo;s prioritized critical elements of the game.</p>
 
@@ -211,7 +226,7 @@
   <entry>
     <title type="html"><![CDATA[.gitignore for Unity projects]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/"/>
-    <updated>2014-05-17T09:48:06-07:00</updated>
+    <updated>2014-05-17T11:48:06-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects</id>
     <content type="html"><![CDATA[<p>I found a solution on the <a href="http://answers.unity3d.com/questions/369755/unity-on-github.html">Unity website</a> that pointed me toward <a href="http://t-machine.org/index.php/2012/07/03/unity-git-source-control-a-basic-gitignore/">this blogpost</a>.  But a better solution is out there.  The Double Fine Game Club&rsquo;s Bad Golf Community Edition <a href="https://github.com/Double-Fine-Game-Club/bad-golf-community-edition/blob/master/.gitignore">.gitignore</a> looks like this:</p>
 
@@ -271,7 +286,7 @@
   <entry>
     <title type="html"><![CDATA[Follow-up to the centrality of caves]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/"/>
-    <updated>2014-05-10T08:27:49-07:00</updated>
+    <updated>2014-05-10T10:27:49-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves</id>
     <content type="html"><![CDATA[<p>My <a href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/">post last week</a> about caves struck a nerve.  I received a lot of encouraging retweets and favorites.  I also received some great feedback.</p>
 
@@ -296,7 +311,7 @@
   <entry>
     <title type="html"><![CDATA[Why are caves central to so many games?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/"/>
-    <updated>2014-05-03T07:46:11-07:00</updated>
+    <updated>2014-05-03T09:46:11-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games</id>
     <content type="html"><![CDATA[<p>On twitter, <a href="https://twitter.com/psysal">@psysal</a> posed this question to the game dev community:</p>
 
@@ -351,7 +366,7 @@
   <entry>
     <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
-    <updated>2014-04-26T07:47:18-07:00</updated>
+    <updated>2014-04-26T09:47:18-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
     <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
 
@@ -416,7 +431,7 @@
   <entry>
     <title type="html"><![CDATA[styx_ebooks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T12:05:03-07:00</updated>
+    <updated>2014-04-19T14:05:03-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
     <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
 
@@ -435,7 +450,7 @@
   <entry>
     <title type="html"><![CDATA[The Fate of Adventure Games]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/"/>
-    <updated>2014-04-12T07:16:59-07:00</updated>
+    <updated>2014-04-12T09:16:59-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games</id>
     <content type="html"><![CDATA[<p>Zoyə Street wrote a <a href="https://medium.com/p/3e3c1e20cfd0">summary</a> of an interesting <a href="http://www.omnsh.org/ressources/527/histoire-formelle-du-jeu-daventure-sur-ordinateur-le-cas-de-lamerique-du-nord-de-1976">PhD thesis by Jonathan Lessard</a>.  Lessard examines the history of adventure games, to see whence they&rsquo;ve come and where they&rsquo;ve gone.  Like Street, I think this approach to thinking about video game design and genre provides useful perspective.</p>
 
@@ -450,7 +465,7 @@
   <entry>
     <title type="html"><![CDATA[Don't Fear Lack of Content]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content/"/>
-    <updated>2014-04-05T07:59:37-07:00</updated>
+    <updated>2014-04-05T09:59:37-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content</id>
     <content type="html"><![CDATA[<p>Came across a <a href="http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/">nice article</a> on <a href="http://www.egometry.com/">Ben McGraw&rsquo;s blog, Egometry</a>. Using Super Mario Bros. as a model, Ben explains why merely increasing content quantity is less desirable than increasing content substance.  The title of this post is lifted from a quote in his article.</p>
 
@@ -461,7 +476,7 @@
   <entry>
     <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
-    <updated>2014-03-29T08:04:05-07:00</updated>
+    <updated>2014-03-29T10:04:05-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
     <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
 ]]></content>
@@ -470,7 +485,7 @@
   <entry>
     <title type="html"><![CDATA[ICE ICE Baby]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/"/>
-    <updated>2014-03-22T07:17:31-07:00</updated>
+    <updated>2014-03-22T09:17:31-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby</id>
     <content type="html"><![CDATA[<p><a href="http://www.thegia.com/author/avestal/">Andrew Vestal</a> of <a href="http://www.thegia.com/">the GIA</a> wrote a <a href="http://twinery.org/">Twine</a> game for <a href="http://itch.io/jam/cyberpunk-jam">#cyberpunkjam</a> called <a href="http://www.thegia.com/avestal/iceicebaby.html">ICE ICE Baby</a>.</p>
 
@@ -485,7 +500,7 @@
   <entry>
     <title type="html"><![CDATA[Upgrading to Mavericks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/"/>
-    <updated>2014-03-15T06:03:27-07:00</updated>
+    <updated>2014-03-15T08:03:27-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks</id>
     <content type="html"><![CDATA[<p>This week I upgraded to <a href="https://www.apple.com/osx/">Mac OS X 10.9 Mavericks</a>.  To keep <a href="http://octopress.org/">octopress</a> working, I had to uninstall and reinstall <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
 
@@ -500,7 +515,7 @@
   <entry>
     <title type="html"><![CDATA[Cut it all right in two: bisect to find bugs]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/"/>
-    <updated>2014-03-08T08:25:02-08:00</updated>
+    <updated>2014-03-08T10:25:02-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs</id>
     <content type="html"><![CDATA[<p>Imagine there&rsquo;s a lion in a desert.  You need to cage the lion or you
 will be eaten.  In this example the desert is your code and the lion
@@ -534,7 +549,7 @@ you isolate the line producing the problem.</p>
   <entry>
     <title type="html"><![CDATA[What's in a name?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/01/whats-in-a-name/"/>
-    <updated>2014-03-01T10:09:41-08:00</updated>
+    <updated>2014-03-01T12:09:41-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/01/whats-in-a-name</id>
     <content type="html"><![CDATA[<p>Growing up, the seemingly interminable school-week gave way to an
 anxious car drive home from the rental store with the weekend&rsquo;s score.
@@ -568,7 +583,7 @@ an extra chance.  &ldquo;Don&rsquo;t worry, zero&rsquo;s a life.&rdquo;</p>
   <entry>
     <title type="html"><![CDATA[Setting up Emacs-like key bindings in MonoDevelop]]></title>
     <link href="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/"/>
-    <updated>2014-02-22T06:14:40-08:00</updated>
+    <updated>2014-02-22T08:14:40-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop</id>
     <content type="html"><![CDATA[<p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
 
@@ -590,25 +605,6 @@ available.</p>
 
 <script src="https://gist.github.com/zerosalife/9096788.js"></script>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bunnies Don't Surf #flappyjam]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/"/>
-    <updated>2014-02-15T06:40:03-08:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam</id>
-    <content type="html"><![CDATA[<p><img class="center" src="https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png"></p>
-
-<p>Here&rsquo;s a WIP FlappyBird-like game prototype for <a href="http://itch.io/jam/flappyjam">#flappyjam</a>: <a href="https://github.com/zerosalife/bunnies-dont-surf">Bunnies Don&rsquo;t Surf</a>. You are an unfortunate rabbit whose warren is being flooded by a passing thunderstorm.  You have to navigate the tunnels of the warren, propelled by the wave of water flooding your home.  There&rsquo;s only one problem: Bunnies Don&rsquo;t Surf.  So you&rsquo;re stuck hopping up and down in a futile attempt to survive.</p>
-
-<p>Bunnies Don&rsquo;t Surf requires <a href="http://www.python.org/">Python</a> and <a href="http://pygame.org/news.html">pygame</a> (<a href="http://pygame.org/download.shtml">version 1.9.1</a>) to play.</p>
-
-<p>Tap <code>SPACE</code> to hop. That&rsquo;s about all there is to say about the controls.</p>
-
-<p>As I&rsquo;m sure you can see, the game is in dire need of art assets, sound assets, and some sort of high score system.  I&rsquo;ll do my best to add these, once time allows. If anyone has feedback or art design ideas, please let me know in the comments section or on Twitter.  I&rsquo;d love to hear it.</p>
-
-<p>I&rsquo;ll post updates as the game progresses, and officially submit it to <a href="http://itch.io/jam/flappyjam">#flappyjam</a> if it&rsquo;s done before the jam ends on February 24.</p>
 ]]></content>
   </entry>
   

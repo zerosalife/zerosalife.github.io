@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-07-26T09:20:43-07:00</updated>
+  <updated>2014-08-02T12:55:25-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,24 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Static and Dynamic Colliders in Unity]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity/"/>
+    <updated>2014-08-02T12:54:15-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity</id>
+    <content type="html"><![CDATA[<p>According to the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">Ray Wenderlich Unity 2D tutorial</a> by <a href="http://www.raywenderlich.com/u/clapollo">Christopher LaPollo</a>, Unity&rsquo;s physics engine builds a simulation based on the <a href="http://docs.unity3d.com/Manual/CollidersOverview.html">Colliders</a> present in a scene.  If some those <code>Colliders</code> are declared to be <code>static</code>, then the entire simulation is rebuilt when those colliders move.  Of course, rebuilding a physics simulation when it&rsquo;s unnecessary is inefficient.  By declaring objects to have <code>dynamic</code> <code>Colliders</code>, the physics engine does not have to rebuild the simulation at runtime, that is to say when the game is running.</p>
+
+<p>As with a lot of things in Unity, it is not immediately apparent how you should go about declaring a collider to be <code>static</code> or <code>dynamic</code>.  It would be great if there were just a checkbox in the <code>Collider</code> component.  But there isn&rsquo;t.  It appears that there are some complex things going on under the hood that preclude a simple declaration.</p>
+
+<p>By default a <code>GameObject</code> with a <code>Collider</code> component attached is treated as <code>static</code> by Unity&rsquo;s physics engine.  This would work for a non-moving wall or impassable bit of scenery, but for moving objects like enemies we need to mark them as <code>dynamic</code>.  In order for a <code>GameObject</code>&rsquo;s <code>Collider</code> to qualify as <code>dynamic</code> it requires a <a href="http://docs.unity3d.com/Manual/class-Rigidbody.html"><code>Rigidbody</code> component</a>.  If you don&rsquo;t want the normal features of the <code>Rigidbody</code>, i.e. conferring control of the <code>GameObject</code>&rsquo;s position to the physics system, then you can check the <code>Is Kinematic</code> checkbox.  A kinematic object&rsquo;s position is under the control of the attached scripts, rather than the physics system.</p>
+
+<p>One other trick from the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">tutorial</a> is to set the <code>Collider</code> component&rsquo;s <code>isTrigger</code> property to <code>true</code>.  This prevents the <code>Collider</code> from being treated as a solid object in the physics simulation, which could lead to unintended bumping and pushing among various <code>Colliders</code> in a scene.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Space Is Read]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
-    <updated>2014-07-26T09:08:44-07:00</updated>
+    <updated>2014-07-26T11:08:44-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
     <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
 
@@ -38,7 +53,7 @@
   <entry>
     <title type="html"><![CDATA[Why you should start simple]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T11:58:34-07:00</updated>
+    <updated>2014-06-07T13:58:34-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
 
@@ -64,7 +79,7 @@
   <entry>
     <title type="html"><![CDATA[styx_ebooks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T12:05:03-07:00</updated>
+    <updated>2014-04-19T14:05:03-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
     <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
 
@@ -83,51 +98,11 @@
   <entry>
     <title type="html"><![CDATA[Don't Fear Lack of Content]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content/"/>
-    <updated>2014-04-05T07:59:37-07:00</updated>
+    <updated>2014-04-05T09:59:37-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content</id>
     <content type="html"><![CDATA[<p>Came across a <a href="http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/">nice article</a> on <a href="http://www.egometry.com/">Ben McGraw&rsquo;s blog, Egometry</a>. Using Super Mario Bros. as a model, Ben explains why merely increasing content quantity is less desirable than increasing content substance.  The title of this post is lifted from a quote in his article.</p>
 
 <p>Sometimes exercising a bit of restraint, keeping the focus of your content simple, can still allow for an interesting and engaging player experience.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An in-depth tour of Tetris]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/02/08/an-in-depth-tour-of-tetris/"/>
-    <updated>2014-02-08T06:34:35-08:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/02/08/an-in-depth-tour-of-tetris</id>
-    <content type="html"><![CDATA[<p><img class="center <a" src="href="http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png">http://upload.wikimedia.org/wikipedia/en/a/ae/Tetris_NES_play.png</a>"></p>
-
-<p style="text-align:center;"> Image from <a href="http://en.wikipedia.org/wiki/Tetris">wikipedia.org</a>.</p>
-
-<p>This week I&rsquo;ve spent quite some time reading
-<a href="http://meatfighter.com/nintendotetrisai/">this article</a> on
-<a href="http://meatfighter.com/">MeatFighter.com</a>.  The article reverse
-engineers the inner-workings of
-<a href="http://en.wikipedia.org/wiki/Tetris#NES">NES Tetris</a>.  With superb
-visual aids, the author, o__1<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> , surveys the mechanics and data
-structures used to implement Tetris on the NES.  Then o__1 designs
-and implements an AI script to play Tetris with super-human speed and
-precision.  o__1 even describes how to try it at home, providing
-instructions and the necessary Lua scripts to run the AI on your own
-copy of Tetris.</p>
-
-<p>I hope to see more articles looking back on classic games with this
-tremendous attention to detail.  An older
-<a href="http://home.comcast.net/~jpittman2/pacman/pacmandossier.html">article looking at Pac-man AI</a>
-shows similar obsessive depth.  Articles like these help supplement
-our appreciation of these games as works of art by documenting the
-essential technical complexities underlying these games.  I think
-that&rsquo;s a good thing for everyone from hobby developers to professional
-developers, as well as designers and fans.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>I&rsquo;m referring to the author by the contact email listed on the website.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
 ]]></content>
   </entry>
   
