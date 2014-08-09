@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Persistent Data in Unity - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity. In other words, I want this data to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Persistent Data in Unity</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-09T11:09:15-05:00" pubdate data-updated="true">Aug 9<span>th</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity.  In other words, I want this data to remain persistent.  As you&rsquo;ll see below I was tempted to use <code>PlayerPrefs</code> to store the data, but, according to <a href="https://www.youtube.com/watch?v%3DJ6FfcJpbPXE">this Unity Live Training on Data Persistence</a>, <code>PlayerPrefs</code> is not the best way to make data persist over multiple Scenes.  <code>PlayerPrefs</code> is an okay place to store non-critical data, like the audio volume, window size, full-screen state&#x2013;you know preferences.  I&rsquo;ll go ahead and show what I believe to be the correct way to store persistent data before talking about <code>PlayerPrefs</code> later.</p>
+
+<h2>Persistent data</h2>
+
+<p>To safely and reliably store persistent data, the Unity tutorials suggest that you need to assign a &ldquo;kinda&rdquo; Singleton design patterny script to an empty <code>GameObject</code> that will persist across Scenes.</p>
+
+<pre><code>using UnityEngine; using System.Collections;
+
+public class GameControl: MonoBehaviour {
+  public static GameControl control;
+
+  public float health; public float experience;
+
+  void Awake() {
+    if(control == null){
+      DontDestroyOnLoad(gameObject); control = this;
+    } else if(control != this) {
+      // There can be only one!  Destroy(gameObject);
+    } }
+}
+</code></pre>
+
+<p>The <code>static</code> reference means that we can just access the values in the <code>GameControl</code> script.</p>
+
+<h2>How to access data in the GameController.</h2>
+
+<pre><code>GameController.control.health = 100;
+</code></pre>
+
+<h2>Writing persistent data to a binary file</h2>
+
+<p>The persistent data that&rsquo;s under the control of the <code>GameController</code> is perfectly happy hanging out when your application is running.  It will persist between Scenes when other data is wiped out by Unity&rsquo;s garbage collection.  But what if you want to maintain persistent data when the application is closed.</p>
+
+<p>Ah hah!  Finally, an answer to my nagging question about writing persistent data to plain text files, like <code>PlayerPrefs</code> or simply a file in a local directory.  Wouldn&rsquo;t a player be able to modify the data?</p>
+
+<p>Enter the binary format:</p>
+
+<pre><code>// Add two more libraries using System; using System.Runtime.Serialzation.Formatters.Binary;
+</code></pre>
+
+<p>Where do we save it?  The persistent data path: <code>Application.persistentDataPath</code>.  We&rsquo;ll need one more library to do some input and output to files:</p>
+
+<pre><code>// Requires one more library and we're ready to get cooking with some // methods using System.IO;
+
+public void Save() {
+  BinaryFormatter bf = new BinaryFormatter(); FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+                              FileMode.Open);
+
+  PlayerData data = new PlayerData(); data.experiencePoints = experiencePoints; data.playerLevel = playerLevel;
+
+  bf.Serialize(file, data); file.Close();
+}
+
+public void Load() {
+  if(File.Exists(Application.persistentDataPath + "/gameInfo.dat")) {
+    BinaryFormatter bf = new BinaryFormatter(); FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+                                FileMode.Open); PlayerData data = (PlayerData)bf.Deserialize(file); file.Close();
+
+    experiencePoints = data.experiencePoints; playerLevel = data.playerLevel;
+  } }
+</code></pre>
+
+<p>Now we need to make the <code>PlayerData</code> class that we will tag with <code>[Serializable]</code> so Unity will know that we want to write this to a binary file at some point in the future.  This affects how Unity stores the data internally, but it doesn&rsquo;t really change how we interact with it.</p>
+
+<pre><code>[Serializable] class PlayerData {
+  // TODO: see about making gets and sets.  // TODO: automate the generation of this data structure.  See: // http://forums.devx.com/showthread.php?170650-How-to-dynamically-add-property-to
+
+  // Add new variables for loading and saving here.  public int experiencePoints; public int playerLevel;
+}
+</code></pre>
+
+<p>After writing up this article, I came across an older, possibly better article on Unity Gems.  Please check out that write-up and all of the great content on the site.  <a href="http://unitygems.com/saving-data-1-remember-me/">http://unitygems.com/saving-data-1-remember-me/</a></p>
+
+<p>My full <code>GameController</code> data persistence Singleton script is available in <a href="https://gist.github.com/zerosalife/6f6e811b27761d287ea5">this gist</a>.</p>
+
+<p>So, that&rsquo;s the best solution I&rsquo;ve found to date for having persistent data across scenes and play sessions.  I&rsquo;ve included my rough first stabs at the problem below.  Keep in mind that anything following this point is just included just to make my notes available, and it&rsquo;s not meant to be a guide.</p>
+
+<h2>Old notes: PlayerPrefs</h2>
+
+<p>In order to have persistent data between Scenes, I was previously going to make use of Unity&rsquo;s <code>PlayerPrefs</code>, a class that implements persistent data storage for <code>ints</code>, <code>floats</code>, and <code>strings</code>.  Notably absent are useful data types like <code>Vector3</code> to maintain, for example, <code>transform</code> data between Scenes.  Some of the solutions I found may still be helpful for more storing complex data types in <code>PlayerPrefs</code>.</p>
+
+<p>One potential solution is to simply set a <code>GameObject</code>&rsquo;s <code>transform.position</code> to some constant <code>Vector3</code> value in the freshly loaded Scene.  While this is possible in some applications, I&rsquo;m going to assume that eventually you&rsquo;ll want to transfer some dynamic position information between Scenes.</p>
+
+<p>Here are two potentially helpful sources to achieve this:</p>
+
+<p><a href="http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/">http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/</a>, based on work by Mehta Dakshil.  While JSON parsing looks interesting, it requires an external <code>.dll</code>, <code>JsonFx.Json.dll</code>.  And I&rsquo;m not interested in external dependencies here.  It may work great for you.</p>
+
+<p><a href="http://wiki.unity3d.com/index.php?title%3DArrayPrefs">&lt;http://wiki.unity3d.com/index.php?title=ArrayPrefs></a>, based on work by Mario Madureiera Fontes and Daniel P. Rossi.  (Note: since <code>GetVector3</code> depends on <code>GetFloatArray</code>, there could be some error due to <code>GetFloatArray</code> casting strings to floats.  But the error introduce in the resulting <code>Vector3</code> is unlikely to be noticeable.)</p>
+
+<p>Actually, see a more updated version here: <a href="http://wiki.unity3d.com/index.php/ArrayPrefs2">http://wiki.unity3d.com/index.php/ArrayPrefs2</a>, which is based on work by Eric Haines.</p>
+
+<p>According to the text, the script should be placed in the <code>Standard Assets</code> directory, so that it can be accessed from both <code>C#</code> and <code>Boo</code> scripts.</p>
+
+<p>To see a faster implementation for mobile devices, where the data to be saved in PlayerPrefs is cached in memory, see: <a href="http://www.previewlabs.com/writing-playerprefs-fast/">http://www.previewlabs.com/writing-playerprefs-fast/</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-09T11:09:15-05:00" pubdate data-updated="true">Aug 9<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/c-number/'>C#</a>, <a class='category' href='/blog/categories/unity3d/'>Unity3d</a>, <a class='category' href='/blog/categories/design/'>design</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/" title="Previous Post: Static and Dynamic Colliders in Unity">&laquo; Static and Dynamic Colliders in Unity</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/09/persistent-data-in-unity/">Persistent Data in Unity</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/">Static and Dynamic Colliders in Unity</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/26/space-is-read/">Space Is Read</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/">The Strength of the Pitch: Jodorowsky's Dune</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/21/playable-call-for-papers/">Playable Call For Papers</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

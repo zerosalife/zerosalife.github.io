@@ -9,7 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="According to the Ray Wenderlich Unity 2D tutorial by Christopher LaPollo, Unity&rsquo;s physics engine builds a simulation based on the Colliders &hellip;">
+  <meta name="description" content="I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity. In other words, I want this data to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,137 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/09/persistent-data-in-unity/">Persistent Data in Unity</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-09T11:09:15-05:00" pubdate data-updated="true">Aug 9<span>th</span>, 2014</time>
+        
+         | <a href="/blog/2014/08/09/persistent-data-in-unity/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity.  In other words, I want this data to remain persistent.  As you&rsquo;ll see below I was tempted to use <code>PlayerPrefs</code> to store the data, but, according to <a href="https://www.youtube.com/watch?v%3DJ6FfcJpbPXE">this Unity Live Training on Data Persistence</a>, <code>PlayerPrefs</code> is not the best way to make data persist over multiple Scenes.  <code>PlayerPrefs</code> is an okay place to store non-critical data, like the audio volume, window size, full-screen state&#x2013;you know preferences.  I&rsquo;ll go ahead and show what I believe to be the correct way to store persistent data before talking about <code>PlayerPrefs</code> later.</p>
+
+<h2>Persistent data</h2>
+
+<p>To safely and reliably store persistent data, the Unity tutorials suggest that you need to assign a &ldquo;kinda&rdquo; Singleton design patterny script to an empty <code>GameObject</code> that will persist across Scenes.</p>
+
+<pre><code>using UnityEngine; using System.Collections;
+
+public class GameControl: MonoBehaviour {
+  public static GameControl control;
+
+  public float health; public float experience;
+
+  void Awake() {
+    if(control == null){
+      DontDestroyOnLoad(gameObject); control = this;
+    } else if(control != this) {
+      // There can be only one!  Destroy(gameObject);
+    } }
+}
+</code></pre>
+
+<p>The <code>static</code> reference means that we can just access the values in the <code>GameControl</code> script.</p>
+
+<h2>How to access data in the GameController.</h2>
+
+<pre><code>GameController.control.health = 100;
+</code></pre>
+
+<h2>Writing persistent data to a binary file</h2>
+
+<p>The persistent data that&rsquo;s under the control of the <code>GameController</code> is perfectly happy hanging out when your application is running.  It will persist between Scenes when other data is wiped out by Unity&rsquo;s garbage collection.  But what if you want to maintain persistent data when the application is closed.</p>
+
+<p>Ah hah!  Finally, an answer to my nagging question about writing persistent data to plain text files, like <code>PlayerPrefs</code> or simply a file in a local directory.  Wouldn&rsquo;t a player be able to modify the data?</p>
+
+<p>Enter the binary format:</p>
+
+<pre><code>// Add two more libraries using System; using System.Runtime.Serialzation.Formatters.Binary;
+</code></pre>
+
+<p>Where do we save it?  The persistent data path: <code>Application.persistentDataPath</code>.  We&rsquo;ll need one more library to do some input and output to files:</p>
+
+<pre><code>// Requires one more library and we're ready to get cooking with some // methods using System.IO;
+
+public void Save() {
+  BinaryFormatter bf = new BinaryFormatter(); FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+                              FileMode.Open);
+
+  PlayerData data = new PlayerData(); data.experiencePoints = experiencePoints; data.playerLevel = playerLevel;
+
+  bf.Serialize(file, data); file.Close();
+}
+
+public void Load() {
+  if(File.Exists(Application.persistentDataPath + "/gameInfo.dat")) {
+    BinaryFormatter bf = new BinaryFormatter(); FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+                                FileMode.Open); PlayerData data = (PlayerData)bf.Deserialize(file); file.Close();
+
+    experiencePoints = data.experiencePoints; playerLevel = data.playerLevel;
+  } }
+</code></pre>
+
+<p>Now we need to make the <code>PlayerData</code> class that we will tag with <code>[Serializable]</code> so Unity will know that we want to write this to a binary file at some point in the future.  This affects how Unity stores the data internally, but it doesn&rsquo;t really change how we interact with it.</p>
+
+<pre><code>[Serializable] class PlayerData {
+  // TODO: see about making gets and sets.  // TODO: automate the generation of this data structure.  See: // http://forums.devx.com/showthread.php?170650-How-to-dynamically-add-property-to
+
+  // Add new variables for loading and saving here.  public int experiencePoints; public int playerLevel;
+}
+</code></pre>
+
+<p>After writing up this article, I came across an older, possibly better article on Unity Gems.  Please check out that write-up and all of the great content on the site.  <a href="http://unitygems.com/saving-data-1-remember-me/">http://unitygems.com/saving-data-1-remember-me/</a></p>
+
+<p>My full <code>GameController</code> data persistence Singleton script is available in <a href="https://gist.github.com/zerosalife/6f6e811b27761d287ea5">this gist</a>.</p>
+
+<p>So, that&rsquo;s the best solution I&rsquo;ve found to date for having persistent data across scenes and play sessions.  I&rsquo;ve included my rough first stabs at the problem below.  Keep in mind that anything following this point is just included just to make my notes available, and it&rsquo;s not meant to be a guide.</p>
+
+<h2>Old notes: PlayerPrefs</h2>
+
+<p>In order to have persistent data between Scenes, I was previously going to make use of Unity&rsquo;s <code>PlayerPrefs</code>, a class that implements persistent data storage for <code>ints</code>, <code>floats</code>, and <code>strings</code>.  Notably absent are useful data types like <code>Vector3</code> to maintain, for example, <code>transform</code> data between Scenes.  Some of the solutions I found may still be helpful for more storing complex data types in <code>PlayerPrefs</code>.</p>
+
+<p>One potential solution is to simply set a <code>GameObject</code>&rsquo;s <code>transform.position</code> to some constant <code>Vector3</code> value in the freshly loaded Scene.  While this is possible in some applications, I&rsquo;m going to assume that eventually you&rsquo;ll want to transfer some dynamic position information between Scenes.</p>
+
+<p>Here are two potentially helpful sources to achieve this:</p>
+
+<p><a href="http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/">http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/</a>, based on work by Mehta Dakshil.  While JSON parsing looks interesting, it requires an external <code>.dll</code>, <code>JsonFx.Json.dll</code>.  And I&rsquo;m not interested in external dependencies here.  It may work great for you.</p>
+
+<p><a href="http://wiki.unity3d.com/index.php?title%3DArrayPrefs">&lt;http://wiki.unity3d.com/index.php?title=ArrayPrefs></a>, based on work by Mario Madureiera Fontes and Daniel P. Rossi.  (Note: since <code>GetVector3</code> depends on <code>GetFloatArray</code>, there could be some error due to <code>GetFloatArray</code> casting strings to floats.  But the error introduce in the resulting <code>Vector3</code> is unlikely to be noticeable.)</p>
+
+<p>Actually, see a more updated version here: <a href="http://wiki.unity3d.com/index.php/ArrayPrefs2">http://wiki.unity3d.com/index.php/ArrayPrefs2</a>, which is based on work by Eric Haines.</p>
+
+<p>According to the text, the script should be placed in the <code>Standard Assets</code> directory, so that it can be accessed from both <code>C#</code> and <code>Boo</code> scripts.</p>
+
+<p>To see a faster implementation for mobile devices, where the data to be saved in PlayerPrefs is cached in memory, see: <a href="http://www.previewlabs.com/writing-playerprefs-fast/">http://www.previewlabs.com/writing-playerprefs-fast/</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -518,64 +649,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/">Why Are Caves Central to So Many Games?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-03T09:46:11-05:00" pubdate data-updated="true">May 3<span>rd</span>, 2014</time>
-        
-         | <a href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>On twitter, <a href="https://twitter.com/psysal">@psysal</a> posed this question to the game dev community:</p>
-
-<div class='embed tweet'><blockquote class="twitter-tweet"><p>Can someone very smart in game design share insight as to why caves are so central to so many games?</p>&mdash; Calvin French (@psysal) <a href="https://twitter.com/psysal/statuses/456314611428372480">April 16, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
-
-<p>You can see all the responses by following the link to the original tweet.</p>
-
-<p>The consensus is that caves are essential features for games for three reasons.</p>
-
-<ol>
-<li>Linearity</li>
-<li>Repeatability of composition</li>
-<li>Curiosity</li>
-</ol>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -591,6 +664,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/09/persistent-data-in-unity/">Persistent Data in Unity</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/">Static and Dynamic Colliders in Unity</a>
       </li>
     
@@ -604,10 +681,6 @@
     
       <li class="post">
         <a href="/blog/2014/06/21/playable-call-for-papers/">Playable Call For Papers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/07/why-you-should-start-simple/">Why you should start simple</a>
       </li>
     
   </ul>

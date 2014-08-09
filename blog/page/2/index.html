@@ -9,7 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="I&rsquo;m using the Rhizome package for Clojure to rapidly prototype the dependency graph for a crafting system. It&rsquo;s nice to be able to add &hellip;">
+  <meta name="description" content="On twitter, @psysal posed this question to the game dev community: Can someone very smart in game design share insight as to why caves are so central &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/">Why Are Caves Central to So Many Games?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-03T09:46:11-05:00" pubdate data-updated="true">May 3<span>rd</span>, 2014</time>
+        
+         | <a href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On twitter, <a href="https://twitter.com/psysal">@psysal</a> posed this question to the game dev community:</p>
+
+<div class='embed tweet'><blockquote class="twitter-tweet"><p>Can someone very smart in game design share insight as to why caves are so central to so many games?</p>&mdash; Calvin French (@psysal) <a href="https://twitter.com/psysal/statuses/456314611428372480">April 16, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+<p>You can see all the responses by following the link to the original tweet.</p>
+
+<p>The consensus is that caves are essential features for games for three reasons.</p>
+
+<ol>
+<li>Linearity</li>
+<li>Repeatability of composition</li>
+<li>Curiosity</li>
+</ol>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -546,63 +604,6 @@ an extra chance.  &ldquo;Don&rsquo;t worry, zero&rsquo;s a life.&rdquo;</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/">Setting Up Emacs-like Key Bindings in MonoDevelop</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-22T08:14:40-06:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
-        
-         | <a href="/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
-
-<p>Since I don&rsquo;t know much about Unity, I&rsquo;m reluctantly using their included <a href="http://monodevelop.com/">MonoDevelop IDE</a>.  While I&rsquo;d heard that Emacs-like key bindings were included, in the build I installed they weren&rsquo;t present.</p>
-
-<p>MonoDevelop does not make it easy to import new key binding schemes (the <a href="http://mjhutchinson.com/journal/2011/02/06/key_bindings">blog post linked here</a> suggests submitting a bug report to propose new key bindings&#x2026;).  So, I did a little digging around on github and found the <a href="https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml">default emacs key binding scheme</a> that I imagine should have been included in the MonoDevelop build I installed.</p>
-
-<p>There was no way to add this key binding scheme to my available key bindings in MonoDevelop, so I hacked my Custom key binding file located at <code>~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml</code>.</p>
-
-<p>I started with some simple copypasta.  But then I found some useful
-navigation features were lacking.  So, I added key binds that
-immediately came to mind, like <code>Alt-f</code> for moving forward one word and
-<code>Alt-b</code> for backward word.  Yes, I know these are <code>M-f</code> in Emacs, but
-I&rsquo;m using MonoDevelop&rsquo;s syntax here.</p>
-
-<p>My key bindings are available in the gist below.  I&rsquo;ll update this
-gist when I add key bindings, to keep a current working version
-available.</p>
-
-<script src="https://gist.github.com/zerosalife/9096788.js"></script>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -620,6 +621,10 @@ available.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/09/persistent-data-in-unity/">Persistent Data in Unity</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/">Static and Dynamic Colliders in Unity</a>
       </li>
     
@@ -633,10 +638,6 @@ available.</p>
     
       <li class="post">
         <a href="/blog/2014/06/21/playable-call-for-papers/">Playable Call For Papers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/07/why-you-should-start-simple/">Why you should start simple</a>
       </li>
     
   </ul>
