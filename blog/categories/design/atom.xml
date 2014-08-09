@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-08-09T11:15:13-05:00</updated>
+  <updated>2014-08-09T11:19:29-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -27,19 +27,24 @@
 
 <p>To safely and reliably store persistent data, the Unity tutorials suggest that you need to assign a &ldquo;kinda&rdquo; Singleton design patterny script to an empty <code>GameObject</code> that will persist across Scenes.</p>
 
-<pre><code>using UnityEngine; using System.Collections;
+<pre><code>using UnityEngine;
+using System.Collections;
 
 public class GameControl: MonoBehaviour {
   public static GameControl control;
 
-  public float health; public float experience;
+  public float health;
+  public float experience;
 
   void Awake() {
     if(control == null){
-      DontDestroyOnLoad(gameObject); control = this;
+      DontDestroyOnLoad(gameObject);
+      control = this;
     } else if(control != this) {
-      // There can be only one!  Destroy(gameObject);
-    } }
+      // There can be only one!
+      Destroy(gameObject);
+    }
+  }
 }
 </code></pre>
 
@@ -58,37 +63,55 @@ public class GameControl: MonoBehaviour {
 
 <p>Enter the binary format:</p>
 
-<pre><code>// Add two more libraries using System; using System.Runtime.Serialzation.Formatters.Binary;
+<pre><code>// Add two more libraries
+using System;
+using System.Runtime.Serialzation.Formatters.Binary;
 </code></pre>
 
 <p>Where do we save it?  The persistent data path: <code>Application.persistentDataPath</code>.  We&rsquo;ll need one more library to do some input and output to files:</p>
 
-<pre><code>// Requires one more library and we're ready to get cooking with some // methods using System.IO;
+<pre><code>// Requires one more library and we're ready to get cooking with some
+// methods
+using System.IO;
 
 public void Save() {
-  BinaryFormatter bf = new BinaryFormatter(); FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+  BinaryFormatter bf = new BinaryFormatter();
+  FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
                               FileMode.Open);
 
-  PlayerData data = new PlayerData(); data.experiencePoints = experiencePoints; data.playerLevel = playerLevel;
+  PlayerData data = new PlayerData();
+  data.experiencePoints = experiencePoints;
+  data.playerLevel = playerLevel;
 
-  bf.Serialize(file, data); file.Close();
+  bf.Serialize(file, data);
+  file.Close();
 }
 
 public void Load() {
   if(File.Exists(Application.persistentDataPath + "/gameInfo.dat")) {
-    BinaryFormatter bf = new BinaryFormatter(); FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
-                                FileMode.Open); PlayerData data = (PlayerData)bf.Deserialize(file); file.Close();
+    BinaryFormatter bf = new BinaryFormatter();
+    FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+                                FileMode.Open);
+    PlayerData data = (PlayerData)bf.Deserialize(file);
+    file.Close();
 
-    experiencePoints = data.experiencePoints; playerLevel = data.playerLevel;
-  } }
+    experiencePoints = data.experiencePoints;
+    playerLevel = data.playerLevel;
+  }
+}
 </code></pre>
 
 <p>Now we need to make the <code>PlayerData</code> class that we will tag with <code>[Serializable]</code> so Unity will know that we want to write this to a binary file at some point in the future.  This affects how Unity stores the data internally, but it doesn&rsquo;t really change how we interact with it.</p>
 
-<pre><code>[Serializable] class PlayerData {
-  // TODO: see about making gets and sets.  // TODO: automate the generation of this data structure.  See: // http://forums.devx.com/showthread.php?170650-How-to-dynamically-add-property-to
+<pre><code>[Serializable]
+class PlayerData {
+  // TODO: see about making gets and sets.
+  // TODO: automate the generation of this data structure.  See:
+  // http://forums.devx.com/showthread.php?170650-How-to-dynamically-add-property-to
 
-  // Add new variables for loading and saving here.  public int experiencePoints; public int playerLevel;
+  // Add new variables for loading and saving here.
+  public int experiencePoints;
+  public int playerLevel;
 }
 </code></pre>
 
