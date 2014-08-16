@@ -4,7 +4,7 @@
   <title><![CDATA[Category: game | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/game/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-08-09T11:19:29-05:00</updated>
+  <updated>2014-08-16T10:41:51-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[One Tap Quest: a pachinko RPG]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/"/>
+    <updated>2014-08-16T10:39:34-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg</id>
+    <content type="html"><![CDATA[<p>I recently played <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest</a></em>, a game in which you tap to place an RPG character who marches upward, gaining levels by bumping into enemies, to tackle bigger and badder foes.  What&rsquo;s interesting to me, if you&rsquo;ll bear with me, is that this is a game that amounts to a pachinko RPG.  I&rsquo;ll start by talking about what I liked about <em>One Tap Quest</em>.  Next week, I&rsquo;ll get into what I mean by a pachinko RPG.</p>
+
+<p>It&rsquo;s rare that I come to a new gameplay experience completely naive these days. The only way I feel I can effectively spend my time with a game is typically after having read some sort of guide because my time is extremely limited.</p>
+
+<p>What the <em>One Tap Quest</em> accomplished so well for me was going from barely being able to read the screen to beating the game over the course of 10 minutes.  Admittedly it&rsquo;s a very short and simple game.  But I felt a sense of accomplishment every time my understanding of the mechanics grew.</p>
+
+<p>Oh, these little critters are stronger than these other little critters, better avoid them.  Oh these are power ups, not critters, better aim for them.  With these skills under my belt it only took a little luck to send my character on a march toward victory.</p>
+
+<p>The place where this idea shines is in the power-ups.  I&rsquo;m not sure whether I&rsquo;ve encountered all of them, but they range from simple buffs that grant free levels to expanding your party into a 3-character-wide enemy-wrecking plow.  For what it&rsquo;s worth, the power-ups were deep enough to keep me interested over 10 minutes of gameplay.  If I were going to engage with this experience over a longer term, I would suggest adding more depth to the power-ups and the enemies, which are as far as I can tell simply harder to kill, and possibly bigger, versions of the puny slimes that move back and forth.  Some of the enemies have variations on the simple random walk style movement of the slimes, but a richer variety of movement and behavior from the enemies would increase the required skill to play the game, and add to replayability.</p>
+
+<p>I think the power-up mechanics add a level of depth and strategy to what otherwise would be a hands-off luck-of-the-draw game.  By aiming for power-ups you have a sense of agency in the action, just like turning the knob controls the velocity at which pachinko balls are launched.  It makes cheering for your lemming-like character(s) more enjoyable: if they could just get a little closer and grab the power-up you aimed at&mdash;no.  Nope, they died.</p>
+
+<p>Go give this great little game a try.  Hopefully it will pique your interest like it piqued mine.  Quirky variations on RPGs seem to be part of the <em>Zeitgeist</em>, with <em><a href="http://www.atlus.com/rollers/">Rollers of the Realm</a></em> and <em><a href="http://zh.monst.wikia.com/wiki/Monster_Strike_%E7%BB%B4%E5%9F%BA">Monster Strike</a></em> combining pinball and console genre gameplay with the potential synergy <em><a href="http://en.wikipedia.org/wiki/Sonic_the_Hedgehog_Spinball">Sonic Spinball</a></em> never achieved.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Space Is Read]]></title>
@@ -75,25 +96,6 @@
 <p>I especially like the use of color to mark the transitions between meatspace and cyberspace.</p>
 
 <p><a href="http://www.thegia.com/author/nmaragos/">Nich Maragos</a> wrote a more thorough <a href="http://www.thegia.com/2014/03/05/appetite-for-destruction-ice-ice-baby/">critical review</a> on the GIA.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bunnies Don't Surf #flappyjam]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/"/>
-    <updated>2014-02-15T08:40:03-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam</id>
-    <content type="html"><![CDATA[<p><img class="center <a" src="href="https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png">https://raw.github.com/zerosalife/bunnies-dont-surf/master/screenshot.png</a>"></p>
-
-<p>Here&rsquo;s a WIP FlappyBird-like game prototype for <a href="http://itch.io/jam/flappyjam">#flappyjam</a>: <a href="https://github.com/zerosalife/bunnies-dont-surf">Bunnies Don&rsquo;t Surf</a>. You are an unfortunate rabbit whose warren is being flooded by a passing thunderstorm.  You have to navigate the tunnels of the warren, propelled by the wave of water flooding your home.  There&rsquo;s only one problem: Bunnies Don&rsquo;t Surf.  So you&rsquo;re stuck hopping up and down in a futile attempt to survive.</p>
-
-<p>Bunnies Don&rsquo;t Surf requires <a href="http://www.python.org/">Python</a> and <a href="http://pygame.org/news.html">pygame</a> (<a href="http://pygame.org/download.shtml">version 1.9.1</a>) to play.</p>
-
-<p>Tap <code>SPACE</code> to hop. That&rsquo;s about all there is to say about the controls.</p>
-
-<p>As I&rsquo;m sure you can see, the game is in dire need of art assets, sound assets, and some sort of high score system.  I&rsquo;ll do my best to add these, once time allows. If anyone has feedback or art design ideas, please let me know in the comments section or on Twitter.  I&rsquo;d love to hear it.</p>
-
-<p>I&rsquo;ll post updates as the game progresses, and officially submit it to <a href="http://itch.io/jam/flappyjam">#flappyjam</a> if it&rsquo;s done before the jam ends on February 24.</p>
 ]]></content>
   </entry>
   

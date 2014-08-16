@@ -102,6 +102,8 @@
 <p>By default a <code>GameObject</code> with a <code>Collider</code> component attached is treated as <code>static</code> by Unity&rsquo;s physics engine.  This would work for a non-moving wall or impassable bit of scenery, but for moving objects like enemies we need to mark them as <code>dynamic</code>.  In order for a <code>GameObject</code>&rsquo;s <code>Collider</code> to qualify as <code>dynamic</code> it requires a <a href="http://docs.unity3d.com/Manual/class-Rigidbody.html"><code>Rigidbody</code> component</a>.  If you don&rsquo;t want the normal features of the <code>Rigidbody</code>, i.e. conferring control of the <code>GameObject</code>&rsquo;s position to the physics system, then you can check the <code>Is Kinematic</code> checkbox.  A kinematic object&rsquo;s position is under the control of the attached scripts, rather than the physics system.</p>
 
 <p>One other trick from the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">tutorial</a> is to set the <code>Collider</code> component&rsquo;s <code>isTrigger</code> property to <code>true</code>.  This prevents the <code>Collider</code> from being treated as a solid object in the physics simulation, which could lead to unintended bumping and pushing among various <code>Colliders</code> in a scene.</p>
+
+<p><strong>Update:</strong> <a href="https://twitter.com/involvingsalmon">@InvolvingSalmon</a> points out that the instructions here depend on the version of Unity that you are using.  This article was written for Unity version 4.5.2f1.</p>
 </div>
 
 
@@ -172,6 +174,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">One Tap Quest: a pachinko RPG</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/09/persistent-data-in-unity/">Persistent Data in Unity</a>
       </li>
     
@@ -185,10 +191,6 @@
     
       <li class="post">
         <a href="/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/">The Strength of the Pitch: Jodorowsky's Dune</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/21/playable-call-for-papers/">Playable Call For Papers</a>
       </li>
     
   </ul>
