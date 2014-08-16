@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-08-16T10:41:51-05:00</updated>
+  <updated>2014-08-16T10:43:32-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -26,7 +26,7 @@
 
 <p>One other trick from the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">tutorial</a> is to set the <code>Collider</code> component&rsquo;s <code>isTrigger</code> property to <code>true</code>.  This prevents the <code>Collider</code> from being treated as a solid object in the physics simulation, which could lead to unintended bumping and pushing among various <code>Colliders</code> in a scene.</p>
 
-<p><strong>Update:</strong> <a href="https://twitter.com/involvingsalmon">@InvolvingSalmon</a> points out that the instructions here depend on the version of Unity that you are using.  This article was written for Unity version 4.5.2f1.</p>
+<p><strong>Update:</strong> <a href="https://twitter.com/involvingsalmon">@InvolvingSalmon</a> points out that the instructions here depend on the version of Unity that you are using.  This article was written for Unity version <code>4.5.2f1</code>.</p>
 ]]></content>
   </entry>
   
