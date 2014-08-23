@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OS X | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/os-x/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-08-16T10:47:49-05:00</updated>
+  <updated>2014-08-23T09:00:55-07:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Upgrading to Mavericks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/"/>
-    <updated>2014-03-15T08:03:27-05:00</updated>
+    <updated>2014-03-15T06:03:27-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks</id>
     <content type="html"><![CDATA[<p>This week I upgraded to <a href="https://www.apple.com/osx/">Mac OS X 10.9 Mavericks</a>.  To keep <a href="http://octopress.org/">octopress</a> working, I had to uninstall and reinstall <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
 

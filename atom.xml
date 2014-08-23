@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-08-16T10:47:49-05:00</updated>
+  <updated>2014-08-23T09:00:55-07:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,40 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Designing a pachinko RPG]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/"/>
+    <updated>2014-08-23T08:48:48-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg</id>
+    <content type="html"><![CDATA[<p>What would make a pachinko RPG?  <a href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">Last week</a>, I wrote about how I&rsquo;m sort of enamored with <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest&rsquo;s</a></em> tap-and-let-them-go interaction, which I think mirrors the play-style of pachinko.  In pachinko, you have some control over launching the little metal balls, but once they&rsquo;re in play, they&rsquo;re on their own.  This mechanism stands in contrast to pinball, where you interact with a single or multiple pinballs with the paddles, and cue sports (especially bumper pool), where you launch a billiard ball repeatedly with a cue.</p>
+
+<p>As I said last week, I think the basic gameplay in <em>One Tap Quest</em> is interesting enough for a 10-minute session.  But I&rsquo;d like to take this concept and run with it, if you&rsquo;ll let me.  What follows are some concepts that, I think, extend the <em>One Tap Quest</em> pachinko RPG model.</p>
+
+<h2>Player characters</h2>
+
+<p>As I conceive of it, a pachinko RPG is sort of like <em><a href="http://en.wikipedia.org/wiki/The_Wonderful_101">Wonderful 101</a></em>.  A changing stock of characters go up against an overwhelming group of enemies.  Just like pachinko rewards players with more pachinko balls, worth real money, a pachinko RPG would need to reward the player with ever more&mdash;and ever more interesting&mdash;characters to bolster the stock and the player&rsquo;s score.  A given character can gain levels when unleashed on the board, a little more unique than generic pachinko balls.  Perhaps characters added to the stock later in the game come at a higher starting level, sort of like characters recruited in later sections of <em><a href="http://en.wikipedia.org/wiki/Final_Fantasy_Tactics">Final Fantasy Tactics</a></em> or <em><a href="http://en.wikipedia.org/wiki/Ogre_Battle:_The_March_of_the_Black_Queen">Ogre Battle</a></em>.</p>
+
+<h2>Environment</h2>
+
+<p>Procedurally generated &ldquo;boards&rdquo; could make a game interesting.  Presenting a variable layout of enemies, terrain, and power-ups can challenge players who are already familiar with the basic gameplay.  I don&rsquo;t think that using roguelike elements, such as varying the effects of power-ups like potions in <em><a href="http://www.nethack.org/">Nethack</a></em> would work very well.  However, incorporating a quest or narrative adventure framework above the level of boards could be engaging.  Here I&rsquo;m using the word level to refer to a conceptual level of hierarchical relationships, rather than an experience level or a stage in a game.  I&rsquo;m talking about the approach that <em><a href="http://www.ftlgame.com/">FTL</a></em> and the built-in 3DS RPG, <em><a href="http://nintendo.wikia.com/wiki/Find_Mii_(3DS">Find Mii</a>)</em>, take.  Each &ldquo;board&rdquo; is a gameplay experience in itself, and the &ldquo;boards&rdquo; have a larger (in terms of conceptual scope) map that ties them together and gives the player a sense of progression or quest completion.</p>
+
+<p>Obstacles on the &ldquo;boards&rdquo; that impair the movement of either player characters or enemies could add another layer of strategy.  In effect these terrain elements could construct a puzzle that they player has to solve by starting their player character down the correct &ldquo;lane&rdquo;, and being lucky enough to gain the required number of levels to beat the &ldquo;board&rdquo;.</p>
+
+<p>This approach to using obstacles to make puzzles would require some clever level design.  A puzzle where there is a single right way to complete it would be boring, once you find it you simply wait until you get the required number of levels through sheer luck&mdash;pointless repetition without interesting choices.  However puzzles where there are (or seem to be) multiple routes to complete the &ldquo;board&rdquo; can be interesting.</p>
+
+<h2>Interaction</h2>
+
+<p>I think it might be cool to maintain control over the character after you launch.  In a sense you would be an invisible hand, maintaining control over the pachinko ball as it rolls through the machine.  This game would be sort of like an inverted bullet-hell shoot &lsquo;em up.  Rather than dodging enemies, you would guide your character toward them.  It is probably worth iterating on this mechanic, because <em><a href="http://zh.monst.wikia.com/wiki/Monster_Strike_%E7%BB%B4%E5%9F%BA">Monster Strike</a></em> seems to use it with relative success.  But I think maintaining control over the character would block out the cheering-your-character-on-from-the-sidelines aspect that I enjoyed in One Tap Quest, and would like to emulate.</p>
+
+<h2>Enemies</h2>
+
+<p>As I mentioned previously, added depth of enemy behavior and power-ups could prolong the experience.  I&rsquo;m not sure exactly what this would entail at this point, but I think iterating on the basic concepts laid out in <em>One Tap Quest</em> could lead to some interesting variation.  That sentence pretty much sums up my take on what would make an interesting pachinko RPG.  Thanks for letting me spew some thoughts that are little more than design notes.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[One Tap Quest: a pachinko RPG]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/"/>
-    <updated>2014-08-16T10:39:34-05:00</updated>
+    <updated>2014-08-16T08:39:34-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg</id>
     <content type="html"><![CDATA[<p>I recently played <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest</a></em>, a game in which you tap to place an RPG character who marches upward, gaining levels by bumping into enemies, to tackle bigger and badder foes.  What&rsquo;s interesting to me, if you&rsquo;ll bear with me, is that this is a game that amounts to a pachinko RPG.  I&rsquo;ll start by talking about what I liked about <em>One Tap Quest</em>.  Next week, I&rsquo;ll get into what I mean by a pachinko RPG.</p>
 
@@ -37,7 +68,7 @@
   <entry>
     <title type="html"><![CDATA[Persistent Data in Unity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/"/>
-    <updated>2014-08-09T11:09:15-05:00</updated>
+    <updated>2014-08-09T09:09:15-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity</id>
     <content type="html"><![CDATA[<p>I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity.  In other words, I want this data to remain persistent.  As you&rsquo;ll see below I was tempted to use <code>PlayerPrefs</code> to store the data, but, according to <a href="https://www.youtube.com/watch?v%3DJ6FfcJpbPXE">this Unity Live Training on Data Persistence</a>, <code>PlayerPrefs</code> is not the best way to make data persist over multiple Scenes.  <code>PlayerPrefs</code> is an okay place to store non-critical data, like the audio volume, window size, full-screen state&#x2013;you know preferences.  I&rsquo;ll go ahead and show what I believe to be the correct way to store persistent data before talking about <code>PlayerPrefs</code> later.</p>
 
@@ -165,7 +196,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Static and Dynamic Colliders in Unity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity/"/>
-    <updated>2014-08-02T12:54:15-05:00</updated>
+    <updated>2014-08-02T10:54:15-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity</id>
     <content type="html"><![CDATA[<p>According to the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">Ray Wenderlich Unity 2D tutorial</a> by <a href="http://www.raywenderlich.com/u/clapollo">Christopher LaPollo</a>, Unity&rsquo;s physics engine builds a simulation based on the <a href="http://docs.unity3d.com/Manual/CollidersOverview.html">Colliders</a> present in a scene.  If some those <code>Colliders</code> are declared to be <code>static</code>, then the entire simulation is rebuilt when those colliders move.  Of course, rebuilding a physics simulation when it&rsquo;s unnecessary is inefficient.  By declaring objects to have <code>dynamic</code> <code>Colliders</code>, the physics engine does not have to rebuild the simulation at runtime, that is to say when the game is running.</p>
 
@@ -182,7 +213,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Space Is Read]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
-    <updated>2014-07-26T11:08:44-05:00</updated>
+    <updated>2014-07-26T09:08:44-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
     <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
 
@@ -204,7 +235,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
-    <updated>2014-07-19T10:42:35-05:00</updated>
+    <updated>2014-07-19T08:42:35-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
     <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
 
@@ -240,7 +271,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Playable Call For Papers]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/"/>
-    <updated>2014-06-21T10:20:23-05:00</updated>
+    <updated>2014-06-21T08:20:23-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers</id>
     <content type="html"><![CDATA[<p><a href="http://www.twitter.com/mtrc">Michael Cook</a> made a &ldquo;needlessly interactive&rdquo; <a href="http://www.exag.org/playablecfp/">playable call for papers</a> for the <a href="http://www.exag.org/">Experimental AI in Games conference</a>, taking place in October in Raleigh, NC.  It&rsquo;s a minimally expressive Twine story, with really one simple interactive experience of role-playing the interaction a recipient feels upon receiving yet another CFP email, <em>click</em>.</p>
 
@@ -255,7 +286,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Why you should start simple]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T13:58:34-05:00</updated>
+    <updated>2014-06-07T11:58:34-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
 
@@ -281,7 +312,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T11:28:40-05:00</updated>
+    <updated>2014-05-31T09:28:40-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -319,7 +350,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Quarries of Scred Roadmap]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap/"/>
-    <updated>2014-05-24T15:49:08-05:00</updated>
+    <updated>2014-05-24T13:49:08-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap</id>
     <content type="html"><![CDATA[<p>The <a href="http://darkestkale.itch.io/quarries-of-scred">Quarries of Scred</a> <a href="https://twitter.com/darkestkale">developer</a> released an image showing the overview of Scred&rsquo;s 14-day game development.  I find it informative for a couple of reasons.  First it&rsquo;s not limited to the core features of the game, Kale&rsquo;s also included public relations and marketing information.  Second, the fact that it&rsquo;s incomplete shows how Kale&rsquo;s prioritized critical elements of the game.</p>
 
@@ -377,7 +408,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[.gitignore for Unity projects]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/"/>
-    <updated>2014-05-17T11:48:06-05:00</updated>
+    <updated>2014-05-17T09:48:06-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects</id>
     <content type="html"><![CDATA[<p>I found a solution on the <a href="http://answers.unity3d.com/questions/369755/unity-on-github.html">Unity website</a> that pointed me toward <a href="http://t-machine.org/index.php/2012/07/03/unity-git-source-control-a-basic-gitignore/">this blogpost</a>.  But a better solution is out there.  The Double Fine Game Club&rsquo;s Bad Golf Community Edition <a href="https://github.com/Double-Fine-Game-Club/bad-golf-community-edition/blob/master/.gitignore">.gitignore</a> looks like this:</p>
 
@@ -437,7 +468,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Follow-up to the centrality of caves]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/"/>
-    <updated>2014-05-10T10:27:49-05:00</updated>
+    <updated>2014-05-10T08:27:49-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves</id>
     <content type="html"><![CDATA[<p>My <a href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/">post last week</a> about caves struck a nerve.  I received a lot of encouraging retweets and favorites.  I also received some great feedback.</p>
 
@@ -462,7 +493,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Why are caves central to so many games?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/"/>
-    <updated>2014-05-03T09:46:11-05:00</updated>
+    <updated>2014-05-03T07:46:11-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games</id>
     <content type="html"><![CDATA[<p>On twitter, <a href="https://twitter.com/psysal">@psysal</a> posed this question to the game dev community:</p>
 
@@ -517,7 +548,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
-    <updated>2014-04-26T09:47:18-05:00</updated>
+    <updated>2014-04-26T07:47:18-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
     <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
 
@@ -582,7 +613,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[styx_ebooks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T14:05:03-05:00</updated>
+    <updated>2014-04-19T12:05:03-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
     <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
 
@@ -601,7 +632,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[The Fate of Adventure Games]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/"/>
-    <updated>2014-04-12T09:16:59-05:00</updated>
+    <updated>2014-04-12T07:16:59-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games</id>
     <content type="html"><![CDATA[<p>Zoyə Street wrote a <a href="https://medium.com/p/3e3c1e20cfd0">summary</a> of an interesting <a href="http://www.omnsh.org/ressources/527/histoire-formelle-du-jeu-daventure-sur-ordinateur-le-cas-de-lamerique-du-nord-de-1976">PhD thesis by Jonathan Lessard</a>.  Lessard examines the history of adventure games, to see whence they&rsquo;ve come and where they&rsquo;ve gone.  Like Street, I think this approach to thinking about video game design and genre provides useful perspective.</p>
 
@@ -616,7 +647,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Don't Fear Lack of Content]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content/"/>
-    <updated>2014-04-05T09:59:37-05:00</updated>
+    <updated>2014-04-05T07:59:37-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content</id>
     <content type="html"><![CDATA[<p>Came across a <a href="http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/">nice article</a> on <a href="http://www.egometry.com/">Ben McGraw&rsquo;s blog, Egometry</a>. Using Super Mario Bros. as a model, Ben explains why merely increasing content quantity is less desirable than increasing content substance.  The title of this post is lifted from a quote in his article.</p>
 
@@ -627,7 +658,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
-    <updated>2014-03-29T10:04:05-05:00</updated>
+    <updated>2014-03-29T08:04:05-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
     <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
 ]]></content>
@@ -636,7 +667,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[ICE ICE Baby]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/"/>
-    <updated>2014-03-22T09:17:31-05:00</updated>
+    <updated>2014-03-22T07:17:31-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby</id>
     <content type="html"><![CDATA[<p><a href="http://www.thegia.com/author/avestal/">Andrew Vestal</a> of <a href="http://www.thegia.com/">the GIA</a> wrote a <a href="http://twinery.org/">Twine</a> game for <a href="http://itch.io/jam/cyberpunk-jam">#cyberpunkjam</a> called <a href="http://www.thegia.com/avestal/iceicebaby.html">ICE ICE Baby</a>.</p>
 
@@ -651,7 +682,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Upgrading to Mavericks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/"/>
-    <updated>2014-03-15T08:03:27-05:00</updated>
+    <updated>2014-03-15T06:03:27-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks</id>
     <content type="html"><![CDATA[<p>This week I upgraded to <a href="https://www.apple.com/osx/">Mac OS X 10.9 Mavericks</a>.  To keep <a href="http://octopress.org/">octopress</a> working, I had to uninstall and reinstall <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
 
@@ -660,40 +691,6 @@ class PlayerData {
 <p>Interestingly, <a href="https://rvm.io/">RVM</a> survived the upgrade and seems to be working just fine.</p>
 
 <p>I followed the instructions <a href="https://gist.github.com/imathis/1104557">here</a> to uninstall and reinstall Ruby, the bundler, and all bundled gems for my octopress install.  The instructions mention a specific problem for OS X Lion, but these steps solved the problem for me.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cut it all right in two: bisect to find bugs]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/"/>
-    <updated>2014-03-08T10:25:02-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs</id>
-    <content type="html"><![CDATA[<p>Imagine there&rsquo;s a lion in a desert.  You need to cage the lion or you
-will be eaten.  In this example the desert is your code and the lion
-is a bug that you&rsquo;re having a hard time pinning down.</p>
-
-<p>There are many ways to trap a lion.  Here&rsquo;s one.</p>
-
-<p>Build a fence dividing the desert in half going North to South.
-Assuming the lion is not in the South section, divide the North
-section in half with a fence going East to West.  Repeat the process
-until your fence is arbitrarily small and has become a cage trapping
-the lion.</p>
-
-<p>But how does this relate to code?</p>
-
-<p>Say you have a relatively large file that executes fine, but
-introduces a bug into your larger system.  You suspect that something
-has gone wrong with the large file, but you&rsquo;re not getting an error
-implicating a specific line.</p>
-
-<p>Cut it all right in two.</p>
-
-<p>Comment out half the code in your large file and try to reproduce the
-bug.  If you reproduce the bug, repeat the process as necessary until
-you isolate the line producing the problem.</p>
-
-<p>I learned about this approach for bugsleuthing from the <a href="https://gist.github.com/stardiviner/8109774#file-temp-txt-L26">bot in #emacs on freenode</a>.  It&rsquo;s particularly useful for tracking down bugs in large configuration files.  There&rsquo;s a list of humorous lion-trapping algorithm examples <a href="http://faculty.smu.edu/yzhou/humor/lion.htm">here</a>.</p>
 ]]></content>
   </entry>
   
