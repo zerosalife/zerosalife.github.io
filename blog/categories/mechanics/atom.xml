@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-08-23T09:00:55-07:00</updated>
+  <updated>2014-08-23T09:02:58-07:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -28,7 +28,7 @@
 
 <h2>Environment</h2>
 
-<p>Procedurally generated &ldquo;boards&rdquo; could make a game interesting.  Presenting a variable layout of enemies, terrain, and power-ups can challenge players who are already familiar with the basic gameplay.  I don&rsquo;t think that using roguelike elements, such as varying the effects of power-ups like potions in <em><a href="http://www.nethack.org/">Nethack</a></em> would work very well.  However, incorporating a quest or narrative adventure framework above the level of boards could be engaging.  Here I&rsquo;m using the word level to refer to a conceptual level of hierarchical relationships, rather than an experience level or a stage in a game.  I&rsquo;m talking about the approach that <em><a href="http://www.ftlgame.com/">FTL</a></em> and the built-in 3DS RPG, <em><a href="http://nintendo.wikia.com/wiki/Find_Mii_(3DS">Find Mii</a>)</em>, take.  Each &ldquo;board&rdquo; is a gameplay experience in itself, and the &ldquo;boards&rdquo; have a larger (in terms of conceptual scope) map that ties them together and gives the player a sense of progression or quest completion.</p>
+<p>Procedurally generated &ldquo;boards&rdquo; could make a game interesting.  Presenting a variable layout of enemies, terrain, and power-ups can challenge players who are already familiar with the basic gameplay.  I don&rsquo;t think that using roguelike elements, such as varying the effects of power-ups like potions in <em><a href="http://www.nethack.org/">Nethack</a></em> would work very well.  However, incorporating a quest or narrative adventure framework above the level of boards could be engaging.  Here I&rsquo;m using the word level to refer to a conceptual level of hierarchical relationships, rather than an experience level or a stage in a game.  I&rsquo;m talking about the approach that <em><a href="http://www.ftlgame.com/">FTL</a></em> and the built-in 3DS RPG, <em><a href="http://nintendo.wikia.com/wiki/Find_Mii_%403DS%41">Find Mii</a></em>, take.  Each &ldquo;board&rdquo; is a gameplay experience in itself, and the &ldquo;boards&rdquo; have a larger (in terms of conceptual scope) map that ties them together and gives the player a sense of progression or quest completion.</p>
 
 <p>Obstacles on the &ldquo;boards&rdquo; that impair the movement of either player characters or enemies could add another layer of strategy.  In effect these terrain elements could construct a puzzle that they player has to solve by starting their player character down the correct &ldquo;lane&rdquo;, and being lucky enough to gain the required number of levels to beat the &ldquo;board&rdquo;.</p>
 
