@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: twine | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/twine/atom.xml" rel="self"/>
+  <link href="http://zerosalife.github.io/"/>
+  <updated>2014-08-23T09:05:53-07:00</updated>
+  <id>http://zerosalife.github.io/</id>
+  <author>
+    <name><![CDATA[zerosalife]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
+    <updated>2014-03-29T08:04:05-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
+    <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ICE ICE Baby]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/"/>
+    <updated>2014-03-22T07:17:31-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby</id>
+    <content type="html"><![CDATA[<p><a href="http://www.thegia.com/author/avestal/">Andrew Vestal</a> of <a href="http://www.thegia.com/">the GIA</a> wrote a <a href="http://twinery.org/">Twine</a> game for <a href="http://itch.io/jam/cyberpunk-jam">#cyberpunkjam</a> called <a href="http://www.thegia.com/avestal/iceicebaby.html">ICE ICE Baby</a>.</p>
+
+<p>It&rsquo;s playable in a quick ten minutes.  Parts of the game remind me of the sorts imagination games I would play growing up. This is quite a nice conceit for a text adventure, and it works well here.</p>
+
+<p>I especially like the use of color to mark the transitions between meatspace and cyberspace.</p>
+
+<p><a href="http://www.thegia.com/author/nmaragos/">Nich Maragos</a> wrote a more thorough <a href="http://www.thegia.com/2014/03/05/appetite-for-destruction-ice-ice-baby/">critical review</a> on the GIA.</p>
+]]></content>
+  </entry>
+  
+</feed>
