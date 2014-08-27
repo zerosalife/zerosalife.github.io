@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: design | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
+  <link href="http://zerosalife.github.io/"/>
+  <updated>2014-08-23T09:05:53-07:00</updated>
+  <id>http://zerosalife.github.io/</id>
+  <author>
+    <name><![CDATA[zerosalife]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Designing a pachinko RPG]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/"/>
+    <updated>2014-08-23T08:48:48-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg</id>
+    <content type="html"><![CDATA[<p>What would make a pachinko RPG?  <a href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">Last week</a>, I wrote about how I&rsquo;m sort of enamored with <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest&rsquo;s</a></em> tap-and-let-them-go interaction, which I think mirrors the play-style of pachinko.  In pachinko, you have some control over launching the little metal balls, but once they&rsquo;re in play, they&rsquo;re on their own.  This mechanism stands in contrast to pinball, where you interact with a single or multiple pinballs with the paddles, and cue sports (especially bumper pool), where you launch a billiard ball repeatedly with a cue.</p>
+
+<p>As I said last week, I think the basic gameplay in <em>One Tap Quest</em> is interesting enough for a 10-minute session.  But I&rsquo;d like to take this concept and run with it, if you&rsquo;ll let me.  What follows are some concepts that, I think, extend the <em>One Tap Quest</em> pachinko RPG model.</p>
+
+<h2>Player characters</h2>
+
+<p>As I conceive of it, a pachinko RPG is sort of like <em><a href="http://en.wikipedia.org/wiki/The_Wonderful_101">Wonderful 101</a></em>.  A changing stock of characters go up against an overwhelming group of enemies.  Just like pachinko rewards players with more pachinko balls, worth real money, a pachinko RPG would need to reward the player with ever more&mdash;and ever more interesting&mdash;characters to bolster the stock and the player&rsquo;s score.  A given character can gain levels when unleashed on the board, a little more unique than generic pachinko balls.  Perhaps characters added to the stock later in the game come at a higher starting level, sort of like characters recruited in later sections of <em><a href="http://en.wikipedia.org/wiki/Final_Fantasy_Tactics">Final Fantasy Tactics</a></em> or <em><a href="http://en.wikipedia.org/wiki/Ogre_Battle:_The_March_of_the_Black_Queen">Ogre Battle</a></em>.</p>
+
+<h2>Environment</h2>
+
+<p>Procedurally generated &ldquo;boards&rdquo; could make a game interesting.  Presenting a variable layout of enemies, terrain, and power-ups can challenge players who are already familiar with the basic gameplay.  I don&rsquo;t think that using roguelike elements, such as varying the effects of power-ups like potions in <em><a href="http://www.nethack.org/">Nethack</a></em> would work very well.  However, incorporating a quest or narrative adventure framework above the level of boards could be engaging.  Here I&rsquo;m using the word level to refer to a conceptual level of hierarchical relationships, rather than an experience level or a stage in a game.  I&rsquo;m talking about the approach that <em><a href="http://www.ftlgame.com/">FTL</a></em> and the built-in 3DS RPG, <em><a href="http://nintendo.wikia.com/wiki/Find_Mii_%283DS%29">Find Mii</a></em>, take.  Each &ldquo;board&rdquo; is a gameplay experience in itself, and the &ldquo;boards&rdquo; have a larger (in terms of conceptual scope) map that ties them together and gives the player a sense of progression or quest completion.</p>
+
+<p>Obstacles on the &ldquo;boards&rdquo; that impair the movement of either player characters or enemies could add another layer of strategy.  In effect these terrain elements could construct a puzzle that they player has to solve by starting their player character down the correct &ldquo;lane&rdquo;, and being lucky enough to gain the required number of levels to beat the &ldquo;board&rdquo;.</p>
+
+<p>This approach to using obstacles to make puzzles would require some clever level design.  A puzzle where there is a single right way to complete it would be boring, once you find it you simply wait until you get the required number of levels through sheer luck&mdash;pointless repetition without interesting choices.  However puzzles where there are (or seem to be) multiple routes to complete the &ldquo;board&rdquo; can be interesting.</p>
+
+<h2>Interaction</h2>
+
+<p>I think it might be cool to maintain control over the character after you launch.  In a sense you would be an invisible hand, maintaining control over the pachinko ball as it rolls through the machine.  This game would be sort of like an inverted bullet-hell shoot &lsquo;em up.  Rather than dodging enemies, you would guide your character toward them.  It is probably worth iterating on this mechanic, because <em><a href="http://zh.monst.wikia.com/wiki/Monster_Strike_%E7%BB%B4%E5%9F%BA">Monster Strike</a></em> seems to use it with relative success.  But I think maintaining control over the character would block out the cheering-your-character-on-from-the-sidelines aspect that I enjoyed in One Tap Quest, and would like to emulate.</p>
+
+<h2>Enemies</h2>
+
+<p>As I mentioned previously, added depth of enemy behavior and power-ups could prolong the experience.  I&rsquo;m not sure exactly what this would entail at this point, but I think iterating on the basic concepts laid out in <em>One Tap Quest</em> could lead to some interesting variation.  That sentence pretty much sums up my take on what would make an interesting pachinko RPG.  Thanks for letting me spew some thoughts that are little more than design notes.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[One Tap Quest: a pachinko RPG]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/"/>
+    <updated>2014-08-16T08:39:34-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg</id>
+    <content type="html"><![CDATA[<p>I recently played <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest</a></em>, a game in which you tap to place an RPG character who marches upward, gaining levels by bumping into enemies, to tackle bigger and badder foes.  What&rsquo;s interesting to me, if you&rsquo;ll bear with me, is that this is a game that amounts to a pachinko RPG.  I&rsquo;ll start by talking about what I liked about <em>One Tap Quest</em>.  <a href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/">Next week</a>, I&rsquo;ll get into what I mean by a pachinko RPG.</p>
+
+<p>It&rsquo;s rare that I come to a new gameplay experience completely naive these days. The only way I feel I can effectively spend my time with a game is typically after having read some sort of guide because my time is extremely limited.</p>
+
+<p>What the <em>One Tap Quest</em> accomplished so well for me was going from barely being able to read the screen to beating the game over the course of 10 minutes.  Admittedly it&rsquo;s a very short and simple game.  But I felt a sense of accomplishment every time my understanding of the mechanics grew.</p>
+
+<p>Oh, these little critters are stronger than these other little critters, better avoid them.  Oh these are power ups, not critters, better aim for them.  With these skills under my belt it only took a little luck to send my character on a march toward victory.</p>
+
+<p>The place where this idea shines is in the power-ups.  I&rsquo;m not sure whether I&rsquo;ve encountered all of them, but they range from simple buffs that grant free levels to expanding your party into a 3-character-wide enemy-wrecking plow.  For what it&rsquo;s worth, the power-ups were deep enough to keep me interested over 10 minutes of gameplay.  If I were going to engage with this experience over a longer term, I would suggest adding more depth to the power-ups and the enemies, which are as far as I can tell simply harder to kill, and possibly bigger, versions of the puny slimes that move back and forth.  Some of the enemies have variations on the simple random walk style movement of the slimes, but a richer variety of movement and behavior from the enemies would increase the required skill to play the game, and add to replayability.</p>
+
+<p>I think the power-up mechanics add a level of depth and strategy to what otherwise would be a hands-off luck-of-the-draw game.  By aiming for power-ups you have a sense of agency in the action, just like turning the knob controls the velocity at which pachinko balls are launched.  It makes cheering for your lemming-like character(s) more enjoyable: if they could just get a little closer and grab the power-up you aimed at&mdash;no.  Nope, they died.</p>
+
+<p>Go give this great little game a try.  Hopefully it will pique your interest like it piqued mine.  Quirky variations on RPGs seem to be part of the <em>Zeitgeist</em>, with <em><a href="http://www.atlus.com/rollers/">Rollers of the Realm</a></em> and <em><a href="http://zh.monst.wikia.com/wiki/Monster_Strike_%E7%BB%B4%E5%9F%BA">Monster Strike</a></em> blending pinball and console genre gameplay with the potential synergy <em><a href="http://en.wikipedia.org/wiki/Sonic_the_Hedgehog_Spinball">Sonic Spinball</a></em> never achieved.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Persistent Data in Unity]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/"/>
+    <updated>2014-08-09T09:09:15-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity.  In other words, I want this data to remain persistent.  As you&rsquo;ll see below I was tempted to use <code>PlayerPrefs</code> to store the data, but, according to <a href="https://www.youtube.com/watch?v%3DJ6FfcJpbPXE">this Unity Live Training on Data Persistence</a>, <code>PlayerPrefs</code> is not the best way to make data persist over multiple Scenes.  <code>PlayerPrefs</code> is an okay place to store non-critical data, like the audio volume, window size, full-screen state&#x2013;you know preferences.  I&rsquo;ll go ahead and show what I believe to be the correct way to store persistent data before talking about <code>PlayerPrefs</code> later.</p>
+
+<!--more-->
+
+
+<h2>Persistent data</h2>
+
+<p>To safely and reliably store persistent data, the Unity tutorials suggest that you need to assign a &ldquo;kinda&rdquo; Singleton design patterny script to an empty <code>GameObject</code> that will persist across Scenes.</p>
+
+<pre><code>using UnityEngine;
+using System.Collections;
+
+public class GameControl: MonoBehaviour {
+  public static GameControl control;
+
+  public float health;
+  public float experience;
+
+  void Awake() {
+    if(control == null){
+      DontDestroyOnLoad(gameObject);
+      control = this;
+    } else if(control != this) {
+      // There can be only one!
+      Destroy(gameObject);
+    }
+  }
+}
+</code></pre>
+
+<p>The <code>static</code> reference means that we can just access the values in the <code>GameControl</code> script.</p>
+
+<h2>How to access data in the GameController.</h2>
+
+<pre><code>GameController.control.health = 100;
+</code></pre>
+
+<h2>Writing persistent data to a binary file</h2>
+
+<p>The persistent data that&rsquo;s under the control of the <code>GameController</code> is perfectly happy hanging out when your application is running.  It will persist between Scenes when other data is wiped out by Unity&rsquo;s garbage collection.  But what if you want to maintain persistent data when the application is closed.</p>
+
+<p>Ah hah!  Finally, an answer to my nagging question about writing persistent data to plain text files, like <code>PlayerPrefs</code> or simply a file in a local directory.  Wouldn&rsquo;t a player be able to modify the data?</p>
+
+<p>Enter the binary format:</p>
+
+<pre><code>// Add two more libraries
+using System;
+using System.Runtime.Serialzation.Formatters.Binary;
+</code></pre>
+
+<p>Where do we save it?  The persistent data path: <code>Application.persistentDataPath</code>.  We&rsquo;ll need one more library to do some input and output to files:</p>
+
+<pre><code>// Requires one more library and we're ready to get cooking with some
+// methods
+using System.IO;
+
+public void Save() {
+  BinaryFormatter bf = new BinaryFormatter();
+  FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+                              FileMode.Open);
+
+  PlayerData data = new PlayerData();
+  data.experiencePoints = experiencePoints;
+  data.playerLevel = playerLevel;
+
+  bf.Serialize(file, data);
+  file.Close();
+}
+
+public void Load() {
+  if(File.Exists(Application.persistentDataPath + "/gameInfo.dat")) {
+    BinaryFormatter bf = new BinaryFormatter();
+    FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+                                FileMode.Open);
+    PlayerData data = (PlayerData)bf.Deserialize(file);
+    file.Close();
+
+    experiencePoints = data.experiencePoints;
+    playerLevel = data.playerLevel;
+  }
+}
+</code></pre>
+
+<p>Now we need to make the <code>PlayerData</code> class that we will tag with <code>[Serializable]</code> so Unity will know that we want to write this to a binary file at some point in the future.  This affects how Unity stores the data internally, but it doesn&rsquo;t really change how we interact with it.</p>
+
+<pre><code>[Serializable]
+class PlayerData {
+  // TODO: see about making gets and sets.
+  // TODO: automate the generation of this data structure.  See:
+  // http://forums.devx.com/showthread.php?170650-How-to-dynamically-add-property-to
+
+  // Add new variables for loading and saving here.
+  public int experiencePoints;
+  public int playerLevel;
+}
+</code></pre>
+
+<p>After writing up this article, I came across an older, possibly better article on Unity Gems.  Please check out that write-up and all of the great content on the site.  <a href="http://unitygems.com/saving-data-1-remember-me/">http://unitygems.com/saving-data-1-remember-me/</a></p>
+
+<p>My full <code>GameController</code> data persistence Singleton script is available in <a href="https://gist.github.com/zerosalife/6f6e811b27761d287ea5">this gist</a>.</p>
+
+<p>So, that&rsquo;s the best solution I&rsquo;ve found to date for having persistent data across scenes and play sessions.  I&rsquo;ve included my rough first stabs at the problem below.  Keep in mind that anything following this point is just included just to make my notes available, and it&rsquo;s not meant to be a guide.</p>
+
+<h2>Old notes: PlayerPrefs</h2>
+
+<p>In order to have persistent data between Scenes, I was previously going to make use of Unity&rsquo;s <code>PlayerPrefs</code>, a class that implements persistent data storage for <code>ints</code>, <code>floats</code>, and <code>strings</code>.  Notably absent are useful data types like <code>Vector3</code> to maintain, for example, <code>transform</code> data between Scenes.  Some of the solutions I found may still be helpful for more storing complex data types in <code>PlayerPrefs</code>.</p>
+
+<p>One potential solution is to simply set a <code>GameObject</code>&rsquo;s <code>transform.position</code> to some constant <code>Vector3</code> value in the freshly loaded Scene.  While this is possible in some applications, I&rsquo;m going to assume that eventually you&rsquo;ll want to transfer some dynamic position information between Scenes.</p>
+
+<p>Here are two potentially helpful sources to achieve this:</p>
+
+<p><a href="http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/">http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/</a>, based on work by Mehta Dakshil.  While JSON parsing looks interesting, it requires an external <code>.dll</code>, <code>JsonFx.Json.dll</code>.  And I&rsquo;m not interested in external dependencies here.  It may work great for you.</p>
+
+<p><a href="http://wiki.unity3d.com/index.php?title%3DArrayPrefs">&lt;http://wiki.unity3d.com/index.php?title=ArrayPrefs></a>, based on work by Mario Madureiera Fontes and Daniel P. Rossi.  (Note: since <code>GetVector3</code> depends on <code>GetFloatArray</code>, there could be some error due to <code>GetFloatArray</code> casting strings to floats.  But the error introduce in the resulting <code>Vector3</code> is unlikely to be noticeable.)</p>
+
+<p>Actually, see a more updated version here: <a href="http://wiki.unity3d.com/index.php/ArrayPrefs2">http://wiki.unity3d.com/index.php/ArrayPrefs2</a>, which is based on work by Eric Haines.</p>
+
+<p>According to the text, the script should be placed in the <code>Standard Assets</code> directory, so that it can be accessed from both <code>C#</code> and <code>Boo</code> scripts.</p>
+
+<p>To see a faster implementation for mobile devices, where the data to be saved in PlayerPrefs is cached in memory, see: <a href="http://www.previewlabs.com/writing-playerprefs-fast/">http://www.previewlabs.com/writing-playerprefs-fast/</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Space Is Read]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
+    <updated>2014-07-26T09:08:44-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
+    <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
+
+<!--more-->
+
+
+<p>On the spectrum of play, these sorts of games are loosely analogous to Choose Your Own Adventure books.  Just as a Choose Your Own Adventure book expects the player to turn to a given page according to the rules laid out at the bottom of the pages to proceed in a consistent, logical fashion, the tropes of a visual novel require the player to interact with the game in order for the story to proceed.  A novel will proceed with the only &lsquo;player&rsquo; interaction consisting of turning to the next page.  I&rsquo;m oversimplifying the difference between <em>real choices</em>, as I would argue, Choose Your Own Adventure Books allow, and <em>mere interactivity</em>, like turning the page of a novel, but you get what I mean.</p>
+
+<p>Visual novels can have real choices and interactivity.  In this case, I&rsquo;d argue that Space Is Red is only interactive.  There are no real choices, short of figuring out the next bit to tap on in order to move the story along.  For me, it&rsquo;s the music that makes the experience gel as something more than an animated e-book.</p>
+
+<p>I don&rsquo;t mean to be presumptuous in my analysis of Space Is Red&rsquo;s gameplay, don&rsquo;t get me wrong.  I&rsquo;m not interested in arguments about merit simply based on A <strong>is</strong> a game but B <strong>isn&rsquo;t</strong>, so A is better.  I just think it&rsquo;s important to think about these sorts of things when considering the underlying design.</p>
+
+<p>I left the game looping <a href="https://soundcloud.com/postpre">PostPre</a>&rsquo;s driving soundtrack for 15 minutes, even though my first play-through lasted only 2 or 3.  Maybe that&rsquo;s the benefit of interactivity and choices, to extend and prolong the mindshare of some experience or product with the player.  I don&rsquo;t necessarily mean that in a cynical way, although the typical model of play can be subverted for more manipulative means (and, of course, it is!).</p>
+
+<p>For me, Space Is Red hit all the right notes and left me with something to think about.  That is what I call a successful gamejam game.  You can see Space Is Red and the other #spacecowboygamejam entries <a href="http://itch.io/jam/space-cowboy-jam">here</a>.  If you&rsquo;re interested in learning more about Space Is Red&rsquo;s creator <a href="http://toddluke.com/">Todd Luke</a>, you can find an interview <a href="http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php">here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
+    <updated>2014-07-19T08:42:35-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
+    <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
+
+<p>One quick note before we go on.  It looks like <em>Jodorowsky&rsquo;s Dune</em> has hit Netflix on DVD, and seems a likely candidate to be available for streaming.  So you can check it out for yourself to see if you agree with my take.</p>
+
+<!--more-->
+
+
+<h2>Pitching</h2>
+
+<p>Jodorowsky looks back, with good-natured humor, on a massively overambitious project for its time.  Aside from the amazing concept art and avant-garde stylings, I took away two messages from the documentary that I would like to share.  The first deals with the art of pitching your ideas and the second with locating oneself in close to proximity to the best and the brightest potential collaborators.</p>
+
+<p>Jodorowsky set out to create a huge book&mdash;more of a cinder block.  It&rsquo;s probably what we could call a design bible today, which would be delivered to production companies in order to secure funding.  By creating a book of storyboards and character designs, Jodorowsky wanted to show that the project was large in scope but feasible, because it had been so intricately planned.</p>
+
+<p>Jodorowsky reached out to a variety of concept artists to help with the design of the movie.  To visual and technical artists, Jodorowsky made impassioned pitches, claiming that they would become &ldquo;spiritual warriors&rdquo; for their collective vision, and implored them to come live and work (for little or no pay) in Paris.</p>
+
+<p>What stands out is the strength of Jodorowsky&rsquo;s pitch.  At a time when artists like <a href="http://www.chrisfossart.com/">Chris Foss</a>, <a href="http://en.wikipedia.org/wiki/Jean_Giraud">Moebius</a>, and <a href="http://www.hrgiger.com/">H.R. Giger</a> were each becoming established in their own rights, Jodorowsky was able, through the sheer strength of an imagined story, to convince them to devote years of effort to the project.  That takes a lot of gumption.  It didn&rsquo;t hurt that Jodorowsky had a strong track record of visually and thematically impressive avant-garde cinema.  Even still, Jodorowsky is great at selling the idea, and that is something that game designers must do, to communicate ideas to others in order to capitalize on the individual talents and assemble a great team.</p>
+
+<h2>Placement</h2>
+
+<p>The second message I took away deals with putting yourself into the right place at the right time.  It&rsquo;s also about leveraging that placement to connect and collaborate.</p>
+
+<p>The documentary showed a curious problem of the movie&rsquo;s mid-Seventies inception.  How do you find people to collaborate with, or even people at all, before the Internet?</p>
+
+<p>The solution: go to Paris.  That&rsquo;s where all the intelligentsia congregate.  This was more or less true for several hundred years before the Internet.  If you want <a href="http://en.wikipedia.org/wiki/Salvador_Dal%25C3%25AD">Salvador Dali</a> in your movie, playing the <a href="http://dune.wikia.com/wiki/Padishah_Emperor">Emperor of the Known Universe</a>, go to Paris and you&rsquo;ll probably run into Dali.</p>
+
+<p>Now we all live in our decentralized <a href="http://en.wikipedia.org/wiki/Temporary_Autonomous_Zone">temporary autonomous zones</a>.  But for as much as they can fragment, social media have the ability to connect disparate artists and thinkers.</p>
+
+<p>I think that Twitter is a platform that serves as a modern Paris, for like-minded people to seek each other out and communicate.  Go congregate with the intelligentsia and let your ideas speak for themselves.  Hit me up on the proverbial tweets, and let me hear your ideas and pitches.  I&rsquo;m constantly working on mine&mdash;writing here, trying to refine my skills.  Maybe we are both looking for the talents that we can provide.</p>
+]]></content>
+  </entry>
+  
+</feed>

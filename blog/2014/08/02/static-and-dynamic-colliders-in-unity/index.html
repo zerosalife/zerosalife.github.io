@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Static and Dynamic Colliders in Unity - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="According to the Ray Wenderlich Unity 2D tutorial by Christopher LaPollo, Unity&rsquo;s physics engine builds a simulation based on the Colliders &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Static and Dynamic Colliders in Unity</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-02T10:54:15-07:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>According to the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">Ray Wenderlich Unity 2D tutorial</a> by <a href="http://www.raywenderlich.com/u/clapollo">Christopher LaPollo</a>, Unity&rsquo;s physics engine builds a simulation based on the <a href="http://docs.unity3d.com/Manual/CollidersOverview.html">Colliders</a> present in a scene.  If some those <code>Colliders</code> are declared to be <code>static</code>, then the entire simulation is rebuilt when those colliders move.  Of course, rebuilding a physics simulation when it&rsquo;s unnecessary is inefficient.  By declaring objects to have <code>dynamic</code> <code>Colliders</code>, the physics engine does not have to rebuild the simulation at runtime, that is to say when the game is running.</p>
+
+<p>As with a lot of things in Unity, it is not immediately apparent how you should go about declaring a collider to be <code>static</code> or <code>dynamic</code>.  It would be great if there were just a checkbox in the <code>Collider</code> component.  But there isn&rsquo;t.  It appears that there are some complex things going on under the hood that preclude a simple declaration.</p>
+
+<p>By default a <code>GameObject</code> with a <code>Collider</code> component attached is treated as <code>static</code> by Unity&rsquo;s physics engine.  This would work for a non-moving wall or impassable bit of scenery, but for moving objects like enemies we need to mark them as <code>dynamic</code>.  In order for a <code>GameObject</code>&rsquo;s <code>Collider</code> to qualify as <code>dynamic</code> it requires a <a href="http://docs.unity3d.com/Manual/class-Rigidbody.html"><code>Rigidbody</code> component</a>.  If you don&rsquo;t want the normal features of the <code>Rigidbody</code>, i.e. conferring control of the <code>GameObject</code>&rsquo;s position to the physics system, then you can check the <code>Is Kinematic</code> checkbox.  A kinematic object&rsquo;s position is under the control of the attached scripts, rather than the physics system.</p>
+
+<p>One other trick from the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">tutorial</a> is to set the <code>Collider</code> component&rsquo;s <code>isTrigger</code> property to <code>true</code>.  This prevents the <code>Collider</code> from being treated as a solid object in the physics simulation, which could lead to unintended bumping and pushing among various <code>Colliders</code> in a scene.</p>
+
+<p><strong>Update:</strong> <a href="https://twitter.com/involvingsalmon">@InvolvingSalmon</a> points out that the instructions here depend on the version of Unity that you are using.  This article was written for Unity version <code>4.5.2f1</code>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-02T10:54:15-07:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/26/space-is-read/" title="Previous Post: Space Is Read">&laquo; Space Is Read</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/09/persistent-data-in-unity/" title="Next Post: Persistent Data in Unity">Persistent Data in Unity &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/23/designing-a-pachinko-rpg/">Designing a pachinko RPG</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">One Tap Quest: a pachinko RPG</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/09/persistent-data-in-unity/">Persistent Data in Unity</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/">Static and Dynamic Colliders in Unity</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/26/space-is-read/">Space Is Read</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

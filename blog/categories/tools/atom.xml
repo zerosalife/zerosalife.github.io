@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tools | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://zerosalife.github.io/"/>
+  <updated>2014-08-23T09:05:53-07:00</updated>
+  <id>http://zerosalife.github.io/</id>
+  <author>
+    <name><![CDATA[zerosalife]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
+    <updated>2014-05-31T09:28:40-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
+    <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
+
+<!--more-->
+
+
+<h2>Wait</h2>
+
+<p>Hickey&rsquo;s advice is to wait for it.  Wait overnight.  Get good rest and make sure that you are sleeping well.  Then you will be able to think about the clearly on the next day.  If you are lucky perhaps you will receive inspiration from a dream and wake up with the problem solved.  This sort of inspiration is what Hickey means by leveraging background processing.</p>
+
+<h2>Multiply</h2>
+
+<p>Hickey mentions working on more than one project.  By having multiple projects, you avoid the problems of creative block, or writer&rsquo;s block.  You can be productive simply by working on another project.  One drawback is that frantically flitting from project to project can lead to problems finishing any single project.  I am often guilty of this.</p>
+
+<p>Eventually, I plan on writing about properly scoping projects to make it possible to get them to a finished state.  One method that works for me is getting something to the point that I can write a blog post about it.  Even if it&rsquo;s not &lsquo;finished&rsquo; finished, I get some satisfaction with putting it out there in a relatively well thought out and complete form.</p>
+
+<p>My solution is to <strong>record, record, record</strong>.  I keep lots of notes, both in more structured form on this blog and in more sketchy form in files on my computer.  I also draw out visual design ideas in a notebook.  Sometimes I will set up skeleton game projects simply to test out an idea.  If I have some sudden insight into a problem, then all of these ideas are available later.</p>
+
+<h2>Switch</h2>
+
+<p>Hickey says to avoid being stuck, switch.  That is why having multiple projects can help.  Hickey also mentions a great suggestion of talking about design hiccups and problems with other people.  Tweet about your design roadblocks.  Write a blog post about them.  Telepathically communicate about them before you go to sleep, so magical dream elves can come and solve them for you.</p>
+
+<h2>Final Thoughts</h2>
+
+<blockquote><p>Summary: There is no summary.  This is a rant.</p></blockquote>
+
+<p>-Rich Hickey</p>
+
+<p>Unless you are Rich Hickey or&#x2013;I dunno&#x2013;Gary Gygax, simply thinking about a problem <em>a priori</em> will not result in a great game.  There is still something to be said for getting your hands dirty and iterating on a design.  However the techniques highlighted in Hickey&rsquo;s talk can be useful when you are stuck on a design problem.</p>
+
+<p>Hit me up in the comments or on the <a href="https://twitter.com/zerosalife">tweet tweet</a> if you have any great Hammock Driven Design tips that I haven&rsquo;t covered here.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
+    <updated>2014-04-26T07:47:18-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
+
+<p>The existing Rhizome documentation shows simple examples for labeling the nodes of a directed graph.  In order to show the relationship between nodes on the graph, I&rsquo;d like to also label the edges, or the arrows connecting the nodes.</p>
+
+<p>Rhizome provides a keyword argument <code>:edge-&gt;descriptor</code> to most of its functions.  Consulting the source code and the tests for the Rhizome package, I learned that the functions expect <code>:edge-&gt;descriptor</code> to be a function accepting two arguments for each edge: <code>src</code>, the source node, and <code>dst</code>, the destination node.  In order to label the edges, the anonymous function I&rsquo;m binding to <code>:edge-&gt;descriptor</code> will return a dictionary containing the key <code>:label</code> and the value for the edge&rsquo;s label.</p>
+
+<p>Here&rsquo;s an example using the simple graph from the Rhizome documentation:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="o">&amp;</span><span class="nv">lsquo</span><span class="c1">;rhizome.viz)&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="k">def </span><span class="nv">g&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">{</span><span class="ss">:a</span> <span class="p">[</span><span class="ss">:b</span> <span class="ss">:c</span><span class="p">]</span>
+</span><span class='line'> <span class="ss">:b</span> <span class="p">[</span><span class="ss">:c</span><span class="p">]</span>
+</span><span class='line'> <span class="ss">:c</span> <span class="p">[</span><span class="ss">:a</span><span class="p">]})</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nf">view-graph</span> <span class="p">(</span><span class="nb">keys </span><span class="nv">g</span><span class="p">)</span> <span class="nv">g&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>        <span class="ss">:node-</span><span class="o">&amp;</span><span class="nv">gt</span><span class="c1">;descriptor (fn [n] {:label n}))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/assets/graph-unlabeled-edges.png"></p>
+
+<p>Now, I&rsquo;ll use a dictionary of dictionaries to associate the source and destination nodes with a label for each edge.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">g-edges</span>
+</span><span class='line'>  <span class="p">{</span><span class="ss">:a</span> <span class="p">{</span><span class="ss">:b</span> <span class="ss">:makes&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>   <span class="ss">:c</span> <span class="ss">:takes</span><span class="p">}</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>   <span class="ss">:b</span> <span class="p">{</span><span class="ss">:c</span> <span class="ss">:takes</span><span class="p">}</span>
+</span><span class='line'>   <span class="ss">:c</span> <span class="p">{</span><span class="ss">:a</span> <span class="ss">:makes</span><span class="p">}})</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nf">view-graph</span> <span class="p">(</span><span class="nb">keys </span><span class="nv">g</span><span class="p">)</span> <span class="nv">g&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>        <span class="ss">:node-</span><span class="o">&amp;</span><span class="nv">gt</span><span class="c1">;descriptor (fn [n] {:label n})</span>
+</span><span class='line'>        <span class="ss">:edge-</span><span class="o">&amp;</span><span class="nv">gt</span><span class="c1">;descriptor (fn [src dst] {:label (dst (src g-edges))}))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/assets/graph-labeled-edges.png"></p>
+
+<p>I&rsquo;ve submitted a <a href="https://github.com/ztellman/rhizome/pull/8">pull request</a> to Rhizome to add this example to the documentation.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
+    <updated>2014-03-29T08:04:05-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
+    <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Upgrading to Mavericks]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/"/>
+    <updated>2014-03-15T06:03:27-07:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks</id>
+    <content type="html"><![CDATA[<p>This week I upgraded to <a href="https://www.apple.com/osx/">Mac OS X 10.9 Mavericks</a>.  To keep <a href="http://octopress.org/">octopress</a> working, I had to uninstall and reinstall <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
+
+<p>Upon trying a <code>rake generate</code> task, I saw errors in the Ruby gems for processing <a href="http://www.yaml.org/">YAML</a>.  I assume this is due to the fact that I built them on the older OS X install.</p>
+
+<p>Interestingly, <a href="https://rvm.io/">RVM</a> survived the upgrade and seems to be working just fine.</p>
+
+<p>I followed the instructions <a href="https://gist.github.com/imathis/1104557">here</a> to uninstall and reinstall Ruby, the bundler, and all bundled gems for my octopress install.  The instructions mention a specific problem for OS X Lion, but these steps solved the problem for me.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cut it all right in two: bisect to find bugs]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/"/>
+    <updated>2014-03-08T08:25:02-08:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs</id>
+    <content type="html"><![CDATA[<p>Imagine there&rsquo;s a lion in a desert.  You need to cage the lion or you
+will be eaten.  In this example the desert is your code and the lion
+is a bug that you&rsquo;re having a hard time pinning down.</p>
+
+<p>There are many ways to trap a lion.  Here&rsquo;s one.</p>
+
+<p>Build a fence dividing the desert in half going North to South.
+Assuming the lion is not in the South section, divide the North
+section in half with a fence going East to West.  Repeat the process
+until your fence is arbitrarily small and has become a cage trapping
+the lion.</p>
+
+<p>But how does this relate to code?</p>
+
+<p>Say you have a relatively large file that executes fine, but
+introduces a bug into your larger system.  You suspect that something
+has gone wrong with the large file, but you&rsquo;re not getting an error
+implicating a specific line.</p>
+
+<p>Cut it all right in two.</p>
+
+<p>Comment out half the code in your large file and try to reproduce the
+bug.  If you reproduce the bug, repeat the process as necessary until
+you isolate the line producing the problem.</p>
+
+<p>I learned about this approach for bugsleuthing from the <a href="https://gist.github.com/stardiviner/8109774#file-temp-txt-L26">bot in #emacs on freenode</a>.  It&rsquo;s particularly useful for tracking down bugs in large configuration files.  There&rsquo;s a list of humorous lion-trapping algorithm examples <a href="http://faculty.smu.edu/yzhou/humor/lion.htm">here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
