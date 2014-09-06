@@ -46,3 +46,9 @@ build`.
 
 I push the source code of my blog to a branch named `source` rather
 than `master`.
+
+### The percent symbol screwed everything up
+
+Not sure exactly why, but including the `%` after blog on the line
+`.PHONY: blog%` gave me an error saying ``make: `blog' is up to date.``.
+Removing the `%` allowed me to run `make blog` as expected.
