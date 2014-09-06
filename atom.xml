@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-08-23T09:05:53-07:00</updated>
+  <updated>2014-09-06T11:38:00-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,54 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Automating blog deployment with Octopress]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/"/>
+    <updated>2014-09-06T11:27:35-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress</id>
+    <content type="html"><![CDATA[<p>Based on Kevin van Zonneveld&rsquo;s (<a href="https://twitter.com/kvz">@kvz</a>) <a href="http://kvz.io/blog/2012/09/25/blog-with-octopress/">article</a> on setting up Octopress,
+I&rsquo;ve adapted a <code>Makefile</code> to make building my blog easier&#x2026; with
+<a href="http://www.gnu.org/software/make/">make</a>.  The following <code>Makefile</code> allows me to build and deploy my blog
+by typing <code>make blog</code> at the command prompt.</p>
+
+<!--more-->
+
+
+<pre><code>all: blog
+
+preview:
+        bundle exec rake generate &amp;&amp; bundle exec rake preview
+
+blog:
+        git pull &amp;&amp; \
+        bundle install &amp;&amp; \
+        bundle exec rake integrate &amp;&amp; \
+        bundle exec rake generate &amp;&amp; \
+        bundle exec rake deploy &amp;&amp; \
+        git add .; \
+        git commit -am "blog update $$(date +%Y-%m-%d)"; \
+        git push origin source
+
+.PHONY: blog%                   # Force blog to run regardless of the changes to the files.
+</code></pre>
+
+<h2>Additional Notes</h2>
+
+<h3>rake build didn&rsquo;t work for me</h3>
+
+<p>I think this is because I haven&rsquo;t written any tasks that use <code>rake
+build</code>.</p>
+
+<h3>Remote for the source of my blog</h3>
+
+<p>I push the source code of my blog to a branch named <code>source</code> rather
+than <code>master</code>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Designing a pachinko RPG]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/"/>
-    <updated>2014-08-23T08:48:48-07:00</updated>
+    <updated>2014-08-23T10:48:48-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg</id>
     <content type="html"><![CDATA[<p>What would make a pachinko RPG?  <a href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">Last week</a>, I wrote about how I&rsquo;m sort of enamored with <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest&rsquo;s</a></em> tap-and-let-them-go interaction, which I think mirrors the play-style of pachinko.  In pachinko, you have some control over launching the little metal balls, but once they&rsquo;re in play, they&rsquo;re on their own.  This mechanism stands in contrast to pinball, where you interact with a single or multiple pinballs with the paddles, and cue sports (especially bumper pool), where you launch a billiard ball repeatedly with a cue.</p>
 
@@ -47,7 +92,7 @@
   <entry>
     <title type="html"><![CDATA[One Tap Quest: a pachinko RPG]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/"/>
-    <updated>2014-08-16T08:39:34-07:00</updated>
+    <updated>2014-08-16T10:39:34-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg</id>
     <content type="html"><![CDATA[<p>I recently played <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest</a></em>, a game in which you tap to place an RPG character who marches upward, gaining levels by bumping into enemies, to tackle bigger and badder foes.  What&rsquo;s interesting to me, if you&rsquo;ll bear with me, is that this is a game that amounts to a pachinko RPG.  I&rsquo;ll start by talking about what I liked about <em>One Tap Quest</em>.  <a href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/">Next week</a>, I&rsquo;ll get into what I mean by a pachinko RPG.</p>
 
@@ -68,7 +113,7 @@
   <entry>
     <title type="html"><![CDATA[Persistent Data in Unity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/"/>
-    <updated>2014-08-09T09:09:15-07:00</updated>
+    <updated>2014-08-09T11:09:15-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity</id>
     <content type="html"><![CDATA[<p>I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity.  In other words, I want this data to remain persistent.  As you&rsquo;ll see below I was tempted to use <code>PlayerPrefs</code> to store the data, but, according to <a href="https://www.youtube.com/watch?v%3DJ6FfcJpbPXE">this Unity Live Training on Data Persistence</a>, <code>PlayerPrefs</code> is not the best way to make data persist over multiple Scenes.  <code>PlayerPrefs</code> is an okay place to store non-critical data, like the audio volume, window size, full-screen state&#x2013;you know preferences.  I&rsquo;ll go ahead and show what I believe to be the correct way to store persistent data before talking about <code>PlayerPrefs</code> later.</p>
 
@@ -196,7 +241,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Static and Dynamic Colliders in Unity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity/"/>
-    <updated>2014-08-02T10:54:15-07:00</updated>
+    <updated>2014-08-02T12:54:15-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity</id>
     <content type="html"><![CDATA[<p>According to the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">Ray Wenderlich Unity 2D tutorial</a> by <a href="http://www.raywenderlich.com/u/clapollo">Christopher LaPollo</a>, Unity&rsquo;s physics engine builds a simulation based on the <a href="http://docs.unity3d.com/Manual/CollidersOverview.html">Colliders</a> present in a scene.  If some those <code>Colliders</code> are declared to be <code>static</code>, then the entire simulation is rebuilt when those colliders move.  Of course, rebuilding a physics simulation when it&rsquo;s unnecessary is inefficient.  By declaring objects to have <code>dynamic</code> <code>Colliders</code>, the physics engine does not have to rebuild the simulation at runtime, that is to say when the game is running.</p>
 
@@ -213,7 +258,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Space Is Read]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
-    <updated>2014-07-26T09:08:44-07:00</updated>
+    <updated>2014-07-26T11:08:44-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
     <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
 
@@ -235,7 +280,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
-    <updated>2014-07-19T08:42:35-07:00</updated>
+    <updated>2014-07-19T10:42:35-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
     <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
 
@@ -271,7 +316,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Playable Call For Papers]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/"/>
-    <updated>2014-06-21T08:20:23-07:00</updated>
+    <updated>2014-06-21T10:20:23-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers</id>
     <content type="html"><![CDATA[<p><a href="http://www.twitter.com/mtrc">Michael Cook</a> made a &ldquo;needlessly interactive&rdquo; <a href="http://www.exag.org/playablecfp/">playable call for papers</a> for the <a href="http://www.exag.org/">Experimental AI in Games conference</a>, taking place in October in Raleigh, NC.  It&rsquo;s a minimally expressive Twine story, with really one simple interactive experience of role-playing the interaction a recipient feels upon receiving yet another CFP email, <em>click</em>.</p>
 
@@ -286,7 +331,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Why you should start simple]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T11:58:34-07:00</updated>
+    <updated>2014-06-07T13:58:34-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
 
@@ -312,7 +357,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T09:28:40-07:00</updated>
+    <updated>2014-05-31T11:28:40-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -350,7 +395,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Quarries of Scred Roadmap]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap/"/>
-    <updated>2014-05-24T13:49:08-07:00</updated>
+    <updated>2014-05-24T15:49:08-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap</id>
     <content type="html"><![CDATA[<p>The <a href="http://darkestkale.itch.io/quarries-of-scred">Quarries of Scred</a> <a href="https://twitter.com/darkestkale">developer</a> released an image showing the overview of Scred&rsquo;s 14-day game development.  I find it informative for a couple of reasons.  First it&rsquo;s not limited to the core features of the game, Kale&rsquo;s also included public relations and marketing information.  Second, the fact that it&rsquo;s incomplete shows how Kale&rsquo;s prioritized critical elements of the game.</p>
 
@@ -408,7 +453,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[.gitignore for Unity projects]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/"/>
-    <updated>2014-05-17T09:48:06-07:00</updated>
+    <updated>2014-05-17T11:48:06-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects</id>
     <content type="html"><![CDATA[<p>I found a solution on the <a href="http://answers.unity3d.com/questions/369755/unity-on-github.html">Unity website</a> that pointed me toward <a href="http://t-machine.org/index.php/2012/07/03/unity-git-source-control-a-basic-gitignore/">this blogpost</a>.  But a better solution is out there.  The Double Fine Game Club&rsquo;s Bad Golf Community Edition <a href="https://github.com/Double-Fine-Game-Club/bad-golf-community-edition/blob/master/.gitignore">.gitignore</a> looks like this:</p>
 
@@ -468,7 +513,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Follow-up to the centrality of caves]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/"/>
-    <updated>2014-05-10T08:27:49-07:00</updated>
+    <updated>2014-05-10T10:27:49-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves</id>
     <content type="html"><![CDATA[<p>My <a href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/">post last week</a> about caves struck a nerve.  I received a lot of encouraging retweets and favorites.  I also received some great feedback.</p>
 
@@ -493,7 +538,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Why are caves central to so many games?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/"/>
-    <updated>2014-05-03T07:46:11-07:00</updated>
+    <updated>2014-05-03T09:46:11-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games</id>
     <content type="html"><![CDATA[<p>On twitter, <a href="https://twitter.com/psysal">@psysal</a> posed this question to the game dev community:</p>
 
@@ -548,7 +593,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
-    <updated>2014-04-26T07:47:18-07:00</updated>
+    <updated>2014-04-26T09:47:18-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
     <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
 
@@ -613,7 +658,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[styx_ebooks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T12:05:03-07:00</updated>
+    <updated>2014-04-19T14:05:03-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
     <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
 
@@ -632,7 +677,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[The Fate of Adventure Games]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/"/>
-    <updated>2014-04-12T07:16:59-07:00</updated>
+    <updated>2014-04-12T09:16:59-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games</id>
     <content type="html"><![CDATA[<p>Zoyə Street wrote a <a href="https://medium.com/p/3e3c1e20cfd0">summary</a> of an interesting <a href="http://www.omnsh.org/ressources/527/histoire-formelle-du-jeu-daventure-sur-ordinateur-le-cas-de-lamerique-du-nord-de-1976">PhD thesis by Jonathan Lessard</a>.  Lessard examines the history of adventure games, to see whence they&rsquo;ve come and where they&rsquo;ve gone.  Like Street, I think this approach to thinking about video game design and genre provides useful perspective.</p>
 
@@ -647,7 +692,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Don't Fear Lack of Content]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content/"/>
-    <updated>2014-04-05T07:59:37-07:00</updated>
+    <updated>2014-04-05T09:59:37-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/05/dont-fear-lack-of-content</id>
     <content type="html"><![CDATA[<p>Came across a <a href="http://www.egometry.com/gruedorf/a-penny-for-your-thoughts-a-hundred-for-your-life/">nice article</a> on <a href="http://www.egometry.com/">Ben McGraw&rsquo;s blog, Egometry</a>. Using Super Mario Bros. as a model, Ben explains why merely increasing content quantity is less desirable than increasing content substance.  The title of this post is lifted from a quote in his article.</p>
 
@@ -658,7 +703,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
-    <updated>2014-03-29T08:04:05-07:00</updated>
+    <updated>2014-03-29T10:04:05-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
     <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
 ]]></content>
@@ -667,7 +712,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[ICE ICE Baby]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/"/>
-    <updated>2014-03-22T07:17:31-07:00</updated>
+    <updated>2014-03-22T09:17:31-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby</id>
     <content type="html"><![CDATA[<p><a href="http://www.thegia.com/author/avestal/">Andrew Vestal</a> of <a href="http://www.thegia.com/">the GIA</a> wrote a <a href="http://twinery.org/">Twine</a> game for <a href="http://itch.io/jam/cyberpunk-jam">#cyberpunkjam</a> called <a href="http://www.thegia.com/avestal/iceicebaby.html">ICE ICE Baby</a>.</p>
 
@@ -676,21 +721,6 @@ class PlayerData {
 <p>I especially like the use of color to mark the transitions between meatspace and cyberspace.</p>
 
 <p><a href="http://www.thegia.com/author/nmaragos/">Nich Maragos</a> wrote a more thorough <a href="http://www.thegia.com/2014/03/05/appetite-for-destruction-ice-ice-baby/">critical review</a> on the GIA.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Upgrading to Mavericks]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/"/>
-    <updated>2014-03-15T06:03:27-07:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks</id>
-    <content type="html"><![CDATA[<p>This week I upgraded to <a href="https://www.apple.com/osx/">Mac OS X 10.9 Mavericks</a>.  To keep <a href="http://octopress.org/">octopress</a> working, I had to uninstall and reinstall <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
-
-<p>Upon trying a <code>rake generate</code> task, I saw errors in the Ruby gems for processing <a href="http://www.yaml.org/">YAML</a>.  I assume this is due to the fact that I built them on the older OS X install.</p>
-
-<p>Interestingly, <a href="https://rvm.io/">RVM</a> survived the upgrade and seems to be working just fine.</p>
-
-<p>I followed the instructions <a href="https://gist.github.com/imathis/1104557">here</a> to uninstall and reinstall Ruby, the bundler, and all bundled gems for my octopress install.  The instructions mention a specific problem for OS X Lion, but these steps solved the problem for me.</p>
 ]]></content>
   </entry>
   

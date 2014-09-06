@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-08-23T09:05:53-07:00</updated>
+  <updated>2014-09-06T11:38:00-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,54 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Automating blog deployment with Octopress]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/"/>
+    <updated>2014-09-06T11:27:35-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress</id>
+    <content type="html"><![CDATA[<p>Based on Kevin van Zonneveld&rsquo;s (<a href="https://twitter.com/kvz">@kvz</a>) <a href="http://kvz.io/blog/2012/09/25/blog-with-octopress/">article</a> on setting up Octopress,
+I&rsquo;ve adapted a <code>Makefile</code> to make building my blog easier&#x2026; with
+<a href="http://www.gnu.org/software/make/">make</a>.  The following <code>Makefile</code> allows me to build and deploy my blog
+by typing <code>make blog</code> at the command prompt.</p>
+
+<!--more-->
+
+
+<pre><code>all: blog
+
+preview:
+        bundle exec rake generate &amp;&amp; bundle exec rake preview
+
+blog:
+        git pull &amp;&amp; \
+        bundle install &amp;&amp; \
+        bundle exec rake integrate &amp;&amp; \
+        bundle exec rake generate &amp;&amp; \
+        bundle exec rake deploy &amp;&amp; \
+        git add .; \
+        git commit -am "blog update $$(date +%Y-%m-%d)"; \
+        git push origin source
+
+.PHONY: blog%                   # Force blog to run regardless of the changes to the files.
+</code></pre>
+
+<h2>Additional Notes</h2>
+
+<h3>rake build didn&rsquo;t work for me</h3>
+
+<p>I think this is because I haven&rsquo;t written any tasks that use <code>rake
+build</code>.</p>
+
+<h3>Remote for the source of my blog</h3>
+
+<p>I push the source code of my blog to a branch named <code>source</code> rather
+than <code>master</code>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T09:28:40-07:00</updated>
+    <updated>2014-05-31T11:28:40-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -54,7 +99,7 @@
   <entry>
     <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
-    <updated>2014-04-26T07:47:18-07:00</updated>
+    <updated>2014-04-26T09:47:18-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
     <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
 
@@ -143,7 +188,7 @@
   <entry>
     <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
-    <updated>2014-03-29T08:04:05-07:00</updated>
+    <updated>2014-03-29T10:04:05-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
     <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
 ]]></content>
@@ -152,7 +197,7 @@
   <entry>
     <title type="html"><![CDATA[Upgrading to Mavericks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks/"/>
-    <updated>2014-03-15T06:03:27-07:00</updated>
+    <updated>2014-03-15T08:03:27-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/15/upgrading-to-mavericks</id>
     <content type="html"><![CDATA[<p>This week I upgraded to <a href="https://www.apple.com/osx/">Mac OS X 10.9 Mavericks</a>.  To keep <a href="http://octopress.org/">octopress</a> working, I had to uninstall and reinstall <a href="https://www.ruby-lang.org/">Ruby</a>.</p>
 
@@ -161,40 +206,6 @@
 <p>Interestingly, <a href="https://rvm.io/">RVM</a> survived the upgrade and seems to be working just fine.</p>
 
 <p>I followed the instructions <a href="https://gist.github.com/imathis/1104557">here</a> to uninstall and reinstall Ruby, the bundler, and all bundled gems for my octopress install.  The instructions mention a specific problem for OS X Lion, but these steps solved the problem for me.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cut it all right in two: bisect to find bugs]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/"/>
-    <updated>2014-03-08T08:25:02-08:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs</id>
-    <content type="html"><![CDATA[<p>Imagine there&rsquo;s a lion in a desert.  You need to cage the lion or you
-will be eaten.  In this example the desert is your code and the lion
-is a bug that you&rsquo;re having a hard time pinning down.</p>
-
-<p>There are many ways to trap a lion.  Here&rsquo;s one.</p>
-
-<p>Build a fence dividing the desert in half going North to South.
-Assuming the lion is not in the South section, divide the North
-section in half with a fence going East to West.  Repeat the process
-until your fence is arbitrarily small and has become a cage trapping
-the lion.</p>
-
-<p>But how does this relate to code?</p>
-
-<p>Say you have a relatively large file that executes fine, but
-introduces a bug into your larger system.  You suspect that something
-has gone wrong with the large file, but you&rsquo;re not getting an error
-implicating a specific line.</p>
-
-<p>Cut it all right in two.</p>
-
-<p>Comment out half the code in your large file and try to reproduce the
-bug.  If you reproduce the bug, repeat the process as necessary until
-you isolate the line producing the problem.</p>
-
-<p>I learned about this approach for bugsleuthing from the <a href="https://gist.github.com/stardiviner/8109774#file-temp-txt-L26">bot in #emacs on freenode</a>.  It&rsquo;s particularly useful for tracking down bugs in large configuration files.  There&rsquo;s a list of humorous lion-trapping algorithm examples <a href="http://faculty.smu.edu/yzhou/humor/lion.htm">here</a>.</p>
 ]]></content>
   </entry>
   
