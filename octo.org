@@ -91,6 +91,17 @@ Either use relative directories:
 or syntactic sugar:
 
 ={% post_url 2014-01-05-blah %}=
+
+** Page view and popular posts
+[[https://github.com/jhshi/octopress-page-view]]
+
+[[https://github.com/jhshi/octopress-popular-posts]]
+
+** Tip Donation
+Could rewrite
+https://github.com/PartTimeLegend/octopress-flattr-donation-aside to
+use moonclerk.
+
 * PUBLISHED
 ** Some thoughts on Attack of the Friday Monsters      :review:3DS:mechanics:
 categories:
@@ -811,6 +822,651 @@ documents behind a game, even if it comes out years after release.
 It's especially informative to see an in-progress version where the
 developer is unafraid to lay the goals out there, to show where the
 project succeeds and possibly falls short.
+
+** Hammock driven creativity
+- design
+- algorithm
+- tools
+
+In 2010, [[https://twitter.com/richhickey][Rich Hickey]] spoke at Clojure Conj about [[http://www.youtube.com/watch?v%3Df84n5oFoZBc]['Hammock Driven
+Development']].  Hickey was talking about the benefit of down-time for
+noodling about software design.  Specifically, Hickey means using
+down-time after considerably 'loading up' your mind with aspects of
+the problem, in order to leverage background offline processes to
+solve those difficult problems.
+
+Hickey's advice is to wait for it.  Wait overnight.  Get good rest and
+make sure that you are sleeping well.  Then you will be able to think
+about the clearly on the next day.  If you are lucky perhaps you will
+receive inspiration from a dream and wake up with the problem solved.
+This sort of inspiration is what Hickey means by leveraging background
+processing.
+
+Hickey mentions working on more than one project.  By having multiple
+projects, you avoid the problems of creative block, or writer's block.
+You can be productive simply by working on another project.  One
+drawback is that frantically flitting from project to project can lead
+to problems finishing any single project.  I am often guilty of this.
+
+I plan on writing about properly scoping projects to make it possible
+to get them to a finished state later.  One method that works for me
+is getting something to the point that I can write a blog post about
+it.  Even if it's not 'finished' finished, I get some satisfaction
+with putting it out there in a relatively thought out and complete
+form.
+
+My solution is to *record, record, record*.  I keep lots of notes,
+both in more structured form on this blog and in more sketchy form in
+files on my computer.  I also draw out visual design ideas in a
+notebook.  Sometimes I will set up skeleton game projects simply to
+test out an idea.  If I have some sudden insight into a problem, then
+all of these ideas are available later.
+
+Hickey says to avoid being stuck, switch.  That is why having multiple
+projects can help.  Hickey also mentions a great suggestion of talking
+about design hiccups and problems with other people.  Tweet about your
+design roadblocks.  Write a blog post about them.  Telepathically
+communicate about them before you go to sleep, so magical dream elves
+can come and solve them for you.
+
+Unless you are Rich Hickey or--I dunno--Gary Gygax, simply thinking
+about a problem /a priori/ will not result in a great game.  There is
+still something to be said for getting your hands dirty and iterating
+on a design.  However the techniques highlighted in Hickey's talk can
+be useful when you are stuck on a design problem.
+
+Hit me up in the comments or on the [[https://twitter.com/zerosalife][tweet tweet]] if you have any great
+Hammock Driven Design tips that I haven't covered here.
+
+** Why you should start simple
+My thoughts about a long-read from @hobbygamedev on why you should
+start simple.
+
+- design
+- mechanics
+
+[[http://twitter.com/hobbygamedev][@HobbyGameDev's]] long-read [[http://www.hobbygamedev.com/beg/incremental-learning/]["Reasons for Modest First Projects and
+Incremental Learning"]] tells the tragic tale of overambitious novice
+developers.
+
+In a response to a doubting tweeter, HGD advocates starting modestly
+to slowly build skills, so that you can tackle more complicated
+projects later on.  Avoiding overambitious projects that are way
+outside of your comfort zone is one of the stumbling points for novice
+and hobby game developers, like myself.
+
+In the [[{%25%20post_url%202014-05-031-hammock-driven-creativity%20%25}][previous post about Hammock Driven Creativity]], I highlighted
+Rich Hickey's suggestion to keep multiple projects going in order to
+avoid stagnation.  While I agree with this, it's important to judge
+the scope of those projects with a critical eye.
+
+Far too often, my ideas start, at least in my mind, with ambitious
+artwork, animation, and multiple complex combinations of mechanics.  I
+am neither talented nor skilled enough to pull these projects off.  So
+it's easy to get stuck.
+
+I often find myself implementing some ad-hoc animation system,
+spending time reinventing the frame-based or skeletal wheel, as it
+were.  Animation shouldn't take priority, especially considering that
+my best artwork is derivative and possibly one step above programmer
+art.  I should focus on creating compelling prototypes, and worry
+about polish later.
+
+To build your skillset, HGD suggests starting out by remaking
+historical games.  By implementing tried-and-true mechanics that are
+necessarily simple in scope given their ancient hardware, you can
+confront the problems involved in creating a full game rather than a
+half-finished proof-of-concept.
+
+By half-finished, I'm thinking of a time where I completely abandoned
+a concept because I was hung-up on optimizing a tile-based room
+system.  Rather than making the actual gameplay fun and complete, I
+was focusing all of my time figuring out how to make walls.  Walls are
+nice in a finished game, and you could make the case that they are
+required constraints to achieve good gameplay, but they are not where
+the fun is.  As HGD and my previous post point out, you can keep
+trying to work on these overly ambitious projects, but your
+productivity will suffer.
+
+Best to reap the rewards that come from continued productivity and, as
+HGD says, pick a fight you can win.
+
+
+
+** Playable Call For Papers
+My thoughts on the playful "needlessly interactive" CFP from @mtrc.
+
+- design
+
+[[http://www.twitter.com/mtrc][Michael Cook]] made a "needlessly interactive" [[http://www.exag.org/playablecfp/][playable call for papers]]
+for the [[http://www.exag.org/][Experimental AI in Games conference]], taking place in October
+in Raleigh, NC.  It's a minimally expressive Twine story, with really
+one simple interactive experience of role-playing the interaction a
+recipient feels upon receiving yet another CFP email, /click/.
+
+It's a tricky thing to get right.  While it makes sense for a
+game-related conference to have a text adventure announcement, I don't
+want to have to play a game of Frogger to purchase movie tickets from
+the automated kiosk at the movie theater.  It would be nice if the
+playable CFP included prominent and consistent links to exit the game,
+in order to read the ordinary CFP on the conference website.
+
+I believe the motivating idea is sound.  Turning banal daily routine
+into a playful interactive experience is a worthy goal for game
+design.  It has the ability to startle the player into paying more
+attention to mundane activities, which I think is the intended goal,
+for a CFP to stand out from piles of other CFP emails.
+
+Let me know if you've come across games in strange places.  I don't
+mean finding a boxed copy of Mario Kart at the flea market--I mean
+conceptually strange places.  Hit me up on twitter if you've got ideas
+like this to discuss, because I think this approach of creating small
+play experiences to "gamify" mundane tasks is an emerging theme of
+design.
+
+
+** The Strength of the Pitch: Jodorowsky's Dune
+- design
+- collaboration
+
+
+I was fortunate enough to catch a screening of /[[http://jodorowskysdune.com/][Jodorowsky's Dune]]/,
+the documentary about [[http://en.wikipedia.org/wiki/Alejandro_Jodorowsky][visionary director Alejandro Jodorowsky's]] failed
+attempt to adapt the science fiction novel /[[http://en.wikipedia.org/wiki/Dune_(novel)][Dune]]/ to the silver screen.
+Having seen a similar [[http://www.imdb.com/title/tt0308514/][documentary about Terry Gilliam's attempt at
+adapting Don Quixote]], I consider myself a fan of the genre, despite
+its niche appeal.
+
+One quick note before we go on.  It looks like /Jodorowsky's Dune/ has
+hit Netflix on DVD, and seems a likely candidate to be available for
+streaming.  So you can check it out for yourself to see if you agree
+with my take.
+
+<!--more-->
+
+*** Pitching
+Jodorowsky looks back, with good-natured humor, on a massively
+overambitious project for its time.  Aside from the amazing concept
+art and avant-garde stylings, I took away two messages from the
+documentary that I would like to share.  The first deals with the art
+of pitching your ideas and the second with locating oneself in close
+to proximity to the best and the brightest potential collaborators.
+
+Jodorowsky set out to create a huge book--more of a cinder block.
+It's probably what we could call a design bible today, which would be
+delivered to production companies in order to secure funding.  By
+creating a book of storyboards and character designs, Jodorowsky
+wanted to show that the project was large in scope but feasible,
+because it had been so intricately planned.
+
+Jodorowsky reached out to a variety of concept artists to help with
+the design of the movie.  To visual and technical artists, Jodorowsky
+made impassioned pitches, claiming that they would become "spiritual
+warriors" for their collective vision, and implored them to come live
+and work (for little or no pay) in Paris.
+
+What stands out is the strength of Jodorowsky's pitch.  At a time when
+artists like [[http://www.chrisfossart.com/][Chris Foss]], [[http://en.wikipedia.org/wiki/Jean_Giraud][Moebius]], and [[http://www.hrgiger.com/][H.R. Giger]] were each becoming
+established in their own rights, Jodorowsky was able, through the
+sheer strength of an imagined story, to convince them to devote years
+of effort to the project.  That takes a lot of gumption.  It didn't
+hurt that Jodorowsky had a strong track record of visually and
+thematically impressive avant-garde cinema.  Even still, Jodorowsky is
+great at selling the idea, and that is something that game designers
+must do, to communicate ideas to others in order to capitalize on the
+individual talents and assemble a great team.
+
+*** Placement
+The second message I took away deals with putting yourself into the
+right place at the right time.  It's also about leveraging that
+placement to connect and collaborate.
+
+The documentary showed a curious problem of the movie's mid-Seventies
+inception.  How do you find people to collaborate with, or even people
+at all, before the Internet?
+
+The solution: go to Paris.  That's where all the intelligentsia
+congregate.  This was more or less true for several hundred years
+before the Internet.
+
+If you want [[http://en.wikipedia.org/wiki/Salvador_Dal%25C3%25AD][Salvador Dali]] in your movie, playing the [[http://dune.wikia.com/wiki/Padishah_Emperor][Emperor of the
+Known Universe]], go to Paris and you'll probably run into Dali.
+
+Now we all live in our decentralized [[http://en.wikipedia.org/wiki/Temporary_Autonomous_Zone][temporary autonomous zones]].  But
+for as much as they can fragment, social media have the ability to
+connect disparate artists and thinkers.
+
+I think that Twitter is a platform that serves as a modern Paris, for
+like-minded people to seek each other out and communicate.  Go
+congregate with the intelligentsia and let your ideas speak for
+themselves.  Hit me up on the proverbial tweets, and let me hear your
+ideas and pitches.  I'm constantly working on mine--writing here,
+trying to refine my skills.  Maybe we are both looking for the talents
+that we can provide.
+
+
+** Space Is Read
+Space Is Red, a #spacecowboygamejam entry by @todluk made me think
+about interactivity in visual novels as a genre and media at large.
+
+- game
+- review
+- mechanics
+- design
+
+[[http://tdlk.itch.io/space-is-red][Space Is Red]] is not so much a game as it is a visual novel.  Out of
+the games I tried from the [[http://itch.io/jam/space-cowboy-jam][#spacecowboygamejam]], it's one that sticks
+with me.
+
+On the spectrum of play, these sorts of games are loosely analogous to
+Choose Your Own Adventure books.  Just as a Choose Your Own Adventure
+book expects the player to turn to a given page according to the rules
+laid out at the bottom of the pages to proceed in a consistent,
+logical fashion, the tropes of a visual novel require the player to
+interact with the game in order for the story to proceed.  A novel
+will proceed with the only 'player' interaction consisting of turning
+to the next page.  I'm oversimplifying the difference between /real
+choices/, as I would argue, Choose Your Own Adventure Books allow, and
+/mere interactivity/, like turning the page of a novel, but you get
+what I mean.
+
+Visual novels can have real choices and interactivity.  In this case,
+I'd argue that Space Is Red is only interactive.  There are no real
+choices, short of figuring out the next bit to tap on in order to move
+the story along.  For me, it's the music that makes the experience gel
+as something more than an animated e-book.
+
+I don't mean to be presumptuous in my analysis of Space Is Red's
+gameplay, don't get me wrong.  I'm not interested in arguments about
+merit simply based on A *is* a game but B *isn't*, so A is better.  I
+just think it's important to think about these sorts of things when
+considering the underlying design.
+
+I left the game looping [[https://soundcloud.com/postpre][PostPre's]] driving soundtrack for 15 minutes,
+even though my first play-through lasted only 2 or 3.  Maybe that's
+the benefit of interactivity and choices, to extend and prolong the
+mindshare of some experience or product with the player.  I don't
+necessarily mean that in a cynical way, although the typical model of
+play can be subverted for more manipulative means (and, of course, it
+is!).
+
+For me, Space Is Red hit all the right notes and left me with
+something to think about.  That is what I call a successful gamejam
+game.  You can see Space Is Red and the other #spacecowboygamejam
+entries [[http://itch.io/jam/space-cowboy-jam][here]].  If you're interested in learning more about Space Is
+Red's creator [[http://toddluke.com/][Todd Luke]], you can find an interview [[http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php][here]].
+
+** Static and Dynamic Colliders in Unity
+Summarizing what I've learned about Colliders in Unity based on a
+tutorial by @clapollo.
+
+- Unity
+- mechanics
+
+According to the [[http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes][Ray Wenderlich Unity 2D tutorial]] by [[http://www.raywenderlich.com/u/clapollo][Christopher
+LaPollo]], Unity's physics engine builds a simulation based on the
+[[http://docs.unity3d.com/Manual/CollidersOverview.html][Colliders]] present in a scene.  If some those =Colliders= are declared
+to be =static=, then the entire simulation is rebuilt when those
+colliders move.  Of course, rebuilding a physics simulation when it's
+unnecessary is inefficient.  By declaring objects to have =dynamic=
+=Colliders=, the physics engine does not have to rebuild the
+simulation at runtime, that is to say when the game is running.
+
+As with a lot of things in Unity, it is not immediately apparent how
+you should go about declaring a collider to be =static= or =dynamic=.
+It would be great if there were just a checkbox in the =Collider=
+component.  But there isn't.  It appears that there are some complex
+things going on under the hood that preclude a simple declaration.
+
+By default a =GameObject= with a =Collider= component attached is
+treated as =static= by Unity's physics engine.  This would work for a
+non-moving wall or impassable bit of scenery, but for moving objects
+like enemies we need to mark them as =dynamic=.  In order for a
+=GameObject='s =Collider= to qualify as =dynamic= it requires a
+[[http://docs.unity3d.com/Manual/class-Rigidbody.html][=Rigidbody= component]].  If you don't want the normal features of the
+=Rigidbody=, i.e. conferring control of the =GameObject='s position to
+the physics system, then you can check the =Is Kinematic= checkbox.  A
+kinematic object's position is under the control of the attached
+scripts, rather than the physics system.
+
+One other trick from the [[http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes][tutorial]] is to set the =Collider= component's
+=isTrigger= property to =true=.  This prevents the =Collider= from
+being treated as a solid object in the physics simulation, which could
+lead to unintended bumping and pushing among various =Colliders= in a
+scene.
+
+** Persistent Data in Unity
+I'm interested in having some data remain available, even though I'm
+switching Scenes in Unity.
+
+- Unity3d
+- design
+- C#
+
+I'm interested in having some data remain available, even though I'm
+switching Scenes in Unity.  In other words, I want this data to remain
+persistent.  As you'll see below I was tempted to use =PlayerPrefs= to
+store the data, but, according to [[https://www.youtube.com/watch?v%3DJ6FfcJpbPXE][this Unity Live Training on Data
+Persistence]], =PlayerPrefs= is not the best way to make data persist
+over multiple Scenes.  =PlayerPrefs= is an okay place to store
+non-critical data, like the audio volume, window size, full-screen
+state--you know preferences.  I'll go ahead and show what I believe to
+be the correct way to store persistent data before talking about
+=PlayerPrefs= later.
+
+*** Persistent data
+To safely and reliably store persistent data, the Unity tutorials
+suggest that you need to assign a "kinda" Singleton design patterny
+script to an empty =GameObject= that will persist across Scenes.
+
+#+BEGIN_SRC csharp
+  using UnityEngine;
+  using System.Collections;
+
+  public class GameControl: MonoBehaviour {
+    public static GameControl control;
+
+    public float health;
+    public float experience;
+
+    void Awake() {
+      if(control == null){
+        DontDestroyOnLoad(gameObject);
+        control = this;
+      } else if(control != this) {
+        // There can be only one!
+        Destroy(gameObject);
+      }
+    }
+  }
+
+#+END_SRC
+
+The =static= reference means that we can just access the values in the
+=GameControl= script.
+
+*** How to access data in the GameController.
+#+BEGIN_SRC csharp
+  GameController.control.health = 100;
+
+#+END_SRC
+
+*** Writing persistent data to a binary file
+The persistent data that's under the control of the =GameController=
+is perfectly happy hanging out when your application is running.  It
+will persist between Scenes when other data is wiped out by Unity's
+garbage collection.  But what if you want to maintain persistent data
+when the application is closed.
+
+Ah hah!  Finally, an answer to my nagging question about writing
+persistent data to plain text files, like =PlayerPrefs= or simply a
+file in a local directory.  Wouldn't a player be able to modify the
+data?
+
+Enter the binary format:
+
+#+BEGIN_SRC csharp
+  // Add two more libraries
+  using System;
+  using System.Runtime.Serialzation.Formatters.Binary;
+
+#+END_SRC
+
+Where do we save it?  The persistent data path:
+=Application.persistentDataPath=.  We'll need one more library to do
+some input and output to files:
+
+#+BEGIN_SRC csharp
+  // Requires one more library and we're ready to get cooking with some
+  // methods
+  using System.IO;
+
+  public void Save() {
+    BinaryFormatter bf = new BinaryFormatter();
+    FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+                                FileMode.Open);
+
+    PlayerData data = new PlayerData();
+    data.experiencePoints = experiencePoints;
+    data.playerLevel = playerLevel;
+
+    bf.Serialize(file, data);
+    file.Close();
+  }
+
+  public void Load() {
+    if(File.Exists(Application.persistentDataPath + "/gameInfo.dat")) {
+      BinaryFormatter bf = new BinaryFormatter();
+      FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
+                                  FileMode.Open);
+      PlayerData data = (PlayerData)bf.Deserialize(file);
+      file.Close();
+
+      experiencePoints = data.experiencePoints;
+      playerLevel = data.playerLevel;
+    }
+  }
+
+#+END_SRC
+
+Now we need to make the =PlayerData= class that we will tag with
+=[Serializable]= so Unity will know that we want to write this to a
+binary file at some point in the future.  This affects how Unity
+stores the data internally, but it doesn't really change how we
+interact with it.
+
+#+BEGIN_SRC csharp
+  [Serializable]
+  class PlayerData {
+    // TODO: see about making gets and sets.
+    // TODO: automate the generation of this data structure.  See:
+    // http://forums.devx.com/showthread.php?170650-How-to-dynamically-add-property-to
+
+    // Add new variables for loading and saving here.
+    public int experiencePoints;
+    public int playerLevel;
+  }
+
+#+END_SRC
+
+After writing up this article, I came across an older, possibly better
+article on Unity Gems.  Please check out that write-up and all of the
+great content on the site.  [[http://unitygems.com/saving-data-1-remember-me/]]
+
+My full =GameController= data persistence Singleton script is
+available in [[https://gist.github.com/zerosalife/6f6e811b27761d287ea5][this gist]].
+
+So, that's the best solution I've found to date for having persistent
+data across scenes and play sessions.  I've included my rough first
+stabs at the problem below.  Keep in mind that anything following this
+point is just included just to make my notes available, and it's not
+meant to be a guide.
+
+*** Old notes: PlayerPrefs
+In order to have persistent data between Scenes, I was previously
+going to make use of Unity's =PlayerPrefs=, a class that implements
+persistent data storage for =ints=, =floats=, and =strings=.  Notably
+absent are useful data types like =Vector3= to maintain, for example,
+=transform= data between Scenes.  Some of the solutions I found may
+still be helpful for more storing complex data types in =PlayerPrefs=.
+
+One potential solution is to simply set a =GameObject='s
+=transform.position= to some constant =Vector3= value in the freshly
+loaded Scene.  While this is possible in some applications, I'm going
+to assume that eventually you'll want to transfer some dynamic
+position information between Scenes.
+
+Here are two potentially helpful sources to achieve this:
+
+[[http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/]],
+based on work by Mehta Dakshil.   While JSON parsing looks
+interesting, it requires an external =.dll=, =JsonFx.Json.dll=.  And
+I'm not interested in external dependencies here.  It may work great
+for you.
+
+[[http://wiki.unity3d.com/index.php?title%3DArrayPrefs][http://wiki.unity3d.com/index.php?title=ArrayPrefs]], based on work by
+Mario Madureiera Fontes and Daniel P. Rossi.  (Note: since
+=GetVector3= depends on =GetFloatArray=, there could be some error due
+to =GetFloatArray= casting strings to floats.  But the error
+introduce in the resulting =Vector3= is unlikely to be noticeable.)
+
+Actually, see a more updated version here:
+[[http://wiki.unity3d.com/index.php/ArrayPrefs2]], which is based on work
+by Eric Haines.
+
+According to the text, the script should be placed in the =Standard
+Assets= directory, so that it can be accessed from both =C#= and =Boo=
+scripts.
+
+To see a faster implementation for mobile devices, where the data to
+be saved in PlayerPrefs is cached in memory, see:
+[[http://www.previewlabs.com/writing-playerprefs-fast/]].
+
+** One Tap Quest: a pachinko RPG
+A review of One Tap Quest, a game by @shimage_net
+
+- design
+- mechanics
+- review
+- game
+
+[[http://shimage.net/one-tap-quest/]]
+
+I recently played /[[http://shimage.net/one-tap-quest/][One Tap Quest]]/, a game in which you tap to place an
+RPG character who marches upward, gaining levels by bumping into
+enemies, to tackle bigger and badder foes.  What's interesting to me,
+if you'll bear with me, is that this is a game that amounts to a
+pachinko RPG.  I'll start by talking about what I liked about /One Tap
+Quest/.  [[http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/][Next week]], I'll get into what I mean by a pachinko RPG.
+
+It's rare that I come to a new gameplay experience completely naive
+these days. The only way I feel I can effectively spend my time with a
+game is typically after having read some sort of guide because my time
+is extremely limited.
+
+What the /One Tap Quest/ accomplished so well for me was going from
+barely being able to read the screen to beating the game over the
+course of 10 minutes.  Admittedly it's a very short and simple game.
+But I felt a sense of accomplishment every time my understanding of
+the mechanics grew.
+
+Oh, these little critters are stronger than these other little
+critters, better avoid them.  Oh these are power ups, not critters,
+better aim for them.  With these skills under my belt it only took a
+little luck to send my character on a march toward victory.
+
+The place where this idea shines is in the power-ups.  I'm not sure
+whether I've encountered all of them, but they range from simple buffs
+that grant free levels to expanding your party into a 3-character-wide
+enemy-wrecking plow.  For what it's worth, the power-ups were deep
+enough to keep me interested over 10 minutes of gameplay.  If I were
+going to engage with this experience over a longer term, I would
+suggest adding more depth to the power-ups and the enemies, which are
+as far as I can tell simply harder to kill, and possibly bigger,
+versions of the puny slimes that move back and forth.  Some of the
+enemies have variations on the simple random walk style movement of
+the slimes, but a richer variety of movement and behavior from the
+enemies would increase the required skill to play the game, and add to
+replayability.
+
+I think the power-up mechanics add a level of depth and strategy to
+what otherwise would be a hands-off luck-of-the-draw game.  By aiming
+for power-ups you have a sense of agency in the action, just like
+turning the knob controls the velocity at which pachinko balls are
+launched.  It makes cheering for your lemming-like character(s) more
+enjoyable: if they could just get a little closer and grab the
+power-up you aimed at--no.  Nope, they died.
+
+Go give this great little game a try.  Hopefully it will pique your
+interest like it piqued mine.  Quirky variations on RPGs seem to be
+part of the /Zeitgeist/, with /[[http://www.atlus.com/rollers/][Rollers of the Realm]]/ and /[[http://zh.monst.wikia.com/wiki/Monster_Strike_%E7%BB%B4%E5%9F%BA][Monster
+Strike]]/ combining pinball and console genre gameplay with the
+potential synergy /[[http://en.wikipedia.org/wiki/Sonic_the_Hedgehog_Spinball][Sonic Spinball]]/ never achieved.
+
+** Designing a pachinko RPG
+- design
+- mechanics
+
+What would make a pachinko RPG?  [[http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/][Last week]], I wrote about how I'm sort
+of enamored with /[[http://shimage.net/one-tap-quest/][One Tap Quest's]]/ tap-and-let-them-go interaction,
+which I think mirrors the play-style of pachinko.  In pachinko, you
+have some control over launching the little metal balls, but once
+they're in play, they're on their own.  This mechanism stands in
+contrast to pinball, where you interact with a single or multiple
+pinballs with the paddles, and cue sports (especially bumper pool),
+where you launch a billiard ball repeatedly with a cue.
+
+As I said last week, I think the basic gameplay in /One Tap Quest/ is
+interesting enough for a 10-minute session.  But I'd like to take this
+concept and run with it, if you'll let me.  What follows are some
+concepts that, I think, extend the /One Tap Quest/ pachinko RPG model.
+
+*** Player characters
+As I conceive of it, a pachinko RPG is sort of like /[[http://en.wikipedia.org/wiki/The_Wonderful_101][Wonderful 101]]/.
+A changing stock of characters go up against an overwhelming group of
+enemies.  Just like pachinko rewards players with more pachinko balls,
+worth real money, a pachinko RPG would need to reward the player with
+ever more--and ever more interesting--characters to bolster the stock
+and the player's score.  A given character can gain levels when
+unleashed on the board, a little more unique than generic pachinko
+balls.  Perhaps characters added to the stock later in the game come
+at a higher starting level, sort of like characters recruited in later
+sections of /[[http://en.wikipedia.org/wiki/Final_Fantasy_Tactics][Final Fantasy Tactics]]/ or /[[http://en.wikipedia.org/wiki/Ogre_Battle:_The_March_of_the_Black_Queen][Ogre Battle]]/.
+
+*** Environment
+Procedurally generated "boards" could make a game interesting.
+Presenting a variable layout of enemies, terrain, and power-ups can
+challenge players who are already familiar with the basic gameplay.  I
+don't think that using roguelike elements, such as varying the effects
+of power-ups like potions in /[[http://www.nethack.org/][Nethack]]/ would work very well.  However,
+incorporating a quest or narrative adventure framework above the level
+of boards could be engaging.  Here I'm using the word level to refer
+to a conceptual level of hierarchical relationships, rather than an
+experience level or a stage in a game.  I'm talking about the approach
+that /[[http://www.ftlgame.com/][FTL]]/ and the built-in 3DS RPG, /[[http://nintendo.wikia.com/wiki/Find_Mii_(3DS)][Find Mii]]/, take.  Each "board"
+is a gameplay experience in itself, and the "boards" have a larger (in
+terms of conceptual scope) map that ties them together and gives the
+player a sense of progression or quest completion.
+
+Obstacles on the "boards" that impair the movement of either player
+characters or enemies could add another layer of strategy.  In effect
+these terrain elements could construct a puzzle that they player has
+to solve by starting their player character down the correct "lane",
+and being lucky enough to gain the required number of levels to beat
+the "board".
+
+This approach to using obstacles to make puzzles would require some
+clever level design.  A puzzle where there is a single right way to
+complete it would be boring, once you find it you simply wait until
+you get the required number of levels through sheer luck--pointless
+repetition without interesting choices.  However puzzles where there
+are (or seem to be) multiple routes to complete the "board" can be
+interesting.
+
+*** Interaction
+I think it might be cool to maintain control over the character after
+you launch.  In a sense you would be an invisible hand, maintaining
+control over the pachinko ball as it rolls through the machine.  This
+game would be sort of like an inverted bullet-hell shoot 'em up.
+Rather than dodging enemies, you would guide your character toward
+them.  It is probably worth iterating on this mechanic, because
+/[[http://zh.monst.wikia.com/wiki/Monster_Strike_%E7%BB%B4%E5%9F%BA][Monster Strike]]/ seems to use it with relative success.  But I think
+maintaining control over the character would block out the
+cheering-your-character-on-from-the-sidelines aspect that I enjoyed in
+One Tap Quest, and would like to emulate.
+
+*** Enemies
+As I mentioned previously, added depth of enemy behavior and power-ups
+could prolong the experience.  I'm not sure exactly what this would
+entail at this point, but I think iterating on the basic concepts laid
+out in /One Tap Quest/ could lead to some interesting variation.  That
+sentence pretty much sums up my take on what would make an interesting
+pachinko RPG.  Thanks for letting me spew some thoughts that are
+little more than design notes.
+
+
+
+
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
 categories:
 - analysis
@@ -1111,6 +1767,14 @@ called [[https://github.com/ztellman/rhizome][Rhizome]]," read my notes.  It'll 
 * Messaging in Unity
 See [[file:~/org/personal/gd.org::*Messaging][Messaging]]
 
+SendMessage can lead to a performance hit.  In places where a
+SendMessage would be called every frame, then caching a copy of the
+target object would be faster.
+
+[[http://forum.unity3d.com/threads/is-sendmessage-really-that-bad.38094/#post-245697]]
+
+
+
 * Game Development Performed
 [[http://gamasutra.com/view/news/213339/Vlambeers_Performative_Game_Development__the_way_of_the_future.php]]
 
@@ -1155,6 +1819,8 @@ for the streamers normal non-streaming content delivery platform.
 
 ** Vlambeer
 [[https://twitter.com/Vlambeer/status/463633278965387264]]
+and more recently:
+[[https://twitter.com/Vlambeer/status/491535617847988224]]
 ** Double Fine Massive Chalice
 
 ** Indie House
@@ -1359,10 +2025,21 @@ code on github.
 
 * Grim Fandango Design Documents
 
+see also: [[http://grumpygamer.com/maniac_mansion_design_doc]]
+
+[[http://www.gamasutra.com/view/news/189266/The_technique_LucasArts_used_to_design_its_classic_adventure_games.php]]
+
 * Full Throttle Critical Path Checklist
 
 * Full throttle junkyard puzzle
 [[https://www.youtube.com/watch?feature%3Dplayer_detailpage&v%3DWE0Cf1JWsAg#t%3D2264][https://www.youtube.com/watch?feature=player_detailpage&v=WE0Cf1JWsAg#t=2264]]
+
+Adventure games too much in inventory. Full throttle. Donkey and rider
+puzzle. Idea of puzzle where everything u need is on te screen In the
+double fine adventure Kickstarter one of te extra was a playground
+with Tim Schafer playing dott and full their. Tim explains the genesis
+of one of ft puzzles at time in video. Then fails to solve it. Turns
+out it wasn't. But how could you make such an puzzle?
 
 * Procedural Terrain in Unity
 [[http://alastaira.wordpress.com/2013/11/14/procedural-terrain-splatmapping/]]
@@ -1500,19 +2177,7 @@ example below illustrates how it's used.
 The ported code for the mind-reader is reproduced below.  A full
 example project is available on my github here.
 
-* Why you should start simple.
-My thoughts on a long-read from @hobbygamedev on why you should start
-simple.
 
-#+BEGIN_QUOTE
-Summary: There is no summary.  This is a rant.
-#+END_QUOTE
--Rich Hickey
-
-- design
-- mechanics
-
-[[http://www.hobbygamedev.com/beg/incremental-learning/]]
 
 * Object reuse in Unity
 [[https://twitter.com/mikegeig/status/453239221885480960/photo/1]]
@@ -1521,11 +2186,21 @@ Summary: There is no summary.  This is a rant.
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 [[http://unitypatterns.com/resource/objectpool/]]
+
+[[https://github.com/joaokucera/unity-pooling/blob/master/source/Assets/Pooling/GenericPooling.cs]]
+
 * Mobile Frame Football Association
+From The Game Design Workshop book:
+
+One good way to train yourself in the design of game mechanics is to
+challenge urself with controlled design exercises in which you take an
+existing game system, set a new player experience goal, and make
+changes to the system to meet that goal
+
 ** Football games
 *** Duration of play
-Mobile Frame Football Association (MFFA) sanctioned games last 12
-turns, consisting of two equal 6-turn halves.  MFFA rules do not allow
+Mobile Frame Football Association (MFFA) sanctioned games last 6
+turns, consisting of two equal 3-turn halves.  MFFA rules do not allow
 for the countdown mechanic from the vanilla Mobile Frame Zero (MF0)
 rules.
 
@@ -1536,7 +2211,8 @@ wins.
 *** Teams
 Games are played between teams consisting of equal numbers of frames.
 Frames may have up to 4 systems installed, with the usual vanilla MF0
-benefits for fewer than 4 installed systems (see, e.g., p. 64).
+benefits for fewer than 4 installed systems (see, e.g., MF0 p. 64).
+For more explanation see /Dice Systems/.
 
 *** Field of Play
 The game field should be approximately the size of a normal MF0 table,
@@ -1552,7 +2228,8 @@ normal MF0 table, your mileage may vary.
 
 ** Deployment
 During the deployment phase, you may place your units anywhere on the
-field in a legal formation.
+field in a legal formation.  Cool your servos, I'll describe the legal
+formations in just a sec.
 
 *** Beginning of play
 At the beginning of the game, at the beginning of the second half, or
@@ -1561,10 +2238,18 @@ bounds, in the half of the field that has been assigned (See:
 [[*Determining%20possession][Determining possession]]).  The player in possession of the ball, the
 /offensive player/, goes first.  The ball, represented by a d12, is
 placed at the center of the field. The offensive player must place a
-unit next to the ball, this unit is said to be in possession of the
-ball.
+unit next to the ball, this unit is in possession of the ball.
 
-**** Determining possession
+**** Maintaining possession of the ball
+A unit possesses the ball if the ball is in contact with its base
+(i.e. its legs).  If two opposing units are in contact with the ball
+the unit in possession of the ball first maintains possession unless
+the opposing unit steals or tackles.  Similarly if two units on the
+same side are in contact with the ball, the unit in possession of the
+ball first maintains possession unless it passes successfully to the
+second unit.
+
+**** Determining possession at kickoff
 A coin flip determines possession at the beginning of the game, with
 the winning player electing to be on offense or defense first.  The
 losing player gets to determine the side of the field in which to
@@ -1646,13 +2331,13 @@ up as normal.
 As in MF0, frames have 2 white dice representing the frame chassis
 plus other dice representing up to 4 additional systems.  Frames get
 the usual vanilla MF0 benefits for having fewer than 4 installed
-systems (see, e.g., p. 64).
+systems (see, e.g., MF0 p. 64).
 
 *** Red dice
 Red dice represent the ability of a frame to shoot or pass the ball on
-offensive.  Unlike the vanilla MF0 rules, there are two legal ranges
-for red dice on offense: direct and artillery.  Systems granting hand
-to hand dice are not rolled on offense.
+offense.  Unlike the vanilla MF0 rules, there are two legal ranges for
+red dice on offense: direct and artillery.  Systems granting hand to
+hand dice are not rolled on offense.
 
 When shooting, you must score a successful hit on the goal using the
 difficulty table from MF0 to score a goal.  When passing you must
@@ -1670,10 +2355,10 @@ scale.  See [[*Movement%20Scale%20and%20Shooting%20scale][Movement Scale and Sho
 **** Passing and shooting
 When in range for a shot or a pass, the player must roll a number of
 /hit dice/ equal to the /shot value/ minus the blue /defense value/ of
-any units in the line of fire.  Any units in the line of the pass or
-shot act as cover, using the normal MF0 cover rules.  If there is
-doubt, consult the MF0 cover rules to determine if a unit is in the
-line of fire.
+any units in the line of fire.  Any units in the line of
+the pass or shot act as cover, using the normal MF0 cover rules.  If
+there is doubt, consult the MF0 cover rules to determine if a unit is
+in the line of fire.
 
 If the rolled hit dice successfully /score a hit/, then the ball goes
 where the offensive player wants, into the goal or into the possession
@@ -1696,7 +2381,9 @@ red /shot value/ for the steal or tackle attack minus the blue
 /defense value/ of the unit in possession of the ball.
 
 Always use Damage chart 2 for stealing and slide tackling. On a roll
-of 5 or 6, the steal or slide tackle scores a hit.
+of 5 or 6, the steal or slide tackle scores a hit.  Possible rule: the
+player who slide tackles to steal the ball may choose to destroy a
+system on the opposing player's unit.
 
 Failure to score a hit is a /fumble/.  Nothing special happens, unless
 the player rolls a 1 on one of the hit dice.
@@ -1712,6 +2399,11 @@ the ability of a unit to gain or maintain control of the ball.
 *** Yellow Dice and Green Dice
 Yellow and green dice systems remain the same as vanilla MF0.
 
+*** Hot rodding
+A player may choose to hotrod a unit's system by sacrificing a system
+to gain a free action with one of the other systems after the unit has
+taken its turn.
+
 ** Taking a turn
 Taking a turn begins with target declaration.  For the defensive units
 this will generally be the unit in possession of the ball.  For the
@@ -1724,6 +2416,12 @@ animosity for the war.
 The turn proceeds as per the vanilla MF0 rules. Any unit that would be
 activated with the normal MF0 turn rules, i.e. the target of a steal
 attempt or a pass, takes its turn as per those rules.
+
+For example: If a unit equipped with a blue system is in the line of
+fire and has not rolled to determine the blue /defense value/ this
+turn, defending player must declare a target for the unit, roll all of
+the unit's dice, and assign a /defense value/.  The unit takes its
+turn as normal when its initiative dictates.
 
 ** Movement Scale and Shooting Scale
 
@@ -1751,6 +2449,7 @@ green for movement) is a good way to distinguish /movement scale/ and
 - Super Mario Bros.
 - Mischief Makers
 - Gunstar Heroes
+- Monument Valley
 
 ** Cross
 - Call of Duty Advanced Warfare
@@ -1768,6 +2467,7 @@ green for movement) is a good way to distinguish /movement scale/ and
 - Getter Robo
 - Armored Trooper Votoms
 - Practically everything from Super Robot Wars
+- Ratchet and Clank
 
 
 * Simulation Sandbox vs Theme Park
@@ -1968,10 +2668,15 @@ Credit to [[https://twitter.com/turnislefthome/status/463692298455617536]]
 - Unity
 - design
 - prototype
+- UnityJS
 
 I'm the dummy.  Prototyping with 2d boxes in Unity has proven
 surprisingly hard.  I think the difficulty I'm having is that I'm not
-exactly sure what I'm trying to do.
+exactly sure what I'm trying to do.  What follows is an example of
+*one* way (notice that I didn't say THE *RIGHT* WAY) to prototype with
+2d rectangles in Unity.  I'm still too much of a noob to have strong
+opinions on the right way to go about doing this.  Expect more posts
+on this topic as I develop my expertise.
 
 [[http://en.wikipedia.org/wiki/Discoverability][Discoverability]] is something I prize in programming languages and
 environments, especially when I'm learning them.  While Unity's
@@ -2114,81 +2819,646 @@ I don't feel so dumb anymore because this was a complex process.  And
 it wasn't until the very last crucial step that I saw anything
 remotely box-like.
 
-I've posted the code to a gist here so you can clone the script for
+I've posted the code to a gist [[https://gist.github.com/zerosalife/743cf797112d62978bec][here]] so you can clone the script for
 yourself, to give it a whirl.  I found that setting =size= to 2 is a
 nice place to start.
 
-* Hammock driven creativity
-- design
-- algorithm
-- tools
-
-In 2010, [[https://twitter.com/richhickey][Rich Hickey]] spoke at Clojure Conj about [[http://www.youtube.com/watch?v%3Df84n5oFoZBc]['Hammock Driven
-Development']].  Hickey was talking about the benefit of down-time for
-noodling about software design.  Specifically, Hickey means using
-down-time after considerably 'loading up' your mind with aspects of
-the problem, in order to leverage background offline processes to
-solve those difficult problems.
-
-Hickey's advice is to wait for it.  Wait overnight.  Get good rest and
-make sure that you are sleeping well.  Then you will be able to think
-about the clearly on the next day.  If you are lucky perhaps you will
-receive inspiration from a dream and wake up with the problem solved.
-This sort of inspiration is what Hickey means by leveraging background
-processing.
-
-Hickey mentions working on more than one project.  By having multiple
-projects, you avoid the problems of creative block, or writer's block.
-You can be productive simply by working on another project.  One
-drawback is that frantically flitting from project to project can lead
-to problems finishing any single project.  I am often guilty of this.
-
-I plan on writing about properly scoping projects to make it possible
-to get them to a finished state later.  One method that works for me
-is getting something to the point that I can write a blog post about
-it.  Even if it's not 'finished' finished, I get some satisfaction
-with putting it out there in a relatively thought out and complete
-form.
-
-My solution is to *record, record, record*.  I keep lots of notes,
-both in more structured form on this blog and in more sketchy form in
-files on my computer.  I also draw out visual design ideas in a
-notebook.  Sometimes I will set up skeleton game projects simply to
-test out an idea.  If I have some sudden insight into a problem, then
-all of these ideas are available later.
-
-Hickey says to avoid being stuck, switch.  That is why having multiple
-projects can help.  Hickey also mentions a great suggestion of talking
-about design hiccups and problems with other people.  Tweet about your
-design roadblocks.  Write a blog post about them.  Telepathically
-communicate about them before you go to sleep, so magical dream elves
-can come and solve them for you.
-
-Unless you are Rich Hickey or--I dunno--Gary Gygax, simply thinking
-about a problem /a priori/ will not result in a great game.  There is
-still something to be said for getting your hands dirty and iterating
-on a design.  However the techniques highlighted in Hickey's talk can
-be useful when you are stuck on a design problem.
-
-Hit me up in the comments or on the [[https://twitter.com/zerosalife][tweet tweet]] if you have any great
-Hammock Driven Design tips that I haven't covered here.
 
 * Thinking about dice games
 [[https://twitter.com/JonahD/status/471458517896155137]]
 
-* Playable Call For Papers
-Michael Cook made a "needlessly interactive" [[http://www.exag.org/playablecfp/][playable call for papers]]
-for the EXAG conference on AI.  It's a minimally expressive Twine
-story, with really one interactive experience role-playing the
-interaction the recipient feels upon receiving yet another CFP email,
-/click/.
-
-The motivating idea is sound.  Turning banal daily routine into an
-interactive experience is a worthy goal for game design.
 
 * Math Team Hearts
 - design
 - mechanics
+- game
+- rules
 
-Math Team Hearts is a speedy modification to hearts that ironically
+Math Team Hearts is a speedy modification to Hearts that ironically
 involves less math than the vanilla game.
+
+From The Game Design Workshop book:
+
+#+BEGIN_QUOTE
+One good way to train yourself in the design of game mechanics is to
+challenge yourself with controlled design exercises in which you take
+an existing game system, set a new player experience goal, and make
+changes to the system to meet that goal.
+#+END_QUOTE
+
+** The Goal
+We needed a game that played quickly, without a defined endpoint
+(e.g. when one player reaches 100 points in normal Hearts) because
+this game was played in free time waiting for school to start or
+waiting for the bus.  There was no time to spend tallying up scores,
+counting hearts and doing awkward math.
+
+The rules also modify the risk-reward value of shooting the moon to
+make it more attractive.  We found the game to be more interesting
+when multiple parties were invested in shooting the moon with less
+drawback from accumulating hearts.
+
+** The Rules
+The game plays like normal Hearts, except taking hearts no longer
+gives you points.
+
+- Taking hearts without shooting the moon gives you 0 points.
+- Taking no hearts in a round gives you 1 point.
+- Shooting the moon gives you 2 points.
+- Taking the Queen without shooting the moon gives you -1 point.
+
+The player with the most points at the end of play wins.
+
+For more variety, use the Dealer's choice drafting rules.  Each round,
+the Dealer decides on how players will pass cards prior to play.
+
+* Gamifying Games
+Something on top of score counting and death states and
+progression. Speed running. Turn taking.  GTA start with 5 stars and
+try to stay alive the longest.  Trying to get the game to glitch out.
+Playing with systems rather than playing the game or the narrative
+within the game.  More bang for your buck, maybe not a problem today,
+but definitely a problem growing up when you got one or two new games
+a year.
+
+[[https://www.youtube.com/watch?v%3Daq6pGJbd6Iw][https://www.youtube.com/watch?v=aq6pGJbd6Iw]]
+
+Offers a sense of empowerment by extending the life of a product that
+has been otherwise consumed, outside of the commercial drive to move
+on to the next thing.
+
+My favorite term, gaminess, comes from Michael Cook in a comment on
+this very blog.  Gaminess captures the odd taste left in my mouth when
+I use the buzzword gamify.
+
+
+* A World of Consequence: The World of Ruin in FFVI
+
+[[http://www.avclub.com/article/final-fantasy-vi-explores-human-pain-through-its-s-205365?utm_source%3Dtwitter&utm_medium%3DShareTools&utm_campaign%3Ddefault][http://www.avclub.com/article/final-fantasy-vi-explores-human-pain-through-its-s-205365?utm_source=twitter&utm_medium=ShareTools&utm_campaign=default]]
+
+* Go big
+[[http://www.shutupandsitdown.com/videos/v/susd-play-megagame/]]
+
+To get more people involved, restrict information.  Only people
+playing certain roles have access to critical gameplay information.
+They also become more invested in the game because they make mechanics
+determinations, a fancy way of saying dice rolls, for the team.  This
+also creates an organic distrust between the players on the same team
+later in the game that creates interesting /intrateam/ dynamics to go
+along with the already interesting /interteam/ dynamics.
+
+* Anatomy of a Screenshot
+[[https://twitter.com/NoelFB/status/474491040011788288/photo/1]]
+
+
+* Is House of Leaves a game?
+In [[*Space%20is%20Read][the post about Space is Read]] I talked a bit about interactive media
+versus more traditional noninteractive media.  That's just a fancy way
+of saying games versus, for example, books.  Needless to say, if you
+haven't read Mark Z. Danielewski's excellent book, here be spoilers.
+
+The House in /House of Leaves/ is a Big Dumb Object, that's larger on
+the inside than the outside.  In this case, I
+guess it's a Big Sinister Object.
+
+* The map and the territory.
+- design
+- level design
+
+Thinking about classic platformer maps as examples of good game
+design.  Not just thinking about level design, but that's a big part.
+Also thinking about beauty and elegance in achieving some level of
+communication with the player, both in the aesthetic and practical
+sense.  Jeremy Parish has looked at this sort of thing from a holistic
+perspective in the Anatomy of Games series.
+
+And others:
+[[http://www.themmnetwork.com/blog/2012/08/19/a-critical-look-at-mega-man-3-stages-snake-man]]
+[[http://www.themmnetwork.com/blog/?tag%3DA%2BCritical%2BLook%2Bat][http://www.themmnetwork.com/blog/?tag=A+Critical+Look+at]]
+
+Here I'd like to examine how the artifacts of design can communicate
+the intention behind the choices made for the design, to the extent
+that's at all possible.  I hope that by coming up with a working
+vocabulary for this type of classic design, future designers can
+leverage it to not only improve their techniques, but to build
+systems, based on this design syntax, that can design in a realistic,
+authorial manner.
+
+I'll be looking at maps hosted on [[http://www.vgmaps.com/Atlas/PC/index.htm#MegaManIII][vgmaps.com]] and speed runs and other
+examples of play.
+
+In a way, design for interactive media is a way of communicating.  The
+designer, or more classically author, communicates with the player
+asynchronously.  At each turn, the designer must think like a player,
+novice to advanced, and create clever scenarios to keep the player
+intrigued.  In the medium of the platformer genre, the elements of
+design communication are the level and the enemies, which are
+minibosses, bosses, or cannonfodder.  The designer rarely has a chance
+to see how the game will be played before the ability to refine or
+modify the design is long gone.
+
+* Secrets and Glitches
+Axiom Verge is an in development game that elevates glitches from
+quirky bugs into generative gameplay content.
+
+The article makes a point of mentioning very old memory manipulation
+glitches.  Due to more modern programming practices, these don't crop
+up as much these days.  Here's an example from Final Fantasy III
+(using Japanese numbering here):
+
+[[http://tasvideos.org/GameResources/NES/FinalFantasy3.html]]
+
+In more recent games there are still glitches that players exploit to
+gain an advantage for speed runs.  Here's an example of RNG
+manipulation from Symphony of the Night:
+
+[[http://tasvideos.org/GameResources/PSX/SymphonyOfTheNight.html]]
+
+This is not to say that modern games are in any way invulnerable to
+memory manipulation tricks.  I think there are two reasons that these
+glitches haven't been shown in modern games.  First, automated memory
+management and smarter programming through explicit checks will
+(probably) protect against some of the old memory manipulation tricks.
+Second, there simply hasn't been enough time spent poking at these
+games.  People have been playing some of these older games for 30 or
+40 years.
+
+Related: the rise and fall of the cheat code
+[[http://beta.slashdot.org/story/203799]]
+
+
+* Shovel Knight's Old-school Tricks
+- design
+- mechanics
+
+Great article about parallax scrolling and  plenty of other stuff from
+Shovel Knight:
+[[http://gamasutra.com/blogs/DavidDAngelo/20140625/219383/Breaking_the_NES_for_Shovel_Knight.php]]
+
+Even some indies are getting into the spirit:
+[[https://twitter.com/NoelFB/status/487185061972680705/photo/1]]
+
+Interview with the Shovel Knight creators Yacht Club Games:
+[[https://www.nintendoworldreport.com/connectivity/38203/episode-144-ive-seen-some-badass-canes]].
+The interview starts about 28 minutes into the podcast.
+
+** Resolution
+Shovel Knight runs on displays meant to run 1080p down to pocket-sized
+3DS screens.  The fine article mentions that scaling Shovel Knight's
+NES-style graphics up to 1080p results in virtual pixels of about 4.5
+x 4.5 1080p pixels.  It also mentions that the effective resolution
+they shoot for is 400 x 240, resulting in an aspect ratio of 5:3.
+According to the fine article and [[http://en.wikipedia.org/wiki/Nintendo_Entertainment_System_technical_specifications][wikipedia]], that's pretty close to a
+stretched out version of the original NES resolution.  For nothing
+else but my own reference here, the DS' resolution is 256 x 192,
+according to [[http://www.usgamer.net/articles/final-fantasy-iii-pc-port][this article]].  The Gameboy is 160 x 144 according to
+[[http://jams.gamejolt.io/gbjam3][#gbajam]].  Typical NES background tiles are 16 x 16 pixels, foreground
+sprites are either 8 x 8 or 8 x 16 (Sources:
+[[http://wayofthepixel.net/index.php?topic%3D10784.5%3Bwap2][http://wayofthepixel.net/index.php?topic=10784.5;wap2]];
+[[http://en.wikipedia.org/wiki/Nintendo_Entertainment_System_technical_specifications]]).
+
+And [[http://en.wikipedia.org/wiki/Neo_Geo_(system)][NeoGeo]] is:
+#+BEGIN_QUOTE
+Display[edit]
+Display resolution: 320×224 (many games only used the centermost 304 pixels)
+Color palette: 65,536 (16-bit) (Not RGB565, but RGB666, where the lowest bit of each channel is shared with one bit[14])
+Maximum colors on screen: 4,096 (12-bit)
+Maximum sprites on screen: 380
+Minimum sprite size: 1×2
+Maximum sprite size: 16×512
+Maximum sprites per scanline: 96
+Simultaneous scroll planes: 3
+Aspect ratio: 4:3
+#+END_QUOTE
+
+And LDTV is:
+[[http://en.wikipedia.org/wiki/Low-definition_television#References]]
+
+More modern resolutions considered:
+[[http://gamedevelopment.tutsplus.com/articles/quick-tip-what-is-the-best-screen-resolution-for-your-game--gamedev-14723]]
+
+So the Shovel Knight screen is 25 x 15 tiles.
+
+I find choosing an aesthetically pleasing aspect ratio to be a crucial
+design decision; one that I often approach on a trial and error basis.
+Knowing what others have--in my humble opinion successfully--chosen
+gives a nice starting point /a priori/ for projects with similar
+scope.
+
+[[http://2-dimensions.com/2014/08/20/mighty-gunvolt-fine/]]
+
+** Backgrounds
+
+** One comment on designer-player interaction through design
+
+According to [[http://www.usgamer.net/articles/inside-shovel-knights-launch][this article]] by Chris Holt, the Shovel Knight designers
+were realtively wishy washy about including the fishing pole.  For the
+record, I like the addition of yet another superfluous minigame.  And
+it's useful for fishing up money bags left in pits when you die, so
+there.
+
+The use of sparkles to mark pits containing potential fishing spoils
+illustrates a clever bit of design and interaction with the player
+through design.  You, the player, will notice that the pit in the
+fish-themed level has the sparkles.  So, naturally, you're very likely
+to fish there.  Bada-bing bada-boom: fish spoils.  The designers have
+communicated what the sparkles in the pits mean without having to
+resort to lame exposition from a tutorial or a helper character.
+
+The great games of the NES-era that Shovel Knight emulates were
+littered with these kinds of ingenious communicative design patterns.
+Here's [[http://iwataasks.nintendo.com/interviews/#/wii/nsmb/0/3][an interview with Shigeru Miyamoto]] talking about the deliberate
+design behind communicating the purpose of the iconic mushroom
+power-up in Super Mario Bros.
+
+** Another fine example of introducing new mechanic in Shovel Knight.
+
+In Treasure Knight's level you come across rocket platforms that fly
+horizontally when you activate a lever by hitting it with your shovel.
+For my play-through this was the first time I encountered these
+platforms.
+
+Since they are your means of conveyance to avoid spikes below, the
+devs could have been mischievous about it. As your intrepid game
+design blogger is well versed in virtual button pressing, my first
+reaction is to hop on the platform and press boot-ton--viciously
+strike the lever with the shovel. Ah, but doing so leads to a spikey
+death for those with slow reaction times--your intrepid blogger, yeah,
+yeah.
+
+The second time through YIB, meaning me, and likely you, meaning you,
+would be more wary; carefully timing the necessary jump to avoid the
+spikes. The devs, in their wise and studied ways, saw fit to embed a
+dig-able reward nugget in the wall. It's lodged in such a way that
+when you knock it loose it lands just so, so when you shovel it to
+dislodge the pecuniary treats within, you also hit the lever,
+activating te rocket platform. Now you know to look ahead and
+carefully time your jump. No harm no foul. No wordy tutorial, telling
+you, "Hey, listen. This platform shoots off when you hit the lever."
+
+You learned the new mechanic, and thus the behavior necessary to
+interact with it, through previously ingrained behavior beaten into
+your head with a thousand gem pickups.  It's devilishly clever.
+
+
+* Feature Complete
+From the Threemails.
+
+- Core Game
+- Tutorial
+- Menu Flow
+- Music
+- SFX
+- Monster Animation
+- Game Rotation (for the iPad/PC)
+- Leaderboards
+- Achievements
+- Twitter
+- Skin Packs
+- IAP
+- (Undos?)
+- Puzzlejuice Cross-promotion
+
+* 8 bit vs 16 bit color
+Listening to the Upper Memory Block Podcast [[http://umbcast.com/episode-22-rollercoaster-tycoon/][Railroad Tycoon episode]]
+(start listening at 30:27 for the specific segment on Tech).
+
+3 bits of 8 represent red
+3 bits rep green
+2 bits for blue
+
+So, 256 colors
+
+2 bytes to map color, 16 bit color
+
+5 bits for red and blue
+6 bits for green
+
+Note: I'm assuming that these values are for DOS games, and may not
+apply to consoles ([[http://en.wikipedia.org/wiki/Nintendo_Entertainment_System_technical_specifications][like the NES]]).
+
+As an aside, I think [[http://en.wikipedia.org/wiki/Nibble#Table_of_nibbles][this chart showing nibbles]] looks like a cellular
+automata thing from Conway's Game of Life.
+
+* INSceptahdeckWU
+- design
+- procedural generation
+- clojure
+
+I'm at it again.  Making a twitter bot like styx_ebooks.  Only this
+time it's in a completely different language and it's got a compltely
+different corpus.  Corpus is a Latin way of saying text, in case you
+forgot.
+
+** Making the corpus
+
+
+** Making it a command line app
+This is the first time I've tried to make a command line application
+in Twitter.  Luckily there are some good tools out there.
+
+I wondered how to deal with multiple options and inputs, and the good
+news is: it's just as easy as you'd think.  You simply add
+conditionals to deal with the possible behaviors of your program.  The
+magic of =parse-opts= handles the rest.  Options with long names
+automatically become keys to the option dictionary, and if you've
+marked them as a =:flag= you can depend on the truth-value to control
+the flow of your program.
+
+You may think it's odd that I'm using options instead of actions as in
+the =cli= example, but hey.  It's my program.  Your program can work
+the way you want it too.  I'm going to make sure to document it so you
+can use the Rebel INS or build a twitter bot based on this code.
+
+** Markov chain text generation
+One of the quirks of the markov package I used is that it stops
+generating 'random walks' when it reaches states that it has not been
+trained on.  As you can imagine when using imagery-rich,
+neologism-laden rap music, there are many words that occur once, even
+in a very large corpus.  Being unique is kind of a goal of the form, a
+fact reflected in [[http://en.wikipedia.org/wiki/Ol%2527_Dirty_Bastard][at least one alias]].
+
+In order to make more realistic texts, it's common to increase the
+order of the transition matrix.  That is to say, to determine the
+probability for a following word from the prior two or more words.
+However, given my idiosyncratic corpus, this leads the 'random walk'
+algorithm to halt, giving me too few words in my output.
+
+Interestingly, in this case, dialing back the order tends to lead to
+more rhyming and a few recognizable couplets, which I find kinda nice.
+
+** Moving on
+From here the skies the limit.  I could try analyzing the generated
+text to try to build lines or stanzas.  I could try to reorder words
+to reflect the syntax present from the transcription.  I could try to
+represent individual emcees with unique corpora.
+
+
+
+* Mario Design Interview
+
+Distilling an interview with Shigeru Miyamoto.
+
+- design
+
+In the interest of preserving an interview that could easily vanish
+into the ether following a Nintendo website redesign, I'm going to
+collect some wisdom from [[http://iwataasks.nintendo.com/interviews/#/wii/nsmb/0/0][an Iwata Asks with Shigeru Miyamoto]].
+
+** Elements of a fun game
+- "A fun game should be easy to understand -- you should be able to
+  take one look at it and know what you have to do straight away."
+- "It should be so well constructed that you can tell at a glance what
+  your goal is and, even if you don't succeed, you'll blame yourself
+  rather than the game."
+- "The people standing around watching the game have also got to be
+  able to enjoy it."
+** Form follows function
+A repeated theme that emerges in the interview is that constraints of
+the hardware or display technology restricted the designs.  Miyamoto
+and crew had to come up with simple, evocative designs that
+communicate the function for each of the entities in the game world.
+Following the maxim that a fun game should be easy to understand,
+straightforward designs that show an entity's purpose in an easily
+recognizable manner communicate the designer's intent to the player.
+** Try it and see
+Gameplay staples from the Mario series that seem unequivocally
+well-designed emerged from a simple iterative prototyping process.
+The designers had an idea, for example, "What if we double the size of
+our main character?"  They then implemented it in a development build
+of the game, and tested it out to see if it was fun.  By testing this
+particular design choice, the designers came up with the idea for a
+mechanic in the game to double the size of the main character as the
+result of picking up a power-up.
+** Communicating through design
+The simple introduction of the mushroom power-up is a clever bit of
+communication through the design of a level.  By this point the player
+has likely learned that stomping on Goombas squashes them.  The
+placement of a power-up block above the player situates it so you have
+no choice but to hit it when you try to squash the Goomba.  By keeping
+the player trapped under a line of blocks, the power-up has time to
+bounce off of a pipe (blatantly informing the player that power-ups
+can bounce) and the player is likely to run into it, thus discovering
+its purpose.
+
+Notice how the construction of the level (one of the elements of fun),
+its design, makes it easy to understand (another element of fun) the
+function of these power-ups.  At no point is it necessary to wrest
+control of the player to blabber on about what power-ups are, why the
+player may want to pick them up, what other power-ups exist in the
+world, /et cetera ad infinitum ad nauseum/.
+** Feel and smell
+These two terms refer to the subjective aesthetic impression of the
+perceptual and interactive elements of a game.  These can be a nice
+way to distinguish your game from the others out there.
+
+Miyamoto uses the term smell to refer to the overall impression that a
+game leaves on your senses.  By really making a distinct impression on
+the player, the experience is likely to stick, leading to
+replayability.
+
+The feel of a game refers to the subjective feeling the player gets
+when pressing buttons on the controller.  Every game uses the same
+controller (more or less), but the feeling that a player gets upon
+pressing a button can differ drastically depending on the game.
+Miyamoto mentions, and I agree, that sound effects have a huge impact
+on the feel of a game.
+*** Jan Willem Nijman of Vlambeer on game feel
+[[http://words.underscorediscovery.com/jan-willem-on-game-feel/]]
+
+
+
+Martin Jonasson petri purho juice it or lose it
+
+
+cactus igs 2009
+
+[[https://www.youtube.com/watch?feature%3Dplayer_detailpage&v%3DAJdEqssNZ-U#t%3D381][https://www.youtube.com/watch?feature=player_detailpage&v=AJdEqssNZ-U#t=381]]
+
+The people behind the Nuclear Throne wiki have put this philosophy
+into practice.  The wiki has screen shake every time you click the
+mouse, and there's an easter egg where pressing a button will play the
+sound of an airhorn.  I'm going to go on record here and say that the
+airhorn onomatopoeia shall henceforth be:
+"Byubyubyubyubyuuuuuuuuuuuuu."
+
+Bullets shouldn't be small.  It's no fun when they're small.  Make it
+about the size of the character's chest.  Also make the first frame of
+animation a circle so that you have a muzzle flash.
+
+Pause the action for 20 ms when something cool happens.  That's about
+10% of [[http://www.humanbenchmark.com/tests/reactiontime/stats.php][average human reaction time]].  So, ignoring nonhuman players,
+that means that this introduces a subliminal pause that adds a kind of
+weight to the action.
+
+* Text adventures vs. User-editable MUDs
+Sort of relates to the [[http://zerosalife.github.io/blog/2014/07/26/space-is-read/][previous discussion]] of interactivnity and genre
+with regard to Visual novels vs choos your own adventure
+
+[[file:~/org/personal/gd.org::*Finite%20state%20machine%20vs%20state%20transition%20system][Finite state machine vs state transition system]]
+* The Yogscast blowback and Generation Like
+
+At the risk of participating in the culture characterized as callow
+and vapid by the very documentary I'm sharing, I'd like to call
+attention to some of the points made in
+[[http://www.pbs.org/wgbh/pages/frontline/generation-like/]] because I
+think they shed light on the recent dust-up with the Yogscast.
+Specifically here I'm talking about the decision to feature games on a
+Youtube channel exclusively in return for a share of the sales profits
+for some time during or following the arrangement.  I'm not talking
+about [[http://www.polygon.com/2014/7/17/5911947/yogventures-kickstarter-canceled-yogscast-no-obligation][the Yogventures kickstarter fiasco]].
+
+See also this video by TB: [[https://www.youtube.com/watch?v%3D4KclXm0fDo0][https://www.youtube.com/watch?v=4KclXm0fDo0]]
+
+* Displaying an arbitrary number of objects in an arc
+
+Want to go around in a circle, like the numbers 8-4 around the top of
+a clock.  Since we have nine reasonable positions, calculate the
+modulo of BigBaddie level and 9 spots, then adjust the number of hits
+and number of objects to display accordingly.
+
+* Skill vs RNG
+[[https://twitter.com/dom2d/status/494206004318314496/photo/1]]
+
+* The graph of a map prototype
+[[https://twitter.com/bitmOO/status/495364383212838912/photo/1]]
+
+* The ethics of game design
+- design
+- ethics
+
+Sarang.  The name sounded familiar to me.  It's a Korean word that
+means love.  Some quick googling revealed that I'd seen it recently in
+a 2008 movie called Moon.  Without spoiling too much, it is the
+soothing name of the moonbase in an otherwise troubling story.  The
+Sarang in this story is just as troubling, if not entirely more so due
+to the reality of the situation.
+
+[[http://www.gamasutra.com/view/feature/207779/ethical_freetoplay_game_design_.php]]
+
+[[http://www.polygon.com/2014/7/28/5930685/love-child-interview-ethics-game-design]]
+
+Maker vs consumer economies.
+
+No right answer.  No way to make a universally regarded ethical game.
+Subjective decision.  Recognize mechanics and design that may cause
+issues: charging to change reward schedules, using a powerfully
+addictive reward schedule and charging to maintain access to the game.
+Reward schedules can be addictive and harmful.  Know methods to
+mitigate: warning screen, notice to take a break, change reward
+schedule on the fly to a less reinforcing schedule.
+
+* Reward Schedules
+[[http://www.betabunny.com/behaviorism/Conditioning2.htm]]
+
+* Pixel Sprites and Unity2d
+
+- Unity
+
+* Types of Screenshake
+- Random X and Y
+  - Looks sort of chaotic, not smooth
+- Periodic X and Y
+  - Looks kind of swirly, can become a Screenorbit if you're not
+    careful.
+- Perlin X and Y
+  - Smoother than Random X and Y
+- Restricting movement to one axis
+  - Can look good if there is some component of the scene that
+    dictates the movement, i.e. the collision of a ball and a wall.
+- Rotating Z (about X and Y)
+  - Looks tilty, can be good if there is little movement in X and Y in
+    your game and you want to convey a sense of rocking or coming down
+    like a see-saw.
+*  Automating blog deployment with Octopress
+- tools
+- Octopress
+- Make
+- Makefile
+
+Based on Kevin van Zonneveld's ([[https://twitter.com/kvz][@kvz]]) [[http://kvz.io/blog/2012/09/25/blog-with-octopress/][article]] on setting up Octopress,
+I've adapted a =Makefile= to make building my blog easier... with
+[[http://www.gnu.org/software/make/][make]].  The following =Makefile= allows me to build and deploy my blog
+by typing =make blog= at the command prompt.
+
+<!--more-->
+
+#+BEGIN_SRC makefile
+  all: blog
+
+  preview:
+          bundle exec rake generate && bundle exec rake preview
+
+  blog:
+          git pull && \
+          bundle install && \
+          bundle exec rake integrate && \
+          bundle exec rake generate && \
+          bundle exec rake deploy && \
+          git add .; \
+          git commit -am "blog update $$(date +%Y-%m-%d)"; \
+          git push origin source
+
+  .PHONY: blog%                   # Force blog to run regardless of the changes to the files.
+
+#+END_SRC
+** Additional Notes
+*** rake build didn't work for me
+I think this is because I haven't written any tasks that use =rake
+build=.
+*** Remote for the source of my blog
+I push the source code of my blog to a branch named =source= rather
+than =master=.
+* Iteration
+The iterative process diagram from Game Design Workshop
+
+Generate Ideas → Formalize Ideas → Test Ideas → Evaluate Results → If
+there are problems, Loop back to Generate Ideas.  Otherwise, You're
+done iterating.
+* Player Interaction Patterns
+The player interaction patterns diagram from Game Design Workshop
+
+- Single player vs. game
+- Player vs. player (2 player)
+- Multiple individiual players vs. game
+- Unilateral competition (assymetric Player vs player)
+- multilateral competition (symmetric player vs. player multiplayer)
+- Team competition
+- cooperative play (team players vs. game)
+* In-depth longread on Final Fantasy VI
+
+An in-depth #longread on #FFVI. @tgdfweb
+
+- mechanics
+- design
+- SNES
+- RPG
+- Final Fantasy
+
+[[http://thegamedesignforum.com/features/reverse_design_ff6_1.html]]
+
+[[http://kotaku.com/how-to-balance-an-rpg-1625516832]]
+
+Whew.  Lot of contractions in that title.  But you made it through,
+most likely because you're interested in reading about FFVI.  Let me
+tell you: this article by the game design forum has pretty much taken
+the cake.  That's right.  All of it.
+
+That being said, there's little more to add to the exhaustive
+exploration of the elements of FFVI's design.  Instead, I'll try to do
+my best to define some of the jargon the article uses.
+
+I found the use of complicated sabermetrics-like stats a bit confusing
+at first. So assuming you're not some stat-crunching RPG machine, you
+can refer back to the definitions here to help decipher the tricky
+stats article.  It's worth saying now that if I didn't think that the
+author makes a cogent and compelling argument for the value of the
+stats, I wouldn't bother defining them.  I'm convinced that having a
+grasp, a real gras p at a mathematical level, for the mechanics in
+your game can make it a more compelling, fun play experience.  And
+wading through design breakdowns liek these articles can make the math
+less of a chore, especially when its written about one of the all-time
+great examples from the genre.
+
+- NPC Irony
+- NPC Sociology
