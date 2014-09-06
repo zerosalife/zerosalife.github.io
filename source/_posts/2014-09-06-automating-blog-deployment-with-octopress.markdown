@@ -33,7 +33,7 @@ by typing `make blog` at the command prompt.
             git commit -am "blog update $$(date +%Y-%m-%d)"; \
             git push origin source
 
-    .PHONY: blog%                   # Force blog to run regardless of the changes to the files.
+    .PHONY: blog                   # Force blog to run regardless of the changes to the files.
 
 ## Additional Notes
 
