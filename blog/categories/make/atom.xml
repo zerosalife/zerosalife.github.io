@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Make | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/make/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-09-06T11:38:00-05:00</updated>
+  <updated>2014-09-06T11:41:03-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -41,7 +41,7 @@ blog:
         git commit -am "blog update $$(date +%Y-%m-%d)"; \
         git push origin source
 
-.PHONY: blog%                   # Force blog to run regardless of the changes to the files.
+.PHONY: blog                   # Force blog to run regardless of the changes to the files.
 </code></pre>
 
 <h2>Additional Notes</h2>
