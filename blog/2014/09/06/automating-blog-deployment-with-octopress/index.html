@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Automating blog deployment with Octopress - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="Based on Kevin van Zonneveld&rsquo;s (@kvz) article on setting up Octopress,
+I&rsquo;ve adapted a Makefile to make building my blog easier&#x2026; &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Automating Blog Deployment With Octopress</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-06T11:27:35-05:00" pubdate data-updated="true">Sep 6<span>th</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Based on Kevin van Zonneveld&rsquo;s (<a href="https://twitter.com/kvz">@kvz</a>) <a href="http://kvz.io/blog/2012/09/25/blog-with-octopress/">article</a> on setting up Octopress,
+I&rsquo;ve adapted a <code>Makefile</code> to make building my blog easier&#x2026; with
+<a href="http://www.gnu.org/software/make/">make</a>.  The following <code>Makefile</code> allows me to build and deploy my blog
+by typing <code>make blog</code> at the command prompt.</p>
+
+<!--more-->
+
+
+<pre><code>all: blog
+
+preview:
+        bundle exec rake generate &amp;&amp; bundle exec rake preview
+
+blog:
+        git pull &amp;&amp; \
+        bundle install &amp;&amp; \
+        bundle exec rake integrate &amp;&amp; \
+        bundle exec rake generate &amp;&amp; \
+        bundle exec rake deploy &amp;&amp; \
+        git add .; \
+        git commit -am "blog update $$(date +%Y-%m-%d)"; \
+        git push origin source
+
+.PHONY: blog%                   # Force blog to run regardless of the changes to the files.
+</code></pre>
+
+<h2>Additional Notes</h2>
+
+<h3>rake build didn&rsquo;t work for me</h3>
+
+<p>I think this is because I haven&rsquo;t written any tasks that use <code>rake
+build</code>.</p>
+
+<h3>Remote for the source of my blog</h3>
+
+<p>I push the source code of my blog to a branch named <code>source</code> rather
+than <code>master</code>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-06T11:27:35-05:00" pubdate data-updated="true">Sep 6<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/make/'>Make</a>, <a class='category' href='/blog/categories/makefile/'>Makefile</a>, <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/23/designing-a-pachinko-rpg/" title="Previous Post: Designing a pachinko RPG">&laquo; Designing a pachinko RPG</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/09/06/automating-blog-deployment-with-octopress/">Automating blog deployment with Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/23/designing-a-pachinko-rpg/">Designing a pachinko RPG</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">One Tap Quest: a pachinko RPG</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/09/persistent-data-in-unity/">Persistent Data in Unity</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/">Static and Dynamic Colliders in Unity</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54217540-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
