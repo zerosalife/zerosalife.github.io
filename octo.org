@@ -1466,7 +1466,49 @@ little more than design notes.
 
 
 
+**  Automating blog deployment with Octopress
+- tools
+- Octopress
+- Make
+- Makefile
 
+Based on Kevin van Zonneveld's ([[https://twitter.com/kvz][@kvz]]) [[http://kvz.io/blog/2012/09/25/blog-with-octopress/][article]] on setting up Octopress,
+I've adapted a =Makefile= to make building my blog easier... with
+[[http://www.gnu.org/software/make/][make]].  The following =Makefile= allows me to build and deploy my blog
+by typing =make blog= at the command prompt.
+
+<!--more-->
+
+#+BEGIN_SRC makefile
+  all: blog
+
+  preview:
+          bundle exec rake generate && bundle exec rake preview
+
+  blog:
+          git pull && \
+          bundle install && \
+          bundle exec rake integrate && \
+          bundle exec rake generate && \
+          bundle exec rake deploy && \
+          git add .; \
+          git commit -am "blog update $$(date +%Y-%m-%d)"; \
+          git push origin source
+
+  .PHONY: blog                   # Force blog to run regardless of the changes to the files.
+
+#+END_SRC
+*** Additional Notes
+**** rake build didn't work for me
+I think this is because I haven't written any tasks that use =rake
+build=.
+**** Remote for the source of my blog
+I push the source code of my blog to a branch named =source= rather
+than =master=.
+**** The percent symbol screwed everything up
+Not sure exactly why, but including the =%= after blog on the line
+=.PHONY: blog%= gave me an error saying =make: `blog' is up to date.=.
+Removing the =%= allowed me to run =make blog= as expected.
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
 categories:
 - analysis
@@ -1917,13 +1959,59 @@ function Start () {
 }
 #+END_SRC
 
-Then I attach this script to the Main Camera for testing purposes.
-Bada bing, bada boom.
+Then I attach this script to the Main Camera of a fresh Scene for
+testing purposes.  Bada bing, bada boom.
 
 This was all relatively straightforward, after I understood some of
 the quirks of Unity's JavaScript syntax.  On my github account, you
 can find a repository of an example Unity project using this code
 here.
+
+* Create a Dictionary of Lists in Unity C♯
+- Unity
+- Unity3d
+- C#
+- tools
+- algorithms
+
+Last week, I published an article about creating a Dictionary of Lists
+in Unity using Unity's JavaScript.  I've already mentioned the
+underlying motive, so I'll dive right in.
+
+#+BEGIN_SRC csharp
+  Dictionary<string, List<int>> table = new Dictionary<string, List<int>>();
+
+#+END_SRC
+
+#+BEGIN_SRC csharp
+  // Fill our table with Lists containing ints using Arrays to intialize
+  // the Lists.
+  table["a"] = new List<int>({1});
+  table["b"] = new List<int>({2});
+  table["c"] = new List<int>({3});
+#+END_SRC
+
+#+BEGIN_SRC csharp
+  void Start() {
+    foreach(string str in table.Keys) {
+      // Get the value for our Key.
+      List<int> value = table[str];
+
+      // If the Key is the desired Key, append to its list.
+      if(str == "c") {
+        value.Add(4);
+      }
+
+      // print the first item in each of the Lists.
+      Debug.Log(value[0]);
+    }
+
+    // Print the appended item to see that it worked.
+    Debug.Log(table["c"][1]);
+  }
+
+#+END_SRC
+
 
 * Probabilistic Entity Spawning in Unity JavaScript
 - JavaScript
@@ -3016,6 +3104,9 @@ according to [[http://www.usgamer.net/articles/final-fantasy-iii-pc-port][this a
 sprites are either 8 x 8 or 8 x 16 (Sources:
 [[http://wayofthepixel.net/index.php?topic%3D10784.5%3Bwap2][http://wayofthepixel.net/index.php?topic=10784.5;wap2]];
 [[http://en.wikipedia.org/wiki/Nintendo_Entertainment_System_technical_specifications]]).
+For reference, Link's sprite in Legend of Zelda, an NES game, is 16 x
+16, Link's sprite in Link's Awakening, a gameboy game, is 16 x 16, and
+Link's sprite in A Link to the Past, an SNES game, is 32 x 32.
 
 And [[http://en.wikipedia.org/wiki/Neo_Geo_(system)][NeoGeo]] is:
 #+BEGIN_QUOTE
@@ -3338,6 +3429,8 @@ to the reality of the situation.
 
 [[http://www.polygon.com/2014/7/28/5930685/love-child-interview-ethics-game-design]]
 
+[[https://www.youtube.com/watch?v%3DFwI0u9L4R8U][https://www.youtube.com/watch?v=FwI0u9L4R8U]]
+
 Maker vs consumer economies.
 
 No right answer.  No way to make a universally regarded ethical game.
@@ -3347,6 +3440,33 @@ addictive reward schedule and charging to maintain access to the game.
 Reward schedules can be addictive and harmful.  Know methods to
 mitigate: warning screen, notice to take a break, change reward
 schedule on the fly to a less reinforcing schedule.
+
+* Do ethics matter in game design?
+- design
+- ethics
+
+I reached out on twitter in a somewhat misguided appeal to #gamedev.
+Apparently there is so much traffic on #gamedev that any tweet will be
+lost in a deluge of announcements and automated bot retweets.  Oh
+well, I'll go it alone.
+
+I'm interested in the question of whether game designers should
+consider the ethical and moral implications of the game, product, or
+artifact that they are creating.  Full disclosure: I should state here
+that I'm not smart enough of or trained well enough to think about
+these sorts of things.  So I've appealed to an article by Langdon
+Winner called /Do Artifacts Have Politics?/, which I will summarize
+here.
+
+My thesis is that the things that game designers create carry
+intentional messages that should reflect the morals and ethics with
+which the game designers are comfortable.  In other words, I'm arguing
+that game design should be conducted in an ethical manner.  I don't
+always think that this should necessarily *restrict* design, but I do
+think this easily neglected aspect of design matters.
+
+** Do Artifacts Have Politics?
+
 
 * Reward Schedules
 [[http://www.betabunny.com/behaviorism/Conditioning2.htm]]
@@ -3370,49 +3490,7 @@ schedule on the fly to a less reinforcing schedule.
   - Looks tilty, can be good if there is little movement in X and Y in
     your game and you want to convey a sense of rocking or coming down
     like a see-saw.
-*  Automating blog deployment with Octopress
-- tools
-- Octopress
-- Make
-- Makefile
 
-Based on Kevin van Zonneveld's ([[https://twitter.com/kvz][@kvz]]) [[http://kvz.io/blog/2012/09/25/blog-with-octopress/][article]] on setting up Octopress,
-I've adapted a =Makefile= to make building my blog easier... with
-[[http://www.gnu.org/software/make/][make]].  The following =Makefile= allows me to build and deploy my blog
-by typing =make blog= at the command prompt.
-
-<!--more-->
-
-#+BEGIN_SRC makefile
-  all: blog
-
-  preview:
-          bundle exec rake generate && bundle exec rake preview
-
-  blog:
-          git pull && \
-          bundle install && \
-          bundle exec rake integrate && \
-          bundle exec rake generate && \
-          bundle exec rake deploy && \
-          git add .; \
-          git commit -am "blog update $$(date +%Y-%m-%d)"; \
-          git push origin source
-
-  .PHONY: blog                   # Force blog to run regardless of the changes to the files.
-
-#+END_SRC
-** Additional Notes
-*** rake build didn't work for me
-I think this is because I haven't written any tasks that use =rake
-build=.
-*** Remote for the source of my blog
-I push the source code of my blog to a branch named =source= rather
-than =master=.
-*** The percent symbol screwed everything up
-Not sure exactly why, but including the =%= after blog on the line
-=.PHONY: blog%= gave me an error saying =make: `blog' is up to date.=.
-Removing the =%= allowed me to run =make blog= as expected.
 * Iteration
 The iterative process diagram from Game Design Workshop
 
@@ -3466,3 +3544,60 @@ great examples from the genre.
 
 - NPC Irony
 - NPC Sociology
+* Text encoding: further improvements to using git for Unity projects
+- Unity
+- Unity3D
+- tools
+- git
+- version control
+
+Brief note here.  Following a Summer of travel and visitors, posts
+should be returning to a more regular schedule soon.  It's great when
+I can post here regularly, but I'm not going to get bent out of shape
+when I have other commitments.  So, if there are unannounced,
+prolonged absences, you can assume that it has something to do with
+spending my weekends traveling or socializing, which is undoubtedly a
+good thing.
+
+I recently came across [[http://stackoverflow.com/questions/18225126/how-to-use-git-for-unity3d-source-control][this stackoverflow answer]] introducing git for
+version control in Unity projects.  Note, the question specifically
+refers to Unity3D, but this will work for Unity2D as well.
+
+I've [[http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/][already written]] about setting up a =.gitignore= file.  Here are
+some steps you can take to optimize the way Unity stores information,
+so git can track it.
+
+Git was built to work by =diffing= large files containing text,
+specifically code.  Git works just fine with binary files, but it
+defaults to a less efficient method to =diff= those files, which can
+result in bloated git repositories.  Nobody wants a bloated git
+repository.
+
+Here I'll summarize two of the steps from the answer that I found
+helpful, using Unity v4.5+.  It's worth noting that these steps will
+increase the size of your project--although I'm unsure whether they
+affect the size of any deployed binaries.
+
+So if the size of the project on your development machine is a
+critical issue, you may want to think about keeping the default
+settings.  The project I tried the steps on went from 86.7 MB on disk
+(including its bloated git repository) to 86.9 MB, so it's probably
+not going to create an appreciable change in most projects.
+
+** Switch to Visible Meta Files
+Switch to =Visible Meta Files= in the Edit → Project Settings → Editor
+→ Version Control Mode Menu.
+
+If the =Visible Meta Files= option is turned on, the =.meta= files
+associated with parts of your project will have textual information
+rather than binary.
+
+** Switch to Force Text
+Switch to =Force Text= in the Edit → Project Settings → Editor
+→ Version Control Menu.
+
+If you choose =Force Text= this will cause Unity to use text to
+serialize assets that it would normally store as binary files.
+
+** Save
+Save the Scene and project for these changes to take effect.
