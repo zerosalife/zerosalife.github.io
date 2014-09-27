@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-09-06T11:41:03-05:00</updated>
+  <updated>2014-09-06T11:42:04-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -55,6 +55,12 @@ build</code>.</p>
 
 <p>I push the source code of my blog to a branch named <code>source</code> rather
 than <code>master</code>.</p>
+
+<h3>The percent symbol screwed everything up</h3>
+
+<p>Not sure exactly why, but including the <code>%</code> after blog on the line
+<code>.PHONY: blog%</code> gave me an error saying <code>make: `blog' is up to date.</code>.
+Removing the <code>%</code> allowed me to run <code>make blog</code> as expected.</p>
 ]]></content>
   </entry>
   
