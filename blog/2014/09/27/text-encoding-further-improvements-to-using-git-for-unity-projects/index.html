@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: NES - zero's a life</title>
+  <title>Text encoding: further improvements to using git for Unity projects - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Category: NES">
+  <meta name="description" content="Brief note here. Following a Summer of travel and visitors, posts should be returning to a more regular schedule soon. It&rsquo;s great when I can &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.ioblog/categories/nes">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -66,36 +66,119 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: NES</h1>
+    
+      <h1 class="entry-title">Text Encoding: Further Improvements to Using Git for Unity Projects</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-27T09:51:41-05:00" pubdate data-updated="true">Sep 27<span>th</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Brief note here.  Following a Summer of travel and visitors, posts should be returning to a more regular schedule soon.  It&rsquo;s great when I can post here regularly, but I&rsquo;m not going to get bent out of shape when I have other commitments.  So, if there are unannounced, prolonged absences, you can assume that it has something to do with spending my weekends traveling or socializing, which is undoubtedly a good thing.</p>
 
-  
-  <h2>2014</h2>
+<p>I recently came across <a href="http://stackoverflow.com/questions/18225126/how-to-use-git-for-unity3d-source-control">this stackoverflow answer</a> introducing git for version control in Unity projects.  Note, the question specifically refers to Unity3D, but this will work for Unity2D as well.</p>
 
-<article>
-  
-<h1><a href="/blog/2014/02/08/an-in-depth-tour-of-tetris/">An in-depth tour of Tetris</a></h1>
-<time datetime="2014-02-08T08:34:35-06:00" pubdate><span class='month'>Feb</span> <span class='day'>08</span> <span class='year'>2014</span></time>
+<p>I&rsquo;ve <a href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/">already written</a> about setting up a <code>.gitignore</code> file.  Here are some steps you can take to optimize the way Unity stores information, so git can track it.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/ai/'>AI</a>, <a class='category' href='/blog/categories/nes/'>NES</a>, <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a></span>
-</footer>
+<p>Git was built to work by <code>diffing</code> large files containing text, specifically code.  Git works just fine with binary files, but it defaults to a less efficient method to <code>diff</code> those files, which can result in bloated git repositories.  Nobody wants a bloated git repository.</p>
 
+<p>Here I&rsquo;ll summarize two of the steps from the answer that I found helpful, using Unity v4.5+.  It&rsquo;s worth noting that these steps will increase the size of your project&mdash;although I&rsquo;m unsure whether they affect the size of any deployed binaries.</p>
 
-</article>
+<p>So if the size of the project on your development machine is a critical issue, you may want to think about keeping the default settings.  The project I tried the steps on went from 86.7 MB on disk (including its bloated git repository) to 86.9 MB, so it&rsquo;s probably not going to create an appreciable change in most projects.</p>
 
+<h2>Switch to Visible Meta Files</h2>
+
+<p>Switch to <code>Visible Meta Files</code> in the Edit → Project Settings → Editor → Version Control Mode Menu.</p>
+
+<p>If the <code>Visible Meta Files</code> option is turned on, the <code>.meta</code> files associated with parts of your project will have textual information rather than binary.</p>
+
+<h2>Switch to Force Text</h2>
+
+<p>Switch to <code>Force Text</code> in the Edit → Project Settings → Editor → Version Control Menu.</p>
+
+<p>If you choose <code>Force Text</code> this will cause Unity to use text to serialize assets that it would normally store as binary files.</p>
+
+<h2>Save</h2>
+
+<p>Save the Scene and project for these changes to take effect.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-27T09:51:41-05:00" pubdate data-updated="true">Sep 27<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/unity3d/'>Unity3D</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/tools/'>tools</a>, <a class='category' href='/blog/categories/version-control/'>version control</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/09/06/automating-blog-deployment-with-octopress/" title="Previous Post: Automating blog deployment with Octopress">&laquo; Automating blog deployment with Octopress</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 
 </div>
@@ -181,7 +264,10 @@
       var disqus_shortname = 'zerosalife';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
