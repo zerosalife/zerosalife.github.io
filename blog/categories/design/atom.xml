@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-09-27T09:55:01-05:00</updated>
+  <updated>2014-10-04T11:45:51-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Do ethics matter in game design?]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design/"/>
+    <updated>2014-10-04T11:38:33-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design</id>
+    <content type="html"><![CDATA[<p>I reached out on twitter in a somewhat misguided appeal to #gamedev, asking whether devs consider ethics when designing games.  Apparently there is so much traffic on #gamedev that any tweet will be lost in a deluge of announcements and automated bot retweets.  Oh well, I thought, I&rsquo;ll go it alone.  Given the <a href="http://bits.blogs.nytimes.com/2014/10/02/intel-pulls-ads-from-site-after-gamergate-boycott/">recent tone in the communities surrounding games</a>, I feel the need to examine this question: <strong>Do ethics matter in game design?</strong></p>
+
+<!--more-->
+
+
+<p>I&rsquo;m interested in the question of whether game designers should consider the ethical and moral implications of the game, product, or artifact that they are creating.</p>
+
+<p>Full disclosure: I should state here that I&rsquo;m not smart enough of or trained well enough to think about these sorts of things.  So I&rsquo;ve appealed to <a href="http://innovate.ucsb.edu/wp-content/uploads/2010/02/Winner-Do-Artifacts-Have-Politics-1980.pdf">an article by Langdon Winner called <em>Do Artifacts Have Politics?</em></a>, which I will summarize here.</p>
+
+<p>My overall thesis is that the things that game designers create carry intentional messages that should reflect the morals and ethics with which the game designers are comfortable.  In other words, I&rsquo;m arguing that game design should be conducted in an ethical manner.  I don&rsquo;t always think that this should necessarily <strong>restrict</strong> design, but I do think this easily neglected aspect of design matters.</p>
+
+<p>Let&rsquo;s be clear here, art and artifacts that are designed are still art, and I&rsquo;m not advocating for some sort of restriction on artistic ideaspace and expression.  What I am trying to do is increase awareness, without necessarily coming to prescriptive conclusions.</p>
+
+<h2>Do Artifacts Have Politics?</h2>
+
+<p>According to the article &ldquo;there is no idea more provocative than the notion that technical things have political qualities.&rdquo;  The main focus of the article is whether &ldquo;machines, structures, and systems of modern material culture,&rdquo; the <strong>artifacts</strong> in question, should be &ldquo;judged not only for their contributions of efficiency and productivity&hellip;but also for the ways in which they can embody specific forms of power and authority.&rdquo;  Winner deals primarily with the environmental and public health issues from rapid modernization and industrialization in the 20th century, challenging the assumption that development and innovation (especially that of scientific investigation) will drive inexorably toward improved circumstance.</p>
+
+<p>I&rsquo;m not as interested in the focus of the article as I am in the thesis it applies.  I&rsquo;d like to argue, with help from Langdon Winner, that games, objects of art designed by game designers, do embody, and in fact reinforce, specific types of power and authority.  As far as the prescriptive moral obligations I outlined in my earlier thesis statement, we&rsquo;ll have to see about that when we get there.  Offering guidelines may be out of the scope of this blog post.</p>
+
+<p>Before you press the submit button on a hasty naysaying screed, Winner acknowledges, &ldquo;We all know that people have politics, not things.&rdquo;  Although, I would argue that in the age of Citizens United, fewer people would be so quick to judge the contention that constructed objects have politics as mistaken.</p>
+
+<p>Winner highlights an overt case of expressing politics through technological systems in which the master builder of roads in a New York city designed overpasses that were too low to allow public transit buses to pass.  Winner cites evidence from a biography of the designer, indicating that these designs were predicated on &ldquo;social-class bias and racial prejudice.&rdquo;  Here we see an example of a technology that on the surface appears designed, albeit poorly, in a neutral manner.  However, when the underlying motivations are revealed, it becomes clear that the design technological system had an express political purpose and political consequences.</p>
+
+<p>So, it&rsquo;s clear that any technological system can, in Winner&rsquo;s words, &ldquo;be used in ways that enhance the power, authority, and privilege of some over others&rdquo;.  These underlying politics of the system can produce a particular set of consequences without any particular user imposing a set of ideals through the application of the technology.  Winner sums up the need to consider these underlying politics well in the following excerpt:</p>
+
+<blockquote><p>If our moral and political language for evaluating technology includes
+only categories having to do with tools and uses, if it does not
+include attention to the meaning of the designs and arrangements of
+our artifacts, then we will be blinded to much that is intellectually
+and practically crucial.</p></blockquote>
+
+<h2>Consequences of design</h2>
+
+<p>When creating a technological thing, Winner identifies two sets of choices that confront the designer with regard to how the technology &ldquo;can affect the relative distribution of power, authority, and privilege in a community&rdquo;.  First is simply do or don&rsquo;t: will you design the thing or won&rsquo;t you?  Second, how will you design specific aspects of the technology?</p>
+
+<p>Winner highlights specific technologies that arguably may have been better for the social fabric had they not been designed.  It&rsquo;s difficult to support Winner&rsquo;s argument here in a general sense, but I see one important lesson for the designer.  Winner talks about criticisms about designers attempting to design politically just systems as idealistic: &ldquo;Whatever claims one may wish to make on behalf of liberty, justice, or equality can be immediately neutralized when confronted with arguments to the effect: &lsquo;Fine, but that&rsquo;s no way to run a railroad&rsquo; (or a steel mill, or airline, or communications system, and so on).&rdquo;  I&rsquo;ll add here, superfluously, that of course this applies to video games as well.</p>
+
+<h2>Own your art</h2>
+
+<p>Like Winner, I hesitate to draw any hard and fast prescriptive conclusions on what should or shouldn&rsquo;t be designed.  There will always be subjective opinion on the political nature of the things that game designers design.</p>
+
+<p>The important thing is for you as the designer of a thing to be aware of the choices, implicit and explicit, that surround your creation.  That sounds kind of <a href="https://www.youtube.com/watch?v%3Dxos2MnVxe-c">Frankenstein-ish</a>, doesn&rsquo;t it?  What I mean is, <strong>own your art</strong>.  Design things that you feel comfortable with.</p>
+
+<p>When the designers of <a href="http://kotaku.com/ubisoft-responds-to-assassins-creed-female-character-co-1589413130">a triple-A game</a> say they can&rsquo;t implement a female 3d model for the main character, they avow a political position in the design of their technological thing.  They should own up to the consequences of that design choice, including all of the ethical and political ramifications.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Designing a pachinko RPG]]></title>
@@ -212,42 +264,6 @@ class PlayerData {
 <p>I left the game looping <a href="https://soundcloud.com/postpre">PostPre</a>&rsquo;s driving soundtrack for 15 minutes, even though my first play-through lasted only 2 or 3.  Maybe that&rsquo;s the benefit of interactivity and choices, to extend and prolong the mindshare of some experience or product with the player.  I don&rsquo;t necessarily mean that in a cynical way, although the typical model of play can be subverted for more manipulative means (and, of course, it is!).</p>
 
 <p>For me, Space Is Red hit all the right notes and left me with something to think about.  That is what I call a successful gamejam game.  You can see Space Is Red and the other #spacecowboygamejam entries <a href="http://itch.io/jam/space-cowboy-jam">here</a>.  If you&rsquo;re interested in learning more about Space Is Red&rsquo;s creator <a href="http://toddluke.com/">Todd Luke</a>, you can find an interview <a href="http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php">here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
-    <updated>2014-07-19T10:42:35-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
-    <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
-
-<p>One quick note before we go on.  It looks like <em>Jodorowsky&rsquo;s Dune</em> has hit Netflix on DVD, and seems a likely candidate to be available for streaming.  So you can check it out for yourself to see if you agree with my take.</p>
-
-<!--more-->
-
-
-<h2>Pitching</h2>
-
-<p>Jodorowsky looks back, with good-natured humor, on a massively overambitious project for its time.  Aside from the amazing concept art and avant-garde stylings, I took away two messages from the documentary that I would like to share.  The first deals with the art of pitching your ideas and the second with locating oneself in close to proximity to the best and the brightest potential collaborators.</p>
-
-<p>Jodorowsky set out to create a huge book&mdash;more of a cinder block.  It&rsquo;s probably what we could call a design bible today, which would be delivered to production companies in order to secure funding.  By creating a book of storyboards and character designs, Jodorowsky wanted to show that the project was large in scope but feasible, because it had been so intricately planned.</p>
-
-<p>Jodorowsky reached out to a variety of concept artists to help with the design of the movie.  To visual and technical artists, Jodorowsky made impassioned pitches, claiming that they would become &ldquo;spiritual warriors&rdquo; for their collective vision, and implored them to come live and work (for little or no pay) in Paris.</p>
-
-<p>What stands out is the strength of Jodorowsky&rsquo;s pitch.  At a time when artists like <a href="http://www.chrisfossart.com/">Chris Foss</a>, <a href="http://en.wikipedia.org/wiki/Jean_Giraud">Moebius</a>, and <a href="http://www.hrgiger.com/">H.R. Giger</a> were each becoming established in their own rights, Jodorowsky was able, through the sheer strength of an imagined story, to convince them to devote years of effort to the project.  That takes a lot of gumption.  It didn&rsquo;t hurt that Jodorowsky had a strong track record of visually and thematically impressive avant-garde cinema.  Even still, Jodorowsky is great at selling the idea, and that is something that game designers must do, to communicate ideas to others in order to capitalize on the individual talents and assemble a great team.</p>
-
-<h2>Placement</h2>
-
-<p>The second message I took away deals with putting yourself into the right place at the right time.  It&rsquo;s also about leveraging that placement to connect and collaborate.</p>
-
-<p>The documentary showed a curious problem of the movie&rsquo;s mid-Seventies inception.  How do you find people to collaborate with, or even people at all, before the Internet?</p>
-
-<p>The solution: go to Paris.  That&rsquo;s where all the intelligentsia congregate.  This was more or less true for several hundred years before the Internet.  If you want <a href="http://en.wikipedia.org/wiki/Salvador_Dal%25C3%25AD">Salvador Dali</a> in your movie, playing the <a href="http://dune.wikia.com/wiki/Padishah_Emperor">Emperor of the Known Universe</a>, go to Paris and you&rsquo;ll probably run into Dali.</p>
-
-<p>Now we all live in our decentralized <a href="http://en.wikipedia.org/wiki/Temporary_Autonomous_Zone">temporary autonomous zones</a>.  But for as much as they can fragment, social media have the ability to connect disparate artists and thinkers.</p>
-
-<p>I think that Twitter is a platform that serves as a modern Paris, for like-minded people to seek each other out and communicate.  Go congregate with the intelligentsia and let your ideas speak for themselves.  Hit me up on the proverbial tweets, and let me hear your ideas and pitches.  I&rsquo;m constantly working on mine&mdash;writing here, trying to refine my skills.  Maybe we are both looking for the talents that we can provide.</p>
 ]]></content>
   </entry>
   
