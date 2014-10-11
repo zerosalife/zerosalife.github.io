@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ethics | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/ethics/atom.xml" rel="self"/>
+  <link href="http://zerosalife.github.io/"/>
+  <updated>2014-10-04T11:45:51-05:00</updated>
+  <id>http://zerosalife.github.io/</id>
+  <author>
+    <name><![CDATA[zerosalife]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Do ethics matter in game design?]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design/"/>
+    <updated>2014-10-04T11:38:33-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design</id>
+    <content type="html"><![CDATA[<p>I reached out on twitter in a somewhat misguided appeal to #gamedev, asking whether devs consider ethics when designing games.  Apparently there is so much traffic on #gamedev that any tweet will be lost in a deluge of announcements and automated bot retweets.  Oh well, I thought, I&rsquo;ll go it alone.  Given the <a href="http://bits.blogs.nytimes.com/2014/10/02/intel-pulls-ads-from-site-after-gamergate-boycott/">recent tone in the communities surrounding games</a>, I feel the need to examine this question: <strong>Do ethics matter in game design?</strong></p>
+
+<!--more-->
+
+
+<p>I&rsquo;m interested in the question of whether game designers should consider the ethical and moral implications of the game, product, or artifact that they are creating.</p>
+
+<p>Full disclosure: I should state here that I&rsquo;m not smart enough of or trained well enough to think about these sorts of things.  So I&rsquo;ve appealed to <a href="http://innovate.ucsb.edu/wp-content/uploads/2010/02/Winner-Do-Artifacts-Have-Politics-1980.pdf">an article by Langdon Winner called <em>Do Artifacts Have Politics?</em></a>, which I will summarize here.</p>
+
+<p>My overall thesis is that the things that game designers create carry intentional messages that should reflect the morals and ethics with which the game designers are comfortable.  In other words, I&rsquo;m arguing that game design should be conducted in an ethical manner.  I don&rsquo;t always think that this should necessarily <strong>restrict</strong> design, but I do think this easily neglected aspect of design matters.</p>
+
+<p>Let&rsquo;s be clear here, art and artifacts that are designed are still art, and I&rsquo;m not advocating for some sort of restriction on artistic ideaspace and expression.  What I am trying to do is increase awareness, without necessarily coming to prescriptive conclusions.</p>
+
+<h2>Do Artifacts Have Politics?</h2>
+
+<p>According to the article &ldquo;there is no idea more provocative than the notion that technical things have political qualities.&rdquo;  The main focus of the article is whether &ldquo;machines, structures, and systems of modern material culture,&rdquo; the <strong>artifacts</strong> in question, should be &ldquo;judged not only for their contributions of efficiency and productivity&hellip;but also for the ways in which they can embody specific forms of power and authority.&rdquo;  Winner deals primarily with the environmental and public health issues from rapid modernization and industrialization in the 20th century, challenging the assumption that development and innovation (especially that of scientific investigation) will drive inexorably toward improved circumstance.</p>
+
+<p>I&rsquo;m not as interested in the focus of the article as I am in the thesis it applies.  I&rsquo;d like to argue, with help from Langdon Winner, that games, objects of art designed by game designers, do embody, and in fact reinforce, specific types of power and authority.  As far as the prescriptive moral obligations I outlined in my earlier thesis statement, we&rsquo;ll have to see about that when we get there.  Offering guidelines may be out of the scope of this blog post.</p>
+
+<p>Before you press the submit button on a hasty naysaying screed, Winner acknowledges, &ldquo;We all know that people have politics, not things.&rdquo;  Although, I would argue that in the age of Citizens United, fewer people would be so quick to judge the contention that constructed objects have politics as mistaken.</p>
+
+<p>Winner highlights an overt case of expressing politics through technological systems in which the master builder of roads in a New York city designed overpasses that were too low to allow public transit buses to pass.  Winner cites evidence from a biography of the designer, indicating that these designs were predicated on &ldquo;social-class bias and racial prejudice.&rdquo;  Here we see an example of a technology that on the surface appears designed, albeit poorly, in a neutral manner.  However, when the underlying motivations are revealed, it becomes clear that the design technological system had an express political purpose and political consequences.</p>
+
+<p>So, it&rsquo;s clear that any technological system can, in Winner&rsquo;s words, &ldquo;be used in ways that enhance the power, authority, and privilege of some over others&rdquo;.  These underlying politics of the system can produce a particular set of consequences without any particular user imposing a set of ideals through the application of the technology.  Winner sums up the need to consider these underlying politics well in the following excerpt:</p>
+
+<blockquote><p>If our moral and political language for evaluating technology includes
+only categories having to do with tools and uses, if it does not
+include attention to the meaning of the designs and arrangements of
+our artifacts, then we will be blinded to much that is intellectually
+and practically crucial.</p></blockquote>
+
+<h2>Consequences of design</h2>
+
+<p>When creating a technological thing, Winner identifies two sets of choices that confront the designer with regard to how the technology &ldquo;can affect the relative distribution of power, authority, and privilege in a community&rdquo;.  First is simply do or don&rsquo;t: will you design the thing or won&rsquo;t you?  Second, how will you design specific aspects of the technology?</p>
+
+<p>Winner highlights specific technologies that arguably may have been better for the social fabric had they not been designed.  It&rsquo;s difficult to support Winner&rsquo;s argument here in a general sense, but I see one important lesson for the designer.  Winner talks about criticisms about designers attempting to design politically just systems as idealistic: &ldquo;Whatever claims one may wish to make on behalf of liberty, justice, or equality can be immediately neutralized when confronted with arguments to the effect: &lsquo;Fine, but that&rsquo;s no way to run a railroad&rsquo; (or a steel mill, or airline, or communications system, and so on).&rdquo;  I&rsquo;ll add here, superfluously, that of course this applies to video games as well.</p>
+
+<h2>Own your art</h2>
+
+<p>Like Winner, I hesitate to draw any hard and fast prescriptive conclusions on what should or shouldn&rsquo;t be designed.  There will always be subjective opinion on the political nature of the things that game designers design.</p>
+
+<p>The important thing is for you as the designer of a thing to be aware of the choices, implicit and explicit, that surround your creation.  That sounds kind of <a href="https://www.youtube.com/watch?v%3Dxos2MnVxe-c">Frankenstein-ish</a>, doesn&rsquo;t it?  What I mean is, <strong>own your art</strong>.  Design things that you feel comfortable with.</p>
+
+<p>When the designers of <a href="http://kotaku.com/ubisoft-responds-to-assassins-creed-female-character-co-1589413130">a triple-A game</a> say they can&rsquo;t implement a female 3d model for the main character, they avow a political position in the design of their technological thing.  They should own up to the consequences of that design choice, including all of the ethical and political ramifications.</p>
+]]></content>
+  </entry>
+  
+</feed>
