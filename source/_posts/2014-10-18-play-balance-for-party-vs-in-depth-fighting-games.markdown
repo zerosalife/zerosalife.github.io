@@ -27,7 +27,7 @@ Thorson previously pointed out an interesting [discussion](https://twitter.com/D
 
 {% tweet https://twitter.com/Sonic9jct/status/519538190764343296 %}
 
-[L-canceling](http://supersmashbros.wikia.com/wiki/L-canceling) requires extremely precise timing of inputs when the character is in a particular state, you must press L within 6 frames of landing on the ground while performing an [aerial attack](http://supersmashbros.wikia.com/wiki/Aerial_attack).  Since *Super Smash Bros.* runs at 60 frames per second, this requires you to press the button within 100 milliseconds of hitting the ground.  To put this in perspective, the average human reaction time is about 250 milliseconds.
+[L-canceling](http://supersmashbros.wikia.com/wiki/L-canceling) requires extremely precise timing of inputs when the character is in a particular state.  You must press L within 6 frames of landing on the ground while performing an [aerial attack](http://supersmashbros.wikia.com/wiki/Aerial_attack).  Since *Super Smash Bros.* runs at 60 frames per second, this requires you to press the button within 100 milliseconds of hitting the ground.  To put this in perspective, the average human reaction time is about 250 milliseconds.
 
 [@whatisian](https://twitter.com/whatisian) brilliantly captures the distinction in design that makes this a more difficult, in-depth, technically demanding mechanic.  If there is no drawback, then the execution of the L-cancel is practically mandatory at high levels of play.
 
