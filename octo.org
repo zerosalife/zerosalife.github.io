@@ -1692,6 +1692,108 @@ in the design of their technological thing.  They should own up to the
 consequences of that design choice, including all of the ethical and
 political ramifications.
 
+** Betting in Super Smash Bros. spectator mode
+Betting strategy in Super Smash Bros. #3DS #SSB4 spectator mode.
+
+- 3DS
+- Super Smash Bros.
+
+Today I'd like to look at how to bet in the spectatore mode of /Super
+Smash Bros. on 3DS/.  I'm surprised by how much I enjoy /Super Smash
+Bros.'/ spectator mode.  It adds the thrill of a horse race alongside
+an already great game.  Here are some of the betting strategies I've
+found useful:
+
+- Always bet the full amount
+- Always bet your earnings
+- Bet the odds
+- Don't be afraid to take your money and run
+- Know the metagame
+- Know the good players, you may see them again.
+- Set limits
+- Trust your judgment
+
+<!--more-->
+
+*** Always bet the full amount
+Any winnings will offset your losses from betting the full amount.
+You stand to multiply your winnings if you bet your earnings.  And
+the larger your initial bet, the larger your potential winnngs will be
+at the end of three rounds.
+
+*** Always bet your earnings
+Betting your earnings allows you to place a bet that is larger than
+the normal cap of 100 gold.  Keep in mind that you only stand to lose
+your initial 100 gold bet from your cash reserve, so this is a pretty
+good deal.
+
+I tend to play the odds more conservatively when betting my earnings,
+but I'm not sure it's completely necessary.  Again, you only stand to
+lose 100 from your cash reserves, so there's little risk associated
+with these bets.
+
+*** Bet the odds
+The payout odds shown next to a gold coin above the character
+portraits are there for a reason.  The odds vary from 2.0 to 10.0,
+meaning that you will receive 200 to 1000 gold payout for a 100 gold
+bet.  The favored player, that is to say the player with the lowest
+payout multiplier, is likely to win a given match.
+
+*** Don't be afraid to take your money and run
+It's a good idea to bet your earnings, but you shouldn't let that
+persuade you to make a bad bet.  If you're on a winning streak and you
+come across a match with no obvious good bet, hit B to take your money
+and run.  You can always bet on a different match.  It's not worth
+risking all of the winnings from a streak on a relatively even match.
+I've lost a lot of gold this way, not from my reserve gold, mind you,
+but still a lot of winnings.
+
+*** Know the metagame
+The game just came out, so the metagame is likely still forming.  But
+there is still useful information available.  For example consider
+Conquest, the in-game periodic match up between characters recording
+the win-loss record of nearly everyone who plays them.  Character
+choice may trump the odds of there is a significant influence of the
+meta game. In other words, some characters are just OP especially
+relative to specific other characters.  The Conquest match ups are
+good indicators that certain characters are OP compared to others.
+
+For the record, Duck Hunt seems pretty OP.
+
+**** Know the good players, you may see them again
+
+Pay attention to the names of the players in the matches you bet on.
+You may see the same player, and even the same match ups, popping up
+again and again.  If a player seems to be highly skilled, go with that
+player on subsequent matches.
+
+*** Set limits
+Set a loss floor and a win ceiling.  Take breaks when you reach those
+limits.  [[http://www.ncbi.nlm.nih.gov/pubmed/21915653][Fatigue can affect your judgment]].  (Don't worry, I don't have
+access to the Journal of Gambling Studies either--the abstract sums up
+what you need to know).  And anyway, it's good to keep a nestegg so
+you have a bankroll for your future bets.
+
+*** Trust your judgment
+
+If you have a hunch that goes against the odds that the game presents
+you go for it.  If you're following the rule of setting limits, your
+judgment should be fresh and not fatigued, and you will not go too
+deep into the hole when taking risks.  The only time when I would not
+advocate risky bets is when continuing bets--there's too much to lose
+on a risky bet.
+
+*** Conclusion
+These are just my thoughts on betting strategy in /Super Smash
+Bros. for 3DS/.  These strategies have worked for me, but of course,
+your mileage may vary.
+
+I'm interested in starting a dialog about these and other strategies
+because I find the spectator mode deeply compelling.  So if you agree,
+disagree, or have other strategies that work for you, feel free to
+contact me either by leaving a comment on the post or hitting me up on
+twitter.
+
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
 categories:
 - analysis
@@ -3699,6 +3801,7 @@ An in-depth #longread on #FFVI. @tgdfweb
 - SNES
 - RPG
 - Final Fantasy
+- balance
 
 [[http://thegamedesignforum.com/features/reverse_design_ff6_1.html]]
 
@@ -3763,9 +3866,9 @@ corrections for the last word.  I'm entrenched.
 
 Also, dealing with the visual clutter of the Twine GUI drives me nuts.
 If I want 30 links from a single Twine Passage, I don't want to have
-to do that manually, or even organize so it's visually appealing.
-There're algorithms for that visualizing stuff and algorithms are
-better at it.
+to do that manually, and I certainly don't want to try to organize it
+so it's visually appealing.  There're algorithms for that visualizing
+stuff and algorithms are better at it.
 
 * Implementing an inventory in Twine
 
@@ -3787,112 +3890,16 @@ better at it.
 
 ** Advertise it, so it gets to a community
 
-* Betting in Super Smash Bros. spectator mode
-Betting strategy in Super Smash Bros. #3DS #SSB4 spectator mode.
-
-- 3DS
-- Super Smash Bros.
-
-Today I'd like to look at how to bet in the spectatore mode of /Super
-Smash Bros. on 3DS/.  I'm surprised by how much I enjoy /Super Smash
-Bros.'/ spectator mode.  It adds the thrill of a horse race alongside
-an already great game.  Here are some of the betting strategies I've
-found useful:
-
-- Always bet the full amount
-- Always bet your earnings
-- Bet the odds
-- Don't be afraid to take your money and run
-- Know the metagame
-- Know the good players, you may see them again.
-- Set limits
-- Trust your judgment
-
-<!--more-->
-
-** Always bet the full amount
-Any winnings will offset your losses from betting the full amount.
-You stand to multiply your winnings if you bet your earnings.  And
-the larger your initial bet, the larger your potential winnngs will be
-at the end of three rounds.
-
-** Always bet your earnings
-Betting your earnings allows you to place a bet that is larger than
-the normal cap of 100 gold.  Keep in mind that you only stand to lose
-your initial 100 gold bet from your cash reserve, so this is a pretty
-good deal.
-
-I tend to play the odds more conservatively when betting my earnings,
-but I'm not sure it's completely necessary.  Again, you only stand to
-lose 100 from your cash reserves, so there's little risk associated
-with these bets.
-
-** Bet the odds
-The payout odds shown next to a gold coin above the character
-portraits are there for a reason.  The odds vary from 2.0 to 10.0,
-meaning that you will receive 200 to 1000 gold payout for a 100 gold
-bet.  The favored player, that is to say the player with the lowest
-payout multiplier, is likely to win a given match.
-
-** Don't be afraid to take your money and run
-It's a good idea to bet your earnings, but you shouldn't let that
-persuade you to make a bad bet.  If you're on a winning streak and you
-come across a match with no obvious good bet, hit B to take your money
-and run.  You can always bet on a different match.  It's not worth
-risking all of the winnings from a streak on a relatively even match.
-I've lost a lot of gold this way, not from my reserve gold, mind you,
-but still a lot of winnings.
-
-** Know the metagame
-The game just came out, so the metagame is likely still forming.  But
-there is still useful information available.  For example consider
-Conquest, the in-game periodic match up between characters recording
-the win-loss record of nearly everyone who plays them.  Character
-choice may trump the odds of there is a significant influence of the
-meta game. In other words, some characters are just OP especially
-relative to specific other characters.  The Conquest match ups are
-good indicators that certain characters are OP compared to others.
-
-For the record, Duck Hunt seems pretty OP.
-
-*** Know the good players, you may see them again
-
-Pay attention to the names of the players in the matches you bet on.
-You may see the same player, and even the same match ups, popping up
-again and again.  If a player seems to be highly skilled, go with that
-player on subsequent matches.
-
-** Set limits
-Set a loss floor and a win ceiling.  Take breaks when you reach those
-limits.  [[http://www.ncbi.nlm.nih.gov/pubmed/21915653][Fatigue can affect your judgment]].  (Don't worry, I don't have
-access to the Journal of Gambling Studies either--the abstract sums up
-what you need to know).  And anyway, it's good to keep a nestegg so
-you have a bankroll for your future bets.
-
-** Trust your judgment
-
-If you have a hunch that goes against the odds that the game presents
-you go for it.  If you're following the rule of setting limits, your
-judgment should be fresh and not fatigued, and you will not go too
-deep into the hole when taking risks.  The only time when I would not
-advocate risky bets is when continuing bets--there's too much to lose
-on a risky bet.
-
-** Conclusion
-These are just my thoughts on betting strategy in /Super Smash
-Bros. for 3DS/.  These strategies have worked for me, but of course,
-your mileage may vary.
-
-I'm interested in starting a dialog about these and other strategies
-because I find the spectator mode deeply compelling.  So if you agree,
-disagree, or have other strategies that work for you, feel free to
-contact me either by leaving a comment on the post or hitting me up on
-twitter.
 
 * Starting a Game Studio Business
 [[http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq%3D1][http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq=1]]
 
+** Business Plan
+[[http://www.gamasutra.com/view/feature/2695/the_basic_marketing_plan_for_indie_.php?print%3D1][http://www.gamasutra.com/view/feature/2695/the_basic_marketing_plan_for_indie_.php?print=1]]
+
+[[http://www.realityisagame.com/archives/2806/a-business-plan-for-indie-game-developers-doesnt-exist/]]
 * Business cards
+
 
 ** For the blog
 Zero's A Life
@@ -3926,3 +3933,148 @@ finished.
 *** Timers
 *Timers* accept a parameter specifying the duration in seconds to time
 and an optional function to be evaluated when the time has elapsed.
+
+** Grid Map
+Contains a 2d array of map nodes.
+
+Contains a hashmap of Grid Map Nodes Positions that maps to neighbors
+of the Grid Map Node at that Position.  This is a set of edges for
+each node of the graph.
+
+Optionally has a button for saving a screenshot.
+*** Grid Map Node
+Has *Position* describing the Grid Map Node's location in the grid.
+Has *Coordinates* describing the Grid Map Node's location in the game
+world space (relative to the dimensions of the Grid Map and the top
+right of the Grid Map Node).  Has *CenterCoordinates* that describe
+the center of the Grid Map Node.  of the Has an *Icon* that is
+rendered if not null.
+
+Optionally, has a Type that determines the Icon.
+
+Optionally implements a Logo showing the name of the Grid Map Node and
+a button for saving the Icon.
+*** Grid Map Edge
+A Grid Map Edge connects two Grid Map Nodes.  It is unidirectional and
+takes a *Source* and a *Destination*.  It can be accessed either
+semantically with *GetSource* or *GetDestination* or as an array with
+=edge(0)= corresponding to the source and =edge(1)= corresponding to
+the destination.
+* The Primacy of Symmetry
+* Sid Meier's 10 Rules of Game Design
+id Meier's 10 Rules of Game Design
+
+1. Choose a topic you have a passion for. Game Design is about creativity.
+
+2. Do research after the game is done. Tap into the player’s brain.
+
+3. Define your axioms, refine your axioms. Prototype, prototype, prototype; sit in all the chairs.
+
+4. Double it or cut it in half. You are more wrong than you think.
+
+5. Make sure the player is having fun, not the designer/computer.
+
+6. Games should be easy to start playing, but hard to stop playing.
+
+7. Simple systems work together to create complexity.
+
+8. Make it ‘Epic’!
+
+9. Most important part of the game is the first and last 15 minutes.
+
+10. Know when to stop, more is not always better and just because we can, doesn’t mean we should.
+
+==========================
+
+Bonus quote:
+
+"a good game is a series of interesting choices."
+* Play balance for party vs in-depth fighting games
+- TowerFall
+- Super Smash Bros.
+- mechanics
+- design
+- balance
+
+
+Here I'm drawing a comparison between games that are subjectively
+perceived as party games and games that are more in-depth.  I'm
+avoiding using loaded terms like casual and hardcore, but I think the
+distinction is likely the same.  Both types of games can be complex,
+but subtle balancing issues can affect the subjective sense of fun
+when playing these games.
+
+For discussion I'm going to focus on relatively advanced moves in
+/[[http://www.smashbros.com][Super Smash Bros.]]/ and /[[http://www.towerfall-game.com/][TowerFall]]/: L-canceling and dodge canceling,
+respectively.  I was inspired to examine this balance issue by a
+recent tweet by /TowerFall/ creator, and, in the interest of full
+disclosure, my close personal 3DS friend, [[https://twitter.com/MattThorson][@MattThorson]].
+
+<blockquote class="twitter-tweet" lang="en"><p>L-cancelling was actually my model of what to avoid with dodge cancelling in TowerFall</p>&mdash; Matt Thorson (@MattThorson) <a href="https://twitter.com/MattThorson/status/519576823533801472">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!--more-->
+
+Thorson previously pointed out an interesting [[https://twitter.com/DamianSommer/status/519537228582633473][discussion]] on the
+mechanic of L-canceling by [[https://twitter.com/DamianSommer/status/519537228582633473][@DamianSommer]] among others. Sommer wants to
+focus on how the L-canceling mechanic reflects the design intent of
+the creators of /Super Smash Bros./
+
+<blockquote class="twitter-tweet" lang="en"><p>I&#39;m of the opinion that it creates an unnecessary disparity between low and high-skill players because there&#39;s no reason to not L-cancel.</p>&mdash; Demon Summoner (@DamianSommer) <a href="https://twitter.com/DamianSommer/status/519537749754658816">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+[[https://twitter.com/Sonic9jct][@Sonic9jct]] highlights the dichotomy that I am exploring here.
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/DamianSommer">@DamianSommer</a> I always imagined the first 3 Smashes were designed and balanced as party games, especially Brawl, as opposed to fighting...</p>&mdash; John-Chocula Holmes (@Sonic9jct) <a href="https://twitter.com/Sonic9jct/status/519538190764343296">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+[[http://supersmashbros.wikia.com/wiki/L-canceling][L-canceling]] requires extremely precise timing of inputs when the
+character is in a particular state, you must press L within 6 frames
+of landing on the ground while performing an [[http://supersmashbros.wikia.com/wiki/Aerial_attack][aerial attack]].  Since
+/Super Smash Bros./ runs at 60 frames per second, this requires you to
+press the button within 100 milliseconds of hitting the ground.  To
+put this in perspective, the average human reaction time is about 250
+milliseconds.
+
+[[https://twitter.com/whatisian][@whatisian]] brilliantly captures the distinction in design that makes
+this a more difficult, in-depth, technically demanding mechanic.  If
+there is no drawback, then the execution of the L-cancel is
+practically mandatory at high levels of play.
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/DamianSommer">@DamianSommer</a> if L-Cancelling is never detrimental, then it&#39;s execution is a measure of dexterity, not cleverness.</p>&mdash; ❧ Demon Cider (@whatisian) <a href="https://twitter.com/whatisian/status/519555442012217344">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Let's look at how this differs from [[http://steamcommunity.com/sharedfiles/filedetails/?id%3D250779585][dodge canceling]] in /TowerFall/ a
+game that Thorson intentionally designed to be welcoming to new
+players, while still keeping them competitive with skilled players.
+
+Dodge canceling requires similarly herculean inputs to pull off, to
+perform a dodge cancel you must press the dodge button a second time
+after initiating a dodge maneuver.  The dodge lasts 367 milliseconds
+or 22 frames at 60 fps.  This seems like a lot of time to perform the
+dodge cancel compared to the scant 6 frames for an L-cancel, but
+there's a catch.  In order to get the most momentum, to carry the most
+speed through the dodge cancel, you must perform the move on exactly
+the right frame.
+
+Sounds pretty tough, right?  If you think this would require some
+impressive technical skills to pull it off, you're right.  But there's
+a catch, turning or firing from the dodge cancel reduces the
+character's speed, making the character an easier target.
+
+Thorson's mechanic provides a similar advantage to L-canceling with
+the addition of the risk of failure.  Dodge cancels could allow the
+player to zing around the level at will, firing arrows every which
+way, but Thorson decided to introduce drawbacks for imprecise play
+that create risks for more advanced players to put them closer to
+parity with less skilled players.
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/then00b">@then00b</a> I wanted it to provide an advantage, but to also have risk associated with it, and I think it does :)</p>&mdash; Matt Thorson (@MattThorson) <a href="https://twitter.com/MattThorson/status/519634020561203200">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+These are just my thoughts on this interesting discussion.  I'm not a
+high-level player of either of these games, so I may have missed some
+of the subtleties to which Thorson or others refer.  If you think I'm
+off the mark, or you just want to weigh in on the merits of designing
+for "party" vs. "fighting" games, drop me a line in the comments or on
+[[https://twitter.com/zerosalife][twitter]].
