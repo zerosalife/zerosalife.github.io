@@ -3990,6 +3990,9 @@ Bonus quote:
 
 "a good game is a series of interesting choices."
 * Play balance for party vs in-depth fighting games
+I look at play balance in #TowerFall and #SmashBros discussions by
+@MattThorson @DamianSommer @Sonic9jct and @whatisian among others
+
 - TowerFall
 - Super Smash Bros.
 - mechanics
@@ -4010,7 +4013,7 @@ respectively.  I was inspired to examine this balance issue by a
 recent tweet by /TowerFall/ creator, and, in the interest of full
 disclosure, my close personal 3DS friend, [[https://twitter.com/MattThorson][@MattThorson]].
 
-<blockquote class="twitter-tweet" lang="en"><p>L-cancelling was actually my model of what to avoid with dodge cancelling in TowerFall</p>&mdash; Matt Thorson (@MattThorson) <a href="https://twitter.com/MattThorson/status/519576823533801472">October 7, 2014</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p>L-cancelling was actually my model of what to avoid with dodge cancelling in TowerFall</p>&mdash; Matt Thorson (@MattThorson) <a href="[[https://twitter.com/MattThorson/status/519576823533801472]]">October 7, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <!--more-->
