@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-10-11T09:13:50-05:00</updated>
+  <updated>2014-10-18T10:43:40-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,67 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Play balance for party vs in-depth fighting games]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/"/>
+    <updated>2014-10-18T10:33:31-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games</id>
+    <content type="html"><![CDATA[<p>Here I&rsquo;m drawing a comparison between games that are subjectively perceived as party games and games that are more in-depth.  I&rsquo;m avoiding using loaded terms like casual and hardcore, but I think the distinction is likely the same.  Both types of games can be complex, but subtle balancing issues can affect the subjective sense of fun when playing these games.</p>
+
+<p>For discussion I&rsquo;m going to focus on relatively advanced moves in <em><a href="http://www.smashbros.com">Super Smash Bros.</a></em> and <em><a href="http://www.towerfall-game.com/">TowerFall</a></em>: L-canceling and dodge canceling, respectively.  I was inspired to examine this balance issue by a recent tweet by <em>TowerFall</em> creator, and, in the interest of full disclosure, my close personal 3DS friend, <a href="https://twitter.com/MattThorson">@MattThorson</a>.</p>
+
+<blockquote class="twitter-tweet" lang="en"><p>L-cancelling was actually my model of what to avoid with dodge cancelling in TowerFall</p>&mdash; Matt Thorson (@MattThorson) <a href="<https://twitter.com/MattThorson/status/519576823533801472>">October 7, 2014</a></blockquote>
+
+
+<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>&lt;!&#x2013;more&#x2013;></p>
+
+<p>Thorson previously pointed out an interesting <a href="https://twitter.com/DamianSommer/status/519537228582633473">discussion</a> on the mechanic of L-canceling by <a href="https://twitter.com/DamianSommer/status/519537228582633473">@DamianSommer</a> among others. Sommer wants to focus on how the L-canceling mechanic reflects the design intent of the creators of <em>Super Smash Bros.</em></p>
+
+<blockquote class="twitter-tweet" lang="en"><p>I&#39;m of the opinion that it creates an unnecessary disparity between low and high-skill players because there&#39;s no reason to not L-cancel.</p>&mdash; Demon Summoner (@DamianSommer) <a href="<https://twitter.com/DamianSommer/status/519537749754658816>">October 7, 2014</a></blockquote>
+
+
+<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p><a href="https://twitter.com/Sonic9jct">@Sonic9jct</a> highlights the dichotomy that I am exploring here.</p>
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="<https://twitter.com/DamianSommer>">@DamianSommer</a> I always imagined the first 3 Smashes were designed and balanced as party games, especially Brawl, as opposed to fighting&#x2026;</p>&mdash; John-Chocula Holmes (@Sonic9jct) <a href="<https://twitter.com/Sonic9jct/status/519538190764343296>">October 7, 2014</a></blockquote>
+
+
+<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p><a href="http://supersmashbros.wikia.com/wiki/L-canceling">L-canceling</a> requires extremely precise timing of inputs when the character is in a particular state, you must press L within 6 frames of landing on the ground while performing an <a href="http://supersmashbros.wikia.com/wiki/Aerial_attack">aerial attack</a>.  Since <em>Super Smash Bros.</em> runs at 60 frames per second, this requires you to press the button within 100 milliseconds of hitting the ground.  To put this in perspective, the average human reaction time is about 250 milliseconds.</p>
+
+<p><a href="https://twitter.com/whatisian">@whatisian</a> brilliantly captures the distinction in design that makes this a more difficult, in-depth, technically demanding mechanic.  If there is no drawback, then the execution of the L-cancel is practically mandatory at high levels of play.</p>
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="<https://twitter.com/DamianSommer>">@DamianSommer</a> if L-Cancelling is never detrimental, then it&#39;s execution is a measure of dexterity, not cleverness.</p>&mdash; ❧ Demon Cider (@whatisian) <a href="<https://twitter.com/whatisian/status/519555442012217344>">October 7, 2014</a></blockquote>
+
+
+<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>Let&rsquo;s look at how this differs from <a href="http://steamcommunity.com/sharedfiles/filedetails/?id%3D250779585">dodge canceling</a> in <em>TowerFall</em> a game that Thorson intentionally designed to be welcoming to new players, while still keeping them competitive with skilled players.</p>
+
+<p>Dodge canceling requires similarly herculean inputs to pull off, to perform a dodge cancel you must press the dodge button a second time after initiating a dodge maneuver.  The dodge lasts 367 milliseconds or 22 frames at 60 fps.  This seems like a lot of time to perform the dodge cancel compared to the scant 6 frames for an L-cancel, but there&rsquo;s a catch.  In order to get the most momentum, to carry the most speed through the dodge cancel, you must perform the move on exactly the right frame.</p>
+
+<p>Sounds pretty tough, right?  If you think this would require some impressive technical skills to pull it off, you&rsquo;re right.  But there&rsquo;s a catch, turning or firing from the dodge cancel reduces the character&rsquo;s speed, making the character an easier target.</p>
+
+<p>Thorson&rsquo;s mechanic provides a similar advantage to L-canceling with the addition of the risk of failure.  Dodge cancels could allow the player to zing around the level at will, firing arrows every which way, but Thorson decided to introduce drawbacks for imprecise play that create risks for more advanced players to put them closer to parity with less skilled players.</p>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="<https://twitter.com/then00b>">@then00b</a> I wanted it to provide an advantage, but to also have risk associated with it, and I think it does :)</p>&mdash; Matt Thorson (@MattThorson) <a href="<https://twitter.com/MattThorson/status/519634020561203200>">October 7, 2014</a></blockquote>
+
+
+<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>These are just my thoughts on this interesting discussion.  I&rsquo;m not a high-level player of either of these games, so I may have missed some of the subtleties to which Thorson or others refer.  If you think I&rsquo;m off the mark, or you just want to weigh in on the merits of designing for &ldquo;party&rdquo; vs. &ldquo;fighting&rdquo; games, drop me a line in the comments or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Designing a pachinko RPG]]></title>
@@ -101,32 +162,6 @@
 <p>I left the game looping <a href="https://soundcloud.com/postpre">PostPre</a>&rsquo;s driving soundtrack for 15 minutes, even though my first play-through lasted only 2 or 3.  Maybe that&rsquo;s the benefit of interactivity and choices, to extend and prolong the mindshare of some experience or product with the player.  I don&rsquo;t necessarily mean that in a cynical way, although the typical model of play can be subverted for more manipulative means (and, of course, it is!).</p>
 
 <p>For me, Space Is Red hit all the right notes and left me with something to think about.  That is what I call a successful gamejam game.  You can see Space Is Red and the other #spacecowboygamejam entries <a href="http://itch.io/jam/space-cowboy-jam">here</a>.  If you&rsquo;re interested in learning more about Space Is Red&rsquo;s creator <a href="http://toddluke.com/">Todd Luke</a>, you can find an interview <a href="http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php">here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Why you should start simple]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T13:58:34-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
-    <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
-
-<!--more-->
-
-
-<p>In a response to a doubting tweeter, HGD advocates starting modestly to slowly build skills, so that you can tackle more complicated projects later on.  Avoiding overambitious projects that are way outside of your comfort zone is one of the stumbling points for novice and hobby game developers, like myself.</p>
-
-<p>In the <a href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/">previous post about Hammock Driven Creativity</a>, I highlighted Rich Hickey&rsquo;s suggestion to keep multiple projects going in order to avoid stagnation.  While I agree with this, it&rsquo;s important to judge the scope of those projects with a critical eye.</p>
-
-<p>Far too often, my ideas start, at least in my mind, with ambitious artwork, animation, and multiple complex combinations of mechanics.  I am neither talented nor skilled enough to pull these projects off.  So it&rsquo;s easy to get stuck.</p>
-
-<p>I often find myself implementing some ad-hoc animation system, spending time reinventing the frame-based or skeletal wheel, as it were.  Animation shouldn&rsquo;t take priority, especially considering that my best artwork is derivative and possibly one step above programmer art.  I should focus on creating compelling prototypes, and worry about polish later.</p>
-
-<p>To build your skillset, HGD suggests starting out by remaking historical games.  By implementing tried-and-true mechanics that are necessarily simple in scope given their ancient hardware, you can confront the problems involved in creating a full game rather than a half-finished proof-of-concept.</p>
-
-<p>By half-finished, I&rsquo;m thinking of a time where I completely abandoned a concept because I was hung-up on optimizing a tile-based room system.  Rather than making the actual gameplay fun and complete, I was focusing all of my time figuring out how to make walls.  Walls are nice in a finished game, and you could make the case that they are required constraints to achieve good gameplay, but they are not where the fun is.  As HGD and my previous post point out, you can keep trying to work on these overly ambitious projects, but your productivity will suffer.</p>
-
-<p>Best to reap the rewards that come from continued productivity and, as HGD says, pick a fight you can win.</p>
 ]]></content>
   </entry>
   
