@@ -15,10 +15,9 @@ Here I'm drawing a comparison between games that are subjectively perceived as p
 
 For discussion I'm going to focus on relatively advanced moves in *[Super Smash Bros.](http://www.smashbros.com)* and *[TowerFall](http://www.towerfall-game.com/)*: L-canceling and dodge canceling, respectively.  I was inspired to examine this balance issue by a recent tweet by *TowerFall* creator, and, in the interest of full disclosure, my close personal 3DS friend, [@MattThorson](https://twitter.com/MattThorson).
 
-<blockquote class="twitter-tweet" lang="en"><p>L-cancelling was actually my model of what to avoid with dodge cancelling in TowerFall</p>&mdash; Matt Thorson (@MattThorson) <a href="<https://twitter.com/MattThorson/status/519576823533801472>">October 7, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% tweet https://twitter.com/MattThorson/status/519576823533801472 %}
 
-<!&#x2013;more&#x2013;>
+<!--more-->
 
 Thorson previously pointed out an interesting [discussion](https://twitter.com/DamianSommer/status/519537228582633473) on the mechanic of L-canceling by [@DamianSommer](https://twitter.com/DamianSommer/status/519537228582633473) among others. Sommer wants to focus on how the L-canceling mechanic reflects the design intent of the creators of *Super Smash Bros.*
 
