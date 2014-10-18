@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 3DS | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/3ds/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-10-04T11:45:51-05:00</updated>
+  <updated>2014-10-11T09:13:50-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,76 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Betting in Super Smash Bros. spectator mode]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/10/11/betting-in-super-smash-bros-spectator-mode/"/>
+    <updated>2014-10-11T08:51:13-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/10/11/betting-in-super-smash-bros-spectator-mode</id>
+    <content type="html"><![CDATA[<p>Today I&rsquo;d like to look at how to bet in the spectator mode of <em>Super Smash Bros. on 3DS</em>.  I&rsquo;m surprised by how much I enjoy /Super Smash Bros.&lsquo;/ spectator mode.  It adds the thrill of a horse race alongside an already great game.</p>
+
+<p>Here are some of the betting strategies I&rsquo;ve found useful:</p>
+
+<ul>
+<li>Always bet the full amount</li>
+<li>Always bet your earnings</li>
+<li>Bet the odds</li>
+<li>Don&rsquo;t be afraid to take your money and run</li>
+<li>Know the metagame</li>
+<li>Know the good players, you may see them again.</li>
+<li>Set limits</li>
+<li>Trust your judgment</li>
+</ul>
+
+
+<!--more-->
+
+
+<h2>Always bet the full amount</h2>
+
+<p>Any winnings will offset your losses from betting the full amount.  You stand to multiply your winnings, if you bet your earnings.  And the larger your initial bet, the larger your potential winnings will be at the end of three rounds.</p>
+
+<h2>Always bet your earnings</h2>
+
+<p>Betting your earnings allows you to place a bet that is larger than the normal cap of 100 gold.  Keep in mind that you only stand to lose your initial 100 gold bet from your gold reserve, so this is a pretty good deal.</p>
+
+<p>I tend to play the odds more conservatively when betting my earnings, but I&rsquo;m not sure it&rsquo;s completely necessary.  Again, you only stand to lose 100 from your cash reserves, so there&rsquo;s little risk associated with these bets.</p>
+
+<h2>Bet the odds</h2>
+
+<p>The payout odds shown next to a gold coin above the character portraits are there for a reason.  The odds vary from 2.0 to 10.0, meaning that you will receive 200 to 1000 gold payout for a 100 gold bet.  The favored player, that is to say the player with the lowest payout multiplier, is likely to win a given match, according to the game&rsquo;s algorithm.</p>
+
+<h2>Don&rsquo;t be afraid to take your money and run</h2>
+
+<p>It&rsquo;s a good idea to bet your earnings, but you shouldn&rsquo;t let that persuade you to make a bad bet.  If you&rsquo;re on a winning streak and you come across a match with no obvious good bet, hit <code>B</code> to take your money and run.  You can always bet on a different match.  It&rsquo;s not worth risking all of the winnings from a streak on a relatively even match.  I&rsquo;ve lost a lot of gold this way, not from my reserve gold, mind you, but still a lot of winnings.</p>
+
+<h2>Know the metagame</h2>
+
+<p>The game just came out, so the metagame is likely still forming.  But there is still useful information available.</p>
+
+<p>For example consider Conquest, the in-game periodic match up between characters recording the win-loss record of nearly everyone who plays them.  Character choice may trump the odds of there is a significant influence of the meta game. In other words, some characters are just OP especially relative to specific other characters.  The Conquest match ups are good indicators that certain characters are OP compared to others.</p>
+
+<p>For the record, Duck Hunt seems pretty OP.</p>
+
+<h3>Know the good players, you may see them again</h3>
+
+<p>Pay attention to the names of the players in the matches you bet on.  You may see the same player, and even the same match ups, popping up again and again.  If a player seems to be highly skilled, go with that player on subsequent matches.</p>
+
+<h2>Set limits</h2>
+
+<p>Set a loss floor and a win ceiling.  Take breaks when you reach those limits.  <a href="http://www.ncbi.nlm.nih.gov/pubmed/21915653">Fatigue can affect your judgment</a>.  (Don&rsquo;t worry, I don&rsquo;t have access to the Journal of Gambling Studies either&mdash;the abstract sums up what you need to know).  And anyway, it&rsquo;s good to keep a nestegg so you have a bankroll for your future bets.</p>
+
+<h2>Trust your judgment</h2>
+
+<p>If you have a hunch that goes against the odds that the game presents you go for it.  If you&rsquo;re following the rule of setting limits, your judgment should be fresh and not fatigued, and you will not go too deep into the hole when taking risks.  The only time when I would not advocate risky bets is when continuing bets&mdash;there&rsquo;s too much to lose on a risky bet.  (Yes I know this goes against what I said before.  I&rsquo;m a hypocrite.)</p>
+
+<h2>Conclusion</h2>
+
+<p>These are just my thoughts on betting strategy in <em>Super Smash Bros. for 3DS</em>.  These strategies have worked for me, but of course, your mileage may vary.</p>
+
+<p>I&rsquo;m interested in starting a dialog about these and other strategies because I find the spectator mode deeply compelling.  So if you agree, disagree, or have other strategies that work for you, feel free to contact me either by leaving a comment on the post or hitting me up on twitter.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Some thoughts on Attack of the Friday Monsters]]></title>
