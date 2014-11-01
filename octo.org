@@ -1794,6 +1794,98 @@ disagree, or have other strategies that work for you, feel free to
 contact me either by leaving a comment on the post or hitting me up on
 twitter.
 
+** Play balance for party vs in-depth fighting games
+I look at play balance in #TowerFall and #SmashBros discussions by
+@MattThorson @DamianSommer @Sonic9jct and @whatisian among others
+
+- TowerFall
+- Super Smash Bros.
+- mechanics
+- design
+- balance
+
+
+Here I'm drawing a comparison between games that are subjectively
+perceived as party games and games that are more in-depth.  I'm
+avoiding using loaded terms like casual and hardcore, but I think the
+distinction is likely the same.  Both types of games can be complex,
+but subtle balancing issues can affect the subjective sense of fun
+when playing these games.
+
+For discussion I'm going to focus on relatively advanced moves in
+/[[http://www.smashbros.com][Super Smash Bros.]]/ and /[[http://www.towerfall-game.com/][TowerFall]]/: L-canceling and dodge canceling,
+respectively.  I was inspired to examine this balance issue by a
+recent tweet by /TowerFall/ creator, and, in the interest of full
+disclosure, my close personal 3DS friend, [[https://twitter.com/MattThorson][@MattThorson]].
+
+<blockquote class="twitter-tweet" lang="en"><p>L-cancelling was actually my model of what to avoid with dodge cancelling in TowerFall</p>&mdash; Matt Thorson (@MattThorson) <a href="[[https://twitter.com/MattThorson/status/519576823533801472]]">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!--more-->
+
+Thorson previously pointed out an interesting [[https://twitter.com/DamianSommer/status/519537228582633473][discussion]] on the
+mechanic of L-canceling by [[https://twitter.com/DamianSommer/status/519537228582633473][@DamianSommer]] among others. Sommer wants to
+focus on how the L-canceling mechanic reflects the design intent of
+the creators of /Super Smash Bros./
+
+<blockquote class="twitter-tweet" lang="en"><p>I&#39;m of the opinion that it creates an unnecessary disparity between low and high-skill players because there&#39;s no reason to not L-cancel.</p>&mdash; Demon Summoner (@DamianSommer) <a href="https://twitter.com/DamianSommer/status/519537749754658816">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+[[https://twitter.com/Sonic9jct][@Sonic9jct]] highlights the dichotomy that I am exploring here.
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/DamianSommer">@DamianSommer</a> I always imagined the first 3 Smashes were designed and balanced as party games, especially Brawl, as opposed to fighting...</p>&mdash; John-Chocula Holmes (@Sonic9jct) <a href="https://twitter.com/Sonic9jct/status/519538190764343296">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+[[http://supersmashbros.wikia.com/wiki/L-canceling][L-canceling]] requires extremely precise timing of inputs when the
+character is in a particular state, you must press L within 6 frames
+of landing on the ground while performing an [[http://supersmashbros.wikia.com/wiki/Aerial_attack][aerial attack]].  Since
+/Super Smash Bros./ runs at 60 frames per second, this requires you to
+press the button within 100 milliseconds of hitting the ground.  To
+put this in perspective, the average human reaction time is about 250
+milliseconds.
+
+[[https://twitter.com/whatisian][@whatisian]] brilliantly captures the distinction in design that makes
+this a more difficult, in-depth, technically demanding mechanic.  If
+there is no drawback, then the execution of the L-cancel is
+practically mandatory at high levels of play.
+
+<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/DamianSommer">@DamianSommer</a> if L-Cancelling is never detrimental, then it&#39;s execution is a measure of dexterity, not cleverness.</p>&mdash; ❧ Demon Cider (@whatisian) <a href="https://twitter.com/whatisian/status/519555442012217344">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Let's look at how this differs from [[http://steamcommunity.com/sharedfiles/filedetails/?id%3D250779585][dodge canceling]] in /TowerFall/ a
+game that Thorson intentionally designed to be welcoming to new
+players, while still keeping them competitive with skilled players.
+
+Dodge canceling requires similarly herculean inputs to pull off, to
+perform a dodge cancel you must press the dodge button a second time
+after initiating a dodge maneuver.  The dodge lasts 367 milliseconds
+or 22 frames at 60 fps.  This seems like a lot of time to perform the
+dodge cancel compared to the scant 6 frames for an L-cancel, but
+there's a catch.  In order to get the most momentum, to carry the most
+speed through the dodge cancel, you must perform the move on exactly
+the right frame.
+
+Sounds pretty tough, right?  If you think this would require some
+impressive technical skills to pull it off, you're right.  But there's
+a catch, turning or firing from the dodge cancel reduces the
+character's speed, making the character an easier target.
+
+Thorson's mechanic provides a similar advantage to L-canceling with
+the addition of the risk of failure.  Dodge cancels could allow the
+player to zing around the level at will, firing arrows every which
+way, but Thorson decided to introduce drawbacks for imprecise play
+that create risks for more advanced players to put them closer to
+parity with less skilled players.
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/then00b">@then00b</a> I wanted it to provide an advantage, but to also have risk associated with it, and I think it does :)</p>&mdash; Matt Thorson (@MattThorson) <a href="https://twitter.com/MattThorson/status/519634020561203200">October 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+These are just my thoughts on this interesting discussion.  I'm not a
+high-level player of either of these games, so I may have missed some
+of the subtleties to which Thorson or others refer.  If you think I'm
+off the mark, or you just want to weigh in on the merits of designing
+for "party" vs. "fighting" games, drop me a line in the comments or on
+[[https://twitter.com/zerosalife][twitter]].
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
 categories:
 - analysis
@@ -2167,8 +2259,11 @@ Under the Ocean development
 [[https://twitter.com/Farmergnome/status/465137564672745472/photo/1]]
 
 * Creating a Dictionary of Lists in Unity JavaScript
+#unity3d
+
 - JavaScript
 - Unity
+- Unity3d
 - tools
 - algorithms
 
@@ -2253,6 +2348,8 @@ can find a repository of an example Unity project using this code
 here.
 
 * Create a Dictionary of Lists in Unity C#
+#unity3d
+
 - Unity
 - Unity3d
 - C#
@@ -2300,6 +2397,8 @@ Dictionary of Lists in C# for Unity.
 
 
 * Probabilistic Entity Spawning in Unity JavaScript
+#unity3d
+
 - JavaScript
 - Unity
 - tools
@@ -2452,6 +2551,7 @@ modify it and run it to recreate the exact sound.
 * Shaders Primer
 [[http://notes.underscorediscovery.com/shaders-a-primer/]]
 * Simple Mind-reading Machine in Unity JavaScript
+#unity3d
 
 - AI
 - algorithm
@@ -3046,13 +3146,13 @@ Credit to [[https://twitter.com/turnislefthome/status/463692298455617536]]
 - prototype
 - UnityJS
 
-I'm the dummy.  Prototyping with 2d boxes in Unity has proven
-surprisingly hard.  I think the difficulty I'm having is that I'm not
-exactly sure what I'm trying to do.  What follows is an example of
-*one* way (notice that I didn't say THE *RIGHT* WAY) to prototype with
-2d rectangles in Unity.  I'm still too much of a noob to have strong
-opinions on the right way to go about doing this.  Expect more posts
-on this topic as I develop my expertise.
+I'm the dummy.  Prototyping with 2d boxes in Unity javascript has
+proven surprisingly hard.  I think the difficulty I'm having is that
+I'm not exactly sure what I'm trying to do.  What follows is an
+example of *one* way (notice that I didn't say THE *RIGHT* WAY) to
+prototype with 2d rectangles in Unity.  I'm still too much of a noob
+to have strong opinions on the right way to go about doing this.
+Expect more posts on this topic as I develop my expertise.
 
 [[http://en.wikipedia.org/wiki/Discoverability][Discoverability]] is something I prize in programming languages and
 environments, especially when I'm learning them.  While Unity's
@@ -3570,6 +3670,12 @@ the =cli= example, but hey.  It's my program.  Your program can work
 the way you want it too.  I'm going to make sure to document it so you
 can use the Rebel INS or build a twitter bot based on this code.
 
+To build the app, I use =lein bin= from the command line.
+
+** Logging
+When I do tweets from the command line there's some dark majik going
+on that I don't understand.  Anyway it seems to invoke the =Log4j=, so
+I [[http://www.bahmanm.com/blogs/how-to-add-logging-to-a-clojure-project][set that up according to this blog post]].
 ** Markov chain text generation
 One of the quirks of the markov package I used is that it stops
 generating 'random walks' when it reaches states that it has not been
@@ -3587,6 +3693,17 @@ algorithm to halt, giving me too few words in my output.
 Interestingly, in this case, dialing back the order tends to lead to
 more rhyming and a few recognizable couplets, which I find kinda nice.
 
+** Setting up the twitter account
+I ran into a problem getting an app set up for the bot's twitter
+account.  I am merely one person, and thus have need for merely one
+cell phone.  Since twitter requires a unique mobile number for
+authenticating apps, I was out of luck.  That is, until I found this
+[[http://dghubble.com/blog/posts/twitter-app-write-access-and-bots/][blog post showing how to use the same app on multiple bot clients]].
+
+Faithful readers may remember my wildly popular, and yet still somehow
+deeply underrated, Bangsian fantasy bot, @styx_ebooks.  Using =twurl=
+I was able to grant access to the @styx_ebooks app credentials for the
+new bot.
 ** Moving on
 From here the skies the limit.  I could try analyzing the generated
 text to try to build lines or stanzas.  I could try to reorder words
@@ -3757,8 +3874,10 @@ schedule on the fly to a less reinforcing schedule.
 [[http://www.betabunny.com/behaviorism/Conditioning2.htm]]
 
 * Pixel Sprites and Unity2d
+#unity3d
 
 - Unity
+- Unity2d
 
 * Types of Screenshake
 - Random X and Y
@@ -3831,6 +3950,10 @@ great examples from the genre.
 - NPC Irony
 - NPC Sociology
 * Building Twine games from the command line
+- Twine
+- Unity3d
+
+
 I got it in my craw to write a short Twine game the other day.  I
 wanted to familiarize myself with the language.  And writing a short
 game in Twine seemed to be lower hanging fruit than trying to
@@ -3840,7 +3963,7 @@ engine.
 ** Why not Unity?
 That being said, there are other text adventure frameworks available
 in the Unity App Store and there's a very intriguing Twine parser for
-Unity called Yarn.
+Unity called [[http://www.platoevolved.com/blog/unity-plugins/#!/~/product/category%3D2743024&id%3D35627540][Yarn]].
 
 Yarn seems well suited to writing Bioware- and Black Isle-style
 dialogs, where individual characters' dialogs are stored in separate
@@ -3869,6 +3992,62 @@ If I want 30 links from a single Twine Passage, I don't want to have
 to do that manually, and I certainly don't want to try to organize it
 so it's visually appealing.  There're algorithms for that visualizing
 stuff and algorithms are better at it.
+
+** Getting started
+The first step is to [[https://github.com/tweecode/twee][install =twee=]] the command line tool used to
+compile Twine files.
+
+Then /all/ you have to do is write your story in the proper [[https://github.com/tweecode/TwineQuest/wiki/Twee-file-format][Twine file
+format]].  This is the hardest part, not because the syntax is
+complicated, but because you've actually got to come up with an
+interesting and interactive story!
+
+** Compiling your twine files
+
+=Twee= will output files to HTML formatted in the usual Twine style.
+It gets tedious to type commands over and over again, so I automate
+building the HTML with a Makefile
+
+#+BEGIN_SRC
+story.html : *.tw tweefiles/*.tw
+	~/twee/twee -t sugarcane $^ > $@
+	open story.html
+
+json: *.tw tweefiles/*.tw
+	~/twee/twee -t json $^ > story.json
+
+clean:
+	rm -f story.html
+
+.PHONY: json
+
+#+END_SRC
+
+Placing this Makefile in the root of your twine directory allows you
+to compile the HTML file by the commands =make clean; make=.  You can
+read more about the Makefile syntax in the [[http://www.gnu.org/software/make/manual/make.html#Rule-Syntax][GNU make manual]].  The
+Makefile looks for Twine file format ending in =.tw=, either in the
+root directory or a directory for =tweefiles/=.
+
+You can also compile to the JSON format by using =make json=.
+
+
+** Getting some of the newer Twine features to work
+I [[https://github.com/tweecode/twee/issues/12][couldn't get some of the newer Twine features to work]] when I
+compiled the twee code from the command line.  I think this stems from
+the twee command line tool failing to parse some of the newer features
+implemented in the Twine GUI.
+
+In order to get some of the newer features to work, use the =Makefile=
+to compile the twee code, then import the resulting =.html= file in
+the Twine GUI.  Finally export HTML from the Twine GUI.
+
+That being said, it was still nice to rapidly iterate through versions
+of a story without having to get bogged down in the Twine GUI.  I
+could write Twine code organized in files in a logical arrangement,
+then compile them into a single HTML file for testing and release.
+Let me know if you have suggestions that would improve this Twine
+workflow or if you take a different approach.
 
 * Implementing an inventory in Twine
 
@@ -3989,95 +4168,112 @@ id Meier's 10 Rules of Game Design
 Bonus quote:
 
 "a good game is a series of interesting choices."
-* Play balance for party vs in-depth fighting games
-I look at play balance in #TowerFall and #SmashBros discussions by
-@MattThorson @DamianSommer @Sonic9jct and @whatisian among others
+* Typical video game costs and budgets
 
-- TowerFall
-- Super Smash Bros.
-- mechanics
-- design
-- balance
+[[http://vgsales.wikia.com/wiki/Video_game_costs]]
+
+- production and development costs
+  - developer salaries
+  - voice acting
+  - music and orchestra (as high as $500K[1])
+  - licensing
+- marketing and promotions
+  - television advertisments
+  - print advertisements (magazines)
+  - online advertisements
+  - events and launch parties[2]
+- manufacturing and distribution
+  - arcade machine production (very expensive)
+  - console cartridge production (fairly expensive)
+  - optical disc production (fairly cheap)
+  - online distribution (very cheap)
+* Procjam
+** Announcement on the blog
+State intention to participate, coverage, possible hiccups.  Intend to
+release at least one project on November 8th, and possibly, time
+allowing a second on the 15th.  Intend to cover talks with writeups or
+responses to follow up.  Also intend to cover entries with writeups or
+responses.
 
 
-Here I'm drawing a comparison between games that are subjectively
-perceived as party games and games that are more in-depth.  I'm
-avoiding using loaded terms like casual and hardcore, but I think the
-distinction is likely the same.  Both types of games can be complex,
-but subtle balancing issues can affect the subjective sense of fun
-when playing these games.
+Make things that make things: #procjam 2014.
 
-For discussion I'm going to focus on relatively advanced moves in
-/[[http://www.smashbros.com][Super Smash Bros.]]/ and /[[http://www.towerfall-game.com/][TowerFall]]/: L-canceling and dodge canceling,
-respectively.  I was inspired to examine this balance issue by a
-recent tweet by /TowerFall/ creator, and, in the interest of full
-disclosure, my close personal 3DS friend, [[https://twitter.com/MattThorson][@MattThorson]].
+A motivational post psyching myself up for #procjam.
 
-<blockquote class="twitter-tweet" lang="en"><p>L-cancelling was actually my model of what to avoid with dodge cancelling in TowerFall</p>&mdash; Matt Thorson (@MattThorson) <a href="[[https://twitter.com/MattThorson/status/519576823533801472]]">October 7, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+- #procjam
 
-<!--more-->
+I'm thrilled to announce that I'm going to participate in the [[http://itch.io/jam/procjam][upcoming
+procedural game jam called #procjam]].  #procjam is a global game jam
+and a live-streamed conference in London focused on making things that
+make things. You can keep up to date by following the jam tumblr
+[[http://procjam.tumblr.com/][procjam.tumblr.com]]. There's already a [[http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started][handy list of procedural
+generation tutorials available on the tumblug]].
 
-Thorson previously pointed out an interesting [[https://twitter.com/DamianSommer/status/519537228582633473][discussion]] on the
-mechanic of L-canceling by [[https://twitter.com/DamianSommer/status/519537228582633473][@DamianSommer]] among others. Sommer wants to
-focus on how the L-canceling mechanic reflects the design intent of
-the creators of /Super Smash Bros./
+In addition to submitting one or two projects I've been working on,
+I'd like to cover the content of the talks with perspective and
+reactions, and to check out the contest entries after it's finished
+[[http://zerosalife.github.io/blog/2014/07/26/space-is-read/][like I did for /Space Is Red/ from #spacecowboyjam]].
 
-<blockquote class="twitter-tweet" lang="en"><p>I&#39;m of the opinion that it creates an unnecessary disparity between low and high-skill players because there&#39;s no reason to not L-cancel.</p>&mdash; Demon Summoner (@DamianSommer) <a href="https://twitter.com/DamianSommer/status/519537749754658816">October 7, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+Needless to say this will be a month-long endeavor, what with my
+weekly (ish) blogging schedule.  With one or two posts focused on
+submissions, I think four blog posts may be conservative, so I'll keep
+writing as long as I'm interested.
 
-[[https://twitter.com/Sonic9jct][@Sonic9jct]] highlights the dichotomy that I am exploring here.
+To make it easier to follow along, I'll tag up all the posts with the
+#procjam category and I'll try to do the same for the tweet
+announcements, even if it's out of style because the jam was weeks
+ago.  That's how committed I am to making this happen.
 
-<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/DamianSommer">@DamianSommer</a> I always imagined the first 3 Smashes were designed and balanced as party games, especially Brawl, as opposed to fighting...</p>&mdash; John-Chocula Holmes (@Sonic9jct) <a href="https://twitter.com/Sonic9jct/status/519538190764343296">October 7, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+If you get the sense that I'm trying to psych myself up for this, I
+am.
 
-[[http://supersmashbros.wikia.com/wiki/L-canceling][L-canceling]] requires extremely precise timing of inputs when the
-character is in a particular state, you must press L within 6 frames
-of landing on the ground while performing an [[http://supersmashbros.wikia.com/wiki/Aerial_attack][aerial attack]].  Since
-/Super Smash Bros./ runs at 60 frames per second, this requires you to
-press the button within 100 milliseconds of hitting the ground.  To
-put this in perspective, the average human reaction time is about 250
-milliseconds.
+The next couple of months will be very busy in my life.  I'll be
+traveling and attending conferences, activities that have
+traditionally consumed my precious blogging time like so many Frito
+pies.
 
-[[https://twitter.com/whatisian][@whatisian]] brilliantly captures the distinction in design that makes
-this a more difficult, in-depth, technically demanding mechanic.  If
-there is no drawback, then the execution of the L-cancel is
-practically mandatory at high levels of play.
+I may be setting the bar high, but if anything the purpose for aiming
+high is success.  All too often I hear about jams in the middle when
+everyone is tweeting out cool prototypes and in the thick of design,
+or I'll hear about a jam when the contest is long over because someone
+pointed out that the winning entry was amazing.  Through dumb luck and
+exquisite taste in following [[https://twitter.com/mtrc][@mtrc on twitter]], I heard about this
+gamejam with enough lead time to mark it on my calendar.
 
-<blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/DamianSommer">@DamianSommer</a> if L-Cancelling is never detrimental, then it&#39;s execution is a measure of dexterity, not cleverness.</p>&mdash; ❧ Demon Cider (@whatisian) <a href="https://twitter.com/whatisian/status/519555442012217344">October 7, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+Even if I don't produce anything interesting or important, by gum, I'm
+going to participate in and cover this gamejam.  I'm not going to let
+another really cool gamejam slip under the radar.
 
-Let's look at how this differs from [[http://steamcommunity.com/sharedfiles/filedetails/?id%3D250779585][dodge canceling]] in /TowerFall/ a
-game that Thorson intentionally designed to be welcoming to new
-players, while still keeping them competitive with skilled players.
+** Procjam submission
 
-Dodge canceling requires similarly herculean inputs to pull off, to
-perform a dodge cancel you must press the dodge button a second time
-after initiating a dodge maneuver.  The dodge lasts 367 milliseconds
-or 22 frames at 60 fps.  This seems like a lot of time to perform the
-dodge cancel compared to the scant 6 frames for an L-cancel, but
-there's a catch.  In order to get the most momentum, to carry the most
-speed through the dodge cancel, you must perform the move on exactly
-the right frame.
+** Procjam follow-up
 
-Sounds pretty tough, right?  If you think this would require some
-impressive technical skills to pull it off, you're right.  But there's
-a catch, turning or firing from the dodge cancel reduces the
-character's speed, making the character an easier target.
+* Gamy Sprite Generator
+Following along with a [[http://catlikecoding.com/unity/tutorials/noise/][tutorial over at Catlike Coding]] I was inspired
+to create a sprite generator.  I always got a kick out of the randomly
+generated user icons "identicons" on github, so I set out to generate
+blocky sprites like those.
 
-Thorson's mechanic provides a similar advantage to L-canceling with
-the addition of the risk of failure.  Dodge cancels could allow the
-player to zing around the level at will, firing arrows every which
-way, but Thorson decided to introduce drawbacks for imprecise play
-that create risks for more advanced players to put them closer to
-parity with less skilled players.
+** Basic procedural textures
 
-<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/then00b">@then00b</a> I wanted it to provide an advantage, but to also have risk associated with it, and I think it does :)</p>&mdash; Matt Thorson (@MattThorson) <a href="https://twitter.com/MattThorson/status/519634020561203200">October 7, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+** Make it random
 
-These are just my thoughts on this interesting discussion.  I'm not a
-high-level player of either of these games, so I may have missed some
-of the subtleties to which Thorson or others refer.  If you think I'm
-off the mark, or you just want to weigh in on the merits of designing
-for "party" vs. "fighting" games, drop me a line in the comments or on
-[[https://twitter.com/zerosalife][twitter]].
+** Tyger, tyger, burning bright
+
+Apophenia, pareidolia.
+
+To make parts of the sprite transparent, I had to use a [[http://docs.unity3d.com/Manual/shader-TransparentCutoutFamily.html][cutout shader]].
+
+** Make it repeatable
+
+** What's next?
+Semantic generation of things.  I've noticed that certain shapes look
+like boxes, like containers or items, like faces, like humanoid
+bodies.  I'd like to explore the rules of procedural generation that
+create these shapes and integreate them into the Gamy Sprite Generator
+as optional constraints on the sprite generation algorithm.
+
+Pet rock generator.  Move from a simple textured quad to a more
+complicated 3 dimensional mesh.  I want to explore generating
+interesting textures for 3 dimensional surfaces instead of simple
+blocky sprites.
