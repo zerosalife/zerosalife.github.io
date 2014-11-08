@@ -53,21 +53,11 @@ When I do tweets from the command line there's some dark magic going on that I d
 
 ## Markov chain text generation
 
-One of the quirks of the markov package I used is that it stops
-generating 'random walks' when it reaches states that it has not been
-trained on.  As you can imagine when using imagery-rich,
-neologism-laden rap music, there are many words that occur once, even
-in a very large corpus.  Being unique is kind of a goal of the form, a
-fact reflected in [at least one alias](http://en.wikipedia.org/wiki/Ol%2527_Dirty_Bastard).
+One of the quirks of the markov package I used is that it stops generating 'random walks' when it reaches states that it has not been trained on.  As you can imagine when using imagery-rich, neologism-laden rap music, there are many words that occur once, even in a very large corpus.  Being unique is kind of a goal of the form, a fact reflected in [at least one alias](http://en.wikipedia.org/wiki/Ol%2527_Dirty_Bastard).
 
-In order to make more realistic texts, it's common to increase the
-order of the transition matrix.  That is to say, to determine the
-probability for a following word from the prior two or more words.
-However, given my idiosyncratic corpus, this leads the 'random walk'
-algorithm to halt, giving me too few words in my output.
+In order to make more realistic texts, it's common to increase the order of the transition matrix.  That is to say, to determine the probability for a following word from the prior two or more words.  However, given my idiosyncratic corpus, this leads the 'random walk' algorithm to halt, giving me too few words in my output.
 
-Interestingly, in this case, dialing back the order tends to lead to
-more rhyming and a few recognizable couplets, which I find kinda nice.
+Interestingly, in this case, dialing back the order tends to lead to more rhyming and a few recognizable couplets, which I find kinda nice.
 
 ## Setting up the twitter account
 
