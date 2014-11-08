@@ -83,4 +83,4 @@ Here's one of my favorite tweets so far:
 
 {% tweet https://twitter.com/insceptahdeckwu/status/529619098758823937 %}
 
-From here the skies the limit.  I could try analyzing the generated text to try to build lines or stanzas.  I could try to reorder words to reflect the syntax present from the transcription.  I could try to represent individual emcees with unique corpora.
+From here the sky's the limit.  I could try analyzing the generated text to try to build lines or stanzas.  I could try to reorder words to reflect the syntax present from the transcription.  I could try to represent individual emcees with unique corpora.
