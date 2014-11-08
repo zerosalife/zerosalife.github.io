@@ -23,7 +23,7 @@ The [#7dfps](https://twitter.com/search?q%3D7dfps) jam is also going on this wee
 
 ## Fourth-person tweets
 
-I'm at it again, [making a twitter bot](http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/) like [@styx<sub>ebooks</sub>](https://twitter.com/styx_ebooks).  Only this time it's in a completely different language and it's got a completely different corpus.  Corpus is a Latin way of saying text, in case you forgot.
+I'm at it again, [making a twitter bot](http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/) like [@styx_ebooks](https://twitter.com/styx_ebooks).  Only this time it's in a completely different language and it's got a completely different corpus.  Corpus is a Latin way of saying text, in case you forgot.
 
 <!--more-->
 
@@ -73,7 +73,7 @@ more rhyming and a few recognizable couplets, which I find kinda nice.
 
 I ran into a problem getting an app set up for the bot's twitter account.  I am merely one person, and thus have need for merely one cell phone.  Since twitter requires a unique mobile number for authenticating apps, I was out of luck.  That is, until I found this [blog post showing how to use the same app on multiple bot clients](http://dghubble.com/blog/posts/twitter-app-write-access-and-bots/).
 
-Faithful readers may remember my wildly popular, and yet still somehow deeply underrated, [Bangsian](http://en.wikipedia.org/wiki/Bangsian_fantasy) fantasy bot, [@styx<sub>ebooks</sub>](https://twitter.com/styx_ebooks).  Using `twurl` I was able to grant access to the [@styx<sub>ebooks</sub>](https://twitter.com/styx_ebooks) app credentials for the new bot.
+Faithful readers may remember my wildly popular, and yet still somehow deeply underrated, [Bangsian](http://en.wikipedia.org/wiki/Bangsian_fantasy) fantasy bot, [@styx_ebooks](https://twitter.com/styx_ebooks).  Using `twurl` I was able to grant access to the [@styx_ebooks](https://twitter.com/styx_ebooks) app credentials for the new bot.
 
 ## Moving on
 
