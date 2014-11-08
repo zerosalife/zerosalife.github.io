@@ -4,7 +4,7 @@
   <title><![CDATA[Category: clojure | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/clojure/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-11-08T08:37:48-06:00</updated>
+  <updated>2014-11-08T08:39:16-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -30,7 +30,7 @@
 
 <h2>Fourth-person tweets</h2>
 
-<p>I&rsquo;m at it again, <a href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/">making a twitter bot</a> like <a href="https://twitter.com/styx_ebooks">@styx<sub>ebooks</sub></a>.  Only this time it&rsquo;s in a completely different language and it&rsquo;s got a completely different corpus.  Corpus is a Latin way of saying text, in case you forgot.</p>
+<p>I&rsquo;m at it again, <a href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/">making a twitter bot</a> like <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>.  Only this time it&rsquo;s in a completely different language and it&rsquo;s got a completely different corpus.  Corpus is a Latin way of saying text, in case you forgot.</p>
 
 <!--more-->
 
@@ -81,7 +81,7 @@ more rhyming and a few recognizable couplets, which I find kinda nice.</p>
 
 <p>I ran into a problem getting an app set up for the bot&rsquo;s twitter account.  I am merely one person, and thus have need for merely one cell phone.  Since twitter requires a unique mobile number for authenticating apps, I was out of luck.  That is, until I found this <a href="http://dghubble.com/blog/posts/twitter-app-write-access-and-bots/">blog post showing how to use the same app on multiple bot clients</a>.</p>
 
-<p>Faithful readers may remember my wildly popular, and yet still somehow deeply underrated, <a href="http://en.wikipedia.org/wiki/Bangsian_fantasy">Bangsian</a> fantasy bot, <a href="https://twitter.com/styx_ebooks">@styx<sub>ebooks</sub></a>.  Using <code>twurl</code> I was able to grant access to the <a href="https://twitter.com/styx_ebooks">@styx<sub>ebooks</sub></a> app credentials for the new bot.</p>
+<p>Faithful readers may remember my wildly popular, and yet still somehow deeply underrated, <a href="http://en.wikipedia.org/wiki/Bangsian_fantasy">Bangsian</a> fantasy bot, <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>.  Using <code>twurl</code> I was able to grant access to the <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a> app credentials for the new bot.</p>
 
 <h2>Moving on</h2>
 
