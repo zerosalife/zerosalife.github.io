@@ -138,21 +138,11 @@
 
 <h2>Markov chain text generation</h2>
 
-<p>One of the quirks of the markov package I used is that it stops
-generating &lsquo;random walks&rsquo; when it reaches states that it has not been
-trained on.  As you can imagine when using imagery-rich,
-neologism-laden rap music, there are many words that occur once, even
-in a very large corpus.  Being unique is kind of a goal of the form, a
-fact reflected in <a href="http://en.wikipedia.org/wiki/Ol%2527_Dirty_Bastard">at least one alias</a>.</p>
+<p>One of the quirks of the markov package I used is that it stops generating &lsquo;random walks&rsquo; when it reaches states that it has not been trained on.  As you can imagine when using imagery-rich, neologism-laden rap music, there are many words that occur once, even in a very large corpus.  Being unique is kind of a goal of the form, a fact reflected in <a href="http://en.wikipedia.org/wiki/Ol%2527_Dirty_Bastard">at least one alias</a>.</p>
 
-<p>In order to make more realistic texts, it&rsquo;s common to increase the
-order of the transition matrix.  That is to say, to determine the
-probability for a following word from the prior two or more words.
-However, given my idiosyncratic corpus, this leads the &lsquo;random walk&rsquo;
-algorithm to halt, giving me too few words in my output.</p>
+<p>In order to make more realistic texts, it&rsquo;s common to increase the order of the transition matrix.  That is to say, to determine the probability for a following word from the prior two or more words.  However, given my idiosyncratic corpus, this leads the &lsquo;random walk&rsquo; algorithm to halt, giving me too few words in my output.</p>
 
-<p>Interestingly, in this case, dialing back the order tends to lead to
-more rhyming and a few recognizable couplets, which I find kinda nice.</p>
+<p>Interestingly, in this case, dialing back the order tends to lead to more rhyming and a few recognizable couplets, which I find kinda nice.</p>
 
 <h2>Setting up the twitter account</h2>
 
