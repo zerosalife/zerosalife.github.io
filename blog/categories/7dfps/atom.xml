@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: procedural generation | zero's a life]]></title>
-  <link href="http://zerosalife.github.io/blog/categories/procedural-generation/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 7dfps | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/7dfps/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
   <updated>2014-11-08T08:37:48-06:00</updated>
   <id>http://zerosalife.github.io/</id>
@@ -92,25 +92,6 @@ more rhyming and a few recognizable couplets, which I find kinda nice.</p>
 <p><div class='embed tweet'>Tweet could not be processed</div></p>
 
 <p>From here the skies the limit.  I could try analyzing the generated text to try to build lines or stanzas.  I could try to reorder words to reflect the syntax present from the transcription.  I could try to represent individual emcees with unique corpora.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[styx_ebooks]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T14:05:03-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
-    <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
-
-<p>I forked it from an earlier project by <a href="https://github.com/jiko">@jiko</a>, <a href="https://github.com/jiko/lovecraft_ebooks">lovecraft_ebooks</a>.  There were some minor implementation hurdles, mainly related to Twitter&rsquo;s API and oauth.  Reading the <a href="https://pypi.python.org/pypi/twitter">python <code>twitter</code> package</a> <code>twitter.oauth</code> docstring set me straight.  You can check out the code in <a href="https://github.com/zerosalife/styx_ebooks">my fork on github</a>.</p>
-
-<p>This sort of text generation algorithm isn&rsquo;t just useful for making annoying twitter bots.  You could alter some of the in-game text or dialog based on a corpus fed into a markov chain text generator. Especially in the case of a Lovecraftian horror game, I can see how this text could serve a thematic purpose in the story.</p>
-
-<p>Say you&rsquo;ve got a Lovecraftian horror game in which the player is an investigator who is trying to figure out what is happening to citizens of Innsmouth.  By interacting with NPCs, the player encounters hand written dialog, with occasional markov-generated gibberish thrown in. The amount of gibberish depends on how corrupted the individual denizens of Innsmouth are becoming.  If the player is not clever enough to determine who is corrupt, the player will be killed.  If the player determines the source of the corruption, the player wins.</p>
-
-<p>Along the same line of reasoning, the concept I&rsquo;m describing here mimics the game <a href="http://www.newgrounds.com/portal/view/634905">ALZ</a>, a touching short, playable in 2 or 3 minutes, which uses glitchy graphics to convey a sense of what it&rsquo;s like to live with Alzheimer&rsquo;s disease to the player.  I came across Dylan Carter&rsquo;s ALZ in a <a href="http://www.animalnewyork.com/2014/making-alz-glitch-fueled-game-alzheimers/">post on the ANIMAL blog</a>.  This approach of literally altering the player&rsquo;s experience of the game world to mimic the subjective experience of characters in the game is ripe for exploration.  I&rsquo;d love to hear about more examples.</p>
-
-<p>You can check out my bot, <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>, on twitter, happily tweeting the day away.</p>
 ]]></content>
   </entry>
   
