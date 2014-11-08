@@ -3641,17 +3641,56 @@ As an aside, I think [[http://en.wikipedia.org/wiki/Nibble#Table_of_nibbles][thi
 automata thing from Conway's Game of Life.
 
 * INSceptahdeckWU
+First #procjam entry: @insceptahdeckwu generates tweets based on Wu
+Tang Clan lyrics. Also updates abt @sudorossy @GalaxyKate #7dfps
+
 - design
 - procedural generation
 - clojure
+- procjam
+- 7dfps
 
-I'm at it again.  Making a twitter bot like styx_ebooks.  Only this
-time it's in a completely different language and it's got a compltely
+** #procjam updates
+
+[[https://twitter.com/search?q%3Dprocjam][#procjam]] is upon us.  The conference is on and popping, streaming at
+[[http://www.twitch.tv/procjam]].  I'll try to precede my #procjam posts
+with a little update on some of the cool things I've seen that need
+pointing out during the jam itself.
+
+[[https://twitter.com/GalaxyKate][@GalaxyKate]] will be streaming [[http://vimeo.com/111272682][some tutorials]] today, following the
+conference.
+
+[[https://twitter.com/SudoRossy][@sudorossy]] is currently streaming some development and modeling at
+[[http://www.twitch.tv/sudorossy]].  I imagine that sudorossy will
+continue this throughout the jam.
+
+The [[https://twitter.com/search?q%3D7dfps][#7dfps]] jam is also going on this week.  So, I've decided to
+release my third person procedural tweeter.  Or maybe it's a fourth
+person tweeter, third person once removed.
+
+** Fourth-person tweets
+
+I'm at it again, [[http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/][making a twitter bot]] like [[https://twitter.com/styx_ebooks][@styx_ebooks]].  Only this
+time it's in a completely different language and it's got a completely
 different corpus.  Corpus is a Latin way of saying text, in case you
 forgot.
 
-** Making the corpus
+<!--more-->
 
+** Making the tweets
+The basic algorithm works like this.
+
+The bot creates a huge textfile containing lyrics from Wu Tang Clan
+songs.  I trim away a lot of the information about verses and
+choruses, but I keep the punctuation because I like the sense of
+rhythm it creates.
+
+Based on the relationship between the words in this corpus file, the
+bot builds a [[http://en.wikipedia.org/wiki/Markov_chain][markov process]] to generate the text of the tweets.  To do
+so, the bot generates a transition matrix using [[https://github.com/Janiczek/markov][Janiczek's Clojure
+markov library]].  It then takes random walks through that matrix to
+produce a string of text with a similar relationship between words to
+the input lyrics corpus.
 
 ** Making it a command line app
 This is the first time I've tried to make a command line application
@@ -3672,10 +3711,16 @@ can use the Rebel INS or build a twitter bot based on this code.
 
 To build the app, I use =lein bin= from the command line.
 
+I'm interested in [[http://www.rkn.io/2014/02/06/clojure-cookbook-daemons/][daemonizing]] the application.  That is to say, I'm
+interested in turning it into a persistent process that runs in the
+background on my computer.  But for now, I've set up a simple [[http://en.wikipedia.org/wiki/Cron][cron]]
+script to tweet every few hours.
+
 ** Logging
-When I do tweets from the command line there's some dark majik going
+When I do tweets from the command line there's some dark magic going
 on that I don't understand.  Anyway it seems to invoke the =Log4j=, so
 I [[http://www.bahmanm.com/blogs/how-to-add-logging-to-a-clojure-project][set that up according to this blog post]].
+
 ** Markov chain text generation
 One of the quirks of the markov package I used is that it stops
 generating 'random walks' when it reaches states that it has not been
@@ -3701,10 +3746,16 @@ authenticating apps, I was out of luck.  That is, until I found this
 [[http://dghubble.com/blog/posts/twitter-app-write-access-and-bots/][blog post showing how to use the same app on multiple bot clients]].
 
 Faithful readers may remember my wildly popular, and yet still somehow
-deeply underrated, Bangsian fantasy bot, @styx_ebooks.  Using =twurl=
-I was able to grant access to the @styx_ebooks app credentials for the
+deeply underrated, [[http://en.wikipedia.org/wiki/Bangsian_fantasy][Bangsian]] fantasy bot, [[https://twitter.com/styx_ebooks][@styx_ebooks]].  Using =twurl=
+I was able to grant access to the [[https://twitter.com/styx_ebooks][@styx_ebooks]] app credentials for the
 new bot.
+
 ** Moving on
+Here's one of my favorite tweets so far:
+
+{% tweet https://twitter.com/insceptahdeckwu/status/529619098758823937
+%}
+
 From here the skies the limit.  I could try analyzing the generated
 text to try to build lines or stanzas.  I could try to reorder words
 to reflect the syntax present from the transcription.  I could try to
@@ -4049,6 +4100,19 @@ then compile them into a single HTML file for testing and release.
 Let me know if you have suggestions that would improve this Twine
 workflow or if you take a different approach.
 
+* Dialog in Unity
+[[https://twitter.com/MattRix/status/525374216225718272/photo/1]]
+[[https://twitter.com/MattRix/status/525372446384586752/photo/1]]
+
+[[https://dl.dropboxusercontent.com/u/1063919/Screen%20Shot%202014-10-23%20at%204.34.47%20PM.png]]
+[[https://twitter.com/infinite_ammo/status/525375826007982080/photo/1]]
+
+[[https://dl.dropboxusercontent.com/u/9814265/skytorn/dialog2.png]]
+[[https://twitter.com/NoelFB/status/525377696571097089]]
+
+[[http://pastebin.com/rArEyKwM]]
+[[https://twitter.com/NoelFB/status/525389011850772480]]
+
 * Implementing an inventory in Twine
 
 * The Core Gameplay Loop of Drug-seeking Behavior
@@ -4248,6 +4312,18 @@ another really cool gamejam slip under the radar.
 
 ** Procjam follow-up
 
+*** Great ideas
+[[https://twitter.com/redblobgames/status/527485845616340992]]
+
+[[https://twitter.com/mtthwcmpbll/status/527881936178778113]]
+
+Good Tutorials
+[[http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content%3Dbuffera3b27&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer][http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content=buffera3b27&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer]]
+
+[[https://twitter.com/alexjc/status/531077005815869440]]
+
+
+
 * Gamy Sprite Generator
 Following along with a [[http://catlikecoding.com/unity/tutorials/noise/][tutorial over at Catlike Coding]] I was inspired
 to create a sprite generator.  I always got a kick out of the randomly
@@ -4277,3 +4353,17 @@ Pet rock generator.  Move from a simple textured quad to a more
 complicated 3 dimensional mesh.  I want to explore generating
 interesting textures for 3 dimensional surfaces instead of simple
 blocky sprites.
+
+* Jump scares and the startle response
+
+** The origin of the jump scare
+Alone in the Dark
+Resident Evil
+
+** Salient stimuli
+"Rewards like sex, money, drugs and novel situations all cause the
+release of dopamine in the reward circuit of the brain, a region
+buried deep beneath the cortex. Aside from generating a sense of
+pleasure, this dopamine signal tells your brain something like, “Pay
+attention, this is an important experience that is worth
+remembering.”"
