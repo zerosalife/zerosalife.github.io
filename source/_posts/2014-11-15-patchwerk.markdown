@@ -12,7 +12,7 @@ categories:
 
 I've spent the week at a couple of major international conferences sponsored to some degree by old dead-tree journals.  I was struck, following last weekends' [#procjam](https://twitter.com/search?q%3Dprocjam) [talks](http://www.twitch.tv/procjam), by the lack of openness.  None of these talks are going to be made freely available.  Photography and recording is actively discouraged.  The official conference hashtags, when provided, were silent or only used by those in attendance.  While this exclusivity may generate profits for the aforementioned dead-tree journals and give a leg up to those fortunate enough to be able to attend these conferences, I find it ethically reprehensible in the 21st century, given the tools that we have available.
 
-I'd like to once again thank [@mtrc](https://twitter.com/mtrc) for hosting *and streaming* \\#procjam.  Because conference was made freely available, I was able to interact with the attendees in a way that would be impossible if I was trying to divine through twitter what was going on behind closed doors.  I think this kind of openness can only generate more interest and ideas, regardless of the field of study.
+I'd like to once again thank [@mtrc](https://twitter.com/mtrc) for hosting *and streaming* \#procjam.  Because conference was made freely available, I was able to interact with the attendees in a way that would be impossible if I was trying to divine through twitter what was going on behind closed doors.  I think this kind of openness can only generate more interest and ideas, regardless of the field of study.
 
 ## Patchwerk
 
