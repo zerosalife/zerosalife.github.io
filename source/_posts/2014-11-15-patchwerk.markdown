@@ -18,7 +18,7 @@ I'd like to once again thank [@mtrc](https://twitter.com/mtrc) for hosting *and 
 
 A [Quil](https://github.com/quil/quil) sketch designed to generate patterns for quilts.  The code is [available on github](https://github.com/zerosalife/patchwerk).
 
-[{% img center https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png %}](https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png)
+[{% img center https://raw.githubusercontent.com/zerosalife/patchwerk/master/patchwerk-example.png %}](https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png)
 
 <!--more-->
 
