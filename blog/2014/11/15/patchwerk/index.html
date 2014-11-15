@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Patchwerk - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="Procjam updates I&rsquo;ve spent the week at a couple of major international conferences sponsored to some degree by old dead-tree journals. I was &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/11/15/patchwerk">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Patchwerk</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-15T08:22:18-05:00" pubdate data-updated="true">Nov 15<span>th</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Procjam updates</h2>
+
+<p>I&rsquo;ve spent the week at a couple of major international conferences sponsored to some degree by old dead-tree journals.  I was struck, following last weekends&#8217; <a href="https://twitter.com/search?q%3Dprocjam">#procjam</a> <a href="http://www.twitch.tv/procjam">talks</a>, by the lack of openness.  None of these talks are going to be made freely available.  Photography and recording is actively discouraged.  The official conference hashtags, when provided, were silent or only used by those in attendance.  While this exclusivity may generate profits for the aforementioned dead-tree journals and give a leg up to those fortunate enough to be able to attend these conferences, I find it ethically reprehensible in the 21st century, given the tools that we have available.</p>
+
+<p>I&rsquo;d like to once again thank <a href="https://twitter.com/mtrc">@mtrc</a> for hosting <em>and streaming</em> \#procjam.  Because conference was made freely available, I was able to interact with the attendees in a way that would be impossible if I was trying to divine through twitter what was going on behind closed doors.  I think this kind of openness can only generate more interest and ideas, regardless of the field of study.</p>
+
+<h2>Patchwerk</h2>
+
+<p>A <a href="https://github.com/quil/quil">Quil</a> sketch designed to generate patterns for quilts.  The code is <a href="https://github.com/zerosalife/patchwerk">available on github</a>.</p>
+
+<p><a href="https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png"><img class="center" src="https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png"></a></p>
+
+<!--more-->
+
+
+<h2>What is Quil?</h2>
+
+<p>Quil is a port of <a href="http://processing.org">Processing</a> to <a href="http://clojure.org/">Clojure</a>.</p>
+
+<h2>Motivation</h2>
+
+<p>When I came across some interesting pictures of quilts, I was struck by the regularity of the shapes used to construct them.  A quilt is simply a grid of squares containing some pattern of simple shapes.  I thought it would be interesting to have an algorithm generate the grid (what I guess quilters probably call a pattern), so I set out to build some functions in Quil to draw a few simple shapes that I identified in the squares of the quilts and then to randomly draw them in a grid.</p>
+
+<h2>How to model a quilt</h2>
+
+<p>Using the fundamental assumption I already stated: a quilt is just a grid of squares.  My algorithm defines a <code>grid-width</code> and <code>grid-height</code> along with a <code>square-size</code> in pixels that determine the overall size of the quilt pattern to generate.  This allows you to generate an arbitrary number of quilt squares of a certain size.</p>
+
+<p>Each square contains a subgrid with a defined <code>sub-grid-width</code> and <code>sub-grid-height</code>.  In retrospect, it would probably be better to define one parameter because if the dimensions are not square, everything will be screwed up.</p>
+
+<p>I then define several basic drawing functions to fill the squares of the grid.  The procedural generation&rsquo;s <code>draw</code> algorithm knows about each of the drawing functions, called <code>pattern-funcs</code>, and picks one of the <code>patterns</code> to draw each square of the grid.</p>
+
+<h2>The drawing functions</h2>
+
+<p>The primary elements of the quilt squares that I wanted to replicate were large squares, smaller checkers, triangles, and a mixed pattern of small triangles with a square that I called &ldquo;fish&rdquo;.</p>
+
+<p>The squares (see the square second left from the top right) and the smaller checkers (see quilt square fourth down from the top left) use the same drawing function.  However, they differ in that they utilize different helper functions return the correctly sized vertices and support multiple calls for the smaller checkers.</p>
+
+<p>The triangles (see square in the top right) use a lookup table, <code>triangle-lookup-table</code>, to store information about the appropriate &ldquo;legs&rdquo; for a triangle with a point in a given corner.  By using a common syntax for the vertices, the <code>draw-triangle</code> algorithm can share the vertex lookup algorithm with the square routines.</p>
+
+<p>Then the culmination of my dastardly plan involves marrying a square from the smaller checker function with flanking triangles, based on the subgrid this time instead of the larger grid.  The result is a pattern that looks like a fish to me (see quilt square in the top left).  Because I built the abstract drawing functions, I simply have to take care of the four directional possibilities and let the drawing functions more fundamental handle the work.</p>
+
+<h2>Future plans: toward Patchwerk 1.0.0</h2>
+
+<p>The project is in need of a major refactoring session, when I can find the time.  I developed it in a single monolithic Clojure file for ease of testing in the REPL.  It will be easier to maintain and understand if I separate out the distinct functionalities into their own namespaces.  The ones that come to mind are <code>patchwerk.grid</code> to handle the generation of the grid, <code>patchwerk.patterns</code> to manage the drawing functions, and <code>patchwerk.util</code> to house the helper functions.  I&rsquo;d also like to make it clear which functions use the <code>quil.core</code> namespace instead of using <code>:refer :all</code>.</p>
+
+<p>There is also <a href="https://github.com/quil/quil/wiki/Functional-mode-(fun-mode">some interesting new functional middleware for Quil</a>).  It provides a framework for you to separate out the mutable state from your Quil functions so that you avoid side effects and can program pure functions, in Processing&rsquo;s typically imperative syntax.  To get this up and running, I imagine that I will have to represent the pixel grid in the <code>state</code> map.</p>
+
+<p>Eventually, and this is beyond the scope of 1.0.0, I&rsquo;m intrigued by the possibility of <a href="https://github.com/quil/quil/wiki/ClojureScript">porting this code over to Clojurescript</a> and creating a web-based version of the application.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-15T08:22:18-05:00" pubdate data-updated="true">Nov 15<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/clojure/'>Clojure</a>, <a class='category' href='/blog/categories/quil/'>Quil</a>, <a class='category' href='/blog/categories/procjam/'>procjam</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/11/15/patchwerk/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/11/15/patchwerk/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/08/insceptahdeckwu/" title="Previous Post: INSceptahdeckWU">&laquo; INSceptahdeckWU</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/11/15/patchwerk/">Patchwerk</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/08/insceptahdeckwu/">INSceptahdeckWU</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/">Make things that make things: #procjam 2014</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/">Play balance for party vs in-depth fighting games</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/11/betting-in-super-smash-bros-spectator-mode/">Betting in Super Smash Bros. spectator mode</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/11/15/patchwerk/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2014/11/15/patchwerk/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54217540-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
