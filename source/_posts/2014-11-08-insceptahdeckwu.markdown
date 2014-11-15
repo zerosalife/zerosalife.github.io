@@ -6,7 +6,7 @@ comments: true
 categories:
 -   design
 -   procedural generation
--   clojure
+-   Clojure
 -   procjam
 -   7dfps
 ---
