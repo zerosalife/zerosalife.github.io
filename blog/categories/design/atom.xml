@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-11-08T08:42:34-06:00</updated>
+  <updated>2014-11-15T08:27:39-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[INSceptahdeckWU]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/"/>
-    <updated>2014-11-08T08:28:39-06:00</updated>
+    <updated>2014-11-08T09:28:39-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu</id>
     <content type="html"><![CDATA[<h2>#procjam updates</h2>
 
@@ -88,7 +88,7 @@
   <entry>
     <title type="html"><![CDATA[Play balance for party vs in-depth fighting games]]></title>
     <link href="http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/"/>
-    <updated>2014-10-18T10:33:31-05:00</updated>
+    <updated>2014-10-18T11:33:31-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games</id>
     <content type="html"><![CDATA[<p>Here I&rsquo;m drawing a comparison between games that are subjectively perceived as party games and games that are more in-depth.  I&rsquo;m avoiding using loaded terms like casual and hardcore, but I think the distinction is likely the same.  Both types of games can be complex, but subtle balancing issues can affect the subjective sense of fun when playing these games.</p>
 
@@ -130,7 +130,7 @@
   <entry>
     <title type="html"><![CDATA[Do ethics matter in game design?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design/"/>
-    <updated>2014-10-04T11:38:33-05:00</updated>
+    <updated>2014-10-04T12:38:33-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design</id>
     <content type="html"><![CDATA[<p>I reached out on twitter in a somewhat misguided appeal to #gamedev, asking whether devs consider ethics when designing games.  Apparently there is so much traffic on #gamedev that any tweet will be lost in a deluge of announcements and automated bot retweets.  Oh well, I thought, I&rsquo;ll go it alone.  Given the <a href="http://bits.blogs.nytimes.com/2014/10/02/intel-pulls-ads-from-site-after-gamergate-boycott/">recent tone in the communities surrounding games</a>, I feel the need to examine this question: <strong>Do ethics matter in game design?</strong></p>
 
@@ -182,7 +182,7 @@ and practically crucial.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Designing a pachinko RPG]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/"/>
-    <updated>2014-08-23T10:48:48-05:00</updated>
+    <updated>2014-08-23T11:48:48-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg</id>
     <content type="html"><![CDATA[<p>What would make a pachinko RPG?  <a href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">Last week</a>, I wrote about how I&rsquo;m sort of enamored with <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest&rsquo;s</a></em> tap-and-let-them-go interaction, which I think mirrors the play-style of pachinko.  In pachinko, you have some control over launching the little metal balls, but once they&rsquo;re in play, they&rsquo;re on their own.  This mechanism stands in contrast to pinball, where you interact with a single or multiple pinballs with the paddles, and cue sports (especially bumper pool), where you launch a billiard ball repeatedly with a cue.</p>
 
@@ -213,7 +213,7 @@ and practically crucial.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[One Tap Quest: a pachinko RPG]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/"/>
-    <updated>2014-08-16T10:39:34-05:00</updated>
+    <updated>2014-08-16T11:39:34-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg</id>
     <content type="html"><![CDATA[<p>I recently played <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest</a></em>, a game in which you tap to place an RPG character who marches upward, gaining levels by bumping into enemies, to tackle bigger and badder foes.  What&rsquo;s interesting to me, if you&rsquo;ll bear with me, is that this is a game that amounts to a pachinko RPG.  I&rsquo;ll start by talking about what I liked about <em>One Tap Quest</em>.  <a href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/">Next week</a>, I&rsquo;ll get into what I mean by a pachinko RPG.</p>
 
