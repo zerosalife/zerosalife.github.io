@@ -4398,7 +4398,7 @@ another really cool gamejam slip under the radar.
 
 ** Procjam submission
 
-** Procjam comedown
+* Procjam comedown
 - procjam
 - procedural generation
 - game
@@ -4423,7 +4423,7 @@ through the end of the year, so don't worry if the blogging is
 intermittent.  I'll revisit the #procjam talks and the submissions
 when I find time.
 
-*** Great ideas
+** Great ideas
 [[https://twitter.com/PNJeffries/status/531592288733261824]]
 
 [[https://twitter.com/redblobgames/status/527485845616340992]]
@@ -4448,7 +4448,7 @@ when I find time.
 
 [[http://jctwood.itch.io/dungen]]
 
-*** Good tutorials
+** Good tutorials
 Some tutorials I came across during the jam:
 
 [[http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content%3Dbuffera3b27&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer][http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content=buffera3b27&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer]]
@@ -4458,11 +4458,11 @@ Some tutorials I came across during the jam:
 [[http://samatkins.co.uk/blog/2014/11/08/procjam-procedural-building-generation/]]
 
 
-*** Talks
+** Talks
 Here are my notes on the talks that I had a chance to see.  In lieu of
 writing anything up, I'll post them here for now.
 
-**** Overall themes
+*** Overall themes
 - Meaning over randomness
 - Scale and direction
   - Layering
@@ -4504,7 +4504,7 @@ writing anything up, I'll post them here for now.
   - Workflow, ease of adjustment can be good for designer and exposing
     the same tools to the player can be fun
 
-*** itch.io
+** itch.io
 It looks like most of the entries are gathered on a [[http://itch.io/jam/procjam][#procjam itch.io
 page]].  I have no experience with [[http://itch.io/][itch.io]], but I think setting up an
 account and exploring what itch.io has to offer couldn't hurt.
