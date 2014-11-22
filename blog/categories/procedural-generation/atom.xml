@@ -4,7 +4,7 @@
   <title><![CDATA[Category: procedural generation | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/procedural-generation/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-11-15T08:30:51-05:00</updated>
+  <updated>2014-11-22T14:33:25-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,137 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[procjam comedown]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/11/22/procjam-comedown/"/>
+    <updated>2014-11-22T14:26:16-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/11/22/procjam-comedown</id>
+    <content type="html"><![CDATA[<p>Now that two weeks have passed (a geologic era in internet time), I&rsquo;m ready begin to look back on the <a href="https://twitter.com/hashtag/procjam">#procjam</a> talks and the entries to the jam that caught my eye.  I&rsquo;ve been very busy lately working on my own submissions <a href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/">INSceptahdeckwu</a> and <a href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/">Patchwerk</a>, among other commitments, so this is by no means an exhaustive look at everything in #procjam.</p>
+
+<!--more-->
+
+
+<p>Since I actually have no time at all to write a full retrospective, I&rsquo;ll have to be brief.  This post will have to serve as a collection of links and notes until I get a chance to look back in detail.  It&rsquo;s by no means complete, as I&rsquo;m still looking over all of the great entries to #procjam.  I enjoyed the interactions with the speakers and participants.  Unfortunately other commitments may occupy my time through the end of the year, so don&rsquo;t worry if the blogging is intermittent.  I&rsquo;ll revisit the #procjam talks and the submissions when I find time.</p>
+
+<h2>Great ideas</h2>
+
+<p><a href="https://twitter.com/PNJeffries/status/531592288733261824">https://twitter.com/PNJeffries/status/531592288733261824</a></p>
+
+<p><a href="https://twitter.com/redblobgames/status/527485845616340992">https://twitter.com/redblobgames/status/527485845616340992</a></p>
+
+<p><a href="https://twitter.com/mtthwcmpbll/status/527881936178778113">https://twitter.com/mtthwcmpbll/status/527881936178778113</a></p>
+
+<p><a href="https://twitter.com/DragonXVI/status/531078933161476096/photo/1">https://twitter.com/DragonXVI/status/531078933161476096/photo/1</a></p>
+
+<p><a href="https://twitter.com/TomNullpointer/status/531108417096916992">https://twitter.com/TomNullpointer/status/531108417096916992</a></p>
+
+<p><a href="http://chrismwaite.github.io/procjam/">http://chrismwaite.github.io/procjam/</a></p>
+
+<p><a href="https://github.com/chrismwaite/procjam/blob/gh-pages/app.js">https://github.com/chrismwaite/procjam/blob/gh-pages/app.js</a></p>
+
+<p><a href="http://renderingpipeline.com/2013/01/adding-analog-inputs-to-your-graphics-app/">http://renderingpipeline.com/2013/01/adding-analog-inputs-to-your-graphics-app/</a></p>
+
+<p><a href="https://github.com/keijiro/unity-midi-input">https://github.com/keijiro/unity-midi-input</a></p>
+
+<p><a href="http://cgaudino.itch.io/tailgunner">http://cgaudino.itch.io/tailgunner</a></p>
+
+<p><a href="https://github.com/civilframe/node-spacegame-ship-gen">https://github.com/civilframe/node-spacegame-ship-gen</a></p>
+
+<p><a href="http://jctwood.itch.io/dungen">http://jctwood.itch.io/dungen</a></p>
+
+<h2>Good tutorials</h2>
+
+<p>Some tutorials I came across during the jam:</p>
+
+<p><a href="http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content%3Dbuffera3b27&amp;utm_medium%3Dsocial&amp;utm_source%3Dtwitter.com&amp;utm_campaign%3Dbuffer">&lt;http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content=buffera3b27&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer></a></p>
+
+<p><a href="https://twitter.com/alexjc/status/531077005815869440">https://twitter.com/alexjc/status/531077005815869440</a></p>
+
+<p><a href="http://samatkins.co.uk/blog/2014/11/08/procjam-procedural-building-generation/">http://samatkins.co.uk/blog/2014/11/08/procjam-procedural-building-generation/</a></p>
+
+<h2>Talks</h2>
+
+<p>Here are my notes on the talks that I had a chance to see.  In lieu of writing anything up, I&rsquo;ll post them here for now.</p>
+
+<h3>Overall themes</h3>
+
+<ul>
+<li>Meaning over randomness</li>
+<li>Scale and direction
+
+<ul>
+<li>Layering</li>
+<li>Deck metaphor really nice for prototyping.</li>
+<li>Great question, how do you make sure the player is not lost in
+this huge history.  Player only aware of history of own house,
+data is gathered by reading books etc.; there&rsquo;s some context for
+the entrance of new bits of history.  Books are populated in
+places where it makes sense for them to turn up.</li>
+<li>Top-down (designer first) is easier than bottom-up (player first;
+shout out to <a href="https://twitter.com/gillianmsmith">@gillianmsmith</a> for this formulation).  Callbacks?
+How to percolate up from lower elements on tree?</li>
+</ul>
+</li>
+<li>Storytelling as divination</li>
+<li>NanoGenMo</li>
+<li>Flow in procedural generation
+
+<ul>
+<li>Meaning, codifying design principlse</li>
+<li>Art of Game Design by Jesse Schell</li>
+<li>a feeling of complete and energized focus in an activity, with a
+high level of enjoyment and fulfillment
+
+<ul>
+<li>clear goals</li>
+<li>no distractions
+
+<ul>
+<li>How does this figure into open world distraction fests like
+triple a sandbox games?</li>
+</ul>
+</li>
+<li>feedback</li>
+<li>continuously challenging</li>
+</ul>
+</li>
+<li>Frustration vs. boredom, find a balance</li>
+<li>Dynamic
+
+<ul>
+<li>Scale enemy level to meet player&rsquo;s level</li>
+<li>AI director, see when the player is overwhelmed, drop difficulty;
+boredom spawn more enemies.  Requires some kind of metric</li>
+</ul>
+</li>
+<li>Static
+
+<ul>
+<li>Lock and key</li>
+<li>Metazelda calculates difficulty number for each room from
+desired flow curve.</li>
+<li>Love <a href="https://github.com/tcoxon">@tcoxon</a> &rsquo;s thoughts on less backtracking.  Algorithmically respecting players' time.</li>
+</ul>
+</li>
+<li>Gamasutra Toni Sala</li>
+</ul>
+</li>
+<li>Emotion and interactivity &#x2013; expressivity
+
+<ul>
+<li>Workflow, ease of adjustment can be good for designer and exposing
+the same tools to the player can be fun</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>itch.io</h2>
+
+<p>It looks like most of the entries are gathered on a <a href="http://itch.io/jam/procjam">#procjam itch.io page</a>.  I have no experience with <a href="http://itch.io/">itch.io</a>, but I think setting up an account and exploring what itch.io has to offer couldn&rsquo;t hurt.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[INSceptahdeckWU]]></title>
