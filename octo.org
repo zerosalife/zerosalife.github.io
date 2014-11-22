@@ -1886,6 +1886,119 @@ of the subtleties to which Thorson or others refer.  If you think I'm
 off the mark, or you just want to weigh in on the merits of designing
 for "party" vs. "fighting" games, drop me a line in the comments or on
 [[https://twitter.com/zerosalife][twitter]].
+
+** Patchwerk
+Announcing Patchwerk: a quilt pattern generator.  #procjam
+
+- procjam
+- Clojure
+- Quil
+
+*** Procjam updates
+I've spent the week at a couple of major international conferences
+sponsored to some degree by old dead-tree journals.  I was struck,
+following last weekends' [[https://twitter.com/search?q%3Dprocjam][#procjam]] [[http://www.twitch.tv/procjam][talks]], by the lack of openness.
+None of these talks are going to be made freely available.
+Photography and recording is actively discouraged.  The official
+conference hashtags, when provided, were silent or only used by those
+in attendance.  While this exclusivity may generate profits for the
+aforementioned dead-tree journals and give a leg up to those fortunate
+enough to be able to attend these conferences, I find it ethically
+reprehensible in the 21st century, given the tools that we have
+available.
+
+I'd like to once again thank [[https://twitter.com/mtrc][@mtrc]] for hosting /and streaming/
+#procjam.  Because conference was made freely available, I was able to
+interact with the attendees in a way that would be impossible if I was
+trying to divine through twitter what was going on behind closed
+doors.  I think this kind of openness can only generate more interest
+and ideas, regardless of the field of study.
+
+*** Patchwerk
+A [[https://github.com/quil/quil][Quil]] sketch designed to generate patterns for quilts.  The code is
+[[https://github.com/zerosalife/patchwerk][available on github]].
+
+[[https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png][{% img center https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png %}]]
+
+<!--more-->
+
+*** What is Quil?
+Quil is a port of [[http://processing.org][Processing]] to [[http://clojure.org/][Clojure]].
+
+*** Motivation
+When I came across some interesting pictures of quilts, I was struck
+by the regularity of the shapes used to construct them.  A quilt is
+simply a grid of squares containing some pattern of simple shapes.  I
+thought it would be interesting to have an algorithm generate the grid
+(what I guess quilters probably call a pattern), so I set out to build
+some functions in Quil to draw a few simple shapes that I identified
+in the squares of the quilts and then to randomly draw them in a grid.
+
+*** How to model a quilt
+Using the fundamental assumption I already stated: a quilt is just a
+grid of squares.  My algorithm defines a =grid-width= and
+=grid-height= along with a =square-size= in pixels that determine the
+overall size of the quilt pattern to generate.  This allows you to
+generate an arbitrary number of quilt squares of a certain size.
+
+Each square contains a subgrid with a defined =sub-grid-width= and
+=sub-grid-height=.  In retrospect, it would probably be better to
+define one parameter because if the dimensions are not square,
+everything will be screwed up.
+
+I then define several basic drawing functions to fill the squares of
+the grid.  The procedural generation's =draw= algorithm knows about
+each of the drawing functions, called =pattern-funcs=, and picks one
+of the =patterns= to draw each square of the grid.
+
+
+*** The drawing functions
+
+The primary elements of the quilt squares that I wanted to replicate
+were large squares, smaller checkers, triangles, and a mixed pattern
+of small triangles with a square that I called "fish".
+
+The squares (see the square second left from the top right) and the
+smaller checkers (see quilt square fourth down from the top left) use
+the same drawing function.  However, they differ in that they utilize
+different helper functions return the correctly sized vertices and
+support multiple calls for the smaller checkers.
+
+The triangles (see square in the top right) use a lookup table,
+=triangle-lookup-table=, to store information about the appropriate
+"legs" for a triangle with a point in a given corner.  By using a
+common syntax for the vertices, the =draw-triangle= algorithm can
+share the vertex lookup algorithm with the square routines.
+
+Then the culmination of my dastardly plan involves marrying a square
+from the smaller checker function with flanking triangles, based on
+the subgrid this time instead of the larger grid.  The result is a
+pattern that looks like a fish to me (see quilt square in the top
+left).  Because I built the abstract drawing functions, I simply have
+to take care of the four directional possibilities and let the drawing
+functions more fundamental handle the work.
+
+*** Future plans: toward Patchwerk 1.0.0
+The project is in need of a major refactoring session, when I can find
+the time.  I developed it in a single monolithic Clojure file for ease
+of testing in the REPL.  It will be easier to maintain and understand
+if I separate out the distinct functionalities into their own
+namespaces.  The ones that come to mind are =patchwerk.grid= to handle
+the generation of the grid, =patchwerk.patterns= to manage the drawing
+functions, and =patchwerk.util= to house the helper functions.  I'd
+also like to make it clear which functions use the =quil.core=
+namespace instead of using =:refer :all=.
+
+There is also [[https://github.com/quil/quil/wiki/Functional-mode-(fun-mode)][some interesting new functional middleware for Quil]].  It
+provides a framework for you to separate out the mutable state from
+your Quil functions so that you avoid side effects and can program
+pure functions, in Processing's typically imperative syntax.  To get
+this up and running, I imagine that I will have to represent the pixel
+grid in the =state= map.
+
+Eventually, and this is beyond the scope of 1.0.0, I'm intrigued by
+the possibility of [[https://github.com/quil/quil/wiki/ClojureScript][porting this code over to Clojurescript]] and
+creating a web-based version of the application.
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
 categories:
 - analysis
@@ -2522,32 +2635,6 @@ out it wasn't. But how could you make such an puzzle?
 [[http://www.big-robot.com/2012/07/02/procedural-british-countryside-generation/]]
 
 [[http://forum.unity3d.com/threads/68807-Infinite-Terrain-Free-Project-Source]]
-
-
-* Sharing philosophy
-
-[[http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code][This interview]] with Sam Aaron.
-
-
-#+BEGIN_QUOTE
-
-We believe that most value in the world comes through sharing, and
-that music is no exception. One of the benefits of sharing is that it
-makes learning much easier. For example, we often hear amazing sounds
-on albums and wonder how they were made. However, musicians rarely
-share their production methods. We release all the software we write,
-which includes our synthesiser designs, interaction abstractions, and
-compositional structures, under an open source license, and we
-distribute it to everyone through GitHub. This makes it free and easy
-for anybody to copy and recreate any aspect of our work. For example,
-when one of our fans is interested in the sound of one of the synths
-we're using, they can go to GitHub and download the synth design as
-text. They can email it to their friends, read it, study it, copy it,
-modify it and run it to recreate the exact sound.
-
-#+END_QUOTE
-
-- Sam Aaron
 * Shaders Primer
 [[http://notes.underscorediscovery.com/shaders-a-primer/]]
 * Simple Mind-reading Machine in Unity JavaScript
@@ -4311,13 +4398,30 @@ another really cool gamejam slip under the radar.
 
 ** Procjam submission
 
-** Procjam follow-up
+** Procjam comedown
+- procjam
+- procedural generation
+- game
+- design
+- mechanics
+
 Now that two weeks have passed (a geologic era in internet time), I'm
-ready to look back on the #procjam talks and the entries to the jam
-that caught my eye.  I've been very busy lately working on my own
-submissions INSceptahdeckwu and Patchwerk, among other commitments, so
+ready begin to look back on the [[https://twitter.com/hashtag/procjam][#procjam]] talks and the entries to the
+jam that caught my eye.  I've been very busy lately working on my own
+submissions [[http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/][INSceptahdeckwu]] and [[http://zerosalife.github.io/blog/2014/11/15/patchwerk/][Patchwerk]], among other commitments, so
 this is by no means an exhaustive look at everything in #procjam.
 
+<!--more-->
+
+Since I actually have no time at all to write a full retrospective,
+I'll have to be brief.  This post will have to serve as a collection
+of links and notes until I get a chance to look back in detail.  It's
+by no means complete, as I'm still looking over all of the great
+entries to #procjam.  I enjoyed the interactions with the speakers and
+participants.  Unfortunately other commitments may occupy my time
+through the end of the year, so don't worry if the blogging is
+intermittent.  I'll revisit the #procjam talks and the submissions
+when I find time.
 
 *** Great ideas
 [[https://twitter.com/PNJeffries/status/531592288733261824]]
@@ -4326,12 +4430,37 @@ this is by no means an exhaustive look at everything in #procjam.
 
 [[https://twitter.com/mtthwcmpbll/status/527881936178778113]]
 
-Good Tutorials
+[[https://twitter.com/DragonXVI/status/531078933161476096/photo/1]]
+
+[[https://twitter.com/TomNullpointer/status/531108417096916992]]
+
+[[http://chrismwaite.github.io/procjam/]]
+
+[[https://github.com/chrismwaite/procjam/blob/gh-pages/app.js]]
+
+[[http://renderingpipeline.com/2013/01/adding-analog-inputs-to-your-graphics-app/]]
+
+[[https://github.com/keijiro/unity-midi-input]]
+
+[[http://cgaudino.itch.io/tailgunner]]
+
+[[https://github.com/civilframe/node-spacegame-ship-gen]]
+
+[[http://jctwood.itch.io/dungen]]
+
+*** Good tutorials
+Some tutorials I came across during the jam:
+
 [[http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content%3Dbuffera3b27&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer][http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content=buffera3b27&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer]]
 
 [[https://twitter.com/alexjc/status/531077005815869440]]
 
+[[http://samatkins.co.uk/blog/2014/11/08/procjam-procedural-building-generation/]]
+
+
 *** Talks
+Here are my notes on the talks that I had a chance to see.  In lieu of
+writing anything up, I'll post them here for now.
 
 **** Overall themes
 - Meaning over randomness
@@ -4344,13 +4473,13 @@ Good Tutorials
     the entrance of new bits of history.  Books are populated in
     places where it makes sense for them to turn up.
   - Top-down (designer first) is easier than bottom-up (player first;
-    shout out to @gillianmsmith for this formulation).  Callbacks?
+    shout out to [[https://twitter.com/gillianmsmith][@gillianmsmith]] for this formulation).  Callbacks?
     How to percolate up from lower elements on tree?
 - Storytelling as divination
 - NanoGenMo
 - Flow in procedural generation
   - Meaning, codifying design principlse
-  - Art of Game Design Jesse Schell
+  - Art of Game Design by Jesse Schell
   - a feeling of complete and energized focus in an activity, with a
     high level of enjoyment and fulfillment
     - clear goals
@@ -4368,16 +4497,16 @@ Good Tutorials
     - Lock and key
     - Metazelda calculates difficulty number for each room from
       desired flow curve.
-    - Love @tcoxon 's thoughts on less backtracking.  Algorithmically
+    - Love [[https://github.com/tcoxon][@tcoxon]] 's thoughts on less backtracking.  Algorithmically
       respecting players' time.
-  - Gamasutra toni sala
-- Emotion and interactivity expressivity
+  - Gamasutra Toni Sala
+- Emotion and interactivity -- expressivity
   - Workflow, ease of adjustment can be good for designer and exposing
     the same tools to the player can be fun
 
-*** Itch.io
-It looks like most of the entries are gathered on a #procjam itch.io
-page.  I have no experience with itch.io, but I think setting up an
+*** itch.io
+It looks like most of the entries are gathered on a [[http://itch.io/jam/procjam][#procjam itch.io
+page]].  I have no experience with [[http://itch.io/][itch.io]], but I think setting up an
 account and exploring what itch.io has to offer couldn't hurt.
 
 * Gamy Sprite Generator
@@ -4424,6 +4553,8 @@ pleasure, this dopamine signal tells your brain something like, “Pay
 attention, this is an important experience that is worth
 remembering.”"
 
+** Characteristic of addiction
+
 * Why do we play games?
 [[http://www.gamasutra.com/blogs/FabianFischer/20141104/229394/Why_do_we_really_play.php?utm_content%3Dbufferda748&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer][http://www.gamasutra.com/blogs/FabianFischer/20141104/229394/Why_do_we_really_play.php?utm_content=bufferda748&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer]]
 
@@ -4436,115 +4567,44 @@ Focus is no longer on average damage per second.  You can focus on
 tactics like maximizing cool downs, or usign situational abilities
 (based on position, enemy attack phase, enemy health, etc.).
 
-* Patchwerk
-Announcing Patchwerk: a quilt pattern generator.  #procjam
 
-- procjam
-- Clojure
-- Quil
+* Sharing philosophy
 
-** Procjam updates
-I've spent the week at a couple of major international conferences
-sponsored to some degree by old dead-tree journals.  I was struck,
-following last weekends' [[https://twitter.com/search?q%3Dprocjam][#procjam]] [[http://www.twitch.tv/procjam][talks]], by the lack of openness.
-None of these talks are going to be made freely available.
-Photography and recording is actively discouraged.  The official
-conference hashtags, when provided, were silent or only used by those
-in attendance.  While this exclusivity may generate profits for the
-aforementioned dead-tree journals and give a leg up to those fortunate
-enough to be able to attend these conferences, I find it ethically
-reprehensible in the 21st century, given the tools that we have
-available.
-
-I'd like to once again thank [[https://twitter.com/mtrc][@mtrc]] for hosting /and streaming/
-#procjam.  Because conference was made freely available, I was able to
-interact with the attendees in a way that would be impossible if I was
-trying to divine through twitter what was going on behind closed
-doors.  I think this kind of openness can only generate more interest
-and ideas, regardless of the field of study.
-
-** Patchwerk
-A [[https://github.com/quil/quil][Quil]] sketch designed to generate patterns for quilts.  The code is
-[[https://github.com/zerosalife/patchwerk][available on github]].
-
-[[https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png][{% img center https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png %}]]
-
-<!--more-->
-
-** What is Quil?
-Quil is a port of [[http://processing.org][Processing]] to [[http://clojure.org/][Clojure]].
-
-** Motivation
-When I came across some interesting pictures of quilts, I was struck
-by the regularity of the shapes used to construct them.  A quilt is
-simply a grid of squares containing some pattern of simple shapes.  I
-thought it would be interesting to have an algorithm generate the grid
-(what I guess quilters probably call a pattern), so I set out to build
-some functions in Quil to draw a few simple shapes that I identified
-in the squares of the quilts and then to randomly draw them in a grid.
-
-** How to model a quilt
-Using the fundamental assumption I already stated: a quilt is just a
-grid of squares.  My algorithm defines a =grid-width= and
-=grid-height= along with a =square-size= in pixels that determine the
-overall size of the quilt pattern to generate.  This allows you to
-generate an arbitrary number of quilt squares of a certain size.
-
-Each square contains a subgrid with a defined =sub-grid-width= and
-=sub-grid-height=.  In retrospect, it would probably be better to
-define one parameter because if the dimensions are not square,
-everything will be screwed up.
-
-I then define several basic drawing functions to fill the squares of
-the grid.  The procedural generation's =draw= algorithm knows about
-each of the drawing functions, called =pattern-funcs=, and picks one
-of the =patterns= to draw each square of the grid.
+[[http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code][This interview]] with Sam Aaron.
 
 
-** The drawing functions
+#+BEGIN_QUOTE
 
-The primary elements of the quilt squares that I wanted to replicate
-were large squares, smaller checkers, triangles, and a mixed pattern
-of small triangles with a square that I called "fish".
+We believe that most value in the world comes through sharing, and
+that music is no exception. One of the benefits of sharing is that it
+makes learning much easier. For example, we often hear amazing sounds
+on albums and wonder how they were made. However, musicians rarely
+share their production methods. We release all the software we write,
+which includes our synthesiser designs, interaction abstractions, and
+compositional structures, under an open source license, and we
+distribute it to everyone through GitHub. This makes it free and easy
+for anybody to copy and recreate any aspect of our work. For example,
+when one of our fans is interested in the sound of one of the synths
+we're using, they can go to GitHub and download the synth design as
+text. They can email it to their friends, read it, study it, copy it,
+modify it and run it to recreate the exact sound.
 
-The squares (see the square second left from the top right) and the
-smaller checkers (see quilt square fourth down from the top left) use
-the same drawing function.  However, they differ in that they utilize
-different helper functions return the correctly sized vertices and
-support multiple calls for the smaller checkers.
+#+END_QUOTE
 
-The triangles (see square in the top right) use a lookup table,
-=triangle-lookup-table=, to store information about the appropriate
-"legs" for a triangle with a point in a given corner.  By using a
-common syntax for the vertices, the =draw-triangle= algorithm can
-share the vertex lookup algorithm with the square routines.
+- Sam Aaron
 
-Then the culmination of my dastardly plan involves marrying a square
-from the smaller checker function with flanking triangles, based on
-the subgrid this time instead of the larger grid.  The result is a
-pattern that looks like a fish to me (see quilt square in the top
-left).  Because I built the abstract drawing functions, I simply have
-to take care of the four directional possibilities and let the drawing
-functions more fundamental handle the work.
+* Moon Hunters Kickstarter retrospective
+Pie charts are not very helpful.  Bar charts are easier to read. So
+I'm going to try to reverse engineer a pie chart from this article.
 
-** Future plans: toward Patchwerk 1.0.0
-The project is in need of a major refactoring session, when I can find
-the time.  I developed it in a single monolithic Clojure file for ease
-of testing in the REPL.  It will be easier to maintain and understand
-if I separate out the distinct functionalities into their own
-namespaces.  The ones that come to mind are =patchwerk.grid= to handle
-the generation of the grid, =patchwerk.patterns= to manage the drawing
-functions, and =patchwerk.util= to house the helper functions.  I'd
-also like to make it clear which functions use the =quil.core=
-namespace instead of using =:refer :all=.
+- Fees & Taxes
+- Programming
+- Art & Design
+- Backer Rewards
+- Audio
+- Square Enix Collective
 
-There is also [[https://github.com/quil/quil/wiki/Functional-mode-(fun-mode)][some interesting new functional middleware for Quil]].  It
-provides a framework for you to separate out the mutable state from
-your Quil functions so that you avoid side effects and can program
-pure functions, in Processing's typically imperative syntax.  To get
-this up and running, I imagine that I will have to represent the pixel
-grid in the =state= map.
-
-Eventually, and this is beyond the scope of 1.0.0, I'm intrigued by
-the possibility of [[https://github.com/quil/quil/wiki/ClojureScript][porting this code over to Clojurescript]] and
-creating a web-based version of the application.
+The top two take up about 50% of the pie.  Let's estimate Fees and
+Taxes at 30% and Programming at 20%.  Art and design and backer
+rewards are probably even at 17.5% each.  Audio is probably 10% and
+SEC gets 5%.
