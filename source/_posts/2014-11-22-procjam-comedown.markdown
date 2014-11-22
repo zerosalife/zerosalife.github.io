@@ -70,10 +70,10 @@ Here are my notes on the talks that I had a chance to see.  In lieu of writing a
         shout out to [@gillianmsmith](https://twitter.com/gillianmsmith) for this formulation).  Callbacks?
         How to percolate up from lower elements on tree?
 -   Storytelling as divination
--   NanoGenMo
+-   [NaNoGenMo](https://github.com/dariusk/NaNoGenMo)
 -   Flow in procedural generation
     -   Meaning, codifying design principlse
-    -   Art of Game Design by Jesse Schell
+    -   [Art of Game Design by Jesse Schell](http://artofgamedesign.com/)
     -   a feeling of complete and energized focus in an activity, with a
         high level of enjoyment and fulfillment
         -   clear goals
@@ -89,10 +89,9 @@ Here are my notes on the talks that I had a chance to see.  In lieu of writing a
             boredom spawn more enemies.  Requires some kind of metric
     -   Static
         -   Lock and key
-        -   Metazelda calculates difficulty number for each room from
-            desired flow curve.
+        -   [Metazelda](https://github.com/tcoxon/metazelda) calculates difficulty number for each room from desired flow curve.
         -   Love [@tcoxon](https://github.com/tcoxon) 's thoughts on less backtracking.  Algorithmically respecting players' time.
-    -   Gamasutra Toni Sala
+    -   [Gamasutra Toni Sala](http://www.gamasutra.com/blogs/ToniSala/20131208/206535/Game_Design_Theory_Applied_The_Flow_Channel.php)
 -   Emotion and interactivity &#x2013; expressivity
     -   Workflow, ease of adjustment can be good for designer and exposing
         the same tools to the player can be fun
