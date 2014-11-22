@@ -45,7 +45,7 @@ Since I actually have no time at all to write a full retrospective, I'll have to
 
 Some tutorials I came across during the jam:
 
-[<http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content=buffera3b27&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer>](http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content%3Dbuffera3b27&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer)
+<http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started>
 
 <https://twitter.com/alexjc/status/531077005815869440>
 
