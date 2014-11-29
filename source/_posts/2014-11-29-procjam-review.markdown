@@ -45,7 +45,7 @@ I think I'm most interested in the literal realization of the procedural generat
 -   [Forska](http://tfurmanskigmailcom.itch.io/forska-web-version)
     -   Great shader.  Generate some *[Myst](http://wikipedia.com/wiki/Myst)*-like puzzles and you've got a game, here.
 -   [Infinity Explorer](http://8-bit-ape.itch.io/infinity-explorer)
-    -   Reminds me of *[Magic Carpet](http://en.wikipedia.org/wiki/Magic_Carpet_(video_game))*.
+    -   Reminds me of *[Magic Carpet](http://en.wikipedia.org/wiki/Magic_Carpet_%28video_game%29)*.
 -   [DUNGEN star](http://jctwood.itch.io/dungen)
     -   Print and play games are great.
 
