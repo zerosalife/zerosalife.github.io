@@ -4398,7 +4398,7 @@ another really cool gamejam slip under the radar.
 
 ** Procjam submission
 
-** Procjam comedown
+* Procjam comedown
 - procjam
 - procedural generation
 - game
@@ -4423,7 +4423,7 @@ through the end of the year, so don't worry if the blogging is
 intermittent.  I'll revisit the #procjam talks and the submissions
 when I find time.
 
-*** Great ideas
+** Great ideas
 [[https://twitter.com/PNJeffries/status/531592288733261824]]
 
 [[https://twitter.com/redblobgames/status/527485845616340992]]
@@ -4448,7 +4448,7 @@ when I find time.
 
 [[http://jctwood.itch.io/dungen]]
 
-*** Good tutorials
+** Good tutorials
 Some tutorials I came across during the jam:
 
 [[http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content%3Dbuffera3b27&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer][http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content=buffera3b27&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer]]
@@ -4458,11 +4458,11 @@ Some tutorials I came across during the jam:
 [[http://samatkins.co.uk/blog/2014/11/08/procjam-procedural-building-generation/]]
 
 
-*** Talks
+** Talks
 Here are my notes on the talks that I had a chance to see.  In lieu of
 writing anything up, I'll post them here for now.
 
-**** Overall themes
+*** Overall themes
 - Meaning over randomness
 - Scale and direction
   - Layering
@@ -4504,10 +4504,127 @@ writing anything up, I'll post them here for now.
   - Workflow, ease of adjustment can be good for designer and exposing
     the same tools to the player can be fun
 
-*** itch.io
+** itch.io
 It looks like most of the entries are gathered on a [[http://itch.io/jam/procjam][#procjam itch.io
 page]].  I have no experience with [[http://itch.io/][itch.io]], but I think setting up an
 account and exploring what itch.io has to offer couldn't hurt.
+
+* Procjam reviews
+My favorite games from #procjam were DUNGEN by @JctWood and JET/LAG by
+@JakeCataford.  Nodemancer by @nihilocrat was my favorite tool.
+
+- game
+- review
+- procjam
+- design
+- mechanics
+
+Looking through the entries, I could only spend a minute or two with
+each entry.  It helped if the game ran in my browser, so HTML and
+Unity were big.  Here are some of the games that caught my eye.
+
+** The top two
+
+** JET/LAG
+Simple instructions: "Click to move. Kill enemies by bashing them."
+There may be little to /[[http://svblm.itch.io/jet-lag][JET/LAG]]/, but its excellent stylish visuals
+set this entry apart for me.  A CRT-like distortion bends the corners
+of the screen complete with scrolling scan lines, while multi-colored
+text oscillates above a simple square.  The simple square is your
+character battering your way through procedurally generated maze-like
+levels.
+
+There's no fancy art in this game, all the characters are made from
+simple shapes.  But that doesn't stop the graphics from impressing.
+It's clear that [[https://twitter.com/JakeCataford][@JakeCataford]] turned the juice up to 11, and it works.
+The game feels great.
+
+As a "rogue-like like like" you may expect it to be deviously hard,
+and you'd be right.  But the controls are responsive and the enemies
+telegraph their moves, so you feel like you are learning something
+with each death.  [[https://twitter.com/JakeCataford][@JakeCataford]] clearly understands some fundamentals
+of engaging game design and I'm excited to see what's coming up next.
+
+** DUNGEN [star]
+A multi-jam entry for [[http://itch.io/jam/procjam][#procjam]], [[http://itch.io/jam/paper-jam-1][#paperjam]], and [[http://7dfps.com/][#7dfps]] by [[https://twitter.com/JctWood][@jctwood]],
+this first person shooter uses shuffling to generate a dynamic dungeon
+with each play-through.  I like the simplicity of the mechanics
+[[https://twitter.com/JctWood][@jctwood]] has designed.  Stats on a 1-10 scale can be just as
+interesting as stats in the thousands.  There are even multiple skin
+options for the protagonist's hand.  That's more advanced than all
+three /[[http://en.wikipedia.org/wiki/Doom_%2528series%2529][DOOM]]/s.
+
+I think I'm most interested in the literal realization of the
+procedural generation algorithm.  By shuffling the cards the
+procedural generation of the dungeon is clear both to designer and
+player, and this type of randomization has been used for many years in
+many games with standard and nonstandard sets of cards.  I'm
+interested in seeing how this shuffling mechanic, both literal and
+metaphorical, can be leveraged to encourage new avenues of play in the
+future.  I can imagine tuning some aspects of a proc gen algorithm by
+exposing the contents to the player as a deck of cards, both literally
+as is typical in CCGs and other tabletop games and as a metaphor for
+abstraction of systems in a video game.
+
+** Favorite games
+- [[http://svblm.itch.io/jet-lag][JET/LAG]]
+  - Bump or get bumped.  Excellent style and great graphics.  Very
+    juicy!
+- [[http://lissar.itch.io/peregrin][Peregrin]]
+  - Beautiful.
+- [[http://entropyphi.itch.io/nauticalith][Nauticalith]]
+  - Simple, but really conveys a sense of scale.  Adding some mechanic
+    like dynamic wind that affects sailing could put this over the
+    top.
+- [[http://tfurmanskigmailcom.itch.io/forska-web-version][Forska]]
+  - Great shader.  Generate some /Myst/-like puzzles and you've got a
+    game, here.
+- [[http://8-bit-ape.itch.io/infinity-explorer][Infinity Explorer]]
+  - Reminds me of /Magic Carpet/.
+- [[http://jctwood.itch.io/dungen][DUNGEN]]
+  - Print and play games are great.
+
+
+** Favorite generators
+- [[http://nihilocrat.itch.io/nodemancer]]
+  - Interesting.  Will have to look more into it.  Now that I think
+    about it, this one deserves an honorable mention for favorite tool
+    of the jam.  I will revisit it in depth in a later post because the
+    generation algorithm looks like an idea I've batted around in my
+    head.
+- [[http://diaspora-colonies.herokuapp.com/]]
+  - Useful and cool!  Check out [[http://ptychomancer.itch.io/diaspora]]
+    for some more background on this space colony generator.
+- [[http://eduardo.itch.io/procedural-fabrics]]
+  - Clever tiling textures using diagonal lines that really break up
+    the patterns to make it more pleasing to the eye.
+- [[http://ibol17.itch.io/procedural-pixel-monsters]]
+  - Artistic style.  Simple color palette still allow for a variety of
+    expressive monsters. Interested in following up on the
+    procedural tree generation–looks great!
+- [[https://github.com/cutgarnetgames/gaia]]
+  - Beautiful world generator with some source code worth digging
+    into.
+- [[http://gillianms.itch.io/hoopla]]
+  - Really think there's something to explore in pixels-as-stitches
+    graphics.
+- [[http://aerique.itch.io/rocks-bitch]]
+  - The pet rock generator I always wanted!
+- [[http://playcrafts.itch.io/palette-generator]]
+  - Useful.
+- [[http://tccoxon.itch.io/dreamer]]
+  - Weird but very creative and very cool.
+- [[http://itch.io/jam/procjam/rate/14026]]
+  - Great concept, but I need remedial lessons or a tutorial.  One to
+    revisit when I can really dig into it.
+
+** Cool looking Windows games I couldn't play
+- [[http://crabowitz.itch.io/key-geist]]
+  - Reminds me of /Wonderful 101/–a game I haven't played, but
+    probably should.  Something about the aesthetic of dozens of
+    little flocking characters appeals to me.
+- [[http://caseportman.itch.io/riser]]
+  - Looks like it controls well
 
 * Gamy Sprite Generator
 Following along with a [[http://catlikecoding.com/unity/tutorials/noise/][tutorial over at Catlike Coding]] I was inspired
@@ -4608,3 +4725,11 @@ The top two take up about 50% of the pie.  Let's estimate Fees and
 Taxes at 30% and Programming at 20%.  Art and design and backer
 rewards are probably even at 17.5% each.  Audio is probably 10% and
 SEC gets 5%.
+
+* Faith No More
+- game
+
+[[http://www.demigiant.com/games/faithnomore/index.php]]
+
+* 10 questions to focus game design
+[[http://www.metkis.com/]]
