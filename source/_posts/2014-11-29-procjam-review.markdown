@@ -88,5 +88,5 @@ I think I'm most interested in the literal realization of the procedural generat
 
 -   <http://crabowitz.itch.io/key-geist>
     - Reminds me of *[Wonderful 101](http://en.wikipedia.org/wiki/The_Wonderful_101)*–a game I haven't played, but probably should.  Something about the aesthetic of dozens of little flocking characters appeals to me.
-    -   <http://caseportman.itch.io/riser>
+-   <http://caseportman.itch.io/riser>
     -   Looks like it controls well
