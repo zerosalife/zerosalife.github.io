@@ -4,7 +4,7 @@
   <title><![CDATA[Category: review | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/review/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-11-22T14:39:26-05:00</updated>
+  <updated>2014-11-29T17:10:11-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,174 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Procjam review]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/11/29/procjam-review/"/>
+    <updated>2014-11-29T09:33:47-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/11/29/procjam-review</id>
+    <content type="html"><![CDATA[<p>Looking through the entries, I could only spend a minute or two with each entry.  It helped if the game ran in my browser, so HTML and Unity were big.  Here are some of the games that caught my eye.</p>
+
+<!--more-->
+
+
+<h2>The top two</h2>
+
+<h2>JET/LAG</h2>
+
+<p>Simple instructions: &ldquo;Click to move. Kill enemies by bashing them.&rdquo;  There may be little to <em><a href="http://svblm.itch.io/jet-lag">JET/LAG</a></em>, but its excellent stylish visuals set this entry apart for me.  A CRT-like distortion bends the corners of the screen complete with scrolling scan lines, while multi-colored text oscillates above a simple square.  The simple square is your character battering your way through procedurally generated maze-like levels.</p>
+
+<p>There&rsquo;s no fancy art in this game, all the characters are made from simple shapes.  But that doesn&rsquo;t stop the graphics from impressing.  It&rsquo;s clear that <a href="https://twitter.com/JakeCataford">@JakeCataford</a> turned the juice up to 11, and it works.  The game feels great.</p>
+
+<p>As a &ldquo;rogue-like like like&rdquo; you may expect it to be deviously hard, and you&rsquo;d be right.  But the controls are responsive and the enemies telegraph their moves, so you feel like you are learning something with each death.  <a href="https://twitter.com/JakeCataford">@JakeCataford</a> clearly understands some fundamentals of engaging game design and I&rsquo;m excited to see what&rsquo;s coming up next.</p>
+
+<h2>DUNGEN [star]</h2>
+
+<p>A multi-jam entry for <a href="http://itch.io/jam/procjam">#procjam</a>, <a href="http://itch.io/jam/paper-jam-1">#paperjam</a>, and <a href="http://7dfps.com/">#7dfps</a> by <a href="https://twitter.com/JctWood">@jctwood</a>, this first person shooter uses shuffling to generate a dynamic dungeon with each play-through.  I like the simplicity of the mechanics <a href="https://twitter.com/JctWood">@jctwood</a> has designed.  Stats on a 1-10 scale can be just as interesting as stats in the thousands.  There are even multiple skin options for the protagonist&rsquo;s hand.  That&rsquo;s more advanced than all three <em><a href="http://en.wikipedia.org/wiki/Doom_%2528series%2529">DOOM</a></em>s.</p>
+
+<p>I think I&rsquo;m most interested in the literal realization of the procedural generation algorithm.  By shuffling the cards the procedural generation of the dungeon is clear both to designer and player, and this type of randomization has been used for many years in many games with standard and nonstandard sets of cards.  I&rsquo;m interested in seeing how this shuffling mechanic, both literal and metaphorical, can be leveraged to encourage new avenues of play in the future.  I can imagine tuning some aspects of a proc gen algorithm by exposing the contents to the player as a deck of cards, both literally as is typical in CCGs and other tabletop games and as a metaphor for abstraction of systems in a video game.</p>
+
+<h2>Favorite games</h2>
+
+<ul>
+<li><a href="http://svblm.itch.io/jet-lag">JET/LAG</a>
+
+<ul>
+<li>Bump or get bumped.  Excellent style and great graphics.  Very
+juicy!</li>
+</ul>
+</li>
+<li><a href="http://lissar.itch.io/peregrin">Peregrin</a>
+
+<ul>
+<li>Beautiful.</li>
+</ul>
+</li>
+<li><a href="http://entropyphi.itch.io/nauticalith">Nauticalith</a>
+
+<ul>
+<li>Simple, but really conveys a sense of scale.  Adding some mechanic
+like dynamic wind that affects sailing could put this over the
+top.</li>
+</ul>
+</li>
+<li><a href="http://tfurmanskigmailcom.itch.io/forska-web-version">Forska</a>
+
+<ul>
+<li>Great shader.  Generate some <em><a href="http://wikipedia.com/wiki/Myst">Myst</a></em>-like puzzles and you&rsquo;ve got a game, here.</li>
+</ul>
+</li>
+<li><a href="http://8-bit-ape.itch.io/infinity-explorer">Infinity Explorer</a>
+
+<ul>
+<li>Reminds me of <em><a href="http://wikipedia.com/wiki/MagicCarpet">Magic Carpet</a></em>.</li>
+</ul>
+</li>
+<li><a href="http://jctwood.itch.io/dungen">DUNGEN star</a>
+
+<ul>
+<li>Print and play games are great.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Favorite generators</h2>
+
+<ul>
+<li><a href="http://nihilocrat.itch.io/nodemancer">http://nihilocrat.itch.io/nodemancer</a>
+
+<ul>
+<li>Interesting.  Will have to look more into it.  Now that I think
+about it, this one deserves an honorable mention for favorite tool
+of the jam.  I will revisit it in depth in a later post because the
+generation algorithm looks like an idea I&rsquo;ve batted around in my
+head.</li>
+</ul>
+</li>
+<li><a href="http://diaspora-colonies.herokuapp.com/">http://diaspora-colonies.herokuapp.com/</a>
+
+<ul>
+<li>Useful and cool!  Check out <a href="http://ptychomancer.itch.io/diaspora">http://ptychomancer.itch.io/diaspora</a>
+for some more background on this space colony generator.</li>
+</ul>
+</li>
+<li><a href="http://eduardo.itch.io/procedural-fabrics">http://eduardo.itch.io/procedural-fabrics</a>
+
+<ul>
+<li>Clever tiling textures using diagonal lines that really break up
+the patterns to make it more pleasing to the eye.</li>
+</ul>
+</li>
+<li><a href="http://ibol17.itch.io/procedural-pixel-monsters">http://ibol17.itch.io/procedural-pixel-monsters</a>
+
+<ul>
+<li>Artistic style.  Simple color palette still allow for a variety of
+expressive monsters. Interested in following up on the
+procedural tree generation–looks great!</li>
+</ul>
+</li>
+<li><a href="https://github.com/cutgarnetgames/gaia">https://github.com/cutgarnetgames/gaia</a>
+
+<ul>
+<li>Beautiful world generator with some source code worth digging
+into.</li>
+</ul>
+</li>
+<li><a href="http://gillianms.itch.io/hoopla">http://gillianms.itch.io/hoopla</a>
+
+<ul>
+<li>Really think there&rsquo;s something to explore in pixels-as-stitches
+graphics.</li>
+</ul>
+</li>
+<li><a href="http://aerique.itch.io/rocks-bitch">http://aerique.itch.io/rocks-bitch</a>
+
+<ul>
+<li>The pet rock generator I always wanted!</li>
+</ul>
+</li>
+<li><a href="http://playcrafts.itch.io/palette-generator">http://playcrafts.itch.io/palette-generator</a>
+
+<ul>
+<li>Useful.</li>
+</ul>
+</li>
+<li><a href="http://tccoxon.itch.io/dreamer">http://tccoxon.itch.io/dreamer</a>
+
+<ul>
+<li>Weird hybrid between an AI and a text adventure, but very
+  creative and very cool.</li>
+</ul>
+</li>
+<li><a href="http://itch.io/jam/procjam/rate/14026">http://itch.io/jam/procjam/rate/14026</a>
+
+<ul>
+<li>Great concept, but I need remedial lessons or a tutorial.  One to
+revisit when I can really dig into it.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Cool looking Windows games I couldn&rsquo;t play</h2>
+
+<ul>
+<li><a href="http://crabowitz.itch.io/key-geist">http://crabowitz.itch.io/key-geist</a>
+
+<ul>
+<li>Reminds me of <em><a href="http://en.wikipedia.org/wiki/The_Wonderful_101">Wonderful 101</a></em>–a game I haven&rsquo;t played, but probably should.  Something about the aesthetic of dozens of little flocking characters appeals to me.</li>
+<li><a href="http://caseportman.itch.io/riser">http://caseportman.itch.io/riser</a></li>
+<li>Looks like it controls well</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[One Tap Quest: a pachinko RPG]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/"/>
-    <updated>2014-08-16T11:39:34-04:00</updated>
+    <updated>2014-08-16T10:39:34-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg</id>
     <content type="html"><![CDATA[<p>I recently played <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest</a></em>, a game in which you tap to place an RPG character who marches upward, gaining levels by bumping into enemies, to tackle bigger and badder foes.  What&rsquo;s interesting to me, if you&rsquo;ll bear with me, is that this is a game that amounts to a pachinko RPG.  I&rsquo;ll start by talking about what I liked about <em>One Tap Quest</em>.  <a href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/">Next week</a>, I&rsquo;ll get into what I mean by a pachinko RPG.</p>
 
@@ -37,7 +202,7 @@
   <entry>
     <title type="html"><![CDATA[Space Is Read]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
-    <updated>2014-07-26T12:08:44-04:00</updated>
+    <updated>2014-07-26T11:08:44-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
     <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
 
@@ -59,7 +224,7 @@
   <entry>
     <title type="html"><![CDATA[ICE ICE Baby]]></title>
     <link href="http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/"/>
-    <updated>2014-03-22T10:17:31-04:00</updated>
+    <updated>2014-03-22T09:17:31-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby</id>
     <content type="html"><![CDATA[<p><a href="http://www.thegia.com/author/avestal/">Andrew Vestal</a> of <a href="http://www.thegia.com/">the GIA</a> wrote a <a href="http://twinery.org/">Twine</a> game for <a href="http://itch.io/jam/cyberpunk-jam">#cyberpunkjam</a> called <a href="http://www.thegia.com/avestal/iceicebaby.html">ICE ICE Baby</a>.</p>
 
@@ -74,7 +239,7 @@
   <entry>
     <title type="html"><![CDATA[Some thoughts on Attack of the Friday Monsters]]></title>
     <link href="http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/"/>
-    <updated>2014-02-01T09:32:40-05:00</updated>
+    <updated>2014-02-01T08:32:40-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters</id>
     <content type="html"><![CDATA[<p>It&rsquo;s hard to say anything new about Attack of the Friday Monsters, a
 game that splashed on the scene months ago.  The work of its creator
