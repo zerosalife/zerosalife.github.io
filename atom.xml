@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-11-22T14:39:26-05:00</updated>
+  <updated>2014-11-29T17:10:11-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,174 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Procjam review]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/11/29/procjam-review/"/>
+    <updated>2014-11-29T09:33:47-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/11/29/procjam-review</id>
+    <content type="html"><![CDATA[<p>Looking through the entries, I could only spend a minute or two with each entry.  It helped if the game ran in my browser, so HTML and Unity were big.  Here are some of the games that caught my eye.</p>
+
+<!--more-->
+
+
+<h2>The top two</h2>
+
+<h2>JET/LAG</h2>
+
+<p>Simple instructions: &ldquo;Click to move. Kill enemies by bashing them.&rdquo;  There may be little to <em><a href="http://svblm.itch.io/jet-lag">JET/LAG</a></em>, but its excellent stylish visuals set this entry apart for me.  A CRT-like distortion bends the corners of the screen complete with scrolling scan lines, while multi-colored text oscillates above a simple square.  The simple square is your character battering your way through procedurally generated maze-like levels.</p>
+
+<p>There&rsquo;s no fancy art in this game, all the characters are made from simple shapes.  But that doesn&rsquo;t stop the graphics from impressing.  It&rsquo;s clear that <a href="https://twitter.com/JakeCataford">@JakeCataford</a> turned the juice up to 11, and it works.  The game feels great.</p>
+
+<p>As a &ldquo;rogue-like like like&rdquo; you may expect it to be deviously hard, and you&rsquo;d be right.  But the controls are responsive and the enemies telegraph their moves, so you feel like you are learning something with each death.  <a href="https://twitter.com/JakeCataford">@JakeCataford</a> clearly understands some fundamentals of engaging game design and I&rsquo;m excited to see what&rsquo;s coming up next.</p>
+
+<h2>DUNGEN [star]</h2>
+
+<p>A multi-jam entry for <a href="http://itch.io/jam/procjam">#procjam</a>, <a href="http://itch.io/jam/paper-jam-1">#paperjam</a>, and <a href="http://7dfps.com/">#7dfps</a> by <a href="https://twitter.com/JctWood">@jctwood</a>, this first person shooter uses shuffling to generate a dynamic dungeon with each play-through.  I like the simplicity of the mechanics <a href="https://twitter.com/JctWood">@jctwood</a> has designed.  Stats on a 1-10 scale can be just as interesting as stats in the thousands.  There are even multiple skin options for the protagonist&rsquo;s hand.  That&rsquo;s more advanced than all three <em><a href="http://en.wikipedia.org/wiki/Doom_%2528series%2529">DOOM</a></em>s.</p>
+
+<p>I think I&rsquo;m most interested in the literal realization of the procedural generation algorithm.  By shuffling the cards the procedural generation of the dungeon is clear both to designer and player, and this type of randomization has been used for many years in many games with standard and nonstandard sets of cards.  I&rsquo;m interested in seeing how this shuffling mechanic, both literal and metaphorical, can be leveraged to encourage new avenues of play in the future.  I can imagine tuning some aspects of a proc gen algorithm by exposing the contents to the player as a deck of cards, both literally as is typical in CCGs and other tabletop games and as a metaphor for abstraction of systems in a video game.</p>
+
+<h2>Favorite games</h2>
+
+<ul>
+<li><a href="http://svblm.itch.io/jet-lag">JET/LAG</a>
+
+<ul>
+<li>Bump or get bumped.  Excellent style and great graphics.  Very
+juicy!</li>
+</ul>
+</li>
+<li><a href="http://lissar.itch.io/peregrin">Peregrin</a>
+
+<ul>
+<li>Beautiful.</li>
+</ul>
+</li>
+<li><a href="http://entropyphi.itch.io/nauticalith">Nauticalith</a>
+
+<ul>
+<li>Simple, but really conveys a sense of scale.  Adding some mechanic
+like dynamic wind that affects sailing could put this over the
+top.</li>
+</ul>
+</li>
+<li><a href="http://tfurmanskigmailcom.itch.io/forska-web-version">Forska</a>
+
+<ul>
+<li>Great shader.  Generate some <em><a href="http://wikipedia.com/wiki/Myst">Myst</a></em>-like puzzles and you&rsquo;ve got a game, here.</li>
+</ul>
+</li>
+<li><a href="http://8-bit-ape.itch.io/infinity-explorer">Infinity Explorer</a>
+
+<ul>
+<li>Reminds me of <em><a href="http://wikipedia.com/wiki/MagicCarpet">Magic Carpet</a></em>.</li>
+</ul>
+</li>
+<li><a href="http://jctwood.itch.io/dungen">DUNGEN star</a>
+
+<ul>
+<li>Print and play games are great.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Favorite generators</h2>
+
+<ul>
+<li><a href="http://nihilocrat.itch.io/nodemancer">http://nihilocrat.itch.io/nodemancer</a>
+
+<ul>
+<li>Interesting.  Will have to look more into it.  Now that I think
+about it, this one deserves an honorable mention for favorite tool
+of the jam.  I will revisit it in depth in a later post because the
+generation algorithm looks like an idea I&rsquo;ve batted around in my
+head.</li>
+</ul>
+</li>
+<li><a href="http://diaspora-colonies.herokuapp.com/">http://diaspora-colonies.herokuapp.com/</a>
+
+<ul>
+<li>Useful and cool!  Check out <a href="http://ptychomancer.itch.io/diaspora">http://ptychomancer.itch.io/diaspora</a>
+for some more background on this space colony generator.</li>
+</ul>
+</li>
+<li><a href="http://eduardo.itch.io/procedural-fabrics">http://eduardo.itch.io/procedural-fabrics</a>
+
+<ul>
+<li>Clever tiling textures using diagonal lines that really break up
+the patterns to make it more pleasing to the eye.</li>
+</ul>
+</li>
+<li><a href="http://ibol17.itch.io/procedural-pixel-monsters">http://ibol17.itch.io/procedural-pixel-monsters</a>
+
+<ul>
+<li>Artistic style.  Simple color palette still allow for a variety of
+expressive monsters. Interested in following up on the
+procedural tree generation–looks great!</li>
+</ul>
+</li>
+<li><a href="https://github.com/cutgarnetgames/gaia">https://github.com/cutgarnetgames/gaia</a>
+
+<ul>
+<li>Beautiful world generator with some source code worth digging
+into.</li>
+</ul>
+</li>
+<li><a href="http://gillianms.itch.io/hoopla">http://gillianms.itch.io/hoopla</a>
+
+<ul>
+<li>Really think there&rsquo;s something to explore in pixels-as-stitches
+graphics.</li>
+</ul>
+</li>
+<li><a href="http://aerique.itch.io/rocks-bitch">http://aerique.itch.io/rocks-bitch</a>
+
+<ul>
+<li>The pet rock generator I always wanted!</li>
+</ul>
+</li>
+<li><a href="http://playcrafts.itch.io/palette-generator">http://playcrafts.itch.io/palette-generator</a>
+
+<ul>
+<li>Useful.</li>
+</ul>
+</li>
+<li><a href="http://tccoxon.itch.io/dreamer">http://tccoxon.itch.io/dreamer</a>
+
+<ul>
+<li>Weird hybrid between an AI and a text adventure, but very
+  creative and very cool.</li>
+</ul>
+</li>
+<li><a href="http://itch.io/jam/procjam/rate/14026">http://itch.io/jam/procjam/rate/14026</a>
+
+<ul>
+<li>Great concept, but I need remedial lessons or a tutorial.  One to
+revisit when I can really dig into it.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Cool looking Windows games I couldn&rsquo;t play</h2>
+
+<ul>
+<li><a href="http://crabowitz.itch.io/key-geist">http://crabowitz.itch.io/key-geist</a>
+
+<ul>
+<li>Reminds me of <em><a href="http://en.wikipedia.org/wiki/The_Wonderful_101">Wonderful 101</a></em>–a game I haven&rsquo;t played, but probably should.  Something about the aesthetic of dozens of little flocking characters appeals to me.</li>
+<li><a href="http://caseportman.itch.io/riser">http://caseportman.itch.io/riser</a></li>
+<li>Looks like it controls well</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[procjam comedown]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/22/procjam-comedown/"/>
-    <updated>2014-11-22T14:26:16-05:00</updated>
+    <updated>2014-11-22T13:26:16-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/22/procjam-comedown</id>
     <content type="html"><![CDATA[<p>Now that two weeks have passed (a geologic era in internet time), I&rsquo;m ready begin to look back on the <a href="https://twitter.com/hashtag/procjam">#procjam</a> talks and the entries to the jam that caught my eye.  I&rsquo;ve been very busy lately working on my own submissions <a href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/">INSceptahdeckwu</a> and <a href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/">Patchwerk</a>, among other commitments, so this is by no means an exhaustive look at everything in #procjam.</p>
 
@@ -146,7 +311,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[Patchwerk]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/"/>
-    <updated>2014-11-15T08:22:18-05:00</updated>
+    <updated>2014-11-15T07:22:18-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/15/patchwerk</id>
     <content type="html"><![CDATA[<h2>Procjam updates</h2>
 
@@ -202,7 +367,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[INSceptahdeckWU]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/"/>
-    <updated>2014-11-08T09:28:39-05:00</updated>
+    <updated>2014-11-08T08:28:39-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu</id>
     <content type="html"><![CDATA[<h2>#procjam updates</h2>
 
@@ -276,7 +441,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[Make things that make things: #procjam 2014]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/"/>
-    <updated>2014-11-01T13:48:46-04:00</updated>
+    <updated>2014-11-01T12:48:46-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014</id>
     <content type="html"><![CDATA[<p>I&rsquo;m thrilled to announce that I&rsquo;m going to participate in the <a href="http://itch.io/jam/procjam">upcoming procedural game jam called #procjam</a>.  #procjam is a global game jam and a live-streamed conference in London focused on making things that make things. You can keep up to date by following the jam tumblr <a href="http://procjam.tumblr.com/">procjam.tumblr.com</a>. There&rsquo;s already a <a href="http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started">handy list of procedural generation tutorials available on the tumblug</a>.</p>
 
@@ -299,7 +464,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[Play balance for party vs in-depth fighting games]]></title>
     <link href="http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/"/>
-    <updated>2014-10-18T11:33:31-04:00</updated>
+    <updated>2014-10-18T10:33:31-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games</id>
     <content type="html"><![CDATA[<p>Here I&rsquo;m drawing a comparison between games that are subjectively perceived as party games and games that are more in-depth.  I&rsquo;m avoiding using loaded terms like casual and hardcore, but I think the distinction is likely the same.  Both types of games can be complex, but subtle balancing issues can affect the subjective sense of fun when playing these games.</p>
 
@@ -353,7 +518,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[Betting in Super Smash Bros. spectator mode]]></title>
     <link href="http://zerosalife.github.io/blog/2014/10/11/betting-in-super-smash-bros-spectator-mode/"/>
-    <updated>2014-10-11T09:51:13-04:00</updated>
+    <updated>2014-10-11T08:51:13-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/10/11/betting-in-super-smash-bros-spectator-mode</id>
     <content type="html"><![CDATA[<p>Today I&rsquo;d like to look at how to bet in the spectator mode of <em>Super Smash Bros. on 3DS</em>.  I&rsquo;m surprised by how much I enjoy /Super Smash Bros.&lsquo;/ spectator mode.  It adds the thrill of a horse race alongside an already great game.</p>
 
@@ -423,7 +588,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[Do ethics matter in game design?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design/"/>
-    <updated>2014-10-04T12:38:33-04:00</updated>
+    <updated>2014-10-04T11:38:33-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design</id>
     <content type="html"><![CDATA[<p>I reached out on twitter in a somewhat misguided appeal to #gamedev, asking whether devs consider ethics when designing games.  Apparently there is so much traffic on #gamedev that any tweet will be lost in a deluge of announcements and automated bot retweets.  Oh well, I thought, I&rsquo;ll go it alone.  Given the <a href="http://bits.blogs.nytimes.com/2014/10/02/intel-pulls-ads-from-site-after-gamergate-boycott/">recent tone in the communities surrounding games</a>, I feel the need to examine this question: <strong>Do ethics matter in game design?</strong></p>
 
@@ -475,7 +640,7 @@ and practically crucial.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Text encoding: further improvements to using git for Unity projects]]></title>
     <link href="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/"/>
-    <updated>2014-09-27T10:51:41-04:00</updated>
+    <updated>2014-09-27T09:51:41-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects</id>
     <content type="html"><![CDATA[<p>Brief note here.  Following a Summer of travel and visitors, posts should be returning to a more regular schedule soon.  It&rsquo;s great when I can post here regularly, but I&rsquo;m not going to get bent out of shape when I have other commitments.  So, if there are unannounced, prolonged absences, you can assume that it has something to do with spending my weekends traveling or socializing, which is undoubtedly a good thing.</p>
 
@@ -510,7 +675,7 @@ and practically crucial.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Automating blog deployment with Octopress]]></title>
     <link href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/"/>
-    <updated>2014-09-06T12:27:35-04:00</updated>
+    <updated>2014-09-06T11:27:35-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress</id>
     <content type="html"><![CDATA[<p>Based on Kevin van Zonneveld&rsquo;s (<a href="https://twitter.com/kvz">@kvz</a>) <a href="http://kvz.io/blog/2012/09/25/blog-with-octopress/">article</a> on setting up Octopress,
 I&rsquo;ve adapted a <code>Makefile</code> to make building my blog easier&#x2026; with
@@ -561,7 +726,7 @@ Removing the <code>%</code> allowed me to run <code>make blog</code> as expected
   <entry>
     <title type="html"><![CDATA[Designing a pachinko RPG]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/"/>
-    <updated>2014-08-23T11:48:48-04:00</updated>
+    <updated>2014-08-23T10:48:48-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg</id>
     <content type="html"><![CDATA[<p>What would make a pachinko RPG?  <a href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">Last week</a>, I wrote about how I&rsquo;m sort of enamored with <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest&rsquo;s</a></em> tap-and-let-them-go interaction, which I think mirrors the play-style of pachinko.  In pachinko, you have some control over launching the little metal balls, but once they&rsquo;re in play, they&rsquo;re on their own.  This mechanism stands in contrast to pinball, where you interact with a single or multiple pinballs with the paddles, and cue sports (especially bumper pool), where you launch a billiard ball repeatedly with a cue.</p>
 
@@ -592,7 +757,7 @@ Removing the <code>%</code> allowed me to run <code>make blog</code> as expected
   <entry>
     <title type="html"><![CDATA[One Tap Quest: a pachinko RPG]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/"/>
-    <updated>2014-08-16T11:39:34-04:00</updated>
+    <updated>2014-08-16T10:39:34-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg</id>
     <content type="html"><![CDATA[<p>I recently played <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest</a></em>, a game in which you tap to place an RPG character who marches upward, gaining levels by bumping into enemies, to tackle bigger and badder foes.  What&rsquo;s interesting to me, if you&rsquo;ll bear with me, is that this is a game that amounts to a pachinko RPG.  I&rsquo;ll start by talking about what I liked about <em>One Tap Quest</em>.  <a href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/">Next week</a>, I&rsquo;ll get into what I mean by a pachinko RPG.</p>
 
@@ -613,7 +778,7 @@ Removing the <code>%</code> allowed me to run <code>make blog</code> as expected
   <entry>
     <title type="html"><![CDATA[Persistent Data in Unity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/"/>
-    <updated>2014-08-09T12:09:15-04:00</updated>
+    <updated>2014-08-09T11:09:15-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity</id>
     <content type="html"><![CDATA[<p>I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity.  In other words, I want this data to remain persistent.  As you&rsquo;ll see below I was tempted to use <code>PlayerPrefs</code> to store the data, but, according to <a href="https://www.youtube.com/watch?v%3DJ6FfcJpbPXE">this Unity Live Training on Data Persistence</a>, <code>PlayerPrefs</code> is not the best way to make data persist over multiple Scenes.  <code>PlayerPrefs</code> is an okay place to store non-critical data, like the audio volume, window size, full-screen state&#x2013;you know preferences.  I&rsquo;ll go ahead and show what I believe to be the correct way to store persistent data before talking about <code>PlayerPrefs</code> later.</p>
 
@@ -741,7 +906,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Static and Dynamic Colliders in Unity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity/"/>
-    <updated>2014-08-02T13:54:15-04:00</updated>
+    <updated>2014-08-02T12:54:15-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/02/static-and-dynamic-colliders-in-unity</id>
     <content type="html"><![CDATA[<p>According to the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">Ray Wenderlich Unity 2D tutorial</a> by <a href="http://www.raywenderlich.com/u/clapollo">Christopher LaPollo</a>, Unity&rsquo;s physics engine builds a simulation based on the <a href="http://docs.unity3d.com/Manual/CollidersOverview.html">Colliders</a> present in a scene.  If some those <code>Colliders</code> are declared to be <code>static</code>, then the entire simulation is rebuilt when those colliders move.  Of course, rebuilding a physics simulation when it&rsquo;s unnecessary is inefficient.  By declaring objects to have <code>dynamic</code> <code>Colliders</code>, the physics engine does not have to rebuild the simulation at runtime, that is to say when the game is running.</p>
 
@@ -758,7 +923,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Space Is Read]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/"/>
-    <updated>2014-07-26T12:08:44-04:00</updated>
+    <updated>2014-07-26T11:08:44-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/26/space-is-read</id>
     <content type="html"><![CDATA[<p>The cinematically inspired <a href="http://tdlk.itch.io/space-is-red">Space Is Red</a> is not so much a game as it is a visual novel.  Out of the games I tried from the <a href="http://itch.io/jam/space-cowboy-jam">#spacecowboygamejam</a>, it&rsquo;s one that sticks with me.</p>
 
@@ -780,7 +945,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
     <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
-    <updated>2014-07-19T11:42:35-04:00</updated>
+    <updated>2014-07-19T10:42:35-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
     <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
 
@@ -816,7 +981,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Playable Call For Papers]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/"/>
-    <updated>2014-06-21T11:20:23-04:00</updated>
+    <updated>2014-06-21T10:20:23-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers</id>
     <content type="html"><![CDATA[<p><a href="http://www.twitter.com/mtrc">Michael Cook</a> made a &ldquo;needlessly interactive&rdquo; <a href="http://www.exag.org/playablecfp/">playable call for papers</a> for the <a href="http://www.exag.org/">Experimental AI in Games conference</a>, taking place in October in Raleigh, NC.  It&rsquo;s a minimally expressive Twine story, with really one simple interactive experience of role-playing the interaction a recipient feels upon receiving yet another CFP email, <em>click</em>.</p>
 
@@ -831,7 +996,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Why you should start simple]]></title>
     <link href="http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple/"/>
-    <updated>2014-06-07T14:58:34-04:00</updated>
+    <updated>2014-06-07T13:58:34-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/06/07/why-you-should-start-simple</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/hobbygamedev">@HobbyGameDev&rsquo;s</a> long-read <a href="http://www.hobbygamedev.com/beg/incremental-learning/">&ldquo;Reasons for Modest First Projects and Incremental Learning&rdquo;</a> tells the tragic tale of overambitious novice developers.</p>
 
@@ -857,7 +1022,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T12:28:40-04:00</updated>
+    <updated>2014-05-31T11:28:40-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -895,7 +1060,7 @@ class PlayerData {
   <entry>
     <title type="html"><![CDATA[Quarries of Scred Roadmap]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap/"/>
-    <updated>2014-05-24T16:49:08-04:00</updated>
+    <updated>2014-05-24T15:49:08-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/24/quarries-of-scred-roadmap</id>
     <content type="html"><![CDATA[<p>The <a href="http://darkestkale.itch.io/quarries-of-scred">Quarries of Scred</a> <a href="https://twitter.com/darkestkale">developer</a> released an image showing the overview of Scred&rsquo;s 14-day game development.  I find it informative for a couple of reasons.  First it&rsquo;s not limited to the core features of the game, Kale&rsquo;s also included public relations and marketing information.  Second, the fact that it&rsquo;s incomplete shows how Kale&rsquo;s prioritized critical elements of the game.</p>
 
@@ -947,66 +1112,6 @@ class PlayerData {
 <h2>Closing Thoughts</h2>
 
 <p>This kind of frank openness about game design is unusual to get prior to the publication of a game.  It&rsquo;s really great to see the design documents behind a game, even if it comes out years after release.  It&rsquo;s especially informative to see an in-progress version where the developer is unafraid to lay the goals out there, to show where the project succeeds and possibly falls short.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[.gitignore for Unity projects]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/"/>
-    <updated>2014-05-17T12:48:06-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects</id>
-    <content type="html"><![CDATA[<p>I found a solution on the <a href="http://answers.unity3d.com/questions/369755/unity-on-github.html">Unity website</a> that pointed me toward <a href="http://t-machine.org/index.php/2012/07/03/unity-git-source-control-a-basic-gitignore/">this blogpost</a>.  But a better solution is out there.  The Double Fine Game Club&rsquo;s Bad Golf Community Edition <a href="https://github.com/Double-Fine-Game-Club/bad-golf-community-edition/blob/master/.gitignore">.gitignore</a> looks like this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="o">[</span>Ll<span class="o">]</span>ibrary/
-</span><span class='line'><span class="o">[</span>Tt<span class="o">]</span>emp/
-</span><span class='line'><span class="o">[</span>Oo<span class="o">]</span>bj/
-</span><span class='line'>build_Data/
-</span><span class='line'>
-</span><span class='line'><span class="c"># Autogenerated VS/MD solution and project files</span>
-</span><span class='line'>*.csproj
-</span><span class='line'>*.unityproj
-</span><span class='line'>*.sln
-</span><span class='line'>*.exe
-</span><span class='line'>*.userprefs
-</span><span class='line'>
-</span><span class='line'><span class="c"># OS generated files #</span>
-</span><span class='line'><span class="c">######################</span>
-</span><span class='line'>.DS_Store
-</span><span class='line'>.DS_Store?
-</span><span class='line'>._*
-</span><span class='line'>.<span class="o">[</span>Ss<span class="o">]</span>potlight-V100
-</span><span class='line'>.<span class="o">[</span>Tt<span class="o">]</span>rashes
-</span><span class='line'><span class="o">[</span>Ee<span class="o">]</span>hthumbs.db
-</span><span class='line'><span class="o">[</span>Tt<span class="o">]</span>humbs.db
-</span><span class='line'>*~
-</span><span class='line'>*#*
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This is the <code>.gitignore</code> I&rsquo;m currently using in my projects.</p>
 ]]></content>
   </entry>
   
