@@ -1999,6 +1999,300 @@ grid in the =state= map.
 Eventually, and this is beyond the scope of 1.0.0, I'm intrigued by
 the possibility of [[https://github.com/quil/quil/wiki/ClojureScript][porting this code over to Clojurescript]] and
 creating a web-based version of the application.
+** Procjam comedown
+- procjam
+- procedural generation
+- game
+- design
+- mechanics
+
+Now that two weeks have passed (a geologic era in internet time), I'm
+ready begin to look back on the [[https://twitter.com/hashtag/procjam][#procjam]] talks and the entries to the
+jam that caught my eye.  I've been very busy lately working on my own
+submissions [[http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/][INSceptahdeckwu]] and [[http://zerosalife.github.io/blog/2014/11/15/patchwerk/][Patchwerk]], among other commitments, so
+this is by no means an exhaustive look at everything in #procjam.
+
+<!--more-->
+
+Since I actually have no time at all to write a full retrospective,
+I'll have to be brief.  This post will have to serve as a collection
+of links and notes until I get a chance to look back in detail.  It's
+by no means complete, as I'm still looking over all of the great
+entries to #procjam.  I enjoyed the interactions with the speakers and
+participants.  Unfortunately other commitments may occupy my time
+through the end of the year, so don't worry if the blogging is
+intermittent.  I'll revisit the #procjam talks and the submissions
+when I find time.
+
+*** Great ideas
+[[https://twitter.com/PNJeffries/status/531592288733261824]]
+
+[[https://twitter.com/redblobgames/status/527485845616340992]]
+
+[[https://twitter.com/mtthwcmpbll/status/527881936178778113]]
+
+[[https://twitter.com/DragonXVI/status/531078933161476096/photo/1]]
+
+[[https://twitter.com/TomNullpointer/status/531108417096916992]]
+
+[[http://chrismwaite.github.io/procjam/]]
+
+[[https://github.com/chrismwaite/procjam/blob/gh-pages/app.js]]
+
+[[http://renderingpipeline.com/2013/01/adding-analog-inputs-to-your-graphics-app/]]
+
+[[https://github.com/keijiro/unity-midi-input]]
+
+[[http://cgaudino.itch.io/tailgunner]]
+
+[[https://github.com/civilframe/node-spacegame-ship-gen]]
+
+[[http://jctwood.itch.io/dungen]]
+
+*** Good tutorials
+Some tutorials I came across during the jam:
+
+[[http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content%3Dbuffera3b27&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer][http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content=buffera3b27&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer]]
+
+[[https://twitter.com/alexjc/status/531077005815869440]]
+
+[[http://samatkins.co.uk/blog/2014/11/08/procjam-procedural-building-generation/]]
+
+
+*** Talks
+Here are my notes on the talks that I had a chance to see.  In lieu of
+writing anything up, I'll post them here for now.
+
+**** Overall themes
+- Meaning over randomness
+- Scale and direction
+  - Layering
+  - Deck metaphor really nice for prototyping.
+  - Great question, how do you make sure the player is not lost in
+    this huge history.  Player only aware of history of own house,
+    data is gathered by reading books etc.; there's some context for
+    the entrance of new bits of history.  Books are populated in
+    places where it makes sense for them to turn up.
+  - Top-down (designer first) is easier than bottom-up (player first;
+    shout out to [[https://twitter.com/gillianmsmith][@gillianmsmith]] for this formulation).  Callbacks?
+    How to percolate up from lower elements on tree?
+- Storytelling as divination
+- NanoGenMo
+- Flow in procedural generation
+  - Meaning, codifying design principlse
+  - Art of Game Design by Jesse Schell
+  - a feeling of complete and energized focus in an activity, with a
+    high level of enjoyment and fulfillment
+    - clear goals
+    - no distractions
+      - How does this figure into open world distraction fests like
+        triple a sandbox games?
+    - feedback
+    - continuously challenging
+  - Frustration vs. boredom, find a balance
+  - Dynamic
+    - Scale enemy level to meet player's level
+    - AI director, see when the player is overwhelmed, drop difficulty;
+      boredom spawn more enemies.  Requires some kind of metric
+  - Static
+    - Lock and key
+    - Metazelda calculates difficulty number for each room from
+      desired flow curve.
+    - Love [[https://github.com/tcoxon][@tcoxon]] 's thoughts on less backtracking.  Algorithmically
+      respecting players' time.
+  - Gamasutra Toni Sala
+- Emotion and interactivity -- expressivity
+  - Workflow, ease of adjustment can be good for designer and exposing
+    the same tools to the player can be fun
+
+*** itch.io
+It looks like most of the entries are gathered on a [[http://itch.io/jam/procjam][#procjam itch.io
+page]].  I have no experience with [[http://itch.io/][itch.io]], but I think setting up an
+account and exploring what itch.io has to offer couldn't hurt.
+
+** Procjam reviews
+My favorite games from #procjam were DUNGEN by @JctWood and JET/LAG by
+@JakeCataford.  Nodemancer by @nihilocrat was my favorite tool.
+
+- game
+- review
+- procjam
+- design
+- mechanics
+
+Looking through the entries, I could only spend a minute or two with
+each entry.  It helped if the game ran in my browser, so HTML and
+Unity were big.  Here are some of the games that caught my eye.
+
+*** The top two
+
+*** JET/LAG
+Simple instructions: "Click to move. Kill enemies by bashing them."
+There may be little to /[[http://svblm.itch.io/jet-lag][JET/LAG]]/, but its excellent stylish visuals
+set this entry apart for me.  A CRT-like distortion bends the corners
+of the screen complete with scrolling scan lines, while multi-colored
+text oscillates above a simple square.  The simple square is your
+character battering your way through procedurally generated maze-like
+levels.
+
+There's no fancy art in this game, all the characters are made from
+simple shapes.  But that doesn't stop the graphics from impressing.
+It's clear that [[https://twitter.com/JakeCataford][@JakeCataford]] turned the juice up to 11, and it works.
+The game feels great.
+
+As a "rogue-like like like" you may expect it to be deviously hard,
+and you'd be right.  But the controls are responsive and the enemies
+telegraph their moves, so you feel like you are learning something
+with each death.  [[https://twitter.com/JakeCataford][@JakeCataford]] clearly understands some fundamentals
+of engaging game design and I'm excited to see what's coming up next.
+
+*** DUNGEN [star]
+A multi-jam entry for [[http://itch.io/jam/procjam][#procjam]], [[http://itch.io/jam/paper-jam-1][#paperjam]], and [[http://7dfps.com/][#7dfps]] by [[https://twitter.com/JctWood][@jctwood]],
+this first person shooter uses shuffling to generate a dynamic dungeon
+with each play-through.  I like the simplicity of the mechanics
+[[https://twitter.com/JctWood][@jctwood]] has designed.  Stats on a 1-10 scale can be just as
+interesting as stats in the thousands.  There are even multiple skin
+options for the protagonist's hand.  That's more advanced than all
+three /[[http://en.wikipedia.org/wiki/Doom_%2528series%2529][DOOM]]/s.
+
+I think I'm most interested in the literal realization of the
+procedural generation algorithm.  By shuffling the cards the
+procedural generation of the dungeon is clear both to designer and
+player, and this type of randomization has been used for many years in
+many games with standard and nonstandard sets of cards.  I'm
+interested in seeing how this shuffling mechanic, both literal and
+metaphorical, can be leveraged to encourage new avenues of play in the
+future.  I can imagine tuning some aspects of a proc gen algorithm by
+exposing the contents to the player as a deck of cards, both literally
+as is typical in CCGs and other tabletop games and as a metaphor for
+abstraction of systems in a video game.
+
+*** Favorite games
+- [[http://svblm.itch.io/jet-lag][JET/LAG]]
+  - Bump or get bumped.  Excellent style and great graphics.  Very
+    juicy!
+- [[http://lissar.itch.io/peregrin][Peregrin]]
+  - Beautiful.
+- [[http://entropyphi.itch.io/nauticalith][Nauticalith]]
+  - Simple, but really conveys a sense of scale.  Adding some mechanic
+    like dynamic wind that affects sailing could put this over the
+    top.
+- [[http://tfurmanskigmailcom.itch.io/forska-web-version][Forska]]
+  - Great shader.  Generate some /Myst/-like puzzles and you've got a
+    game, here.
+- [[http://8-bit-ape.itch.io/infinity-explorer][Infinity Explorer]]
+  - Reminds me of /Magic Carpet/.
+- [[http://jctwood.itch.io/dungen][DUNGEN]]
+  - Print and play games are great.
+
+
+*** Favorite generators
+- [[http://nihilocrat.itch.io/nodemancer]]
+  - Interesting.  Will have to look more into it.  Now that I think
+    about it, this one deserves an honorable mention for favorite tool
+    of the jam.  I will revisit it in depth in a later post because the
+    generation algorithm looks like an idea I've batted around in my
+    head.
+- [[http://diaspora-colonies.herokuapp.com/]]
+  - Useful and cool!  Check out [[http://ptychomancer.itch.io/diaspora]]
+    for some more background on this space colony generator.
+- [[http://eduardo.itch.io/procedural-fabrics]]
+  - Clever tiling textures using diagonal lines that really break up
+    the patterns to make it more pleasing to the eye.
+- [[http://ibol17.itch.io/procedural-pixel-monsters]]
+  - Artistic style.  Simple color palette still allow for a variety of
+    expressive monsters. Interested in following up on the
+    procedural tree generation–looks great!
+- [[https://github.com/cutgarnetgames/gaia]]
+  - Beautiful world generator with some source code worth digging
+    into.
+- [[http://gillianms.itch.io/hoopla]]
+  - Really think there's something to explore in pixels-as-stitches
+    graphics.
+- [[http://aerique.itch.io/rocks-bitch]]
+  - The pet rock generator I always wanted!
+- [[http://playcrafts.itch.io/palette-generator]]
+  - Useful.
+- [[http://tccoxon.itch.io/dreamer]]
+  - Weird but very creative and very cool.
+- [[http://itch.io/jam/procjam/rate/14026]]
+  - Great concept, but I need remedial lessons or a tutorial.  One to
+    revisit when I can really dig into it.
+
+*** Cool looking Windows games I couldn't play
+- [[http://crabowitz.itch.io/key-geist]]
+  - Reminds me of /Wonderful 101/–a game I haven't played, but
+    probably should.  Something about the aesthetic of dozens of
+    little flocking characters appeals to me.
+- [[http://caseportman.itch.io/riser]]
+  - Looks like it controls well
+
+* A proper review of DUNGEN [Star]
+I owe @JctWood a playthrough and review of DUNGEN [Star], too lazy to
+print it so I cut it up in Adobe Illustrator. #procjam #7dfps #paperjam
+
+- game
+- review
+- procjam
+- paperjam
+- 7dfps
+
+/My green fingers sweat on the handle of my pistol as I creep through/
+/the door, into the next room.  I found two boxes of ammunition in the/
+/previous room so I'm well equipped for the next horrible monster I/
+/encounter.  My grip on the pistol tightens as a horrible three-legged/
+/spherical thing jumps down from the ceiling, pirouetting to land on its feet/
+/and shooting a stream of acidic liquid at me./
+
+/"Oof," is all I manage to get out, as I feel the Burster's fluid eat/
+/into my skin.  Without thinking I fire at it, killing the thing in two/
+/shots./
+
+/While reloading my pistol, I notice a glowing jewel on the stone.  If/
+/it's what the briefings said, this is the teleport stone that will/
+/allow me to phase out of our normal reality just long enough to escape/
+/the next deadly monster I encounter in/ DUNGEN [Star].
+
+<!--more-->
+
+[{% img center /images/assets/DUNGENStar.gif %}](/images/assets/DUNGENStar.gif)
+DUNGENStar.gif
+
+(Please excuse my lame attempt at illustrating play with a .gif).
+
+Last week, I posted an overview of my favorite #procjam games.  I felt
+remissed when I got a tweet from one of the designers, asking whether
+I had actually printed and played the game.  I hadn't and neither had
+any of the other reviewers who praised it.  So, this week I took some
+time to cut out the cards on my computer, effectively making a
+print-and-play game I could play in Illustrator without bothering to
+print it out.
+
+After the initial time investment, /DUNGEN [Star]/, a print-and-play
+game designed by @JctWood for the #paperjam, #procjam, and #7dfps
+gamejams, plays quickly.  Especially if you are brave enough to choose
+the roguelike secret difficulty level of starting with 1HP.  Add to
+that, the advanced enemy rules, which give the monsters more
+personality on top of their already evocative illustrations and you've
+got a challenging game.
+
+I'm a fan of the cartoonish art style of /DUNGEN [Star]/.  The
+character design does a good job of communicating interesting variety,
+even though there are few monsters to go up against.
+
+/DUNGEN [Star]/ runs out of steam quickly, but I think the intent
+behind it is clear.  This game does a good job of bringing the feel of
+a procedural first-person shooter with roguelike elements to the
+print-and-play market.  I think extending the combat to involve
+multiple weapons would add some depth to the game.  I would like to
+see more enemies, particularly ones with more interesting advanced
+enemy rules.  I'd also like to see an overarching goal or theme tying
+together /DUNGEN [Star]/'s dungeoning and star, so you feel more
+satisfied when you survive the dungeon.  With that criticism said, I
+still think /DUNGEN [Star]/ succeeds as a gamejam game and a great
+prototype to build off of.
+
+
 * Chrono Trigger Random Number Generator               :analysis:R:mechanics:
 categories:
 - analysis
@@ -2637,108 +2931,6 @@ out it wasn't. But how could you make such an puzzle?
 [[http://forum.unity3d.com/threads/68807-Infinite-Terrain-Free-Project-Source]]
 * Shaders Primer
 [[http://notes.underscorediscovery.com/shaders-a-primer/]]
-* Simple Mind-reading Machine in Unity JavaScript
-#unity3d
-
-- AI
-- algorithm
-- mechanics
-- Unity
-- JavaScript
-
-
-[[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/]]
-
-[[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html]]
-
-[[http://answers.unity3d.com/questions/54695/how-to-declare-and-initialize-multidimensional-arr.html]]
-
-[[http://csharptutorial.blogspot.com/2006/05/question-mark-ternary-operator.html]]
-
-I ported a cool toy from [[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/][Alastair Atchison's blog]] to Unity
-JavaScript.  The toy implements a simple 'mind-reading' algorithm that
-attempts to guess whether the player will choose Left (by pressing the
-left arrow key) or Right (by pressing the right arrow key).
-
-<!--more-->
-
-** How does it work?
-
-Atchison's blog post describes how it works:
-#+BEGIN_QUOTE
-How does it work? Not by mind-reading, obviously, but by exploiting
-the fact that humans do not behave as "randomly" as they think they
-do. The computer maintains a very simple memory that records the
-pattern of results of the last two rounds – whether the player won or
-lost, whether they switched strategy, and then whether they then won
-or last the following round. The computer then uses this to choose its
-own best strategy based on the way the player behaved last time the
-current pattern occurred. If the computer loses twice in a row using
-the current strategy, it picks a random response in the next round.
-#+END_QUOTE
-
-The original idea came from some AI work by [[http://en.wikipedia.org/wiki/Claude_Shannon][Claude Shannon]]
-and D. W. Hagelbarger.  [[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html][They describe the internal memory of the toy
-mind-reader]] that we will model using a multidimensional array =v=:
-
-#+BEGIN_QUOTE
-There are 8 possible situations and two things the player can do at each one:
-
-1) player wins, plays same, wins. Then same or differently.
-2) player wins, plays same, loses. Then same or differently.
-3) player wins, plays differently, wins. Then same or differently.
-4) player wins, plays differently, loses.Then same or differently.
-5) player loses, plays same, wins.Then same or differently.
-6) player loses, plays same, loses.Then same or differently.
-7) player loses, plays differently, wins.Then same or differently.
-8) player loses, plays differently, loses.Then same or differently.
-#+END_QUOTE
-
-** Why port it?
-Why not just take a straightforward approach, running
-his code myself? First, I wanted to fully understand the algorithm the
-hard way, by coding it line for line myself. And second, I wanted to
-better familiarize myself with Unity JavaScript, including its
-differences from C#.
-
-The port was relatively simple, except for two small hiccups.  First,
-as far as I know, Unity JavaScript doesn't allow for initializing a
-multidimensional array.  So I looped over the cells in the array,
-filling them that way.  I have a hunch that the cells are initialized
-to the =int= =0= by default, but I wanted to be explicit.  Please let
-me know in the comments or [[https://twitter.com/zerosalife][via twitter]] if I'm way off base.
-
-#+BEGIN_SRC javascript
-  var v : int[2, 2, 2];
-  for(var cell in v) {
-      cell = 0;
-  }
-
-#+END_SRC
-
-I also encountered some unfamiliar syntax: the sonorously named Elvis
-operator, [[http://en.wikipedia.org/wiki/Conditional_operator][?:]].  It's also called the [[http://en.wikipedia.org/wiki/Ternary_operation][ternary operator]], when it's used
-with 3 arguments, as I've used it here.  In C-like languages it allows
-for succinctly stating these kinds of conditional expressions. The
-example below illustrates how it's used.
-
-#+BEGIN_SRC javascript
-  // Is the current player's choice the same as the previous player's
-  // choice?
-  //
-  // if (playerChoice == lastChoice)
-  //     sameChoice = True;
-  // else
-  //     sameChoice = False;
-  //
-  // Using ternary operator:
-  v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
-
-#+END_SRC
-
-** The code
-The ported code for the mind-reader is reproduced below.  A full
-example project is available on my github here.
 
 
 
@@ -4292,7 +4484,7 @@ semantically with *GetSource* or *GetDestination* or as an array with
 the destination.
 * The Primacy of Symmetry
 * Sid Meier's 10 Rules of Game Design
-id Meier's 10 Rules of Game Design
+Sid Meier's 10 Rules of Game Design
 
 1. Choose a topic you have a passion for. Game Design is about creativity.
 
@@ -4398,234 +4590,6 @@ another really cool gamejam slip under the radar.
 
 ** Procjam submission
 
-* Procjam comedown
-- procjam
-- procedural generation
-- game
-- design
-- mechanics
-
-Now that two weeks have passed (a geologic era in internet time), I'm
-ready begin to look back on the [[https://twitter.com/hashtag/procjam][#procjam]] talks and the entries to the
-jam that caught my eye.  I've been very busy lately working on my own
-submissions [[http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/][INSceptahdeckwu]] and [[http://zerosalife.github.io/blog/2014/11/15/patchwerk/][Patchwerk]], among other commitments, so
-this is by no means an exhaustive look at everything in #procjam.
-
-<!--more-->
-
-Since I actually have no time at all to write a full retrospective,
-I'll have to be brief.  This post will have to serve as a collection
-of links and notes until I get a chance to look back in detail.  It's
-by no means complete, as I'm still looking over all of the great
-entries to #procjam.  I enjoyed the interactions with the speakers and
-participants.  Unfortunately other commitments may occupy my time
-through the end of the year, so don't worry if the blogging is
-intermittent.  I'll revisit the #procjam talks and the submissions
-when I find time.
-
-** Great ideas
-[[https://twitter.com/PNJeffries/status/531592288733261824]]
-
-[[https://twitter.com/redblobgames/status/527485845616340992]]
-
-[[https://twitter.com/mtthwcmpbll/status/527881936178778113]]
-
-[[https://twitter.com/DragonXVI/status/531078933161476096/photo/1]]
-
-[[https://twitter.com/TomNullpointer/status/531108417096916992]]
-
-[[http://chrismwaite.github.io/procjam/]]
-
-[[https://github.com/chrismwaite/procjam/blob/gh-pages/app.js]]
-
-[[http://renderingpipeline.com/2013/01/adding-analog-inputs-to-your-graphics-app/]]
-
-[[https://github.com/keijiro/unity-midi-input]]
-
-[[http://cgaudino.itch.io/tailgunner]]
-
-[[https://github.com/civilframe/node-spacegame-ship-gen]]
-
-[[http://jctwood.itch.io/dungen]]
-
-** Good tutorials
-Some tutorials I came across during the jam:
-
-[[http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content%3Dbuffera3b27&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer][http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started?utm_content=buffera3b27&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer]]
-
-[[https://twitter.com/alexjc/status/531077005815869440]]
-
-[[http://samatkins.co.uk/blog/2014/11/08/procjam-procedural-building-generation/]]
-
-
-** Talks
-Here are my notes on the talks that I had a chance to see.  In lieu of
-writing anything up, I'll post them here for now.
-
-*** Overall themes
-- Meaning over randomness
-- Scale and direction
-  - Layering
-  - Deck metaphor really nice for prototyping.
-  - Great question, how do you make sure the player is not lost in
-    this huge history.  Player only aware of history of own house,
-    data is gathered by reading books etc.; there's some context for
-    the entrance of new bits of history.  Books are populated in
-    places where it makes sense for them to turn up.
-  - Top-down (designer first) is easier than bottom-up (player first;
-    shout out to [[https://twitter.com/gillianmsmith][@gillianmsmith]] for this formulation).  Callbacks?
-    How to percolate up from lower elements on tree?
-- Storytelling as divination
-- NanoGenMo
-- Flow in procedural generation
-  - Meaning, codifying design principlse
-  - Art of Game Design by Jesse Schell
-  - a feeling of complete and energized focus in an activity, with a
-    high level of enjoyment and fulfillment
-    - clear goals
-    - no distractions
-      - How does this figure into open world distraction fests like
-        triple a sandbox games?
-    - feedback
-    - continuously challenging
-  - Frustration vs. boredom, find a balance
-  - Dynamic
-    - Scale enemy level to meet player's level
-    - AI director, see when the player is overwhelmed, drop difficulty;
-      boredom spawn more enemies.  Requires some kind of metric
-  - Static
-    - Lock and key
-    - Metazelda calculates difficulty number for each room from
-      desired flow curve.
-    - Love [[https://github.com/tcoxon][@tcoxon]] 's thoughts on less backtracking.  Algorithmically
-      respecting players' time.
-  - Gamasutra Toni Sala
-- Emotion and interactivity -- expressivity
-  - Workflow, ease of adjustment can be good for designer and exposing
-    the same tools to the player can be fun
-
-** itch.io
-It looks like most of the entries are gathered on a [[http://itch.io/jam/procjam][#procjam itch.io
-page]].  I have no experience with [[http://itch.io/][itch.io]], but I think setting up an
-account and exploring what itch.io has to offer couldn't hurt.
-
-* Procjam reviews
-My favorite games from #procjam were DUNGEN by @JctWood and JET/LAG by
-@JakeCataford.  Nodemancer by @nihilocrat was my favorite tool.
-
-- game
-- review
-- procjam
-- design
-- mechanics
-
-Looking through the entries, I could only spend a minute or two with
-each entry.  It helped if the game ran in my browser, so HTML and
-Unity were big.  Here are some of the games that caught my eye.
-
-** The top two
-
-** JET/LAG
-Simple instructions: "Click to move. Kill enemies by bashing them."
-There may be little to /[[http://svblm.itch.io/jet-lag][JET/LAG]]/, but its excellent stylish visuals
-set this entry apart for me.  A CRT-like distortion bends the corners
-of the screen complete with scrolling scan lines, while multi-colored
-text oscillates above a simple square.  The simple square is your
-character battering your way through procedurally generated maze-like
-levels.
-
-There's no fancy art in this game, all the characters are made from
-simple shapes.  But that doesn't stop the graphics from impressing.
-It's clear that [[https://twitter.com/JakeCataford][@JakeCataford]] turned the juice up to 11, and it works.
-The game feels great.
-
-As a "rogue-like like like" you may expect it to be deviously hard,
-and you'd be right.  But the controls are responsive and the enemies
-telegraph their moves, so you feel like you are learning something
-with each death.  [[https://twitter.com/JakeCataford][@JakeCataford]] clearly understands some fundamentals
-of engaging game design and I'm excited to see what's coming up next.
-
-** DUNGEN [star]
-A multi-jam entry for [[http://itch.io/jam/procjam][#procjam]], [[http://itch.io/jam/paper-jam-1][#paperjam]], and [[http://7dfps.com/][#7dfps]] by [[https://twitter.com/JctWood][@jctwood]],
-this first person shooter uses shuffling to generate a dynamic dungeon
-with each play-through.  I like the simplicity of the mechanics
-[[https://twitter.com/JctWood][@jctwood]] has designed.  Stats on a 1-10 scale can be just as
-interesting as stats in the thousands.  There are even multiple skin
-options for the protagonist's hand.  That's more advanced than all
-three /[[http://en.wikipedia.org/wiki/Doom_%2528series%2529][DOOM]]/s.
-
-I think I'm most interested in the literal realization of the
-procedural generation algorithm.  By shuffling the cards the
-procedural generation of the dungeon is clear both to designer and
-player, and this type of randomization has been used for many years in
-many games with standard and nonstandard sets of cards.  I'm
-interested in seeing how this shuffling mechanic, both literal and
-metaphorical, can be leveraged to encourage new avenues of play in the
-future.  I can imagine tuning some aspects of a proc gen algorithm by
-exposing the contents to the player as a deck of cards, both literally
-as is typical in CCGs and other tabletop games and as a metaphor for
-abstraction of systems in a video game.
-
-** Favorite games
-- [[http://svblm.itch.io/jet-lag][JET/LAG]]
-  - Bump or get bumped.  Excellent style and great graphics.  Very
-    juicy!
-- [[http://lissar.itch.io/peregrin][Peregrin]]
-  - Beautiful.
-- [[http://entropyphi.itch.io/nauticalith][Nauticalith]]
-  - Simple, but really conveys a sense of scale.  Adding some mechanic
-    like dynamic wind that affects sailing could put this over the
-    top.
-- [[http://tfurmanskigmailcom.itch.io/forska-web-version][Forska]]
-  - Great shader.  Generate some /Myst/-like puzzles and you've got a
-    game, here.
-- [[http://8-bit-ape.itch.io/infinity-explorer][Infinity Explorer]]
-  - Reminds me of /Magic Carpet/.
-- [[http://jctwood.itch.io/dungen][DUNGEN]]
-  - Print and play games are great.
-
-
-** Favorite generators
-- [[http://nihilocrat.itch.io/nodemancer]]
-  - Interesting.  Will have to look more into it.  Now that I think
-    about it, this one deserves an honorable mention for favorite tool
-    of the jam.  I will revisit it in depth in a later post because the
-    generation algorithm looks like an idea I've batted around in my
-    head.
-- [[http://diaspora-colonies.herokuapp.com/]]
-  - Useful and cool!  Check out [[http://ptychomancer.itch.io/diaspora]]
-    for some more background on this space colony generator.
-- [[http://eduardo.itch.io/procedural-fabrics]]
-  - Clever tiling textures using diagonal lines that really break up
-    the patterns to make it more pleasing to the eye.
-- [[http://ibol17.itch.io/procedural-pixel-monsters]]
-  - Artistic style.  Simple color palette still allow for a variety of
-    expressive monsters. Interested in following up on the
-    procedural tree generation–looks great!
-- [[https://github.com/cutgarnetgames/gaia]]
-  - Beautiful world generator with some source code worth digging
-    into.
-- [[http://gillianms.itch.io/hoopla]]
-  - Really think there's something to explore in pixels-as-stitches
-    graphics.
-- [[http://aerique.itch.io/rocks-bitch]]
-  - The pet rock generator I always wanted!
-- [[http://playcrafts.itch.io/palette-generator]]
-  - Useful.
-- [[http://tccoxon.itch.io/dreamer]]
-  - Weird but very creative and very cool.
-- [[http://itch.io/jam/procjam/rate/14026]]
-  - Great concept, but I need remedial lessons or a tutorial.  One to
-    revisit when I can really dig into it.
-
-** Cool looking Windows games I couldn't play
-- [[http://crabowitz.itch.io/key-geist]]
-  - Reminds me of /Wonderful 101/–a game I haven't played, but
-    probably should.  Something about the aesthetic of dozens of
-    little flocking characters appeals to me.
-- [[http://caseportman.itch.io/riser]]
-  - Looks like it controls well
-
 * Gamy Sprite Generator
 Following along with a [[http://catlikecoding.com/unity/tutorials/noise/][tutorial over at Catlike Coding]] I was inspired
 to create a sprite generator.  I always got a kick out of the randomly
@@ -4681,7 +4645,7 @@ remembering.”"
 
 ** No enemy has higher HP than 10
 Focus is no longer on average damage per second.  You can focus on
-tactics like maximizing cool downs, or usign situational abilities
+tactics like maximizing cool downs, or using situational abilities
 (based on position, enemy attack phase, enemy health, etc.).
 
 
@@ -4726,6 +4690,22 @@ Taxes at 30% and Programming at 20%.  Art and design and backer
 rewards are probably even at 17.5% each.  Audio is probably 10% and
 SEC gets 5%.
 
+| Expense        | Percentage |
+|----------------+------------|
+| Fees & Taxes   |         30 |
+| Programming    |         20 |
+| Art & Design   |       17.5 |
+| Backer Rewards |       17.5 |
+| Audio          |         10 |
+| SEC            |          5 |
+
+
+The resulting pie chart I get from this looks similar enough to the
+pie chart in the article.  The moral of the story is that fees and
+taxes take up a significant chunk of kickstarter funding (!) and that
+pie charts, especially small pie charts with 6 wedges, need an
+accompanying table of numbers to be worth the pixels they're blit on.
+
 * Faith No More
 - game
 
@@ -4733,3 +4713,105 @@ SEC gets 5%.
 
 * 10 questions to focus game design
 [[http://www.metkis.com/]]
+* Simple Mind-reading Machine in Unity JavaScript
+#unity3d
+
+- AI
+- algorithm
+- mechanics
+- Unity
+- JavaScript
+
+
+[[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/]]
+
+[[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html]]
+
+[[http://answers.unity3d.com/questions/54695/how-to-declare-and-initialize-multidimensional-arr.html]]
+
+[[http://csharptutorial.blogspot.com/2006/05/question-mark-ternary-operator.html]]
+
+I ported a cool toy from [[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/][Alastair Atchison's blog]] to Unity
+JavaScript.  The toy implements a simple 'mind-reading' algorithm that
+attempts to guess whether the player will choose Left (by pressing the
+left arrow key) or Right (by pressing the right arrow key).
+
+<!--more-->
+
+** How does it work?
+
+Atchison's blog post describes how it works:
+#+BEGIN_QUOTE
+How does it work? Not by mind-reading, obviously, but by exploiting
+the fact that humans do not behave as "randomly" as they think they
+do. The computer maintains a very simple memory that records the
+pattern of results of the last two rounds – whether the player won or
+lost, whether they switched strategy, and then whether they then won
+or last the following round. The computer then uses this to choose its
+own best strategy based on the way the player behaved last time the
+current pattern occurred. If the computer loses twice in a row using
+the current strategy, it picks a random response in the next round.
+#+END_QUOTE
+
+The original idea came from some AI work by [[http://en.wikipedia.org/wiki/Claude_Shannon][Claude Shannon]]
+and D. W. Hagelbarger.  [[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html][They describe the internal memory of the toy
+mind-reader]] that we will model using a multidimensional array =v=:
+
+#+BEGIN_QUOTE
+There are 8 possible situations and two things the player can do at each one:
+
+1) player wins, plays same, wins. Then same or differently.
+2) player wins, plays same, loses. Then same or differently.
+3) player wins, plays differently, wins. Then same or differently.
+4) player wins, plays differently, loses.Then same or differently.
+5) player loses, plays same, wins.Then same or differently.
+6) player loses, plays same, loses.Then same or differently.
+7) player loses, plays differently, wins.Then same or differently.
+8) player loses, plays differently, loses.Then same or differently.
+#+END_QUOTE
+
+** Why port it?
+Why not just take a straightforward approach, running
+his code myself? First, I wanted to fully understand the algorithm the
+hard way, by coding it line for line myself. And second, I wanted to
+better familiarize myself with Unity JavaScript, including its
+differences from C#.
+
+The port was relatively simple, except for two small hiccups.  First,
+as far as I know, Unity JavaScript doesn't allow for initializing a
+multidimensional array.  So I looped over the cells in the array,
+filling them that way.  I have a hunch that the cells are initialized
+to the =int= =0= by default, but I wanted to be explicit.  Please let
+me know in the comments or [[https://twitter.com/zerosalife][via twitter]] if I'm way off base.
+
+#+BEGIN_SRC javascript
+  var v : int[2, 2, 2];
+  for(var cell in v) {
+      cell = 0;
+  }
+
+#+END_SRC
+
+I also encountered some unfamiliar syntax: the sonorously named Elvis
+operator, [[http://en.wikipedia.org/wiki/Conditional_operator][?:]].  It's also called the [[http://en.wikipedia.org/wiki/Ternary_operation][ternary operator]], when it's used
+with 3 arguments, as I've used it here.  In C-like languages it allows
+for succinctly stating these kinds of conditional expressions. The
+example below illustrates how it's used.
+
+#+BEGIN_SRC javascript
+  // Is the current player's choice the same as the previous player's
+  // choice?
+  //
+  // if (playerChoice == lastChoice)
+  //     sameChoice = True;
+  // else
+  //     sameChoice = False;
+  //
+  // Using ternary operator:
+  v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
+
+#+END_SRC
+
+** The code
+The ported code for the mind-reader is reproduced below.  A full
+example project is available on my github here.
