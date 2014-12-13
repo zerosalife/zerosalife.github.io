@@ -4,6 +4,12 @@ title: "A proper review of DUNGEN [Star]"
 date: 2014-12-06 09:44:36 -0600
 comments: true
 categories:
+
+- game
+- review
+- procjam
+- paperjam
+- 7dfps
 ---
 *My green fingers sweat on the handle of my pistol as I creep through the door, into the next room.  I found two boxes of ammunition in the previous room so I'm well equipped for the next horrible monster I encounter.  My grip on the pistol tightens as a horrible three-legged spherical thing jumps down from the ceiling, pirouetting to land on its feet and shooting a stream of acidic liquid at me.*
 
