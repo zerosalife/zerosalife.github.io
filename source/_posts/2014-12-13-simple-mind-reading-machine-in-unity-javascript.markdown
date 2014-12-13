@@ -34,13 +34,21 @@ Aitchison's blog post describes how it works:
 The original idea came from some AI work by [Claude Shannon](http://en.wikipedia.org/wiki/Claude_Shannon) and D. W. Hagelbarger. [They describe the internal memory of the toy mind-reader](http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html) that we will model using a multidimensional array `v`:
 
 > There are 8 possible situations and two things the player can do at each one:
+
 > 1.  player wins, plays same, wins. Then same or differently.
+
 > 2.  player wins, plays same, loses. Then same or differently.
+
 > 3.  player wins, plays differently, wins. Then same or differently.
+
 > 4.  player wins, plays differently, loses.Then same or differently.
+
 > 5.  player loses, plays same, wins.Then same or differently.
+
 > 6.  player loses, plays same, loses.Then same or differently.
+
 > 7.  player loses, plays differently, wins.Then same or differently.
+
 > 8.  player loses, plays differently, loses.Then same or differently.
 
 ## Why port it?
