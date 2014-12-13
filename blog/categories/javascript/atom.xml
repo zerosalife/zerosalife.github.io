@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-12-13T14:41:14-06:00</updated>
+  <updated>2014-12-13T14:42:43-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -39,15 +39,19 @@ the current strategy, it picks a random response in the next round.</p></blockqu
 
 <p>The original idea came from some AI work by <a href="http://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a> and D. W. Hagelbarger. <a href="http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html">They describe the internal memory of the toy mind-reader</a> that we will model using a multidimensional array <code>v</code>:</p>
 
-<blockquote><p>There are 8 possible situations and two things the player can do at each one:
-1.  player wins, plays same, wins. Then same or differently.
-2.  player wins, plays same, loses. Then same or differently.
-3.  player wins, plays differently, wins. Then same or differently.
-4.  player wins, plays differently, loses.Then same or differently.
-5.  player loses, plays same, wins.Then same or differently.
-6.  player loses, plays same, loses.Then same or differently.
-7.  player loses, plays differently, wins.Then same or differently.
-8.  player loses, plays differently, loses.Then same or differently.</p></blockquote>
+<blockquote><p>There are 8 possible situations and two things the player can do at each one:</p>
+
+<ol>
+<li><p>player wins, plays same, wins. Then same or differently.</p></li>
+<li><p>player wins, plays same, loses. Then same or differently.</p></li>
+<li><p>player wins, plays differently, wins. Then same or differently.</p></li>
+<li><p>player wins, plays differently, loses.Then same or differently.</p></li>
+<li><p>player loses, plays same, wins.Then same or differently.</p></li>
+<li><p>player loses, plays same, loses.Then same or differently.</p></li>
+<li><p>player loses, plays differently, wins.Then same or differently.</p></li>
+<li><p>player loses, plays differently, loses.Then same or differently.</p></li>
+</ol>
+</blockquote>
 
 <h2>Why port it?</h2>
 
