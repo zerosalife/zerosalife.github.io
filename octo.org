@@ -4714,13 +4714,14 @@ accompanying table of numbers to be worth the pixels they're blit on.
 * 10 questions to focus game design
 [[http://www.metkis.com/]]
 * Simple Mind-reading Machine in Unity JavaScript
-#unity3d
+Porting a simple mind-reading script to Unity's javascript.  #unity3d
 
 - AI
 - algorithm
 - mechanics
 - Unity
 - JavaScript
+- Unity3d
 
 
 [[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/]]
@@ -4731,7 +4732,7 @@ accompanying table of numbers to be worth the pixels they're blit on.
 
 [[http://csharptutorial.blogspot.com/2006/05/question-mark-ternary-operator.html]]
 
-I ported a cool toy from [[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/][Alastair Atchison's blog]] to Unity
+I ported a cool toy from [[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/][Alastair Aitchison's blog]] to Unity
 JavaScript.  The toy implements a simple 'mind-reading' algorithm that
 attempts to guess whether the player will choose Left (by pressing the
 left arrow key) or Right (by pressing the right arrow key).
@@ -4740,7 +4741,7 @@ left arrow key) or Right (by pressing the right arrow key).
 
 ** How does it work?
 
-Atchison's blog post describes how it works:
+Aitchison's blog post describes how it works:
 #+BEGIN_QUOTE
 How does it work? Not by mind-reading, obviously, but by exploiting
 the fact that humans do not behave as "randomly" as they think they
@@ -4754,7 +4755,7 @@ the current strategy, it picks a random response in the next round.
 #+END_QUOTE
 
 The original idea came from some AI work by [[http://en.wikipedia.org/wiki/Claude_Shannon][Claude Shannon]]
-and D. W. Hagelbarger.  [[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html][They describe the internal memory of the toy
+and D. W. Hagelbarger. [[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html][They describe the internal memory of the toy
 mind-reader]] that we will model using a multidimensional array =v=:
 
 #+BEGIN_QUOTE
@@ -4813,5 +4814,110 @@ example below illustrates how it's used.
 #+END_SRC
 
 ** The code
-The ported code for the mind-reader is reproduced below.  A full
-example project is available on my github here.
+The ported code for the mind-reader is reproduced below.
+
+#+BEGIN_SRC javascript
+  #pragma strict
+  import System.Collections.Generic;
+
+  // Used to record play history
+  var v: int[,,];
+  var lw1: int;
+  var lw2: int;
+  var losingStreak: int;
+
+  // The prediction of the player's next turn
+  var prediction: int;
+
+  // Keep track of scores
+  var cpuScore: int;
+  var playerScore: int;
+
+  var outText: String;
+
+  function Start () {
+      // Initialize matrix to track state of play history
+
+      v = new int[2, 2, 2];
+
+      for(var cell in v) {
+          cell = 0;
+      }
+
+      // No prior knowledge, so set inital prediction based on random chance.
+      prediction = flip();
+
+      // Set scores to 0
+      cpuScore = 0;
+      playerScore = 0;
+
+      // Initialize previous play and play before last win-lost trackers
+      lw1 = 0;
+      lw2 = 0;
+
+      // Output
+      outText = "";
+  }
+
+  function TakeTurn(playerChoice: int) {
+      // Display player and computer's choices
+      var outTextString: String = "You pressed " + playerChoice + ", " + "I guessed " + prediction + "\n";
+
+      // Computer guessed correctly
+      if (playerChoice == prediction) {
+          cpuScore++;
+          losingStreak = 0;
+          outTextString += " I WIN!\n";
+      }
+      else {
+          playerScore++;
+          losingStreak++;
+          outTextString += " YOU WIN!\n";
+      }
+
+      outText = outTextString;
+
+      // Is the current player's choice the same as the previous player's
+      // choice?
+      //
+      // if (playerChoice == lastChoice)
+      //     sameChoice = True;
+      // else
+      //     sameChoice = False;
+      //
+      // Using ternary operator:
+      v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
+      v[lw2, lw1, 0] = playerChoice;
+      lw2 = lw1;
+      lw1 = playerChoice;
+
+      // If lost more than twice in present state, choose random
+      // strategy.  Otherwise keep the same strategy.
+      prediction = v[lw2, lw1, 1] == 1 && losingStreak < 2 ? v[lw2, lw1, 0] : flip();
+  }
+
+  function flip() : int {
+      // Simulate a coin flip to produce 50:50 chance of [0, 1]
+      return Random.Range(0, 2);
+  }
+
+
+  function Update () {
+      if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+          TakeTurn(0);
+      }
+      if (Input.GetKeyDown(KeyCode.RightArrow)) {
+          TakeTurn(1);
+      }
+  }
+
+  function OnGUI() {
+      var style : GUIStyle = new GUIStyle();
+      style.fontSize = 36;
+
+      GUI.Label(new Rect(0, 0, Screen.width, 100), outText, style);
+      GUI.Label(new Rect(0, 100, Screen.width, 200), "Player: " + playerScore + " CPU: " + cpuScore, style);
+  }
+
+
+#+END_SRC
