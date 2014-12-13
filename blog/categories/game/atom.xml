@@ -4,7 +4,7 @@
   <title><![CDATA[Category: game | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/game/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-12-06T10:07:48-06:00</updated>
+  <updated>2014-12-13T14:41:14-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A proper review of DUNGEN [Star]]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star/"/>
+    <updated>2014-12-06T09:44:36-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star</id>
+    <content type="html"><![CDATA[<p><em>My green fingers sweat on the handle of my pistol as I creep through the door, into the next room.  I found two boxes of ammunition in the previous room so I&rsquo;m well equipped for the next horrible monster I encounter.  My grip on the pistol tightens as a horrible three-legged spherical thing jumps down from the ceiling, pirouetting to land on its feet and shooting a stream of acidic liquid at me.</em></p>
+
+<p><em>&ldquo;Oof,&rdquo; is all I manage to get out, as I feel the Burster&rsquo;s fluid eat into my skin.  Without thinking I fire at it, killing the thing in two shots.</em></p>
+
+<p><em>While reloading my pistol, I notice a glowing jewel on the stone.  If it&rsquo;s what the briefings said, this is the teleport stone that will allow me to phase out of our normal reality just long enough to escape the next deadly monster I encounter in</em> DUNGEN [Star].</p>
+
+<!--more-->
+
+
+<p><a href="/images/assets/DUNGENStar.gif"><img class="center" src="/images/assets/DUNGENStar.gif"></a></p>
+
+<p>(Please excuse my lame attempt at illustrating play with a .gif).</p>
+
+<p><a href="http://zerosalife.github.io/blog/2014/11/29/procjam-review/">Last week, I posted an overview of my favorite #procjam games</a>.  I felt remissed when I got a tweet from the designer, asking whether I had actually printed and played the game.  I hadn&rsquo;t and neither had any of the other reviewers who praised it.  So, this week I took some time to cut out the cards on my computer, effectively making a print-and-play game I could play in Illustrator without bothering to print it out.</p>
+
+<p>After the initial time investment, <em><a href="http://jctwood.itch.io/dungen">DUNGEN [Star]</a></em>, a print-and-play game designed by <a href="https://twitter.com/JctWood">@JctWood</a> for the <a href="https://twitter.com/hashtag/paperjam">#paperjam</a>, <a href="https://twitter.com/hashtag/procjam">#procjam</a>, and <a href="https://twitter.com/hashtag/7dfps">#7dfps</a> gamejams, plays quickly.  Especially if you are brave enough to choose the roguelike secret difficulty level of starting with 1HP.  Add to that, the advanced enemy rules, which give the monsters more personality on top of their already evocative illustrations and you&rsquo;ve got a challenging game.</p>
+
+<p>I&rsquo;m a fan of the cartoonish art style of <em>DUNGEN [Star]</em>.  The character design does a good job of communicating interesting variety, even though there are few monsters to go up against.</p>
+
+<p><em>DUNGEN [Star]</em> runs out of steam quickly, but I think the intent behind it is clear.  This game does a good job of bringing the feel of a procedural first-person shooter with roguelike elements to the print-and-play market.  I think extending the combat to involve multiple weapons would add some depth to the game.  I would like to see more enemies, particularly ones with more interesting advanced enemy rules.  I&rsquo;d also like to see an overarching goal or theme tying together <em>DUNGEN [Star]</em>&rsquo;s dungeoning and star, so you feel more satisfied when you survive the dungeon.  With that criticism said, I still think <em>DUNGEN [Star]</em> succeeds as a gamejam game and a great prototype from which to build.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Procjam review]]></title>
@@ -352,25 +380,6 @@ the same tools to the player can be fun</li>
 <p>I left the game looping <a href="https://soundcloud.com/postpre">PostPre</a>&rsquo;s driving soundtrack for 15 minutes, even though my first play-through lasted only 2 or 3.  Maybe that&rsquo;s the benefit of interactivity and choices, to extend and prolong the mindshare of some experience or product with the player.  I don&rsquo;t necessarily mean that in a cynical way, although the typical model of play can be subverted for more manipulative means (and, of course, it is!).</p>
 
 <p>For me, Space Is Red hit all the right notes and left me with something to think about.  That is what I call a successful gamejam game.  You can see Space Is Red and the other #spacecowboygamejam entries <a href="http://itch.io/jam/space-cowboy-jam">here</a>.  If you&rsquo;re interested in learning more about Space Is Red&rsquo;s creator <a href="http://toddluke.com/">Todd Luke</a>, you can find an interview <a href="http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php">here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[styx_ebooks]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T14:05:03-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
-    <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
-
-<p>I forked it from an earlier project by <a href="https://github.com/jiko">@jiko</a>, <a href="https://github.com/jiko/lovecraft_ebooks">lovecraft_ebooks</a>.  There were some minor implementation hurdles, mainly related to Twitter&rsquo;s API and oauth.  Reading the <a href="https://pypi.python.org/pypi/twitter">python <code>twitter</code> package</a> <code>twitter.oauth</code> docstring set me straight.  You can check out the code in <a href="https://github.com/zerosalife/styx_ebooks">my fork on github</a>.</p>
-
-<p>This sort of text generation algorithm isn&rsquo;t just useful for making annoying twitter bots.  You could alter some of the in-game text or dialog based on a corpus fed into a markov chain text generator. Especially in the case of a Lovecraftian horror game, I can see how this text could serve a thematic purpose in the story.</p>
-
-<p>Say you&rsquo;ve got a Lovecraftian horror game in which the player is an investigator who is trying to figure out what is happening to citizens of Innsmouth.  By interacting with NPCs, the player encounters hand written dialog, with occasional markov-generated gibberish thrown in. The amount of gibberish depends on how corrupted the individual denizens of Innsmouth are becoming.  If the player is not clever enough to determine who is corrupt, the player will be killed.  If the player determines the source of the corruption, the player wins.</p>
-
-<p>Along the same line of reasoning, the concept I&rsquo;m describing here mimics the game <a href="http://www.newgrounds.com/portal/view/634905">ALZ</a>, a touching short, playable in 2 or 3 minutes, which uses glitchy graphics to convey a sense of what it&rsquo;s like to live with Alzheimer&rsquo;s disease to the player.  I came across Dylan Carter&rsquo;s ALZ in a <a href="http://www.animalnewyork.com/2014/making-alz-glitch-fueled-game-alzheimers/">post on the ANIMAL blog</a>.  This approach of literally altering the player&rsquo;s experience of the game world to mimic the subjective experience of characters in the game is ripe for exploration.  I&rsquo;d love to hear about more examples.</p>
-
-<p>You can check out my bot, <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>, on twitter, happily tweeting the day away.</p>
 ]]></content>
   </entry>
   

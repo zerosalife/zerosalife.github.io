@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Simple Mind-reading Machine in Unity JavaScript - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="I ported a cool toy from Alastair Aitchison&rsquo;s blog to Unity JavaScript. The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Simple Mind-reading Machine in Unity JavaScript</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-13T14:38:20-06:00" pubdate data-updated="true">Dec 13<span>th</span>, 2014</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I ported a cool toy from <a href="http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/">Alastair Aitchison&rsquo;s blog</a> to Unity JavaScript.  The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that attempts to guess whether the player will choose Left (by pressing the left arrow key) or Right (by pressing the right arrow key).</p>
+
+<!--more-->
+
+
+<h2>How does it work?</h2>
+
+<p>Aitchison&rsquo;s blog post describes how it works:</p>
+
+<blockquote><p>How does it work? Not by mind-reading, obviously, but by exploiting
+the fact that humans do not behave as &ldquo;randomly&rdquo; as they think they
+do. The computer maintains a very simple memory that records the
+pattern of results of the last two rounds – whether the player won or
+lost, whether they switched strategy, and then whether they then won
+or last the following round. The computer then uses this to choose its
+own best strategy based on the way the player behaved last time the
+current pattern occurred. If the computer loses twice in a row using
+the current strategy, it picks a random response in the next round.</p></blockquote>
+
+<p>The original idea came from some AI work by <a href="http://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a> and D. W. Hagelbarger. <a href="http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html">They describe the internal memory of the toy mind-reader</a> that we will model using a multidimensional array <code>v</code>:</p>
+
+<blockquote><p>There are 8 possible situations and two things the player can do at each one:
+1.  player wins, plays same, wins. Then same or differently.
+2.  player wins, plays same, loses. Then same or differently.
+3.  player wins, plays differently, wins. Then same or differently.
+4.  player wins, plays differently, loses.Then same or differently.
+5.  player loses, plays same, wins.Then same or differently.
+6.  player loses, plays same, loses.Then same or differently.
+7.  player loses, plays differently, wins.Then same or differently.
+8.  player loses, plays differently, loses.Then same or differently.</p></blockquote>
+
+<h2>Why port it?</h2>
+
+<p>Why not just take a straightforward approach, running his code myself? First, I wanted to fully understand the algorithm the hard way, by coding it line for line myself. And second, I wanted to better familiarize myself with Unity JavaScript, including its differences from C#.</p>
+
+<p>The port was relatively simple, except for two small hiccups.  First, as far as I know, Unity JavaScript doesn&rsquo;t allow for initializing a multidimensional array.  So I looped over the cells in the array, filling them that way.  I have a hunch that the cells are initialized to the <code>int</code> <code>0</code> by default, but I wanted to be explicit.  Please let me know in the comments or <a href="https://twitter.com/zerosalife">via twitter</a> if I&rsquo;m way off base.</p>
+
+<pre><code>var v : int[2, 2, 2];
+for(var cell in v) {
+    cell = 0;
+}
+</code></pre>
+
+<p>I also encountered some unfamiliar syntax: the sonorously named Elvis operator, <a href="http://en.wikipedia.org/wiki/Conditional_operator">?:</a>.  It&rsquo;s also called the <a href="http://en.wikipedia.org/wiki/Ternary_operation">ternary operator</a>, when it&rsquo;s used with 3 arguments, as I&rsquo;ve used it here.  In C-like languages it allows for succinctly stating these kinds of conditional expressions. The example below illustrates how it&rsquo;s used.</p>
+
+<pre><code>// Is the current player's choice the same as the previous player's
+// choice?
+//
+// if (playerChoice == lastChoice)
+//     sameChoice = True;
+// else
+//     sameChoice = False;
+//
+// Using ternary operator:
+v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
+</code></pre>
+
+<h2>The code</h2>
+
+<p>The ported code for the mind-reader is reproduced below.</p>
+
+<pre><code>#pragma strict
+import System.Collections.Generic;
+
+// Used to record play history
+var v: int[,,];
+var lw1: int;
+var lw2: int;
+var losingStreak: int;
+
+// The prediction of the player's next turn
+var prediction: int;
+
+// Keep track of scores
+var cpuScore: int;
+var playerScore: int;
+
+var outText: String;
+
+function Start () {
+    // Initialize matrix to track state of play history
+
+    v = new int[2, 2, 2];
+
+    for(var cell in v) {
+        cell = 0;
+    }
+
+    // No prior knowledge, so set inital prediction based on random chance.
+    prediction = flip();
+
+    // Set scores to 0
+    cpuScore = 0;
+    playerScore = 0;
+
+    // Initialize previous play and play before last win-lost trackers
+    lw1 = 0;
+    lw2 = 0;
+
+    // Output
+    outText = "";
+}
+
+function TakeTurn(playerChoice: int) {
+    // Display player and computer's choices
+    var outTextString: String = "You pressed " + playerChoice + ", " + "I guessed " + prediction + "\n";
+
+    // Computer guessed correctly
+    if (playerChoice == prediction) {
+        cpuScore++;
+        losingStreak = 0;
+        outTextString += " I WIN!\n";
+    }
+    else {
+        playerScore++;
+        losingStreak++;
+        outTextString += " YOU WIN!\n";
+    }
+
+    outText = outTextString;
+
+    // Is the current player's choice the same as the previous player's
+    // choice?
+    //
+    // if (playerChoice == lastChoice)
+    //     sameChoice = True;
+    // else
+    //     sameChoice = False;
+    //
+    // Using ternary operator:
+    v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
+    v[lw2, lw1, 0] = playerChoice;
+    lw2 = lw1;
+    lw1 = playerChoice;
+
+    // If lost more than twice in present state, choose random
+    // strategy.  Otherwise keep the same strategy.
+    prediction = v[lw2, lw1, 1] == 1 &amp;&amp; losingStreak &lt; 2 ? v[lw2, lw1, 0] : flip();
+}
+
+function flip() : int {
+    // Simulate a coin flip to produce 50:50 chance of [0, 1]
+    return Random.Range(0, 2);
+}
+
+
+function Update () {
+    if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        TakeTurn(0);
+    }
+    if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        TakeTurn(1);
+    }
+}
+
+function OnGUI() {
+    var style : GUIStyle = new GUIStyle();
+    style.fontSize = 36;
+
+    GUI.Label(new Rect(0, 0, Screen.width, 100), outText, style);
+    GUI.Label(new Rect(0, 100, Screen.width, 200), "Player: " + playerScore + " CPU: " + cpuScore, style);
+}
+</code></pre>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-13T14:38:20-06:00" pubdate data-updated="true">Dec 13<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ai/'>AI</a>, <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/unity3d/'>Unity3d</a>, <a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/12/06/a-proper-review-of-dungen-star/" title="Previous Post: A proper review of DUNGEN [Star]">&laquo; A proper review of DUNGEN [Star]</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/">Simple Mind-reading Machine in Unity JavaScript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/06/a-proper-review-of-dungen-star/">A proper review of DUNGEN [Star]</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/29/procjam-review/">Procjam review</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/22/procjam-comedown/">procjam comedown</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/15/patchwerk/">Patchwerk</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54217540-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
