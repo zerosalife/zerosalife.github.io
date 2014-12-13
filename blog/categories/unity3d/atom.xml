@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Unity3D | zero's a life]]></title>
+  <title><![CDATA[Category: Unity3d | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity3d/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-12-06T10:07:48-06:00</updated>
+  <updated>2014-12-13T14:41:14-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,37 +14,173 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Text encoding: further improvements to using git for Unity projects]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/"/>
-    <updated>2014-09-27T09:51:41-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects</id>
-    <content type="html"><![CDATA[<p>Brief note here.  Following a Summer of travel and visitors, posts should be returning to a more regular schedule soon.  It&rsquo;s great when I can post here regularly, but I&rsquo;m not going to get bent out of shape when I have other commitments.  So, if there are unannounced, prolonged absences, you can assume that it has something to do with spending my weekends traveling or socializing, which is undoubtedly a good thing.</p>
+    <title type="html"><![CDATA[Simple Mind-reading Machine in Unity JavaScript]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/"/>
+    <updated>2014-12-13T14:38:20-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript</id>
+    <content type="html"><![CDATA[<p>I ported a cool toy from <a href="http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/">Alastair Aitchison&rsquo;s blog</a> to Unity JavaScript.  The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that attempts to guess whether the player will choose Left (by pressing the left arrow key) or Right (by pressing the right arrow key).</p>
 
-<p>I recently came across <a href="http://stackoverflow.com/questions/18225126/how-to-use-git-for-unity3d-source-control">this stackoverflow answer</a> introducing git for version control in Unity projects.  Note, the question specifically refers to Unity3D, but this will work for Unity2D as well.</p>
+<!--more-->
 
-<p>I&rsquo;ve <a href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/">already written</a> about setting up a <code>.gitignore</code> file.  Here are some steps you can take to optimize the way Unity stores information, so git can track it.</p>
 
-<p>Git was built to work by <code>diffing</code> large files containing text, specifically code.  Git works just fine with binary files, but it defaults to a less efficient method to <code>diff</code> those files, which can result in bloated git repositories.  Nobody wants a bloated git repository.</p>
+<h2>How does it work?</h2>
 
-<p>Here I&rsquo;ll summarize two of the steps from the answer that I found helpful, using Unity v4.5+.  It&rsquo;s worth noting that these steps will increase the size of your project&mdash;although I&rsquo;m unsure whether they affect the size of any deployed binaries.</p>
+<p>Aitchison&rsquo;s blog post describes how it works:</p>
 
-<p>So if the size of the project on your development machine is a critical issue, you may want to think about keeping the default settings.  The project I tried the steps on went from 86.7 MB on disk (including its bloated git repository) to 86.9 MB, so it&rsquo;s probably not going to create an appreciable change in most projects.</p>
+<blockquote><p>How does it work? Not by mind-reading, obviously, but by exploiting
+the fact that humans do not behave as &ldquo;randomly&rdquo; as they think they
+do. The computer maintains a very simple memory that records the
+pattern of results of the last two rounds – whether the player won or
+lost, whether they switched strategy, and then whether they then won
+or last the following round. The computer then uses this to choose its
+own best strategy based on the way the player behaved last time the
+current pattern occurred. If the computer loses twice in a row using
+the current strategy, it picks a random response in the next round.</p></blockquote>
 
-<h2>Switch to Visible Meta Files</h2>
+<p>The original idea came from some AI work by <a href="http://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a> and D. W. Hagelbarger. <a href="http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html">They describe the internal memory of the toy mind-reader</a> that we will model using a multidimensional array <code>v</code>:</p>
 
-<p>Switch to <code>Visible Meta Files</code> in the Edit → Project Settings → Editor → Version Control Mode Menu.</p>
+<blockquote><p>There are 8 possible situations and two things the player can do at each one:
+1.  player wins, plays same, wins. Then same or differently.
+2.  player wins, plays same, loses. Then same or differently.
+3.  player wins, plays differently, wins. Then same or differently.
+4.  player wins, plays differently, loses.Then same or differently.
+5.  player loses, plays same, wins.Then same or differently.
+6.  player loses, plays same, loses.Then same or differently.
+7.  player loses, plays differently, wins.Then same or differently.
+8.  player loses, plays differently, loses.Then same or differently.</p></blockquote>
 
-<p>If the <code>Visible Meta Files</code> option is turned on, the <code>.meta</code> files associated with parts of your project will have textual information rather than binary.</p>
+<h2>Why port it?</h2>
 
-<h2>Switch to Force Text</h2>
+<p>Why not just take a straightforward approach, running his code myself? First, I wanted to fully understand the algorithm the hard way, by coding it line for line myself. And second, I wanted to better familiarize myself with Unity JavaScript, including its differences from C#.</p>
 
-<p>Switch to <code>Force Text</code> in the Edit → Project Settings → Editor → Version Control Menu.</p>
+<p>The port was relatively simple, except for two small hiccups.  First, as far as I know, Unity JavaScript doesn&rsquo;t allow for initializing a multidimensional array.  So I looped over the cells in the array, filling them that way.  I have a hunch that the cells are initialized to the <code>int</code> <code>0</code> by default, but I wanted to be explicit.  Please let me know in the comments or <a href="https://twitter.com/zerosalife">via twitter</a> if I&rsquo;m way off base.</p>
 
-<p>If you choose <code>Force Text</code> this will cause Unity to use text to serialize assets that it would normally store as binary files.</p>
+<pre><code>var v : int[2, 2, 2];
+for(var cell in v) {
+    cell = 0;
+}
+</code></pre>
 
-<h2>Save</h2>
+<p>I also encountered some unfamiliar syntax: the sonorously named Elvis operator, <a href="http://en.wikipedia.org/wiki/Conditional_operator">?:</a>.  It&rsquo;s also called the <a href="http://en.wikipedia.org/wiki/Ternary_operation">ternary operator</a>, when it&rsquo;s used with 3 arguments, as I&rsquo;ve used it here.  In C-like languages it allows for succinctly stating these kinds of conditional expressions. The example below illustrates how it&rsquo;s used.</p>
 
-<p>Save the Scene and project for these changes to take effect.</p>
+<pre><code>// Is the current player's choice the same as the previous player's
+// choice?
+//
+// if (playerChoice == lastChoice)
+//     sameChoice = True;
+// else
+//     sameChoice = False;
+//
+// Using ternary operator:
+v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
+</code></pre>
+
+<h2>The code</h2>
+
+<p>The ported code for the mind-reader is reproduced below.</p>
+
+<pre><code>#pragma strict
+import System.Collections.Generic;
+
+// Used to record play history
+var v: int[,,];
+var lw1: int;
+var lw2: int;
+var losingStreak: int;
+
+// The prediction of the player's next turn
+var prediction: int;
+
+// Keep track of scores
+var cpuScore: int;
+var playerScore: int;
+
+var outText: String;
+
+function Start () {
+    // Initialize matrix to track state of play history
+
+    v = new int[2, 2, 2];
+
+    for(var cell in v) {
+        cell = 0;
+    }
+
+    // No prior knowledge, so set inital prediction based on random chance.
+    prediction = flip();
+
+    // Set scores to 0
+    cpuScore = 0;
+    playerScore = 0;
+
+    // Initialize previous play and play before last win-lost trackers
+    lw1 = 0;
+    lw2 = 0;
+
+    // Output
+    outText = "";
+}
+
+function TakeTurn(playerChoice: int) {
+    // Display player and computer's choices
+    var outTextString: String = "You pressed " + playerChoice + ", " + "I guessed " + prediction + "\n";
+
+    // Computer guessed correctly
+    if (playerChoice == prediction) {
+        cpuScore++;
+        losingStreak = 0;
+        outTextString += " I WIN!\n";
+    }
+    else {
+        playerScore++;
+        losingStreak++;
+        outTextString += " YOU WIN!\n";
+    }
+
+    outText = outTextString;
+
+    // Is the current player's choice the same as the previous player's
+    // choice?
+    //
+    // if (playerChoice == lastChoice)
+    //     sameChoice = True;
+    // else
+    //     sameChoice = False;
+    //
+    // Using ternary operator:
+    v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
+    v[lw2, lw1, 0] = playerChoice;
+    lw2 = lw1;
+    lw1 = playerChoice;
+
+    // If lost more than twice in present state, choose random
+    // strategy.  Otherwise keep the same strategy.
+    prediction = v[lw2, lw1, 1] == 1 &amp;&amp; losingStreak &lt; 2 ? v[lw2, lw1, 0] : flip();
+}
+
+function flip() : int {
+    // Simulate a coin flip to produce 50:50 chance of [0, 1]
+    return Random.Range(0, 2);
+}
+
+
+function Update () {
+    if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        TakeTurn(0);
+    }
+    if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        TakeTurn(1);
+    }
+}
+
+function OnGUI() {
+    var style : GUIStyle = new GUIStyle();
+    style.fontSize = 36;
+
+    GUI.Label(new Rect(0, 0, Screen.width, 100), outText, style);
+    GUI.Label(new Rect(0, 100, Screen.width, 200), "Player: " + playerScore + " CPU: " + cpuScore, style);
+}
+</code></pre>
 ]]></content>
   </entry>
   
