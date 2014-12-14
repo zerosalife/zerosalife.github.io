@@ -53,7 +53,7 @@ The original idea came from some AI work by [Claude Shannon](http://en.wikipedia
 
 ## Why port it?
 
-Why not just take a straightforward approach, running his code myself? First, I wanted to fully understand the algorithm the hard way, by coding it line for line myself. And second, I wanted to better familiarize myself with Unity JavaScript, including its differences from C#.
+Why not just take a straightforward approach, running the code myself? First, I wanted to fully understand the algorithm the hard way, by coding it line for line myself. And second, I wanted to better familiarize myself with Unity JavaScript, including its differences from C#.
 
 The port was relatively simple, except for two small hiccups.  First, as far as I know, Unity JavaScript doesn't allow for initializing a multidimensional array.  So I looped over the cells in the array, filling them that way.  I have a hunch that the cells are initialized to the `int` `0` by default, but I wanted to be explicit.  Please let me know in the comments or [via twitter](https://twitter.com/zerosalife) if I'm way off base.
 
