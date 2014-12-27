@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-12-13T14:42:43-06:00</updated>
+  <updated>2014-12-13T21:52:29-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -55,7 +55,7 @@ the current strategy, it picks a random response in the next round.</p></blockqu
 
 <h2>Why port it?</h2>
 
-<p>Why not just take a straightforward approach, running his code myself? First, I wanted to fully understand the algorithm the hard way, by coding it line for line myself. And second, I wanted to better familiarize myself with Unity JavaScript, including its differences from C#.</p>
+<p>Why not just take a straightforward approach, running the code myself? First, I wanted to fully understand the algorithm the hard way, by coding it line for line myself. And second, I wanted to better familiarize myself with Unity JavaScript, including its differences from C#.</p>
 
 <p>The port was relatively simple, except for two small hiccups.  First, as far as I know, Unity JavaScript doesn&rsquo;t allow for initializing a multidimensional array.  So I looped over the cells in the array, filling them that way.  I have a hunch that the cells are initialized to the <code>int</code> <code>0</code> by default, but I wanted to be explicit.  Please let me know in the comments or <a href="https://twitter.com/zerosalife">via twitter</a> if I&rsquo;m way off base.</p>
 
