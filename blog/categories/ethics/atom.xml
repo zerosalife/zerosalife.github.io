@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ethics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/ethics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-12-13T21:52:29-06:00</updated>
+  <updated>2014-12-27T13:42:42-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,35 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Sharing Philosophy]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy/"/>
+    <updated>2014-12-27T09:01:01-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy</id>
+    <content type="html"><![CDATA[<p>From <a href="http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code">this interview</a> with <a href="https://twitter.com/samaaron">Sam Aaron</a>.  Aaron talks about sharing software to create music, but it applies just as well to games.</p>
+
+<blockquote><p>We believe that most value in the world comes through sharing, and that music is no exception. One of the benefits of sharing is that it makes learning much easier. For example, we often hear amazing sounds on albums and wonder how they were made. However, musicians rarely share their production methods. We release all the software we write, which includes our synthesiser designs, interaction abstractions, and compositional structures, under an open source license, and we distribute it to everyone through GitHub. This makes it free and easy for anybody to copy and recreate any aspect of our work. For example, when one of our fans is interested in the sound of one of the synths we&rsquo;re using, they can go to GitHub and download the synth design as text. They can email it to their friends, read it, study it, copy it, modify it and run it to recreate the exact sound.</p></blockquote>
+
+<p>&#x2013;Sam Aaron</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sharing Philosophy]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy/"/>
+    <updated>2014-12-27T09:01:01-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy</id>
+    <content type="html"><![CDATA[<p>From <a href="http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code">this interview</a> with <a href="https://twitter.com/samaaron">Sam Aaron</a>.  Aaron talks about sharing software to create music, but it applies just as well to games.</p>
+
+<blockquote><p>We believe that most value in the world comes through sharing, and that music is no exception. One of the benefits of sharing is that it makes learning much easier. For example, we often hear amazing sounds on albums and wonder how they were made. However, musicians rarely share their production methods. We release all the software we write, which includes our synthesiser designs, interaction abstractions, and compositional structures, under an open source license, and we distribute it to everyone through GitHub. This makes it free and easy for anybody to copy and recreate any aspect of our work. For example, when one of our fans is interested in the sound of one of the synths we&rsquo;re using, they can go to GitHub and download the synth design as text. They can email it to their friends, read it, study it, copy it, modify it and run it to recreate the exact sound.</p></blockquote>
+
+<p>&#x2013;Sam Aaron</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Do ethics matter in game design?]]></title>
     <link href="http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design/"/>
-    <updated>2014-10-04T11:38:33-05:00</updated>
+    <updated>2014-10-04T12:38:33-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/10/04/do-ethics-matter-in-game-design</id>
     <content type="html"><![CDATA[<p>I reached out on twitter in a somewhat misguided appeal to #gamedev, asking whether devs consider ethics when designing games.  Apparently there is so much traffic on #gamedev that any tweet will be lost in a deluge of announcements and automated bot retweets.  Oh well, I thought, I&rsquo;ll go it alone.  Given the <a href="http://bits.blogs.nytimes.com/2014/10/02/intel-pulls-ads-from-site-after-gamergate-boycott/">recent tone in the communities surrounding games</a>, I feel the need to examine this question: <strong>Do ethics matter in game design?</strong></p>
 

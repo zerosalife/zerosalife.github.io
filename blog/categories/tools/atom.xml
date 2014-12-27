@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-12-13T21:52:29-06:00</updated>
+  <updated>2014-12-27T13:42:42-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,22 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Sharing Philosophy]]></title>
+    <link href="http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy/"/>
+    <updated>2014-12-27T09:01:01-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy</id>
+    <content type="html"><![CDATA[<p>From <a href="http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code">this interview</a> with <a href="https://twitter.com/samaaron">Sam Aaron</a>.  Aaron talks about sharing software to create music, but it applies just as well to games.</p>
+
+<blockquote><p>We believe that most value in the world comes through sharing, and that music is no exception. One of the benefits of sharing is that it makes learning much easier. For example, we often hear amazing sounds on albums and wonder how they were made. However, musicians rarely share their production methods. We release all the software we write, which includes our synthesiser designs, interaction abstractions, and compositional structures, under an open source license, and we distribute it to everyone through GitHub. This makes it free and easy for anybody to copy and recreate any aspect of our work. For example, when one of our fans is interested in the sound of one of the synths we&rsquo;re using, they can go to GitHub and download the synth design as text. They can email it to their friends, read it, study it, copy it, modify it and run it to recreate the exact sound.</p></blockquote>
+
+<p>&#x2013;Sam Aaron</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Text encoding: further improvements to using git for Unity projects]]></title>
     <link href="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/"/>
-    <updated>2014-09-27T09:51:41-05:00</updated>
+    <updated>2014-09-27T10:51:41-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects</id>
     <content type="html"><![CDATA[<p>Brief note here.  Following a Summer of travel and visitors, posts should be returning to a more regular schedule soon.  It&rsquo;s great when I can post here regularly, but I&rsquo;m not going to get bent out of shape when I have other commitments.  So, if there are unannounced, prolonged absences, you can assume that it has something to do with spending my weekends traveling or socializing, which is undoubtedly a good thing.</p>
 
@@ -51,7 +64,7 @@
   <entry>
     <title type="html"><![CDATA[Automating blog deployment with Octopress]]></title>
     <link href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/"/>
-    <updated>2014-09-06T11:27:35-05:00</updated>
+    <updated>2014-09-06T12:27:35-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress</id>
     <content type="html"><![CDATA[<p>Based on Kevin van Zonneveld&rsquo;s (<a href="https://twitter.com/kvz">@kvz</a>) <a href="http://kvz.io/blog/2012/09/25/blog-with-octopress/">article</a> on setting up Octopress,
 I&rsquo;ve adapted a <code>Makefile</code> to make building my blog easier&#x2026; with
@@ -102,7 +115,7 @@ Removing the <code>%</code> allowed me to run <code>make blog</code> as expected
   <entry>
     <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T11:28:40-05:00</updated>
+    <updated>2014-05-31T12:28:40-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
     <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
 
@@ -140,7 +153,7 @@ Removing the <code>%</code> allowed me to run <code>make blog</code> as expected
   <entry>
     <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
-    <updated>2014-04-26T09:47:18-05:00</updated>
+    <updated>2014-04-26T10:47:18-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
     <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
 
@@ -223,15 +236,6 @@ Removing the <code>%</code> allowed me to run <code>make blog</code> as expected
 <p><img src="/images/assets/graph-labeled-edges.png"></p>
 
 <p>I&rsquo;ve submitted a <a href="https://github.com/ztellman/rhizome/pull/8">pull request</a> to Rhizome to add this example to the documentation.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
-    <updated>2014-03-29T10:04:05-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
-    <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
 ]]></content>
   </entry>
   
