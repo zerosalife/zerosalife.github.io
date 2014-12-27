@@ -4650,8 +4650,17 @@ tactics like maximizing cool downs, or using situational abilities
 
 
 * Sharing philosophy
+I close the year out with a quote from @samaaron about the value of
+sharing.
 
-[[http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code][This interview]] with Sam Aaron.
+- ethics
+- tools
+- ethics
+- algorithms
+
+
+From [[http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code][this interview]] with [[https://twitter.com/samaaron][Sam Aaron]].  Aaron talks about sharing
+software to create music, but it applies just as well to games.
 
 
 #+BEGIN_QUOTE
@@ -4672,7 +4681,7 @@ modify it and run it to recreate the exact sound.
 
 #+END_QUOTE
 
-- Sam Aaron
+--Sam Aaron
 
 * Moon Hunters Kickstarter retrospective
 Pie charts are not very helpful.  Bar charts are easier to read. So
@@ -4921,3 +4930,9 @@ The ported code for the mind-reader is reproduced below.
 
 
 #+END_SRC
+
+* Gamifying pro-social behavior
+[[https://twitter.com/Staubfluse/status/540806562613575680/photo/1]]
+
+* Framed and Manipulated Environments
+[[http://www.polygon.com/2014/12/12/7383903/hideo-kojima-framed-game-of-the-year-ios]]
