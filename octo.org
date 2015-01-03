@@ -1887,6 +1887,66 @@ off the mark, or you just want to weigh in on the merits of designing
 for "party" vs. "fighting" games, drop me a line in the comments or on
 [[https://twitter.com/zerosalife][twitter]].
 
+** Procjam
+*** Announcement on the blog
+State intention to participate, coverage, possible hiccups.  Intend to
+release at least one project on November 8th, and possibly, time
+allowing a second on the 15th.  Intend to cover talks with writeups or
+responses to follow up.  Also intend to cover entries with writeups or
+responses.
+
+
+Make things that make things: #procjam 2014.
+
+A motivational post psyching myself up for #procjam.
+
+- #procjam
+
+I'm thrilled to announce that I'm going to participate in the
+[[http://itch.io/jam/procjam][upcoming procedural game jam called
+#procjam]].  #procjam is a global game jam and a live-streamed
+conference in London focused on making things that make things. You
+can keep up to date by following the jam tumblr
+[[http://procjam.tumblr.com/][procjam.tumblr.com]]. There's already a [[http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started][handy list of procedural
+generation tutorials available on the tumblug]].
+
+In addition to submitting one or two projects I've been working on,
+I'd like to cover the content of the talks with perspective and
+reactions, and to check out the contest entries after it's finished
+[[http://zerosalife.github.io/blog/2014/07/26/space-is-read/][like I did for /Space Is Red/ from #spacecowboyjam]].
+
+Needless to say this will be a month-long endeavor, what with my
+weekly (ish) blogging schedule.  With one or two posts focused on
+submissions, I think four blog posts may be conservative, so I'll keep
+writing as long as I'm interested.
+
+To make it easier to follow along, I'll tag up all the posts with the
+#procjam category and I'll try to do the same for the tweet
+announcements, even if it's out of style because the jam was weeks
+ago.  That's how committed I am to making this happen.
+
+If you get the sense that I'm trying to psych myself up for this, I
+am.
+
+The next couple of months will be very busy in my life.  I'll be
+traveling and attending conferences, activities that have
+traditionally consumed my precious blogging time like so many Frito
+pies.
+
+I may be setting the bar high, but if anything the purpose for aiming
+high is success.  All too often I hear about jams in the middle when
+everyone is tweeting out cool prototypes and in the thick of design,
+or I'll hear about a jam when the contest is long over because someone
+pointed out that the winning entry was amazing.  Through dumb luck and
+exquisite taste in following [[https://twitter.com/mtrc][@mtrc on twitter]], I heard about this
+gamejam with enough lead time to mark it on my calendar.
+
+Even if I don't produce anything interesting or important, by gum, I'm
+going to participate in and cover this gamejam.  I'm not going to let
+another really cool gamejam slip under the radar.
+
+*** Procjam submission
+
 ** Patchwerk
 Announcing Patchwerk: a quilt pattern generator.  #procjam
 
@@ -1999,6 +2059,7 @@ grid in the =state= map.
 Eventually, and this is beyond the scope of 1.0.0, I'm intrigued by
 the possibility of [[https://github.com/quil/quil/wiki/ClojureScript][porting this code over to Clojurescript]] and
 creating a web-based version of the application.
+
 ** Procjam comedown
 - procjam
 - procedural generation
@@ -2227,7 +2288,7 @@ abstraction of systems in a video game.
 - [[http://caseportman.itch.io/riser]]
   - Looks like it controls well
 
-* A proper review of DUNGEN [Star]
+** A proper review of DUNGEN [Star]
 I owe @JctWood a playthrough and review of DUNGEN [Star], too lazy to
 print it so I cut it up in Adobe Illustrator. #procjam #7dfps #paperjam
 
@@ -2292,15 +2353,409 @@ satisfied when you survive the dungeon.  With that criticism said, I
 still think /DUNGEN [Star]/ succeeds as a gamejam game and a great
 prototype to build off of.
 
+** Simple Mind-reading Machine in Unity JavaScript
+Porting a simple mind-reading script to Unity's javascript.  #unity3d
 
-* Chrono Trigger Random Number Generator               :analysis:R:mechanics:
+- AI
+- algorithm
+- mechanics
+- Unity
+- JavaScript
+- Unity3d
+
+
+[[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/]]
+
+[[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html]]
+
+[[http://answers.unity3d.com/questions/54695/how-to-declare-and-initialize-multidimensional-arr.html]]
+
+[[http://csharptutorial.blogspot.com/2006/05/question-mark-ternary-operator.html]]
+
+I ported a cool toy from [[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/][Alastair Aitchison's blog]] to Unity
+JavaScript.  The toy implements a simple 'mind-reading' algorithm that
+attempts to guess whether the player will choose Left (by pressing the
+left arrow key) or Right (by pressing the right arrow key).
+
+<!--more-->
+
+*** How does it work?
+
+Aitchison's blog post describes how it works:
+#+BEGIN_QUOTE
+How does it work? Not by mind-reading, obviously, but by exploiting
+the fact that humans do not behave as "randomly" as they think they
+do. The computer maintains a very simple memory that records the
+pattern of results of the last two rounds – whether the player won or
+lost, whether they switched strategy, and then whether they then won
+or last the following round. The computer then uses this to choose its
+own best strategy based on the way the player behaved last time the
+current pattern occurred. If the computer loses twice in a row using
+the current strategy, it picks a random response in the next round.
+#+END_QUOTE
+
+The original idea came from some AI work by [[http://en.wikipedia.org/wiki/Claude_Shannon][Claude Shannon]]
+and D. W. Hagelbarger. [[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html][They describe the internal memory of the toy
+mind-reader]] that we will model using a multidimensional array =v=:
+
+#+BEGIN_QUOTE
+There are 8 possible situations and two things the player can do at each one:
+
+1) player wins, plays same, wins. Then same or differently.
+2) player wins, plays same, loses. Then same or differently.
+3) player wins, plays differently, wins. Then same or differently.
+4) player wins, plays differently, loses.Then same or differently.
+5) player loses, plays same, wins.Then same or differently.
+6) player loses, plays same, loses.Then same or differently.
+7) player loses, plays differently, wins.Then same or differently.
+8) player loses, plays differently, loses.Then same or differently.
+#+END_QUOTE
+
+*** Why port it?
+Why not just take a straightforward approach, running
+his code myself? First, I wanted to fully understand the algorithm the
+hard way, by coding it line for line myself. And second, I wanted to
+better familiarize myself with Unity JavaScript, including its
+differences from C#.
+
+The port was relatively simple, except for two small hiccups.  First,
+as far as I know, Unity JavaScript doesn't allow for initializing a
+multidimensional array.  So I looped over the cells in the array,
+filling them that way.  I have a hunch that the cells are initialized
+to the =int= =0= by default, but I wanted to be explicit.  Please let
+me know in the comments or [[https://twitter.com/zerosalife][via twitter]] if I'm way off base.
+
+#+BEGIN_SRC javascript
+  var v : int[2, 2, 2];
+  for(var cell in v) {
+      cell = 0;
+  }
+
+#+END_SRC
+
+I also encountered some unfamiliar syntax: the sonorously named Elvis
+operator, [[http://en.wikipedia.org/wiki/Conditional_operator][?:]].  It's also called the [[http://en.wikipedia.org/wiki/Ternary_operation][ternary operator]], when it's used
+with 3 arguments, as I've used it here.  In C-like languages it allows
+for succinctly stating these kinds of conditional expressions. The
+example below illustrates how it's used.
+
+#+BEGIN_SRC javascript
+  // Is the current player's choice the same as the previous player's
+  // choice?
+  //
+  // if (playerChoice == lastChoice)
+  //     sameChoice = True;
+  // else
+  //     sameChoice = False;
+  //
+  // Using ternary operator:
+  v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
+
+#+END_SRC
+
+*** The code
+The ported code for the mind-reader is reproduced below.
+
+#+BEGIN_SRC javascript
+  #pragma strict
+  import System.Collections.Generic;
+
+  // Used to record play history
+  var v: int[,,];
+  var lw1: int;
+  var lw2: int;
+  var losingStreak: int;
+
+  // The prediction of the player's next turn
+  var prediction: int;
+
+  // Keep track of scores
+  var cpuScore: int;
+  var playerScore: int;
+
+  var outText: String;
+
+  function Start () {
+      // Initialize matrix to track state of play history
+
+      v = new int[2, 2, 2];
+
+      for(var cell in v) {
+          cell = 0;
+      }
+
+      // No prior knowledge, so set inital prediction based on random chance.
+      prediction = flip();
+
+      // Set scores to 0
+      cpuScore = 0;
+      playerScore = 0;
+
+      // Initialize previous play and play before last win-lost trackers
+      lw1 = 0;
+      lw2 = 0;
+
+      // Output
+      outText = "";
+  }
+
+  function TakeTurn(playerChoice: int) {
+      // Display player and computer's choices
+      var outTextString: String = "You pressed " + playerChoice + ", " + "I guessed " + prediction + "\n";
+
+      // Computer guessed correctly
+      if (playerChoice == prediction) {
+          cpuScore++;
+          losingStreak = 0;
+          outTextString += " I WIN!\n";
+      }
+      else {
+          playerScore++;
+          losingStreak++;
+          outTextString += " YOU WIN!\n";
+      }
+
+      outText = outTextString;
+
+      // Is the current player's choice the same as the previous player's
+      // choice?
+      //
+      // if (playerChoice == lastChoice)
+      //     sameChoice = True;
+      // else
+      //     sameChoice = False;
+      //
+      // Using ternary operator:
+      v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
+      v[lw2, lw1, 0] = playerChoice;
+      lw2 = lw1;
+      lw1 = playerChoice;
+
+      // If lost more than twice in present state, choose random
+      // strategy.  Otherwise keep the same strategy.
+      prediction = v[lw2, lw1, 1] == 1 && losingStreak < 2 ? v[lw2, lw1, 0] : flip();
+  }
+
+  function flip() : int {
+      // Simulate a coin flip to produce 50:50 chance of [0, 1]
+      return Random.Range(0, 2);
+  }
+
+
+  function Update () {
+      if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+          TakeTurn(0);
+      }
+      if (Input.GetKeyDown(KeyCode.RightArrow)) {
+          TakeTurn(1);
+      }
+  }
+
+  function OnGUI() {
+      var style : GUIStyle = new GUIStyle();
+      style.fontSize = 36;
+
+      GUI.Label(new Rect(0, 0, Screen.width, 100), outText, style);
+      GUI.Label(new Rect(0, 100, Screen.width, 200), "Player: " + playerScore + " CPU: " + cpuScore, style);
+  }
+
+
+#+END_SRC
+
+
+** Sharing philosophy
+I close the year out with a quote from @samaaron about the value of
+sharing.
+
+- ethics
+- tools
+- ethics
+- algorithms
+
+
+From [[http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code][this interview]] with [[https://twitter.com/samaaron][Sam Aaron]].  Aaron talks about sharing
+software to create music, but it applies just as well to games.
+
+
+#+BEGIN_QUOTE
+
+We believe that most value in the world comes through sharing, and
+that music is no exception. One of the benefits of sharing is that it
+makes learning much easier. For example, we often hear amazing sounds
+on albums and wonder how they were made. However, musicians rarely
+share their production methods. We release all the software we write,
+which includes our synthesiser designs, interaction abstractions, and
+compositional structures, under an open source license, and we
+distribute it to everyone through GitHub. This makes it free and easy
+for anybody to copy and recreate any aspect of our work. For example,
+when one of our fans is interested in the sound of one of the synths
+we're using, they can go to GitHub and download the synth design as
+text. They can email it to their friends, read it, study it, copy it,
+modify it and run it to recreate the exact sound.
+
+#+END_QUOTE
+
+--Sam Aaron
+
+** INSceptahdeckWU
+First #procjam entry: @insceptahdeckwu generates tweets based on Wu
+Tang Clan lyrics. Also updates abt @sudorossy @GalaxyKate #7dfps
+
+- design
+- procedural generation
+- clojure
+- procjam
+- 7dfps
+
+*** #procjam updates
+
+[[https://twitter.com/search?q%3Dprocjam][#procjam]] is upon us.  The conference is on and popping, streaming at
+[[http://www.twitch.tv/procjam]].  I'll try to precede my #procjam posts
+with a little update on some of the cool things I've seen that need
+pointing out during the jam itself.
+
+[[https://twitter.com/GalaxyKate][@GalaxyKate]] will be streaming [[http://vimeo.com/111272682][some tutorials]] today, following the
+conference.
+
+[[https://twitter.com/SudoRossy][@sudorossy]] is currently streaming some development and modeling at
+[[http://www.twitch.tv/sudorossy]].  I imagine that sudorossy will
+continue this throughout the jam.
+
+The [[https://twitter.com/search?q%3D7dfps][#7dfps]] jam is also going on this week.  So, I've decided to
+release my third person procedural tweeter.  Or maybe it's a fourth
+person tweeter, third person once removed.
+
+*** Fourth-person tweets
+
+I'm at it again, [[http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/][making a twitter bot]] like [[https://twitter.com/styx_ebooks][@styx_ebooks]].  Only this
+time it's in a completely different language and it's got a completely
+different corpus.  Corpus is a Latin way of saying text, in case you
+forgot.
+
+<!--more-->
+
+*** Making the tweets
+The basic algorithm works like this.
+
+The bot creates a huge textfile containing lyrics from Wu Tang Clan
+songs.  I trim away a lot of the information about verses and
+choruses, but I keep the punctuation because I like the sense of
+rhythm it creates.
+
+Based on the relationship between the words in this corpus file, the
+bot builds a [[http://en.wikipedia.org/wiki/Markov_chain][markov process]] to generate the text of the tweets.  To do
+so, the bot generates a transition matrix using [[https://github.com/Janiczek/markov][Janiczek's Clojure
+markov library]].  It then takes random walks through that matrix to
+produce a string of text with a similar relationship between words to
+the input lyrics corpus.
+
+*** Making it a command line app
+This is the first time I've tried to make a command line application
+in Twitter.  Luckily there are some good tools out there.
+
+I wondered how to deal with multiple options and inputs, and the good
+news is: it's just as easy as you'd think.  You simply add
+conditionals to deal with the possible behaviors of your program.  The
+magic of =parse-opts= handles the rest.  Options with long names
+automatically become keys to the option dictionary, and if you've
+marked them as a =:flag= you can depend on the truth-value to control
+the flow of your program.
+
+You may think it's odd that I'm using options instead of actions as in
+the =cli= example, but hey.  It's my program.  Your program can work
+the way you want it too.  I'm going to make sure to document it so you
+can use the Rebel INS or build a twitter bot based on this code.
+
+To build the app, I use =lein bin= from the command line.
+
+I'm interested in [[http://www.rkn.io/2014/02/06/clojure-cookbook-daemons/][daemonizing]] the application.  That is to say, I'm
+interested in turning it into a persistent process that runs in the
+background on my computer.  But for now, I've set up a simple [[http://en.wikipedia.org/wiki/Cron][cron]]
+script to tweet every few hours.
+
+*** Logging
+When I do tweets from the command line there's some dark magic going
+on that I don't understand.  Anyway it seems to invoke the =Log4j=, so
+I [[http://www.bahmanm.com/blogs/how-to-add-logging-to-a-clojure-project][set that up according to this blog post]].
+
+*** Markov chain text generation
+One of the quirks of the markov package I used is that it stops
+generating 'random walks' when it reaches states that it has not been
+trained on.  As you can imagine when using imagery-rich,
+neologism-laden rap music, there are many words that occur once, even
+in a very large corpus.  Being unique is kind of a goal of the form, a
+fact reflected in [[http://en.wikipedia.org/wiki/Ol%2527_Dirty_Bastard][at least one alias]].
+
+In order to make more realistic texts, it's common to increase the
+order of the transition matrix.  That is to say, to determine the
+probability for a following word from the prior two or more words.
+However, given my idiosyncratic corpus, this leads the 'random walk'
+algorithm to halt, giving me too few words in my output.
+
+Interestingly, in this case, dialing back the order tends to lead to
+more rhyming and a few recognizable couplets, which I find kinda nice.
+
+*** Setting up the twitter account
+I ran into a problem getting an app set up for the bot's twitter
+account.  I am merely one person, and thus have need for merely one
+cell phone.  Since twitter requires a unique mobile number for
+authenticating apps, I was out of luck.  That is, until I found this
+[[http://dghubble.com/blog/posts/twitter-app-write-access-and-bots/][blog post showing how to use the same app on multiple bot clients]].
+
+Faithful readers may remember my wildly popular, and yet still somehow
+deeply underrated, [[http://en.wikipedia.org/wiki/Bangsian_fantasy][Bangsian]] fantasy bot, [[https://twitter.com/styx_ebooks][@styx_ebooks]].  Using =twurl=
+I was able to grant access to the [[https://twitter.com/styx_ebooks][@styx_ebooks]] app credentials for the
+new bot.
+
+*** Moving on
+Here's one of my favorite tweets so far:
+
+{% tweet https://twitter.com/insceptahdeckwu/status/529619098758823937
+%}
+
+From here the skies the limit.  I could try analyzing the generated
+text to try to build lines or stanzas.  I could try to reorder words
+to reflect the syntax present from the transcription.  I could try to
+represent individual emcees with unique corpora.
+
+
+* Starting a Game Studio Business
+[[http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq%3D1][http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq=1]]
+
+** Business Plan
+[[http://www.gamasutra.com/view/feature/2695/the_basic_marketing_plan_for_indie_.php?print%3D1][http://www.gamasutra.com/view/feature/2695/the_basic_marketing_plan_for_indie_.php?print=1]]
+
+[[http://www.realityisagame.com/archives/2806/a-business-plan-for-indie-game-developers-doesnt-exist/]]
+
+* Business cards
+
+
+** For the blog
+Zero's A Life
+
+Meditations on Games and Design
+
+[[http://zerosalife.github.io]] [[http://twitter.com/zerosalife][@zerosalife]]
+
+** For the studio
+
+*** Brands
+Gaminess
+
+Pengin, incorporating aspects of the japanese: ペンギン
+
+
+* IDEAS
+
+** STUBS
+*** Chrono Trigger Random Number Generator             :analysis:R:mechanics:
 categories:
 - analysis
 - algorithms
 - R
 - mechanics
 
-** Introduction
+**** Introduction
 [[http://en.wikipedia.org/wiki/File:ChronoTriggerInside.PNG][{% img http://upload.wikimedia.org/wikipedia/en/d/d5/ChronoTriggerInside.PNG from Wikipedia%}]]
 Image from [[http://en.wikipedia.org/wiki/Chrono_Trigger][wikipedia.org]].
 
@@ -2335,12 +2790,12 @@ using basic R commands to tease apart its underlying algorithms.
 
 <!--more-->
 
-** A brief note on the choice of R
+**** A brief note on the choice of R
 There was no good reason to choose R for this analysis.  I chose R
 because I was comfortable using it to quickly do the statistical
 analyses summarizing a data set.
 
-** Chrono Trigger's battle system
+**** Chrono Trigger's battle system
 
 Chrono Trigger's battle system has two types of attacks: *[[http://chrono.wikia.com/wiki/Tech][Tech]]*
 (including magic) and *[[http://chrono.wikia.com/wiki/List_of_Chrono_Trigger_weapons][weapon attacks]]*.  The Tech system is more
@@ -2373,7 +2828,7 @@ parameters of the *Damage* formula.  That's a fancy way of saying, I
 hit the same enemies with the same weapons a bunch of times.  I kept
 track of the damage dealt each time.
 
-** Analysis and Observations
+**** Analysis and Observations
 Crono begins the game with 5 *PWR* and his weapon is a Wood Sword,
 which has a *Weapon* value of 3. Crono's *Attack* value is:
 
@@ -2460,7 +2915,7 @@ raw.hits
 
 
 
-** Summary
+**** Summary
 
 There are still questions that remain unanswered.
 
@@ -2581,16 +3036,16 @@ The way Earthbound does things:
 
 #+END_SRC
 
-* Visualizing Zelda Dungeons                              :design:CommonLisp:
+*** Visualizing Zelda Dungeons                            :design:CommonLisp:
 
 
-* Visualizing Zelda Dungeons in Clojure                      :design:Clojure:
+*** Visualizing Zelda Dungeons in Clojure                    :design:Clojure:
 "Port it to Clojure, dogg.  There's a nice library by [[https://github.com/ztellman][Zachary Tellman]]
 called [[https://github.com/ztellman/rhizome][Rhizome]]," read my notes.  It'll be easy, I think.
 
-* What's an LFSR? :design:algorithm:mechanics:Clojure:
+*** What's an LFSR?                      :design:algorithm:mechanics:Clojure:
 
-* Messaging in Unity
+*** Messaging in Unity
 See [[file:~/org/personal/gd.org::*Messaging][Messaging]]
 
 SendMessage can lead to a performance hit.  In places where a
@@ -2599,9 +3054,23 @@ target object would be faster.
 
 [[http://forum.unity3d.com/threads/is-sendmessage-really-that-bad.38094/#post-245697]]
 
+*** Level experience progressions
+
+**** Solar 2
+Growth Requirements
+A Planet - 20 Mass
+A Life Sustaining Planet - 80 Mass
+A Small Star - 180 Mass
+A Medium Star - 1,500 Mass
+A Large Star - 2,000 Mass
+A Black Hole - 3,000 Mass
+The Big Crunch - 1,000,000 Mass
+
+[[http://forums.steampowered.com/forums/showthread.php?t%3D1935621][Source.]]
 
 
-* Game Development Performed
+
+*** Game Development Performed
 [[http://gamasutra.com/view/news/213339/Vlambeers_Performative_Game_Development__the_way_of_the_future.php]]
 
 [[http://kotaku.com/we-made-this-game-when-we-were-angry-1553875111]]
@@ -2643,29 +3112,709 @@ Marathon.  These streamed charity events, and even non-charity
 streams, can themselves then be edited, chopped & screwed into content
 for the streamers normal non-streaming content delivery platform.
 
-** Vlambeer
+**** Vlambeer
 [[https://twitter.com/Vlambeer/status/463633278965387264]]
 and more recently:
 [[https://twitter.com/Vlambeer/status/491535617847988224]]
-** Double Fine Massive Chalice
+**** Double Fine Massive Chalice
 
-** Indie House
+**** Indie House
 [[https://twitter.com/infinite_ammo/status/463209517010780160]]
 
-** Noel F B
+**** Noel F B
 [[https://twitter.com/NoelFB/status/463451657234550784]]
 
 [[http://skytorn.tumblr.com/post/84964990403/howd-you-go-at-describing-the-game-in-a-few][What's the game all about?]]
 
 
-** Farmer Gnome
+**** Farmer Gnome
 Under the Ocean development
 
 [[https://twitter.com/Farmergnome/status/463688831263203330]]
 
 [[https://twitter.com/Farmergnome/status/465137564672745472/photo/1]]
 
-* Creating a Dictionary of Lists in Unity JavaScript
+
+*** Grim Fandango Design Documents
+
+see also: [[http://grumpygamer.com/maniac_mansion_design_doc]]
+
+[[http://www.gamasutra.com/view/news/189266/The_technique_LucasArts_used_to_design_its_classic_adventure_games.php]]
+
+*** Full Throttle Critical Path Checklist
+
+*** Procedural Terrain in Unity
+[[http://alastaira.wordpress.com/2013/11/14/procedural-terrain-splatmapping/]]
+
+[[http://www.big-robot.com/2012/07/02/procedural-british-countryside-generation/]]
+
+[[http://forum.unity3d.com/threads/68807-Infinite-Terrain-Free-Project-Source]]
+*** Shaders Primer
+[[http://notes.underscorediscovery.com/shaders-a-primer/]]
+
+
+
+*** Object reuse in Unity
+[[https://twitter.com/mikegeig/status/453239221885480960/photo/1]]
+
+<blockquote class="twitter-tweet" lang="en"><p>Everything you ever needed to know about object pooling. <a href="https://twitter.com/search?q=%23unity3d&amp;src=hash">#unity3d</a> <a href="http://t.co/dGxRaxktqo">pic.twitter.com/dGxRaxktqo</a></p>&mdash; Mike Geig (@mikegeig) <a href="https://twitter.com/mikegeig/statuses/453239221885480960">April 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+[[http://unitypatterns.com/resource/objectpool/]]
+
+[[https://github.com/joaokucera/unity-pooling/blob/master/source/Assets/Pooling/GenericPooling.cs]]
+
+*** Game design patterns
+[[http://gameprogrammingpatterns.com/index.html]]
+
+*** UI Ideas
+[[http://futureinterface.tumblr.com/]]
+
+[[http://visualpunker.tumblr.com/tagged/fui]]
+
+Credit to [[https://twitter.com/turnislefthome/status/463692298455617536]]
+
+*** 1d games
+Flappy bird is a 1d game.
+
+
+*** Thinking about dice games
+[[https://twitter.com/JonahD/status/471458517896155137]]
+
+[[http://www.dungeonmorphs.com/]]
+
+
+*** A World of Consequence: The World of Ruin in FFVI
+
+[[http://www.avclub.com/article/final-fantasy-vi-explores-human-pain-through-its-s-205365?utm_source%3Dtwitter&utm_medium%3DShareTools&utm_campaign%3Ddefault][http://www.avclub.com/article/final-fantasy-vi-explores-human-pain-through-its-s-205365?utm_source=twitter&utm_medium=ShareTools&utm_campaign=default]]
+
+*** Anatomy of a Screenshot
+[[https://twitter.com/NoelFB/status/474491040011788288/photo/1]]
+
+*** Text adventures vs. User-editable MUDs
+Sort of relates to the [[http://zerosalife.github.io/blog/2014/07/26/space-is-read/][previous discussion]] of interactivity and genre
+with regard to Visual novels vs choos your own adventure
+
+[[file:~/org/personal/gd.org::*Finite%20state%20machine%20vs%20state%20transition%20system][Finite state machine vs state transition system]]
+
+*** Displaying an arbitrary number of objects in an arc
+
+Want to go around in a circle, like the numbers 8-4 around the top of
+a clock.  Since we have nine reasonable positions, calculate the
+modulo of BigBaddie level and 9 spots, then adjust the number of hits
+and number of objects to display accordingly.
+
+*** Skill vs RNG
+[[https://twitter.com/dom2d/status/494206004318314496/photo/1]]
+
+*** The graph of a map prototype
+[[https://twitter.com/bitmOO/status/495364383212838912/photo/1]]
+
+
+*** Reward Schedules
+[[http://www.betabunny.com/behaviorism/Conditioning2.htm]]
+
+*** Pixel Sprites and Unity2d
+#unity3d
+
+- Unity
+- Unity2d
+
+*** Dialog in Unity
+[[https://twitter.com/MattRix/status/525374216225718272/photo/1]]
+[[https://twitter.com/MattRix/status/525372446384586752/photo/1]]
+
+[[https://dl.dropboxusercontent.com/u/1063919/Screen%20Shot%202014-10-23%20at%204.34.47%20PM.png]]
+[[https://twitter.com/infinite_ammo/status/525375826007982080/photo/1]]
+
+[[https://dl.dropboxusercontent.com/u/9814265/skytorn/dialog2.png]]
+[[https://twitter.com/NoelFB/status/525377696571097089]]
+
+[[http://pastebin.com/rArEyKwM]]
+[[https://twitter.com/NoelFB/status/525389011850772480]]
+
+*** Implementing an inventory in Twine
+
+*** The Core Gameplay Loop of Drug-seeking Behavior
+
+**** [[http://adriancrook.com/designing-core-loops/]]
+
+**** [[http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2801885/]]
+
+**** See [[*Reward%20Schedules][Reward Schedules]]
+
+*** Self-publishing
+
+**** Write the book
+
+**** Come up with a cover
+
+**** Get it physically published, reach publishing stream
+
+**** Advertise it, so it gets to a community
+*** The Primacy of Symmetry
+*** Typical video game costs and budgets
+
+[[http://vgsales.wikia.com/wiki/Video_game_costs]]
+
+- production and development costs
+  - developer salaries
+  - voice acting
+  - music and orchestra (as high as $500K[1])
+  - licensing
+- marketing and promotions
+  - television advertisments
+  - print advertisements (magazines)
+  - online advertisements
+  - events and launch parties[2]
+- manufacturing and distribution
+  - arcade machine production (very expensive)
+  - console cartridge production (fairly expensive)
+  - optical disc production (fairly cheap)
+  - online distribution (very cheap)
+
+*** Jump scares and the startle response
+
+**** The origin of the jump scare
+Alone in the Dark
+Resident Evil
+
+**** Salient stimuli
+"Rewards like sex, money, drugs and novel situations all cause the
+release of dopamine in the reward circuit of the brain, a region
+buried deep beneath the cortex. Aside from generating a sense of
+pleasure, this dopamine signal tells your brain something like, “Pay
+attention, this is an important experience that is worth
+remembering.”"
+
+**** Characteristic of addiction
+
+*** Why do we play games?
+[[http://www.gamasutra.com/blogs/FabianFischer/20141104/229394/Why_do_we_really_play.php?utm_content%3Dbufferda748&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer][http://www.gamasutra.com/blogs/FabianFischer/20141104/229394/Why_do_we_really_play.php?utm_content=bufferda748&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer]]
+
+*** Okeanos version 1
+
+*** Faith No More
+- game
+
+[[http://www.demigiant.com/games/faithnomore/index.php]]
+
+*** 10 questions to focus game design
+[[http://www.metkis.com/]]
+
+*** Gamifying pro-social behavior
+[[https://twitter.com/Staubfluse/status/540806562613575680/photo/1]]
+
+*** Framed and Manipulated Environments
+[[http://www.polygon.com/2014/12/12/7383903/hideo-kojima-framed-game-of-the-year-ios]]
+
+*** Terrain Vocabulary
+Useful Geographical Descriptors
+
+[[http://octoswan.tumblr.com/post/77439447520/i-made-these-as-a-way-to-compile-all-the]]
+
+[[http://silentmania.tumblr.com/post/83837712011/octoswan-i-made-these-as-a-way-to-compile-all]]
+
+*** itch.io
+How to set up an itch.io account and what it's for.
+** STARTED DRAFTS
+
+
+*** Simulation Sandbox vs Theme Park
+This quote from the artist @sougwen resonates with me because I feel
+it encapsulates some aspect of game design.
+
+#+BEGIN_QUOTE
+"To “construct” something is to carve the space out of it"
+#+END_QUOTE
+
+{% tweet https://twitter.com/sougwen/status/462994273898872832 %}
+
+I don't mean to simply say that sougwen is talking about art and games
+are art, so this quote resonates.  No.  I think that there is
+something to this carving-out-of-allowed-play that is fundamental to
+games.
+
+Theme parks are about creating spectacle rather than true interactivity.
+
+**** Games vs activities
+Per this dude's rant:
+[[http://www.boardgamegeek.com/blogpost/25274/good-dice-bad-dice-guest-post-by-chad-mestdagh]]
+
+**** Deep simulation vs. superficial simulation
+
+Minecraft: So emergent people hallucinate parts of the game that don't
+exist. Retronauts talk a lot about this. The Schoolyard rumor mill
+often contains fantastically fabricated anecdotes. "My uncle works at
+Mojang..."
+[[https://twitter.com/notch/status/463254297283919872]]
+
+**** Smooth vs wrinkly
+[[https://twitter.com/AndroidArts/status/463685510691815424]]
+
+
+**** It's systems all the way down
+The resonant thread for me is that it's the systems, stupid.
+Interactive systems make a game chunky, giving the players something
+to bite into.
+
+*** Nontraditional game jams
+
+Game jams need not simply vary in terms of theme or duration.  There
+are plenty of interesting axes upon which they can be projected for
+new and interesting results.
+
+**** Game jam as recruitment
+Game jams are typically thought of as a way for *participants* to
+network.  And they are.  Game jams are unique, if not the most casual
+and carefree, spaces for meeting and trial collaboration with others.
+
+But that's not all.  You, yes I mean you, as an organizer are in a
+unique position to network with talented game makers of all stripes.
+Looking for pixel artists?  Organize a 48 hour game jam with pixel art
+graphics as a constraint and a theme of your choice.
+
+Yes, it could be considered manipulative, possibly unscrupulous or
+unethical, but no one is twisting anyone's arm to participate.  And,
+there's no reason not to be transparent when organizing the game jam.
+Say you're looking for great pixel art because you would like to
+collaborate on a specific idea.
+
+There's one benefit of recruiting from willing participants in game
+jams.  THese are poeple with at least enough free time to commit to
+participating in a game jam.  They may be more approachable than
+people who are otherwise tied up and unable to commit 24 hours, 48
+hours, or a week to start and finish a project.
+
+W.G. Armintrout made a similar plea in a Space Gamer Magizine issue
+from 1982, (#52).
+
+**** Examples
+[[https://www.kickstarter.com/projects/556682087/in-security-roll-hack-get-promoted-starting-at-jus]]
+Game that [[http://boardgamegeek.com/geeklist/168206/congrats-koen-hendrix-randalls-dice-or-no-dice][won a design contest]], and went on to successfully fund a
+kickstarter.
+
+[[https://software.intel.com/sites/campaigns/levelup2014/]]
+
+A game jam in which winners will be displayed at a film festival:
+[[http://itch.io/jam/space-cowboy-jam]]
+
+[[http://fuckthisjam.com/]]
+
+*** Let's plays are some of the best feedback a designer can get
+Imagine having to provide a questionaire with a game prototype to
+solicit feedback on a design.  It may look something like this:
+
+1. How much did you play? (approximate number of games)
+2. Did you enjoy the game? If so, what made it enjoyable?
+3. Was anything broken? Was anything not enjoyable, tedious, fiddly etc?
+4. Were the rules/objectives understandable?
+5. Any suggestions for improvement or comments?
+
+Now imagine looking over a player's shoulder during the entire
+playtesting experience.
+
+Let's play videos and reports represent an entertaining and imminently
+watchable form of playtesting.
+
+*** Gamifying Games
+Something on top of score counting and death states and
+progression. Speed running. Turn taking.  GTA start with 5 stars and
+try to stay alive the longest.  Trying to get the game to glitch out.
+Playing with systems rather than playing the game or the narrative
+within the game.  More bang for your buck, maybe not a problem today,
+but definitely a problem growing up when you got one or two new games
+a year.
+
+[[https://www.youtube.com/watch?v%3Daq6pGJbd6Iw][https://www.youtube.com/watch?v=aq6pGJbd6Iw]]
+
+Offers a sense of empowerment by extending the life of a product that
+has been otherwise consumed, outside of the commercial drive to move
+on to the next thing.
+
+My favorite term, gaminess, comes from Michael Cook in a comment on
+this very blog.  Gaminess captures the odd taste left in my mouth when
+I use the buzzword gamify.
+
+*** Go big
+[[http://www.shutupandsitdown.com/videos/v/susd-play-megagame/]]
+
+To get more people involved, restrict information.  Only people
+playing certain roles have access to critical gameplay information.
+They also become more invested in the game because they make mechanics
+determinations, a fancy way of saying dice rolls, for the team.  This
+also creates an organic distrust between the players on the same team
+later in the game that creates interesting /intrateam/ dynamics to go
+along with the already interesting /interteam/ dynamics.
+
+
+*** Is House of Leaves a game?
+In [[*Space%20is%20Read][the post about Space is Read]] I talked a bit about interactive media
+versus more traditional noninteractive media.  That's just a fancy way
+of saying games versus, for example, books.  Needless to say, if you
+haven't read Mark Z. Danielewski's excellent book, here be spoilers.
+
+The House in /House of Leaves/ is a Big Dumb Object, that's larger on
+the inside than the outside.  In this case, I guess it's a Big
+Sinister Object.
+
+*** Secrets and Glitches
+Axiom Verge is an in development game that elevates glitches from
+quirky bugs into generative gameplay content.
+
+The article makes a point of mentioning very old memory manipulation
+glitches.  Due to more modern programming practices, these don't crop
+up as much these days.  Here's an example from Final Fantasy III
+(using Japanese numbering here):
+
+[[http://tasvideos.org/GameResources/NES/FinalFantasy3.html]]
+
+In more recent games there are still glitches that players exploit to
+gain an advantage for speed runs.  Here's an example of RNG
+manipulation from Symphony of the Night:
+
+[[http://tasvideos.org/GameResources/PSX/SymphonyOfTheNight.html]]
+
+This is not to say that modern games are in any way invulnerable to
+memory manipulation tricks.  I think there are two reasons that these
+glitches haven't been shown in modern games.  First, automated memory
+management and smarter programming through explicit checks will
+(probably) protect against some of the old memory manipulation tricks.
+Second, there simply hasn't been enough time spent poking at these
+games.  People have been playing some of these older games for 30 or
+40 years.
+
+Related: the rise and fall of the cheat code
+[[http://beta.slashdot.org/story/203799]]
+
+*** 8 bit vs 16 bit color
+Listening to the Upper Memory Block Podcast [[http://umbcast.com/episode-22-rollercoaster-tycoon/][Railroad Tycoon episode]]
+(start listening at 30:27 for the specific segment on Tech).
+
+3 bits of 8 represent red
+3 bits rep green
+2 bits for blue
+
+So, 256 colors
+
+2 bytes to map color, 16 bit color
+
+5 bits for red and blue
+6 bits for green
+
+Note: I'm assuming that these values are for DOS games, and may not
+apply to consoles ([[http://en.wikipedia.org/wiki/Nintendo_Entertainment_System_technical_specifications][like the NES]]).
+
+As an aside, I think [[http://en.wikipedia.org/wiki/Nibble#Table_of_nibbles][this chart showing nibbles]] looks like a cellular
+automata thing from Conway's Game of Life.
+*** The Yogscast blowback and Generation Like
+
+At the risk of participating in the culture characterized as callow
+and vapid by the very documentary I'm sharing, I'd like to call
+attention to some of the points made in
+[[http://www.pbs.org/wgbh/pages/frontline/generation-like/]] because I
+think they shed light on the recent dust-up with the Yogscast.
+Specifically here I'm talking about the decision to feature games on a
+Youtube channel exclusively in return for a share of the sales profits
+for some time during or following the arrangement.  I'm not talking
+about [[http://www.polygon.com/2014/7/17/5911947/yogventures-kickstarter-canceled-yogscast-no-obligation][the Yogventures kickstarter fiasco]].
+
+See also this video by TB: [[https://www.youtube.com/watch?v%3D4KclXm0fDo0][https://www.youtube.com/watch?v=4KclXm0fDo0]]
+
+*** The ethics of game design
+- design
+- ethics
+
+Sarang.  The name sounded familiar to me.  It's a Korean word that
+means love.  Some quick googling revealed that I'd seen it recently in
+a 2008 movie called Moon.  Without spoiling too much, it is the
+soothing name of the moonbase in an otherwise troubling story.  The
+Sarang in this story is just as troubling, if not entirely more so due
+to the reality of the situation.
+
+[[http://www.gamasutra.com/view/feature/207779/ethical_freetoplay_game_design_.php]]
+
+[[http://www.polygon.com/2014/7/28/5930685/love-child-interview-ethics-game-design]]
+
+[[https://www.youtube.com/watch?v%3DFwI0u9L4R8U][https://www.youtube.com/watch?v=FwI0u9L4R8U]]
+
+Maker vs consumer economies.
+
+No right answer.  No way to make a universally regarded ethical game.
+Subjective decision.  Recognize mechanics and design that may cause
+issues: charging to change reward schedules, using a powerfully
+addictive reward schedule and charging to maintain access to the game.
+Reward schedules can be addictive and harmful.  Know methods to
+mitigate: warning screen, notice to take a break, change reward
+schedule on the fly to a less reinforcing schedule.
+
+*** Types of Screenshake
+- Random X and Y
+  - Looks sort of chaotic, not smooth
+- Periodic X and Y
+  - Looks kind of swirly, can become a Screenorbit if you're not
+    careful.
+- Perlin X and Y
+  - Smoother than Random X and Y
+- Restricting movement to one axis
+  - Can look good if there is some component of the scene that
+    dictates the movement, i.e. the collision of a ball and a wall.
+- Rotating Z (about X and Y)
+  - Looks tilty, can be good if there is little movement in X and Y in
+    your game and you want to convey a sense of rocking or coming down
+    like a see-saw.
+
+*** Iteration
+The iterative process diagram from Game Design Workshop
+
+Generate Ideas → Formalize Ideas → Test Ideas → Evaluate Results → If
+there are problems, Loop back to Generate Ideas.  Otherwise, You're
+done iterating.
+*** Player Interaction Patterns
+The player interaction patterns diagram from Game Design Workshop
+
+- Single player vs. game
+- Player vs. player (2 player)
+- Multiple individiual players vs. game
+- Unilateral competition (assymetric Player vs player)
+- multilateral competition (symmetric player vs. player multiplayer)
+- Team competition
+- cooperative play (team players vs. game)
+*** In-depth longread on Final Fantasy VI
+
+An in-depth #longread on #FFVI. @tgdfweb
+
+- mechanics
+- design
+- SNES
+- RPG
+- Final Fantasy
+- balance
+
+[[http://thegamedesignforum.com/features/reverse_design_ff6_1.html]]
+
+[[http://kotaku.com/how-to-balance-an-rpg-1625516832]]
+
+Whew.  Lot of contractions in that title.  But you made it through,
+most likely because you're interested in reading about FFVI.  Let me
+tell you: this article by the game design forum has pretty much taken
+the cake.  That's right.  All of it.
+
+That being said, there's little more to add to the exhaustive
+exploration of the elements of FFVI's design.  Instead, I'll try to do
+my best to define some of the jargon the article uses.
+
+I found the use of complicated sabermetrics-like stats a bit confusing
+at first. So assuming you're not some stat-crunching RPG machine, you
+can refer back to the definitions here to help decipher the tricky
+stats article.  It's worth saying now that if I didn't think that the
+author makes a cogent and compelling argument for the value of the
+stats, I wouldn't bother defining them.  I'm convinced that having a
+grasp, a real gras p at a mathematical level, for the mechanics in
+your game can make it a more compelling, fun play experience.  And
+wading through design breakdowns liek these articles can make the math
+less of a chore, especially when its written about one of the all-time
+great examples from the genre.
+
+- NPC Irony
+- NPC Sociology
+
+*** Toward a game programming style guide
+
+- design
+- algorithms
+
+**** Timing
+*Counters* count down a specific number of frames.  *Timers* wait for
+ a specified amount of time to elapse.  Both *Counters* and *Timers*
+ are *Utilities*.
+
+***** Counters
+*Counters* accept a parameter specifying the number of frames to count
+down and an optional function to be evaluated when the count has
+finished.
+
+- int num :: The number of frames to count
+- delegate void FinishFunc() :: The function to be evaluated when the
+     count has finished.  Make sure to check that this is not null
+     before using it.
+- bool IsFinished() :: A function getting the status of whether the
+     counter has finished.
+
+***** Timers
+*Timers* accept a parameter specifying the duration in seconds to time
+and an optional function to be evaluated when the time has elapsed.
+
+**** Grid Map
+Contains a 2d array of map nodes.
+
+Contains a hashmap of Grid Map Nodes Positions that maps to neighbors
+of the Grid Map Node at that Position.  This is a set of edges for
+each node of the graph.
+
+Optionally has a button for saving a screenshot.
+***** Grid Map Node
+Has *Position* describing the Grid Map Node's location in the grid.
+Has *Coordinates* describing the Grid Map Node's location in the game
+world space (relative to the dimensions of the Grid Map and the top
+right of the Grid Map Node).  Has *CenterCoordinates* that describe
+the center of the Grid Map Node.  of the Has an *Icon* that is
+rendered if not null.
+
+Optionally, has a Type that determines the Icon.
+
+Optionally implements a Logo showing the name of the Grid Map Node and
+a button for saving the Icon.
+***** Grid Map Edge
+A Grid Map Edge connects two Grid Map Nodes.  It is unidirectional and
+takes a *Source* and a *Destination*.  It can be accessed either
+semantically with *GetSource* or *GetDestination* or as an array with
+=edge(0)= corresponding to the source and =edge(1)= corresponding to
+the destination.
+*** Sid Meier's 10 Rules of Game Design
+Sid Meier's 10 Rules of Game Design
+
+1. Choose a topic you have a passion for. Game Design is about creativity.
+
+2. Do research after the game is done. Tap into the player’s brain.
+
+3. Define your axioms, refine your axioms. Prototype, prototype, prototype; sit in all the chairs.
+
+4. Double it or cut it in half. You are more wrong than you think.
+
+5. Make sure the player is having fun, not the designer/computer.
+
+6. Games should be easy to start playing, but hard to stop playing.
+
+7. Simple systems work together to create complexity.
+
+8. Make it ‘Epic’!
+
+9. Most important part of the game is the first and last 15 minutes.
+
+10. Know when to stop, more is not always better and just because we can, doesn’t mean we should.
+
+==========================
+
+Bonus quote:
+
+"a good game is a series of interesting choices."
+
+*** Gamy Sprite Generator
+Following along with a [[http://catlikecoding.com/unity/tutorials/noise/][tutorial over at Catlike Coding]] I was inspired
+to create a sprite generator.  I always got a kick out of the randomly
+generated user icons "identicons" on github, so I set out to generate
+blocky sprites like those.
+
+**** Basic procedural textures
+
+**** Make it random
+
+**** Tyger, tyger, burning bright
+
+Apophenia, pareidolia.
+
+To make parts of the sprite transparent, I had to use a [[http://docs.unity3d.com/Manual/shader-TransparentCutoutFamily.html][cutout shader]].
+
+**** Make it repeatable
+
+**** What's next?
+Semantic generation of things.  I've noticed that certain shapes look
+like boxes, like containers or items, like faces, like humanoid
+bodies.  I'd like to explore the rules of procedural generation that
+create these shapes and integreate them into the Gamy Sprite Generator
+as optional constraints on the sprite generation algorithm.
+
+Pet rock generator.  Move from a simple textured quad to a more
+complicated 3 dimensional mesh.  I want to explore generating
+interesting textures for 3 dimensional surfaces instead of simple
+blocky sprites.
+
+*** Roguelike Radio Combat Mechanics
+
+**** No enemy has higher HP than 10
+Focus is no longer on average damage per second.  You can focus on
+tactics like maximizing cool downs, or using situational abilities
+(based on position, enemy attack phase, enemy health, etc.).
+
+
+
+*** Moon Hunters Kickstarter retrospective
+Pie charts are not very helpful.  Bar charts are easier to read. So
+I'm going to try to reverse engineer a pie chart from this article.
+
+- Fees & Taxes
+- Programming
+- Art & Design
+- Backer Rewards
+- Audio
+- Square Enix Collective
+
+The top two take up about 50% of the pie.  Let's estimate Fees and
+Taxes at 30% and Programming at 20%.  Art and design and backer
+rewards are probably even at 17.5% each.  Audio is probably 10% and
+SEC gets 5%.
+
+| Expense        | Percentage |
+|----------------+------------|
+| Fees & Taxes   |         30 |
+| Programming    |         20 |
+| Art & Design   |       17.5 |
+| Backer Rewards |       17.5 |
+| Audio          |         10 |
+| SEC            |          5 |
+
+
+The resulting pie chart I get from this looks similar enough to the
+pie chart in the article.  The moral of the story is that fees and
+taxes take up a significant chunk of kickstarter funding (!) and that
+pie charts, especially small pie charts with 6 wedges, need an
+accompanying table of numbers to be worth the pixels they're blit on.
+
+*** Full throttle junkyard puzzle
+[[https://www.youtube.com/watch?feature%3Dplayer_detailpage&v%3DWE0Cf1JWsAg#t%3D2264][https://www.youtube.com/watch?feature=player_detailpage&v=WE0Cf1JWsAg#t=2264]]
+
+Adventure games too much in inventory. Full throttle. Donkey and rider
+puzzle. Idea of puzzle where everything u need is on te screen In the
+double fine adventure Kickstarter one of te extra was a playground
+with Tim Schafer playing dott and full their. Tim explains the genesis
+of one of ft puzzles at time in video. Then fails to solve it. Turns
+out it wasn't. But how could you make such an puzzle?
+
+* COMPLETED POSTS
+** New Year, New Footer
+
+In which I update the footer of my @octopress blog.
+
+- tools
+- Octopress
+
+It's 2015, time to update my footer.  I came across a link to a
+website called, [[http://updateyourfooter.com/][updateyourfooter.com]].  It describes ways to
+dynamically update footer info in a variety of languages.
+
+I set out to intrepidly implement one of the JavaScript snippets from
+the website in the =source/_includes/custom/footer.html= file in my
+[[http://octopress.org/][Octopress]] install.  To my surprise there was a bit of code in the
+footer that already dynamically generated the date timestamp for the
+footer.
+
+The code looks like this:
+
+={{ site.time | date: "%Y" }}=
+
+Ready for this?  Octopress is a framework built on top of [[https://github.com/jekyll/jekyll][Jekyll]].
+Jekyll uses [[http://docs.shopify.com/themes/liquid-documentation/basics][Shopify's Liquid Template Engine]].  All of that is a fancy
+way of saying that this code is compiled into useful stuff for my site.
+
+All I had to do was preface that with the year my blog was
+established, and badabing, no-mess dynamic footer.  Now the relevant
+section of the footer looks like this:
+
+=Copyright &copy; 2014 -- {{ site.time | date: "%Y" }}=
+
+You can see the results at the bottom of this page.
+** Creating a Dictionary of Lists in Unity JavaScript
 #unity3d
 
 - JavaScript
@@ -2754,7 +3903,7 @@ the quirks of Unity's JavaScript syntax.  On my github account, you
 can find a repository of an example Unity project using this code
 here.
 
-* Create a Dictionary of Lists in Unity C#
+** Create a Dictionary of Lists in Unity C#
 #unity3d
 
 - Unity
@@ -2803,7 +3952,7 @@ Dictionary of Lists in C# for Unity.
 #+END_SRC
 
 
-* Probabilistic Entity Spawning in Unity JavaScript
+** Probabilistic Entity Spawning in Unity JavaScript
 #unity3d
 
 - JavaScript
@@ -2904,47 +4053,7 @@ Now to choose an item:
 That's all there is to it. I've put an example Unity project with this
 code on github.
 
-
-* Grim Fandango Design Documents
-
-see also: [[http://grumpygamer.com/maniac_mansion_design_doc]]
-
-[[http://www.gamasutra.com/view/news/189266/The_technique_LucasArts_used_to_design_its_classic_adventure_games.php]]
-
-* Full Throttle Critical Path Checklist
-
-* Full throttle junkyard puzzle
-[[https://www.youtube.com/watch?feature%3Dplayer_detailpage&v%3DWE0Cf1JWsAg#t%3D2264][https://www.youtube.com/watch?feature=player_detailpage&v=WE0Cf1JWsAg#t=2264]]
-
-Adventure games too much in inventory. Full throttle. Donkey and rider
-puzzle. Idea of puzzle where everything u need is on te screen In the
-double fine adventure Kickstarter one of te extra was a playground
-with Tim Schafer playing dott and full their. Tim explains the genesis
-of one of ft puzzles at time in video. Then fails to solve it. Turns
-out it wasn't. But how could you make such an puzzle?
-
-* Procedural Terrain in Unity
-[[http://alastaira.wordpress.com/2013/11/14/procedural-terrain-splatmapping/]]
-
-[[http://www.big-robot.com/2012/07/02/procedural-british-countryside-generation/]]
-
-[[http://forum.unity3d.com/threads/68807-Infinite-Terrain-Free-Project-Source]]
-* Shaders Primer
-[[http://notes.underscorediscovery.com/shaders-a-primer/]]
-
-
-
-* Object reuse in Unity
-[[https://twitter.com/mikegeig/status/453239221885480960/photo/1]]
-
-<blockquote class="twitter-tweet" lang="en"><p>Everything you ever needed to know about object pooling. <a href="https://twitter.com/search?q=%23unity3d&amp;src=hash">#unity3d</a> <a href="http://t.co/dGxRaxktqo">pic.twitter.com/dGxRaxktqo</a></p>&mdash; Mike Geig (@mikegeig) <a href="https://twitter.com/mikegeig/statuses/453239221885480960">April 7, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-[[http://unitypatterns.com/resource/objectpool/]]
-
-[[https://github.com/joaokucera/unity-pooling/blob/master/source/Assets/Pooling/GenericPooling.cs]]
-
-* Mobile Frame Football Association
+** Mobile Frame Football Association
 From The Game Design Workshop book:
 
 One good way to train yourself in the design of game mechanics is to
@@ -2952,24 +4061,24 @@ challenge urself with controlled design exercises in which you take an
 existing game system, set a new player experience goal, and make
 changes to the system to meet that goal
 
-** Football games
-*** Duration of play
+*** Football games
+**** Duration of play
 Mobile Frame Football Association (MFFA) sanctioned games last 6
 turns, consisting of two equal 3-turn halves.  MFFA rules do not allow
 for the countdown mechanic from the vanilla Mobile Frame Zero (MF0)
 rules.
 
-*** Objective
+**** Objective
 When time expires, the player with the highest number of goals scored
 wins.
 
-*** Teams
+**** Teams
 Games are played between teams consisting of equal numbers of frames.
 Frames may have up to 4 systems installed, with the usual vanilla MF0
 benefits for fewer than 4 installed systems (see, e.g., MF0 p. 64).
 For more explanation see /Dice Systems/.
 
-*** Field of Play
+**** Field of Play
 The game field should be approximately the size of a normal MF0 table,
 with goals the size of 1 /movement scale/ on each end of the field.
 Lines should be laid out to clearly mark the in bounds/out of bounds
@@ -2981,12 +4090,12 @@ The size of your available Field of Play can dictate the Movement and
 Shooting Scales for your game.  The suggested defaults are based on a
 normal MF0 table, your mileage may vary.
 
-** Deployment
+*** Deployment
 During the deployment phase, you may place your units anywhere on the
 field in a legal formation.  Cool your servos, I'll describe the legal
 formations in just a sec.
 
-*** Beginning of play
+**** Beginning of play
 At the beginning of the game, at the beginning of the second half, or
 at a kickoff following a goal, players take turns placing units in
 bounds, in the half of the field that has been assigned (See:
@@ -2995,7 +4104,7 @@ bounds, in the half of the field that has been assigned (See:
 placed at the center of the field. The offensive player must place a
 unit next to the ball, this unit is in possession of the ball.
 
-**** Maintaining possession of the ball
+***** Maintaining possession of the ball
 A unit possesses the ball if the ball is in contact with its base
 (i.e. its legs).  If two opposing units are in contact with the ball
 the unit in possession of the ball first maintains possession unless
@@ -3004,7 +4113,7 @@ same side are in contact with the ball, the unit in possession of the
 ball first maintains possession unless it passes successfully to the
 second unit.
 
-**** Determining possession at kickoff
+***** Determining possession at kickoff
 A coin flip determines possession at the beginning of the game, with
 the winning player electing to be on offense or defense first.  The
 losing player gets to determine the side of the field in which to
@@ -3014,11 +4123,11 @@ At the half, the possession and sides switch.  Following a scored
 goal, the player who was scored on gains possession of the ball at the
 kickoff.
 
-*** After a dead ball situation
+**** After a dead ball situation
 Play is stopped due to a foul, an out of bounds ball. This is called
 a /dead ball/ situation.
 
-**** Out of bounds
+***** Out of bounds
 Out of bounds balls force a turnover of possession. The ball is placed
 on the sideline where it went out of bounds.
 
@@ -3034,7 +4143,7 @@ the unit next to the ball immediately taking its turn, regardless of
 its initiative roll.  If the unit next to the ball has an initiative
 die, remove it.
 
-***** Corner Kicks and Goal Kicks
+****** Corner Kicks and Goal Kicks
 Corner kicks occur when a defending unit kicks the ball out of bounds
 on the sideline running on its own 'goal' side of the field.  The ball
 is placed on the corner sideline on the side it went out of bounds.
@@ -3043,17 +4152,17 @@ Goal kicks occur when an offensive unit kicks the ball out of bounds
 on the sideline of the defensive units' 'goal' side of the field.  The
 ball is placed in front of the goal.
 
-**** Fouls
+***** Fouls
 Fouls do not force a turnover of possession.  Redeployment following a
 foul occurs the same as in the [[*Out%20of%20bounds][Out of bounds]] situation.
 
-**** Redeployment and units that have already taken turns
+***** Redeployment and units that have already taken turns
 Redeployment does not normally reset whether a unit has taken its
 turn.  If the unit placed next to the ball in a dead ball situation
 has already taken its turn, it gets a free turn taken immediately
 following deployment, when play resumes.
 
-** Initiative
+*** Initiative
 For the time being, MFFA uses the older per-unit turn order from MF0
 (p. 136).  Enough with the hutching bellyaching, you yabbies.
 
@@ -3069,7 +4178,7 @@ been resolved, the initiative count continues as normal.
 
 In a dead ball situation, the initiative count does not reset.
 
-*** Coaching
+**** Coaching
 Coaching adds a layer of complexity to initiative determination.  It
 may slow down the game a bit, but it allows for extra tactical
 decisions.
@@ -3082,13 +4191,13 @@ After initiatives are assigned, the initiative count starts and counts
 up as normal.
 
 
-** Dice systems
+*** Dice systems
 As in MF0, frames have 2 white dice representing the frame chassis
 plus other dice representing up to 4 additional systems.  Frames get
 the usual vanilla MF0 benefits for having fewer than 4 installed
 systems (see, e.g., MF0 p. 64).
 
-*** Red dice
+**** Red dice
 Red dice represent the ability of a frame to shoot or pass the ball on
 offense.  Unlike the vanilla MF0 rules, there are two legal ranges for
 red dice on offense: direct and artillery.  Systems granting hand to
@@ -3107,7 +4216,7 @@ rolled on defense.
 Red dice use a special scale that is different from the movement
 scale.  See [[*Movement%20Scale%20and%20Shooting%20scale][Movement Scale and Shooting Scale]]
 
-**** Passing and shooting
+***** Passing and shooting
 When in range for a shot or a pass, the player must roll a number of
 /hit dice/ equal to the /shot value/ minus the blue /defense value/ of
 any units in the line of fire.  Any units in the line of
@@ -3128,7 +4237,7 @@ discretion (be reasonable here, it's not going to /fly backwards/).
 This may cause the ball to go out of bounds, into the possession of a
 unit, into the goal, or into the field of play.
 
-**** Stealing and slide tackling
+***** Stealing and slide tackling
 When stealing or slide tackling, /scoring a hit/ results in the ball
 coming into the stealing or tackling unit's possession.  The stealing
 or tackling unit's player rolls a number of /hit dice/ equal to its
@@ -3146,20 +4255,20 @@ the player rolls a 1 on one of the hit dice.
 Rolling a 1 on a hit die during a fumble results in a foul.  See
 /Fouls/.
 
-*** Blue Dice
+**** Blue Dice
 Blue dice systems remain the same as blue dice systems in the normal
 MF0 rules.  However, rather than representing armor, they represent
 the ability of a unit to gain or maintain control of the ball.
 
-*** Yellow Dice and Green Dice
+**** Yellow Dice and Green Dice
 Yellow and green dice systems remain the same as vanilla MF0.
 
-*** Hot rodding
+**** Hot rodding
 A player may choose to hotrod a unit's system by sacrificing a system
 to gain a free action with one of the other systems after the unit has
 taken its turn.
 
-** Taking a turn
+*** Taking a turn
 Taking a turn begins with target declaration.  For the defensive units
 this will generally be the unit in possession of the ball.  For the
 offensive unit in possession of the ball, this could be targeting a
@@ -3178,7 +4287,7 @@ turn, defending player must declare a target for the unit, roll all of
 the unit's dice, and assign a /defense value/.  The unit takes its
 turn as normal when its initiative dictates.
 
-** Movement Scale and Shooting Scale
+*** Movement Scale and Shooting Scale
 
 Normal vanilla MF0 scale is 2".  /Shooting scale/ for MFFA is 2".
 /Movement scale/ is double that, 4", to represent the agility of these
@@ -3188,15 +4297,15 @@ Using two different colored rulers (e.g., 1 red for shooting and 1
 green for movement) is a good way to distinguish /movement scale/ and
 /shooting scale/.
 
-* Game design patterns
-[[http://gameprogrammingpatterns.com/index.html]]
-
-* Proportion Types
+** Proportion Types
 - design
 [[http://androidarts.com/misc/proportions_types.jpg]]
 
+Arne over at Android Arts codified a taxonomy of proportion types in
+character design.  I've kept track of a few examples I've come across
+to share with you below.
 
-** Ninja Star
+*** Ninja Star
 - Bravely Default
 - Fire Emblem
 - Miis
@@ -3206,7 +4315,7 @@ green for movement) is a good way to distinguish /movement scale/ and
 - Gunstar Heroes
 - Monument Valley
 
-** Cross
+*** Cross
 - Call of Duty Advanced Warfare
 - Minecraft
 - N++
@@ -3215,7 +4324,7 @@ green for movement) is a good way to distinguish /movement scale/ and
 - Last of Us
 - Uncharted
 
-** Maltese cross
+*** Maltese cross
 - Mega Man
 - Mobile Suit Gundam
 - Mazinger Z
@@ -3224,38 +4333,12 @@ green for movement) is a good way to distinguish /movement scale/ and
 - Practically everything from Super Robot Wars
 - Ratchet and Clank
 
-
-* Simulation Sandbox vs Theme Park
-This quote from the artist @sougwen resonates with me because I feel
-it encapsulates some aspect of game design.
-
-{% tweet https://twitter.com/sougwen/status/462994273898872832 %}
-
-I don't mean to simply say that sougwen is talking about art and games
-are art, so this quote resonates.  No.  I think that there is
-something to this carving-out-of-allowed-play that is fundamental to
-games.
-
-Theme parks are about creating spectacle rather than true interactivity.
-
-** Games vs activities
-Per this dude's rant:
-[[http://www.boardgamegeek.com/blogpost/25274/good-dice-bad-dice-guest-post-by-chad-mestdagh]]
-
-** Deep simulation vs. superficial simulation
-
-Minecraft: So emergent people hallucinate parts of the game that don't
-exist. Retronauts talk a lot about this. The Schoolyard rumor mill
-often contains fantastically fabricated anecdotes. "My uncle works at
-Mojang..."
-[[https://twitter.com/notch/status/463254297283919872]]
-
-** Smooth vs wrinkly
-[[https://twitter.com/AndroidArts/status/463685510691815424]]
-
-* Improvisation vs Preparation
+** Improvisation vs Preparation
 This week I look at how games from JoshuaACNewman, handle
 Improvisation vs Preparation as modes of play
+
+- design
+- mechanics
 
 Or preparation as play.
 
@@ -3330,96 +4413,10 @@ itself.  The results of the each player's solo game(s) are then
 somehow incorporated and allowed to influence the collaborative group
 play session.
 
-* Level experience progressions
+*** Microscope
+Follow up next week
 
-** Solar 2
-Growth Requirements
-A Planet - 20 Mass
-A Life Sustaining Planet - 80 Mass
-A Small Star - 180 Mass
-A Medium Star - 1,500 Mass
-A Large Star - 2,000 Mass
-A Black Hole - 3,000 Mass
-The Big Crunch - 1,000,000 Mass
-
-[[http://forums.steampowered.com/forums/showthread.php?t%3D1935621][Source.]]
-
-* Nontraditional game jams
-
-Game jams need not simply vary in terms of theme or duration.  There
-are plenty of interesting axes upon which they can be projected for
-new and interesting results.
-
-** Game jam as recruitment
-Game jams are typically thought of as a way for *participants* to
-network.  And they are.  Game jams are unique, if not the most casual
-and carefree, spaces for meeting and trial collaboration with others.
-
-But that's not all.  You, yes I mean you, as an organizer are in a
-unique position to network with talented game makers of all stripes.
-Looking for pixel artists?  Organize a 48 hour game jam with pixel art
-graphics as a constraint and a theme of your choice.
-
-Yes, it could be considered manipulative, possibly unscrupulous or
-unethical, but no one is twisting anyone's arm to participate.  And,
-there's no reason not to be transparent when organizing the game jam.
-Say you're looking for great pixel art because you would like to
-collaborate on a specific idea.
-
-There's one benefit of recruiting from willing participants in game
-jams.  THese are poeple with at least enough free time to commit to
-participating in a game jam.  They may be more approachable than
-people who are otherwise tied up and unable to commit 24 hours, 48
-hours, or a week to start and finish a project.
-
-W.G. Armintrout made a similar plea in a Space Gamer Magizine issue
-from 1982, (#52).
-
-** Examples
-[[https://www.kickstarter.com/projects/556682087/in-security-roll-hack-get-promoted-starting-at-jus]]
-Game that [[http://boardgamegeek.com/geeklist/168206/congrats-koen-hendrix-randalls-dice-or-no-dice][won a design contest]], and went on to successfully fund a
-kickstarter.
-
-[[https://software.intel.com/sites/campaigns/levelup2014/]]
-
-A game jam in which winners will be displayed at a film festival:
-[[http://itch.io/jam/space-cowboy-jam]]
-
-[[http://fuckthisjam.com/]]
-
-* Let's plays are some of the best feedback a designer can get
-Imagine having to provide a questionaire with a game prototype to
-solicit feedback on a design.  It may look something like this:
-
-1. How much did you play? (approximate number of games)
-2. Did you enjoy the game? If so, what made it enjoyable?
-3. Was anything broken? Was anything not enjoyable, tedious, fiddly etc?
-4. Were the rules/objectives understandable?
-5. Any suggestions for improvement or comments?
-
-Now imagine looking over a player's shoulder during the entire
-playtesting experience.
-
-Let's play videos and reports represent an entertaining and imminently
-watchable form of playtesting.
-
-* Terrain Vocabulary
-Useful Geographical Descriptors
-
-[[http://octoswan.tumblr.com/post/77439447520/i-made-these-as-a-way-to-compile-all-the]]
-
-[[http://silentmania.tumblr.com/post/83837712011/octoswan-i-made-these-as-a-way-to-compile-all]]
-
-* UI Ideas
-[[http://futureinterface.tumblr.com/]]
-
-[[http://visualpunker.tumblr.com/tagged/fui]]
-
-Credit to [[https://twitter.com/turnislefthome/status/463692298455617536]]
-
-* 1d games
-
-* Rectangles for Prototyping in Unity 2d for Dummy
+** Rectangles for Prototyping in Unity 2d for Dummy
 - Unity
 - design
 - prototype
@@ -3461,7 +4458,7 @@ As near as I can tell, the =Sprite= is a new way of making a flat 2D
 
 So, I started out following a Unity Answers question [[http://answers.unity3d.com/questions/139808/creating-a-plane-mesh-directly-from-code.html][here]].
 
-** Getting the Mesh to gel
+*** Getting the Mesh to gel
 
 First, I created a brand-spankin new Unity 2D project.  I had to
 create an empty =GameObject= to host my =PlaneTest.js= script
@@ -3494,7 +4491,7 @@ Here we [[http://i.eho.st/pgtxqdii.gif][do it live]] by defining a =name= =Strin
                    0, 2, 3];
 #+END_SRC
 
-** Who you calling normal?
+*** Who you calling normal?
 
 At one point I thought I had to =RecalculateNormals=, according to the
 Unity Answers example above.  But it doesn't seem to make a
@@ -3507,7 +4504,7 @@ A little more digging [[http://forum.unity3d.com/threads/210399-4-3-Sprites-and-
 important for lighting.  Since the =Sprite Shader= I intend to use
 don't use normal maps, we can leave it out.
 
-** OBJECTION!!
+*** OBJECTION!!
 
 Time to create the =GameObject= that will hold a =MeshRenderer=,
 =MeshFilter=, and =MeshCollider=.  According to the [[http://docs.unity3d.com/Documentation/Components/class-MeshFilter.html][docs]], a
@@ -3526,7 +4523,7 @@ by the =GameObject='s =Transform=.
   obj.GetComponent(MeshFilter).mesh = m;
 #+END_SRC
 
-** Time for texture
+*** Time for texture
 
 Next we create a =Texture2D= to hold the color information so the box
 has some panache.  The =Texture2D= goes into the =MeshRenderer='s
@@ -3544,7 +4541,7 @@ I don't know too much about how =Texture2D= works right now, but
 there's plenty to read in the [[http://docs.unity3d.com/Documentation/ScriptReference/Texture2D.html][docs]].
 
 
-** A splash of color
+*** A splash of color
 Here we generate some random RGB values, normalize them for Unity's
 0.0-1.0 colorspace and make a =Color= to put into the =MeshRenderer='s
 color slot.
@@ -3557,7 +4554,7 @@ color slot.
   obj.renderer.material.color = color;
 #+END_SRC
 
-** The crucial shader
+*** The crucial shader
 At this point, I tested my code and got no errors. However, to my
 surprise I didn't see anything rendered on the screen.
 
@@ -3569,7 +4566,7 @@ mesh to render properly.  Here's how I did it:
   obj.renderer.material.shader = spriteShader;
 #+END_SRC
 
-** Boxes for dummy
+*** Boxes for dummy
 I don't feel so dumb anymore because this was a complex process.  And
 it wasn't until the very last crucial step that I saw anything
 remotely box-like.
@@ -3578,105 +4575,7 @@ I've posted the code to a gist [[https://gist.github.com/zerosalife/743cf797112d
 yourself, to give it a whirl.  I found that setting =size= to 2 is a
 nice place to start.
 
-
-* Thinking about dice games
-[[https://twitter.com/JonahD/status/471458517896155137]]
-
-
-* Math Team Hearts
-- design
-- mechanics
-- game
-- rules
-
-Math Team Hearts is a speedy modification to Hearts that ironically
-involves less math than the vanilla game.
-
-From The Game Design Workshop book:
-
-#+BEGIN_QUOTE
-One good way to train yourself in the design of game mechanics is to
-challenge yourself with controlled design exercises in which you take
-an existing game system, set a new player experience goal, and make
-changes to the system to meet that goal.
-#+END_QUOTE
-
-** The Goal
-We needed a game that played quickly, without a defined endpoint
-(e.g. when one player reaches 100 points in normal Hearts) because
-this game was played in free time waiting for school to start or
-waiting for the bus.  There was no time to spend tallying up scores,
-counting hearts and doing awkward math.
-
-The rules also modify the risk-reward value of shooting the moon to
-make it more attractive.  We found the game to be more interesting
-when multiple parties were invested in shooting the moon with less
-drawback from accumulating hearts.
-
-** The Rules
-The game plays like normal Hearts, except taking hearts no longer
-gives you points.
-
-- Taking hearts without shooting the moon gives you 0 points.
-- Taking no hearts in a round gives you 1 point.
-- Shooting the moon gives you 2 points.
-- Taking the Queen without shooting the moon gives you -1 point.
-
-The player with the most points at the end of play wins.
-
-For more variety, use the Dealer's choice drafting rules.  Each round,
-the Dealer decides on how players will pass cards prior to play.
-
-* Gamifying Games
-Something on top of score counting and death states and
-progression. Speed running. Turn taking.  GTA start with 5 stars and
-try to stay alive the longest.  Trying to get the game to glitch out.
-Playing with systems rather than playing the game or the narrative
-within the game.  More bang for your buck, maybe not a problem today,
-but definitely a problem growing up when you got one or two new games
-a year.
-
-[[https://www.youtube.com/watch?v%3Daq6pGJbd6Iw][https://www.youtube.com/watch?v=aq6pGJbd6Iw]]
-
-Offers a sense of empowerment by extending the life of a product that
-has been otherwise consumed, outside of the commercial drive to move
-on to the next thing.
-
-My favorite term, gaminess, comes from Michael Cook in a comment on
-this very blog.  Gaminess captures the odd taste left in my mouth when
-I use the buzzword gamify.
-
-
-* A World of Consequence: The World of Ruin in FFVI
-
-[[http://www.avclub.com/article/final-fantasy-vi-explores-human-pain-through-its-s-205365?utm_source%3Dtwitter&utm_medium%3DShareTools&utm_campaign%3Ddefault][http://www.avclub.com/article/final-fantasy-vi-explores-human-pain-through-its-s-205365?utm_source=twitter&utm_medium=ShareTools&utm_campaign=default]]
-
-* Go big
-[[http://www.shutupandsitdown.com/videos/v/susd-play-megagame/]]
-
-To get more people involved, restrict information.  Only people
-playing certain roles have access to critical gameplay information.
-They also become more invested in the game because they make mechanics
-determinations, a fancy way of saying dice rolls, for the team.  This
-also creates an organic distrust between the players on the same team
-later in the game that creates interesting /intrateam/ dynamics to go
-along with the already interesting /interteam/ dynamics.
-
-* Anatomy of a Screenshot
-[[https://twitter.com/NoelFB/status/474491040011788288/photo/1]]
-
-
-* Is House of Leaves a game?
-In [[*Space%20is%20Read][the post about Space is Read]] I talked a bit about interactive media
-versus more traditional noninteractive media.  That's just a fancy way
-of saying games versus, for example, books.  Needless to say, if you
-haven't read Mark Z. Danielewski's excellent book, here be spoilers.
-
-The House in /House of Leaves/ is a Big Dumb Object, that's larger on
-the inside than the outside.  In this case, I
-guess it's a Big Sinister Object.
-
-* The map and the territory.
+** The map and the territory.
 - design
 - level design
 
@@ -3712,37 +4611,8 @@ minibosses, bosses, or cannonfodder.  The designer rarely has a chance
 to see how the game will be played before the ability to refine or
 modify the design is long gone.
 
-* Secrets and Glitches
-Axiom Verge is an in development game that elevates glitches from
-quirky bugs into generative gameplay content.
 
-The article makes a point of mentioning very old memory manipulation
-glitches.  Due to more modern programming practices, these don't crop
-up as much these days.  Here's an example from Final Fantasy III
-(using Japanese numbering here):
-
-[[http://tasvideos.org/GameResources/NES/FinalFantasy3.html]]
-
-In more recent games there are still glitches that players exploit to
-gain an advantage for speed runs.  Here's an example of RNG
-manipulation from Symphony of the Night:
-
-[[http://tasvideos.org/GameResources/PSX/SymphonyOfTheNight.html]]
-
-This is not to say that modern games are in any way invulnerable to
-memory manipulation tricks.  I think there are two reasons that these
-glitches haven't been shown in modern games.  First, automated memory
-management and smarter programming through explicit checks will
-(probably) protect against some of the old memory manipulation tricks.
-Second, there simply hasn't been enough time spent poking at these
-games.  People have been playing some of these older games for 30 or
-40 years.
-
-Related: the rise and fall of the cheat code
-[[http://beta.slashdot.org/story/203799]]
-
-
-* Shovel Knight's Old-school Tricks
+** Shovel Knight's Old-school Tricks
 - design
 - mechanics
 
@@ -3757,7 +4627,7 @@ Interview with the Shovel Knight creators Yacht Club Games:
 [[https://www.nintendoworldreport.com/connectivity/38203/episode-144-ive-seen-some-badass-canes]].
 The interview starts about 28 minutes into the podcast.
 
-** Resolution
+*** Resolution
 Shovel Knight runs on displays meant to run 1080p down to pocket-sized
 3DS screens.  The fine article mentions that scaling Shovel Knight's
 NES-style graphics up to 1080p results in virtual pixels of about 4.5
@@ -3807,9 +4677,9 @@ scope.
 
 [[http://2-dimensions.com/2014/08/20/mighty-gunvolt-fine/]]
 
-** Backgrounds
+*** Backgrounds
 
-** One comment on designer-player interaction through design
+*** One comment on designer-player interaction through design
 
 According to [[http://www.usgamer.net/articles/inside-shovel-knights-launch][this article]] by Chris Holt, the Shovel Knight designers
 were realtively wishy washy about including the fishing pole.  For the
@@ -3831,7 +4701,7 @@ Here's [[http://iwataasks.nintendo.com/interviews/#/wii/nsmb/0/3][an interview w
 design behind communicating the purpose of the iconic mushroom
 power-up in Super Mario Bros.
 
-** Another fine example of introducing new mechanic in Shovel Knight.
+*** Another fine example of introducing new mechanic in Shovel Knight.
 
 In Treasure Knight's level you come across rocket platforms that fly
 horizontally when you activate a lever by hitting it with your shovel.
@@ -3860,28 +4730,41 @@ You learned the new mechanic, and thus the behavior necessary to
 interact with it, through previously ingrained behavior beaten into
 your head with a thousand gem pickups.  It's devilishly clever.
 
-** Shovel Knight's toolset
+*** Shovel Knight's toolset
 
-*** Physics
+**** Physics
 Box2D
 
-*** Level Editor
+**** Level Editor
 Tiled Map Editor
 
-*** Pixel Editor
+**** Pixel Editor
 Pro Motion
 
-*** Audio Engine
+**** Audio Engine
 FMOD Sound System
 
-*** Rendering
+**** Rendering
 Angle
 
-*** Rendering and Input
+**** Rendering and Input
 SDL
 
-* Feature Complete
-From the Threemails.
+** Feature Complete
+What makes a game feature complete?
+
+Of course the makeup of a list of game features depend on the
+particular project in question.  This list of features required to
+make /Threes/ feature complete comes from early on in the published
+emails about the game's development.
+
+The final product has certainly received many times more polish than
+the time spent implementing these features and the list may have
+changed.  But, from time to time, it's nice to see what other
+successful projects have deemed necessary to get a better sense of how
+to plan for your own projects.
+
+*** Features
 
 - Core Game
 - Tutorial
@@ -3898,151 +4781,9 @@ From the Threemails.
 - (Undos?)
 - Puzzlejuice Cross-promotion
 
-* 8 bit vs 16 bit color
-Listening to the Upper Memory Block Podcast [[http://umbcast.com/episode-22-rollercoaster-tycoon/][Railroad Tycoon episode]]
-(start listening at 30:27 for the specific segment on Tech).
-
-3 bits of 8 represent red
-3 bits rep green
-2 bits for blue
-
-So, 256 colors
-
-2 bytes to map color, 16 bit color
-
-5 bits for red and blue
-6 bits for green
-
-Note: I'm assuming that these values are for DOS games, and may not
-apply to consoles ([[http://en.wikipedia.org/wiki/Nintendo_Entertainment_System_technical_specifications][like the NES]]).
-
-As an aside, I think [[http://en.wikipedia.org/wiki/Nibble#Table_of_nibbles][this chart showing nibbles]] looks like a cellular
-automata thing from Conway's Game of Life.
-
-* INSceptahdeckWU
-First #procjam entry: @insceptahdeckwu generates tweets based on Wu
-Tang Clan lyrics. Also updates abt @sudorossy @GalaxyKate #7dfps
-
-- design
-- procedural generation
-- clojure
-- procjam
-- 7dfps
-
-** #procjam updates
-
-[[https://twitter.com/search?q%3Dprocjam][#procjam]] is upon us.  The conference is on and popping, streaming at
-[[http://www.twitch.tv/procjam]].  I'll try to precede my #procjam posts
-with a little update on some of the cool things I've seen that need
-pointing out during the jam itself.
-
-[[https://twitter.com/GalaxyKate][@GalaxyKate]] will be streaming [[http://vimeo.com/111272682][some tutorials]] today, following the
-conference.
-
-[[https://twitter.com/SudoRossy][@sudorossy]] is currently streaming some development and modeling at
-[[http://www.twitch.tv/sudorossy]].  I imagine that sudorossy will
-continue this throughout the jam.
-
-The [[https://twitter.com/search?q%3D7dfps][#7dfps]] jam is also going on this week.  So, I've decided to
-release my third person procedural tweeter.  Or maybe it's a fourth
-person tweeter, third person once removed.
-
-** Fourth-person tweets
-
-I'm at it again, [[http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/][making a twitter bot]] like [[https://twitter.com/styx_ebooks][@styx_ebooks]].  Only this
-time it's in a completely different language and it's got a completely
-different corpus.  Corpus is a Latin way of saying text, in case you
-forgot.
-
-<!--more-->
-
-** Making the tweets
-The basic algorithm works like this.
-
-The bot creates a huge textfile containing lyrics from Wu Tang Clan
-songs.  I trim away a lot of the information about verses and
-choruses, but I keep the punctuation because I like the sense of
-rhythm it creates.
-
-Based on the relationship between the words in this corpus file, the
-bot builds a [[http://en.wikipedia.org/wiki/Markov_chain][markov process]] to generate the text of the tweets.  To do
-so, the bot generates a transition matrix using [[https://github.com/Janiczek/markov][Janiczek's Clojure
-markov library]].  It then takes random walks through that matrix to
-produce a string of text with a similar relationship between words to
-the input lyrics corpus.
-
-** Making it a command line app
-This is the first time I've tried to make a command line application
-in Twitter.  Luckily there are some good tools out there.
-
-I wondered how to deal with multiple options and inputs, and the good
-news is: it's just as easy as you'd think.  You simply add
-conditionals to deal with the possible behaviors of your program.  The
-magic of =parse-opts= handles the rest.  Options with long names
-automatically become keys to the option dictionary, and if you've
-marked them as a =:flag= you can depend on the truth-value to control
-the flow of your program.
-
-You may think it's odd that I'm using options instead of actions as in
-the =cli= example, but hey.  It's my program.  Your program can work
-the way you want it too.  I'm going to make sure to document it so you
-can use the Rebel INS or build a twitter bot based on this code.
-
-To build the app, I use =lein bin= from the command line.
-
-I'm interested in [[http://www.rkn.io/2014/02/06/clojure-cookbook-daemons/][daemonizing]] the application.  That is to say, I'm
-interested in turning it into a persistent process that runs in the
-background on my computer.  But for now, I've set up a simple [[http://en.wikipedia.org/wiki/Cron][cron]]
-script to tweet every few hours.
-
-** Logging
-When I do tweets from the command line there's some dark magic going
-on that I don't understand.  Anyway it seems to invoke the =Log4j=, so
-I [[http://www.bahmanm.com/blogs/how-to-add-logging-to-a-clojure-project][set that up according to this blog post]].
-
-** Markov chain text generation
-One of the quirks of the markov package I used is that it stops
-generating 'random walks' when it reaches states that it has not been
-trained on.  As you can imagine when using imagery-rich,
-neologism-laden rap music, there are many words that occur once, even
-in a very large corpus.  Being unique is kind of a goal of the form, a
-fact reflected in [[http://en.wikipedia.org/wiki/Ol%2527_Dirty_Bastard][at least one alias]].
-
-In order to make more realistic texts, it's common to increase the
-order of the transition matrix.  That is to say, to determine the
-probability for a following word from the prior two or more words.
-However, given my idiosyncratic corpus, this leads the 'random walk'
-algorithm to halt, giving me too few words in my output.
-
-Interestingly, in this case, dialing back the order tends to lead to
-more rhyming and a few recognizable couplets, which I find kinda nice.
-
-** Setting up the twitter account
-I ran into a problem getting an app set up for the bot's twitter
-account.  I am merely one person, and thus have need for merely one
-cell phone.  Since twitter requires a unique mobile number for
-authenticating apps, I was out of luck.  That is, until I found this
-[[http://dghubble.com/blog/posts/twitter-app-write-access-and-bots/][blog post showing how to use the same app on multiple bot clients]].
-
-Faithful readers may remember my wildly popular, and yet still somehow
-deeply underrated, [[http://en.wikipedia.org/wiki/Bangsian_fantasy][Bangsian]] fantasy bot, [[https://twitter.com/styx_ebooks][@styx_ebooks]].  Using =twurl=
-I was able to grant access to the [[https://twitter.com/styx_ebooks][@styx_ebooks]] app credentials for the
-new bot.
-
-** Moving on
-Here's one of my favorite tweets so far:
-
-{% tweet https://twitter.com/insceptahdeckwu/status/529619098758823937
-%}
-
-From here the skies the limit.  I could try analyzing the generated
-text to try to build lines or stanzas.  I could try to reorder words
-to reflect the syntax present from the transcription.  I could try to
-represent individual emcees with unique corpora.
 
 
-
-* Mario Design Interview
+** Mario Design Interview
 
 Distilling an interview with Shigeru Miyamoto.
 
@@ -4052,7 +4793,7 @@ In the interest of preserving an interview that could easily vanish
 into the ether following a Nintendo website redesign, I'm going to
 collect some wisdom from [[http://iwataasks.nintendo.com/interviews/#/wii/nsmb/0/0][an Iwata Asks with Shigeru Miyamoto]].
 
-** Elements of a fun game
+*** Elements of a fun game
 - "A fun game should be easy to understand -- you should be able to
   take one look at it and know what you have to do straight away."
 - "It should be so well constructed that you can tell at a glance what
@@ -4060,7 +4801,7 @@ collect some wisdom from [[http://iwataasks.nintendo.com/interviews/#/wii/nsmb/0
   rather than the game."
 - "The people standing around watching the game have also got to be
   able to enjoy it."
-** Form follows function
+*** Form follows function
 A repeated theme that emerges in the interview is that constraints of
 the hardware or display technology restricted the designs.  Miyamoto
 and crew had to come up with simple, evocative designs that
@@ -4068,7 +4809,7 @@ communicate the function for each of the entities in the game world.
 Following the maxim that a fun game should be easy to understand,
 straightforward designs that show an entity's purpose in an easily
 recognizable manner communicate the designer's intent to the player.
-** Try it and see
+*** Try it and see
 Gameplay staples from the Mario series that seem unequivocally
 well-designed emerged from a simple iterative prototyping process.
 The designers had an idea, for example, "What if we double the size of
@@ -4077,7 +4818,7 @@ of the game, and tested it out to see if it was fun.  By testing this
 particular design choice, the designers came up with the idea for a
 mechanic in the game to double the size of the main character as the
 result of picking up a power-up.
-** Communicating through design
+*** Communicating through design
 The simple introduction of the mushroom power-up is a clever bit of
 communication through the design of a level.  By this point the player
 has likely learned that stomping on Goombas squashes them.  The
@@ -4094,7 +4835,7 @@ function of these power-ups.  At no point is it necessary to wrest
 control of the player to blabber on about what power-ups are, why the
 player may want to pick them up, what other power-ups exist in the
 world, /et cetera ad infinitum ad nauseum/.
-** Feel and smell
+*** Feel and smell
 These two terms refer to the subjective aesthetic impression of the
 perceptual and interactive elements of a game.  These can be a nice
 way to distinguish your game from the others out there.
@@ -4110,7 +4851,7 @@ controller (more or less), but the feeling that a player gets upon
 pressing a button can differ drastically depending on the game.
 Miyamoto mentions, and I agree, that sound effects have a huge impact
 on the feel of a game.
-*** Jan Willem Nijman of Vlambeer on game feel
+**** Jan Willem Nijman of Vlambeer on game feel
 [[http://words.underscorediscovery.com/jan-willem-on-game-feel/]]
 
 
@@ -4140,146 +4881,34 @@ Pause the action for 20 ms when something cool happens.  That's about
 that means that this introduces a subliminal pause that adds a kind of
 weight to the action.
 
-* Text adventures vs. User-editable MUDs
-Sort of relates to the [[http://zerosalife.github.io/blog/2014/07/26/space-is-read/][previous discussion]] of interactivity and genre
-with regard to Visual novels vs choos your own adventure
+** Raycast Lighting in Skytorn
 
-[[file:~/org/personal/gd.org::*Finite%20state%20machine%20vs%20state%20transition%20system][Finite state machine vs state transition system]]
-* The Yogscast blowback and Generation Like
-
-At the risk of participating in the culture characterized as callow
-and vapid by the very documentary I'm sharing, I'd like to call
-attention to some of the points made in
-[[http://www.pbs.org/wgbh/pages/frontline/generation-like/]] because I
-think they shed light on the recent dust-up with the Yogscast.
-Specifically here I'm talking about the decision to feature games on a
-Youtube channel exclusively in return for a share of the sales profits
-for some time during or following the arrangement.  I'm not talking
-about [[http://www.polygon.com/2014/7/17/5911947/yogventures-kickstarter-canceled-yogscast-no-obligation][the Yogventures kickstarter fiasco]].
-
-See also this video by TB: [[https://www.youtube.com/watch?v%3D4KclXm0fDo0][https://www.youtube.com/watch?v=4KclXm0fDo0]]
-
-* Displaying an arbitrary number of objects in an arc
-
-Want to go around in a circle, like the numbers 8-4 around the top of
-a clock.  Since we have nine reasonable positions, calculate the
-modulo of BigBaddie level and 9 spots, then adjust the number of hits
-and number of objects to display accordingly.
-
-* Skill vs RNG
-[[https://twitter.com/dom2d/status/494206004318314496/photo/1]]
-
-* The graph of a map prototype
-[[https://twitter.com/bitmOO/status/495364383212838912/photo/1]]
-
-* The ethics of game design
+- lighting
 - design
-- ethics
-
-Sarang.  The name sounded familiar to me.  It's a Korean word that
-means love.  Some quick googling revealed that I'd seen it recently in
-a 2008 movie called Moon.  Without spoiling too much, it is the
-soothing name of the moonbase in an otherwise troubling story.  The
-Sarang in this story is just as troubling, if not entirely more so due
-to the reality of the situation.
-
-[[http://www.gamasutra.com/view/feature/207779/ethical_freetoplay_game_design_.php]]
-
-[[http://www.polygon.com/2014/7/28/5930685/love-child-interview-ethics-game-design]]
-
-[[https://www.youtube.com/watch?v%3DFwI0u9L4R8U][https://www.youtube.com/watch?v=FwI0u9L4R8U]]
-
-Maker vs consumer economies.
-
-No right answer.  No way to make a universally regarded ethical game.
-Subjective decision.  Recognize mechanics and design that may cause
-issues: charging to change reward schedules, using a powerfully
-addictive reward schedule and charging to maintain access to the game.
-Reward schedules can be addictive and harmful.  Know methods to
-mitigate: warning screen, notice to take a break, change reward
-schedule on the fly to a less reinforcing schedule.
-
-
-* Reward Schedules
-[[http://www.betabunny.com/behaviorism/Conditioning2.htm]]
-
-* Pixel Sprites and Unity2d
-#unity3d
-
-- Unity
-- Unity2d
-
-* Types of Screenshake
-- Random X and Y
-  - Looks sort of chaotic, not smooth
-- Periodic X and Y
-  - Looks kind of swirly, can become a Screenorbit if you're not
-    careful.
-- Perlin X and Y
-  - Smoother than Random X and Y
-- Restricting movement to one axis
-  - Can look good if there is some component of the scene that
-    dictates the movement, i.e. the collision of a ball and a wall.
-- Rotating Z (about X and Y)
-  - Looks tilty, can be good if there is little movement in X and Y in
-    your game and you want to convey a sense of rocking or coming down
-    like a see-saw.
-
-* Iteration
-The iterative process diagram from Game Design Workshop
-
-Generate Ideas → Formalize Ideas → Test Ideas → Evaluate Results → If
-there are problems, Loop back to Generate Ideas.  Otherwise, You're
-done iterating.
-* Player Interaction Patterns
-The player interaction patterns diagram from Game Design Workshop
-
-- Single player vs. game
-- Player vs. player (2 player)
-- Multiple individiual players vs. game
-- Unilateral competition (assymetric Player vs player)
-- multilateral competition (symmetric player vs. player multiplayer)
-- Team competition
-- cooperative play (team players vs. game)
-* In-depth longread on Final Fantasy VI
-
-An in-depth #longread on #FFVI. @tgdfweb
-
 - mechanics
-- design
-- SNES
-- RPG
-- Final Fantasy
-- balance
 
-[[http://thegamedesignforum.com/features/reverse_design_ff6_1.html]]
 
-[[http://kotaku.com/how-to-balance-an-rpg-1625516832]]
+@NoelFB posted a [[https://twitter.com/NoelFB/status/543586120731074561/photo/1][screenshot]] showing how dynamic lighting works in
+[[http://skytorn-game.com/][Skytorn]].
 
-Whew.  Lot of contractions in that title.  But you made it through,
-most likely because you're interested in reading about FFVI.  Let me
-tell you: this article by the game design forum has pretty much taken
-the cake.  That's right.  All of it.
+{% tweet 543586120731074561 %}
 
-That being said, there's little more to add to the exhaustive
-exploration of the elements of FFVI's design.  Instead, I'll try to do
-my best to define some of the jargon the article uses.
+*** The algorithm
+From what I can tell, the algorithm looks something like this:
 
-I found the use of complicated sabermetrics-like stats a bit confusing
-at first. So assuming you're not some stat-crunching RPG machine, you
-can refer back to the definitions here to help decipher the tricky
-stats article.  It's worth saying now that if I didn't think that the
-author makes a cogent and compelling argument for the value of the
-stats, I wouldn't bother defining them.  I'm convinced that having a
-grasp, a real gras p at a mathematical level, for the mechanics in
-your game can make it a more compelling, fun play experience.  And
-wading through design breakdowns liek these articles can make the math
-less of a chore, especially when its written about one of the all-time
-great examples from the genre.
-
-- NPC Irony
-- NPC Sociology
-* Building Twine games from the command line
+1. Raycast out for 360° around the light source, starting in a
+   clockwise direction.  If the rays encounter a collidable object,
+   add it to the list of pink lines defining the polygonal shape of
+   the lit area.  If the ray exceeds the distance of the light
+   gradient, clamp the triangle edge defining the pink line at that
+   distance.
+2. For each of the collidable objects encountered, extend a ray past
+   their vertices until it hits another collidable to create the
+   obscured lighting effect visible to down and to the right of the
+   light source.
+3. Finally construct a set of triangles by starting from the closest
+   edge in the list defining the pink lines to form the polygon.
+** Building Twine games from the command line
 - Twine
 - Unity3d
 
@@ -4290,7 +4919,7 @@ game in Twine seemed to be lower hanging fruit than trying to
 implement my own text adventure framework for Unity or some other game
 engine.
 
-** Why not Unity?
+*** Why not Unity?
 That being said, there are other text adventure frameworks available
 in the Unity App Store and there's a very intriguing Twine parser for
 Unity called [[http://www.platoevolved.com/blog/unity-plugins/#!/~/product/category%3D2743024&id%3D35627540][Yarn]].
@@ -4309,7 +4938,7 @@ modify a Unity plugin from the App Store as I would trying to
 implement something similar on my own.  That being said, in this case
 for what I wanted to do, Twine was the path of least resistance.
 
-** Why the command line?
+*** Why the command line?
 I live in my text editor.  So, having to write in the Twine GUI tool's
 rudimentary text editor isn't really my bag.  I've trained my muscle
 memory to use these short cuts without thinking.  In fact, I don't
@@ -4323,7 +4952,7 @@ to do that manually, and I certainly don't want to try to organize it
 so it's visually appealing.  There're algorithms for that visualizing
 stuff and algorithms are better at it.
 
-** Getting started
+*** Getting started
 The first step is to [[https://github.com/tweecode/twee][install =twee=]] the command line tool used to
 compile Twine files.
 
@@ -4332,7 +4961,7 @@ format]].  This is the hardest part, not because the syntax is
 complicated, but because you've actually got to come up with an
 interesting and interactive story!
 
-** Compiling your twine files
+*** Compiling your twine files
 
 =Twee= will output files to HTML formatted in the usual Twine style.
 It gets tedious to type commands over and over again, so I automate
@@ -4362,7 +4991,7 @@ root directory or a directory for =tweefiles/=.
 You can also compile to the JSON format by using =make json=.
 
 
-** Getting some of the newer Twine features to work
+*** Getting some of the newer Twine features to work
 I [[https://github.com/tweecode/twee/issues/12][couldn't get some of the newer Twine features to work]] when I
 compiled the twee code from the command line.  I think this stems from
 the twee command line tool failing to parse some of the newer features
@@ -4379,560 +5008,47 @@ then compile them into a single HTML file for testing and release.
 Let me know if you have suggestions that would improve this Twine
 workflow or if you take a different approach.
 
-* Dialog in Unity
-[[https://twitter.com/MattRix/status/525374216225718272/photo/1]]
-[[https://twitter.com/MattRix/status/525372446384586752/photo/1]]
 
-[[https://dl.dropboxusercontent.com/u/1063919/Screen%20Shot%202014-10-23%20at%204.34.47%20PM.png]]
-[[https://twitter.com/infinite_ammo/status/525375826007982080/photo/1]]
-
-[[https://dl.dropboxusercontent.com/u/9814265/skytorn/dialog2.png]]
-[[https://twitter.com/NoelFB/status/525377696571097089]]
-
-[[http://pastebin.com/rArEyKwM]]
-[[https://twitter.com/NoelFB/status/525389011850772480]]
-
-* Implementing an inventory in Twine
-
-* The Core Gameplay Loop of Drug-seeking Behavior
-
-** [[http://adriancrook.com/designing-core-loops/]]
-
-** [[http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2801885/]]
-
-** See [[*Reward%20Schedules][Reward Schedules]]
-
-* Self-publishing
-
-** Write the book
-
-** Come up with a cover
-
-** Get it physically published, reach publishing stream
-
-** Advertise it, so it gets to a community
-
-
-* Starting a Game Studio Business
-[[http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq%3D1][http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq=1]]
-
-** Business Plan
-[[http://www.gamasutra.com/view/feature/2695/the_basic_marketing_plan_for_indie_.php?print%3D1][http://www.gamasutra.com/view/feature/2695/the_basic_marketing_plan_for_indie_.php?print=1]]
-
-[[http://www.realityisagame.com/archives/2806/a-business-plan-for-indie-game-developers-doesnt-exist/]]
-* Business cards
-
-
-** For the blog
-Zero's A Life
-
-Meditations on Games and Design
-
-[[http://zerosalife.github.io]] [[http://twitter.com/zerosalife][@zerosalife]]
-
-** For the studio
-Gaminess
-
-* Toward a game programming style guide
-
-** Timing
-*Counters* count down a specific number of frames.  *Timers* wait for
- a specified amount of time to elapse.  Both *Counters* and *Timers*
- are *Utilities*.
-
-*** Counters
-*Counters* accept a parameter specifying the number of frames to count
-down and an optional function to be evaluated when the count has
-finished.
-
-- int num :: The number of frames to count
-- delegate void FinishFunc() :: The function to be evaluated when the
-     count has finished.  Make sure to check that this is not null
-     before using it.
-- bool IsFinished() :: A function getting the status of whether the
-     counter has finished.
-
-*** Timers
-*Timers* accept a parameter specifying the duration in seconds to time
-and an optional function to be evaluated when the time has elapsed.
-
-** Grid Map
-Contains a 2d array of map nodes.
-
-Contains a hashmap of Grid Map Nodes Positions that maps to neighbors
-of the Grid Map Node at that Position.  This is a set of edges for
-each node of the graph.
-
-Optionally has a button for saving a screenshot.
-*** Grid Map Node
-Has *Position* describing the Grid Map Node's location in the grid.
-Has *Coordinates* describing the Grid Map Node's location in the game
-world space (relative to the dimensions of the Grid Map and the top
-right of the Grid Map Node).  Has *CenterCoordinates* that describe
-the center of the Grid Map Node.  of the Has an *Icon* that is
-rendered if not null.
-
-Optionally, has a Type that determines the Icon.
-
-Optionally implements a Logo showing the name of the Grid Map Node and
-a button for saving the Icon.
-*** Grid Map Edge
-A Grid Map Edge connects two Grid Map Nodes.  It is unidirectional and
-takes a *Source* and a *Destination*.  It can be accessed either
-semantically with *GetSource* or *GetDestination* or as an array with
-=edge(0)= corresponding to the source and =edge(1)= corresponding to
-the destination.
-* The Primacy of Symmetry
-* Sid Meier's 10 Rules of Game Design
-Sid Meier's 10 Rules of Game Design
-
-1. Choose a topic you have a passion for. Game Design is about creativity.
-
-2. Do research after the game is done. Tap into the player’s brain.
-
-3. Define your axioms, refine your axioms. Prototype, prototype, prototype; sit in all the chairs.
-
-4. Double it or cut it in half. You are more wrong than you think.
-
-5. Make sure the player is having fun, not the designer/computer.
-
-6. Games should be easy to start playing, but hard to stop playing.
-
-7. Simple systems work together to create complexity.
-
-8. Make it ‘Epic’!
-
-9. Most important part of the game is the first and last 15 minutes.
-
-10. Know when to stop, more is not always better and just because we can, doesn’t mean we should.
-
-==========================
-
-Bonus quote:
-
-"a good game is a series of interesting choices."
-* Typical video game costs and budgets
-
-[[http://vgsales.wikia.com/wiki/Video_game_costs]]
-
-- production and development costs
-  - developer salaries
-  - voice acting
-  - music and orchestra (as high as $500K[1])
-  - licensing
-- marketing and promotions
-  - television advertisments
-  - print advertisements (magazines)
-  - online advertisements
-  - events and launch parties[2]
-- manufacturing and distribution
-  - arcade machine production (very expensive)
-  - console cartridge production (fairly expensive)
-  - optical disc production (fairly cheap)
-  - online distribution (very cheap)
-* Procjam
-** Announcement on the blog
-State intention to participate, coverage, possible hiccups.  Intend to
-release at least one project on November 8th, and possibly, time
-allowing a second on the 15th.  Intend to cover talks with writeups or
-responses to follow up.  Also intend to cover entries with writeups or
-responses.
-
-
-Make things that make things: #procjam 2014.
-
-A motivational post psyching myself up for #procjam.
-
-- #procjam
-
-I'm thrilled to announce that I'm going to participate in the
-[[http://itch.io/jam/procjam][upcoming procedural game jam called
-#procjam]].  #procjam is a global game jam and a live-streamed
-conference in London focused on making things that make things. You
-can keep up to date by following the jam tumblr
-[[http://procjam.tumblr.com/][procjam.tumblr.com]]. There's already a [[http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started][handy list of procedural
-generation tutorials available on the tumblug]].
-
-In addition to submitting one or two projects I've been working on,
-I'd like to cover the content of the talks with perspective and
-reactions, and to check out the contest entries after it's finished
-[[http://zerosalife.github.io/blog/2014/07/26/space-is-read/][like I did for /Space Is Red/ from #spacecowboyjam]].
-
-Needless to say this will be a month-long endeavor, what with my
-weekly (ish) blogging schedule.  With one or two posts focused on
-submissions, I think four blog posts may be conservative, so I'll keep
-writing as long as I'm interested.
-
-To make it easier to follow along, I'll tag up all the posts with the
-#procjam category and I'll try to do the same for the tweet
-announcements, even if it's out of style because the jam was weeks
-ago.  That's how committed I am to making this happen.
-
-If you get the sense that I'm trying to psych myself up for this, I
-am.
-
-The next couple of months will be very busy in my life.  I'll be
-traveling and attending conferences, activities that have
-traditionally consumed my precious blogging time like so many Frito
-pies.
-
-I may be setting the bar high, but if anything the purpose for aiming
-high is success.  All too often I hear about jams in the middle when
-everyone is tweeting out cool prototypes and in the thick of design,
-or I'll hear about a jam when the contest is long over because someone
-pointed out that the winning entry was amazing.  Through dumb luck and
-exquisite taste in following [[https://twitter.com/mtrc][@mtrc on twitter]], I heard about this
-gamejam with enough lead time to mark it on my calendar.
-
-Even if I don't produce anything interesting or important, by gum, I'm
-going to participate in and cover this gamejam.  I'm not going to let
-another really cool gamejam slip under the radar.
-
-** Procjam submission
-
-* Gamy Sprite Generator
-Following along with a [[http://catlikecoding.com/unity/tutorials/noise/][tutorial over at Catlike Coding]] I was inspired
-to create a sprite generator.  I always got a kick out of the randomly
-generated user icons "identicons" on github, so I set out to generate
-blocky sprites like those.
-
-** Basic procedural textures
-
-** Make it random
-
-** Tyger, tyger, burning bright
-
-Apophenia, pareidolia.
-
-To make parts of the sprite transparent, I had to use a [[http://docs.unity3d.com/Manual/shader-TransparentCutoutFamily.html][cutout shader]].
-
-** Make it repeatable
-
-** What's next?
-Semantic generation of things.  I've noticed that certain shapes look
-like boxes, like containers or items, like faces, like humanoid
-bodies.  I'd like to explore the rules of procedural generation that
-create these shapes and integreate them into the Gamy Sprite Generator
-as optional constraints on the sprite generation algorithm.
-
-Pet rock generator.  Move from a simple textured quad to a more
-complicated 3 dimensional mesh.  I want to explore generating
-interesting textures for 3 dimensional surfaces instead of simple
-blocky sprites.
-
-* Jump scares and the startle response
-
-** The origin of the jump scare
-Alone in the Dark
-Resident Evil
-
-** Salient stimuli
-"Rewards like sex, money, drugs and novel situations all cause the
-release of dopamine in the reward circuit of the brain, a region
-buried deep beneath the cortex. Aside from generating a sense of
-pleasure, this dopamine signal tells your brain something like, “Pay
-attention, this is an important experience that is worth
-remembering.”"
-
-** Characteristic of addiction
-
-* Why do we play games?
-[[http://www.gamasutra.com/blogs/FabianFischer/20141104/229394/Why_do_we_really_play.php?utm_content%3Dbufferda748&utm_medium%3Dsocial&utm_source%3Dtwitter.com&utm_campaign%3Dbuffer][http://www.gamasutra.com/blogs/FabianFischer/20141104/229394/Why_do_we_really_play.php?utm_content=bufferda748&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer]]
-
-* Okeanos version 1
-
-* Roguelike Radio Combat Mechanics
-
-** No enemy has higher HP than 10
-Focus is no longer on average damage per second.  You can focus on
-tactics like maximizing cool downs, or using situational abilities
-(based on position, enemy attack phase, enemy health, etc.).
-
-
-* Sharing philosophy
-I close the year out with a quote from @samaaron about the value of
-sharing.
-
-- ethics
-- tools
-- ethics
-- algorithms
-
-
-From [[http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code][this interview]] with [[https://twitter.com/samaaron][Sam Aaron]].  Aaron talks about sharing
-software to create music, but it applies just as well to games.
-
-
-#+BEGIN_QUOTE
-
-We believe that most value in the world comes through sharing, and
-that music is no exception. One of the benefits of sharing is that it
-makes learning much easier. For example, we often hear amazing sounds
-on albums and wonder how they were made. However, musicians rarely
-share their production methods. We release all the software we write,
-which includes our synthesiser designs, interaction abstractions, and
-compositional structures, under an open source license, and we
-distribute it to everyone through GitHub. This makes it free and easy
-for anybody to copy and recreate any aspect of our work. For example,
-when one of our fans is interested in the sound of one of the synths
-we're using, they can go to GitHub and download the synth design as
-text. They can email it to their friends, read it, study it, copy it,
-modify it and run it to recreate the exact sound.
-
-#+END_QUOTE
-
---Sam Aaron
-
-* Moon Hunters Kickstarter retrospective
-Pie charts are not very helpful.  Bar charts are easier to read. So
-I'm going to try to reverse engineer a pie chart from this article.
-
-- Fees & Taxes
-- Programming
-- Art & Design
-- Backer Rewards
-- Audio
-- Square Enix Collective
-
-The top two take up about 50% of the pie.  Let's estimate Fees and
-Taxes at 30% and Programming at 20%.  Art and design and backer
-rewards are probably even at 17.5% each.  Audio is probably 10% and
-SEC gets 5%.
-
-| Expense        | Percentage |
-|----------------+------------|
-| Fees & Taxes   |         30 |
-| Programming    |         20 |
-| Art & Design   |       17.5 |
-| Backer Rewards |       17.5 |
-| Audio          |         10 |
-| SEC            |          5 |
-
-
-The resulting pie chart I get from this looks similar enough to the
-pie chart in the article.  The moral of the story is that fees and
-taxes take up a significant chunk of kickstarter funding (!) and that
-pie charts, especially small pie charts with 6 wedges, need an
-accompanying table of numbers to be worth the pixels they're blit on.
-
-* Faith No More
-- game
-
-[[http://www.demigiant.com/games/faithnomore/index.php]]
-
-* 10 questions to focus game design
-[[http://www.metkis.com/]]
-* Simple Mind-reading Machine in Unity JavaScript
-Porting a simple mind-reading script to Unity's javascript.  #unity3d
-
-- AI
-- algorithm
+** Math Team Hearts
+- design
 - mechanics
-- Unity
-- JavaScript
-- Unity3d
+- game
+- rules
 
+Math Team Hearts is a speedy modification to Hearts that ironically
+involves less math than the vanilla game.
 
-[[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/]]
-
-[[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html]]
-
-[[http://answers.unity3d.com/questions/54695/how-to-declare-and-initialize-multidimensional-arr.html]]
-
-[[http://csharptutorial.blogspot.com/2006/05/question-mark-ternary-operator.html]]
-
-I ported a cool toy from [[http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/][Alastair Aitchison's blog]] to Unity
-JavaScript.  The toy implements a simple 'mind-reading' algorithm that
-attempts to guess whether the player will choose Left (by pressing the
-left arrow key) or Right (by pressing the right arrow key).
-
-<!--more-->
-
-** How does it work?
-
-Aitchison's blog post describes how it works:
-#+BEGIN_QUOTE
-How does it work? Not by mind-reading, obviously, but by exploiting
-the fact that humans do not behave as "randomly" as they think they
-do. The computer maintains a very simple memory that records the
-pattern of results of the last two rounds – whether the player won or
-lost, whether they switched strategy, and then whether they then won
-or last the following round. The computer then uses this to choose its
-own best strategy based on the way the player behaved last time the
-current pattern occurred. If the computer loses twice in a row using
-the current strategy, it picks a random response in the next round.
-#+END_QUOTE
-
-The original idea came from some AI work by [[http://en.wikipedia.org/wiki/Claude_Shannon][Claude Shannon]]
-and D. W. Hagelbarger. [[http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html][They describe the internal memory of the toy
-mind-reader]] that we will model using a multidimensional array =v=:
+From The Game Design Workshop book:
 
 #+BEGIN_QUOTE
-There are 8 possible situations and two things the player can do at each one:
-
-1) player wins, plays same, wins. Then same or differently.
-2) player wins, plays same, loses. Then same or differently.
-3) player wins, plays differently, wins. Then same or differently.
-4) player wins, plays differently, loses.Then same or differently.
-5) player loses, plays same, wins.Then same or differently.
-6) player loses, plays same, loses.Then same or differently.
-7) player loses, plays differently, wins.Then same or differently.
-8) player loses, plays differently, loses.Then same or differently.
+One good way to train yourself in the design of game mechanics is to
+challenge yourself with controlled design exercises in which you take
+an existing game system, set a new player experience goal, and make
+changes to the system to meet that goal.
 #+END_QUOTE
 
-** Why port it?
-Why not just take a straightforward approach, running
-his code myself? First, I wanted to fully understand the algorithm the
-hard way, by coding it line for line myself. And second, I wanted to
-better familiarize myself with Unity JavaScript, including its
-differences from C#.
+*** The Goal
+We needed a game that played quickly, without a defined endpoint
+(e.g. when one player reaches 100 points in normal Hearts) because
+this game was played in free time waiting for school to start or
+waiting for the bus.  There was no time to spend tallying up scores,
+counting hearts and doing awkward math.
 
-The port was relatively simple, except for two small hiccups.  First,
-as far as I know, Unity JavaScript doesn't allow for initializing a
-multidimensional array.  So I looped over the cells in the array,
-filling them that way.  I have a hunch that the cells are initialized
-to the =int= =0= by default, but I wanted to be explicit.  Please let
-me know in the comments or [[https://twitter.com/zerosalife][via twitter]] if I'm way off base.
+The rules also modify the risk-reward value of shooting the moon to
+make it more attractive.  We found the game to be more interesting
+when multiple parties were invested in shooting the moon with less
+drawback from accumulating hearts.
 
-#+BEGIN_SRC javascript
-  var v : int[2, 2, 2];
-  for(var cell in v) {
-      cell = 0;
-  }
+*** The Rules
+The game plays like normal Hearts, except taking hearts no longer
+gives you points.
 
-#+END_SRC
+- Taking hearts without shooting the moon gives you 0 points.
+- Taking no hearts in a round gives you 1 point.
+- Shooting the moon gives you 2 points.
+- Taking the Queen without shooting the moon gives you -1 point.
 
-I also encountered some unfamiliar syntax: the sonorously named Elvis
-operator, [[http://en.wikipedia.org/wiki/Conditional_operator][?:]].  It's also called the [[http://en.wikipedia.org/wiki/Ternary_operation][ternary operator]], when it's used
-with 3 arguments, as I've used it here.  In C-like languages it allows
-for succinctly stating these kinds of conditional expressions. The
-example below illustrates how it's used.
+The player with the most points at the end of play wins.
 
-#+BEGIN_SRC javascript
-  // Is the current player's choice the same as the previous player's
-  // choice?
-  //
-  // if (playerChoice == lastChoice)
-  //     sameChoice = True;
-  // else
-  //     sameChoice = False;
-  //
-  // Using ternary operator:
-  v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
-
-#+END_SRC
-
-** The code
-The ported code for the mind-reader is reproduced below.
-
-#+BEGIN_SRC javascript
-  #pragma strict
-  import System.Collections.Generic;
-
-  // Used to record play history
-  var v: int[,,];
-  var lw1: int;
-  var lw2: int;
-  var losingStreak: int;
-
-  // The prediction of the player's next turn
-  var prediction: int;
-
-  // Keep track of scores
-  var cpuScore: int;
-  var playerScore: int;
-
-  var outText: String;
-
-  function Start () {
-      // Initialize matrix to track state of play history
-
-      v = new int[2, 2, 2];
-
-      for(var cell in v) {
-          cell = 0;
-      }
-
-      // No prior knowledge, so set inital prediction based on random chance.
-      prediction = flip();
-
-      // Set scores to 0
-      cpuScore = 0;
-      playerScore = 0;
-
-      // Initialize previous play and play before last win-lost trackers
-      lw1 = 0;
-      lw2 = 0;
-
-      // Output
-      outText = "";
-  }
-
-  function TakeTurn(playerChoice: int) {
-      // Display player and computer's choices
-      var outTextString: String = "You pressed " + playerChoice + ", " + "I guessed " + prediction + "\n";
-
-      // Computer guessed correctly
-      if (playerChoice == prediction) {
-          cpuScore++;
-          losingStreak = 0;
-          outTextString += " I WIN!\n";
-      }
-      else {
-          playerScore++;
-          losingStreak++;
-          outTextString += " YOU WIN!\n";
-      }
-
-      outText = outTextString;
-
-      // Is the current player's choice the same as the previous player's
-      // choice?
-      //
-      // if (playerChoice == lastChoice)
-      //     sameChoice = True;
-      // else
-      //     sameChoice = False;
-      //
-      // Using ternary operator:
-      v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
-      v[lw2, lw1, 0] = playerChoice;
-      lw2 = lw1;
-      lw1 = playerChoice;
-
-      // If lost more than twice in present state, choose random
-      // strategy.  Otherwise keep the same strategy.
-      prediction = v[lw2, lw1, 1] == 1 && losingStreak < 2 ? v[lw2, lw1, 0] : flip();
-  }
-
-  function flip() : int {
-      // Simulate a coin flip to produce 50:50 chance of [0, 1]
-      return Random.Range(0, 2);
-  }
-
-
-  function Update () {
-      if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-          TakeTurn(0);
-      }
-      if (Input.GetKeyDown(KeyCode.RightArrow)) {
-          TakeTurn(1);
-      }
-  }
-
-  function OnGUI() {
-      var style : GUIStyle = new GUIStyle();
-      style.fontSize = 36;
-
-      GUI.Label(new Rect(0, 0, Screen.width, 100), outText, style);
-      GUI.Label(new Rect(0, 100, Screen.width, 200), "Player: " + playerScore + " CPU: " + cpuScore, style);
-  }
-
-
-#+END_SRC
-
-* Gamifying pro-social behavior
-[[https://twitter.com/Staubfluse/status/540806562613575680/photo/1]]
-
-* Framed and Manipulated Environments
-[[http://www.polygon.com/2014/12/12/7383903/hideo-kojima-framed-game-of-the-year-ios]]
+For more variety, use the Dealer's choice drafting rules.  Each round,
+the Dealer decides on how players will pass cards prior to play.
