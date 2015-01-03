@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Quil - zero's a life</title>
+  <title>New Year, New Footer - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Category: Quil">
+  <meta name="description" content="It&rsquo;s 2015. Time to update my footer. I came across a link to a
+website called, updateyourfooter.com. It describes ways to
+dynamically update &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.ioblog/categories/quil">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/01/03/new-year-new-footer">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -66,36 +68,109 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Quil</h1>
+    
+      <h1 class="entry-title">New Year, New Footer</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-03T09:17:24-06:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2015</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>It&rsquo;s 2015.  Time to update my footer.  I came across a link to a
+website called, <a href="http://updateyourfooter.com/">updateyourfooter.com</a>.  It describes ways to
+dynamically update footer info in a variety of languages.</p>
 
-  
-  <h2>2014</h2>
+<p>I set out to intrepidly implement one of the JavaScript snippets from the website in the <code>source/_includes/custom/footer.html</code> file in my <a href="http://octopress.org/">Octopress</a> install.  But, to my surprise, there was a bit of code in the footer that already dynamically generated the date timestamp for the footer.</p>
 
-<article>
-  
-<h1><a href="/blog/2014/11/15/patchwerk/">Patchwerk</a></h1>
-<time datetime="2014-11-15T07:22:18-06:00" pubdate><span class='month'>Nov</span> <span class='day'>15</span> <span class='year'>2014</span></time>
+<p>The code looks like this:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/clojure/'>Clojure</a>, <a class='category' href='/blog/categories/quil/'>Quil</a>, <a class='category' href='/blog/categories/procjam/'>procjam</a></span>
-</footer>
+<p><code>{{ site.time | date: "%Y" }}</code></p>
 
+<p>Ready for this?  Octopress is a framework built on top of <a href="https://github.com/jekyll/jekyll">Jekyll</a>.  Jekyll uses <a href="http://docs.shopify.com/themes/liquid-documentation/basics">Shopify&rsquo;s Liquid Template Engine</a>.  All of that is a fancy way of saying that this code is compiled into useful stuff for my site.</p>
 
-</article>
+<p>All I had to do was preface that with the year my blog was established, and badabing, no-mess dynamic footer.  Now the relevant section of the footer looks like this:</p>
 
+<p><code>Copyright &amp;copy; 2014 &amp;ndash; {{ site.time | date: "%Y" }}</code></p>
+
+<p>You can see the results at the bottom of this page.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-03T09:17:24-06:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/01/03/new-year-new-footer/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/01/03/new-year-new-footer/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/12/27/sharing-philosophy/" title="Previous Post: Sharing Philosophy">&laquo; Sharing Philosophy</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 
 </div>
@@ -181,7 +256,10 @@
       var disqus_shortname = 'zerosalife';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/01/03/new-year-new-footer/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/01/03/new-year-new-footer/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
