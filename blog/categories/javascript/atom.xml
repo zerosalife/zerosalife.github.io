@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-12-13T21:52:29-06:00</updated>
+  <updated>2014-12-27T13:42:42-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Simple Mind-reading Machine in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/"/>
-    <updated>2014-12-13T14:38:20-06:00</updated>
+    <updated>2014-12-13T15:38:20-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>I ported a cool toy from <a href="http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/">Alastair Aitchison&rsquo;s blog</a> to Unity JavaScript.  The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that attempts to guess whether the player will choose Left (by pressing the left arrow key) or Right (by pressing the right arrow key).</p>
 
