@@ -5,7 +5,6 @@ date: 2014-12-27 09:01:01 -0500
 comments: true
 categories:
 
--   ethics
 -   tools
 -   ethics
 -   algorithms
