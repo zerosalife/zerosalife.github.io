@@ -2718,7 +2718,38 @@ text to try to build lines or stanzas.  I could try to reorder words
 to reflect the syntax present from the transcription.  I could try to
 represent individual emcees with unique corpora.
 
+** New Year, New Footer
 
+In which I update the footer of my @octopress blog.
+
+- tools
+- Octopress
+
+It's 2015, time to update my footer.  I came across a link to a
+website called, [[http://updateyourfooter.com/][updateyourfooter.com]].  It describes ways to
+dynamically update footer info in a variety of languages.
+
+I set out to intrepidly implement one of the JavaScript snippets from
+the website in the =source/_includes/custom/footer.html= file in my
+[[http://octopress.org/][Octopress]] install.  To my surprise there was a bit of code in the
+footer that already dynamically generated the date timestamp for the
+footer.
+
+The code looks like this:
+
+={{ site.time | date: "%Y" }}=
+
+Ready for this?  Octopress is a framework built on top of [[https://github.com/jekyll/jekyll][Jekyll]].
+Jekyll uses [[http://docs.shopify.com/themes/liquid-documentation/basics][Shopify's Liquid Template Engine]].  All of that is a fancy
+way of saying that this code is compiled into useful stuff for my site.
+
+All I had to do was preface that with the year my blog was
+established, and badabing, no-mess dynamic footer.  Now the relevant
+section of the footer looks like this:
+
+=Copyright &copy; 2014 -- {{ site.time | date: "%Y" }}=
+
+You can see the results at the bottom of this page.
 * Starting a Game Studio Business
 [[http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq%3D1][http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq=1]]
 
@@ -3317,6 +3348,15 @@ Useful Geographical Descriptors
 
 *** itch.io
 How to set up an itch.io account and what it's for.
+
+*** 3D modeling for 2.5D
+AngryOctopus made a modeling tool based on an idea by LostGarden
+
+[[https://github.com/angryoctopus/lgmodeler]]
+
+[[http://www.lostgarden.com/2013/10/prototyping-challenge-3d-modeling-tool.html]]
+
+[[http://www.angryoctopus.co.nz/lgmodler/]]
 ** STARTED DRAFTS
 
 
@@ -3782,38 +3822,7 @@ of one of ft puzzles at time in video. Then fails to solve it. Turns
 out it wasn't. But how could you make such an puzzle?
 
 * COMPLETED POSTS
-** New Year, New Footer
 
-In which I update the footer of my @octopress blog.
-
-- tools
-- Octopress
-
-It's 2015, time to update my footer.  I came across a link to a
-website called, [[http://updateyourfooter.com/][updateyourfooter.com]].  It describes ways to
-dynamically update footer info in a variety of languages.
-
-I set out to intrepidly implement one of the JavaScript snippets from
-the website in the =source/_includes/custom/footer.html= file in my
-[[http://octopress.org/][Octopress]] install.  To my surprise there was a bit of code in the
-footer that already dynamically generated the date timestamp for the
-footer.
-
-The code looks like this:
-
-={{ site.time | date: "%Y" }}=
-
-Ready for this?  Octopress is a framework built on top of [[https://github.com/jekyll/jekyll][Jekyll]].
-Jekyll uses [[http://docs.shopify.com/themes/liquid-documentation/basics][Shopify's Liquid Template Engine]].  All of that is a fancy
-way of saying that this code is compiled into useful stuff for my site.
-
-All I had to do was preface that with the year my blog was
-established, and badabing, no-mess dynamic footer.  Now the relevant
-section of the footer looks like this:
-
-=Copyright &copy; 2014 -- {{ site.time | date: "%Y" }}=
-
-You can see the results at the bottom of this page.
 ** Creating a Dictionary of Lists in Unity JavaScript
 #unity3d
 
@@ -4416,13 +4425,15 @@ play session.
 *** Microscope
 Follow up next week
 
-** Rectangles for Prototyping in Unity 2d for Dummy
+** Prototyping Rectangles in Unity 2D for Dummy
+Prototyping Rectangles in Unity 2D for Dummy
+
 - Unity
 - design
 - prototype
 - UnityJS
 
-I'm the dummy.  Prototyping with 2d boxes in Unity javascript has
+I'm the dummy.  Prototyping with 2d boxes in Unity JavaScript has
 proven surprisingly hard.  I think the difficulty I'm having is that
 I'm not exactly sure what I'm trying to do.  What follows is an
 example of *one* way (notice that I didn't say THE *RIGHT* WAY) to
@@ -4436,6 +4447,8 @@ documentation is thorough, the lack of congruence between the GUI
 environment and coding leads to poor discoverability.  There's not a
 one-to-one correspondence between the labels for =Components= in the
 GUI inspector and their names and attributes in code.
+
+<!--more-->
 
 Most of the time, Google is my method for discovering new
 functionality in Unity.  The problem with this method, and even the
@@ -4451,10 +4464,10 @@ get a box that can walk around and jump, at this point.  =GUIBoxes=
 seem like the wrong type of boxes, if I want to prototype something
 that will eventually be a =Sprite=.
 
-
-As near as I can tell, the =Sprite= is a new way of making a flat 2D
-=Plane= in Unity.  I couldn't seem to find anything dealing with
-=Sprites= without creating them in the Unity GUI interface.
+As near as I can tell, the =Sprite= is a (relatively) new way of
+making a flat 2D =Plane= in Unity.  I couldn't seem to find anything
+dealing with =Sprites= without creating them in the Unity GUI
+interface.
 
 So, I started out following a Unity Answers question [[http://answers.unity3d.com/questions/139808/creating-a-plane-mesh-directly-from-code.html][here]].
 
@@ -5010,6 +5023,9 @@ workflow or if you take a different approach.
 
 
 ** Math Team Hearts
+Math Team Hearts is a speedy modification to Hearts that ironically
+involves less math than the vanilla game.
+
 - design
 - mechanics
 - game
@@ -5043,7 +5059,8 @@ drawback from accumulating hearts.
 The game plays like normal Hearts, except taking hearts no longer
 gives you points.
 
-- Taking hearts without shooting the moon gives you 0 points.
+- Taking any number of hearts without shooting the moon gives you 0
+  points.
 - Taking no hearts in a round gives you 1 point.
 - Shooting the moon gives you 2 points.
 - Taking the Queen without shooting the moon gives you -1 point.
@@ -5052,3 +5069,35 @@ The player with the most points at the end of play wins.
 
 For more variety, use the Dealer's choice drafting rules.  Each round,
 the Dealer decides on how players will pass cards prior to play.
+
+*** Tweaks
+
+I'm working from memory, so I'm not sure I've got the point values
+exactly right.  Perhaps there should be more of a penalty for taking
+the Queen without shooting the moon.  That would create a more
+exciting risk-reward trade-off.
+
+** Previewing a post using Octopress
+In which I document how to preview a post using @Octopress.
+
+- tools
+- Octopress
+
+It's nice to preview some of my more complicated posts before I ship
+them out to the Internets.  Here's how I do it.
+
+*** make preview
+
+I [[http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/][previously posted]] a =makefile= I use to automate deployment of my
+blog.  Here are the germane lines for previewing:
+
+#+BEGIN_SRC make
+preview:
+	bundle exec rake generate && bundle exec rake preview
+#+END_SRC
+
+So typing =make preview= at the command prompt will run start up
+=rake='s webserver at =http://localhost:4000=.  Then all I have to do
+is launch a browser, connect to that port, and voila: a preview of the
+blog that regenerates to match the changes I make live, as I make
+them.
