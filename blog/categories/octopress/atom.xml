@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-12-27T13:42:42-05:00</updated>
+  <updated>2015-01-03T09:30:32-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,38 @@
 
   
   <entry>
+    <title type="html"><![CDATA[New Year, New Footer]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/01/03/new-year-new-footer/"/>
+    <updated>2015-01-03T09:17:24-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/01/03/new-year-new-footer</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s 2015.  Time to update my footer.  I came across a link to a
+website called, <a href="http://updateyourfooter.com/">updateyourfooter.com</a>.  It describes ways to
+dynamically update footer info in a variety of languages.</p>
+
+<p>I set out to intrepidly implement one of the JavaScript snippets from the website in the <code>source/_includes/custom/footer.html</code> file in my <a href="http://octopress.org/">Octopress</a> install.  But, to my surprise, there was a bit of code in the footer that already dynamically generated the date timestamp for the footer.</p>
+
+<p>The code looks like this:</p>
+
+<p>
+<code>{{ site.time | date: "%Y" }}</code>
+</p>
+
+<p>Ready for this?  Octopress is a framework built on top of <a href="https://github.com/jekyll/jekyll">Jekyll</a>.  Jekyll uses <a href="http://docs.shopify.com/themes/liquid-documentation/basics">Shopify&rsquo;s Liquid Template Engine</a>.  All of that is a fancy way of saying that this code is compiled into useful stuff for my site.</p>
+
+<p>All I had to do was preface that with the year my blog was established, and badabing, no-mess dynamic footer.  Now the relevant section of the footer looks like this:</p>
+
+<p>
+<code>Copyright &amp;copy; 2014 &amp;ndash; {{ site.time | date: "%Y" }}</code>
+</p>
+
+<p>You can see the results at the bottom of this page.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Automating blog deployment with Octopress]]></title>
     <link href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/"/>
-    <updated>2014-09-06T12:27:35-04:00</updated>
+    <updated>2014-09-06T11:27:35-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress</id>
     <content type="html"><![CDATA[<p>Based on Kevin van Zonneveld&rsquo;s (<a href="https://twitter.com/kvz">@kvz</a>) <a href="http://kvz.io/blog/2012/09/25/blog-with-octopress/">article</a> on setting up Octopress,
 I&rsquo;ve adapted a <code>Makefile</code> to make building my blog easier&#x2026; with

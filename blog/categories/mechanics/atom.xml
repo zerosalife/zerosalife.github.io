@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2014-12-27T13:42:42-05:00</updated>
+  <updated>2015-01-03T09:30:32-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Simple Mind-reading Machine in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/"/>
-    <updated>2014-12-13T15:38:20-05:00</updated>
+    <updated>2014-12-13T14:38:20-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>I ported a cool toy from <a href="http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/">Alastair Aitchison&rsquo;s blog</a> to Unity JavaScript.  The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that attempts to guess whether the player will choose Left (by pressing the left arrow key) or Right (by pressing the right arrow key).</p>
 
@@ -191,7 +191,7 @@ function OnGUI() {
   <entry>
     <title type="html"><![CDATA[Procjam review]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/29/procjam-review/"/>
-    <updated>2014-11-29T10:33:47-05:00</updated>
+    <updated>2014-11-29T09:33:47-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/29/procjam-review</id>
     <content type="html"><![CDATA[<p>Looking through the entries, I could only spend a minute or two with each entry.  It helped if the game ran in my browser, so HTML and Unity were big.  Here are some of the games that caught my eye.</p>
 
@@ -360,7 +360,7 @@ revisit when I can really dig into it.</li>
   <entry>
     <title type="html"><![CDATA[procjam comedown]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/22/procjam-comedown/"/>
-    <updated>2014-11-22T14:26:16-05:00</updated>
+    <updated>2014-11-22T13:26:16-06:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/22/procjam-comedown</id>
     <content type="html"><![CDATA[<p>Now that two weeks have passed (a geologic era in internet time), I&rsquo;m ready begin to look back on the <a href="https://twitter.com/hashtag/procjam">#procjam</a> talks and the entries to the jam that caught my eye.  I&rsquo;ve been very busy lately working on my own submissions <a href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/">INSceptahdeckwu</a> and <a href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/">Patchwerk</a>, among other commitments, so this is by no means an exhaustive look at everything in #procjam.</p>
 
@@ -490,7 +490,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[Play balance for party vs in-depth fighting games]]></title>
     <link href="http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/"/>
-    <updated>2014-10-18T11:33:31-04:00</updated>
+    <updated>2014-10-18T10:33:31-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games</id>
     <content type="html"><![CDATA[<p>Here I&rsquo;m drawing a comparison between games that are subjectively perceived as party games and games that are more in-depth.  I&rsquo;m avoiding using loaded terms like casual and hardcore, but I think the distinction is likely the same.  Both types of games can be complex, but subtle balancing issues can affect the subjective sense of fun when playing these games.</p>
 
@@ -532,7 +532,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[Designing a pachinko RPG]]></title>
     <link href="http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg/"/>
-    <updated>2014-08-23T11:48:48-04:00</updated>
+    <updated>2014-08-23T10:48:48-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/08/23/designing-a-pachinko-rpg</id>
     <content type="html"><![CDATA[<p>What would make a pachinko RPG?  <a href="http://zerosalife.github.io/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">Last week</a>, I wrote about how I&rsquo;m sort of enamored with <em><a href="http://shimage.net/one-tap-quest/">One Tap Quest&rsquo;s</a></em> tap-and-let-them-go interaction, which I think mirrors the play-style of pachinko.  In pachinko, you have some control over launching the little metal balls, but once they&rsquo;re in play, they&rsquo;re on their own.  This mechanism stands in contrast to pinball, where you interact with a single or multiple pinballs with the paddles, and cue sports (especially bumper pool), where you launch a billiard ball repeatedly with a cue.</p>
 
