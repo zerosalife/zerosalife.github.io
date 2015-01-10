@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-01-03T09:30:32-06:00</updated>
+  <updated>2015-01-10T10:11:23-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Previewing a post using Octopress]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress/"/>
+    <updated>2015-01-10T10:01:44-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s nice to preview some of my more complicated posts before I ship them out to the Internets.  Here&rsquo;s how I do it.</p>
+
+<h2>make preview</h2>
+
+<p>I <a href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/">previously posted</a> a <code>makefile</code> I use to automate deployment of my blog.  Here are the germane lines for previewing:</p>
+
+<p>``` make
+preview:</p>
+
+<pre><code>bundle exec rake generate &amp;&amp; bundle exec rake preview
+</code></pre>
+
+<p>```</p>
+
+<p>So typing <code>make preview</code> at the command prompt will run start up <a href="https://github.com/ruby/rake">rake</a>&rsquo;s webserver at <code>http://localhost:4000</code>.  Then all I have to do is launch a browser, connect to that port, and voila: a preview of the blog that regenerates to match the changes I make live, as I make them.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[New Year, New Footer]]></title>
@@ -138,44 +161,6 @@ than <code>master</code>.</p>
 <p>Not sure exactly why, but including the <code>%</code> after blog on the line
 <code>.PHONY: blog%</code> gave me an error saying <code>make: `blog' is up to date.</code>.
 Removing the <code>%</code> allowed me to run <code>make blog</code> as expected.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hammock Driven Creativity]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/"/>
-    <updated>2014-05-31T11:28:40-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity</id>
-    <content type="html"><![CDATA[<p>In 2010, <a href="https://twitter.com/richhickey">Rich Hickey</a> spoke at Clojure Conj about <a href="http://www.youtube.com/watch?v%3Df84n5oFoZBc">&lsquo;Hammock Driven Development&rsquo;</a>.  Hickey was talking about the benefit of down-time for noodling about software design.  Specifically, Hickey means using down-time after considerably &lsquo;loading up&rsquo; your mind with aspects of the problem, in order to leverage background offline processes to solve those difficult problems.</p>
-
-<!--more-->
-
-
-<h2>Wait</h2>
-
-<p>Hickey&rsquo;s advice is to wait for it.  Wait overnight.  Get good rest and make sure that you are sleeping well.  Then you will be able to think about the clearly on the next day.  If you are lucky perhaps you will receive inspiration from a dream and wake up with the problem solved.  This sort of inspiration is what Hickey means by leveraging background processing.</p>
-
-<h2>Multiply</h2>
-
-<p>Hickey mentions working on more than one project.  By having multiple projects, you avoid the problems of creative block, or writer&rsquo;s block.  You can be productive simply by working on another project.  One drawback is that frantically flitting from project to project can lead to problems finishing any single project.  I am often guilty of this.</p>
-
-<p>Eventually, I plan on writing about properly scoping projects to make it possible to get them to a finished state.  One method that works for me is getting something to the point that I can write a blog post about it.  Even if it&rsquo;s not &lsquo;finished&rsquo; finished, I get some satisfaction with putting it out there in a relatively well thought out and complete form.</p>
-
-<p>My solution is to <strong>record, record, record</strong>.  I keep lots of notes, both in more structured form on this blog and in more sketchy form in files on my computer.  I also draw out visual design ideas in a notebook.  Sometimes I will set up skeleton game projects simply to test out an idea.  If I have some sudden insight into a problem, then all of these ideas are available later.</p>
-
-<h2>Switch</h2>
-
-<p>Hickey says to avoid being stuck, switch.  That is why having multiple projects can help.  Hickey also mentions a great suggestion of talking about design hiccups and problems with other people.  Tweet about your design roadblocks.  Write a blog post about them.  Telepathically communicate about them before you go to sleep, so magical dream elves can come and solve them for you.</p>
-
-<h2>Final Thoughts</h2>
-
-<blockquote><p>Summary: There is no summary.  This is a rant.</p></blockquote>
-
-<p>-Rich Hickey</p>
-
-<p>Unless you are Rich Hickey or&#x2013;I dunno&#x2013;Gary Gygax, simply thinking about a problem <em>a priori</em> will not result in a great game.  There is still something to be said for getting your hands dirty and iterating on a design.  However the techniques highlighted in Hickey&rsquo;s talk can be useful when you are stuck on a design problem.</p>
-
-<p>Hit me up in the comments or on the <a href="https://twitter.com/zerosalife">tweet tweet</a> if you have any great Hammock Driven Design tips that I haven&rsquo;t covered here.</p>
 ]]></content>
   </entry>
   
