@@ -2750,6 +2750,32 @@ section of the footer looks like this:
 =Copyright &copy; 2014 -- {{ site.time | date: "%Y" }}=
 
 You can see the results at the bottom of this page.
+
+** Previewing a post using Octopress
+In which I document how to preview a post using @Octopress.
+
+- tools
+- Octopress
+
+It's nice to preview some of my more complicated posts before I ship
+them out to the Internets.  Here's how I do it.
+
+*** make preview
+
+I [[http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/][previously posted]] a =makefile= I use to automate deployment of my
+blog.  Here are the germane lines for previewing:
+
+#+BEGIN_SRC make
+preview:
+	bundle exec rake generate && bundle exec rake preview
+#+END_SRC
+
+So typing =make preview= at the command prompt will run start up
+=rake='s webserver at =http://localhost:4000=.  Then all I have to do
+is launch a browser, connect to that port, and voila: a preview of the
+blog that regenerates to match the changes I make live, as I make
+them.
+
 * Starting a Game Studio Business
 [[http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq%3D1][http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq=1]]
 
@@ -3349,6 +3375,8 @@ Useful Geographical Descriptors
 *** itch.io
 How to set up an itch.io account and what it's for.
 
+[[http://itchio.tumblr.com/post/107522238129/itch-io-year-in-review-2014-the-features]]
+
 *** 3D modeling for 2.5D
 AngryOctopus made a modeling tool based on an idea by LostGarden
 
@@ -3357,6 +3385,10 @@ AngryOctopus made a modeling tool based on an idea by LostGarden
 [[http://www.lostgarden.com/2013/10/prototyping-challenge-3d-modeling-tool.html]]
 
 [[http://www.angryoctopus.co.nz/lgmodler/]]
+
+
+
+
 ** STARTED DRAFTS
 
 
@@ -5023,8 +5055,8 @@ workflow or if you take a different approach.
 
 
 ** Math Team Hearts
-Math Team Hearts is a speedy modification to Hearts that ironically
-involves less math than the vanilla game.
+Following exercise from @kinojabber: Math Team Hearts, a speedy mod to
+Hearts that ironically involves less math.
 
 - design
 - mechanics
@@ -5034,7 +5066,7 @@ involves less math than the vanilla game.
 Math Team Hearts is a speedy modification to Hearts that ironically
 involves less math than the vanilla game.
 
-From The Game Design Workshop book:
+From [[http://www.crcpress.com/product/isbn/9781482217162][Game Design Workshop]] by [[https://twitter.com/kinojabber][Tracy Fullerton]]:
 
 #+BEGIN_QUOTE
 One good way to train yourself in the design of game mechanics is to
@@ -5067,8 +5099,8 @@ gives you points.
 
 The player with the most points at the end of play wins.
 
-For more variety, use the Dealer's choice drafting rules.  Each round,
-the Dealer decides on how players will pass cards prior to play.
+For more variety, use Dealer's choice drafting rules.  Each round, the
+Dealer decides on how players will pass cards prior to play.
 
 *** Tweaks
 
@@ -5077,27 +5109,229 @@ exactly right.  Perhaps there should be more of a penalty for taking
 the Queen without shooting the moon.  That would create a more
 exciting risk-reward trade-off.
 
-** Previewing a post using Octopress
-In which I document how to preview a post using @Octopress.
+
+** Syntax highlighting for Octopress
+In which I remind myself how to post code snippets in @octopress.
+
+Seeking advice on code refactor at the bottom of this post. #gamedev
 
 - tools
 - Octopress
+- algorithm
 
-It's nice to preview some of my more complicated posts before I ship
-them out to the Internets.  Here's how I do it.
+It's relatively simple, but I always forget how it's done.  In the
+interest of documenting useful information for myself, here is how to
+use [[http://octopress.org/docs/blogging/code/][syntax highlighting with code blocks in Octopress]].
 
-*** make preview
+#+BEGIN_SRC
+``` [language]
 
-I [[http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/][previously posted]] a =makefile= I use to automate deployment of my
-blog.  Here are the germane lines for previewing:
+blah
 
-#+BEGIN_SRC make
-preview:
-	bundle exec rake generate && bundle exec rake preview
+```
+
 #+END_SRC
 
-So typing =make preview= at the command prompt will run start up
-=rake='s webserver at =http://localhost:4000=.  Then all I have to do
-is launch a browser, connect to that port, and voila: a preview of the
-blog that regenerates to match the changes I make live, as I make
-them.
+
+
+Here are some examples of languages I typically use:
+
+#+BEGIN_SRC csharp
+  private IEnumerator GUIMoveToPosition(Vector3 newPosition, float duration, RectTransform rect) {
+    float elapsedTime = 0;
+    Vector3 startingPos = rect.position;
+    while(elapsedTime < duration) {
+      rect.position = Vector3.Lerp(startingPos,
+                                   newPosition,
+                                   elapsedTime / duration);
+      elapsedTime += Time.deltaTime;
+      yield return null;
+    }
+  }
+
+#+END_SRC
+
+#+BEGIN_SRC python
+  def update(self, time_elapsed):
+      self.tick += 1
+      self.total_time += time_elapsed
+
+      if self.mode:
+          self.mode.update(time_elapsed)
+
+
+#+END_SRC
+
+#+BEGIN_SRC clojure
+  (defn valid-string? [s]
+    "Valid strings are non-empty strings that do not contain
+    [ (commonly used to denote parts of the song and which rappers are
+    rapping) and : (commonly used in the album info and transcriber
+    info)."
+    (and (not (contains-char? s \[))
+         (not (contains-char? s \:))
+         (not (contains-char? s \"))
+         (not (contains-char? s \())
+         (seq s)))
+  ;;; http://clojuredocs.org/clojure_core/clojure.core/empty_q
+  ;;; Please use the idiom (seq x) rather than (not (empty? x))
+
+
+#+END_SRC
+
+*** Bonus: Help me refactor this code
+I think there's some way to refactor these two similar functions so
+they don't share code, but I don't see it.  If you have a clever way
+to offload the common functionality, let me know in the comments
+([[http://gist.github.com][gists]] preferred).
+
+#+BEGIN_SRC csharp
+  // NOTE: there are some differences between the two functions
+  // because I'm still adding funcitonality.  I think there should be
+  // a way to pull out some of the common functionality so I don't
+  // have two functions that share code.  Maybe by separating the
+  // boundary checks from the actual "counting" steps?
+
+  void Countdown () {
+    int iTargetHp = iHp + 1;
+
+    // If the rolling hp reaches the hit point above iHp then we can
+    // stop the rolling because each RollEvent effectively moves past
+    // the current iRolHp.
+    if(iRolHp == iTargetHp) {
+      // Start Coroutine to return reels to original positions
+      StartCoroutine(WaitAndResetReels(RollDir.Down));
+
+      CancelInvoke("Countdown");
+    }
+    if(iRolHp <= 0) {
+      StartCoroutine(WaitAndResetReels(RollDir.Down));
+
+      // TRUE DEATH!
+      CancelInvoke("Countdown");
+    }
+    // If the rolling HP is larger than the target HP and positive,
+    // then roll down.
+    if(iRolHp > iTargetHp || iRolHp > 0) {
+      RollEvent(RollDir.Down);
+    }
+
+    iRolHp = iRolHp + (int)RollDir.Down;
+
+  }
+
+  void Countup() {
+    int iTargetHp = iHp - 1;
+
+    // If the rolling hp reaches the hit point below iHp then we can
+    // stop rolling because each RollEvent effectively moves past the
+    // current iRolHp.
+    //
+    // Also take care of some nasty edge cases resulting in two calls
+    // to WaitAndResetReels.
+    if(iRolHp == iTargetHp & iRolHp < iMaxHp & iRolHp != iMaxHp) {
+      StartCoroutine(WaitAndResetReels(RollDir.Up));
+
+      CancelInvoke("Countup");
+    } else if(iRolHp >= iMaxHp) {
+      iHp = iMaxHp;
+      StartCoroutine(WaitAndResetReels(RollDir.Up));
+
+      // Maxed out HP.
+      CancelInvoke("Countup");
+    }
+
+    // If the rolling HP is smaller than the target HP and less than
+    // Max HP, then roll up.
+    if(iRolHp < iTargetHp || iRolHp < iMaxHp) {
+      RollEvent(RollDir.Up);
+    }
+
+    iRolHp = iRolHp + (int)RollDir.Up;
+
+  }
+#+END_SRC
+** Video Game Book Club
+- design
+- book club
+- VGBC
+
+Credit for the original idea for a VGBC goes to Rick Wolf, who also
+coauthored this post.  You can get in touch with Rick at .
+
+*** What?
+A *club* devoted to selecting and critically *discussing video games*.
+I like the acronym VGBC, but you can call it what you feel.
+
+Each meeting you can discuss any aspect of a video game that strikes
+your fancy.  Maybe you really like the music or art direction, maybe
+there's one level that you could play over and over again until you
+get it perfect, maybe you really like the silent protagonist's
+haircut.  Let your club know.  Chances are your thoughts about the
+video game will evoke some exciting input from others in your club.
+You can respond with all those witty retorts you've been practicing in
+the mirror.  This is what's known colloquially as a discussion.
+
+But how do I know what to discuss, you ask?  It's simple.  *Take turns
+picking a topical game that everyone can play*, within reason.  I say
+within reason because, like a book club, everyone needn't finish the
+discussion material to weigh in.  Don't expect everyone in your club
+to buy the latest $60 game.
+
+A rule of thumb can be that the host of the last meeting gets to
+choose the game for the next meeting.
+
+*** Who?
+You, your friends, the cat (If you have one.  No catnapping.),
+*anyone* with an interest in critically discussing video games
+
+*** When?
+Pick your favorite periodic adjective.  I'd recommend starting with
+*monthly* meetings, but you can meet as often as you like.  Really.  I
+don't mind.  See if I care.  It's not like you invited me.
+
+Anyway pick a time that works best for your group.  Sometime in the
+evening, say around happy hour, with a delicious beverage and snacks
+sounds good to me.  I'd reckon that allowing for *two hours* should be
+enough discussion.  If a topic is particularly engaging you can always
+spread it out over multiple meetings.
+
+It's up to you to work out a schedule that works for your group.
+*Scheduling apps* like [[http://doodle.com/][Doodle.com]] can be helpful for coordinating
+diverse schedules and finding a time that works for everyone in your
+group.
+
+*** Where?
+In your *home*, in your friends' homes (assuming they're part of the
+meeting...), in your garage, at a local pub.
+
+It's nice to meet somewhere with a *television* and a *game system* to
+play the game you will discuss.  Showing video of your favorite parts
+of the game can be nice too.
+
+If you meet outside your home make sure you check with the
+establishment beforehand.  Give them a headcount and check if it's ok.
+Be sure to spend a little scrilla and tip well.  Be aware of other
+customers.
+
+*** Why?
+Because *video games deserve a critical reading*.  Discussions force
+us to crystallize our views from vague notions of "It's good," to "The
+fog of war mechanic in this game vastly improves the strategic
+elements, strengthening the multiplayer meta-game."  (Your mileage may
+vary.)
+
+Sometimes you'll get to suggest your favorite game.  Others may deride
+your choice, but they will get their chance too.  Heck someone may
+even like the games you suggest, discussing an intriguing aspect that
+was lost on you.  Then the others in your club will suggest other
+games.  You never know, you may just find a game that you like.
+
+What we've presented here are a set of guidelines.  There are no hard
+and fast rules or requirements for hosting your own VGBC.  Want to
+talk about knitting?  Cool.  Want to discuss your favorite sporting
+moments?  Great.  Board games?  Lawn darts?  More power to you.
+
+So start up your own VGBC and let us know how it goes in the comments
+or on the twitters @zerosalife or .  When I post about something from
+VGBC, I'll tag it with VGBC.
