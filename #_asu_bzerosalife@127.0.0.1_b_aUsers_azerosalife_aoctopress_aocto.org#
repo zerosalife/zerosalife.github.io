@@ -5148,18 +5148,18 @@ Here are some examples of languages I typically use:
       yield return null;
     }
   }
-
+  
 #+END_SRC
 
 #+BEGIN_SRC python
   def update(self, time_elapsed):
       self.tick += 1
       self.total_time += time_elapsed
-
+  
       if self.mode:
           self.mode.update(time_elapsed)
-
-
+  
+  
 #+END_SRC
 
 #+BEGIN_SRC clojure
@@ -5175,8 +5175,8 @@ Here are some examples of languages I typically use:
          (seq s)))
   ;;; http://clojuredocs.org/clojure_core/clojure.core/empty_q
   ;;; Please use the idiom (seq x) rather than (not (empty? x))
-
-
+  
+  
 #+END_SRC
 
 *** Bonus: Help me refactor this code
