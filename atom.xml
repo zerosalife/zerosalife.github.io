@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-01-03T09:30:32-06:00</updated>
+  <updated>2015-01-10T10:11:23-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Previewing a post using Octopress]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress/"/>
+    <updated>2015-01-10T10:01:44-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s nice to preview some of my more complicated posts before I ship them out to the Internets.  Here&rsquo;s how I do it.</p>
+
+<h2>make preview</h2>
+
+<p>I <a href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/">previously posted</a> a <code>makefile</code> I use to automate deployment of my blog.  Here are the germane lines for previewing:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='make'><span class='line'><span class="nf">preview</span><span class="o">:</span>
+</span><span class='line'>  bundle <span class="nb">exec </span>rake generate <span class="o">&amp;&amp;</span> bundle <span class="nb">exec </span>rake preview
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So typing <code>make preview</code> at the command prompt will run start up <a href="https://github.com/ruby/rake">rake</a>&rsquo;s webserver at <code>http://localhost:4000</code>.  Then all I have to do is launch a browser, connect to that port, and voila: a preview of the blog that regenerates to match the changes I make live, as I make them.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[New Year, New Footer]]></title>
@@ -1184,42 +1206,6 @@ class PlayerData {
 <p>I left the game looping <a href="https://soundcloud.com/postpre">PostPre</a>&rsquo;s driving soundtrack for 15 minutes, even though my first play-through lasted only 2 or 3.  Maybe that&rsquo;s the benefit of interactivity and choices, to extend and prolong the mindshare of some experience or product with the player.  I don&rsquo;t necessarily mean that in a cynical way, although the typical model of play can be subverted for more manipulative means (and, of course, it is!).</p>
 
 <p>For me, Space Is Red hit all the right notes and left me with something to think about.  That is what I call a successful gamejam game.  You can see Space Is Red and the other #spacecowboygamejam entries <a href="http://itch.io/jam/space-cowboy-jam">here</a>.  If you&rsquo;re interested in learning more about Space Is Red&rsquo;s creator <a href="http://toddluke.com/">Todd Luke</a>, you can find an interview <a href="http://www.gamasutra.com/blogs/TalhaKaya/20140711/220825/Finding_Beauty_in_Imperfection_Interview_with_Todd_Luke.php">here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Strength of the Pitch: Jodorowsky's Dune]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/"/>
-    <updated>2014-07-19T10:42:35-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune</id>
-    <content type="html"><![CDATA[<p>I was fortunate enough to catch a screening of <em><a href="http://jodorowskysdune.com/">Jodorowsky&rsquo;s Dune</a></em>, the documentary about <a href="http://en.wikipedia.org/wiki/Alejandro_Jodorowsky">visionary director Alejandro Jodorowsky&rsquo;s</a> failed attempt to adapt the science fiction novel <em><a href="http://en.wikipedia.org/wiki/Dune_(novel">Dune</a>)</em> to the silver screen.  Having seen a similar <a href="http://www.imdb.com/title/tt0308514/">documentary about Terry Gilliam&rsquo;s attempt at adapting Don Quixote</a>, I consider myself a fan of the genre, despite its niche appeal.</p>
-
-<p>One quick note before we go on.  It looks like <em>Jodorowsky&rsquo;s Dune</em> has hit Netflix on DVD, and seems a likely candidate to be available for streaming.  So you can check it out for yourself to see if you agree with my take.</p>
-
-<!--more-->
-
-
-<h2>Pitching</h2>
-
-<p>Jodorowsky looks back, with good-natured humor, on a massively overambitious project for its time.  Aside from the amazing concept art and avant-garde stylings, I took away two messages from the documentary that I would like to share.  The first deals with the art of pitching your ideas and the second with locating oneself in close to proximity to the best and the brightest potential collaborators.</p>
-
-<p>Jodorowsky set out to create a huge book&mdash;more of a cinder block.  It&rsquo;s probably what we could call a design bible today, which would be delivered to production companies in order to secure funding.  By creating a book of storyboards and character designs, Jodorowsky wanted to show that the project was large in scope but feasible, because it had been so intricately planned.</p>
-
-<p>Jodorowsky reached out to a variety of concept artists to help with the design of the movie.  To visual and technical artists, Jodorowsky made impassioned pitches, claiming that they would become &ldquo;spiritual warriors&rdquo; for their collective vision, and implored them to come live and work (for little or no pay) in Paris.</p>
-
-<p>What stands out is the strength of Jodorowsky&rsquo;s pitch.  At a time when artists like <a href="http://www.chrisfossart.com/">Chris Foss</a>, <a href="http://en.wikipedia.org/wiki/Jean_Giraud">Moebius</a>, and <a href="http://www.hrgiger.com/">H.R. Giger</a> were each becoming established in their own rights, Jodorowsky was able, through the sheer strength of an imagined story, to convince them to devote years of effort to the project.  That takes a lot of gumption.  It didn&rsquo;t hurt that Jodorowsky had a strong track record of visually and thematically impressive avant-garde cinema.  Even still, Jodorowsky is great at selling the idea, and that is something that game designers must do, to communicate ideas to others in order to capitalize on the individual talents and assemble a great team.</p>
-
-<h2>Placement</h2>
-
-<p>The second message I took away deals with putting yourself into the right place at the right time.  It&rsquo;s also about leveraging that placement to connect and collaborate.</p>
-
-<p>The documentary showed a curious problem of the movie&rsquo;s mid-Seventies inception.  How do you find people to collaborate with, or even people at all, before the Internet?</p>
-
-<p>The solution: go to Paris.  That&rsquo;s where all the intelligentsia congregate.  This was more or less true for several hundred years before the Internet.  If you want <a href="http://en.wikipedia.org/wiki/Salvador_Dal%25C3%25AD">Salvador Dali</a> in your movie, playing the <a href="http://dune.wikia.com/wiki/Padishah_Emperor">Emperor of the Known Universe</a>, go to Paris and you&rsquo;ll probably run into Dali.</p>
-
-<p>Now we all live in our decentralized <a href="http://en.wikipedia.org/wiki/Temporary_Autonomous_Zone">temporary autonomous zones</a>.  But for as much as they can fragment, social media have the ability to connect disparate artists and thinkers.</p>
-
-<p>I think that Twitter is a platform that serves as a modern Paris, for like-minded people to seek each other out and communicate.  Go congregate with the intelligentsia and let your ideas speak for themselves.  Hit me up on the proverbial tweets, and let me hear your ideas and pitches.  I&rsquo;m constantly working on mine&mdash;writing here, trying to refine my skills.  Maybe we are both looking for the talents that we can provide.</p>
 ]]></content>
   </entry>
   
