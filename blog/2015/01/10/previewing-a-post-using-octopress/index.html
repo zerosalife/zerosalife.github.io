@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Follow-up to the centrality of caves - zero's a life</title>
+  <title>Previewing a post using Octopress - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="My post last week about caves struck a nerve. I received a lot of encouraging retweets and favorites. I also received some great feedback. Paul Diaz &hellip;">
+  <meta name="description" content="It&rsquo;s nice to preview some of my more complicated posts before I ship them out to the Internets. Here&rsquo;s how I do it. make preview I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Follow-up to the Centrality of Caves</h1>
+      <h1 class="entry-title">Previewing a Post Using Octopress</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-05-10T10:27:49-05:00" pubdate data-updated="true">May 10<span>th</span>, 2014</time>
+<time datetime="2015-01-10T10:01:44-06:00" pubdate data-updated="true">Jan 10<span>th</span>, 2015</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,23 +95,20 @@
   </header>
 
 
-<div class="entry-content"><p>My <a href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/">post last week</a> about caves struck a nerve.  I received a lot of encouraging retweets and favorites.  I also received some great feedback.</p>
+<div class="entry-content"><p>It&rsquo;s nice to preview some of my more complicated posts before I ship them out to the Internets.  Here&rsquo;s how I do it.</p>
 
-<p>Paul Diaz points out one design constraint granted by caves that I hadn&rsquo;t considered.</p>
+<h2>make preview</h2>
 
-<div class='embed tweet'><blockquote class="twitter-tweet"><p><a href="https://twitter.com/psysal">@psysal</a> <a href="https://twitter.com/ZerosALife">@ZerosALife</a> very nice. One that supports linearity and design is cave&#39;s are dark. Helps direct attention w/ lighting/effects.</p>&mdash; Paul Diaz (@SleepyTearyEyed) <a href="https://twitter.com/SleepyTearyEyed/statuses/462624220447391744">May 3, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<p>I <a href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/">previously posted</a> a <code>makefile</code> I use to automate deployment of my blog.  Here are the germane lines for previewing:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='make'><span class='line'><span class="nf">preview</span><span class="o">:</span>
+</span><span class='line'>  bundle <span class="nb">exec </span>rake generate <span class="o">&amp;&amp;</span> bundle <span class="nb">exec </span>rake preview
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>I think Paul is right, that this falls within the scope of caves&#8217; linearity.  I&rsquo;ve been thinking a bit about a possible taxonomy of cave environments in games, but for the purposes of these posts I&rsquo;ll keep it more general.  A cave is a cave, right?  <a href="http://en.wikipedia.org/wiki/I_know_it_when_I_see_it">We know it when we see it.</a></p>
-
-<p>Any old screen in a game can be cave-like in the way its environmental design constraints fit into the game world.  Here I&rsquo;m using &lsquo;screen&rsquo; to refer to a room in a metroid-like game or a level in other sorts of games&#x2013;some arbitrary atomic unit of division of the game environment constituting a discrete area.</p>
-
-<p>For the purpose of argument, Paul&rsquo;s point forces us to think of the most cave-y of caves, which I think was the intent behind the original question in the first place.  Because caves are dark environments, dank environments, <em>interior</em> environments, they lack the uniform lighting that typically characterizes the exterior &lsquo;overworld&rsquo; in games.  As Paul states, lighting cues can serve as guideposts for the player, directing attention toward the critical path.</p>
-
-<p>I view this example as a manifestation of the fundamental reduction in degrees of freedom of play achieved by the interiority, and thus, linearity of caves.  The fact that there are more walls, and therefore fewer possible places for the player to go, allows for the designer, using careful construction, to communicate intent to the player through the environment itself.  I don&rsquo;t mean to say here that such communication is impossible outside of caves, just that caves are one simple and straightforward way to achieve this constrained, communicative sort of design.  This vocabulary of design showed up early on in the history of games, it worked, and it has persisted.</p>
-
-<p>Thanks and shout outs to <a href="https://twitter.com/sleepytearyeyed">Paul Diaz</a>, whose feedback inspired this follow-up post.</p>
+<p>So typing <code>make preview</code> at the command prompt will run start up <a href="https://github.com/ruby/rake">rake</a>&rsquo;s webserver at <code>http://localhost:4000</code>.  Then all I have to do is launch a browser, connect to that port, and voila: a preview of the blog that regenerates to match the changes I make live, as I make them.</p>
 </div>
 
 
@@ -134,12 +131,12 @@
   
 
 
-<time datetime="2014-05-10T10:27:49-05:00" pubdate data-updated="true">May 10<span>th</span>, 2014</time>
+<time datetime="2015-01-10T10:01:44-06:00" pubdate data-updated="true">Jan 10<span>th</span>, 2015</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/design/'>design</a>
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -148,7 +145,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress/" >Tweet</a>
   
   
   
@@ -157,10 +154,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/05/03/why-are-caves-central-to-so-many-games/" title="Previous Post: Why are caves central to so many games?">&laquo; Why are caves central to so many games?</a>
+        <a class="basic-alignment left" href="/blog/2015/01/03/new-year-new-footer/" title="Previous Post: New Year, New Footer">&laquo; New Year, New Footer</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/05/17/dot-gitignore-for-unity-projects/" title="Next Post: .gitignore for Unity projects">.gitignore for Unity projects &raquo;</a>
       
     </p>
   </footer>
@@ -257,8 +252,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress/';
         var disqus_script = 'embed.js';
       
     (function () {

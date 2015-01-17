@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-01-03T09:30:32-06:00</updated>
+  <updated>2015-01-10T10:11:23-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Previewing a post using Octopress]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress/"/>
+    <updated>2015-01-10T10:01:44-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s nice to preview some of my more complicated posts before I ship them out to the Internets.  Here&rsquo;s how I do it.</p>
+
+<h2>make preview</h2>
+
+<p>I <a href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/">previously posted</a> a <code>makefile</code> I use to automate deployment of my blog.  Here are the germane lines for previewing:</p>
+
+<p>``` make
+preview:</p>
+
+<pre><code>bundle exec rake generate &amp;&amp; bundle exec rake preview
+</code></pre>
+
+<p>```</p>
+
+<p>So typing <code>make preview</code> at the command prompt will run start up <a href="https://github.com/ruby/rake">rake</a>&rsquo;s webserver at <code>http://localhost:4000</code>.  Then all I have to do is launch a browser, connect to that port, and voila: a preview of the blog that regenerates to match the changes I make live, as I make them.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[New Year, New Footer]]></title>
