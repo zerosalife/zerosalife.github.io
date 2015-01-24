@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Syntax highlighting for Octopress - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="It&rsquo;s relatively simple, but I always forget how it&rsquo;s done. In the
+interest of documenting useful information for myself, here is how to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Syntax Highlighting for Octopress</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-17T11:12:37-06:00" pubdate data-updated="true">Jan 17<span>th</span>, 2015</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>It&rsquo;s relatively simple, but I always forget how it&rsquo;s done.  In the
+interest of documenting useful information for myself, here is how to
+use <a href="http://octopress.org/docs/blogging/code/">syntax highlighting with code blocks in Octopress</a>.</p>
+
+<!--more-->
+
+
+<p>Here are some examples of languages I typically use:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">private</span> <span class="n">IEnumerator</span> <span class="nf">GUIMoveToPosition</span><span class="p">(</span><span class="n">Vector3</span> <span class="n">newPosition</span><span class="p">,</span> <span class="kt">float</span> <span class="n">duration</span><span class="p">,</span> <span class="n">RectTransform</span> <span class="n">rect</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">float</span> <span class="n">elapsedTime</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">Vector3</span> <span class="n">startingPos</span> <span class="p">=</span> <span class="n">rect</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">elapsedTime</span> <span class="p">&lt;</span> <span class="n">duration</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">rect</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">Lerp</span><span class="p">(</span><span class="n">startingPos</span><span class="p">,</span>
+</span><span class='line'>                                 <span class="n">newPosition</span><span class="p">,</span>
+</span><span class='line'>                                 <span class="n">elapsedTime</span> <span class="p">/</span> <span class="n">duration</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">elapsedTime</span> <span class="p">+=</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">yield</span> <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_elapsed</span><span class="p">):</span>
+</span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">tick</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">total_time</span> <span class="o">+=</span> <span class="n">time_elapsed</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">time_elapsed</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">valid-string?</span> <span class="p">[</span><span class="nv">s</span><span class="p">]</span>
+</span><span class='line'>  <span class="s">&quot;Valid strings are non-empty strings that do not contain</span>
+</span><span class='line'><span class="s">  [ (commonly used to denote parts of the song and which rappers are</span>
+</span><span class='line'><span class="s">  rapping) and : (commonly used in the album info and transcriber</span>
+</span><span class='line'><span class="s">  info).&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">contains-char?</span> <span class="nv">s</span> <span class="sc">\[</span><span class="p">))</span>
+</span><span class='line'>       <span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">contains-char?</span> <span class="nv">s</span> <span class="sc">\:</span><span class="p">))</span>
+</span><span class='line'>       <span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">contains-char?</span> <span class="nv">s</span> <span class="sc">\&quot;</span><span class="p">))</span>
+</span><span class='line'>       <span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">contains-char?</span> <span class="nv">s</span> <span class="sc">\(</span><span class="p">))</span>
+</span><span class='line'>       <span class="p">(</span><span class="nb">seq </span><span class="nv">s</span><span class="p">)))</span>
+</span><span class='line'><span class="c1">;;; http://clojuredocs.org/clojure_core/clojure.core/empty_q</span>
+</span><span class='line'><span class="c1">;;; Please use the idiom (seq x) rather than (not (empty? x))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Bonus: Help me refactor this code</h2>
+
+<p>I think there&rsquo;s some way to refactor these two similar functions so
+they don&rsquo;t share code, but I don&rsquo;t see it.  If you have a clever way
+to offload the common functionality, let me know in the comments
+(<a href="http://gist.github.com">gists</a> preferred).</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="c1">// NOTE: there are some differences between the two functions</span>
+</span><span class='line'><span class="c1">// because I&#39;m still adding funcitonality.  I think there should be</span>
+</span><span class='line'><span class="c1">// a way to pull out some of the common functionality so I don&#39;t</span>
+</span><span class='line'><span class="c1">// have two functions that share code.  Maybe by separating the</span>
+</span><span class='line'><span class="c1">// boundary checks from the actual &quot;counting&quot; steps?</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">void</span> <span class="nf">Countdown</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">iTargetHp</span> <span class="p">=</span> <span class="n">iHp</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// If the rolling hp reaches the hit point above iHp then we can</span>
+</span><span class='line'>  <span class="c1">// stop the rolling because each RollEvent effectively moves past</span>
+</span><span class='line'>  <span class="c1">// the current iRolHp.</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">==</span> <span class="n">iTargetHp</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Start Coroutine to return reels to original positions</span>
+</span><span class='line'>    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">WaitAndResetReels</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Down</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">CancelInvoke</span><span class="p">(</span><span class="s">&quot;Countdown&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">WaitAndResetReels</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Down</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// TRUE DEATH!</span>
+</span><span class='line'>    <span class="n">CancelInvoke</span><span class="p">(</span><span class="s">&quot;Countdown&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="c1">// If the rolling HP is larger than the target HP and positive,</span>
+</span><span class='line'>  <span class="c1">// then roll down.</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">&gt;</span> <span class="n">iTargetHp</span> <span class="p">||</span> <span class="n">iRolHp</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">RollEvent</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Down</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">iRolHp</span> <span class="p">=</span> <span class="n">iRolHp</span> <span class="p">+</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Down</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">void</span> <span class="nf">Countup</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">iTargetHp</span> <span class="p">=</span> <span class="n">iHp</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// If the rolling hp reaches the hit point below iHp then we can</span>
+</span><span class='line'>  <span class="c1">// stop rolling because each RollEvent effectively moves past the</span>
+</span><span class='line'>  <span class="c1">// current iRolHp.</span>
+</span><span class='line'>  <span class="c1">//</span>
+</span><span class='line'>  <span class="c1">// Also take care of some nasty edge cases resulting in two calls</span>
+</span><span class='line'>  <span class="c1">// to WaitAndResetReels.</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">==</span> <span class="n">iTargetHp</span> <span class="p">&amp;</span> <span class="n">iRolHp</span> <span class="p">&lt;</span> <span class="n">iMaxHp</span> <span class="p">&amp;</span> <span class="n">iRolHp</span> <span class="p">!=</span> <span class="n">iMaxHp</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">WaitAndResetReels</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Up</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">CancelInvoke</span><span class="p">(</span><span class="s">&quot;Countup&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">&gt;=</span> <span class="n">iMaxHp</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">iHp</span> <span class="p">=</span> <span class="n">iMaxHp</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">WaitAndResetReels</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Up</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Maxed out HP.</span>
+</span><span class='line'>    <span class="n">CancelInvoke</span><span class="p">(</span><span class="s">&quot;Countup&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// If the rolling HP is smaller than the target HP and less than</span>
+</span><span class='line'>  <span class="c1">// Max HP, then roll up.</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">&lt;</span> <span class="n">iTargetHp</span> <span class="p">||</span> <span class="n">iRolHp</span> <span class="p">&lt;</span> <span class="n">iMaxHp</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">RollEvent</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Up</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">iRolHp</span> <span class="p">=</span> <span class="n">iRolHp</span> <span class="p">+</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Up</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-17T11:12:37-06:00" pubdate data-updated="true">Jan 17<span>th</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/01/10/previewing-a-post-using-octopress/" title="Previous Post: Previewing a post using Octopress">&laquo; Previewing a post using Octopress</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/17/syntax-highlighting-for-octopress/">Syntax highlighting for Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/10/previewing-a-post-using-octopress/">Previewing a post using Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/03/new-year-new-footer/">New Year, New Footer</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/27/sharing-philosophy/">Sharing Philosophy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/">Simple Mind-reading Machine in Unity JavaScript</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 &ndash; 2015
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54217540-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
