@@ -2776,6 +2776,147 @@ is launch a browser, connect to that port, and voila: a preview of the
 blog that regenerates to match the changes I make live, as I make
 them.
 
+** Syntax highlighting for Octopress
+In which I remind myself how to post code snippets in @octopress.
+
+Seeking advice on code refactor at the bottom of this post. #gamedev
+
+- tools
+- Octopress
+- algorithm
+
+It's relatively simple, but I always forget how it's done.  In the
+interest of documenting useful information for myself, here is how to
+use [[http://octopress.org/docs/blogging/code/][syntax highlighting with code blocks in Octopress]].
+
+#+BEGIN_SRC
+``` [language]
+
+blah
+
+```
+
+#+END_SRC
+
+
+
+Here are some examples of languages I typically use:
+
+#+BEGIN_SRC csharp
+  private IEnumerator GUIMoveToPosition(Vector3 newPosition, float duration, RectTransform rect) {
+    float elapsedTime = 0;
+    Vector3 startingPos = rect.position;
+    while(elapsedTime < duration) {
+      rect.position = Vector3.Lerp(startingPos,
+                                   newPosition,
+                                   elapsedTime / duration);
+      elapsedTime += Time.deltaTime;
+      yield return null;
+    }
+  }
+
+#+END_SRC
+
+#+BEGIN_SRC python
+  def update(self, time_elapsed):
+      self.tick += 1
+      self.total_time += time_elapsed
+
+      if self.mode:
+          self.mode.update(time_elapsed)
+
+
+#+END_SRC
+
+#+BEGIN_SRC clojure
+  (defn valid-string? [s]
+    "Valid strings are non-empty strings that do not contain
+    [ (commonly used to denote parts of the song and which rappers are
+    rapping) and : (commonly used in the album info and transcriber
+    info)."
+    (and (not (contains-char? s \[))
+         (not (contains-char? s \:))
+         (not (contains-char? s \"))
+         (not (contains-char? s \())
+         (seq s)))
+  ;;; http://clojuredocs.org/clojure_core/clojure.core/empty_q
+  ;;; Please use the idiom (seq x) rather than (not (empty? x))
+
+
+#+END_SRC
+
+*** Bonus: Help me refactor this code
+I think there's some way to refactor these two similar functions so
+they don't share code, but I don't see it.  If you have a clever way
+to offload the common functionality, let me know in the comments
+([[http://gist.github.com][gists]] preferred).
+
+#+BEGIN_SRC csharp
+  // NOTE: there are some differences between the two functions
+  // because I'm still adding funcitonality.  I think there should be
+  // a way to pull out some of the common functionality so I don't
+  // have two functions that share code.  Maybe by separating the
+  // boundary checks from the actual "counting" steps?
+
+  void Countdown () {
+    int iTargetHp = iHp + 1;
+
+    // If the rolling hp reaches the hit point above iHp then we can
+    // stop the rolling because each RollEvent effectively moves past
+    // the current iRolHp.
+    if(iRolHp == iTargetHp) {
+      // Start Coroutine to return reels to original positions
+      StartCoroutine(WaitAndResetReels(RollDir.Down));
+
+      CancelInvoke("Countdown");
+    }
+    if(iRolHp <= 0) {
+      StartCoroutine(WaitAndResetReels(RollDir.Down));
+
+      // TRUE DEATH!
+      CancelInvoke("Countdown");
+    }
+    // If the rolling HP is larger than the target HP and positive,
+    // then roll down.
+    if(iRolHp > iTargetHp || iRolHp > 0) {
+      RollEvent(RollDir.Down);
+    }
+
+    iRolHp = iRolHp + (int)RollDir.Down;
+
+  }
+
+  void Countup() {
+    int iTargetHp = iHp - 1;
+
+    // If the rolling hp reaches the hit point below iHp then we can
+    // stop rolling because each RollEvent effectively moves past the
+    // current iRolHp.
+    //
+    // Also take care of some nasty edge cases resulting in two calls
+    // to WaitAndResetReels.
+    if(iRolHp == iTargetHp & iRolHp < iMaxHp & iRolHp != iMaxHp) {
+      StartCoroutine(WaitAndResetReels(RollDir.Up));
+
+      CancelInvoke("Countup");
+    } else if(iRolHp >= iMaxHp) {
+      iHp = iMaxHp;
+      StartCoroutine(WaitAndResetReels(RollDir.Up));
+
+      // Maxed out HP.
+      CancelInvoke("Countup");
+    }
+
+    // If the rolling HP is smaller than the target HP and less than
+    // Max HP, then roll up.
+    if(iRolHp < iTargetHp || iRolHp < iMaxHp) {
+      RollEvent(RollDir.Up);
+    }
+
+    iRolHp = iRolHp + (int)RollDir.Up;
+
+  }
+#+END_SRC
 * Starting a Game Studio Business
 [[http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq%3D1][http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq=1]]
 
@@ -3387,7 +3528,42 @@ AngryOctopus made a modeling tool based on an idea by LostGarden
 [[http://www.angryoctopus.co.nz/lgmodler/]]
 
 
-
+*** Practical Creativity talk at GDC 14
+[[http://www.gamasutra.com/view/news/231225/Video_Practical_Creativity__A_way_to_invent_new_kinds_of_video_games.php]]
+**** A library of mechanic patterns
+- Set packing
+- Time limits
+- Guessing
+- Binary search
+- Neighbor count
+- Movement rate
+- Pickups
+- Stats
+- Graph traversal
+- Optimal path
+- Threes optimization
+- Exponentiality
+- Repeated move chains
+- Player judging
+- Memory
+- Equipment
+- Markets
+- Triadic relationships
+- Open draw pile
+- Race tracks
+- Diminishing returns
+- Push your luck
+- Hidden information
+- Token state changes
+- Knapsack problem
+- Wild cards
+- Combos
+- Item association
+- Collection
+- Fill the map
+- Roles
+- Resource limits
+- Physics simulation
 
 ** STARTED DRAFTS
 
@@ -3507,6 +3683,8 @@ on to the next thing.
 My favorite term, gaminess, comes from Michael Cook in a comment on
 this very blog.  Gaminess captures the odd taste left in my mouth when
 I use the buzzword gamify.
+
+Adding goals to games where the gameplay has long ago been exhausted.
 
 *** Go big
 [[http://www.shutupandsitdown.com/videos/v/susd-play-megagame/]]
@@ -5110,170 +5288,39 @@ the Queen without shooting the moon.  That would create a more
 exciting risk-reward trade-off.
 
 
-** Syntax highlighting for Octopress
-In which I remind myself how to post code snippets in @octopress.
 
-Seeking advice on code refactor at the bottom of this post. #gamedev
+** VGBC: a Video Game Book Club
+Organize your own videogame bookclub #VGBC.  f/ @InvolvingSalmon
+#gamedev #screenshotsaturday #gaming #retrogaming #games
 
-- tools
-- Octopress
-- algorithm
-
-It's relatively simple, but I always forget how it's done.  In the
-interest of documenting useful information for myself, here is how to
-use [[http://octopress.org/docs/blogging/code/][syntax highlighting with code blocks in Octopress]].
-
-#+BEGIN_SRC
-``` [language]
-
-blah
-
-```
-
-#+END_SRC
-
-
-
-Here are some examples of languages I typically use:
-
-#+BEGIN_SRC csharp
-  private IEnumerator GUIMoveToPosition(Vector3 newPosition, float duration, RectTransform rect) {
-    float elapsedTime = 0;
-    Vector3 startingPos = rect.position;
-    while(elapsedTime < duration) {
-      rect.position = Vector3.Lerp(startingPos,
-                                   newPosition,
-                                   elapsedTime / duration);
-      elapsedTime += Time.deltaTime;
-      yield return null;
-    }
-  }
-  
-#+END_SRC
-
-#+BEGIN_SRC python
-  def update(self, time_elapsed):
-      self.tick += 1
-      self.total_time += time_elapsed
-  
-      if self.mode:
-          self.mode.update(time_elapsed)
-  
-  
-#+END_SRC
-
-#+BEGIN_SRC clojure
-  (defn valid-string? [s]
-    "Valid strings are non-empty strings that do not contain
-    [ (commonly used to denote parts of the song and which rappers are
-    rapping) and : (commonly used in the album info and transcriber
-    info)."
-    (and (not (contains-char? s \[))
-         (not (contains-char? s \:))
-         (not (contains-char? s \"))
-         (not (contains-char? s \())
-         (seq s)))
-  ;;; http://clojuredocs.org/clojure_core/clojure.core/empty_q
-  ;;; Please use the idiom (seq x) rather than (not (empty? x))
-  
-  
-#+END_SRC
-
-*** Bonus: Help me refactor this code
-I think there's some way to refactor these two similar functions so
-they don't share code, but I don't see it.  If you have a clever way
-to offload the common functionality, let me know in the comments
-([[http://gist.github.com][gists]] preferred).
-
-#+BEGIN_SRC csharp
-  // NOTE: there are some differences between the two functions
-  // because I'm still adding funcitonality.  I think there should be
-  // a way to pull out some of the common functionality so I don't
-  // have two functions that share code.  Maybe by separating the
-  // boundary checks from the actual "counting" steps?
-
-  void Countdown () {
-    int iTargetHp = iHp + 1;
-
-    // If the rolling hp reaches the hit point above iHp then we can
-    // stop the rolling because each RollEvent effectively moves past
-    // the current iRolHp.
-    if(iRolHp == iTargetHp) {
-      // Start Coroutine to return reels to original positions
-      StartCoroutine(WaitAndResetReels(RollDir.Down));
-
-      CancelInvoke("Countdown");
-    }
-    if(iRolHp <= 0) {
-      StartCoroutine(WaitAndResetReels(RollDir.Down));
-
-      // TRUE DEATH!
-      CancelInvoke("Countdown");
-    }
-    // If the rolling HP is larger than the target HP and positive,
-    // then roll down.
-    if(iRolHp > iTargetHp || iRolHp > 0) {
-      RollEvent(RollDir.Down);
-    }
-
-    iRolHp = iRolHp + (int)RollDir.Down;
-
-  }
-
-  void Countup() {
-    int iTargetHp = iHp - 1;
-
-    // If the rolling hp reaches the hit point below iHp then we can
-    // stop rolling because each RollEvent effectively moves past the
-    // current iRolHp.
-    //
-    // Also take care of some nasty edge cases resulting in two calls
-    // to WaitAndResetReels.
-    if(iRolHp == iTargetHp & iRolHp < iMaxHp & iRolHp != iMaxHp) {
-      StartCoroutine(WaitAndResetReels(RollDir.Up));
-
-      CancelInvoke("Countup");
-    } else if(iRolHp >= iMaxHp) {
-      iHp = iMaxHp;
-      StartCoroutine(WaitAndResetReels(RollDir.Up));
-
-      // Maxed out HP.
-      CancelInvoke("Countup");
-    }
-
-    // If the rolling HP is smaller than the target HP and less than
-    // Max HP, then roll up.
-    if(iRolHp < iTargetHp || iRolHp < iMaxHp) {
-      RollEvent(RollDir.Up);
-    }
-
-    iRolHp = iRolHp + (int)RollDir.Up;
-
-  }
-#+END_SRC
-** Video Game Book Club
 - design
-- book club
 - VGBC
 
 Credit for the original idea for a VGBC goes to Rick Wolf, who also
-coauthored this post.  You can get in touch with Rick at .
+coauthored this post.  You can get in touch with Rick at
+[[https://twitter.com/involvingsalmon][@InvolvingSalmon]] on Twitter.
 
 *** What?
-A *club* devoted to selecting and critically *discussing video games*.
-I like the acronym VGBC, but you can call it what you feel.
+
+Your very own VGBC (one of those newfangled acronyms I hear are all
+the rage these days).  A *club* devoted to selecting and critically
+*discussing video games*. I like the acronym VGBC, but you can call it
+what you feel. It's worth noting that we aren’t reading a book each
+month (although some game design books would do us well), but we’re
+calling it a “book” club to emphasize the format that encourages
+thoughtful discussion.
 
 Each meeting you can discuss any aspect of a video game that strikes
 your fancy.  Maybe you really like the music or art direction, maybe
 there's one level that you could play over and over again until you
 get it perfect, maybe you really like the silent protagonist's
-haircut.  Let your club know.  Chances are your thoughts about the
+haircut.  Let your club know.  Chances are, your thoughts about the
 video game will evoke some exciting input from others in your club.
 You can respond with all those witty retorts you've been practicing in
 the mirror.  This is what's known colloquially as a discussion.
 
 But how do I know what to discuss, you ask?  It's simple.  *Take turns
-picking a topical game that everyone can play*, within reason.  I say
+picking a topical game that everyone can play*, within reason.  We say
 within reason because, like a book club, everyone needn't finish the
 discussion material to weigh in.  Don't expect everyone in your club
 to buy the latest $60 game.
@@ -5282,32 +5329,39 @@ A rule of thumb can be that the host of the last meeting gets to
 choose the game for the next meeting.
 
 *** Who?
-You, your friends, the cat (If you have one.  No catnapping.),
-*anyone* with an interest in critically discussing video games
+You, your friends, the cat (If you have one. No catnapping.), *anyone*
+with interest in critically discussing video games. Maybe, like us,
+the group consists of people that are interested in game design. Maybe
+you invite your friends that love games, but haven’t ventured into the
+realm of formal discussion. The more the people you have with
+different interests, the more likely you are to get a new take on a
+game.
+
 
 *** When?
-Pick your favorite periodic adjective.  I'd recommend starting with
-*monthly* meetings, but you can meet as often as you like.  Really.  I
-don't mind.  See if I care.  It's not like you invited me.
+Pick your favorite periodic adjective.  We'd recommend starting with
+*monthly* meetings, but you can meet as often as you like.  Really.
+We don't mind.  See if we care.  It's not like you invited us.
 
-Anyway pick a time that works best for your group.  Sometime in the
+Anyway. Pick a time that works best for your group.  Sometime in the
 evening, say around happy hour, with a delicious beverage and snacks
-sounds good to me.  I'd reckon that allowing for *two hours* should be
-enough discussion.  If a topic is particularly engaging you can always
-spread it out over multiple meetings.
+sounds good to us.  We'd reckon that allowing for *two hours* should
+be enough discussion.  If a topic is particularly engaging you can
+always spread it out over multiple meetings.
 
 It's up to you to work out a schedule that works for your group.
-*Scheduling apps* like [[http://doodle.com/][Doodle.com]] can be helpful for coordinating
-diverse schedules and finding a time that works for everyone in your
-group.
+*Scheduling apps* like [[http://doodle.com/][Doodle.com]] can be helpful for coordinating busy
+schedules and finding a time that works for everyone in your group.
 
 *** Where?
 In your *home*, in your friends' homes (assuming they're part of the
-meeting...), in your garage, at a local pub.
+meeting...), in your garage, *at a local pub*.
 
-It's nice to meet somewhere with a *television* and a *game system* to
+It's nice to meet *somewhere with a television* and a *game system* to
 play the game you will discuss.  Showing video of your favorite parts
-of the game can be nice too.
+of the game can be nice too.  If you want to do that, try to plan
+ahead and get a save near the part you want to discuss or check for
+video playthroughs on [[https://www.youtube.com/][YouTube]].
 
 If you meet outside your home make sure you check with the
 establishment beforehand.  Give them a headcount and check if it's ok.
@@ -5315,9 +5369,10 @@ Be sure to spend a little scrilla and tip well.  Be aware of other
 customers.
 
 *** Why?
+
 Because *video games deserve a critical reading*.  Discussions force
-us to crystallize our views from vague notions of "It's good," to "The
-fog of war mechanic in this game vastly improves the strategic
+all of us to crystallize our views from vague notions of "It's good,"
+to "The fog of war mechanic in this game vastly improves the strategic
 elements, strengthening the multiplayer meta-game."  (Your mileage may
 vary.)
 
@@ -5325,13 +5380,213 @@ Sometimes you'll get to suggest your favorite game.  Others may deride
 your choice, but they will get their chance too.  Heck someone may
 even like the games you suggest, discussing an intriguing aspect that
 was lost on you.  Then the others in your club will suggest other
-games.  You never know, you may just find a game that you like.
+games.  You never know, you may just find a game that you like.  If
+you're anything like us, assigning a game and being accountable to
+comment on it can also help [[http://www.backloggery.com/][curb the constant growth of your Steam
+library]].
+
+Maybe one month you'll find that you hated a game. But take a moment
+and think about why it isn't fun. Do you dislike it because you're bad
+at puzzle games, or is it unenjoyable because it's a garbage visual
+novel whose writer has never heard of the three act structure? These
+reasons are very different, and both are worth considering. We're
+hoping that reflecting on what makes a game good or bad will make us
+better designers. We do this with most games that we play, but by
+doing it with friends we can all get feedback on our thoughts; and we
+guarantee that will make us grow as designers.
 
 What we've presented here are a set of guidelines.  There are no hard
 and fast rules or requirements for hosting your own VGBC.  Want to
 talk about knitting?  Cool.  Want to discuss your favorite sporting
 moments?  Great.  Board games?  Lawn darts?  More power to you.
 
-So start up your own VGBC and let us know how it goes in the comments
-or on the twitters @zerosalife or .  When I post about something from
-VGBC, I'll tag it with VGBC.
+So start up your own #VGBC and let us know how it goes in the comments
+or on the twitters @zerosalife or @InvolvingSalmon.  When I post about
+something from #VGBC on the blog, I'll tag it with VGBC.
+
+** VGBC Design Review: Gunstar Heroes
+- design
+- VGBC
+- run-and-gun
+- Sega
+- Genesis
+- Treasure
+
+Inspired by Daniel Cook's game design review format over at [[http://www.lostgarden.com/2005/09/game-design-review-advance-wars-dual.html][Lost
+Garden]].  I'm going to take a similar approach to my write up covering
+/Gunstar Heroes/, the first book we've chosen for the VGBC.
+
+*** The Format
+- *A brief history*: What is the historical context of the design of
+  /Gunstar Heroes/?
+- *Game anthropology*: What market niche does /Gunstar Heroes/ fill?
+- *Layered game design*: What major design lesson(s) does /Gunstar
+  Heroes/ teach us?
+- *What worked and what didn't?*: What design decisions worked and
+  what fell flat?
+*** Brief history
+/Gunstar Heroes/ was the first release by nascent studio Treasure.
+But the developers at Treasure were old hats at run-and-gun game
+design.  Like a group of seasoned musicians coming together to form a
+supergroup, the studio was created by former Konami employees, to
+create great games.  Treasure was much smaller than Konami, lending
+the studio a dynamic, independent vibe that we would label AA or indie
+today.
+
+Treasure's developers, designers, and artists cut their teeth making
+some of Konami's biggest hits.  While the list is long, ranging from
+classics like Castlevania and Metal Gear to relatively unknown games
+like Snatcher and Rocket Knight Adventures, for the purpose of this
+article I'd like to compare arguably the greatest of its forebears:
+/Contra III: The Alien Wars/.
+
+Games in the run-and-gun genre are straightforward, you run (and jump)
+and shoot at enemies (with guns).  /Contra III/ was the pinnacle of
+the genre in 1993, when /Gunstar Heroes/ was released, by way of the
+game's attractive graphics, challenging gameplay, excellent music, and
+varied level design.  /Gunstar Heroes/ represented the developers at
+Treasure taking the lessons from /Contra III/ and seeking to improve
+and expand on the previous success.
+*** Game anthropology
+
+/Gunstar Heroes/ entered a market during the heyday of the run-and-gun
+action platformer genre.  The hardware of the 16-bit consoles allowed
+for better graphics and supported larger numbers of sprites, leading
+to more engaging and challenging gameplay.  But the hardware and
+arguably the developer mindsets had not yet evolved to support many
+other approaches to gameplay.
+
+There are too many copy-cats and also-rans to list.  /Contra/ was a
+hit and every publisher wanted their own version.  Treasure sought set
+/Gunstar Heroes/ off from the crowd by designing expressive sprites
+and dynamic gameplay.
+
+To my mind this approach worked, although I'm not aware of the sales
+figures from the time.  The graphics of /Gunstar Heroes/ have helped
+it occupy mindshare over the long run.  In fact, in my opinion,
+/Gunstar Heroes/ looks more like a predecessor to the popular /Metal
+Slug/ series than a sequel or offshoot from /Contra/.  For a game to
+have this longevity, there must be something the designers have done
+right.
+*** First Layer: Core Mechanics
+**** Bosses
+An entire article could be devoted to the boss design in /Gunstar
+Heroes/ by "cool character creator" HAN aka Tetsuhiko Kikuchi.  But
+the scope of this article is less concerned with the design of
+specific encounters and more focused on the overall experience.  A
+thorough exploration of the boss design would also require more skill
+in this game than your humble author possesses.
+*** Second Layer: Creating new variation
+**** Controls
+Fixed Shot vs Free Shot
+
+In addition to /Contra/'s ducking and climbing mechanics, /Gunstar
+Heroes/ adds slides, throws and jump attacks.
+
+A lot of the additional moves grant invincibility frames.  Sometimes
+the only way to get through difficult sections of the game without
+taking damage is to slide or jump attack at the correct time, using
+the invincibility frames to avoid damage.
+
+The throws also allow for a new interaction between player characters:
+throwing the other player.  It can be annoying but that is half of the
+fun of playing these cooperative games.  The players can also throw
+some of the bombs that are thrown by enemies.
+
+**** Weapons
+Ability to choose weapons, store combinations
+
+Persistent weapons
+**** Life is no longer a binary
+
+Players and bosses have numeric vitality indicators.  Vitality is
+tracked as an integer value rather than a binary alive/dead state.
+
+You start at a vitality of 100 and, notably, there is no maximum.  You
+can gain more than 100 vitality, adding even more a buffer between
+playing and the icy clutches of the grim reaper.
+
+Boss vitality is indicated on the screen, communicating directly to
+the player when the boss will be defeated.  This removes some of the
+ambiguity of earlier titles, where often the indications that the boss
+was being damaged could be lost in the sea of explosions and
+screenshake that characterize the run-and-gun genre.
+
+Gives you free range as a designer to throw more and more challenges
+at the player.
+*** Additional Layers
+
+**** Destructible environment
+
+**** Enemy interactions
+When thrown, enmies can hit other enemies.  Another notable type of
+enemy interaction is that bombs thrown by enemies can damage other
+enemies and the thrower.
+
+The result of these additional layers of player choice and
+interactivity serve to situate the player characters and thus the
+players in the world.  /Gunstar Heroes/ feels less like a series of
+obstacles to overcome and more like a madcap adventure in which you
+are desperately trying to survive.  Contrast this with the original
+/Ninja Gaiden/, in which player agency is reduced to memorizing and
+executing a series of well-timed button presses.
+
+**** The boardgame level
+/Gunstar Heroes/ combines the throwing mechanic with a giant die to
+create the most unique level in the game: The Dice Palace.  The player
+characters must move through a board populated with boss encounters,
+item rooms and spaces that can send the players back to the start of
+the board or require the players to fight a boss without weapons.
+
+The addition of this level creates a dynamic experience that changes
+with each play through.  The result is a truly unique than the simple
+test of skill that most boss rushes represent, although there is a
+more typical boss rush present in one of the later levels.
+
+**** Anti-gravity mine carts
+While games like /Battletoads/ have previously done speedy vehicular
+mine-cart-style levels, /Gunstar Heroes/ takes it to another level
+(forgive me).  The modified mine carts in /Gunstar Heroes/ allow the
+players to flip gravity /a la/ under-appreciated late-generation NES
+action platformer /Metal Storm/.
+
+**** The genre switch
+Although this is not unique to /Gunstar Heroes/ this may be one of the
+first times that developers have tried this.  In the last level, the
+gameplay changes from run-and-gun action to a side view bullet-hell
+shoot em up.  While interesting, to me, this is not where the bulk of
+the /Gunstar Heroes/ experience lies.
+*** What worked?
+Each player can decide on a unique approach, using the various weapon
+combinations and shot types.
+
+Some of the combinations were overpowered but that was half of the
+fun.  Less skilled players could equip the over powered
+lighting/chaser combination, while experienced players could try to
+become proficient in the other combinations.
+
+Anti gravity communicated through overlap with previous commands like
+jump attack.
+
+Swtiching between combined and individual weapon powerups
+
+*** What didn't work?
+The length.  This is hardly a damning complaint, but the game could be
+longer.  There are seven stages, a couple of which are totally
+innovative, but most of them have been done before.  Perhaps it was
+simply a problem of time and cartridge size constraints.
+
+The poor, poor framerate couldn't always keep up with the destruction
+on the screen, but again, this is likely due to constraints of the
+technology during the early 90s.
+
+The airship level sets up rules and breaks them.
+
+*** Conclusion
+
+*** Resources
+I got my information from:
+- [[http://en.wikipedia.org/wiki/Gunstar_Heroes]]
+- [[http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm]]
+
+Many thanks to the original authors of these articles.
