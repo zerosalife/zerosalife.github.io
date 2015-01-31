@@ -2917,6 +2917,121 @@ to offload the common functionality, let me know in the comments
 
   }
 #+END_SRC
+** VGBC: a Video Game Book Club
+Organize your own videogame bookclub #VGBC.  f/ @InvolvingSalmon
+#gamedev #screenshotsaturday #gaming #retrogaming #games
+
+- design
+- VGBC
+
+Credit for the original idea for a VGBC goes to Rick Wolf, who also
+coauthored this post.  You can get in touch with Rick at
+[[https://twitter.com/involvingsalmon][@InvolvingSalmon]] on Twitter.
+
+*** What?
+
+Your very own VGBC (one of those newfangled acronyms I hear are all
+the rage these days).  A *club* devoted to selecting and critically
+*discussing video games*. I like the acronym VGBC, but you can call it
+what you feel. It's worth noting that we aren’t reading a book each
+month (although some game design books would do us well), but we’re
+calling it a “book” club to emphasize the format that encourages
+thoughtful discussion.
+
+Each meeting you can discuss any aspect of a video game that strikes
+your fancy.  Maybe you really like the music or art direction, maybe
+there's one level that you could play over and over again until you
+get it perfect, maybe you really like the silent protagonist's
+haircut.  Let your club know.  Chances are, your thoughts about the
+video game will evoke some exciting input from others in your club.
+You can respond with all those witty retorts you've been practicing in
+the mirror.  This is what's known colloquially as a discussion.
+
+But how do I know what to discuss, you ask?  It's simple.  *Take turns
+picking a topical game that everyone can play*, within reason.  We say
+within reason because, like a book club, everyone needn't finish the
+discussion material to weigh in.  Don't expect everyone in your club
+to buy the latest $60 game.
+
+A rule of thumb can be that the host of the last meeting gets to
+choose the game for the next meeting.
+
+*** Who?
+You, your friends, the cat (If you have one. No catnapping.), *anyone*
+with interest in critically discussing video games. Maybe, like us,
+the group consists of people that are interested in game design. Maybe
+you invite your friends that love games, but haven’t ventured into the
+realm of formal discussion. The more the people you have with
+different interests, the more likely you are to get a new take on a
+game.
+
+
+*** When?
+Pick your favorite periodic adjective.  We'd recommend starting with
+*monthly* meetings, but you can meet as often as you like.  Really.
+We don't mind.  See if we care.  It's not like you invited us.
+
+Anyway. Pick a time that works best for your group.  Sometime in the
+evening, say around happy hour, with a delicious beverage and snacks
+sounds good to us.  We'd reckon that allowing for *two hours* should
+be enough discussion.  If a topic is particularly engaging you can
+always spread it out over multiple meetings.
+
+It's up to you to work out a schedule that works for your group.
+*Scheduling apps* like [[http://doodle.com/][Doodle.com]] can be helpful for coordinating busy
+schedules and finding a time that works for everyone in your group.
+
+*** Where?
+In your *home*, in your friends' homes (assuming they're part of the
+meeting...), in your garage, *at a local pub*.
+
+It's nice to meet *somewhere with a television* and a *game system* to
+play the game you will discuss.  Showing video of your favorite parts
+of the game can be nice too.  If you want to do that, try to plan
+ahead and get a save near the part you want to discuss or check for
+video playthroughs on [[https://www.youtube.com/][YouTube]].
+
+If you meet outside your home make sure you check with the
+establishment beforehand.  Give them a headcount and check if it's ok.
+Be sure to spend a little scrilla and tip well.  Be aware of other
+customers.
+
+*** Why?
+
+Because *video games deserve a critical reading*.  Discussions force
+all of us to crystallize our views from vague notions of "It's good,"
+to "The fog of war mechanic in this game vastly improves the strategic
+elements, strengthening the multiplayer meta-game."  (Your mileage may
+vary.)
+
+Sometimes you'll get to suggest your favorite game.  Others may deride
+your choice, but they will get their chance too.  Heck someone may
+even like the games you suggest, discussing an intriguing aspect that
+was lost on you.  Then the others in your club will suggest other
+games.  You never know, you may just find a game that you like.  If
+you're anything like us, assigning a game and being accountable to
+comment on it can also help [[http://www.backloggery.com/][curb the constant growth of your Steam
+library]].
+
+Maybe one month you'll find that you hated a game. But take a moment
+and think about why it isn't fun. Do you dislike it because you're bad
+at puzzle games, or is it unenjoyable because it's a garbage visual
+novel whose writer has never heard of the three act structure? These
+reasons are very different, and both are worth considering. We're
+hoping that reflecting on what makes a game good or bad will make us
+better designers. We do this with most games that we play, but by
+doing it with friends we can all get feedback on our thoughts; and we
+guarantee that will make us grow as designers.
+
+What we've presented here are a set of guidelines.  There are no hard
+and fast rules or requirements for hosting your own VGBC.  Want to
+talk about knitting?  Cool.  Want to discuss your favorite sporting
+moments?  Great.  Board games?  Lawn darts?  More power to you.
+
+So start up your own #VGBC and let us know how it goes in the comments
+or on the twitters @zerosalife or @InvolvingSalmon.  When I post about
+something from #VGBC on the blog, I'll tag it with VGBC.
+
 * Starting a Game Studio Business
 [[http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq%3D1][http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq=1]]
 
@@ -2941,6 +3056,8 @@ Meditations on Games and Design
 Gaminess
 
 Pengin, incorporating aspects of the japanese: ペンギン
+
+Dai-su, dice-ooh, mascot: Big Sue.
 
 
 * IDEAS
@@ -3564,6 +3681,13 @@ AngryOctopus made a modeling tool based on an idea by LostGarden
 - Roles
 - Resource limits
 - Physics simulation
+*** Creating a header ribbon in CSS for Octopress
+[[http://www.sitepoint.com/pure-css3-speech-bubbles/]]
+[[http://www.sitepoint.com/pure-css3-ribbons/]]
+*** Why Adventure Games Suck
+[[http://grumpygamer.com/why_adventure_games_suck]]
+[[http://www.oldmanmurray.com/features/77.html]]
+
 
 ** STARTED DRAFTS
 
@@ -4170,6 +4294,134 @@ Dictionary of Lists in C# for Unity.
 
 #+END_SRC
 
+** Create a Dictionary with multiple keys in Unity C#
+A workaround to access a dictionary with multiple keys in Unity C#
+#unity #unity3d #programming
+
+- C#
+- Unity
+- Unity3d
+- Unity2d
+
+I want to create a lookup table for comparing a player choice and an
+enemy choice.  Each pair of choices can lead to a variety of
+outcomes.  So, in order to map the relationship between choice pair
+and outcome, I've decided to use a Dictionary with choice pairs as
+keys and outcomes as values.
+
+To me, the obvious way to do this is by using [[http://en.wikipedia.org/wiki/Tuple][tuples]] to encode the
+choice pairs.  I've already enumerated the choices so it's simple
+enough to pair them off in tuples for use as keys for the Dictionary.
+This approach worked, however, I ran into a couple of problems along
+the way.
+
+*** Unity's C# doesn't have Tuples
+
+Unity's [[http://en.wikipedia.org/wiki/Mono_%2528software%2529][Mono framework]] includes a C# compiler, runtime, and lots of
+libraries.  The version of Mono included with version =4.6.1f1= of
+Unity is =2.6.5 (tarball)=.  Mono recreates some of the features of
+.NET, but apparently not a =Tuple= type.  The =Tuple= type got added
+to .NET in version =4.0=.  Looks like Mono version =2.8= may support
+it, but I'll have to wait for the folks at Unity to update Mono.
+
+I checked the version of Mono using the following code:
+#+BEGIN_SRC csharp
+  using System;
+  using System.Reflection;
+
+  Type type = Type.GetType("Mono.Runtime");
+  if (type != null) {
+      MethodInfo displayName = type.GetMethod("GetDisplayName",
+                                              BindingFlags.NonPublic | BindingFlags.Static);
+      if (displayName != null)
+        Debug.Log(displayName.Invoke(null, null));
+   }
+
+#+END_SRC
+
+Since Mono =2.8= was released 4 years ago, it seems like Unity is in
+no rush to update their Mono version.  So it looks like I'll have to
+roll my own tuple class.
+
+
+*** Implementing a Pairs class
+
+Since I'm only concerned with pairs of choices, I decided to implement
+the simplest possible solution.  I followed the implementation of a
+=Pair= class from [[http://stackoverflow.com/questions/569903/multi-value-dictionary][this Stack Overflow question regarding encoding
+multiple values in Dictionaries]].  The trick is that the tuple
+implemented here can be used to encode keys as well.
+
+The critically important part of the =Pair= class is that it inherits
+from =IEquatable= and implements methods for determining equality and
+hashing.  The fundamental thing a Dictionary needs is to test whether
+keys are equal in order to store or retrieve the correct values and it
+typically does so by hashing the key.
+
+I won't bother reproducing the code for the =Pair= class here.  You
+can [[http://stackoverflow.com/a/569920][check it out for yourself]].
+
+*** How I wish I could use it
+
+Once I implemented the =Pair= class in its own file =Pair.cs=, I had
+to import it in the file where I wanted to create the Dictionary.
+Also note that I'm [[http://msdn.microsoft.com/en-us/library/bb531208.aspx][using literal syntax to construct the Dictionary
+when I define it]].  And yes, unlike most uses of curly braces in C#,
+that =;= is necessary to end the line after the literal.
+
+#+BEGIN_SRC csharp
+  using Pair;
+
+  // Not shown: lots of enums...
+
+  Dictionary<Pair<Choice, Choice>, Outcome> lookup = new Dictionary<Pair<Choice, Choice>, Outcome> {
+    {Pair(Choice.ChoiceOne, Choice.ChoiceOne), Outcome.Win},
+    {Pair(Choice.ChoiceOne, Choice.ChoiceTwo), Outcome.Lose},
+  };
+
+  Outcome outcome = lookup[Pair(ChoiceOne, ChoiceOne)];
+#+END_SRC
+
+But alas, I run into this problem: =Using the generic type
+`Pair<TFirst,TSecond>' requires `2' type argument(s)=.  I can't seem
+to find any documentation detailing what I'm doing wrong.  Maybe it's
+just a problem with Unity's version of Mono .NET runtime.
+
+*** The workaround: A Dictionary of Dictionaries
+I've found a workaround.  It is, in my humble opinion, way less
+elegant, but it gets the job done.
+
+#+BEGIN_SRC csharp
+  // Not shown: lots of enums...
+
+  Dictionary<Choice, Dictionary<Choice, Outcome>> lookup = new Dictionary<Choice, Outcome> {
+    {Choice.ChoiceOne, new Dictionary<Choice, Outcome> {
+        {Choice.ChoiceOne, Outcome.Win},
+        {Choice.ChoiceTwo, Outcome.Lose}
+      }},
+    {Choice.ChoiceTwo, new Dictionary<Choice, Outcome> {
+        {Choice.ChoiceOne, Outcome.Lose},
+        {Choice.ChoiceTwo, Outcome.Win}
+      }}};
+
+  Outcome outcome = lookup[Choice.ChoiceOne][Choice.ChoiceOne];
+
+#+END_SRC
+
+*** Conclusion
+
+I find the tuple key code way more readable than the Dictionary of
+Dictionaries code.  You can imagine how the legibility of the
+Dictionary of Dictionaries approach decreases with additional keys but
+the tuple key code legibility remains the same no matter how many keys
+you add.  This is probably a moot point for using two keys, as I have
+in this example, but I hope you can appreciate why I think the tuple
+approach is more elegant.
+
+If you have any insight into how to solve the =Using the generic type
+`Pair<TFirst,TSecond>' requires `2' type argument(s)= error I
+encountered using the =Pair= class, please let me know in the comments
+below or on [[http://twitter.com/zerosalife][twitter]].
 
 ** Probabilistic Entity Spawning in Unity JavaScript
 #unity3d
@@ -5289,120 +5541,6 @@ exciting risk-reward trade-off.
 
 
 
-** Video Game Book Club
-Organize your own videogame bookclub #VGBC.  f/ @InvolvingSalmon
-#gamedev #screenshotsaturday #gaming #retrogaming #games
-
-- design
-- VGBC
-
-Credit for the original idea for a VGBC goes to Rick Wolf, who also
-coauthored this post.  You can get in touch with Rick at
-[[https://twitter.com/involvingsalmon][@InvolvingSalmon]] on Twitter.
-
-*** What?
-
-Your very own VGBC (one of those newfangled acronyms I hear are all
-the rage these days).  A *club* devoted to selecting and critically
-*discussing video games*. I like the acronym VGBC, but you can call it
-what you feel. It's worth noting that we aren’t reading a book each
-month (although some game design books would do us well), but we’re
-calling it a “book” club to emphasize the format that encourages
-thoughtful discussion.
-
-Each meeting you can discuss any aspect of a video game that strikes
-your fancy.  Maybe you really like the music or art direction, maybe
-there's one level that you could play over and over again until you
-get it perfect, maybe you really like the silent protagonist's
-haircut.  Let your club know.  Chances are, your thoughts about the
-video game will evoke some exciting input from others in your club.
-You can respond with all those witty retorts you've been practicing in
-the mirror.  This is what's known colloquially as a discussion.
-
-But how do I know what to discuss, you ask?  It's simple.  *Take turns
-picking a topical game that everyone can play*, within reason.  We say
-within reason because, like a book club, everyone needn't finish the
-discussion material to weigh in.  Don't expect everyone in your club
-to buy the latest $60 game.
-
-A rule of thumb can be that the host of the last meeting gets to
-choose the game for the next meeting.
-
-*** Who?
-You, your friends, the cat (If you have one. No catnapping.), *anyone*
-with interest in critically discussing video games. Maybe, like us,
-the group consists of people that are interested in game design. Maybe
-you invite your friends that love games, but haven’t ventured into the
-realm of formal discussion. The more the people you have with
-different interests, the more likely you are to get a new take on a
-game.
-
-
-*** When?
-Pick your favorite periodic adjective.  We'd recommend starting with
-*monthly* meetings, but you can meet as often as you like.  Really.
-We don't mind.  See if we care.  It's not like you invited us.
-
-Anyway. Pick a time that works best for your group.  Sometime in the
-evening, say around happy hour, with a delicious beverage and snacks
-sounds good to us.  We'd reckon that allowing for *two hours* should
-be enough discussion.  If a topic is particularly engaging you can
-always spread it out over multiple meetings.
-
-It's up to you to work out a schedule that works for your group.
-*Scheduling apps* like [[http://doodle.com/][Doodle.com]] can be helpful for coordinating busy
-schedules and finding a time that works for everyone in your group.
-
-*** Where?
-In your *home*, in your friends' homes (assuming they're part of the
-meeting...), in your garage, *at a local pub*.
-
-It's nice to meet *somewhere with a television* and a *game system* to
-play the game you will discuss.  Showing video of your favorite parts
-of the game can be nice too.  If you want to do that, try to plan
-ahead and get a save near the part you want to discuss or check for
-video playthroughs on [[https://www.youtube.com/][YouTube]].
-
-If you meet outside your home make sure you check with the
-establishment beforehand.  Give them a headcount and check if it's ok.
-Be sure to spend a little scrilla and tip well.  Be aware of other
-customers.
-
-*** Why?
-
-Because *video games deserve a critical reading*.  Discussions force
-all of us to crystallize our views from vague notions of "It's good,"
-to "The fog of war mechanic in this game vastly improves the strategic
-elements, strengthening the multiplayer meta-game."  (Your mileage may
-vary.)
-
-Sometimes you'll get to suggest your favorite game.  Others may deride
-your choice, but they will get their chance too.  Heck someone may
-even like the games you suggest, discussing an intriguing aspect that
-was lost on you.  Then the others in your club will suggest other
-games.  You never know, you may just find a game that you like.  If
-you're anything like us, assigning a game and being accountable to
-comment on it can also help [[http://www.backloggery.com/][curb the constant growth of your Steam
-library]].
-
-Maybe one month you'll find that you hated a game. But take a moment
-and think about why it isn't fun. Do you dislike it because you’re bad
-at puzzle games, or is it unenjoyable because it’s a garbage visual
-novel whose writer has never heard of the three act structure? These
-reasons are very different, and both are worth considering. We’re
-hoping that reflecting on what makes a game good or bad will make us
-better designers. We do this with most games that we play, but by
-doing it with friends we can all get feedback on our thoughts; and we
-guarantee that will make us grow as designers.
-
-What we've presented here are a set of guidelines.  There are no hard
-and fast rules or requirements for hosting your own VGBC.  Want to
-talk about knitting?  Cool.  Want to discuss your favorite sporting
-moments?  Great.  Board games?  Lawn darts?  More power to you.
-
-So start up your own VGBC and let us know how it goes in the comments
-or on the twitters @zerosalife or .  When I post about something from
-VGBC, I'll tag it with VGBC.
 
 ** VGBC Design Review: Gunstar Heroes
 - design
