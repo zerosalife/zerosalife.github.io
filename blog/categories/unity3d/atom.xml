@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity3d | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity3d/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-01-24T13:01:21-06:00</updated>
+  <updated>2015-01-31T14:18:54-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,106 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Create a Dictionary with multiple keys in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/01/31/create-a-dictionary-with-multiple-keys-in-unity-c-number/"/>
+    <updated>2015-01-31T11:03:42-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/01/31/create-a-dictionary-with-multiple-keys-in-unity-c-number</id>
+    <content type="html"><![CDATA[<p>I want to create a lookup table for comparing a player choice and an enemy choice.  Each pair of choices can lead to a variety of outcomes.  So, in order to map the relationship between choice pair and outcome, I&rsquo;ve decided to use a Dictionary with choice pairs as keys and outcomes as values.</p>
+
+<p>To me, the obvious way to do this is by using <a href="http://en.wikipedia.org/wiki/Tuple">tuples</a> to encode the choice pairs.  I&rsquo;ve already enumerated the choices so it&rsquo;s simple enough to pair them off in tuples for use as keys for the Dictionary.  This approach worked, however, I ran into a couple of problems along the way.</p>
+
+<!--more-->
+
+
+<h2>Unity&rsquo;s C# doesn&rsquo;t have Tuples</h2>
+
+<p>Unity&rsquo;s <a href="http://en.wikipedia.org/wiki/Mono_%2528software%2529">Mono framework</a> includes a C# compiler, runtime, and lots of libraries.  The version of Mono included with version <code>4.6.1f1</code> of Unity is <code>2.6.5 (tarball)</code>.  Mono recreates some of the features of .NET, but apparently not a <code>Tuple</code> type.  The <code>Tuple</code> type got added to .NET in version <code>4.0</code>.  Looks like Mono version <code>2.8</code> may support it, but I&rsquo;ll have to wait for the folks at Unity to update Mono.</p>
+
+<p>I checked the version of Mono using the following code:</p>
+
+<p>``` csharp Check Unity&rsquo;s version of Mono
+using System;
+using System.Reflection;</p>
+
+<p>Type type = Type.GetType(&ldquo;Mono.Runtime&rdquo;);
+if (type != null) {</p>
+
+<pre><code>MethodInfo displayName = type.GetMethod("GetDisplayName",
+                                        BindingFlags.NonPublic | BindingFlags.Static);
+if (displayName != null)
+  Debug.Log(displayName.Invoke(null, null));
+</code></pre>
+
+<p> }
+```</p>
+
+<p>Since Mono <code>2.8</code> was released 5 years ago, it seems like Unity is in no rush to update their Mono version.  So it looks like I&rsquo;ll have to roll my own tuple class.</p>
+
+<h2>Implementing a Pairs class</h2>
+
+<p>Since I&rsquo;m only concerned with pairs of choices, I decided to implement the simplest possible solution.  I followed the implementation of a <code>Pair</code> class from <a href="http://stackoverflow.com/questions/569903/multi-value-dictionary">this Stack Overflow question regarding encoding multiple values in Dictionaries</a>.  The trick is that the tuple implemented here can be used to encode keys as well.</p>
+
+<p>The critically important part of the <code>Pair</code> class is that it inherits from <code>IEquatable</code> and implements methods for determining equality and hashing.  The fundamental thing a Dictionary needs is to test whether keys are equal in order to store or retrieve the correct values and it typically does so by hashing the key.</p>
+
+<p>I won&rsquo;t bother reproducing the code for the <code>Pair</code> class here.  You can <a href="http://stackoverflow.com/a/569920">check it out for yourself</a>.</p>
+
+<h2>How I wish I could use it</h2>
+
+<p>Once I implemented the <code>Pair</code> class in its own file <code>Pair.cs</code>, I had to import it in the file where I wanted to create the Dictionary.  Also note that I&rsquo;m <a href="http://msdn.microsoft.com/en-us/library/bb531208.aspx">using literal syntax to construct the Dictionary when I define it</a>.  And yes, unlike most uses of curly braces in C#, that <code>;</code> is necessary to end the line after the literal.</p>
+
+<p>``` csharp
+using Pair;</p>
+
+<p>// Not shown: lots of enums&hellip;</p>
+
+<p>Dictionary&lt;Pair&lt;Choice, Choice>, Outcome> lookup = new Dictionary&lt;Pair&lt;Choice, Choice>, Outcome> {
+  {Pair(Choice.ChoiceOne, Choice.ChoiceOne), Outcome.Win},
+  {Pair(Choice.ChoiceOne, Choice.ChoiceTwo), Outcome.Lose},
+};</p>
+
+<p>Outcome outcome = lookup[Pair(ChoiceOne, ChoiceOne)];</p>
+
+<p>// Compiler throws an error
+```</p>
+
+<p>But alas, I run into this error: <code>Using the generic type `Pair&lt;TFirst,TSecond&gt;' requires `2' type argument(s)</code>.  I can&rsquo;t seem to find any documentation detailing what I&rsquo;m doing wrong.  Maybe it&rsquo;s just a problem with Unity&rsquo;s version of Mono .NET runtime.</p>
+
+<h2>The workaround: A Dictionary of Dictionaries</h2>
+
+<p>I&rsquo;ve found a workaround.  It is, in my humble opinion, way less elegant, but it gets the job done.</p>
+
+<p>``` csharp
+// Not shown: lots of enums&hellip;</p>
+
+<p>Dictionary&lt;Choice, Dictionary&lt;Choice, Outcome>> lookup = new Dictionary&lt;Choice, Outcome> {
+  {Choice.ChoiceOne, new Dictionary&lt;Choice, Outcome> {</p>
+
+<pre><code>  {Choice.ChoiceOne, Outcome.Win},
+  {Choice.ChoiceTwo, Outcome.Lose}
+}},
+</code></pre>
+
+<p>  {Choice.ChoiceTwo, new Dictionary&lt;Choice, Outcome> {</p>
+
+<pre><code>  {Choice.ChoiceOne, Outcome.Lose},
+  {Choice.ChoiceTwo, Outcome.Win}
+}}};
+</code></pre>
+
+<p>Outcome outcome = lookup[Choice.ChoiceOne][Choice.ChoiceOne];</p>
+
+<p>// Will return Outcome.Win
+```</p>
+
+<h2>Conclusion</h2>
+
+<p>I find the tuple key code way more readable than the Dictionary of Dictionaries code.  You can imagine how the legibility of the Dictionary of Dictionaries approach decreases with additional keys but the tuple key code legibility remains the same no matter how many keys you add.  This is probably a moot point for using two keys, as I have in this example, but I hope you can appreciate why I think the tuple approach is more elegant.</p>
+
+<p>If you have any insight into how to solve the <code>Using the generic type `Pair&lt;TFirst,TSecond&gt;' requires `2' type argument(s)</code> error I encountered using the <code>Pair</code> class, please let me know in the comments below or on <a href="http://twitter.com/zerosalife">twitter</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Simple Mind-reading Machine in Unity JavaScript]]></title>

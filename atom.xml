@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-01-24T13:01:21-06:00</updated>
+  <updated>2015-01-31T14:18:54-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,135 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Create a Dictionary with multiple keys in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/01/31/create-a-dictionary-with-multiple-keys-in-unity-c-number/"/>
+    <updated>2015-01-31T11:03:42-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/01/31/create-a-dictionary-with-multiple-keys-in-unity-c-number</id>
+    <content type="html"><![CDATA[<p>I want to create a lookup table for comparing a player choice and an enemy choice.  Each pair of choices can lead to a variety of outcomes.  So, in order to map the relationship between choice pair and outcome, I&rsquo;ve decided to use a Dictionary with choice pairs as keys and outcomes as values.</p>
+
+<p>To me, the obvious way to do this is by using <a href="http://en.wikipedia.org/wiki/Tuple">tuples</a> to encode the choice pairs.  I&rsquo;ve already enumerated the choices so it&rsquo;s simple enough to pair them off in tuples for use as keys for the Dictionary.  This approach worked, however, I ran into a couple of problems along the way.</p>
+
+<!--more-->
+
+
+<h2>Unity&rsquo;s C# doesn&rsquo;t have Tuples</h2>
+
+<p>Unity&rsquo;s <a href="http://en.wikipedia.org/wiki/Mono_%2528software%2529">Mono framework</a> includes a C# compiler, runtime, and lots of libraries.  The version of Mono included with version <code>4.6.1f1</code> of Unity is <code>2.6.5 (tarball)</code>.  Mono recreates some of the features of .NET, but apparently not a <code>Tuple</code> type.  The <code>Tuple</code> type got added to .NET in version <code>4.0</code>.  Looks like Mono version <code>2.8</code> may support it, but I&rsquo;ll have to wait for the folks at Unity to update Mono.</p>
+
+<p>I checked the version of Mono using the following code:</p>
+
+<figure class='code'><figcaption><span>Check Unity&#8217;s version of Mono</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">System.Reflection</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Type</span> <span class="n">type</span> <span class="p">=</span> <span class="n">Type</span><span class="p">.</span><span class="n">GetType</span><span class="p">(</span><span class="s">&quot;Mono.Runtime&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">MethodInfo</span> <span class="n">displayName</span> <span class="p">=</span> <span class="n">type</span><span class="p">.</span><span class="n">GetMethod</span><span class="p">(</span><span class="s">&quot;GetDisplayName&quot;</span><span class="p">,</span>
+</span><span class='line'>                                            <span class="n">BindingFlags</span><span class="p">.</span><span class="n">NonPublic</span> <span class="p">|</span> <span class="n">BindingFlags</span><span class="p">.</span><span class="n">Static</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">displayName</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">displayName</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">));</span>
+</span><span class='line'> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Since Mono <code>2.8</code> was released 5 years ago, it seems like Unity is in no rush to update their Mono version.  So it looks like I&rsquo;ll have to roll my own tuple class.</p>
+
+<h2>Implementing a Pairs class</h2>
+
+<p>Since I&rsquo;m only concerned with pairs of choices, I decided to implement the simplest possible solution.  I followed the implementation of a <code>Pair</code> class from <a href="http://stackoverflow.com/questions/569903/multi-value-dictionary">this Stack Overflow question regarding encoding multiple values in Dictionaries</a>.  The trick is that the tuple implemented here can be used to encode keys as well.</p>
+
+<p>The critically important part of the <code>Pair</code> class is that it inherits from <code>IEquatable</code> and implements methods for determining equality and hashing.  The fundamental thing a Dictionary needs is to test whether keys are equal in order to store or retrieve the correct values and it typically does so by hashing the key.</p>
+
+<p>I won&rsquo;t bother reproducing the code for the <code>Pair</code> class here.  You can <a href="http://stackoverflow.com/a/569920">check it out for yourself</a>.</p>
+
+<h2>How I wish I could use it</h2>
+
+<p>Once I implemented the <code>Pair</code> class in its own file <code>Pair.cs</code>, I had to import it in the file where I wanted to create the Dictionary.  Also note that I&rsquo;m <a href="http://msdn.microsoft.com/en-us/library/bb531208.aspx">using literal syntax to construct the Dictionary when I define it</a>.  And yes, unlike most uses of curly braces in C#, that <code>;</code> is necessary to end the line after the literal.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Pair</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Not shown: lots of enums...</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Pair</span><span class="p">&lt;</span><span class="n">Choice</span><span class="p">,</span> <span class="n">Choice</span><span class="p">&gt;,</span> <span class="n">Outcome</span><span class="p">&gt;</span> <span class="n">lookup</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Pair</span><span class="p">&lt;</span><span class="n">Choice</span><span class="p">,</span> <span class="n">Choice</span><span class="p">&gt;,</span> <span class="n">Outcome</span><span class="p">&gt;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="p">{</span><span class="n">Pair</span><span class="p">(</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceOne</span><span class="p">,</span> <span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceOne</span><span class="p">),</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Win</span><span class="p">},</span>
+</span><span class='line'>  <span class="p">{</span><span class="n">Pair</span><span class="p">(</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceOne</span><span class="p">,</span> <span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceTwo</span><span class="p">),</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Lose</span><span class="p">},</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Outcome</span> <span class="n">outcome</span> <span class="p">=</span> <span class="n">lookup</span><span class="p">[</span><span class="n">Pair</span><span class="p">(</span><span class="n">ChoiceOne</span><span class="p">,</span> <span class="n">ChoiceOne</span><span class="p">)];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Compiler throws an error</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But alas, I run into this error: <code>Using the generic type `Pair&lt;TFirst,TSecond&gt;' requires `2' type argument(s)</code>.  I can&rsquo;t seem to find any documentation detailing what I&rsquo;m doing wrong.  Maybe it&rsquo;s just a problem with Unity&rsquo;s version of Mono .NET runtime.</p>
+
+<h2>The workaround: A Dictionary of Dictionaries</h2>
+
+<p>I&rsquo;ve found a workaround.  It is, in my humble opinion, way less elegant, but it gets the job done.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="c1">// Not shown: lots of enums...</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Choice</span><span class="p">,</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Choice</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">&gt;&gt;</span> <span class="n">lookup</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Choice</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">&gt;</span> <span class="p">{</span>
+</span><span class='line'>  <span class="p">{</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceOne</span><span class="p">,</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Choice</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">&gt;</span> <span class="p">{</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceOne</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Win</span><span class="p">},</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceTwo</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Lose</span><span class="p">}</span>
+</span><span class='line'>    <span class="p">}},</span>
+</span><span class='line'>  <span class="p">{</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceTwo</span><span class="p">,</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Choice</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">&gt;</span> <span class="p">{</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceOne</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Lose</span><span class="p">},</span>
+</span><span class='line'>      <span class="p">{</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceTwo</span><span class="p">,</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Win</span><span class="p">}</span>
+</span><span class='line'>    <span class="p">}}};</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Outcome</span> <span class="n">outcome</span> <span class="p">=</span> <span class="n">lookup</span><span class="p">[</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceOne</span><span class="p">][</span><span class="n">Choice</span><span class="p">.</span><span class="n">ChoiceOne</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Will return Outcome.Win</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Conclusion</h2>
+
+<p>I find the tuple key code way more readable than the Dictionary of Dictionaries code.  You can imagine how the legibility of the Dictionary of Dictionaries approach decreases with additional keys but the tuple key code legibility remains the same no matter how many keys you add.  This is probably a moot point for using two keys, as I have in this example, but I hope you can appreciate why I think the tuple approach is more elegant.</p>
+
+<p>If you have any insight into how to solve the <code>Using the generic type `Pair&lt;TFirst,TSecond&gt;' requires `2' type argument(s)</code> error I encountered using the <code>Pair</code> class, please let me know in the comments below or on <a href="http://twitter.com/zerosalife">twitter</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[VGBC: a Video Game Book Club]]></title>
@@ -1323,134 +1452,6 @@ Removing the <code>%</code> allowed me to run <code>make blog</code> as expected
 <p>I think the power-up mechanics add a level of depth and strategy to what otherwise would be a hands-off luck-of-the-draw game.  By aiming for power-ups you have a sense of agency in the action, just like turning the knob controls the velocity at which pachinko balls are launched.  It makes cheering for your lemming-like character(s) more enjoyable: if they could just get a little closer and grab the power-up you aimed at&mdash;no.  Nope, they died.</p>
 
 <p>Go give this great little game a try.  Hopefully it will pique your interest like it piqued mine.  Quirky variations on RPGs seem to be part of the <em>Zeitgeist</em>, with <em><a href="http://www.atlus.com/rollers/">Rollers of the Realm</a></em> and <em><a href="http://zh.monst.wikia.com/wiki/Monster_Strike_%E7%BB%B4%E5%9F%BA">Monster Strike</a></em> blending pinball and console genre gameplay with the potential synergy <em><a href="http://en.wikipedia.org/wiki/Sonic_the_Hedgehog_Spinball">Sonic Spinball</a></em> never achieved.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Persistent Data in Unity]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/"/>
-    <updated>2014-08-09T11:09:15-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity.  In other words, I want this data to remain persistent.  As you&rsquo;ll see below I was tempted to use <code>PlayerPrefs</code> to store the data, but, according to <a href="https://www.youtube.com/watch?v%3DJ6FfcJpbPXE">this Unity Live Training on Data Persistence</a>, <code>PlayerPrefs</code> is not the best way to make data persist over multiple Scenes.  <code>PlayerPrefs</code> is an okay place to store non-critical data, like the audio volume, window size, full-screen state&#x2013;you know preferences.  I&rsquo;ll go ahead and show what I believe to be the correct way to store persistent data before talking about <code>PlayerPrefs</code> later.</p>
-
-<!--more-->
-
-
-<h2>Persistent data</h2>
-
-<p>To safely and reliably store persistent data, the Unity tutorials suggest that you need to assign a &ldquo;kinda&rdquo; Singleton design patterny script to an empty <code>GameObject</code> that will persist across Scenes.</p>
-
-<pre><code>using UnityEngine;
-using System.Collections;
-
-public class GameControl: MonoBehaviour {
-  public static GameControl control;
-
-  public float health;
-  public float experience;
-
-  void Awake() {
-    if(control == null){
-      DontDestroyOnLoad(gameObject);
-      control = this;
-    } else if(control != this) {
-      // There can be only one!
-      Destroy(gameObject);
-    }
-  }
-}
-</code></pre>
-
-<p>The <code>static</code> reference means that we can just access the values in the <code>GameControl</code> script.</p>
-
-<h2>How to access data in the GameController.</h2>
-
-<pre><code>GameController.control.health = 100;
-</code></pre>
-
-<h2>Writing persistent data to a binary file</h2>
-
-<p>The persistent data that&rsquo;s under the control of the <code>GameController</code> is perfectly happy hanging out when your application is running.  It will persist between Scenes when other data is wiped out by Unity&rsquo;s garbage collection.  But what if you want to maintain persistent data when the application is closed.</p>
-
-<p>Ah hah!  Finally, an answer to my nagging question about writing persistent data to plain text files, like <code>PlayerPrefs</code> or simply a file in a local directory.  Wouldn&rsquo;t a player be able to modify the data?</p>
-
-<p>Enter the binary format:</p>
-
-<pre><code>// Add two more libraries
-using System;
-using System.Runtime.Serialzation.Formatters.Binary;
-</code></pre>
-
-<p>Where do we save it?  The persistent data path: <code>Application.persistentDataPath</code>.  We&rsquo;ll need one more library to do some input and output to files:</p>
-
-<pre><code>// Requires one more library and we're ready to get cooking with some
-// methods
-using System.IO;
-
-public void Save() {
-  BinaryFormatter bf = new BinaryFormatter();
-  FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
-                              FileMode.Open);
-
-  PlayerData data = new PlayerData();
-  data.experiencePoints = experiencePoints;
-  data.playerLevel = playerLevel;
-
-  bf.Serialize(file, data);
-  file.Close();
-}
-
-public void Load() {
-  if(File.Exists(Application.persistentDataPath + "/gameInfo.dat")) {
-    BinaryFormatter bf = new BinaryFormatter();
-    FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
-                                FileMode.Open);
-    PlayerData data = (PlayerData)bf.Deserialize(file);
-    file.Close();
-
-    experiencePoints = data.experiencePoints;
-    playerLevel = data.playerLevel;
-  }
-}
-</code></pre>
-
-<p>Now we need to make the <code>PlayerData</code> class that we will tag with <code>[Serializable]</code> so Unity will know that we want to write this to a binary file at some point in the future.  This affects how Unity stores the data internally, but it doesn&rsquo;t really change how we interact with it.</p>
-
-<pre><code>[Serializable]
-class PlayerData {
-  // TODO: see about making gets and sets.
-  // TODO: automate the generation of this data structure.  See:
-  // http://forums.devx.com/showthread.php?170650-How-to-dynamically-add-property-to
-
-  // Add new variables for loading and saving here.
-  public int experiencePoints;
-  public int playerLevel;
-}
-</code></pre>
-
-<p>After writing up this article, I came across an older, possibly better article on Unity Gems.  Please check out that write-up and all of the great content on the site.  <a href="http://unitygems.com/saving-data-1-remember-me/">http://unitygems.com/saving-data-1-remember-me/</a></p>
-
-<p>My full <code>GameController</code> data persistence Singleton script is available in <a href="https://gist.github.com/zerosalife/6f6e811b27761d287ea5">this gist</a>.</p>
-
-<p>So, that&rsquo;s the best solution I&rsquo;ve found to date for having persistent data across scenes and play sessions.  I&rsquo;ve included my rough first stabs at the problem below.  Keep in mind that anything following this point is just included just to make my notes available, and it&rsquo;s not meant to be a guide.</p>
-
-<h2>Old notes: PlayerPrefs</h2>
-
-<p>In order to have persistent data between Scenes, I was previously going to make use of Unity&rsquo;s <code>PlayerPrefs</code>, a class that implements persistent data storage for <code>ints</code>, <code>floats</code>, and <code>strings</code>.  Notably absent are useful data types like <code>Vector3</code> to maintain, for example, <code>transform</code> data between Scenes.  Some of the solutions I found may still be helpful for more storing complex data types in <code>PlayerPrefs</code>.</p>
-
-<p>One potential solution is to simply set a <code>GameObject</code>&rsquo;s <code>transform.position</code> to some constant <code>Vector3</code> value in the freshly loaded Scene.  While this is possible in some applications, I&rsquo;m going to assume that eventually you&rsquo;ll want to transfer some dynamic position information between Scenes.</p>
-
-<p>Here are two potentially helpful sources to achieve this:</p>
-
-<p><a href="http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/">http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/</a>, based on work by Mehta Dakshil.  While JSON parsing looks interesting, it requires an external <code>.dll</code>, <code>JsonFx.Json.dll</code>.  And I&rsquo;m not interested in external dependencies here.  It may work great for you.</p>
-
-<p><a href="http://wiki.unity3d.com/index.php?title%3DArrayPrefs">&lt;http://wiki.unity3d.com/index.php?title=ArrayPrefs></a>, based on work by Mario Madureiera Fontes and Daniel P. Rossi.  (Note: since <code>GetVector3</code> depends on <code>GetFloatArray</code>, there could be some error due to <code>GetFloatArray</code> casting strings to floats.  But the error introduce in the resulting <code>Vector3</code> is unlikely to be noticeable.)</p>
-
-<p>Actually, see a more updated version here: <a href="http://wiki.unity3d.com/index.php/ArrayPrefs2">http://wiki.unity3d.com/index.php/ArrayPrefs2</a>, which is based on work by Eric Haines.</p>
-
-<p>According to the text, the script should be placed in the <code>Standard Assets</code> directory, so that it can be accessed from both <code>C#</code> and <code>Boo</code> scripts.</p>
-
-<p>To see a faster implementation for mobile devices, where the data to be saved in PlayerPrefs is cached in memory, see: <a href="http://www.previewlabs.com/writing-playerprefs-fast/">http://www.previewlabs.com/writing-playerprefs-fast/</a>.</p>
 ]]></content>
   </entry>
   
