@@ -3687,10 +3687,28 @@ AngryOctopus made a modeling tool based on an idea by LostGarden
 *** Why Adventure Games Suck
 [[http://grumpygamer.com/why_adventure_games_suck]]
 [[http://www.oldmanmurray.com/features/77.html]]
-
+*** Screenshake in Unity
+*** Use a Dictionary of Delegates instead of Switch Case
+[[http://stackoverflow.com/questions/2896715/dictionary-with-delegate-or-switch]]
 
 ** STARTED DRAFTS
 
+
+*** Types of Screenshake
+- Random X and Y
+  - Looks sort of chaotic, not smooth
+- Periodic X and Y
+  - Looks kind of swirly, can become a Screenorbit if you're not
+    careful.
+- Perlin X and Y
+  - Smoother than Random X and Y
+- Restricting movement to one axis
+  - Can look good if there is some component of the scene that
+    dictates the movement, i.e. the collision of a ball and a wall.
+- Rotating Z (about X and Y)
+  - Looks tilty, can be good if there is little movement in X and Y in
+    your game and you want to convey a sense of rocking or coming down
+    like a see-saw.
 
 *** Simulation Sandbox vs Theme Park
 This quote from the artist @sougwen resonates with me because I feel
@@ -3810,6 +3828,8 @@ I use the buzzword gamify.
 
 Adding goals to games where the gameplay has long ago been exhausted.
 
+[[http://nowrongwaytoplay.tumblr.com/]]
+
 *** Go big
 [[http://www.shutupandsitdown.com/videos/v/susd-play-megagame/]]
 
@@ -3921,22 +3941,6 @@ addictive reward schedule and charging to maintain access to the game.
 Reward schedules can be addictive and harmful.  Know methods to
 mitigate: warning screen, notice to take a break, change reward
 schedule on the fly to a less reinforcing schedule.
-
-*** Types of Screenshake
-- Random X and Y
-  - Looks sort of chaotic, not smooth
-- Periodic X and Y
-  - Looks kind of swirly, can become a Screenorbit if you're not
-    careful.
-- Perlin X and Y
-  - Smoother than Random X and Y
-- Restricting movement to one axis
-  - Can look good if there is some component of the scene that
-    dictates the movement, i.e. the collision of a ball and a wall.
-- Rotating Z (about X and Y)
-  - Looks tilty, can be good if there is little movement in X and Y in
-    your game and you want to convey a sense of rocking or coming down
-    like a see-saw.
 
 *** Iteration
 The iterative process diagram from Game Design Workshop
@@ -5728,3 +5732,94 @@ I got my information from:
 - [[http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm]]
 
 Many thanks to the original authors of these articles.
+
+** 2014 Year In Review
+First year of my blog retrospective including #procjam @psysal
+@McFunkypants @HobbyGameDev @SleepyTearyEyed
+
+- YIR
+
+This week is the anniversary of [[http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/][the first post on this blog]].  I'd like
+to take a moment to reflect on the first year.
+
+A recent tweet by [[https://twitter.com/McFunkypants][@McFunkypants]] sums up my approach to blogging:
+
+{% tweet 562450390839353345 %}
+
+I'm not vain enough to imagine a future of internet (in)famy and
+riches(?) to emerge as a product of this blog.  If I was linearly
+following the [[https://twitter.com/HobbyGameDev][@HobbyGameDev]] trend, I should have around 20k followers
+by now.  I'm nowhere near that total.  But, like [[https://twitter.com/HobbyGameDev][@HobbyGameDev]], I set
+out with a goal of publishing weekly content.  And with that in mind,
+I consider the first year a success.
+
+<!--more-->
+
+*** Looking back
+In the past year, I covered recently released games from [[http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/][major
+publishers]] [[http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/][and]] [[http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/][game]] [[http://zerosalife.github.io/blog/2014/07/26/space-is-read/][jams]].  I linked to useful [[http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/][tutorial]] content and
+[[http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/][talks]].  I pointed out some of my [[http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/][favorite essays]] about games.  And I
+released my own [[http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/][games]], [[http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/][tools]], [[http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/][and]] [[http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/][tutorials]].
+
+*** New year, new goals
+Part of the motivation for creating this blog was to provide myself
+with a platform for regular publishing.  Failing a few travel-related
+[[http://en.wikipedia.org/wiki/Snafu][SNAFUs]], I've maintained weekly posts.  And I think the weekly post on
+Saturday model works for me.
+
+In the coming year, I'd like to focus on using Google Analytics and
+marketing tools to better publicize these posts.  I'm not sure what
+this marketing push will look like.  I'll likely pursue it like an
+experiment.  Maybe one month I'll publicize the blog posts twice on
+the day of publication, or once on Saturday and once on Wednesday,
+then compare the traffic to months when I only publicize posts on
+Saturdays.  Of course, this doesn't control for variable interest in
+the content of the posts, but it's a start.  Posts have been most
+successful when they reach the people who are most interested in them,
+and it's easy to get lost in a sea of irrelevant hashtags.  I'm
+looking for better ways to get the word out.
+
+*** What worked?
+
+**** #procjam
+My two most successful topics this year were [[http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/][#procjam]] and an [[http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/][original
+article on the centrality of caves in game design]].
+
+I think #procjam was successful because I got a post out in front of
+the jam, the week before the jam started.  At that time it was a
+low-traffic hashtag.  People were just finding out about the gamejam,
+and my post was one of the only things written about #procjam, other
+than the announcement.  The jam also worked for me because I had a [[http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/][lot]]
+of [[http://zerosalife.github.io/blog/2014/11/15/patchwerk/][ideas]] to jam out during the event, and I got a kick out of
+[[http://zerosalife.github.io/blog/2014/11/29/procjam-review/][reviewing]] [[http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star/][several of the entries]] by others.  My projects,
+[[https://twitter.com/insceptahdeckwu][@INSceptahdeckWU]] and [[https://github.com/zerosalife/patchwerk][Patchwerk]], were a ton of fun to work on.  I'll
+definitely plan on participating in #procjam next year.
+
+It would be worth my time to seek out other interesting gamejams to
+participate in this year.  It can be easy to miss gamejams, but I'd
+like to get involved in at least one more, maybe if there's another
+[[http://itch.io/jam/space-cowboy-jam][Space Cowboy Jam]].  I'm not sure there's a definitive resource for
+gamejams, but I reckon [[http://itch.io/jams][itch.io's list]] is pretty good. One thing I'd
+like to look into is pursuing [[http://itch.io/][itch.io]] as a platform to release tools
+and games.
+
+**** Cavernous worlds
+My [[http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/][article on the centrality of caves]] and [[http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/][the follow-up]] involved a
+little bit of synthesis and a bit of serendipity.  I saw a series of
+tweets discussing the topic and set out to simply catalog the main
+themes in the discussion.  Once the themes were clear, it was
+impossible for me not to write the article.  I got some great [[http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/][feedback]]
+on twitter from the initial post that I turned into the follow-up
+article.  This pair of posts worked because there was a clear audience
+that I could make aware of the articles through mentions in the tweets
+announcing the publication on the blog.  I was lucky that the audience
+was vocal and willing to discuss the topic in depth with me and with
+others.
+
+*** Conclusion
+
+Overall, I'm happy with the format of the blog covering a bit of the
+technical side and a bit of the design side.  In the coming year, I
+fully intend on releasing some more of my own original games and
+prototypes.  Hopefully I can find a receptive audience to kindle
+discussion and constructive feedback.
