@@ -1,0 +1,45 @@
+---
+layout: post
+title: "2014 Year In Review"
+date: 2015-02-07 10:15:45 -0600
+comments: true
+categories:
+-   YIR
+---
+This week is the anniversary of [the first post on this blog](http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/).  I'd like to take a moment to reflect on the first year.
+
+A recent tweet by [@McFunkypants](https://twitter.com/McFunkypants) sums up my approach to blogging:
+
+{% tweet http://twitter.com/McFunkypants/status/562450390839353345 %}
+
+I'm not vain enough to imagine a future of internet (in)famy and riches(?) to emerge as a product of this blog.  If I was linearly following the [@HobbyGameDev](https://twitter.com/HobbyGameDev) trend, I should have around 20k followers by now.  I'm nowhere near that total.  But, like [@HobbyGameDev](https://twitter.com/HobbyGameDev), I set out with a goal of publishing weekly content.  And with that in mind, I consider the first year a success.
+
+<!--more-->
+
+## Looking back
+
+In the past year, I covered recently released games from [major publishers](http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/) [and](http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/) [game](http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/) [jams](http://zerosalife.github.io/blog/2014/07/26/space-is-read/).  I linked to useful [tutorial](http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/) content and [talks](http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/).  I pointed out some of my [favorite essays](http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/) about games.  And I released my own [games](http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/), [tools](http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/), [and](http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/) [tutorials](http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/).
+
+## New year, new goals
+
+Part of the motivation for creating this blog was to provide myself with a platform for regular publishing.  Failing a few travel-related [SNAFUs](http://en.wikipedia.org/wiki/Snafu), I've maintained weekly posts.  And I think the weekly post on Saturday model works for me.
+
+In the coming year, I'd like to focus on using Google Analytics and marketing tools to better publicize these posts.  I'm not sure what this marketing push will look like.  I'll likely pursue it like an experiment.  Maybe one month I'll publicize the blog posts twice on the day of publication, or once on Saturday and once on Wednesday, then compare the traffic to months when I only publicize posts on Saturdays.  Of course, this doesn't control for variable interest in the content of the posts, but it's a start.  Posts have been most successful when they reach the people who are most interested in them, and it's easy to get lost in a sea of irrelevant hashtags.  I'm looking for better ways to get the word out.
+
+## What worked?
+
+### #procjam
+
+My two most successful topics this year were [#procjam](http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/) and an [original article on the centrality of caves in game design](http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/).
+
+I think #procjam was successful because I got a post out in front of the jam, the week before the jam started.  At that time it was a low-traffic hashtag.  People were just finding out about the gamejam, and my post was one of the only things written about #procjam, other than the announcement.  The jam also worked for me because I had a [lot](http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/) of [ideas](http://zerosalife.github.io/blog/2014/11/15/patchwerk/) to jam out during the event, and I got a kick out of [reviewing](http://zerosalife.github.io/blog/2014/11/29/procjam-review/) [several of the entries](http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star/) by others.  My projects, [@INSceptahdeckWU](https://twitter.com/insceptahdeckwu) and [Patchwerk](https://github.com/zerosalife/patchwerk), were a ton of fun to work on.  I'll definitely plan on participating in #procjam next year.
+
+It would be worth my time to seek out other interesting gamejams to participate in this year.  It can be easy to miss gamejams, but I'd like to get involved in at least one more, maybe if there's another [Space Cowboy Jam](http://itch.io/jam/space-cowboy-jam).  I'm not sure there's a definitive resource for gamejams, but I reckon [itch.io's list](http://itch.io/jams) is pretty good. One thing I'd like to look into is pursuing [itch.io](http://itch.io/) as a platform to release tools and games.
+
+### Cavernous worlds
+
+My [article on the centrality of caves](http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/) and [the follow-up](http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/) involved a little bit of synthesis and a bit of serendipity.  I saw a series of tweets discussing the topic and set out to simply catalog the main themes in the discussion.  Once the themes were clear, it was impossible for me not to write the article.  I got some great [feedback](http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/) on twitter from the initial post that I turned into the follow-up article.  This pair of posts worked because there was a clear audience that I could make aware of the articles through mentions in the tweets announcing the publication on the blog.  I was lucky that the audience was vocal and willing to discuss the topic in depth with me and with others.
+
+## Conclusion
+
+Overall, I'm happy with the format of the blog covering a bit of the technical side and a bit of the design side.  In the coming year, I fully intend on releasing some more of my own original games and prototypes.  Hopefully I can find a receptive audience to kindle discussion and constructive feedback.
