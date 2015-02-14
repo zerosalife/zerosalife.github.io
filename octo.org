@@ -3032,6 +3032,96 @@ So start up your own #VGBC and let us know how it goes in the comments
 or on the twitters @zerosalife or @InvolvingSalmon.  When I post about
 something from #VGBC on the blog, I'll tag it with VGBC.
 
+** 2014 Year In Review
+First year of my blog retrospective including #procjam @psysal
+@McFunkypants @HobbyGameDev @SleepyTearyEyed
+
+- YIR
+
+This week is the anniversary of [[http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/][the first post on this blog]].  I'd like
+to take a moment to reflect on the first year.
+
+A recent tweet by [[https://twitter.com/McFunkypants][@McFunkypants]] sums up my approach to blogging:
+
+{% tweet 562450390839353345 %}
+
+I'm not vain enough to imagine a future of internet (in)famy and
+riches(?) to emerge as a product of this blog.  If I was linearly
+following the [[https://twitter.com/HobbyGameDev][@HobbyGameDev]] trend, I should have around 20k followers
+by now.  I'm nowhere near that total.  But, like [[https://twitter.com/HobbyGameDev][@HobbyGameDev]], I set
+out with a goal of publishing weekly content.  And with that in mind,
+I consider the first year a success.
+
+<!--more-->
+
+*** Looking back
+In the past year, I covered recently released games from [[http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/][major
+publishers]] [[http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/][and]] [[http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/][game]] [[http://zerosalife.github.io/blog/2014/07/26/space-is-read/][jams]].  I linked to useful [[http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/][tutorial]] content and
+[[http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/][talks]].  I pointed out some of my [[http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/][favorite essays]] about games.  And I
+released my own [[http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/][games]], [[http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/][tools]], [[http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/][and]] [[http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/][tutorials]].
+
+*** New year, new goals
+Part of the motivation for creating this blog was to provide myself
+with a platform for regular publishing.  Failing a few travel-related
+[[http://en.wikipedia.org/wiki/Snafu][SNAFUs]], I've maintained weekly posts.  And I think the weekly post on
+Saturday model works for me.
+
+In the coming year, I'd like to focus on using Google Analytics and
+marketing tools to better publicize these posts.  I'm not sure what
+this marketing push will look like.  I'll likely pursue it like an
+experiment.  Maybe one month I'll publicize the blog posts twice on
+the day of publication, or once on Saturday and once on Wednesday,
+then compare the traffic to months when I only publicize posts on
+Saturdays.  Of course, this doesn't control for variable interest in
+the content of the posts, but it's a start.  Posts have been most
+successful when they reach the people who are most interested in them,
+and it's easy to get lost in a sea of irrelevant hashtags.  I'm
+looking for better ways to get the word out.
+
+*** What worked?
+
+**** #procjam
+My two most successful topics this year were [[http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/][#procjam]] and an [[http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/][original
+article on the centrality of caves in game design]].
+
+I think #procjam was successful because I got a post out in front of
+the jam, the week before the jam started.  At that time it was a
+low-traffic hashtag.  People were just finding out about the gamejam,
+and my post was one of the only things written about #procjam, other
+than the announcement.  The jam also worked for me because I had a [[http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/][lot]]
+of [[http://zerosalife.github.io/blog/2014/11/15/patchwerk/][ideas]] to jam out during the event, and I got a kick out of
+[[http://zerosalife.github.io/blog/2014/11/29/procjam-review/][reviewing]] [[http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star/][several of the entries]] by others.  My projects,
+[[https://twitter.com/insceptahdeckwu][@INSceptahdeckWU]] and [[https://github.com/zerosalife/patchwerk][Patchwerk]], were a ton of fun to work on.  I'll
+definitely plan on participating in #procjam next year.
+
+It would be worth my time to seek out other interesting gamejams to
+participate in this year.  It can be easy to miss gamejams, but I'd
+like to get involved in at least one more, maybe if there's another
+[[http://itch.io/jam/space-cowboy-jam][Space Cowboy Jam]].  I'm not sure there's a definitive resource for
+gamejams, but I reckon [[http://itch.io/jams][itch.io's list]] is pretty good. One thing I'd
+like to look into is pursuing [[http://itch.io/][itch.io]] as a platform to release tools
+and games.
+
+**** Cavernous worlds
+My [[http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/][article on the centrality of caves]] and [[http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/][the follow-up]] involved a
+little bit of synthesis and a bit of serendipity.  I saw a series of
+tweets discussing the topic and set out to simply catalog the main
+themes in the discussion.  Once the themes were clear, it was
+impossible for me not to write the article.  I got some great [[http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/][feedback]]
+on twitter from the initial post that I turned into the follow-up
+article.  This pair of posts worked because there was a clear audience
+that I could make aware of the articles through mentions in the tweets
+announcing the publication on the blog.  I was lucky that the audience
+was vocal and willing to discuss the topic in depth with me and with
+others.
+
+*** Conclusion
+
+Overall, I'm happy with the format of the blog covering a bit of the
+technical side and a bit of the design side.  In the coming year, I
+fully intend on releasing some more of my own original games and
+prototypes.  Hopefully I can find a receptive audience to kindle
+discussion and constructive feedback.
 * Starting a Game Studio Business
 [[http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq%3D1][http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq=1]]
 
@@ -3630,10 +3720,6 @@ Useful Geographical Descriptors
 
 [[http://silentmania.tumblr.com/post/83837712011/octoswan-i-made-these-as-a-way-to-compile-all]]
 
-*** itch.io
-How to set up an itch.io account and what it's for.
-
-[[http://itchio.tumblr.com/post/107522238129/itch-io-year-in-review-2014-the-features]]
 
 *** 3D modeling for 2.5D
 AngryOctopus made a modeling tool based on an idea by LostGarden
@@ -3690,7 +3776,10 @@ AngryOctopus made a modeling tool based on an idea by LostGarden
 *** Screenshake in Unity
 *** Use a Dictionary of Delegates instead of Switch Case
 [[http://stackoverflow.com/questions/2896715/dictionary-with-delegate-or-switch]]
+*** Choice in game design
+See also: [[*Sid%20Meier's%2010%20Rules%20of%20Game%20Design][Sid Meier's 10 Rules of Game Design]]
 
+[[http://darrellhardy.com/blog/2015/01/19/choice-thoughts-on-game-design/]]
 ** STARTED DRAFTS
 
 
@@ -4158,6 +4247,64 @@ double fine adventure Kickstarter one of te extra was a playground
 with Tim Schafer playing dott and full their. Tim explains the genesis
 of one of ft puzzles at time in video. Then fails to solve it. Turns
 out it wasn't. But how could you make such an puzzle?
+*** itch.io
+How to set up an itch.io account and what it's for.
+
+[[http://itchio.tumblr.com/post/107522238129/itch-io-year-in-review-2014-the-features]]
+
+*** WuXingRPS: Elemental Rock Paper Scissors
+- UI
+- UX
+- game
+
+{% img screenshot %}
+
+WuXingRPS is a prototype 5-way rock paper scissors game.  The eventual
+purpose for the prototype is to serve as a minigame to teach elemental
+interactions in an RPG battle system.
+
+I chose WuXing elements because they provide a nontraditional (in
+terms of typical RPGs) series of interesting interactions.
+
+**** The Five Elements
+{% img interactions %}
+
+The five elements are Earth (yellow), Metal (silver), Water (black),
+Wood (green), and Fire (red).  They have two levels of interactions
+that you can look at anytime by pressing the =?= button in the bottom
+right corner.
+
+The *Destruction* interaction, indicated by red arrows, shows that,
+for example, Metal chops Wood.  So Metal beats Wood.
+
+The *Generation* interaction shows that, for example, Water grows
+Wood.  So Wood "eats" Water.
+
+That's all there is to it.  Click those element disks and try to get
+more points than the computer.
+
+**** Surprise: iteration to find mechanics
+In an earlier version of the prototype the player and enemy choices
+that resulted in a generation relationship interaction led to a draw.
+This meant that 3/5 interactions were draws.  The prototype was less
+exciting than the current version.  This iteration was critical in
+achieving a sense of fun in this prototype, as well as fleshing out
+the goals of an eventual RPG battle system using the elemental
+mechanic.
+
+So making this prototype led to unexpected value.  Let that be a
+lesson to keep it simple, because *sometimes the simple things that
+are achievable within your current skillset can lead to surprising
+results*.
+
+**** The next version
+
+**** Conclusion
+I'm really interested in feedback, so give the game a try and tell me
+what you think in the comments or on twitter.  If you're an artist
+interested in gussying up my shameful attempts at UI and UX, please
+please please reach out to me.  I'd love to improve this prototype.
+
 
 * COMPLETED POSTS
 
@@ -5546,7 +5693,10 @@ exciting risk-reward trade-off.
 
 
 
-** VGBC Design Review: Gunstar Heroes
+** VGBC Game Design Review: Gunstar Heroes
+I take a look at #GunstarHeroes in a game design review format
+inspired by @danctheduck.  #VGBC #Sega #Genesis #Treasure
+
 - design
 - VGBC
 - run-and-gun
@@ -5566,6 +5716,9 @@ Garden]].  I'm going to take a similar approach to my write up covering
   Heroes/ teach us?
 - *What worked and what didn't?*: What design decisions worked and
   what fell flat?
+
+
+
 *** Brief history
 /Gunstar Heroes/ was the first release by nascent studio Treasure.
 But the developers at Treasure were old hats at run-and-gun game
@@ -5636,9 +5789,15 @@ fun of playing these cooperative games.  The players can also throw
 some of the bombs that are thrown by enemies.
 
 **** Weapons
-Ability to choose weapons, store combinations
+Meaningful choices between the various weapon types allow players to
+experiment to find combinations that work best for each situation and
+style of play.  Players can adjust the difficulty of the game by
+restricting the available weapon combinations, and since weapons
+persist between levels players can attempt full game restriction-based
+challenge runs.  The fact that the designers alllowed for interactions
+between the different weapon types simply adds to the depth of
+available choices.
 
-Persistent weapons
 **** Life is no longer a binary
 
 Players and bosses have numeric vitality indicators.  Vitality is
@@ -5654,8 +5813,8 @@ ambiguity of earlier titles, where often the indications that the boss
 was being damaged could be lost in the sea of explosions and
 screenshake that characterize the run-and-gun genre.
 
-Gives you free range as a designer to throw more and more challenges
-at the player.
+This approach gives you free range as a designer to throw more and
+more challenges at the player.
 *** Additional Layers
 
 **** Destructible environment
@@ -5699,18 +5858,20 @@ gameplay changes from run-and-gun action to a side view bullet-hell
 shoot em up.  While interesting, to me, this is not where the bulk of
 the /Gunstar Heroes/ experience lies.
 *** What worked?
-Each player can decide on a unique approach, using the various weapon
-combinations and shot types.
+- Each player can decide on a unique approach, using the various
+  weapon combinations and shot types.
 
-Some of the combinations were overpowered but that was half of the
-fun.  Less skilled players could equip the over powered
-lighting/chaser combination, while experienced players could try to
-become proficient in the other combinations.
+- Some of the combinations were overpowered but that was half of the
+  fun.  Less skilled players could equip the over powered
+  lighting/chaser combination, while experienced players could try to
+  become proficient in the other combinations.
 
-Anti gravity communicated through overlap with previous commands like
-jump attack.
+- Anti gravity communicated through overlap with previous commands
+  like jump attack.
 
-Swtiching between combined and individual weapon powerups
+- Switching between combined and individual weapon powerups allows the
+  player to exercise choice, a fundamental goal of game design and
+  play in general.
 
 *** What didn't work?
 The length.  This is hardly a damning complaint, but the game could be
@@ -5725,6 +5886,23 @@ technology during the early 90s.
 The airship level sets up rules and breaks them.
 
 *** Conclusion
+/Gunstar Heroes/ illustrates the maxim (allegedly) espoused by Sid
+Meier: "A game is a series of interesting choices."  It takes ideas
+formed in the great /Contra III/ and expands the number of interesting
+choices and interactions for the player, leading to an undeniable
+classic.
+
+I hope you've enjoyed this Design Review.  It requires a lot of effort
+to put these together, so I'd like to take my hat off to Daniel Cook
+at Lost Garden, who inspired me to use this format.  I'd also like to
+thank [[twitter.com/InvolvingSalmon][Rick Wolf]] for contributing to and helping to crystallize the
+ideas in this article.  I also could not have done this without the
+research cited in my Resources, so shoutout to [[http://wikipedia.org][Wikipedia]] and [[http://www.hardcoregaming101.net][Hardcore
+Gaming 101]].
+
+Expect more Design Reviews as our book club mulls over more games in
+the coming months.
+
 
 *** Resources
 I got my information from:
@@ -5732,94 +5910,3 @@ I got my information from:
 - [[http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm]]
 
 Many thanks to the original authors of these articles.
-
-** 2014 Year In Review
-First year of my blog retrospective including #procjam @psysal
-@McFunkypants @HobbyGameDev @SleepyTearyEyed
-
-- YIR
-
-This week is the anniversary of [[http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/][the first post on this blog]].  I'd like
-to take a moment to reflect on the first year.
-
-A recent tweet by [[https://twitter.com/McFunkypants][@McFunkypants]] sums up my approach to blogging:
-
-{% tweet 562450390839353345 %}
-
-I'm not vain enough to imagine a future of internet (in)famy and
-riches(?) to emerge as a product of this blog.  If I was linearly
-following the [[https://twitter.com/HobbyGameDev][@HobbyGameDev]] trend, I should have around 20k followers
-by now.  I'm nowhere near that total.  But, like [[https://twitter.com/HobbyGameDev][@HobbyGameDev]], I set
-out with a goal of publishing weekly content.  And with that in mind,
-I consider the first year a success.
-
-<!--more-->
-
-*** Looking back
-In the past year, I covered recently released games from [[http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/][major
-publishers]] [[http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/][and]] [[http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/][game]] [[http://zerosalife.github.io/blog/2014/07/26/space-is-read/][jams]].  I linked to useful [[http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/][tutorial]] content and
-[[http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/][talks]].  I pointed out some of my [[http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/][favorite essays]] about games.  And I
-released my own [[http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/][games]], [[http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/][tools]], [[http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/][and]] [[http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/][tutorials]].
-
-*** New year, new goals
-Part of the motivation for creating this blog was to provide myself
-with a platform for regular publishing.  Failing a few travel-related
-[[http://en.wikipedia.org/wiki/Snafu][SNAFUs]], I've maintained weekly posts.  And I think the weekly post on
-Saturday model works for me.
-
-In the coming year, I'd like to focus on using Google Analytics and
-marketing tools to better publicize these posts.  I'm not sure what
-this marketing push will look like.  I'll likely pursue it like an
-experiment.  Maybe one month I'll publicize the blog posts twice on
-the day of publication, or once on Saturday and once on Wednesday,
-then compare the traffic to months when I only publicize posts on
-Saturdays.  Of course, this doesn't control for variable interest in
-the content of the posts, but it's a start.  Posts have been most
-successful when they reach the people who are most interested in them,
-and it's easy to get lost in a sea of irrelevant hashtags.  I'm
-looking for better ways to get the word out.
-
-*** What worked?
-
-**** #procjam
-My two most successful topics this year were [[http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/][#procjam]] and an [[http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/][original
-article on the centrality of caves in game design]].
-
-I think #procjam was successful because I got a post out in front of
-the jam, the week before the jam started.  At that time it was a
-low-traffic hashtag.  People were just finding out about the gamejam,
-and my post was one of the only things written about #procjam, other
-than the announcement.  The jam also worked for me because I had a [[http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/][lot]]
-of [[http://zerosalife.github.io/blog/2014/11/15/patchwerk/][ideas]] to jam out during the event, and I got a kick out of
-[[http://zerosalife.github.io/blog/2014/11/29/procjam-review/][reviewing]] [[http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star/][several of the entries]] by others.  My projects,
-[[https://twitter.com/insceptahdeckwu][@INSceptahdeckWU]] and [[https://github.com/zerosalife/patchwerk][Patchwerk]], were a ton of fun to work on.  I'll
-definitely plan on participating in #procjam next year.
-
-It would be worth my time to seek out other interesting gamejams to
-participate in this year.  It can be easy to miss gamejams, but I'd
-like to get involved in at least one more, maybe if there's another
-[[http://itch.io/jam/space-cowboy-jam][Space Cowboy Jam]].  I'm not sure there's a definitive resource for
-gamejams, but I reckon [[http://itch.io/jams][itch.io's list]] is pretty good. One thing I'd
-like to look into is pursuing [[http://itch.io/][itch.io]] as a platform to release tools
-and games.
-
-**** Cavernous worlds
-My [[http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/][article on the centrality of caves]] and [[http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/][the follow-up]] involved a
-little bit of synthesis and a bit of serendipity.  I saw a series of
-tweets discussing the topic and set out to simply catalog the main
-themes in the discussion.  Once the themes were clear, it was
-impossible for me not to write the article.  I got some great [[http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/][feedback]]
-on twitter from the initial post that I turned into the follow-up
-article.  This pair of posts worked because there was a clear audience
-that I could make aware of the articles through mentions in the tweets
-announcing the publication on the blog.  I was lucky that the audience
-was vocal and willing to discuss the topic in depth with me and with
-others.
-
-*** Conclusion
-
-Overall, I'm happy with the format of the blog covering a bit of the
-technical side and a bit of the design side.  In the coming year, I
-fully intend on releasing some more of my own original games and
-prototypes.  Hopefully I can find a receptive audience to kindle
-discussion and constructive feedback.
