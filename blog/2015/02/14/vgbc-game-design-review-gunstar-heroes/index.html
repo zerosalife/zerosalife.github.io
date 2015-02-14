@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>VGBC Game Design Review: Gunstar Heroes - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="Inspired by Daniel Cook&rsquo;s game design review format over at Lost Garden. I&rsquo;m going to take a similar approach to my write up covering &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">VGBC Game Design Review: Gunstar Heroes</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-14T10:25:33-06:00" pubdate data-updated="true">Feb 14<span>th</span>, 2015</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Inspired by <a href="http://twitter.com/danctheduck">Daniel Cook&rsquo;s</a> game design review format over at <a href="http://www.lostgarden.com/2005/09/game-design-review-advance-wars-dual.html">Lost Garden</a>.  I&rsquo;m going to take a similar approach to my write up covering
+<em>Gunstar Heroes</em>, the first book we&rsquo;ve chosen for the VGBC.</p>
+
+<h2>The Format</h2>
+
+<ul>
+<li><strong>A brief history</strong>: What is the historical context of the design of <em>Gunstar Heroes</em>?</li>
+<li><strong>Game anthropology</strong>: What market niche does <em>Gunstar Heroes</em> fill?</li>
+<li><strong>Layered game design</strong>: What major design lesson(s) does <em>Gunstar Heroes</em> teach us?</li>
+<li><strong>What worked and what didn&rsquo;t?</strong>: What design decisions worked and what fell flat?</li>
+</ul>
+
+
+<!--more-->
+
+
+<h2>Brief history</h2>
+
+<p><em>Gunstar Heroes</em> was the first release by nascent studio Treasure.
+But the developers at Treasure were old hats at run-and-gun game design.  Like a group of seasoned musicians coming together to form a supergroup, the studio was created by former Konami employees, to create great games.  Treasure was much smaller than Konami, lending the studio a dynamic, independent vibe that we would label AA or indie today.</p>
+
+<p>Treasure&rsquo;s developers, designers, and artists cut their teeth making some of Konami&rsquo;s biggest hits.  While the list is long, ranging from classics like Castlevania and Metal Gear to relatively unknown games like Snatcher and Rocket Knight Adventures, for the purpose of this article I&rsquo;d like to compare arguably the greatest of its forebears: <em><a href="http://en.wikipedia.org/wiki/Contra_III:_The_Alien_Wars">Contra III: The Alien Wars</a></em>.</p>
+
+<p>Games in the run-and-gun genre are straightforward, you run (and jump) and shoot at enemies (with guns).  <em>Contra III</em> was the pinnacle of the genre in 1993, when <em>Gunstar Heroes</em> was released, by way of the game&rsquo;s attractive graphics, challenging gameplay, excellent music, and varied level design.  <em>Gunstar Heroes</em> represented the developers at Treasure taking the lessons from <em>Contra III</em> and seeking to improve and expand on the previous success.</p>
+
+<h2>Game anthropology</h2>
+
+<p><em>Gunstar Heroes</em> entered a market during the heyday of the run-and-gun
+action platformer genre.  The hardware of the 16-bit consoles allowed for better graphics and supported larger numbers of sprites, leading to more engaging and challenging gameplay.  But the hardware and arguably the developer mindsets had not yet evolved to support many other approaches to gameplay.</p>
+
+<p>There are too many copy-cats and also-rans to list.  <em>Contra</em> was a hit and every publisher wanted their own version.  Treasure sought set
+<em>Gunstar Heroes</em> off from the crowd by designing expressive sprites
+and dynamic gameplay.</p>
+
+<p>To my mind this approach worked, although I&rsquo;m not aware of the sales figures from the time.  The graphics of <em>Gunstar Heroes</em> have helped it occupy mindshare over the long run.  In fact, in my opinion,
+<em>Gunstar Heroes</em> looks more like a predecessor to the popular <em>Metal
+Slug</em> series than a sequel or offshoot from <em>Contra</em>.  For a game to have this longevity, there must be something the designers have done right.</p>
+
+<h2>First Layer: Core Mechanics</h2>
+
+<h3>Bosses</h3>
+
+<p>An entire article could be devoted to the boss design in <em>Gunstar Heroes</em> by &ldquo;cool character creator&rdquo; HAN aka Tetsuhiko Kikuchi.  But the scope of this article is less concerned with the design of specific encounters and more focused on the overall experience.  A thorough exploration of the boss design would also require more skill in this game than your humble author possesses.</p>
+
+<h2>Second Layer: Creating new variation</h2>
+
+<h3>Controls</h3>
+
+<ul>
+<li><p>Right off the bat, players get a choice between two control styles Fixed Shot and Free Shot.  These differ in terms of freedom of movement while allowing for more precise targeting.</p></li>
+<li><p>In addition to <em>Contra</em>&rsquo;s ducking and climbing mechanics, <em>Gunstar Heroes</em> adds slides, throws and jump attacks.</p></li>
+<li><p>A lot of the additional moves grant invincibility frames.  Sometimes the only way to get through difficult sections of the game without taking damage is to slide or jump attack at the correct time, using the invincibility frames to avoid damage.</p></li>
+<li><p>The throws also allow for a new interaction between player characters: throwing the other player.  It can be annoying but that is half of the fun of playing these cooperative games.  The players can also throw some of the bombs that are thrown by enemies.</p></li>
+</ul>
+
+
+<h3>Weapons</h3>
+
+<p>Meaningful choices between the various weapon types allow players to experiment to find combinations that work best for each situation and style of play.  Players can adjust the difficulty of the game by restricting the available weapon combinations, and since weapons persist between levels players can attempt full game restriction-based challenge runs.  The fact that the designers alllowed for interactions between the different weapon types simply adds to the depth of available choices.</p>
+
+<h3>Life is no longer a binary</h3>
+
+<p>Players and bosses have numeric vitality indicators.  Vitality is tracked as an integer value rather than a binary alive/dead state. You start at a vitality of 100 and, notably, there is no maximum.  You can gain more than 100 vitality, adding even more a buffer between playing and the icy clutches of the grim reaper.</p>
+
+<p>Boss vitality is indicated on the screen, communicating directly to the player when the boss will be defeated.  This removes some of the ambiguity of earlier titles, where often the indications that the boss was being damaged could be lost in the sea of explosions and screenshake that characterize the run-and-gun genre.</p>
+
+<p>This approach gives you free range, as a designer, to throw more and more challenges at the player.</p>
+
+<h2>Additional Layers</h2>
+
+<h3>Destructible environment</h3>
+
+<h3>Enemy interactions</h3>
+
+<p>When thrown, enemies can hit other enemies.  Another notable type of enemy interaction is that bombs thrown by enemies can damage other enemies and the thrower.</p>
+
+<p>The result of these additional layers of player choice and interactivity serve to situate the player characters, and thus the players, in the world.  <em>Gunstar Heroes</em> feels less like a series of obstacles to overcome and more like a madcap adventure in which you are desperately trying to survive.  Contrast this with the original <em><a href="http://en.wikipedia.org/wiki/Ninja_Gaiden">Ninja Gaiden</a></em>, in which player agency is reduced to memorizing and executing a series of well-timed button presses.</p>
+
+<h3>The boardgame level</h3>
+
+<p><em>Gunstar Heroes</em> combines the throwing mechanic with a giant die to create the most unique level in the game: The Dice Palace.  The player characters must move through a board populated with boss encounters, item rooms and spaces that can send the players back to the start of the board or require the players to fight a boss without weapons.</p>
+
+<p>The addition of this level creates a dynamic experience that changes with each play through.  The result is a truly unique than the simple test of skill that most boss rushes represent, although there is a more typical boss rush present in one of the later levels.</p>
+
+<h3>Anti-gravity mine carts</h3>
+
+<p>While games like <em><a href="http://en.wikipedia.org/wiki/Battletoads">Battletoads</a></em> have previously done speedy vehicular mine-cart-style levels, <em>Gunstar Heroes</em> takes it to another level (forgive me).  The modified mine carts in <em>Gunstar Heroes</em> allow the players to flip gravity <em>a la</em> under-appreciated late-generation NES action platformer <em><a href="http://en.wikipedia.org/wiki/Metal_Storm_%28video_game%29">Metal Storm</a></em>.</p>
+
+<h3>The genre switch</h3>
+
+<p>Although this is not unique to <em>Gunstar Heroes</em> this may be one of the first times that developers have tried this.  In the last level, the gameplay changes from run-and-gun action to a side view bullet-hell shoot-em-up.  While interesting, to me, this is not where the bulk of the <em>Gunstar Heroes</em> experience lies.</p>
+
+<h2>What worked?</h2>
+
+<ul>
+<li><p>Each player can decide on a unique approach, using the various weapon combinations and shot types.</p></li>
+<li><p>Some of the combinations were overpowered but that was half of the fun.  Less skilled players could equip the over powered lighting/chaser combination, while experienced players could try to become proficient in the other combinations.</p></li>
+<li><p>Anti-gravity is communicated through overlap with previous commands like jump attack.  When the minecart level starts, the player likely doesn&rsquo;t know about the anti-gravity mechanic, that is, until an enemy comes into jump attack range.</p></li>
+<li><p>Switching between combined and individual weapon powerups allows the player to exercise choice, a fundamental goal of game design and play in general.</p></li>
+</ul>
+
+
+<h2>What didn&rsquo;t work?</h2>
+
+<ul>
+<li><p>The length.  This is hardly a damning complaint, but the game could be longer.  There are seven stages, a couple of which are totally innovative, but most of them have been done before.  Perhaps it was simply a problem of time and cartridge size constraints.</p></li>
+<li><p>The poor, poor framerate couldn&rsquo;t always keep up with the destruction on the screen, but again, this is likely due to constraints of the technology during the early 90s.</p></li>
+<li><p>The airship level sets up rules and breaks them. You need to keep climbing and climbing and climbing until, well, you don&rsquo;t need to any more.  You need to get on top of that airship and if you don&rsquo;t, it&rsquo;ll take off leaving you marooned with nary a Wilson to keep you company.</p></li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p><em>Gunstar Heroes</em> illustrates the maxim (allegedly) espoused by Sid
+Meier: &ldquo;A game is a series of interesting choices.&rdquo;  It takes ideas formed in the great <em>Contra III</em> and expands the number of interesting choices and interactions for the player, leading to an undeniable classic.</p>
+
+<p>I hope you&rsquo;ve enjoyed this Design Review.  It requires a lot of effort to put these together, so I&rsquo;d like to take my hat off to Daniel Cook at Lost Garden, who inspired me to use this format.  I&rsquo;d also like to thank Rick Wolf for contributing to and helping to crystallize the ideas in this article.  I also could not have done this without the research cited in my Resources, so shoutout to <a href="http://wikipedia.org">Wikipedia</a> and <a href="http://www.hardcoregaming101.net">Hardcore Gaming 101</a>.</p>
+
+<p>Expect more Design Reviews as our book club mulls over more games in the coming months.</p>
+
+<h2>Resources</h2>
+
+<p>I got my information from:</p>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Gunstar_Heroes">http://en.wikipedia.org/wiki/Gunstar_Heroes</a></li>
+<li><a href="http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm">http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm</a></li>
+</ul>
+
+
+<p>Many thanks to the original authors of these articles.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-14T10:25:33-06:00" pubdate data-updated="true">Feb 14<span>th</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/genesis/'>Genesis</a>, <a class='category' href='/blog/categories/sega/'>Sega</a>, <a class='category' href='/blog/categories/treasure/'>Treasure</a>, <a class='category' href='/blog/categories/vgbc/'>VGBC</a>, <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/run-and-gun/'>run-and-gun</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/02/07/2014-year-in-review/" title="Previous Post: 2014 Year In Review">&laquo; 2014 Year In Review</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes/">VGBC Game Design Review: Gunstar Heroes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/07/2014-year-in-review/">2014 Year In Review</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/31/create-a-dictionary-with-multiple-keys-in-unity-c-number/">Create a Dictionary with multiple keys in Unity C#</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/24/vgbc-a-video-game-book-club/">VGBC: a Video Game Book Club</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/17/syntax-highlighting-for-octopress/">Syntax highlighting for Octopress</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 &ndash; 2015
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54217540-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
