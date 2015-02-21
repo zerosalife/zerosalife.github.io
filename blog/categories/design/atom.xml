@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-02-07T10:26:53-06:00</updated>
+  <updated>2015-02-14T10:51:22-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,145 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[VGBC Game Design Review: Gunstar Heroes]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes/"/>
+    <updated>2015-02-14T10:25:33-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes</id>
+    <content type="html"><![CDATA[<p>Inspired by <a href="http://twitter.com/danctheduck">Daniel Cook&rsquo;s</a> game design review format over at <a href="http://www.lostgarden.com/2005/09/game-design-review-advance-wars-dual.html">Lost Garden</a>.  I&rsquo;m going to take a similar approach to my write up covering
+<em>Gunstar Heroes</em>, the first book we&rsquo;ve chosen for the VGBC.</p>
+
+<h2>The Format</h2>
+
+<ul>
+<li><strong>A brief history</strong>: What is the historical context of the design of <em>Gunstar Heroes</em>?</li>
+<li><strong>Game anthropology</strong>: What market niche does <em>Gunstar Heroes</em> fill?</li>
+<li><strong>Layered game design</strong>: What major design lesson(s) does <em>Gunstar Heroes</em> teach us?</li>
+<li><strong>What worked and what didn&rsquo;t?</strong>: What design decisions worked and what fell flat?</li>
+</ul>
+
+
+<!--more-->
+
+
+<h2>Brief history</h2>
+
+<p><em>Gunstar Heroes</em> was the first release by nascent studio Treasure.
+But the developers at Treasure were old hats at run-and-gun game design.  Like a group of seasoned musicians coming together to form a supergroup, the studio was created by former Konami employees, to create great games.  Treasure was much smaller than Konami, lending the studio a dynamic, independent vibe that we would label AA or indie today.</p>
+
+<p>Treasure&rsquo;s developers, designers, and artists cut their teeth making some of Konami&rsquo;s biggest hits.  While the list is long, ranging from classics like Castlevania and Metal Gear to relatively unknown games like Snatcher and Rocket Knight Adventures, for the purpose of this article I&rsquo;d like to compare arguably the greatest of its forebears: <em><a href="http://en.wikipedia.org/wiki/Contra_III:_The_Alien_Wars">Contra III: The Alien Wars</a></em>.</p>
+
+<p>Games in the run-and-gun genre are straightforward, you run (and jump) and shoot at enemies (with guns).  <em>Contra III</em> was the pinnacle of the genre in 1993, when <em>Gunstar Heroes</em> was released, by way of the game&rsquo;s attractive graphics, challenging gameplay, excellent music, and varied level design.  <em>Gunstar Heroes</em> represented the developers at Treasure taking the lessons from <em>Contra III</em> and seeking to improve and expand on the previous success.</p>
+
+<h2>Game anthropology</h2>
+
+<p><em>Gunstar Heroes</em> entered a market during the heyday of the run-and-gun
+action platformer genre.  The hardware of the 16-bit consoles allowed for better graphics and supported larger numbers of sprites, leading to more engaging and challenging gameplay.  But the hardware and arguably the developer mindsets had not yet evolved to support many other approaches to gameplay.</p>
+
+<p>There are too many copy-cats and also-rans to list.  <em>Contra</em> was a hit and every publisher wanted their own version.  Treasure sought set
+<em>Gunstar Heroes</em> off from the crowd by designing expressive sprites
+and dynamic gameplay.</p>
+
+<p>To my mind this approach worked, although I&rsquo;m not aware of the sales figures from the time.  The graphics of <em>Gunstar Heroes</em> have helped it occupy mindshare over the long run.  In fact, in my opinion,
+<em>Gunstar Heroes</em> looks more like a predecessor to the popular <em>Metal
+Slug</em> series than a sequel or offshoot from <em>Contra</em>.  For a game to have this longevity, there must be something the designers have done right.</p>
+
+<h2>First Layer: Core Mechanics</h2>
+
+<h3>Bosses</h3>
+
+<p>An entire article could be devoted to the boss design in <em>Gunstar Heroes</em> by &ldquo;cool character creator&rdquo; HAN aka Tetsuhiko Kikuchi.  But the scope of this article is less concerned with the design of specific encounters and more focused on the overall experience.  A thorough exploration of the boss design would also require more skill in this game than your humble author possesses.</p>
+
+<h2>Second Layer: Creating new variation</h2>
+
+<h3>Controls</h3>
+
+<ul>
+<li><p>Right off the bat, players get a choice between two control styles Fixed Shot and Free Shot.  These differ in terms of freedom of movement while allowing for more precise targeting.</p></li>
+<li><p>In addition to <em>Contra</em>&rsquo;s ducking and climbing mechanics, <em>Gunstar Heroes</em> adds slides, throws and jump attacks.</p></li>
+<li><p>A lot of the additional moves grant invincibility frames.  Sometimes the only way to get through difficult sections of the game without taking damage is to slide or jump attack at the correct time, using the invincibility frames to avoid damage.</p></li>
+<li><p>The throws also allow for a new interaction between player characters: throwing the other player.  It can be annoying but that is half of the fun of playing these cooperative games.  The players can also throw some of the bombs that are thrown by enemies.</p></li>
+</ul>
+
+
+<h3>Weapons</h3>
+
+<p>Meaningful choices between the various weapon types allow players to experiment to find combinations that work best for each situation and style of play.  Players can adjust the difficulty of the game by restricting the available weapon combinations, and since weapons persist between levels players can attempt full game restriction-based challenge runs.  The fact that the designers alllowed for interactions between the different weapon types simply adds to the depth of available choices.</p>
+
+<h3>Life is no longer a binary</h3>
+
+<p>Players and bosses have numeric vitality indicators.  Vitality is tracked as an integer value rather than a binary alive/dead state. You start at a vitality of 100 and, notably, there is no maximum.  You can gain more than 100 vitality, adding even more a buffer between playing and the icy clutches of the grim reaper.</p>
+
+<p>Boss vitality is indicated on the screen, communicating directly to the player when the boss will be defeated.  This removes some of the ambiguity of earlier titles, where often the indications that the boss was being damaged could be lost in the sea of explosions and screenshake that characterize the run-and-gun genre.</p>
+
+<p>This approach gives you free range, as a designer, to throw more and more challenges at the player.</p>
+
+<h2>Additional Layers</h2>
+
+<h3>Destructible environment</h3>
+
+<h3>Enemy interactions</h3>
+
+<p>When thrown, enemies can hit other enemies.  Another notable type of enemy interaction is that bombs thrown by enemies can damage other enemies and the thrower.</p>
+
+<p>The result of these additional layers of player choice and interactivity serve to situate the player characters, and thus the players, in the world.  <em>Gunstar Heroes</em> feels less like a series of obstacles to overcome and more like a madcap adventure in which you are desperately trying to survive.  Contrast this with the original <em><a href="http://en.wikipedia.org/wiki/Ninja_Gaiden">Ninja Gaiden</a></em>, in which player agency is reduced to memorizing and executing a series of well-timed button presses.</p>
+
+<h3>The boardgame level</h3>
+
+<p><em>Gunstar Heroes</em> combines the throwing mechanic with a giant die to create the most unique level in the game: The Dice Palace.  The player characters must move through a board populated with boss encounters, item rooms and spaces that can send the players back to the start of the board or require the players to fight a boss without weapons.</p>
+
+<p>The addition of this level creates a dynamic experience that changes with each play through.  The result is a truly unique than the simple test of skill that most boss rushes represent, although there is a more typical boss rush present in one of the later levels.</p>
+
+<h3>Anti-gravity mine carts</h3>
+
+<p>While games like <em><a href="http://en.wikipedia.org/wiki/Battletoads">Battletoads</a></em> have previously done speedy vehicular mine-cart-style levels, <em>Gunstar Heroes</em> takes it to another level (forgive me).  The modified mine carts in <em>Gunstar Heroes</em> allow the players to flip gravity <em>a la</em> under-appreciated late-generation NES action platformer <em><a href="http://en.wikipedia.org/wiki/Metal_Storm_%28video_game%29">Metal Storm</a></em>.</p>
+
+<h3>The genre switch</h3>
+
+<p>Although this is not unique to <em>Gunstar Heroes</em> this may be one of the first times that developers have tried this.  In the last level, the gameplay changes from run-and-gun action to a side view bullet-hell shoot-em-up.  While interesting, to me, this is not where the bulk of the <em>Gunstar Heroes</em> experience lies.</p>
+
+<h2>What worked?</h2>
+
+<ul>
+<li><p>Each player can decide on a unique approach, using the various weapon combinations and shot types.</p></li>
+<li><p>Some of the combinations were overpowered but that was half of the fun.  Less skilled players could equip the over powered lighting/chaser combination, while experienced players could try to become proficient in the other combinations.</p></li>
+<li><p>Anti-gravity is communicated through overlap with previous commands like jump attack.  When the minecart level starts, the player likely doesn&rsquo;t know about the anti-gravity mechanic, that is, until an enemy comes into jump attack range.</p></li>
+<li><p>Switching between combined and individual weapon powerups allows the player to exercise choice, a fundamental goal of game design and play in general.</p></li>
+</ul>
+
+
+<h2>What didn&rsquo;t work?</h2>
+
+<ul>
+<li><p>The length.  This is hardly a damning complaint, but the game could be longer.  There are seven stages, a couple of which are totally innovative, but most of them have been done before.  Perhaps it was simply a problem of time and cartridge size constraints.</p></li>
+<li><p>The poor, poor framerate couldn&rsquo;t always keep up with the destruction on the screen, but again, this is likely due to constraints of the technology during the early 90s.</p></li>
+<li><p>The airship level sets up rules and breaks them. You need to keep climbing and climbing and climbing until, well, you don&rsquo;t need to any more.  You need to get on top of that airship and if you don&rsquo;t, it&rsquo;ll take off leaving you marooned with nary a Wilson to keep you company.</p></li>
+</ul>
+
+
+<h2>Conclusion</h2>
+
+<p><em>Gunstar Heroes</em> illustrates the maxim (allegedly) espoused by Sid
+Meier: &ldquo;A game is a series of interesting choices.&rdquo;  It takes ideas formed in the great <em>Contra III</em> and expands the number of interesting choices and interactions for the player, leading to an undeniable classic.</p>
+
+<p>I hope you&rsquo;ve enjoyed this Design Review.  It requires a lot of effort to put these together, so I&rsquo;d like to take my hat off to Daniel Cook at Lost Garden, who inspired me to use this format.  I&rsquo;d also like to thank Rick Wolf for contributing to and helping to crystallize the ideas in this article.  I also could not have done this without the research cited in my Resources, so shoutout to <a href="http://wikipedia.org">Wikipedia</a> and <a href="http://www.hardcoregaming101.net">Hardcore Gaming 101</a>.</p>
+
+<p>Expect more Design Reviews as our book club mulls over more games in the coming months.</p>
+
+<h2>Resources</h2>
+
+<p>I got my information from:</p>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Gunstar_Heroes">http://en.wikipedia.org/wiki/Gunstar_Heroes</a></li>
+<li><a href="http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm">http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm</a></li>
+</ul>
+
+
+<p>Many thanks to the original authors of these articles.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[VGBC: a Video Game Book Club]]></title>
@@ -440,48 +579,6 @@ the same tools to the player can be fun</li>
 <p><div class='embed tweet'>Tweet could not be processed</div></p>
 
 <p>From here the sky&rsquo;s the limit.  I could try analyzing the generated text to try to build lines or stanzas.  I could try to reorder words to reflect the syntax present from the transcription.  I could try to represent individual emcees with unique corpora.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Play balance for party vs in-depth fighting games]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/"/>
-    <updated>2014-10-18T10:33:31-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games</id>
-    <content type="html"><![CDATA[<p>Here I&rsquo;m drawing a comparison between games that are subjectively perceived as party games and games that are more in-depth.  I&rsquo;m avoiding using loaded terms like casual and hardcore, but I think the distinction is likely the same.  Both types of games can be complex, but subtle balancing issues can affect the subjective sense of fun when playing these games.</p>
-
-<p>For discussion I&rsquo;m going to focus on relatively advanced moves in <em><a href="http://www.smashbros.com">Super Smash Bros.</a></em> and <em><a href="http://www.towerfall-game.com/">TowerFall</a></em>: L-canceling and dodge canceling, respectively.  I was inspired to examine this balance issue by a recent tweet by <em>TowerFall</em> creator, and, in the interest of full disclosure, my close personal 3DS friend, <a href="https://twitter.com/MattThorson">@MattThorson</a>.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<!--more-->
-
-
-<p>Thorson previously pointed out an interesting <a href="https://twitter.com/DamianSommer/status/519537228582633473">discussion</a> on the mechanic of L-canceling by <a href="https://twitter.com/DamianSommer/status/519537228582633473">@DamianSommer</a> among others. Sommer wants to focus on how the L-canceling mechanic reflects the design intent of the creators of <em>Super Smash Bros.</em></p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p><a href="https://twitter.com/Sonic9jct">@Sonic9jct</a> highlights the dichotomy that I am exploring here.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p><a href="http://supersmashbros.wikia.com/wiki/L-canceling">L-canceling</a> requires extremely precise timing of inputs when the character is in a particular state.  You must press L within 6 frames of landing on the ground while performing an <a href="http://supersmashbros.wikia.com/wiki/Aerial_attack">aerial attack</a>.  Since <em>Super Smash Bros.</em> runs at 60 frames per second, this requires you to press the button within 100 milliseconds of hitting the ground.  To put this in perspective, the average human reaction time is about 250 milliseconds.</p>
-
-<p><a href="https://twitter.com/whatisian">@whatisian</a> brilliantly captures the distinction in design that makes this a more difficult, in-depth, technically demanding mechanic.  If there is no drawback, then the execution of the L-cancel is practically mandatory at high levels of play.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p>Let&rsquo;s look at how this differs from <a href="http://steamcommunity.com/sharedfiles/filedetails/?id%3D250779585">dodge canceling</a> in <em>TowerFall</em> a game that Thorson intentionally designed to be welcoming to new players, while still keeping them competitive with skilled players.</p>
-
-<p>Dodge canceling requires similarly herculean inputs to pull off, to perform a dodge cancel you must press the dodge button a second time after initiating a dodge maneuver.  The dodge lasts 367 milliseconds or 22 frames at 60 fps.  This seems like a lot of time to perform the dodge cancel compared to the scant 6 frames for an L-cancel, but there&rsquo;s a catch.  In order to get the most momentum, to carry the most speed through the dodge cancel, you must perform the move on exactly the right frame.</p>
-
-<p>Sounds pretty tough, right?  If you think this would require some impressive technical skills to pull it off, you&rsquo;re right.  But there&rsquo;s a catch, turning or firing from the dodge cancel reduces the character&rsquo;s speed, making the character an easier target.</p>
-
-<p>Thorson&rsquo;s mechanic provides a similar advantage to L-canceling with the addition of the risk of failure.  Dodge cancels could allow the player to zing around the level at will, firing arrows every which way, but Thorson decided to introduce drawbacks for imprecise play that create risks for more advanced players to put them closer to parity with less skilled players.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p>These are just my thoughts on this interesting discussion.  I&rsquo;m not a high-level player of either of these games, so I may have missed some of the subtleties to which Thorson or others refer.  If you think I&rsquo;m off the mark, or you just want to weigh in on the merits of designing for &ldquo;party&rdquo; vs. &ldquo;fighting&rdquo; games, drop me a line in the comments or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 ]]></content>
   </entry>
   
