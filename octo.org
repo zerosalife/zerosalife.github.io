@@ -3780,6 +3780,8 @@ AngryOctopus made a modeling tool based on an idea by LostGarden
 See also: [[*Sid%20Meier's%2010%20Rules%20of%20Game%20Design][Sid Meier's 10 Rules of Game Design]]
 
 [[http://darrellhardy.com/blog/2015/01/19/choice-thoughts-on-game-design/]]
+*** Keep losing fun
+[[http://www.leagueofgamemakers.com/hey-loser-keeping-players-engaged/?utm_source%3Drss&utm_medium%3Drss&utm_campaign%3Dhey-loser-keeping-players-engaged][http://www.leagueofgamemakers.com/hey-loser-keeping-players-engaged/?utm_source=rss&utm_medium=rss&utm_campaign=hey-loser-keeping-players-engaged]]
 ** STARTED DRAFTS
 
 
@@ -4247,11 +4249,6 @@ double fine adventure Kickstarter one of te extra was a playground
 with Tim Schafer playing dott and full their. Tim explains the genesis
 of one of ft puzzles at time in video. Then fails to solve it. Turns
 out it wasn't. But how could you make such an puzzle?
-*** itch.io
-How to set up an itch.io account and what it's for.
-
-[[http://itchio.tumblr.com/post/107522238129/itch-io-year-in-review-2014-the-features]]
-
 *** WuXingRPS: Elemental Rock Paper Scissors
 - UI
 - UX
@@ -4304,6 +4301,16 @@ I'm really interested in feedback, so give the game a try and tell me
 what you think in the comments or on twitter.  If you're an artist
 interested in gussying up my shameful attempts at UI and UX, please
 please please reach out to me.  I'd love to improve this prototype.
+
+*** Pay what you mean
+For a given service with a given fee structure, how much should you
+pay, if you're electing to pay what you want above minimum price, to
+ensure that the developers receive the amount of money you intend.
+
+**** Platform coverage
+- itch.io
+- humble bundle
+- steam
 
 
 * COMPLETED POSTS
@@ -5910,3 +5917,95 @@ I got my information from:
 - [[http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm]]
 
 Many thanks to the original authors of these articles.
+
+** Hosting a game on itch.io: account set up and transaction fees
+Easy account set up and a look at the fees for @moonscript's itch.io
+
+- tools
+
+*** What is itch.io?
+According to the [[http://itch.io/about/faq][faq]], itch.io is a service for handling hosting and
+selling individual and bundled games, soundtracks, art, etc.  It has
+some handy features to [[http://itch.io/jams][manage and track gamejams]] as well.  It was
+[[http://leafo.net/posts/introducing_itchio.html][created]] by [[https://twitter.com/moonscript][@moonscript]].
+
+In this post I'll look at the fees charged itch.io and the supported
+payment platforms and how to set up an account.  The [[http://itch.io/about/faq][faq]] covers these
+and other topics in more detail so make sure you peruse it.
+
+*** Fees
+There are a few payment options available on itch.io.  Here's how the
+fees break down.  I'll use the example of selling $5.00 and $2.00
+games to show the revenue you could expect to receive after taking out
+the various fees.
+
+It's worth noting that, at of the time of this post, *itch.io is not
+collecting fees*.  I'll still present the revenue calculations with
+the itch.io slice factored in, but itch.io won't start collecting a
+percentage of the game price until a later, unspecified date.
+
+Itch.io currently provides three options for handling payments: [[http://payments.amazon.com/][Amazon
+Payments]], [[http://www.paypal.com/][PayPal]] and [[http://stripe.com/][Stripe]].
+
+**** Supported currencies
+PayPal appears to be the least restrictive in terms of the countries
+and currencies it handles.  Stripe handles U.S., Canada, U.K.,
+Australia, and Ireland.  Stripe has an [[https://support.stripe.com/questions/what-countries-does-stripe-support][open beta for some European
+countries]]. Amazon Payments only handles U.S. currencies.
+Non-U.S. purchases through Amazon Payments are [[https://payments.amazon.com/sdui/sdui/about?nodeId%3D77175#aspd_cost][only allowed via credit
+card transactions, and there's an additional charge]].
+
+**** Fee structure
+The fees for [[https://stripe.com/us/pricing][Stripe]] and [[https://www.paypal.com/webapps/mpp/merchant-fees][PayPal]] work similarly, assuming you're
+processing less than $3,000 monthly.  There's a base fee of $0.30 +
+2.9% for each transaction.  Amazon Payments works similarly if the
+price is above $10.00, but below $9.99, there's a $0.05 surcharge +
+5%.
+
+Itch.io will charge a 10% fee for each transaction, but currently this
+charge is waived.
+
+**** Down and dirty
+So let's do the math for the two example prices I mentioned above:
+
+For Stripe and PayPal the numbers look like this:
+#+BEGIN_SRC
+$5 - ($5 * 0.1) - $0.30 - ($5 * 0.029) = 4.055
+
+$2 - ($2 * 0.1) - $0.30 - ($2 * 0.029) = 1.442
+#+END_SRC
+
+I'm not sure how the rounding works.  I will have to reach out to
+itch.io and the payment handling services to see how they handle
+tenths of a cent.
+
+For Amazon Payments the numbers look like:
+
+#+BEGIN_SRC
+$5 - ($5 * 0.1) - $0.05 - ($5 * 0.05) = 4.20
+
+$2 - ($2 * 0.1) - $0.05 - ($2 * 0.05) = 1.65
+#+END_SRC
+
+Keep in mind, for each of these calculations you'll get an extra $0.50
+and $0.20, respectively, since the itch.io surcharge is not in effect.
+
+That's how the numbers breakdown for these price points.  I'm not
+planning on charging money right now, but it's nice to see the real
+amounts you can expect to see.  I am really bad at reasoning about
+these sorts of percentages in the abstract.
+
+*** Signing up
+Signing up for itch.io was easy.  I created an account and checked =I
+want to distribute games=.  That's it.  It's very straightforward.
+
+Now I have a relatively spartan page at [[http://zerosalife.itch.io/][zerosalife.itch.io]].
+
+*** The next step
+
+I'd like to brand and personalize my itch.io page, but I don't think
+that the time for that is now.  Somewhere down the road, I'll look
+into itch.io's powerful customization tools.
+
+The obvious clear thing to do with my new itch.io account is to
+release a game.  Tune in next week for exactly that!
