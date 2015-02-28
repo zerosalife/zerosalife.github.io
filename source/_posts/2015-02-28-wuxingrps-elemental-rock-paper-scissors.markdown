@@ -32,8 +32,6 @@ In an earlier version of the prototype the player and enemy choices that resulte
 
 So making this prototype led to unexpected value.  Let that be a lesson to keep it simple, because *sometimes the simple things that are achievable within your current skillset can lead to surprising results*.
 
-## The next version
-
 ## Conclusion
 
 I'm really interested in feedback, so [give the game a try](http://zerosalife.itch.io/wuxingrps) and tell me what you think in the comments or on [twitter](http://twitter.com/zerosalife).  If you're an artist interested in gussying up my shameful attempts at UI and UX, please please please reach out to me.  I'd love to improve this prototype.
