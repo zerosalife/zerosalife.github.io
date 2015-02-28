@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: UI | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/ui/atom.xml" rel="self"/>
+  <link href="http://zerosalife.github.io/"/>
+  <updated>2015-02-28T17:22:56-06:00</updated>
+  <id>http://zerosalife.github.io/</id>
+  <author>
+    <name><![CDATA[zerosalife]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[WuXingRPS: Elemental Rock Paper Scissors]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/02/28/wuxingrps-elemental-rock-paper-scissors/"/>
+    <updated>2015-02-28T10:13:28-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/02/28/wuxingrps-elemental-rock-paper-scissors</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/images/assets/WuXing-screenshot.png"></p>
+
+<p><a href="http://zerosalife.itch.io/wuxingrps">WuXingRPS</a> is a prototype 5-way rock paper scissors game.  The eventual purpose for the prototype is to serve as a minigame to teach elemental interactions in an RPG battle system.</p>
+
+<p>I chose WuXing elements because they provide a nontraditional (in terms of typical RPGs) series of interesting interactions.</p>
+
+<h2>The Five Elements</h2>
+
+<p><img class="center" src="/images/assets/WuXing-interactions.png"></p>
+
+<p>The five elements are Earth (yellow), Metal (silver), Water (black), Wood (green), and Fire (red).  They have two levels of interactions that you can look at anytime by pressing the <code>?</code> button in the bottom right corner.</p>
+
+<p>The <strong>Destruction</strong> interaction, indicated by red arrows, shows that, for example, Metal chops Wood.  So Metal beats Wood.</p>
+
+<p>The <strong>Generation</strong> interaction shows that, for example, Water grows Wood.  So Wood &ldquo;eats&rdquo; Water.</p>
+
+<p>That&rsquo;s all there is to it.  Click those element disks and try to get more points than the computer.</p>
+
+<h2>Surprise: iteration to find mechanics</h2>
+
+<p>In an earlier version of the prototype the player and enemy choices that resulted in a generation relationship interaction led to a draw.  This meant that 3/5 interactions were draws.  The prototype was less exciting than the current version.  This iteration was critical in achieving a sense of fun in this prototype, as well as fleshing out the goals of an eventual RPG battle system using the elemental mechanic.</p>
+
+<p>So making this prototype led to unexpected value.  Let that be a lesson to keep it simple, because <em>sometimes the simple things that are achievable within your current skillset can lead to surprising results</em>.</p>
+
+<h2>The next version</h2>
+
+<h2>Conclusion</h2>
+
+<p>I&rsquo;m really interested in feedback, so <a href="http://zerosalife.itch.io/wuxingrps">give the game a try</a> and tell me what you think in the comments or on <a href="http://twitter.com/zerosalife">twitter</a>.  If you&rsquo;re an artist interested in gussying up my shameful attempts at UI and UX, please please please reach out to me.  I&rsquo;d love to improve this prototype.</p>
+]]></content>
+  </entry>
+  
+</feed>
