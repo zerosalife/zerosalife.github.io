@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rules | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/rules/atom.xml" rel="self"/>
+  <link href="http://zerosalife.github.io/"/>
+  <updated>2015-03-14T14:25:18-05:00</updated>
+  <id>http://zerosalife.github.io/</id>
+  <author>
+    <name><![CDATA[zerosalife]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Math Team Hearts]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/03/14/math-team-hearts/"/>
+    <updated>2015-03-14T14:14:29-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/03/14/math-team-hearts</id>
+    <content type="html"><![CDATA[<p>Math Team Hearts is a speedy modification to Hearts that ironically involves less math than the vanilla game.</p>
+
+<!--more-->
+
+
+<p>From <a href="http://www.crcpress.com/product/isbn/9781482217162">Game Design Workshop</a> by <a href="https://twitter.com/kinojabber">Tracy Fullerton</a>:</p>
+
+<blockquote><p>One good way to train yourself in the design of game mechanics is to challenge yourself with controlled design exercises in which you take an existing game system, set a new player experience goal, and make changes to the system to meet that goal.</p></blockquote>
+
+<h2>The Goal</h2>
+
+<p>We needed a game that played quickly, without a defined endpoint (e.g. when one player reaches 100 points in normal <em>Hearts</em>) because this game was played in free time waiting for school to start or waiting for the bus.  There was no time to spend tallying up scores, counting hearts and doing awkward math.</p>
+
+<p>The rules also modify the risk-reward value of shooting the moon to make it more attractive.  We found the game to be more interesting when multiple parties were invested in shooting the moon with less drawback from accumulating hearts.</p>
+
+<h2>The Rules</h2>
+
+<p>The game plays like normal <em><a href="http://en.wikipedia.org/wiki/Hearts">Hearts</a></em>, except taking <strong>hearts</strong> no longer gives you points.</p>
+
+<ul>
+<li>Taking any number of <strong>hearts</strong> without <strong>shooting the moon</strong> gives you 0 points.</li>
+<li>Taking no <strong>hearts</strong> in a round gives you 1 point.</li>
+<li><strong>Shooting the moon</strong> gives you 2 points.</li>
+<li>Taking the <strong>queen of spades</strong> without <strong>shooting the moon</strong> gives you -1 point.</li>
+</ul>
+
+
+<p>The <strong>player</strong> with the most points at the end of play wins.</p>
+
+<p>For more variety, use <strong>dealer</strong>&rsquo;s choice drafting rules.  Each round, the <strong>dealer</strong> decides on how players will pass cards prior to play.
+<strong>Players</strong> take turns dealing.</p>
+
+<h2>Tweaks</h2>
+
+<p>I&rsquo;m working from memory, so I&rsquo;m not sure I&rsquo;ve got the point values exactly right.  Perhaps there should be more of a penalty for taking the Queen without shooting the moon.  That would create a more exciting risk-reward trade-off.</p>
+]]></content>
+  </entry>
+  
+</feed>
