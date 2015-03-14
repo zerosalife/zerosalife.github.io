@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-02-28T17:22:56-06:00</updated>
+  <updated>2015-02-28T17:24:30-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -41,8 +41,6 @@
 <p>In an earlier version of the prototype the player and enemy choices that resulted in a generation relationship interaction led to a draw.  This meant that 3/5 interactions were draws.  The prototype was less exciting than the current version.  This iteration was critical in achieving a sense of fun in this prototype, as well as fleshing out the goals of an eventual RPG battle system using the elemental mechanic.</p>
 
 <p>So making this prototype led to unexpected value.  Let that be a lesson to keep it simple, because <em>sometimes the simple things that are achievable within your current skillset can lead to surprising results</em>.</p>
-
-<h2>The next version</h2>
 
 <h2>Conclusion</h2>
 
