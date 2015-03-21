@@ -3213,6 +3213,548 @@ into itch.io's powerful customization tools.
 
 The obvious clear thing to do with my new itch.io account is to
 release a game.  Tune in next week for exactly that!
+** VGBC Game Design Review: Gunstar Heroes
+I take a look at #GunstarHeroes in a game design review format
+inspired by @danctheduck.  #VGBC #Sega #Genesis #Treasure
+
+- design
+- VGBC
+- run-and-gun
+- Sega
+- Genesis
+- Treasure
+
+Inspired by Daniel Cook's game design review format over at [[http://www.lostgarden.com/2005/09/game-design-review-advance-wars-dual.html][Lost
+Garden]].  I'm going to take a similar approach to my write up covering
+/Gunstar Heroes/, the first book we've chosen for the VGBC.
+
+*** The Format
+- *A brief history*: What is the historical context of the design of
+  /Gunstar Heroes/?
+- *Game anthropology*: What market niche does /Gunstar Heroes/ fill?
+- *Layered game design*: What major design lesson(s) does /Gunstar
+  Heroes/ teach us?
+- *What worked and what didn't?*: What design decisions worked and
+  what fell flat?
+
+
+
+*** Brief history
+/Gunstar Heroes/ was the first release by nascent studio Treasure.
+But the developers at Treasure were old hats at run-and-gun game
+design.  Like a group of seasoned musicians coming together to form a
+supergroup, the studio was created by former Konami employees, to
+create great games.  Treasure was much smaller than Konami, lending
+the studio a dynamic, independent vibe that we would label AA or indie
+today.
+
+Treasure's developers, designers, and artists cut their teeth making
+some of Konami's biggest hits.  While the list is long, ranging from
+classics like Castlevania and Metal Gear to relatively unknown games
+like Snatcher and Rocket Knight Adventures, for the purpose of this
+article I'd like to compare arguably the greatest of its forebears:
+/Contra III: The Alien Wars/.
+
+Games in the run-and-gun genre are straightforward, you run (and jump)
+and shoot at enemies (with guns).  /Contra III/ was the pinnacle of
+the genre in 1993, when /Gunstar Heroes/ was released, by way of the
+game's attractive graphics, challenging gameplay, excellent music, and
+varied level design.  /Gunstar Heroes/ represented the developers at
+Treasure taking the lessons from /Contra III/ and seeking to improve
+and expand on the previous success.
+*** Game anthropology
+
+/Gunstar Heroes/ entered a market during the heyday of the run-and-gun
+action platformer genre.  The hardware of the 16-bit consoles allowed
+for better graphics and supported larger numbers of sprites, leading
+to more engaging and challenging gameplay.  But the hardware and
+arguably the developer mindsets had not yet evolved to support many
+other approaches to gameplay.
+
+There are too many copy-cats and also-rans to list.  /Contra/ was a
+hit and every publisher wanted their own version.  Treasure sought set
+/Gunstar Heroes/ off from the crowd by designing expressive sprites
+and dynamic gameplay.
+
+To my mind this approach worked, although I'm not aware of the sales
+figures from the time.  The graphics of /Gunstar Heroes/ have helped
+it occupy mindshare over the long run.  In fact, in my opinion,
+/Gunstar Heroes/ looks more like a predecessor to the popular /Metal
+Slug/ series than a sequel or offshoot from /Contra/.  For a game to
+have this longevity, there must be something the designers have done
+right.
+*** First Layer: Core Mechanics
+**** Bosses
+An entire article could be devoted to the boss design in /Gunstar
+Heroes/ by "cool character creator" HAN aka Tetsuhiko Kikuchi.  But
+the scope of this article is less concerned with the design of
+specific encounters and more focused on the overall experience.  A
+thorough exploration of the boss design would also require more skill
+in this game than your humble author possesses.
+*** Second Layer: Creating new variation
+**** Controls
+Fixed Shot vs Free Shot
+
+In addition to /Contra/'s ducking and climbing mechanics, /Gunstar
+Heroes/ adds slides, throws and jump attacks.
+
+A lot of the additional moves grant invincibility frames.  Sometimes
+the only way to get through difficult sections of the game without
+taking damage is to slide or jump attack at the correct time, using
+the invincibility frames to avoid damage.
+
+The throws also allow for a new interaction between player characters:
+throwing the other player.  It can be annoying but that is half of the
+fun of playing these cooperative games.  The players can also throw
+some of the bombs that are thrown by enemies.
+
+**** Weapons
+Meaningful choices between the various weapon types allow players to
+experiment to find combinations that work best for each situation and
+style of play.  Players can adjust the difficulty of the game by
+restricting the available weapon combinations, and since weapons
+persist between levels players can attempt full game restriction-based
+challenge runs.  The fact that the designers alllowed for interactions
+between the different weapon types simply adds to the depth of
+available choices.
+
+**** Life is no longer a binary
+
+Players and bosses have numeric vitality indicators.  Vitality is
+tracked as an integer value rather than a binary alive/dead state.
+
+You start at a vitality of 100 and, notably, there is no maximum.  You
+can gain more than 100 vitality, adding even more a buffer between
+playing and the icy clutches of the grim reaper.
+
+Boss vitality is indicated on the screen, communicating directly to
+the player when the boss will be defeated.  This removes some of the
+ambiguity of earlier titles, where often the indications that the boss
+was being damaged could be lost in the sea of explosions and
+screenshake that characterize the run-and-gun genre.
+
+This approach gives you free range as a designer to throw more and
+more challenges at the player.
+*** Additional Layers
+
+**** Destructible environment
+
+**** Enemy interactions
+When thrown, enmies can hit other enemies.  Another notable type of
+enemy interaction is that bombs thrown by enemies can damage other
+enemies and the thrower.
+
+The result of these additional layers of player choice and
+interactivity serve to situate the player characters and thus the
+players in the world.  /Gunstar Heroes/ feels less like a series of
+obstacles to overcome and more like a madcap adventure in which you
+are desperately trying to survive.  Contrast this with the original
+/Ninja Gaiden/, in which player agency is reduced to memorizing and
+executing a series of well-timed button presses.
+
+**** The boardgame level
+/Gunstar Heroes/ combines the throwing mechanic with a giant die to
+create the most unique level in the game: The Dice Palace.  The player
+characters must move through a board populated with boss encounters,
+item rooms and spaces that can send the players back to the start of
+the board or require the players to fight a boss without weapons.
+
+The addition of this level creates a dynamic experience that changes
+with each play through.  The result is a truly unique than the simple
+test of skill that most boss rushes represent, although there is a
+more typical boss rush present in one of the later levels.
+
+**** Anti-gravity mine carts
+While games like /Battletoads/ have previously done speedy vehicular
+mine-cart-style levels, /Gunstar Heroes/ takes it to another level
+(forgive me).  The modified mine carts in /Gunstar Heroes/ allow the
+players to flip gravity /a la/ under-appreciated late-generation NES
+action platformer /Metal Storm/.
+
+**** The genre switch
+Although this is not unique to /Gunstar Heroes/ this may be one of the
+first times that developers have tried this.  In the last level, the
+gameplay changes from run-and-gun action to a side view bullet-hell
+shoot em up.  While interesting, to me, this is not where the bulk of
+the /Gunstar Heroes/ experience lies.
+*** What worked?
+- Each player can decide on a unique approach, using the various
+  weapon combinations and shot types.
+
+- Some of the combinations were overpowered but that was half of the
+  fun.  Less skilled players could equip the over powered
+  lighting/chaser combination, while experienced players could try to
+  become proficient in the other combinations.
+
+- Anti gravity communicated through overlap with previous commands
+  like jump attack.
+
+- Switching between combined and individual weapon powerups allows the
+  player to exercise choice, a fundamental goal of game design and
+  play in general.
+
+*** What didn't work?
+The length.  This is hardly a damning complaint, but the game could be
+longer.  There are seven stages, a couple of which are totally
+innovative, but most of them have been done before.  Perhaps it was
+simply a problem of time and cartridge size constraints.
+
+The poor, poor framerate couldn't always keep up with the destruction
+on the screen, but again, this is likely due to constraints of the
+technology during the early 90s.
+
+The airship level sets up rules and breaks them.
+
+*** Conclusion
+/Gunstar Heroes/ illustrates the maxim (allegedly) espoused by Sid
+Meier: "A game is a series of interesting choices."  It takes ideas
+formed in the great /Contra III/ and expands the number of interesting
+choices and interactions for the player, leading to an undeniable
+classic.
+
+I hope you've enjoyed this Design Review.  It requires a lot of effort
+to put these together, so I'd like to take my hat off to Daniel Cook
+at Lost Garden, who inspired me to use this format.  I'd also like to
+thank [[twitter.com/InvolvingSalmon][Rick Wolf]] for contributing to and helping to crystallize the
+ideas in this article.  I also could not have done this without the
+research cited in my Resources, so shoutout to [[http://wikipedia.org][Wikipedia]] and [[http://www.hardcoregaming101.net][Hardcore
+Gaming 101]].
+
+Expect more Design Reviews as our book club mulls over more games in
+the coming months.
+
+
+*** Resources
+I got my information from:
+- [[http://en.wikipedia.org/wiki/Gunstar_Heroes]]
+- [[http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm]]
+
+Many thanks to the original authors of these articles.
+
+** WuXingRPS: Elemental Rock Paper Scissors
+- UI
+- UX
+- game
+
+{% img /images/assets/screenshot %}
+
+WuXingRPS is a prototype 5-way rock paper scissors game.  The eventual
+purpose for the prototype is to serve as a minigame to teach elemental
+interactions in an RPG battle system.
+
+I chose WuXing elements because they provide a nontraditional (in
+terms of typical RPGs) series of interesting interactions.
+
+*** The Five Elements
+{% img /images/assets/interactions %}
+
+The five elements are Earth (yellow), Metal (silver), Water (black),
+Wood (green), and Fire (red).  They have two levels of interactions
+that you can look at anytime by pressing the =?= button in the bottom
+right corner.
+
+The *Destruction* interaction, indicated by red arrows, shows that,
+for example, Metal chops Wood.  So Metal beats Wood.
+
+The *Generation* interaction shows that, for example, Water grows
+Wood.  So Wood "eats" Water.
+
+That's all there is to it.  Click those element disks and try to get
+more points than the computer.
+
+*** Surprise: iteration to find mechanics
+In an earlier version of the prototype the player and enemy choices
+that resulted in a generation relationship interaction led to a draw.
+This meant that 3/5 interactions were draws.  The prototype was less
+exciting than the current version.  This iteration was critical in
+achieving a sense of fun in this prototype, as well as fleshing out
+the goals of an eventual RPG battle system using the elemental
+mechanic.
+
+So making this prototype led to unexpected value.  Let that be a
+lesson to keep it simple, because *sometimes the simple things that
+are achievable within your current skillset can lead to surprising
+results*.
+
+*** The next version
+
+*** Conclusion
+I'm really interested in feedback, so give the game a try and tell me
+what you think in the comments or on twitter.  If you're an artist
+interested in gussying up my shameful attempts at UI and UX, please
+please please reach out to me.  I'd love to improve this prototype.
+** Math Team Hearts
+Following exercise from @kinojabber: the rules for Math Team Hearts, a
+speedy mod to Hearts that ironically involves less math.
+
+- design
+- mechanics
+- game
+- rules
+
+Math Team Hearts is a speedy modification to Hearts that ironically
+involves less math than the vanilla game.
+
+From [[http://www.crcpress.com/product/isbn/9781482217162][Game Design Workshop]] by [[https://twitter.com/kinojabber][Tracy Fullerton]]:
+
+#+BEGIN_QUOTE
+One good way to train yourself in the design of game mechanics is to
+challenge yourself with controlled design exercises in which you take
+an existing game system, set a new player experience goal, and make
+changes to the system to meet that goal.
+#+END_QUOTE
+
+*** The Goal
+We needed a game that played quickly, without a defined endpoint
+(e.g. when one player reaches 100 points in normal Hearts) because
+this game was played in free time waiting for school to start or
+waiting for the bus.  There was no time to spend tallying up scores,
+counting hearts and doing awkward math.
+
+The rules also modify the risk-reward value of shooting the moon to
+make it more attractive.  We found the game to be more interesting
+when multiple parties were invested in shooting the moon with less
+drawback from accumulating hearts.
+
+*** The Rules
+The game plays like normal Hearts, except taking hearts no longer
+gives you points.
+
+- Taking any number of hearts without shooting the moon gives you 0
+  points.
+- Taking no hearts in a round gives you 1 point.
+- Shooting the moon gives you 2 points.
+- Taking the Queen without shooting the moon gives you -1 point.
+
+The player with the most points at the end of play wins.
+
+For more variety, use Dealer's choice drafting rules.  Each round, the
+Dealer decides on how players will pass cards prior to play.
+
+*** Tweaks
+
+I'm working from memory, so I'm not sure I've got the point values
+exactly right.  Perhaps there should be more of a penalty for taking
+the Queen without shooting the moon.  That would create a more
+exciting risk-reward trade-off.
+** Create a Dictionary with multiple keys in Unity C#
+A workaround to access a dictionary with multiple keys in Unity C#
+#unity #unity3d #programming
+
+- C#
+- Unity
+- Unity3d
+- Unity2d
+
+I want to create a lookup table for comparing a player choice and an
+enemy choice.  Each pair of choices can lead to a variety of
+outcomes.  So, in order to map the relationship between choice pair
+and outcome, I've decided to use a Dictionary with choice pairs as
+keys and outcomes as values.
+
+To me, the obvious way to do this is by using [[http://en.wikipedia.org/wiki/Tuple][tuples]] to encode the
+choice pairs.  I've already enumerated the choices so it's simple
+enough to pair them off in tuples for use as keys for the Dictionary.
+This approach worked, however, I ran into a couple of problems along
+the way.
+
+*** Unity's C# doesn't have Tuples
+
+Unity's [[http://en.wikipedia.org/wiki/Mono_%2528software%2529][Mono framework]] includes a C# compiler, runtime, and lots of
+libraries.  The version of Mono included with version =4.6.1f1= of
+Unity is =2.6.5 (tarball)=.  Mono recreates some of the features of
+.NET, but apparently not a =Tuple= type.  The =Tuple= type got added
+to .NET in version =4.0=.  Looks like Mono version =2.8= may support
+it, but I'll have to wait for the folks at Unity to update Mono.
+
+I checked the version of Mono using the following code:
+#+BEGIN_SRC csharp
+  using System;
+  using System.Reflection;
+
+  Type type = Type.GetType("Mono.Runtime");
+  if (type != null) {
+      MethodInfo displayName = type.GetMethod("GetDisplayName",
+                                              BindingFlags.NonPublic | BindingFlags.Static);
+      if (displayName != null)
+        Debug.Log(displayName.Invoke(null, null));
+   }
+
+#+END_SRC
+
+Since Mono =2.8= was released 4 years ago, it seems like Unity is in
+no rush to update their Mono version.  So it looks like I'll have to
+roll my own tuple class.
+
+
+*** Implementing a Pairs class
+
+Since I'm only concerned with pairs of choices, I decided to implement
+the simplest possible solution.  I followed the implementation of a
+=Pair= class from [[http://stackoverflow.com/questions/569903/multi-value-dictionary][this Stack Overflow question regarding encoding
+multiple values in Dictionaries]].  The trick is that the tuple
+implemented here can be used to encode keys as well.
+
+The critically important part of the =Pair= class is that it inherits
+from =IEquatable= and implements methods for determining equality and
+hashing.  The fundamental thing a Dictionary needs is to test whether
+keys are equal in order to store or retrieve the correct values and it
+typically does so by hashing the key.
+
+I won't bother reproducing the code for the =Pair= class here.  You
+can [[http://stackoverflow.com/a/569920][check it out for yourself]].
+
+*** How I wish I could use it
+
+Once I implemented the =Pair= class in its own file =Pair.cs=, I had
+to import it in the file where I wanted to create the Dictionary.
+Also note that I'm [[http://msdn.microsoft.com/en-us/library/bb531208.aspx][using literal syntax to construct the Dictionary
+when I define it]].  And yes, unlike most uses of curly braces in C#,
+that =;= is necessary to end the line after the literal.
+
+#+BEGIN_SRC csharp
+  using Pair;
+
+  // Not shown: lots of enums...
+
+  Dictionary<Pair<Choice, Choice>, Outcome> lookup = new Dictionary<Pair<Choice, Choice>, Outcome> {
+    {Pair(Choice.ChoiceOne, Choice.ChoiceOne), Outcome.Win},
+    {Pair(Choice.ChoiceOne, Choice.ChoiceTwo), Outcome.Lose},
+  };
+
+  Outcome outcome = lookup[Pair(ChoiceOne, ChoiceOne)];
+#+END_SRC
+
+But alas, I run into this problem: =Using the generic type
+`Pair<TFirst,TSecond>' requires `2' type argument(s)=.  I can't seem
+to find any documentation detailing what I'm doing wrong.  Maybe it's
+just a problem with Unity's version of Mono .NET runtime.
+
+*** The workaround: A Dictionary of Dictionaries
+I've found a workaround.  It is, in my humble opinion, way less
+elegant, but it gets the job done.
+
+#+BEGIN_SRC csharp
+  // Not shown: lots of enums...
+
+  Dictionary<Choice, Dictionary<Choice, Outcome>> lookup = new Dictionary<Choice, Outcome> {
+    {Choice.ChoiceOne, new Dictionary<Choice, Outcome> {
+        {Choice.ChoiceOne, Outcome.Win},
+        {Choice.ChoiceTwo, Outcome.Lose}
+      }},
+    {Choice.ChoiceTwo, new Dictionary<Choice, Outcome> {
+        {Choice.ChoiceOne, Outcome.Lose},
+        {Choice.ChoiceTwo, Outcome.Win}
+      }}};
+
+  Outcome outcome = lookup[Choice.ChoiceOne][Choice.ChoiceOne];
+
+#+END_SRC
+
+*** Conclusion
+
+I find the tuple key code way more readable than the Dictionary of
+Dictionaries code.  You can imagine how the legibility of the
+Dictionary of Dictionaries approach decreases with additional keys but
+the tuple key code legibility remains the same no matter how many keys
+you add.  This is probably a moot point for using two keys, as I have
+in this example, but I hope you can appreciate why I think the tuple
+approach is more elegant.
+
+If you have any insight into how to solve the =Using the generic type
+`Pair<TFirst,TSecond>' requires `2' type argument(s)= error I
+encountered using the =Pair= class, please let me know in the comments
+below or on [[http://twitter.com/zerosalife][twitter]].
+
+
+** AdventureJam Prep
+[[http://jams.gamejolt.io/adventurejam]]
+
+[[http://www.adventurejam.org/forums/]]
+
+[[http://jams.gamejolt.io/adventurejam/rules]]
+
+A post announcing my intent to participate in #adventurejam.
+
+- adventurejam
+
+In *two weeks*, April 3 - April 17, [[https://twitter.com/fenderbenter][Cassie Benter]] and [[https://twitter.com/stacydavidson][Stacy Davidson]]
+are hosting a game jam focused on creating adventure games called
+[[http://adventurejam.org][#adventurejam]].  I share the organizers' love of point-and-click
+adventure games, and I'm totally thrilled to announce my
+participation.  #Adventurejam is a fortnight-long competition to
+create and adventurous game-ish experience.
+
+The [[http://jams.gamejolt.io/adventurejam/rules][rules]] of #adventurejam are more strict than [[http://procjam.tumblr.com/][#procjam]], [[http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/][the jam I
+participated in last fall]].  They require that the work on a game take
+place over the two weeks of the #adventurejam competition.  I don't
+expect to have the time to create something that is truly competitive,
+but I may as well play along.  Like #procjam, I plan on spending the
+next series of blog posts covering #adventurejam-related content.
+
+So, click every pixel on the screen, grab everything in sight, exhaust
+every dialog option, and combine items in new and mysterious ways,
+it's #adventurejam time.
+
+I'd like to spend the rest of this post exploring the options in terms
+of game engines for creating adventure games.  The website and forums
+were great resources for constructing this list.  And I suspect that
+I'll come across some new resources as the jam progresses.
+
+*** Engines (Or, A Decidedly Unresearched and Perfunctory List)
+
+**** Graphical
+***** Windows
+- [[http://www.adventuregamestudio.co.uk/]]
+
+- [[http://dead-code.org/home/]]
+
+***** Non-windows
+- [[http://codecanyon.net/item/jaguar-lucasarts-adventure-game-engine/8753130]]
+
+- [[http://www.visionaire-studio.net/][Visionaire]]
+
+- [[http://www.alpacaengine.com/]]
+***** Unity
+- [[http://age.seccia.com/]]
+
+- [[http://www.adventurecreator.org/][Adventure Creator]]
+
+**** Text
+- [[http://inform7.com/][Inform]]
+- [[http://textadventures.co.uk/quest][Quest]]
+- [[http://twinery.org/][Twine]]
+
+*** The Adventure Jam Forums
+
+The [[http://www.adventurejam.org/forums/][#adventurejam forums]] were a great resource for constructing this
+overview of adventure game engines.  I only expect the information
+there to grow as the jam progresses.
+
+*** My Plan
+Given my workload, familiarity with and access to the tools listed
+above, and artistic abilities, I'm going to go with Twine to get any
+real progress done in the time constraints.
+
+Like my [[http://zerosalife.github.io/blog/categories/procjam/][series of posts on #procjam]], I'll tag all the posts related to
+#adventurejam so they're easily accessible.
+
+[[https://indiegraph.wordpress.com/2013/01/14/twine-tips-for-beginners/]]
+
+
+*** How to participate
+[[http://jams.gamejolt.io/adventurejam/faq]]
+
+*** Ideas
+[[http://www.aesopfables.com/cgi/aesop1.cgi?1&TheBullandtheGoat]]
+[[http://ancienthistory.about.com/library/bl/bl_aesop_lion_bull.htm]]
+
+*** Art tutorials
+[[http://www.kafkaskoffee.com/tutorials.shtml]] (*Warning*: some art is
+NSFW).
+*** Engine
+[[http://age.seccia.com/]]
+
 * Starting a Game Studio Business
 [[http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq%3D1][http://gamedev.stackexchange.com/questions/54407/what-type-of-legal-entity-do-i-need-for-my-game-company?rq=1]]
 
@@ -4349,58 +4891,6 @@ double fine adventure Kickstarter one of te extra was a playground
 with Tim Schafer playing dott and full their. Tim explains the genesis
 of one of ft puzzles at time in video. Then fails to solve it. Turns
 out it wasn't. But how could you make such an puzzle?
-*** WuXingRPS: Elemental Rock Paper Scissors
-- UI
-- UX
-- game
-
-{% img /images/assets/screenshot %}
-
-WuXingRPS is a prototype 5-way rock paper scissors game.  The eventual
-purpose for the prototype is to serve as a minigame to teach elemental
-interactions in an RPG battle system.
-
-I chose WuXing elements because they provide a nontraditional (in
-terms of typical RPGs) series of interesting interactions.
-
-**** The Five Elements
-{% img /images/assets/interactions %}
-
-The five elements are Earth (yellow), Metal (silver), Water (black),
-Wood (green), and Fire (red).  They have two levels of interactions
-that you can look at anytime by pressing the =?= button in the bottom
-right corner.
-
-The *Destruction* interaction, indicated by red arrows, shows that,
-for example, Metal chops Wood.  So Metal beats Wood.
-
-The *Generation* interaction shows that, for example, Water grows
-Wood.  So Wood "eats" Water.
-
-That's all there is to it.  Click those element disks and try to get
-more points than the computer.
-
-**** Surprise: iteration to find mechanics
-In an earlier version of the prototype the player and enemy choices
-that resulted in a generation relationship interaction led to a draw.
-This meant that 3/5 interactions were draws.  The prototype was less
-exciting than the current version.  This iteration was critical in
-achieving a sense of fun in this prototype, as well as fleshing out
-the goals of an eventual RPG battle system using the elemental
-mechanic.
-
-So making this prototype led to unexpected value.  Let that be a
-lesson to keep it simple, because *sometimes the simple things that
-are achievable within your current skillset can lead to surprising
-results*.
-
-**** The next version
-
-**** Conclusion
-I'm really interested in feedback, so give the game a try and tell me
-what you think in the comments or on twitter.  If you're an artist
-interested in gussying up my shameful attempts at UI and UX, please
-please please reach out to me.  I'd love to improve this prototype.
 
 *** Pay what you mean
 For a given service with a given fee structure, how much should you
@@ -4551,135 +5041,6 @@ Dictionary of Lists in C# for Unity.
   }
 
 #+END_SRC
-
-** Create a Dictionary with multiple keys in Unity C#
-A workaround to access a dictionary with multiple keys in Unity C#
-#unity #unity3d #programming
-
-- C#
-- Unity
-- Unity3d
-- Unity2d
-
-I want to create a lookup table for comparing a player choice and an
-enemy choice.  Each pair of choices can lead to a variety of
-outcomes.  So, in order to map the relationship between choice pair
-and outcome, I've decided to use a Dictionary with choice pairs as
-keys and outcomes as values.
-
-To me, the obvious way to do this is by using [[http://en.wikipedia.org/wiki/Tuple][tuples]] to encode the
-choice pairs.  I've already enumerated the choices so it's simple
-enough to pair them off in tuples for use as keys for the Dictionary.
-This approach worked, however, I ran into a couple of problems along
-the way.
-
-*** Unity's C# doesn't have Tuples
-
-Unity's [[http://en.wikipedia.org/wiki/Mono_%2528software%2529][Mono framework]] includes a C# compiler, runtime, and lots of
-libraries.  The version of Mono included with version =4.6.1f1= of
-Unity is =2.6.5 (tarball)=.  Mono recreates some of the features of
-.NET, but apparently not a =Tuple= type.  The =Tuple= type got added
-to .NET in version =4.0=.  Looks like Mono version =2.8= may support
-it, but I'll have to wait for the folks at Unity to update Mono.
-
-I checked the version of Mono using the following code:
-#+BEGIN_SRC csharp
-  using System;
-  using System.Reflection;
-
-  Type type = Type.GetType("Mono.Runtime");
-  if (type != null) {
-      MethodInfo displayName = type.GetMethod("GetDisplayName",
-                                              BindingFlags.NonPublic | BindingFlags.Static);
-      if (displayName != null)
-        Debug.Log(displayName.Invoke(null, null));
-   }
-
-#+END_SRC
-
-Since Mono =2.8= was released 4 years ago, it seems like Unity is in
-no rush to update their Mono version.  So it looks like I'll have to
-roll my own tuple class.
-
-
-*** Implementing a Pairs class
-
-Since I'm only concerned with pairs of choices, I decided to implement
-the simplest possible solution.  I followed the implementation of a
-=Pair= class from [[http://stackoverflow.com/questions/569903/multi-value-dictionary][this Stack Overflow question regarding encoding
-multiple values in Dictionaries]].  The trick is that the tuple
-implemented here can be used to encode keys as well.
-
-The critically important part of the =Pair= class is that it inherits
-from =IEquatable= and implements methods for determining equality and
-hashing.  The fundamental thing a Dictionary needs is to test whether
-keys are equal in order to store or retrieve the correct values and it
-typically does so by hashing the key.
-
-I won't bother reproducing the code for the =Pair= class here.  You
-can [[http://stackoverflow.com/a/569920][check it out for yourself]].
-
-*** How I wish I could use it
-
-Once I implemented the =Pair= class in its own file =Pair.cs=, I had
-to import it in the file where I wanted to create the Dictionary.
-Also note that I'm [[http://msdn.microsoft.com/en-us/library/bb531208.aspx][using literal syntax to construct the Dictionary
-when I define it]].  And yes, unlike most uses of curly braces in C#,
-that =;= is necessary to end the line after the literal.
-
-#+BEGIN_SRC csharp
-  using Pair;
-
-  // Not shown: lots of enums...
-
-  Dictionary<Pair<Choice, Choice>, Outcome> lookup = new Dictionary<Pair<Choice, Choice>, Outcome> {
-    {Pair(Choice.ChoiceOne, Choice.ChoiceOne), Outcome.Win},
-    {Pair(Choice.ChoiceOne, Choice.ChoiceTwo), Outcome.Lose},
-  };
-
-  Outcome outcome = lookup[Pair(ChoiceOne, ChoiceOne)];
-#+END_SRC
-
-But alas, I run into this problem: =Using the generic type
-`Pair<TFirst,TSecond>' requires `2' type argument(s)=.  I can't seem
-to find any documentation detailing what I'm doing wrong.  Maybe it's
-just a problem with Unity's version of Mono .NET runtime.
-
-*** The workaround: A Dictionary of Dictionaries
-I've found a workaround.  It is, in my humble opinion, way less
-elegant, but it gets the job done.
-
-#+BEGIN_SRC csharp
-  // Not shown: lots of enums...
-
-  Dictionary<Choice, Dictionary<Choice, Outcome>> lookup = new Dictionary<Choice, Outcome> {
-    {Choice.ChoiceOne, new Dictionary<Choice, Outcome> {
-        {Choice.ChoiceOne, Outcome.Win},
-        {Choice.ChoiceTwo, Outcome.Lose}
-      }},
-    {Choice.ChoiceTwo, new Dictionary<Choice, Outcome> {
-        {Choice.ChoiceOne, Outcome.Lose},
-        {Choice.ChoiceTwo, Outcome.Win}
-      }}};
-
-  Outcome outcome = lookup[Choice.ChoiceOne][Choice.ChoiceOne];
-
-#+END_SRC
-
-*** Conclusion
-
-I find the tuple key code way more readable than the Dictionary of
-Dictionaries code.  You can imagine how the legibility of the
-Dictionary of Dictionaries approach decreases with additional keys but
-the tuple key code legibility remains the same no matter how many keys
-you add.  This is probably a moot point for using two keys, as I have
-in this example, but I hope you can appreciate why I think the tuple
-approach is more elegant.
-
-If you have any insight into how to solve the =Using the generic type
-`Pair<TFirst,TSecond>' requires `2' type argument(s)= error I
-encountered using the =Pair= class, please let me know in the comments
-below or on [[http://twitter.com/zerosalife][twitter]].
 
 ** Probabilistic Entity Spawning in Unity JavaScript
 #unity3d
@@ -5344,7 +5705,6 @@ minibosses, bosses, or cannonfodder.  The designer rarely has a chance
 to see how the game will be played before the ability to refine or
 modify the design is long gone.
 
-
 ** Shovel Knight's Old-school Tricks
 - design
 - mechanics
@@ -5513,7 +5873,6 @@ to plan for your own projects.
 - IAP
 - (Undos?)
 - Puzzlejuice Cross-promotion
-
 
 
 ** Mario Design Interview
@@ -5740,283 +6099,6 @@ could write Twine code organized in files in a logical arrangement,
 then compile them into a single HTML file for testing and release.
 Let me know if you have suggestions that would improve this Twine
 workflow or if you take a different approach.
-
-
-** Math Team Hearts
-Following exercise from @kinojabber: Math Team Hearts, a speedy mod to
-Hearts that ironically involves less math.
-
-- design
-- mechanics
-- game
-- rules
-
-Math Team Hearts is a speedy modification to Hearts that ironically
-involves less math than the vanilla game.
-
-From [[http://www.crcpress.com/product/isbn/9781482217162][Game Design Workshop]] by [[https://twitter.com/kinojabber][Tracy Fullerton]]:
-
-#+BEGIN_QUOTE
-One good way to train yourself in the design of game mechanics is to
-challenge yourself with controlled design exercises in which you take
-an existing game system, set a new player experience goal, and make
-changes to the system to meet that goal.
-#+END_QUOTE
-
-*** The Goal
-We needed a game that played quickly, without a defined endpoint
-(e.g. when one player reaches 100 points in normal Hearts) because
-this game was played in free time waiting for school to start or
-waiting for the bus.  There was no time to spend tallying up scores,
-counting hearts and doing awkward math.
-
-The rules also modify the risk-reward value of shooting the moon to
-make it more attractive.  We found the game to be more interesting
-when multiple parties were invested in shooting the moon with less
-drawback from accumulating hearts.
-
-*** The Rules
-The game plays like normal Hearts, except taking hearts no longer
-gives you points.
-
-- Taking any number of hearts without shooting the moon gives you 0
-  points.
-- Taking no hearts in a round gives you 1 point.
-- Shooting the moon gives you 2 points.
-- Taking the Queen without shooting the moon gives you -1 point.
-
-The player with the most points at the end of play wins.
-
-For more variety, use Dealer's choice drafting rules.  Each round, the
-Dealer decides on how players will pass cards prior to play.
-
-*** Tweaks
-
-I'm working from memory, so I'm not sure I've got the point values
-exactly right.  Perhaps there should be more of a penalty for taking
-the Queen without shooting the moon.  That would create a more
-exciting risk-reward trade-off.
-
-
-
-
-** VGBC Game Design Review: Gunstar Heroes
-I take a look at #GunstarHeroes in a game design review format
-inspired by @danctheduck.  #VGBC #Sega #Genesis #Treasure
-
-- design
-- VGBC
-- run-and-gun
-- Sega
-- Genesis
-- Treasure
-
-Inspired by Daniel Cook's game design review format over at [[http://www.lostgarden.com/2005/09/game-design-review-advance-wars-dual.html][Lost
-Garden]].  I'm going to take a similar approach to my write up covering
-/Gunstar Heroes/, the first book we've chosen for the VGBC.
-
-*** The Format
-- *A brief history*: What is the historical context of the design of
-  /Gunstar Heroes/?
-- *Game anthropology*: What market niche does /Gunstar Heroes/ fill?
-- *Layered game design*: What major design lesson(s) does /Gunstar
-  Heroes/ teach us?
-- *What worked and what didn't?*: What design decisions worked and
-  what fell flat?
-
-
-
-*** Brief history
-/Gunstar Heroes/ was the first release by nascent studio Treasure.
-But the developers at Treasure were old hats at run-and-gun game
-design.  Like a group of seasoned musicians coming together to form a
-supergroup, the studio was created by former Konami employees, to
-create great games.  Treasure was much smaller than Konami, lending
-the studio a dynamic, independent vibe that we would label AA or indie
-today.
-
-Treasure's developers, designers, and artists cut their teeth making
-some of Konami's biggest hits.  While the list is long, ranging from
-classics like Castlevania and Metal Gear to relatively unknown games
-like Snatcher and Rocket Knight Adventures, for the purpose of this
-article I'd like to compare arguably the greatest of its forebears:
-/Contra III: The Alien Wars/.
-
-Games in the run-and-gun genre are straightforward, you run (and jump)
-and shoot at enemies (with guns).  /Contra III/ was the pinnacle of
-the genre in 1993, when /Gunstar Heroes/ was released, by way of the
-game's attractive graphics, challenging gameplay, excellent music, and
-varied level design.  /Gunstar Heroes/ represented the developers at
-Treasure taking the lessons from /Contra III/ and seeking to improve
-and expand on the previous success.
-*** Game anthropology
-
-/Gunstar Heroes/ entered a market during the heyday of the run-and-gun
-action platformer genre.  The hardware of the 16-bit consoles allowed
-for better graphics and supported larger numbers of sprites, leading
-to more engaging and challenging gameplay.  But the hardware and
-arguably the developer mindsets had not yet evolved to support many
-other approaches to gameplay.
-
-There are too many copy-cats and also-rans to list.  /Contra/ was a
-hit and every publisher wanted their own version.  Treasure sought set
-/Gunstar Heroes/ off from the crowd by designing expressive sprites
-and dynamic gameplay.
-
-To my mind this approach worked, although I'm not aware of the sales
-figures from the time.  The graphics of /Gunstar Heroes/ have helped
-it occupy mindshare over the long run.  In fact, in my opinion,
-/Gunstar Heroes/ looks more like a predecessor to the popular /Metal
-Slug/ series than a sequel or offshoot from /Contra/.  For a game to
-have this longevity, there must be something the designers have done
-right.
-*** First Layer: Core Mechanics
-**** Bosses
-An entire article could be devoted to the boss design in /Gunstar
-Heroes/ by "cool character creator" HAN aka Tetsuhiko Kikuchi.  But
-the scope of this article is less concerned with the design of
-specific encounters and more focused on the overall experience.  A
-thorough exploration of the boss design would also require more skill
-in this game than your humble author possesses.
-*** Second Layer: Creating new variation
-**** Controls
-Fixed Shot vs Free Shot
-
-In addition to /Contra/'s ducking and climbing mechanics, /Gunstar
-Heroes/ adds slides, throws and jump attacks.
-
-A lot of the additional moves grant invincibility frames.  Sometimes
-the only way to get through difficult sections of the game without
-taking damage is to slide or jump attack at the correct time, using
-the invincibility frames to avoid damage.
-
-The throws also allow for a new interaction between player characters:
-throwing the other player.  It can be annoying but that is half of the
-fun of playing these cooperative games.  The players can also throw
-some of the bombs that are thrown by enemies.
-
-**** Weapons
-Meaningful choices between the various weapon types allow players to
-experiment to find combinations that work best for each situation and
-style of play.  Players can adjust the difficulty of the game by
-restricting the available weapon combinations, and since weapons
-persist between levels players can attempt full game restriction-based
-challenge runs.  The fact that the designers alllowed for interactions
-between the different weapon types simply adds to the depth of
-available choices.
-
-**** Life is no longer a binary
-
-Players and bosses have numeric vitality indicators.  Vitality is
-tracked as an integer value rather than a binary alive/dead state.
-
-You start at a vitality of 100 and, notably, there is no maximum.  You
-can gain more than 100 vitality, adding even more a buffer between
-playing and the icy clutches of the grim reaper.
-
-Boss vitality is indicated on the screen, communicating directly to
-the player when the boss will be defeated.  This removes some of the
-ambiguity of earlier titles, where often the indications that the boss
-was being damaged could be lost in the sea of explosions and
-screenshake that characterize the run-and-gun genre.
-
-This approach gives you free range as a designer to throw more and
-more challenges at the player.
-*** Additional Layers
-
-**** Destructible environment
-
-**** Enemy interactions
-When thrown, enmies can hit other enemies.  Another notable type of
-enemy interaction is that bombs thrown by enemies can damage other
-enemies and the thrower.
-
-The result of these additional layers of player choice and
-interactivity serve to situate the player characters and thus the
-players in the world.  /Gunstar Heroes/ feels less like a series of
-obstacles to overcome and more like a madcap adventure in which you
-are desperately trying to survive.  Contrast this with the original
-/Ninja Gaiden/, in which player agency is reduced to memorizing and
-executing a series of well-timed button presses.
-
-**** The boardgame level
-/Gunstar Heroes/ combines the throwing mechanic with a giant die to
-create the most unique level in the game: The Dice Palace.  The player
-characters must move through a board populated with boss encounters,
-item rooms and spaces that can send the players back to the start of
-the board or require the players to fight a boss without weapons.
-
-The addition of this level creates a dynamic experience that changes
-with each play through.  The result is a truly unique than the simple
-test of skill that most boss rushes represent, although there is a
-more typical boss rush present in one of the later levels.
-
-**** Anti-gravity mine carts
-While games like /Battletoads/ have previously done speedy vehicular
-mine-cart-style levels, /Gunstar Heroes/ takes it to another level
-(forgive me).  The modified mine carts in /Gunstar Heroes/ allow the
-players to flip gravity /a la/ under-appreciated late-generation NES
-action platformer /Metal Storm/.
-
-**** The genre switch
-Although this is not unique to /Gunstar Heroes/ this may be one of the
-first times that developers have tried this.  In the last level, the
-gameplay changes from run-and-gun action to a side view bullet-hell
-shoot em up.  While interesting, to me, this is not where the bulk of
-the /Gunstar Heroes/ experience lies.
-*** What worked?
-- Each player can decide on a unique approach, using the various
-  weapon combinations and shot types.
-
-- Some of the combinations were overpowered but that was half of the
-  fun.  Less skilled players could equip the over powered
-  lighting/chaser combination, while experienced players could try to
-  become proficient in the other combinations.
-
-- Anti gravity communicated through overlap with previous commands
-  like jump attack.
-
-- Switching between combined and individual weapon powerups allows the
-  player to exercise choice, a fundamental goal of game design and
-  play in general.
-
-*** What didn't work?
-The length.  This is hardly a damning complaint, but the game could be
-longer.  There are seven stages, a couple of which are totally
-innovative, but most of them have been done before.  Perhaps it was
-simply a problem of time and cartridge size constraints.
-
-The poor, poor framerate couldn't always keep up with the destruction
-on the screen, but again, this is likely due to constraints of the
-technology during the early 90s.
-
-The airship level sets up rules and breaks them.
-
-*** Conclusion
-/Gunstar Heroes/ illustrates the maxim (allegedly) espoused by Sid
-Meier: "A game is a series of interesting choices."  It takes ideas
-formed in the great /Contra III/ and expands the number of interesting
-choices and interactions for the player, leading to an undeniable
-classic.
-
-I hope you've enjoyed this Design Review.  It requires a lot of effort
-to put these together, so I'd like to take my hat off to Daniel Cook
-at Lost Garden, who inspired me to use this format.  I'd also like to
-thank [[twitter.com/InvolvingSalmon][Rick Wolf]] for contributing to and helping to crystallize the
-ideas in this article.  I also could not have done this without the
-research cited in my Resources, so shoutout to [[http://wikipedia.org][Wikipedia]] and [[http://www.hardcoregaming101.net][Hardcore
-Gaming 101]].
-
-Expect more Design Reviews as our book club mulls over more games in
-the coming months.
-
-
-*** Resources
-I got my information from:
-- [[http://en.wikipedia.org/wiki/Gunstar_Heroes]]
-- [[http://www.hardcoregaming101.net/gunstarheroes/gunstarheroes.htm]]
-
-Many thanks to the original authors of these articles.
 
 ** Chevy Ray's level design notes
 Documented some lovely notes from @ChevyRay
