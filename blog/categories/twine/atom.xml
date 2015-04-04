@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: twine | zero's a life]]></title>
+  <title><![CDATA[Category: Twine | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/twine/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-03-21T13:55:36-05:00</updated>
+  <updated>2015-03-28T10:39:44-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,26 +14,70 @@
 
   
   <entry>
-    <title type="html"><![CDATA[A Twine Tutorial in Twine]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/"/>
-    <updated>2014-03-29T10:04:05-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine</id>
-    <content type="html"><![CDATA[<p><a href="http://ryanscasey.com/">Ryan S. Casey</a> incepted a Twine tutorial in a Twine game.  Awesome.  Take a look at it <a href="http://ryanscasey.com/twine/">here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ICE ICE Baby]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/"/>
-    <updated>2014-03-22T09:17:31-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby</id>
-    <content type="html"><![CDATA[<p><a href="http://www.thegia.com/author/avestal/">Andrew Vestal</a> of <a href="http://www.thegia.com/">the GIA</a> wrote a <a href="http://twinery.org/">Twine</a> game for <a href="http://itch.io/jam/cyberpunk-jam">#cyberpunkjam</a> called <a href="http://www.thegia.com/avestal/iceicebaby.html">ICE ICE Baby</a>.</p>
+    <title type="html"><![CDATA[Building Twine games from the command line]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/03/28/building-twine-games-from-the-command-line/"/>
+    <updated>2015-03-28T10:20:35-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/03/28/building-twine-games-from-the-command-line</id>
+    <content type="html"><![CDATA[<p>I got it in my craw to write a short <a href="http://twinery.org/">Twine</a> game a while back.  I wanted to familiarize myself with the language.  And writing a short game in Twine seemed to be lower hanging fruit than trying to implement my own text adventure framework for Unity or some other game engine.</p>
 
-<p>It&rsquo;s playable in a quick ten minutes.  Parts of the game remind me of the sorts imagination games I would play growing up. This is quite a nice conceit for a text adventure, and it works well here.</p>
+<!--more-->
 
-<p>I especially like the use of color to mark the transitions between meatspace and cyberspace.</p>
 
-<p><a href="http://www.thegia.com/author/nmaragos/">Nich Maragos</a> wrote a more thorough <a href="http://www.thegia.com/2014/03/05/appetite-for-destruction-ice-ice-baby/">critical review</a> on the GIA.</p>
+<h2>Why not Unity?</h2>
+
+<p>That being said, there are other text adventure frameworks available in the Unity App Store and there&rsquo;s a very intriguing Twine parser for Unity called <a href="http://www.platoevolved.com/blog/unity-plugins/#!/~/product/category%3D2743024&amp;id%3D35627540">Yarn</a>.</p>
+
+<p>Yarn seems well suited to writing Bioware- and Black Isle-style dialogues, where individual characters' dialogues are stored in separate Twine files with scripts to load them at runtime.  It doesn&rsquo;t seem like it does anything to solve the woes of writing a larger (than one dialog tree) game in the usual Twine GUI.</p>
+
+<p>There&rsquo;s too much to be learned by implementing things available on the Unity App Store for me to pass that up in favor of saving time.  It&rsquo;s true that my time is the most valuable asset I have, but it&rsquo;s also very likely that I&rsquo;ll spend just as much time trying to figure out or modify a Unity plugin from the App Store as I would trying to implement something similar on my own.  That being said, in this case for what I wanted to do, Twine was the path of least resistance.</p>
+
+<h2>Why the command line?</h2>
+
+<p>I live in my text editor.  So, having to write in the Twine GUI tool&rsquo;s rudimentary text editor isn&rsquo;t really my bag.  I&rsquo;ve trained my muscle memory to use these short cuts without thinking.  In fact, I don&rsquo;t even bother to backspace to correct typos, I use the keyboard shortcut in my editor to automatically step through the suggested spelling corrections for the last word.  I&rsquo;m entrenched.</p>
+
+<p>Also, dealing with the visual clutter of the Twine GUI drives me nuts.  If I want 30 links from a single Twine Passage, I don&rsquo;t want to have to do that manually, and I certainly don&rsquo;t want to try to organize it so it&rsquo;s visually appealing.  There&rsquo;re algorithms for that visualizing stuff, and algorithms are better at it (than I am).</p>
+
+<h2>Getting started</h2>
+
+<p>The first step is to <a href="https://github.com/tweecode/twee">install <code>twee</code></a> the command line tool used to compile Twine files.</p>
+
+<p>Then <em>all</em> you have to do is write your story in the proper <a href="https://github.com/tweecode/TwineQuest/wiki/Twee-file-format">Twine file format</a>.  This is the hardest part, not because the syntax is complicated, but because you&rsquo;ve actually got to come up with an interesting and interactive story!</p>
+
+<h2>Compiling your twine files</h2>
+
+<p><code>Twee</code> will output files to HTML formatted in the usual Twine style.  It gets tedious to type commands over and over again, so I automate building the HTML with a Makefile.</p>
+
+<p>```make Makefile
+story.html : <em>.tw tweefiles/</em>.tw</p>
+
+<pre><code>    ~/twee/twee -t sugarcane $^ &gt; $@
+    open story.html
+</code></pre>
+
+<p>json: <em>.tw tweefiles/</em>.tw</p>
+
+<pre><code>    ~/twee/twee -t json $^ &gt; story.json
+</code></pre>
+
+<p>clean:</p>
+
+<pre><code>    rm -f story.html
+</code></pre>
+
+<p>.PHONY: json
+```</p>
+
+<p>Placing this Makefile in the root of your twine directory allows you to compile the HTML file by the commands <code>make clean; make</code>.  You can read more about the Makefile syntax in the <a href="http://www.gnu.org/software/make/manual/make.html#Rule-Syntax">GNU make manual</a>.  The Makefile looks for Twine file format ending in <code>.tw</code>, either in the root directory or a directory for <code>tweefiles/</code>.</p>
+
+<p>You can also compile to the JSON format by using <code>make json</code>.</p>
+
+<h2>Getting some of the newer Twine features to work</h2>
+
+<p>I <a href="https://github.com/tweecode/twee/issues/12">couldn&rsquo;t get some of the newer Twine features to work</a> when I compiled the twee code from the command line.  I think this stems from the twee command line tool failing to parse some of the newer features implemented in the Twine GUI.</p>
+
+<p>In order to get some of the newer features to work, use the <code>Makefile</code> to compile the twee code, then import the resulting <code>.html</code> file in the Twine GUI.  Finally export HTML from the Twine GUI.</p>
+
+<p>That being said, it was still nice to rapidly iterate through versions of a story without having to get bogged down in the Twine GUI.  I could write Twine code organized in files in a logical arrangement, then compile them into a single HTML file for testing and release.  Let me know if you have suggestions that would improve this Twine workflow or if you take a different approach.</p>
 ]]></content>
   </entry>
   

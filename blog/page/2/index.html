@@ -9,9 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="It&rsquo;s 2015. Time to update my footer. I came across a link to a
-website called, updateyourfooter.com. It describes ways to
-dynamically update &hellip;">
+  <meta name="description" content="It&rsquo;s nice to preview some of my more complicated posts before I ship them out to the Internets. Here&rsquo;s how I do it. make preview I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +67,57 @@ dynamically update &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/10/previewing-a-post-using-octopress/">Previewing a Post Using Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-10T10:01:44-06:00" pubdate data-updated="true">Jan 10<span>th</span>, 2015</time>
+        
+         | <a href="/blog/2015/01/10/previewing-a-post-using-octopress/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s nice to preview some of my more complicated posts before I ship them out to the Internets.  Here&rsquo;s how I do it.</p>
+
+<h2>make preview</h2>
+
+<p>I <a href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/">previously posted</a> a <code>makefile</code> I use to automate deployment of my blog.  Here are the germane lines for previewing:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='make'><span class='line'><span class="nf">preview</span><span class="o">:</span>
+</span><span class='line'>  bundle <span class="nb">exec </span>rake generate <span class="o">&amp;&amp;</span> bundle <span class="nb">exec </span>rake preview
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So typing <code>make preview</code> at the command prompt will run start up <a href="https://github.com/ruby/rake">rake</a>&rsquo;s webserver at <code>http://localhost:4000</code>.  Then all I have to do is launch a browser, connect to that port, and voila: a preview of the blog that regenerates to match the changes I make live, as I make them.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -502,57 +551,6 @@ dynamically update footer info in a variety of languages.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/">Play Balance for Party vs In-depth Fighting Games</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-18T10:33:31-05:00" pubdate data-updated="true">Oct 18<span>th</span>, 2014</time>
-        
-         | <a href="/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here I&rsquo;m drawing a comparison between games that are subjectively perceived as party games and games that are more in-depth.  I&rsquo;m avoiding using loaded terms like casual and hardcore, but I think the distinction is likely the same.  Both types of games can be complex, but subtle balancing issues can affect the subjective sense of fun when playing these games.</p>
-
-<p>For discussion I&rsquo;m going to focus on relatively advanced moves in <em><a href="http://www.smashbros.com">Super Smash Bros.</a></em> and <em><a href="http://www.towerfall-game.com/">TowerFall</a></em>: L-canceling and dodge canceling, respectively.  I was inspired to examine this balance issue by a recent tweet by <em>TowerFall</em> creator, and, in the interest of full disclosure, my close personal 3DS friend, <a href="https://twitter.com/MattThorson">@MattThorson</a>.</p>
-
-<div class='embed tweet'><blockquote class="twitter-tweet"><p>L-cancelling was actually my model of what to avoid with dodge cancelling in TowerFall</p>&mdash; Matt Thorson (@MattThorson) <a href="https://twitter.com/MattThorson/status/519576823533801472">October 7, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
-
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -570,6 +568,10 @@ dynamically update footer info in a variety of languages.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/03/28/building-twine-games-from-the-command-line/">Building Twine games from the command line</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/03/21/adventurejam-prep/">AdventureJam Prep</a>
       </li>
     
@@ -583,10 +585,6 @@ dynamically update footer info in a variety of languages.</p>
     
       <li class="post">
         <a href="/blog/2015/02/21/hosting-a-game-on-itch-dot-io-account-set-up-and-transaction-fees/">Hosting a game on itch.io: account set up and transaction fees</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes/">VGBC Game Design Review: Gunstar Heroes</a>
       </li>
     
   </ul>
