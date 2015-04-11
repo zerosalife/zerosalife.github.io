@@ -4,7 +4,7 @@
   <title><![CDATA[Category: adventurejam | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/adventurejam/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-03-28T10:39:44-05:00</updated>
+  <updated>2015-04-04T14:12:59-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,66 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Deploying Twine games to Game Jolt]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/04/04/deploying-twine-games-to-game-jolt/"/>
+    <updated>2015-04-04T13:57:39-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/04/04/deploying-twine-games-to-game-jolt</id>
+    <content type="html"><![CDATA[<p>The <a href="http://jams.gamejolt.io/adventurejam">#adventurejam</a> started last night.  It lasts two weeks, until April 17.  I&rsquo;ll be covering my participation on here the blog under the <a href="http://zerosalife.github.io/blog/categories/adventurejam/">adventurejam</a> tag.</p>
+
+<p>Today, I&rsquo;m going to deploy small prototype Twine game to <a href="http://gamejolt.com">Game Jolt</a>.  I made this game a while back.  It&rsquo;s a complete prototype, but it&rsquo;s still got some display flaws.  I&rsquo;m putting it out there in all of its buggy glory.  The game served its purpose of familiarizing me with some of the ins and outs of Twine, as well as the build process I <a href="http://zerosalife.github.io/blog/2015/03/28/building-twine-games-from-the-command-line/">described last week</a>.</p>
+
+<h2><em>The Age of the Flying Boat</em></h2>
+
+<p>I made a small prototype game based off of <a href="http://en.wikipedia.org/wiki/Hayao_Miyazaki">Hayao Miyazaki</a>&rsquo;s comic that was turned into the movie <em><a href="http://www.imdb.com/title/tt0104652/">Porco Rosso</a></em>.  You must figure out how to fuel-up and start your airplane to respond to a desperate call for help.</p>
+
+<p>You can play it <a href="http://gamejolt.com/games/adventure/the-age-of-the-flying-boat/58040/">here on Game Jolt</a>.</p>
+
+<!--more-->
+
+
+<h2>Deploying a Twine game to Game Jolt</h2>
+
+<p>Here&rsquo;s what it took for me to deploy my first game on Game Jolt.</p>
+
+<h3>Play by the rules</h3>
+
+<p>First, I had to agree to the rules.</p>
+
+<h3>Title, links, and copy</h3>
+
+<p>Next up, I had to enter some information about my game.</p>
+
+<h3>Thumbnail and maturity rating</h3>
+
+<p>Then, I had a couple of necessary things to do: uploading a thumbnail and setting a surprisingly detailed maturity rating for my game.  There were several optional steps that I skipped for this game prototype.</p>
+
+<p>There were a lot of headaches with the &ldquo;thumbnail&rdquo;.  It must be 16:9 and it must be at least 588 pixels tall.  Sounds like a full screenshot, to me.  But, this constraint is necessary because Game Jolt uses a bunch of different dimensions to display the thumbnail on the website.</p>
+
+<h3>Game Distribution</h3>
+
+<p>For my next trick, I uploaded a Game Distribution of the HTML persuasion.  I needed to upload a zip file containing my twine-generated <code>index.html</code>.</p>
+
+<h3>Unhiding so people can play your game</h3>
+
+<p>Now, here&rsquo;s the critical part.  Pay attention.</p>
+
+<p>There were two (2) final steps to make my game available on the site:</p>
+
+<ul>
+<li><p>First, I had to unhide my game&rsquo;s profile when I was satisfied with information I entered.</p></li>
+<li><p>Second, and most importantly, I had to specifically unhide the <code>html</code> we uploaded as a Game Distribution in the Distributions tab.</p></li>
+</ul>
+
+
+<h2>Whew!</h2>
+
+<p>If you&rsquo;ve followed along this far, we did it!  We uploaded a game to Game Jolt.  It&rsquo;s a surprisingly detailed process, but that amount of detail gives you a lot of tools make your game&rsquo;s presentation shine.</p>
+
+<p>Go check out <em><a href="http://gamejolt.com/games/adventure/the-age-of-the-flying-boat/58040/">The Age of the Flying Boat</a></em> and let me know what you think in the comments or on <a href="http://twitter.com/zerosalife">twitter</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[AdventureJam Prep]]></title>
