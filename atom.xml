@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-04-04T14:12:59-05:00</updated>
+  <updated>2015-04-11T08:43:00-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Midway through adventurejam I'm attending Midwest Gaming Classic]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/04/11/midway-through-adventurejam-im-attending-midwest-gaming-classic/"/>
+    <updated>2015-04-11T08:22:57-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/04/11/midway-through-adventurejam-im-attending-midwest-gaming-classic</id>
+    <content type="html"><![CDATA[<h2>Quick update on #adventurejam</h2>
+
+<p>I feel like my game is on track to finish next Friday.  I&rsquo;m happy to say it&rsquo;s feature complete.  I&rsquo;ll spend the next week polishing, various flavors of bughunting (maybe even some bugfishing and bugtrapping), and, most important of all, prosifying.  My goal is to come up with a little game that&rsquo;s compelling to play, rather than just a series of links to click.</p>
+
+<h2>Midwest Gaming Classic</h2>
+
+<p>Instead of a normal blog post, I want to take this time to shout out the <a href="http://twitter.com/MGC_gaming">@MGC_gaming</a>, <a href="https://twitter.com/mgc_gaming">Midwest Gaming Classic</a>.  I&rsquo;ll be attending today.  So if you&rsquo;re there hit me up <a href="http://twitter.com/zerosalife">@zerosalife</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Deploying Twine games to Game Jolt]]></title>
@@ -1575,80 +1590,6 @@ the same tools to the player can be fun</li>
 <p>There is also <a href="https://github.com/quil/quil/wiki/Functional-mode-(fun-mode">some interesting new functional middleware for Quil</a>).  It provides a framework for you to separate out the mutable state from your Quil functions so that you avoid side effects and can program pure functions, in Processing&rsquo;s typically imperative syntax.  To get this up and running, I imagine that I will have to represent the pixel grid in the <code>state</code> map.</p>
 
 <p>Eventually, and this is beyond the scope of 1.0.0, I&rsquo;m intrigued by the possibility of <a href="https://github.com/quil/quil/wiki/ClojureScript">porting this code over to Clojurescript</a> and creating a web-based version of the application.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[INSceptahdeckWU]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/"/>
-    <updated>2014-11-08T08:28:39-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu</id>
-    <content type="html"><![CDATA[<h2>#procjam updates</h2>
-
-<p><a href="https://twitter.com/search?q%3Dprocjam">#procjam</a> is upon us.  The conference is on and popping, streaming at <a href="http://www.twitch.tv/procjam">http://www.twitch.tv/procjam</a>.  I&rsquo;ll try to precede my #procjam posts with a little update on some of the cool things I&rsquo;ve seen that need pointing out during the jam itself.</p>
-
-<p><a href="https://twitter.com/GalaxyKate">@GalaxyKate</a> will be streaming <a href="http://vimeo.com/111272682">some tutorials</a> today, following the conference.</p>
-
-<p><a href="https://twitter.com/SudoRossy">@sudorossy</a> is currently streaming some development and modeling at <a href="http://www.twitch.tv/sudorossy">http://www.twitch.tv/sudorossy</a>.  I imagine that sudorossy will continue this throughout the jam.</p>
-
-<p>The <a href="https://twitter.com/search?q%3D7dfps">#7dfps</a> jam is also going on this week.  So, I&rsquo;ve decided to release my third person procedural tweeter.  Or maybe it&rsquo;s a fourth person tweeter, third person once removed.</p>
-
-<h2>Fourth-person tweets</h2>
-
-<p>I&rsquo;m at it again, <a href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/">making a twitter bot</a> like <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>.  Only this time it&rsquo;s in a completely different language and it&rsquo;s got a completely different corpus.  Corpus is a Latin way of saying text, in case you forgot.</p>
-
-<!--more-->
-
-
-<h2>Making the tweets</h2>
-
-<p>The basic algorithm works like this.</p>
-
-<p>The bot creates a huge textfile containing lyrics from Wu Tang Clan songs.  I trim away a lot of the information about verses and choruses, but I keep the punctuation because I like the sense of rhythm it creates.</p>
-
-<p>Based on the relationship between the words in this corpus file, the bot builds a <a href="http://en.wikipedia.org/wiki/Markov_chain">markov process</a> to generate the text of the tweets.  To do so, the bot generates a transition matrix using <a href="https://github.com/Janiczek/markov">Janiczek&rsquo;s Clojure markov library</a>.  It then takes random walks through that matrix to produce a string of text with a similar relationship between words to the input lyrics corpus.</p>
-
-<h2>Making it a command line app</h2>
-
-<p>This is the first time I&rsquo;ve tried to make a command line application in Twitter.  Luckily there are some good tools out there.</p>
-
-<p>I wondered how to deal with multiple options and inputs, and the good news is: it&rsquo;s just as easy as you&rsquo;d think.  You simply add conditionals to deal with the possible behaviors of your program.  The magic of <code>parse-opts</code> handles the rest.  Options with long names automatically become keys to the option dictionary, and if you&rsquo;ve marked them as a <code>:flag</code> you can depend on the truth-value to control the flow of your program.</p>
-
-<p>You may think it&rsquo;s odd that I&rsquo;m using options instead of actions as in the <code>cli</code> example, but hey.  It&rsquo;s my program.  Your program can work the way you want it too.  I&rsquo;m going to make sure to document it so you can use the Rebel INS or build a twitter bot based on this code.</p>
-
-<p>To build the app, I use <code>lein bin</code> from the command line.</p>
-
-<p>I&rsquo;m interested in <a href="http://www.rkn.io/2014/02/06/clojure-cookbook-daemons/">daemonizing</a> the application.  That is to say, I&rsquo;m interested in turning it into a persistent process that runs in the background on my computer.  But for now, I&rsquo;ve set up a simple <a href="http://en.wikipedia.org/wiki/Cron">cron</a> script to tweet every few hours.</p>
-
-<h2>Logging</h2>
-
-<p>When I do tweets from the command line there&rsquo;s some dark magic going on that I don&rsquo;t understand.  Anyway it seems to invoke the <code>Log4j</code>, so I <a href="http://www.bahmanm.com/blogs/how-to-add-logging-to-a-clojure-project">set that up according to this blog post</a>.</p>
-
-<h2>Markov chain text generation</h2>
-
-<p>One of the quirks of the markov package I used is that it stops generating &lsquo;random walks&rsquo; when it reaches states that it has not been trained on.  As you can imagine when using imagery-rich, neologism-laden rap music, there are many words that occur once, even in a very large corpus.  Being unique is kind of a goal of the form, a fact reflected in <a href="http://en.wikipedia.org/wiki/Ol%2527_Dirty_Bastard">at least one alias</a>.</p>
-
-<p>In order to make more realistic texts, it&rsquo;s common to increase the order of the transition matrix.  That is to say, to determine the probability for a following word from the prior two or more words.  However, given my idiosyncratic corpus, this leads the &lsquo;random walk&rsquo; algorithm to halt, giving me too few words in my output.</p>
-
-<p>Interestingly, in this case, dialing back the order tends to lead to more rhyming and a few recognizable couplets, which I find kinda nice.</p>
-
-<h2>Setting up the twitter account</h2>
-
-<p>I ran into a problem getting an app set up for the bot&rsquo;s twitter account.  I am merely one person, and thus have need for merely one cell phone.  Since twitter requires a unique mobile number for authenticating apps, I was out of luck.  That is, until I found this <a href="http://dghubble.com/blog/posts/twitter-app-write-access-and-bots/">blog post showing how to use the same app on multiple bot clients</a>.</p>
-
-<p>Faithful readers may remember my wildly popular, and yet still somehow deeply underrated, <a href="http://en.wikipedia.org/wiki/Bangsian_fantasy">Bangsian</a> fantasy bot, <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>.  Using <code>twurl</code> I was able to grant access to the <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a> app credentials for the new bot.</p>
-
-<h2>Moving on</h2>
-
-<p>You can find the source code over on <a href="http://github.com/zerosalife/insceptahdeckwu">github.</a></p>
-
-<p>Here&rsquo;s one of my favorite tweets so far:</p>
-
-<div class='embed tweet'><blockquote class="twitter-tweet"><p>struck oil, the whole experience is wild</p>&mdash; INSceptah Deck (@insceptahdeckwu) <a href="https://twitter.com/insceptahdeckwu/status/529619098758823937">November 4, 2014</a></blockquote>
-<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
-
-<p>From here the sky&rsquo;s the limit.  I could try analyzing the generated text to try to build lines or stanzas.  I could try to reorder words to reflect the syntax present from the transcription.  I could try to represent individual emcees with unique corpora.</p>
 ]]></content>
   </entry>
   
