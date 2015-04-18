@@ -4355,8 +4355,8 @@ see also: [[http://grumpygamer.com/maniac_mansion_design_doc]]
 [[http://forum.unity3d.com/threads/68807-Infinite-Terrain-Free-Project-Source]]
 *** Shaders Primer
 [[http://notes.underscorediscovery.com/shaders-a-primer/]]
-
-
+*** ASCII Shader
+[[http://pentahelix.github.io/ASCII-Effect/]]
 
 *** Object reuse in Unity
 [[https://twitter.com/mikegeig/status/453239221885480960/photo/1]]
@@ -6208,19 +6208,43 @@ Every level should *feel* unique, be identifiable in some form or
 another, whether it be aesthetically or mechanically, or both
 
 ** Midway through adventurejam I'm attending Midwest Gaming Classic
+A quick update on #adventurejam because I'm attending @MGC_gaming today.
+
 - adventurejam
 
 *** Quick update on #adventurejam
 
 I feel like my game is on track to finish next Friday.  I'm happy to
 say it's feature complete.  I'll spend the next week polishing,
-bughunting, bugfishing, bugtrapping, and prosifying.  My goal is to
+various flavors of bughunting (maybe even some bugfishing and
+bugtrapping), and, most important of all, prosifying.  My goal is to
 come up with a little game that's compelling to play, rather than just
 a series of links to click.
 
-*** @MGC_gaming
+*** Midwest Gaming Classic
 Instead of a normal blog post, I want to take this time to shout out
 the [[https://twitter.com/mgc_gaming][Midwest Gaming Classic]].  I'll be attending today.  So if you're
 there hit me up [[http://twitter.com/zerosalife][@zerosalife]].
 
 ** Yarn by Infiniteammo and crew
+
+** Aurion and the Aurochs is out
+- game
+- adventurejam
+
+I'm happy to announce that my [[http://jams.gamejolt.io/adventurejam][#adventurejam]] game is finished and
+released.  I'll do a more in-depth post-mortem next week.  In the
+coming weeks, before the 30-day voting deadline ends, I want to take a
+look at some of the [[http://jams.gamejolt.io/adventurejam/games][other submissions]] that pique my interest.
+
+You can [[http://gamejolt.com/games/adventure/aurion-and-the-aurochs/60738/][play /Aurion and the Aurochs/ on gamejolt]] and you can [[https://github.com/zerosalife/aurion][view the
+source on github]].  Please leave me some feedback in the comments here
+or on twitter [[https://twitter.com/zerosalife][@zerosalife]].
+
+** Aurion and the Aurochs Post-mortem
+
+*** What Worked?
+
+*** What Didn't Work?
+
+*** What Will I Improve Next Time?
