@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-04-18T12:47:16-05:00</updated>
+  <updated>2015-04-25T11:41:05-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Aurion and the Aurochs Post-mortem]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/04/25/aurion-and-the-aurochs-post-mortem/"/>
+    <updated>2015-04-25T10:31:42-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/04/25/aurion-and-the-aurochs-post-mortem</id>
+    <content type="html"><![CDATA[<p>Join me as I look back on my <a href="http://jams.gamejolt.io/adventurejam">#adventurejam</a> game, <em><a href="http://jams.gamejolt.io/adventurejam/games/aurion-and-the-aurochs/60738">Aurion and the Aurochs</a></em>.  You can take a <a href="http://gamejolt.com/games/adventure/aurion-and-the-aurochs/60738/">look at the game</a> over on <a href="http://gamejolt.com">gamejolt</a> and you can <a href="https://github.com/zerosalife/aurion">view the sourcecode here</a>.  You can see all of the entries at <a href="http://jams.gamejolt.io/adventurejam/games">adventurejam&rsquo;s site</a>.</p>
+
+<p>I&rsquo;m going to look at things that worked, things that didn&rsquo;t, and the lessons I&rsquo;ll take with me moving forward.</p>
+
+<!--more-->
+
+
+<h2>What Worked?</h2>
+
+<h3>Pre-planning</h3>
+
+<p>I sketched out the plot using <a href="http://www.lamemage.com/microscope/">Microscope</a> to define events, locations, and potential actions and routes the player could take through the game.  Microscope&rsquo;s 3&#8221;x5&#8221; index card format made it easy to move ideas around when they weren&rsquo;t working.  And it made it easy to see the overall flow of the game.</p>
+
+<p>Once I got the plot Microscope&rsquo;d to my liking, I transferred it to the <a href="https://github.com/zerosalife/aurion#microscope">project&rsquo;s readme</a>, using checkmarks and crosses to represent the filled and unfilled circles of Microscope.  Please note, that there be spoilers, so <a href="http://gamejolt.com/games/adventure/aurion-and-the-aurochs/60738/">go play the game</a> if you haven&rsquo;t yet.</p>
+
+<p>While I wasn&rsquo;t using the circles in the typical way that Microscope proposes, it did help me visualize the potential routes for &ldquo;good&rdquo; and &ldquo;bad&rdquo; alternate endings.</p>
+
+<h3>Twine macros</h3>
+
+<p>I used some <a href="https://github.com/zerosalife/aurion#created-using-artisanal-macros-from">Twine macros</a> for the first time in this game.  I can see how they add some impressive functionality to Twine.</p>
+
+<p>I reckon, if I find the right macros, I would save a ton of time implementing functionality that has already been better implemented as drop-in macros.</p>
+
+<h2>What Didn&rsquo;t Work?</h2>
+
+<h3>Scope</h3>
+
+<p>I set out to create what I thought at the time would be a relatively simple adventure game.  However, I failed to appreciate the combinatorial proliferation of states that blossomed out as I added more and more items and interactions.</p>
+
+<h3>Timeframe and Pacing</h3>
+
+<p>I found the rigid format of the gamejam to be oppressive and stressful.</p>
+
+<h3>Prose</h3>
+
+<p>Because I was so focused on implementing the game I wanted in the time I had, I feel that the initial creative spark that drove me to design <em>Aurion and the Aurochs</em> wasn&rsquo;t allowed to grow into the creative prose flamethrower that I wanted to torch raw palceholder text into a fine <em>crème brûlée</em>.</p>
+
+<p>I can&rsquo;t force that <a href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/">hammock-driven imagination</a>, especially when I feel crunched for time.</p>
+
+<h2>What Will I Improve Next Time?</h2>
+
+<h3>Plotting</h3>
+
+<p>I will definitely continue to use Microscope for brainstorming and outlining plots.  It could be fun to collaborate with multiple people on this process, as Microscope is meant to be a multiplayer experience.</p>
+
+<p>It may be worthwhile to write-up the &ldquo;single-player&rdquo; approach I used for Microscope brainstorming.</p>
+
+<p>I&rsquo;d also be interested in trying out Tim Schafer&rsquo;s freewriting technique that I came across in the <a href="http://adventure.doublefine.com/">Double Fine Adventure documentaries</a>.  This probably merits its own post in the future.</p>
+
+<h3>Scope and Pacing</h3>
+
+<p>I will think hard about whether I should participate in gamejams with such strict time requirements for submissions.  I refuse to compromise on work and life commitments to participate in what should be a fun, creative hobby.</p>
+
+<p>I feel emotionally and creatively drained from adventurejam, and I&rsquo;d prefer to have steady, fulfilling creative output.</p>
+
+<p>I think the <em>laissez-faire</em> format of <a href="http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/">#procjam</a> was healthier.  I should also note that, although I submitted more things to procjam, the scope of each of those projects was much smaller than my project for \#adventurejam.</p>
+
+<p>I think I could have compromised on delivering what was a more or less finished game.  I could have submitted a more prototype-y version that I could work on later.  In fact, I may still refine the prose of <em>Aurion and the Aurochs</em> if I feel so inclined in the future.</p>
+
+<p>That being said, I&rsquo;m happy with the game I was able to deliver in the constraints of the jam.</p>
+
+<h3>Investigate the Twine macro ecosystem</h3>
+
+<p>Maybe in a future post, I&rsquo;ll look into some of the macros out there.  It&rsquo;d be useful to write simple example code too.</p>
+
+<h2>Conclusion</h2>
+
+<p>Well, that&rsquo;s it.  I have some good perspective going forward.  In the coming weeks, I&rsquo;m going to look at some of my favorite submissions and finalize my votes for the contest.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Aurion and the Aurochs is out]]></title>
@@ -1415,136 +1491,6 @@ revisit when I can really dig into it.</li>
 </li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[procjam comedown]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/11/22/procjam-comedown/"/>
-    <updated>2014-11-22T13:26:16-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/11/22/procjam-comedown</id>
-    <content type="html"><![CDATA[<p>Now that two weeks have passed (a geologic era in internet time), I&rsquo;m ready begin to look back on the <a href="https://twitter.com/hashtag/procjam">#procjam</a> talks and the entries to the jam that caught my eye.  I&rsquo;ve been very busy lately working on my own submissions <a href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/">INSceptahdeckwu</a> and <a href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/">Patchwerk</a>, among other commitments, so this is by no means an exhaustive look at everything in #procjam.</p>
-
-<!--more-->
-
-
-<p>Since I actually have no time at all to write a full retrospective, I&rsquo;ll have to be brief.  This post will have to serve as a collection of links and notes until I get a chance to look back in detail.  It&rsquo;s by no means complete, as I&rsquo;m still looking over all of the great entries to #procjam.  I enjoyed the interactions with the speakers and participants.  Unfortunately other commitments may occupy my time through the end of the year, so don&rsquo;t worry if the blogging is intermittent.  I&rsquo;ll revisit the #procjam talks and the submissions when I find time.</p>
-
-<h2>Great ideas</h2>
-
-<p><a href="https://twitter.com/PNJeffries/status/531592288733261824">https://twitter.com/PNJeffries/status/531592288733261824</a></p>
-
-<p><a href="https://twitter.com/redblobgames/status/527485845616340992">https://twitter.com/redblobgames/status/527485845616340992</a></p>
-
-<p><a href="https://twitter.com/mtthwcmpbll/status/527881936178778113">https://twitter.com/mtthwcmpbll/status/527881936178778113</a></p>
-
-<p><a href="https://twitter.com/DragonXVI/status/531078933161476096/photo/1">https://twitter.com/DragonXVI/status/531078933161476096/photo/1</a></p>
-
-<p><a href="https://twitter.com/TomNullpointer/status/531108417096916992">https://twitter.com/TomNullpointer/status/531108417096916992</a></p>
-
-<p><a href="http://chrismwaite.github.io/procjam/">http://chrismwaite.github.io/procjam/</a></p>
-
-<p><a href="https://github.com/chrismwaite/procjam/blob/gh-pages/app.js">https://github.com/chrismwaite/procjam/blob/gh-pages/app.js</a></p>
-
-<p><a href="http://renderingpipeline.com/2013/01/adding-analog-inputs-to-your-graphics-app/">http://renderingpipeline.com/2013/01/adding-analog-inputs-to-your-graphics-app/</a></p>
-
-<p><a href="https://github.com/keijiro/unity-midi-input">https://github.com/keijiro/unity-midi-input</a></p>
-
-<p><a href="http://cgaudino.itch.io/tailgunner">http://cgaudino.itch.io/tailgunner</a></p>
-
-<p><a href="https://github.com/civilframe/node-spacegame-ship-gen">https://github.com/civilframe/node-spacegame-ship-gen</a></p>
-
-<p><a href="http://jctwood.itch.io/dungen">http://jctwood.itch.io/dungen</a></p>
-
-<h2>Good tutorials</h2>
-
-<p>Some tutorials I came across during the jam:</p>
-
-<p><a href="http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started">http://procjam.tumblr.com/post/99689402659/procedural-generation-tutorials-getting-started</a></p>
-
-<p><a href="https://twitter.com/alexjc/status/531077005815869440">https://twitter.com/alexjc/status/531077005815869440</a></p>
-
-<p><a href="http://samatkins.co.uk/blog/2014/11/08/procjam-procedural-building-generation/">http://samatkins.co.uk/blog/2014/11/08/procjam-procedural-building-generation/</a></p>
-
-<h2>Talks</h2>
-
-<p>Here are my notes on the talks that I had a chance to see.  In lieu of writing anything up, I&rsquo;ll post them here for now.</p>
-
-<h3>Overall themes</h3>
-
-<ul>
-<li>Meaning over randomness</li>
-<li>Scale and direction
-
-<ul>
-<li>Layering</li>
-<li>Deck metaphor really nice for prototyping.</li>
-<li>Great question, how do you make sure the player is not lost in
-this huge history.  Player only aware of history of own house,
-data is gathered by reading books etc.; there&rsquo;s some context for
-the entrance of new bits of history.  Books are populated in
-places where it makes sense for them to turn up.</li>
-<li>Top-down (designer first) is easier than bottom-up (player first;
-shout out to <a href="https://twitter.com/gillianmsmith">@gillianmsmith</a> for this formulation).  Callbacks?
-How to percolate up from lower elements on tree?</li>
-</ul>
-</li>
-<li>Storytelling as divination</li>
-<li><a href="https://github.com/dariusk/NaNoGenMo">NaNoGenMo</a></li>
-<li>Flow in procedural generation
-
-<ul>
-<li>Meaning, codifying design principlse</li>
-<li><a href="http://artofgamedesign.com/">Art of Game Design by Jesse Schell</a></li>
-<li>a feeling of complete and energized focus in an activity, with a
-high level of enjoyment and fulfillment
-
-<ul>
-<li>clear goals</li>
-<li>no distractions
-
-<ul>
-<li>How does this figure into open world distraction fests like
-triple a sandbox games?</li>
-</ul>
-</li>
-<li>feedback</li>
-<li>continuously challenging</li>
-</ul>
-</li>
-<li>Frustration vs. boredom, find a balance</li>
-<li>Dynamic
-
-<ul>
-<li>Scale enemy level to meet player&rsquo;s level</li>
-<li>AI director, see when the player is overwhelmed, drop difficulty;
-boredom spawn more enemies.  Requires some kind of metric</li>
-</ul>
-</li>
-<li>Static
-
-<ul>
-<li>Lock and key</li>
-<li><a href="https://github.com/tcoxon/metazelda">Metazelda</a> calculates difficulty number for each room from desired flow curve.</li>
-<li>Love <a href="https://github.com/tcoxon">@tcoxon</a> &rsquo;s thoughts on less backtracking.  Algorithmically respecting players&#8217; time.</li>
-</ul>
-</li>
-<li><a href="http://www.gamasutra.com/blogs/ToniSala/20131208/206535/Game_Design_Theory_Applied_The_Flow_Channel.php">Gamasutra Toni Sala</a></li>
-</ul>
-</li>
-<li>Emotion and interactivity &#x2013; expressivity
-
-<ul>
-<li>Workflow, ease of adjustment can be good for designer and exposing
-the same tools to the player can be fun</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>itch.io</h2>
-
-<p>It looks like most of the entries are gathered on a <a href="http://itch.io/jam/procjam">#procjam itch.io page</a>.  I have no experience with <a href="http://itch.io/">itch.io</a>, but I think setting up an account and exploring what itch.io has to offer couldn&rsquo;t hurt.</p>
 ]]></content>
   </entry>
   
