@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: post-mortem | zero's a life]]></title>
+  <link href="http://zerosalife.github.io/blog/categories/post-mortem/atom.xml" rel="self"/>
+  <link href="http://zerosalife.github.io/"/>
+  <updated>2015-04-25T11:41:05-05:00</updated>
+  <id>http://zerosalife.github.io/</id>
+  <author>
+    <name><![CDATA[zerosalife]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Aurion and the Aurochs Post-mortem]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/04/25/aurion-and-the-aurochs-post-mortem/"/>
+    <updated>2015-04-25T10:31:42-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/04/25/aurion-and-the-aurochs-post-mortem</id>
+    <content type="html"><![CDATA[<p>Join me as I look back on my <a href="http://jams.gamejolt.io/adventurejam">#adventurejam</a> game, <em><a href="http://jams.gamejolt.io/adventurejam/games/aurion-and-the-aurochs/60738">Aurion and the Aurochs</a></em>.  You can take a <a href="http://gamejolt.com/games/adventure/aurion-and-the-aurochs/60738/">look at the game</a> over on <a href="http://gamejolt.com">gamejolt</a> and you can <a href="https://github.com/zerosalife/aurion">view the sourcecode here</a>.  You can see all of the entries at <a href="http://jams.gamejolt.io/adventurejam/games">adventurejam&rsquo;s site</a>.</p>
+
+<p>I&rsquo;m going to look at things that worked, things that didn&rsquo;t, and the lessons I&rsquo;ll take with me moving forward.</p>
+
+<!--more-->
+
+
+<h2>What Worked?</h2>
+
+<h3>Pre-planning</h3>
+
+<p>I sketched out the plot using <a href="http://www.lamemage.com/microscope/">Microscope</a> to define events, locations, and potential actions and routes the player could take through the game.  Microscope&rsquo;s 3"x5" index card format made it easy to move ideas around when they weren&rsquo;t working.  And it made it easy to see the overall flow of the game.</p>
+
+<p>Once I got the plot Microscope&rsquo;d to my liking, I transferred it to the <a href="https://github.com/zerosalife/aurion#microscope">project&rsquo;s readme</a>, using checkmarks and crosses to represent the filled and unfilled circles of Microscope.  Please note, that there be spoilers, so <a href="http://gamejolt.com/games/adventure/aurion-and-the-aurochs/60738/">go play the game</a> if you haven&rsquo;t yet.</p>
+
+<p>While I wasn&rsquo;t using the circles in the typical way that Microscope proposes, it did help me visualize the potential routes for &ldquo;good&rdquo; and &ldquo;bad&rdquo; alternate endings.</p>
+
+<h3>Twine macros</h3>
+
+<p>I used some <a href="https://github.com/zerosalife/aurion#created-using-artisanal-macros-from">Twine macros</a> for the first time in this game.  I can see how they add some impressive functionality to Twine.</p>
+
+<p>I reckon, if I find the right macros, I would save a ton of time implementing functionality that has already been better implemented as drop-in macros.</p>
+
+<h2>What Didn&rsquo;t Work?</h2>
+
+<h3>Scope</h3>
+
+<p>I set out to create what I thought at the time would be a relatively simple adventure game.  However, I failed to appreciate the combinatorial proliferation of states that blossomed out as I added more and more items and interactions.</p>
+
+<h3>Timeframe and Pacing</h3>
+
+<p>I found the rigid format of the gamejam to be oppressive and stressful.</p>
+
+<h3>Prose</h3>
+
+<p>Because I was so focused on implementing the game I wanted in the time I had, I feel that the initial creative spark that drove me to design <em>Aurion and the Aurochs</em> wasn&rsquo;t allowed to grow into the creative prose flamethrower that I wanted to torch raw palceholder text into a fine <em>crème brûlée</em>.</p>
+
+<p>I can&rsquo;t force that <a href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/">hammock-driven imagination</a>, especially when I feel crunched for time.</p>
+
+<h2>What Will I Improve Next Time?</h2>
+
+<h3>Plotting</h3>
+
+<p>I will definitely continue to use Microscope for brainstorming and outlining plots.  It could be fun to collaborate with multiple people on this process, as Microscope is meant to be a multiplayer experience.</p>
+
+<p>It may be worthwhile to write-up the &ldquo;single-player&rdquo; approach I used for Microscope brainstorming.</p>
+
+<p>I&rsquo;d also be interested in trying out Tim Schafer&rsquo;s freewriting technique that I came across in the <a href="http://adventure.doublefine.com/">Double Fine Adventure documentaries</a>.  This probably merits its own post in the future.</p>
+
+<h3>Scope and Pacing</h3>
+
+<p>I will think hard about whether I should participate in gamejams with such strict time requirements for submissions.  I refuse to compromise on work and life commitments to participate in what should be a fun, creative hobby.</p>
+
+<p>I feel emotionally and creatively drained from adventurejam, and I&rsquo;d prefer to have steady, fulfilling creative output.</p>
+
+<p>I think the <em>laissez-faire</em> format of <a href="http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/">#procjam</a> was healthier.  I should also note that, although I submitted more things to procjam, the scope of each of those projects was much smaller than my project for \#adventurejam.</p>
+
+<p>I think I could have compromised on delivering what was a more or less finished game.  I could have submitted a more prototype-y version that I could work on later.  In fact, I may still refine the prose of <em>Aurion and the Aurochs</em> if I feel so inclined in the future.</p>
+
+<p>That being said, I&rsquo;m happy with the game I was able to deliver in the constraints of the jam.</p>
+
+<h3>Investigate the Twine macro ecosystem</h3>
+
+<p>Maybe in a future post, I&rsquo;ll look into some of the macros out there.  It&rsquo;d be useful to write simple example code too.</p>
+
+<h2>Conclusion</h2>
+
+<p>Well, that&rsquo;s it.  I have some good perspective going forward.  In the coming weeks, I&rsquo;m going to look at some of my favorite submissions and finalize my votes for the contest.</p>
+]]></content>
+  </entry>
+  
+</feed>
