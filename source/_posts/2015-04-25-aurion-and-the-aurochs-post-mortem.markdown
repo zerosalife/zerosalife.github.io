@@ -63,7 +63,7 @@ I will think hard about whether I should participate in gamejams with such stric
 
 I feel emotionally and creatively drained from adventurejam, and I'd prefer to have steady, fulfilling creative output.
 
-I think the *laissez-faire* format of [#procjam](http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/) was healthier.  I should also note that, although I submitted more things to procjam, the scope of each of those projects was much smaller than my project for \\#adventurejam.
+I think the *laissez-faire* format of [#procjam](http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/) was healthier.  I should also note that, although I submitted more things to procjam, the scope of each of those projects was much smaller than my project for \#adventurejam.
 
 I think I could have compromised on delivering what was a more or less finished game.  I could have submitted a more prototype-y version that I could work on later.  In fact, I may still refine the prose of *Aurion and the Aurochs* if I feel so inclined in the future.
 
