@@ -4605,6 +4605,11 @@ The Metroidvania genre is a microcosm of life's journey itself.
 [[http://tumblr.austinkleon.com/post/23005382318]]
 [[http://generator.acmi.net.au/gallery/media/tim-schafer-discusses-his-writing-methods]]
 [[http://generator.acmi.net.au/gallery/media/game-masters-interview-tim-schafer]]
+*** Unity division of responsiblity
+[[https://gist.github.com/grahamboree/36a815a7aeba50a2c1f2]]
+
+
+[[https://twitter.com/mtrc/status/588370746323443712]]
 
 
 ** STARTED DRAFTS
@@ -5924,6 +5929,8 @@ For reference, Link's sprite in Legend of Zelda, an NES game, is 16 x
 16, Link's sprite in Link's Awakening, a gameboy game, is 16 x 16, and
 Link's sprite in A Link to the Past, an SNES game, is 32 x 32.
 
+http://www.fortressofdoors.com/the-quest-to-upscale-pixel-art/
+
 And [[http://en.wikipedia.org/wiki/Neo_Geo_(system)][NeoGeo]] is:
 #+BEGIN_QUOTE
 Display resolution: 320×224 (many games only used the centermost 304 pixels)
@@ -6362,3 +6369,78 @@ It'd be useful to write simple example code too.
 Well, that's it.  I have some good perspective going forward.  In the
 coming weeks, I'm going to look at some of my favorite submissions and
 finalize my votes for the contest.
+
+** Adventurejam reviews
+
+Thoughts on #adventurejam games by @quinnstephens @MechanicMoon
+@davegrey and more
+
+- game
+- review
+- adventurejam
+
+Here are some of my thoughts on my favorite entries to [[http://jams.gamejolt.io/adventurejam][#adventurejam]]
+so far.  Voting ends in a little over two weeks.  So, I'm not ruling
+out the possibility of looking at more games.
+
+*** [[http://jams.gamejolt.io/adventurejam/games/ree-s-ruined-earth-courier-service-shipment-delayed/60572][Ree's Ruined Earth Courier Service: Shipment Delayed]]
+
+- Amazing graphics.
+- Loving the dialogue.
+- I played the Unity version.
+
+I find the story, characters, and world-building totally compelling.
+
+Unfortunately interacting with the world is proving difficult.  I
+could use some indication of when I can walk offscreen.  I think that
+could help with some pathfinding issues.
+
+I'd really like to see more work done on this game, and I'd like to
+see more content in the Ree's universe.
+
+*** [[http://jams.gamejolt.io/adventurejam/games/the-endless-night-prelude/58725][The Endless Night]]
+For as much as I wanted to play this game, I couldn't.  The platform
+restrictions kept me from trying this interesting looking game.  I
+think the graphics for this game look pretty cool.
+
+*** [[http://jams.gamejolt.io/adventurejam/games/speak-of-the-cloud/60613][Speak of the Cloud]]
+- Sound effects do a good job of situating the experience in a world.
+
+- Loving the /Dr. Strangelove/ allusions.
+
+- Character animations are impressive, and jive well with the cartoon
+art style.
+
+Unfortunately, I couldn't play this game as much as I would have
+liked.  It's compelling, and the art design really sells intriguing,
+interactive spaces that make up for the ridiculous pixel-hunting
+puzzle I encountered.
+
+*** [[http://jams.gamejolt.io/adventurejam/games/walkman/60724][Walkman]]
+Like the animation and the constraint of linear movement.
+
+*** [[http://jams.gamejolt.io/adventurejam/games/cascade/58292][Cascade]]
+- Got chills from this one.
+- The sparse sound does a great job of communicating atmosphere.
+
+- Got the sense that there was more to this game than there actually
+  was (in a good way), I think due to the writing.
+
+Nice scoping for a two-week game jam.  I think this is my runner-up,
+based on the strength of its story.
+
+*** [[http://gamejolt.com/games/adventure/theropods/58684/][Therapods]]
+- Great art, animation.
+- Loving the parallax and layering.
+- Great sound design.
+- Great overall design, love the inventory and interface.
+- Great examples of one-screen puzzles.  The puzzles that I've heard
+  Tim Schafer call donkey and rider puzzles.
+
+/Theropods/ is my favorite game of the jam.  Not only did it scope the game correctly
+for the development team, it was also playable in a reasonable amount
+of time.
+
+*** Conclusion
+So there you have it, go out there and try some of these games.  If
+you only have time to try one, check out /[[http://gamejolt.com/games/adventure/theropods/58684/][Theropods]]/.  It's groovy.
