@@ -8,7 +8,7 @@ categories:
 -   design
 -   mechanics
 ---
-@NoelFB posted a [screenshot](https://twitter.com/NoelFB/status/543586120731074561/photo/1) showing how dynamic lighting works in [Skytorn](http://skytorn-game.com/).
+[@NoelFB](https://twitter.com/NoelFB/) posted a [screenshot](https://twitter.com/NoelFB/status/543586120731074561/photo/1) showing how dynamic lighting works in [Skytorn](http://skytorn-game.com/).
 
 {% tweet http://twitter.com/NoelFB/status/543586120731074561/ %}
 
