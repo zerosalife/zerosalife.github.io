@@ -4601,6 +4601,8 @@ The Metroidvania genre is a microcosm of life's journey itself.
 - level design
 
 [[https://www.youtube.com/watch?v%3DWihe7ScIZjs][https://www.youtube.com/watch?v=Wihe7ScIZjs]]
+*** Super Metroid hub and spoke and loop level design tricks
+[[https://www.youtube.com/watch?v%3DZGWHxQ2WcBE][https://www.youtube.com/watch?v=ZGWHxQ2WcBE]]
 *** Tim Schafer's freewriting technique
 [[http://tumblr.austinkleon.com/post/23005382318]]
 [[http://generator.acmi.net.au/gallery/media/tim-schafer-discusses-his-writing-methods]]
@@ -6372,8 +6374,7 @@ finalize my votes for the contest.
 
 ** Adventurejam reviews
 
-Thoughts on #adventurejam games by @quinnstephens @MechanicMoon
-@davegrey and more
+Thoughts on #adventurejam games by @quinnstephens @MechanicMoon @davegrey and more
 
 - game
 - review
