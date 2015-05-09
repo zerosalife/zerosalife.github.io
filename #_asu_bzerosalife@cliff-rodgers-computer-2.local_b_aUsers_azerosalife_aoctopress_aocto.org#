@@ -6170,6 +6170,8 @@ that means that this introduces a subliminal pause that adds a kind of
 weight to the action.
 
 ** Raycast Lighting in Skytorn
+Discerning the lighting algorithm @NoelFB is using for #Skytorn
+
 
 - lighting
 - design
@@ -6249,6 +6251,7 @@ the [[https://twitter.com/mgc_gaming][Midwest Gaming Classic]].  I'll be attendi
 there hit me up [[http://twitter.com/zerosalife][@zerosalife]].
 
 ** Yarn by Infiniteammo and crew
+https://github.com/InfiniteAmmoInc/Yarn
 
 ** Aurion and the Aurochs is out
 - game
