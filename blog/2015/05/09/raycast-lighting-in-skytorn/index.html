@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: review - zero's a life</title>
+  <title>Raycast Lighting in Skytorn - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Category: review">
+  <meta name="description" content="@NoelFB posted a screenshot showing how dynamic lighting works in Skytorn. What Raycast lighting (roughly) looks like in Skytorn. Each triangle is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.ioblog/categories/review">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -66,123 +66,117 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Review</h1>
+    
+      <h1 class="entry-title">Raycast Lighting in Skytorn</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-09T09:21:03-05:00" pubdate data-updated="true">May 9<span>th</span>, 2015</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
+
+
+<div class="entry-content"><p>@NoelFB posted a <a href="https://twitter.com/NoelFB/status/543586120731074561/photo/1">screenshot</a> showing how dynamic lighting works in <a href="http://skytorn-game.com/">Skytorn</a>.</p>
+
+<div class='embed tweet'><blockquote class="twitter-tweet"><p lang="en" dir="ltr">What Raycast lighting (roughly) looks like in Skytorn. Each triangle is drawn with a gradient from color-&gt;transparent <a href="http://t.co/saqVkxxvgB">pic.twitter.com/saqVkxxvgB</a></p>&mdash; Noel Berry (@NoelFB) <a href="https://twitter.com/NoelFB/status/543586120731074561">December 13, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
 
 
-  
-  <h2>2015</h2>
 
-<article>
-  
-<h1><a href="/blog/2015/05/02/adventurejam-reviews/">Adventurejam reviews</a></h1>
-<time datetime="2015-05-02T13:51:55-05:00" pubdate><span class='month'>May</span> <span class='day'>02</span> <span class='year'>2015</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/adventurejam/'>adventurejam</a>, <a class='category' href='/blog/categories/game/'>game</a>, <a class='category' href='/blog/categories/review/'>review</a></span>
-</footer>
+<!--more-->
 
 
-</article>
+<h2>The algorithm</h2>
+
+<p>From what I can tell, the algorithm looks something like this:</p>
+
+<ol>
+<li><p>Raycast out for 360° around the light source, starting in a clockwise direction.  If the rays encounter a collidable object, add it to the list of pink lines defining the polygonal shape of the lit area.  If the ray exceeds the distance of the light gradient, clamp the triangle edge defining the pink line at that distance.</p></li>
+<li><p>For each of the collidable objects encountered, extend a ray past their vertices until it hits another collidable to create the obscured lighting effect visible to down and to the right of the light source.</p></li>
+<li><p>Finally construct a set of triangles by starting from the closest edge in the list defining the pink lines to form the polygon.</p></li>
+</ol>
 
 
+<h2>That&rsquo;s all</h2>
 
-  
-  <h2>2014</h2>
-
-<article>
-  
-<h1><a href="/blog/2014/12/06/a-proper-review-of-dungen-star/">A proper review of DUNGEN [Star]</a></h1>
-<time datetime="2014-12-06T09:44:36-06:00" pubdate><span class='month'>Dec</span> <span class='day'>06</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/7dfps/'>7dfps</a>, <a class='category' href='/blog/categories/game/'>game</a>, <a class='category' href='/blog/categories/paperjam/'>paperjam</a>, <a class='category' href='/blog/categories/procjam/'>procjam</a>, <a class='category' href='/blog/categories/review/'>review</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/11/29/procjam-review/">Procjam review</a></h1>
-<time datetime="2014-11-29T09:33:47-06:00" pubdate><span class='month'>Nov</span> <span class='day'>29</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/game/'>game</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>, <a class='category' href='/blog/categories/procjam/'>procjam</a>, <a class='category' href='/blog/categories/review/'>review</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/08/16/one-tap-quest-a-pachinko-rpg/">One Tap Quest: a pachinko RPG</a></h1>
-<time datetime="2014-08-16T10:39:34-05:00" pubdate><span class='month'>Aug</span> <span class='day'>16</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/game/'>game</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>, <a class='category' href='/blog/categories/review/'>review</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/07/26/space-is-read/">Space Is Read</a></h1>
-<time datetime="2014-07-26T11:08:44-05:00" pubdate><span class='month'>Jul</span> <span class='day'>26</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/game/'>game</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>, <a class='category' href='/blog/categories/review/'>review</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/03/22/ice-ice-baby/">ICE ICE Baby</a></h1>
-<time datetime="2014-03-22T09:17:31-05:00" pubdate><span class='month'>Mar</span> <span class='day'>22</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cyberpunk/'>cyberpunk</a>, <a class='category' href='/blog/categories/cyberpunkjam/'>cyberpunkjam</a>, <a class='category' href='/blog/categories/game/'>game</a>, <a class='category' href='/blog/categories/review/'>review</a>, <a class='category' href='/blog/categories/twine/'>twine</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/">Some thoughts on Attack of the Friday Monsters</a></h1>
-<time datetime="2014-02-01T08:32:40-06:00" pubdate><span class='month'>Feb</span> <span class='day'>01</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/3ds/'>3DS</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>, <a class='category' href='/blog/categories/review/'>review</a></span>
-</footer>
-
-
-</article>
-
+<p>That&rsquo;s it for this week.  Let me know if you have any insight into this or other lighting algorithms in the comments or on the tweets.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-09T09:21:03-05:00" pubdate data-updated="true">May 9<span>th</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/lighting/'>lighting</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/05/02/adventurejam-reviews/" title="Previous Post: Adventurejam reviews">&laquo; Adventurejam reviews</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 
 </div>
@@ -268,7 +262,10 @@
       var disqus_shortname = 'zerosalife';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
