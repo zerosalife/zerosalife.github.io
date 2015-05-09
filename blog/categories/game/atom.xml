@@ -4,7 +4,7 @@
   <title><![CDATA[Category: game | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/game/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-04-25T19:59:22-05:00</updated>
+  <updated>2015-05-02T13:56:26-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,80 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Adventurejam reviews]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/05/02/adventurejam-reviews/"/>
+    <updated>2015-05-02T13:51:55-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/05/02/adventurejam-reviews</id>
+    <content type="html"><![CDATA[<p>Here are some of my thoughts on my favorite entries to <a href="http://jams.gamejolt.io/adventurejam">#adventurejam</a> so far.  Voting ends in a little over two weeks.  So, I&rsquo;m not ruling out the possibility of looking at more games.</p>
+
+<!--more-->
+
+
+<h2><a href="http://jams.gamejolt.io/adventurejam/games/ree-s-ruined-earth-courier-service-shipment-delayed/60572">Ree&rsquo;s Ruined Earth Courier Service: Shipment Delayed</a></h2>
+
+<ul>
+<li>Amazing graphics.</li>
+<li>Loving the dialogue.</li>
+<li>I played the Unity version.</li>
+</ul>
+
+
+<p>I find the story, characters, and world-building totally compelling.</p>
+
+<p>Unfortunately interacting with the world is proving difficult.  I could use some indication of when I can walk offscreen.  I think that could help with some pathfinding issues.</p>
+
+<p>I&rsquo;d really like to see more work done on this game, and I&rsquo;d like to see more content in the Ree&rsquo;s universe.</p>
+
+<h2><a href="http://jams.gamejolt.io/adventurejam/games/the-endless-night-prelude/58725">The Endless Night</a></h2>
+
+<p>For as much as I wanted to play this game, I couldn&rsquo;t.  The platform restrictions kept me from trying this interesting looking game.  I think the graphics for this game look pretty cool.</p>
+
+<h2><a href="http://jams.gamejolt.io/adventurejam/games/speak-of-the-cloud/60613">Speak of the Cloud</a></h2>
+
+<ul>
+<li>Sound effects do a good job of situating the experience in a world.</li>
+<li>Loving the <em>Dr. Strangelove</em> allusions.</li>
+<li>Character animations are impressive, and jive well with the cartoon art style.</li>
+</ul>
+
+
+<p>Unfortunately, I couldn&rsquo;t play this game as much as I would have liked.  It&rsquo;s compelling, and the art design really sells intriguing, interactive spaces that make up for the ridiculous pixel-hunting puzzle I encountered.</p>
+
+<h2><a href="http://jams.gamejolt.io/adventurejam/games/walkman/60724">Walkman</a></h2>
+
+<p>Like the animation and the constraint of linear movement.</p>
+
+<h2><a href="http://jams.gamejolt.io/adventurejam/games/cascade/58292">Cascade</a></h2>
+
+<ul>
+<li>Got chills from this one.</li>
+<li>The sparse sound does a great job of communicating atmosphere.</li>
+<li>Got the sense that there was more to this game than there actually was (in a good way), I think due to the writing.</li>
+</ul>
+
+
+<p>Nice scoping for a two-week game jam.  I think this is my runner-up, based on the strength of its story.</p>
+
+<h2><a href="http://gamejolt.com/games/adventure/theropods/58684/">Therapods</a></h2>
+
+<ul>
+<li>Great art, animation.</li>
+<li>Loving the parallax and layering.</li>
+<li>Great sound design.</li>
+<li>Great overall design, love the inventory and interface.</li>
+<li>Great examples of one-screen puzzles.  The puzzles that I&rsquo;ve heard Tim Schafer call donkey and rider puzzles.</li>
+</ul>
+
+
+<p><em>Theropods</em> is my favorite game of the jam.  Not only did it scope the game correctly for the development team, it was also playable in a reasonable amount of time.</p>
+
+<h2>Conclusion</h2>
+
+<p>So there you have it, go out there and try some of these games.  If you only have time to try one, check out <em><a href="http://gamejolt.com/games/adventure/theropods/58684/">Theropods</a></em>.  It&rsquo;s groovy.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Aurion and the Aurochs Post-mortem]]></title>
@@ -175,34 +249,6 @@
 <h2>Conclusion</h2>
 
 <p>I&rsquo;m really interested in feedback, so <a href="http://zerosalife.itch.io/wuxingrps">give the game a try</a> and tell me what you think in the comments or on <a href="http://twitter.com/zerosalife">twitter</a>.  If you&rsquo;re an artist interested in gussying up my shameful attempts at UI and UX, please please please reach out to me.  I&rsquo;d love to improve this prototype.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A proper review of DUNGEN [Star]]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star/"/>
-    <updated>2014-12-06T09:44:36-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star</id>
-    <content type="html"><![CDATA[<p><em>My green fingers sweat on the handle of my pistol as I creep through the door, into the next room.  I found two boxes of ammunition in the previous room so I&rsquo;m well equipped for the next horrible monster I encounter.  My grip on the pistol tightens as a horrible three-legged spherical thing jumps down from the ceiling, pirouetting to land on its feet and shooting a stream of acidic liquid at me.</em></p>
-
-<p><em>&ldquo;Oof,&rdquo; is all I manage to get out, as I feel the Burster&rsquo;s fluid eat into my skin.  Without thinking I fire at it, killing the thing in two shots.</em></p>
-
-<p><em>While reloading my pistol, I notice a glowing jewel on the stone.  If it&rsquo;s what the briefings said, this is the teleport stone that will allow me to phase out of our normal reality just long enough to escape the next deadly monster I encounter in</em> DUNGEN [Star].</p>
-
-<!--more-->
-
-
-<p><a href="/images/assets/DUNGENStar.gif"><img class="center" src="/images/assets/DUNGENStar.gif"></a></p>
-
-<p>(Please excuse my lame attempt at illustrating play with a .gif).</p>
-
-<p><a href="http://zerosalife.github.io/blog/2014/11/29/procjam-review/">Last week, I posted an overview of my favorite #procjam games</a>.  I felt remissed when I got a tweet from the designer, asking whether I had actually printed and played the game.  I hadn&rsquo;t and neither had any of the other reviewers who praised it.  So, this week I took some time to cut out the cards on my computer, effectively making a print-and-play game I could play in Illustrator without bothering to print it out.</p>
-
-<p>After the initial time investment, <em><a href="http://jctwood.itch.io/dungen">DUNGEN [Star]</a></em>, a print-and-play game designed by <a href="https://twitter.com/JctWood">@JctWood</a> for the <a href="https://twitter.com/hashtag/paperjam">#paperjam</a>, <a href="https://twitter.com/hashtag/procjam">#procjam</a>, and <a href="https://twitter.com/hashtag/7dfps">#7dfps</a> gamejams, plays quickly.  Especially if you are brave enough to choose the roguelike secret difficulty level of starting with 1HP.  Add to that, the advanced enemy rules, which give the monsters more personality on top of their already evocative illustrations and you&rsquo;ve got a challenging game.</p>
-
-<p>I&rsquo;m a fan of the cartoonish art style of <em>DUNGEN [Star]</em>.  The character design does a good job of communicating interesting variety, even though there are few monsters to go up against.</p>
-
-<p><em>DUNGEN [Star]</em> runs out of steam quickly, but I think the intent behind it is clear.  This game does a good job of bringing the feel of a procedural first-person shooter with roguelike elements to the print-and-play market.  I think extending the combat to involve multiple weapons would add some depth to the game.  I would like to see more enemies, particularly ones with more interesting advanced enemy rules.  I&rsquo;d also like to see an overarching goal or theme tying together <em>DUNGEN [Star]</em>&rsquo;s dungeoning and star, so you feel more satisfied when you survive the dungeon.  With that criticism said, I still think <em>DUNGEN [Star]</em> succeeds as a gamejam game and a great prototype from which to build.</p>
 ]]></content>
   </entry>
   
