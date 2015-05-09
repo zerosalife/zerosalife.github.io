@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-05-02T13:56:26-05:00</updated>
+  <updated>2015-05-09T09:29:34-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Raycast Lighting in Skytorn]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/"/>
+    <updated>2015-05-09T09:21:03-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn</id>
+    <content type="html"><![CDATA[<p>@NoelFB posted a <a href="https://twitter.com/NoelFB/status/543586120731074561/photo/1">screenshot</a> showing how dynamic lighting works in <a href="http://skytorn-game.com/">Skytorn</a>.</p>
+
+<p><div class='embed tweet'>Tweet could not be processed</div></p>
+
+<!--more-->
+
+
+<h2>The algorithm</h2>
+
+<p>From what I can tell, the algorithm looks something like this:</p>
+
+<ol>
+<li><p>Raycast out for 360° around the light source, starting in a clockwise direction.  If the rays encounter a collidable object, add it to the list of pink lines defining the polygonal shape of the lit area.  If the ray exceeds the distance of the light gradient, clamp the triangle edge defining the pink line at that distance.</p></li>
+<li><p>For each of the collidable objects encountered, extend a ray past their vertices until it hits another collidable to create the obscured lighting effect visible to down and to the right of the light source.</p></li>
+<li><p>Finally construct a set of triangles by starting from the closest edge in the list defining the pink lines to form the polygon.</p></li>
+</ol>
+
+
+<h2>That&rsquo;s all</h2>
+
+<p>That&rsquo;s it for this week.  Let me know if you have any insight into this or other lighting algorithms in the comments or on the tweets.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Math Team Hearts]]></title>
@@ -527,48 +556,6 @@ the same tools to the player can be fun</li>
 <h2>itch.io</h2>
 
 <p>It looks like most of the entries are gathered on a <a href="http://itch.io/jam/procjam">#procjam itch.io page</a>.  I have no experience with <a href="http://itch.io/">itch.io</a>, but I think setting up an account and exploring what itch.io has to offer couldn&rsquo;t hurt.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Play balance for party vs in-depth fighting games]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games/"/>
-    <updated>2014-10-18T10:33:31-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/10/18/play-balance-for-party-vs-in-depth-fighting-games</id>
-    <content type="html"><![CDATA[<p>Here I&rsquo;m drawing a comparison between games that are subjectively perceived as party games and games that are more in-depth.  I&rsquo;m avoiding using loaded terms like casual and hardcore, but I think the distinction is likely the same.  Both types of games can be complex, but subtle balancing issues can affect the subjective sense of fun when playing these games.</p>
-
-<p>For discussion I&rsquo;m going to focus on relatively advanced moves in <em><a href="http://www.smashbros.com">Super Smash Bros.</a></em> and <em><a href="http://www.towerfall-game.com/">TowerFall</a></em>: L-canceling and dodge canceling, respectively.  I was inspired to examine this balance issue by a recent tweet by <em>TowerFall</em> creator, and, in the interest of full disclosure, my close personal 3DS friend, <a href="https://twitter.com/MattThorson">@MattThorson</a>.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<!--more-->
-
-
-<p>Thorson previously pointed out an interesting <a href="https://twitter.com/DamianSommer/status/519537228582633473">discussion</a> on the mechanic of L-canceling by <a href="https://twitter.com/DamianSommer/status/519537228582633473">@DamianSommer</a> among others. Sommer wants to focus on how the L-canceling mechanic reflects the design intent of the creators of <em>Super Smash Bros.</em></p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p><a href="https://twitter.com/Sonic9jct">@Sonic9jct</a> highlights the dichotomy that I am exploring here.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p><a href="http://supersmashbros.wikia.com/wiki/L-canceling">L-canceling</a> requires extremely precise timing of inputs when the character is in a particular state.  You must press L within 6 frames of landing on the ground while performing an <a href="http://supersmashbros.wikia.com/wiki/Aerial_attack">aerial attack</a>.  Since <em>Super Smash Bros.</em> runs at 60 frames per second, this requires you to press the button within 100 milliseconds of hitting the ground.  To put this in perspective, the average human reaction time is about 250 milliseconds.</p>
-
-<p><a href="https://twitter.com/whatisian">@whatisian</a> brilliantly captures the distinction in design that makes this a more difficult, in-depth, technically demanding mechanic.  If there is no drawback, then the execution of the L-cancel is practically mandatory at high levels of play.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p>Let&rsquo;s look at how this differs from <a href="http://steamcommunity.com/sharedfiles/filedetails/?id%3D250779585">dodge canceling</a> in <em>TowerFall</em> a game that Thorson intentionally designed to be welcoming to new players, while still keeping them competitive with skilled players.</p>
-
-<p>Dodge canceling requires similarly herculean inputs to pull off, to perform a dodge cancel you must press the dodge button a second time after initiating a dodge maneuver.  The dodge lasts 367 milliseconds or 22 frames at 60 fps.  This seems like a lot of time to perform the dodge cancel compared to the scant 6 frames for an L-cancel, but there&rsquo;s a catch.  In order to get the most momentum, to carry the most speed through the dodge cancel, you must perform the move on exactly the right frame.</p>
-
-<p>Sounds pretty tough, right?  If you think this would require some impressive technical skills to pull it off, you&rsquo;re right.  But there&rsquo;s a catch, turning or firing from the dodge cancel reduces the character&rsquo;s speed, making the character an easier target.</p>
-
-<p>Thorson&rsquo;s mechanic provides a similar advantage to L-canceling with the addition of the risk of failure.  Dodge cancels could allow the player to zing around the level at will, firing arrows every which way, but Thorson decided to introduce drawbacks for imprecise play that create risks for more advanced players to put them closer to parity with less skilled players.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p>These are just my thoughts on this interesting discussion.  I&rsquo;m not a high-level player of either of these games, so I may have missed some of the subtleties to which Thorson or others refer.  If you think I&rsquo;m off the mark, or you just want to weigh in on the merits of designing for &ldquo;party&rdquo; vs. &ldquo;fighting&rdquo; games, drop me a line in the comments or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 ]]></content>
   </entry>
   

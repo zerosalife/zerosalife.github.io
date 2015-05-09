@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-05-02T13:56:26-05:00</updated>
+  <updated>2015-05-09T09:29:34-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Raycast Lighting in Skytorn]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/"/>
+    <updated>2015-05-09T09:21:03-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn</id>
+    <content type="html"><![CDATA[<p>@NoelFB posted a <a href="https://twitter.com/NoelFB/status/543586120731074561/photo/1">screenshot</a> showing how dynamic lighting works in <a href="http://skytorn-game.com/">Skytorn</a>.</p>
+
+<div class='embed tweet'><blockquote class="twitter-tweet"><p lang="en" dir="ltr">What Raycast lighting (roughly) looks like in Skytorn. Each triangle is drawn with a gradient from color-&gt;transparent <a href="http://t.co/saqVkxxvgB">pic.twitter.com/saqVkxxvgB</a></p>&mdash; Noel Berry (@NoelFB) <a href="https://twitter.com/NoelFB/status/543586120731074561">December 13, 2014</a></blockquote>
+<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+
+
+<!--more-->
+
+
+<h2>The algorithm</h2>
+
+<p>From what I can tell, the algorithm looks something like this:</p>
+
+<ol>
+<li><p>Raycast out for 360° around the light source, starting in a clockwise direction.  If the rays encounter a collidable object, add it to the list of pink lines defining the polygonal shape of the lit area.  If the ray exceeds the distance of the light gradient, clamp the triangle edge defining the pink line at that distance.</p></li>
+<li><p>For each of the collidable objects encountered, extend a ray past their vertices until it hits another collidable to create the obscured lighting effect visible to down and to the right of the light source.</p></li>
+<li><p>Finally construct a set of triangles by starting from the closest edge in the list defining the pink lines to form the polygon.</p></li>
+</ol>
+
+
+<h2>That&rsquo;s all</h2>
+
+<p>That&rsquo;s it for this week.  Let me know if you have any insight into this or other lighting algorithms in the comments or on the tweets.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Adventurejam reviews]]></title>
@@ -1368,34 +1401,6 @@ function OnGUI() {
     GUI.Label(new Rect(0, 100, Screen.width, 200), "Player: " + playerScore + " CPU: " + cpuScore, style);
 }
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A proper review of DUNGEN [Star]]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star/"/>
-    <updated>2014-12-06T09:44:36-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star</id>
-    <content type="html"><![CDATA[<p><em>My green fingers sweat on the handle of my pistol as I creep through the door, into the next room.  I found two boxes of ammunition in the previous room so I&rsquo;m well equipped for the next horrible monster I encounter.  My grip on the pistol tightens as a horrible three-legged spherical thing jumps down from the ceiling, pirouetting to land on its feet and shooting a stream of acidic liquid at me.</em></p>
-
-<p><em>&ldquo;Oof,&rdquo; is all I manage to get out, as I feel the Burster&rsquo;s fluid eat into my skin.  Without thinking I fire at it, killing the thing in two shots.</em></p>
-
-<p><em>While reloading my pistol, I notice a glowing jewel on the stone.  If it&rsquo;s what the briefings said, this is the teleport stone that will allow me to phase out of our normal reality just long enough to escape the next deadly monster I encounter in</em> DUNGEN [Star].</p>
-
-<!--more-->
-
-
-<p><a href="http://zerosalife.github.io/images/assets/DUNGENStar.gif"><img class="center" src="http://zerosalife.github.io/images/assets/DUNGENStar.gif"></a></p>
-
-<p>(Please excuse my lame attempt at illustrating play with a .gif).</p>
-
-<p><a href="http://zerosalife.github.io/blog/2014/11/29/procjam-review/">Last week, I posted an overview of my favorite #procjam games</a>.  I felt remissed when I got a tweet from the designer, asking whether I had actually printed and played the game.  I hadn&rsquo;t and neither had any of the other reviewers who praised it.  So, this week I took some time to cut out the cards on my computer, effectively making a print-and-play game I could play in Illustrator without bothering to print it out.</p>
-
-<p>After the initial time investment, <em><a href="http://jctwood.itch.io/dungen">DUNGEN [Star]</a></em>, a print-and-play game designed by <a href="https://twitter.com/JctWood">@JctWood</a> for the <a href="https://twitter.com/hashtag/paperjam">#paperjam</a>, <a href="https://twitter.com/hashtag/procjam">#procjam</a>, and <a href="https://twitter.com/hashtag/7dfps">#7dfps</a> gamejams, plays quickly.  Especially if you are brave enough to choose the roguelike secret difficulty level of starting with 1HP.  Add to that, the advanced enemy rules, which give the monsters more personality on top of their already evocative illustrations and you&rsquo;ve got a challenging game.</p>
-
-<p>I&rsquo;m a fan of the cartoonish art style of <em>DUNGEN [Star]</em>.  The character design does a good job of communicating interesting variety, even though there are few monsters to go up against.</p>
-
-<p><em>DUNGEN [Star]</em> runs out of steam quickly, but I think the intent behind it is clear.  This game does a good job of bringing the feel of a procedural first-person shooter with roguelike elements to the print-and-play market.  I think extending the combat to involve multiple weapons would add some depth to the game.  I would like to see more enemies, particularly ones with more interesting advanced enemy rules.  I&rsquo;d also like to see an overarching goal or theme tying together <em>DUNGEN [Star]</em>&rsquo;s dungeoning and star, so you feel more satisfied when you survive the dungeon.  With that criticism said, I still think <em>DUNGEN [Star]</em> succeeds as a gamejam game and a great prototype from which to build.</p>
 ]]></content>
   </entry>
   
