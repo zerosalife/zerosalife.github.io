@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-05-09T09:32:42-05:00</updated>
+  <updated>2015-05-16T11:16:20-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[More Skytorn Raycast Lighting Algorithm Details]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/"/>
+    <updated>2015-05-16T11:10:29-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/">Last week</a> I covered the lighting algorithm <a href="https://twitter.com/NoelFB">@NoelFB</a> is implementing for <a href="http://skytorngame.com/">Skytorn</a>.  Noel was nice enough to correct my mistaken assumptions about the inner workings of the lighting algorithm.</p>
+
+<p>Looks like I kind of inverted the polarity of the raycasting with regard to the player and the level geometry.</p>
+
+<p><div class='embed tweet'>Tweet could not be processed</div></p>
+
+<!--more-->
+
+
+<h2>The algorithm</h2>
+
+<p>The algorithm doesn&rsquo;t raycast in the full 360° circle around player&#x2013;that would be too costly.  Instead, it takes advantage of the fact that the level&rsquo;s ground collision geometry is stored in a grid.</p>
+
+<ol>
+<li><p>Given the player&rsquo;s location, there is a small list of collision geometry in the 8 or so grid cells surrounding the player.</p></li>
+<li><p>The lighting algorithm raycasts from the corners of the level geometry to the player, instead of from the player out to the geometry.</p></li>
+<li><p>Then, to prevent the lighting from looking too triangular, the algorithm adds a few more raycasts out from the player to the geometry in between the other raycasts.</p></li>
+</ol>
+
+
+<h2>That&rsquo;s actually all there is to it</h2>
+
+<p>The algorithm I originally envisioned was naive and costly.  But, it&rsquo;s nice to hear that I wasn&rsquo;t far off&#x2013;I simply inverted the solution.  It was also nice to learn about a benefit of storing level geometry in a grid that I previously failed to appreciate.</p>
+
+<p>Heaping thanks to <a href="https://twitter.com/NoelFB/">@NoelFB</a> for helping explain the algorithm, instead of getting bent out of shape about my lame attempt to reverse engineer the inner workings of <a href="http://skytorn-game.com/">Skytorn</a> from a screenshot.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Raycast Lighting in Skytorn]]></title>
@@ -39,6 +72,10 @@
 <h2>That&rsquo;s all</h2>
 
 <p>That&rsquo;s it for this week.  Let me know if you have any insight into this or other lighting algorithms in the comments or on the tweets.</p>
+
+<h2>Update</h2>
+
+<p>After some feedback from @NoelFB, I&rsquo;ve updated the algorithm in the <a href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">following post</a>.</p>
 ]]></content>
   </entry>
   
@@ -280,175 +317,6 @@ schedules and finding a time that works for everyone in your group.</p>
 <p>What we&rsquo;ve presented here are a set of guidelines.  There are no hard and fast rules or requirements for hosting your own #VGBC.  Want to talk about knitting?  Cool.  Want to discuss your favorite sporting moments?  Great.  Board games?  Lawn darts?  More power to you.</p>
 
 <p>So start up your own #VGBC and let us know how it goes in the comments or on the twitters <a href="http://twitter.com/zerosalife">@zerosalife</a> or <a href="http://twitter.com/involvingsalmon">@InvolvingSalmon</a>.  When I post about something from #VGBC on the blog, I&rsquo;ll tag it with <a href="http://zerosalife.github.io/blog/categories/vgbc/">VGBC</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Procjam review]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/11/29/procjam-review/"/>
-    <updated>2014-11-29T09:33:47-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/11/29/procjam-review</id>
-    <content type="html"><![CDATA[<p>Looking through the entries, I could only spend a minute or two with each entry.  It helped if the game ran in my browser, so HTML and Unity were big.  Here are some of the games that caught my eye.</p>
-
-<!--more-->
-
-
-<h2>The top two</h2>
-
-<h2>JET/LAG</h2>
-
-<p>Simple instructions: &ldquo;Click to move. Kill enemies by bashing them.&rdquo;  There may be little to <em><a href="http://svblm.itch.io/jet-lag">JET/LAG</a></em>, but its excellent stylish visuals set this entry apart for me.  A CRT-like distortion bends the corners of the screen complete with scrolling scan lines, while multi-colored text oscillates above a simple square.  The simple square is your character battering your way through procedurally generated maze-like levels.</p>
-
-<p>There&rsquo;s no fancy art in this game, all the characters are made from simple shapes.  But that doesn&rsquo;t stop the graphics from impressing.  It&rsquo;s clear that <a href="https://twitter.com/JakeCataford">@JakeCataford</a> turned the juice up to 11, and it works.  The game feels great.</p>
-
-<p>As a &ldquo;rogue-like like like&rdquo; you may expect it to be deviously hard, and you&rsquo;d be right.  But the controls are responsive and the enemies telegraph their moves, so you feel like you are learning something with each death.  <a href="https://twitter.com/JakeCataford">@JakeCataford</a> clearly understands some fundamentals of engaging game design and I&rsquo;m excited to see what&rsquo;s coming up next.</p>
-
-<h2>DUNGEN [star]</h2>
-
-<p>A multi-jam entry for <a href="http://itch.io/jam/procjam">#procjam</a>, <a href="http://itch.io/jam/paper-jam-1">#paperjam</a>, and <a href="http://7dfps.com/">#7dfps</a> by <a href="https://twitter.com/JctWood">@jctwood</a>, this first person shooter uses shuffling to generate a dynamic dungeon with each play-through.  I like the simplicity of the mechanics <a href="https://twitter.com/JctWood">@jctwood</a> has designed.  Stats on a 1-10 scale can be just as interesting as stats in the thousands.  There are even multiple skin options for the protagonist&rsquo;s hand.  That&rsquo;s more advanced than all three <em><a href="http://en.wikipedia.org/wiki/Doom_%2528series%2529">DOOM</a></em>s.</p>
-
-<p>I think I&rsquo;m most interested in the literal realization of the procedural generation algorithm.  By shuffling the cards the procedural generation of the dungeon is clear both to designer and player, and this type of randomization has been used for many years in many games with standard and nonstandard sets of cards.  I&rsquo;m interested in seeing how this shuffling mechanic, both literal and metaphorical, can be leveraged to encourage new avenues of play in the future.  I can imagine tuning some aspects of a proc gen algorithm by exposing the contents to the player as a deck of cards, both literally as is typical in CCGs and other tabletop games and as a metaphor for abstraction of systems in a video game.</p>
-
-<h2>Favorite games</h2>
-
-<ul>
-<li><a href="http://svblm.itch.io/jet-lag">JET/LAG</a>
-
-<ul>
-<li>Bump or get bumped.  Excellent style and great graphics.  Very
-juicy!</li>
-</ul>
-</li>
-<li><a href="http://lissar.itch.io/peregrin">Peregrin</a>
-
-<ul>
-<li>Beautiful.</li>
-</ul>
-</li>
-<li><a href="http://entropyphi.itch.io/nauticalith">Nauticalith</a>
-
-<ul>
-<li>Simple, but really conveys a sense of scale.  Adding some mechanic
-like dynamic wind that affects sailing could put this over the
-top.</li>
-</ul>
-</li>
-<li><a href="http://tfurmanskigmailcom.itch.io/forska-web-version">Forska</a>
-
-<ul>
-<li>Great shader.  Generate some <em><a href="http://wikipedia.com/wiki/Myst">Myst</a></em>-like puzzles and you&rsquo;ve got a game, here.</li>
-</ul>
-</li>
-<li><a href="http://8-bit-ape.itch.io/infinity-explorer">Infinity Explorer</a>
-
-<ul>
-<li>Reminds me of <em><a href="http://en.wikipedia.org/wiki/Magic_Carpet_%28video_game%29">Magic Carpet</a></em>.</li>
-</ul>
-</li>
-<li><a href="http://jctwood.itch.io/dungen">DUNGEN star</a>
-
-<ul>
-<li>Print and play games are great.</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>Favorite generators</h2>
-
-<ul>
-<li><a href="http://nihilocrat.itch.io/nodemancer">http://nihilocrat.itch.io/nodemancer</a>
-
-<ul>
-<li>Interesting.  Will have to look more into it.  Now that I think
-about it, this one deserves an honorable mention for favorite tool
-of the jam.  I will revisit it in depth in a later post because the
-generation algorithm looks like an idea I&rsquo;ve batted around in my
-head.</li>
-</ul>
-</li>
-<li><a href="http://diaspora-colonies.herokuapp.com/">http://diaspora-colonies.herokuapp.com/</a>
-
-<ul>
-<li>Useful and cool!  Check out <a href="http://ptychomancer.itch.io/diaspora">http://ptychomancer.itch.io/diaspora</a>
-for some more background on this space colony generator.</li>
-</ul>
-</li>
-<li><a href="http://eduardo.itch.io/procedural-fabrics">http://eduardo.itch.io/procedural-fabrics</a>
-
-<ul>
-<li>Clever tiling textures using diagonal lines that really break up
-the patterns to make it more pleasing to the eye.</li>
-</ul>
-</li>
-<li><a href="http://ibol17.itch.io/procedural-pixel-monsters">http://ibol17.itch.io/procedural-pixel-monsters</a>
-
-<ul>
-<li>Artistic style.  Simple color palette still allow for a variety of
-expressive monsters. Interested in following up on the
-procedural tree generation–looks great!</li>
-</ul>
-</li>
-<li><a href="https://github.com/cutgarnetgames/gaia">https://github.com/cutgarnetgames/gaia</a>
-
-<ul>
-<li>Beautiful world generator with some source code worth digging
-into.</li>
-</ul>
-</li>
-<li><a href="http://gillianms.itch.io/hoopla">http://gillianms.itch.io/hoopla</a>
-
-<ul>
-<li>Really think there&rsquo;s something to explore in pixels-as-stitches
-graphics.</li>
-</ul>
-</li>
-<li><a href="http://aerique.itch.io/rocks-bitch">http://aerique.itch.io/rocks-bitch</a>
-
-<ul>
-<li>The pet rock generator I always wanted!</li>
-</ul>
-</li>
-<li><a href="http://playcrafts.itch.io/palette-generator">http://playcrafts.itch.io/palette-generator</a>
-
-<ul>
-<li>Useful.</li>
-</ul>
-</li>
-<li><a href="http://tccoxon.itch.io/dreamer">http://tccoxon.itch.io/dreamer</a>
-
-<ul>
-<li>Weird hybrid between an AI and a text adventure, but very
-  creative and very cool.</li>
-</ul>
-</li>
-<li><a href="http://itch.io/jam/procjam/rate/14026">http://itch.io/jam/procjam/rate/14026</a>
-
-<ul>
-<li>Great concept, but I need remedial lessons or a tutorial.  One to
-revisit when I can really dig into it.</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>Cool looking Windows games I couldn&rsquo;t play</h2>
-
-<ul>
-<li><a href="http://crabowitz.itch.io/key-geist">http://crabowitz.itch.io/key-geist</a>
-
-<ul>
-<li>Reminds me of <em><a href="http://en.wikipedia.org/wiki/The_Wonderful_101">Wonderful 101</a></em>–a game I haven&rsquo;t played, but probably should.  Something about the aesthetic of dozens of little flocking characters appeals to me.</li>
-</ul>
-</li>
-<li><a href="http://caseportman.itch.io/riser">http://caseportman.itch.io/riser</a>
-
-<ul>
-<li>Looks like it controls well</li>
-</ul>
-</li>
-</ul>
-
 ]]></content>
   </entry>
   
