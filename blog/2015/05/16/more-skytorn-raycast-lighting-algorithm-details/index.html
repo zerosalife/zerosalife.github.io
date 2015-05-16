@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: run-and-gun - zero's a life</title>
+  <title>More Skytorn Raycast Lighting Algorithm Details - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Category: run-and-gun">
+  <meta name="description" content="Last week I covered the lighting algorithm @NoelFB is implementing for Skytorn. Noel was nice enough to correct my mistaken assumptions about the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.ioblog/categories/run-and-gun">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -66,36 +66,121 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Run-and-gun</h1>
+    
+      <h1 class="entry-title">More Skytorn Raycast Lighting Algorithm Details</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-16T11:10:29-05:00" pubdate data-updated="true">May 16<span>th</span>, 2015</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
+
+
+<div class="entry-content"><p><a href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/">Last week</a> I covered the lighting algorithm <a href="https://twitter.com/NoelFB">@NoelFB</a> is implementing for <a href="http://skytorngame.com/">Skytorn</a>.  Noel was nice enough to correct my mistaken assumptions about the inner workings of the lighting algorithm.</p>
+
+<p>Looks like I kind of inverted the polarity of the raycasting with regard to the player and the level geometry.</p>
+
+<div class='embed tweet'><blockquote class="twitter-tweet"><p lang="en" dir="ltr">What Raycast lighting (roughly) looks like in Skytorn. Each triangle is drawn with a gradient from color-&gt;transparent <a href="http://t.co/saqVkxxvgB">pic.twitter.com/saqVkxxvgB</a></p>&mdash; Noel Berry (@NoelFB) <a href="https://twitter.com/NoelFB/status/543586120731074561">December 13, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 
 
 
-  
-  <h2>2015</h2>
 
-<article>
-  
-<h1><a href="/blog/2015/02/14/vgbc-game-design-review-gunstar-heroes/">VGBC Game Design Review: Gunstar Heroes</a></h1>
-<time datetime="2015-02-14T10:25:33-06:00" pubdate><span class='month'>Feb</span> <span class='day'>14</span> <span class='year'>2015</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/genesis/'>Genesis</a>, <a class='category' href='/blog/categories/sega/'>Sega</a>, <a class='category' href='/blog/categories/treasure/'>Treasure</a>, <a class='category' href='/blog/categories/vgbc/'>VGBC</a>, <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/run-and-gun/'>run-and-gun</a></span>
-</footer>
+<!--more-->
 
 
-</article>
+<h2>The algorithm</h2>
 
+<p>The algorithm doesn&rsquo;t raycast in the full 360° circle around player&#x2013;that would be too costly.  Instead, it takes advantage of the fact that the level&rsquo;s ground collision geometry is stored in a grid.</p>
+
+<ol>
+<li><p>Given the player&rsquo;s location, there is a small list of collision geometry in the 8 or so grid cells surrounding the player.</p></li>
+<li><p>The lighting algorithm raycasts from the corners of the level geometry to the player, instead of from the player out to the geometry.</p></li>
+<li><p>Then, to prevent the lighting from looking too triangular, the algorithm adds a few more raycasts out from the player to the geometry in between the other raycasts.</p></li>
+</ol>
+
+
+<h2>That&rsquo;s actually all there is to it</h2>
+
+<p>The algorithm I originally envisioned was naive and costly.  But, it&rsquo;s nice to hear that I wasn&rsquo;t far off&#x2013;I simply inverted the solution.  It was also nice to learn about a benefit of storing level geometry in a grid that I previously failed to appreciate.</p>
+
+<p>Heaping thanks to <a href="https://twitter.com/NoelFB/">@NoelFB</a> for helping explain the algorithm, instead of getting bent out of shape about my lame attempt to reverse engineer the inner workings of <a href="http://skytorn-game.com/">Skytorn</a> from a screenshot.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-16T11:10:29-05:00" pubdate data-updated="true">May 16<span>th</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/algorithms/'>algorithms</a>, <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/lighting/'>lighting</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/05/09/raycast-lighting-in-skytorn/" title="Previous Post: Raycast Lighting in Skytorn">&laquo; Raycast Lighting in Skytorn</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 
 </div>
@@ -181,7 +266,10 @@
       var disqus_shortname = 'zerosalife';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

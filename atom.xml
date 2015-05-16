@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-05-09T09:32:42-05:00</updated>
+  <updated>2015-05-16T11:16:20-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[More Skytorn Raycast Lighting Algorithm Details]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/"/>
+    <updated>2015-05-16T11:10:29-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/">Last week</a> I covered the lighting algorithm <a href="https://twitter.com/NoelFB">@NoelFB</a> is implementing for <a href="http://skytorngame.com/">Skytorn</a>.  Noel was nice enough to correct my mistaken assumptions about the inner workings of the lighting algorithm.</p>
+
+<p>Looks like I kind of inverted the polarity of the raycasting with regard to the player and the level geometry.</p>
+
+<div class='embed tweet'><blockquote class="twitter-tweet"><p lang="en" dir="ltr">What Raycast lighting (roughly) looks like in Skytorn. Each triangle is drawn with a gradient from color-&gt;transparent <a href="http://t.co/saqVkxxvgB">pic.twitter.com/saqVkxxvgB</a></p>&mdash; Noel Berry (@NoelFB) <a href="https://twitter.com/NoelFB/status/543586120731074561">December 13, 2014</a></blockquote>
+<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+
+
+<!--more-->
+
+
+<h2>The algorithm</h2>
+
+<p>The algorithm doesn&rsquo;t raycast in the full 360° circle around player&#x2013;that would be too costly.  Instead, it takes advantage of the fact that the level&rsquo;s ground collision geometry is stored in a grid.</p>
+
+<ol>
+<li><p>Given the player&rsquo;s location, there is a small list of collision geometry in the 8 or so grid cells surrounding the player.</p></li>
+<li><p>The lighting algorithm raycasts from the corners of the level geometry to the player, instead of from the player out to the geometry.</p></li>
+<li><p>Then, to prevent the lighting from looking too triangular, the algorithm adds a few more raycasts out from the player to the geometry in between the other raycasts.</p></li>
+</ol>
+
+
+<h2>That&rsquo;s actually all there is to it</h2>
+
+<p>The algorithm I originally envisioned was naive and costly.  But, it&rsquo;s nice to hear that I wasn&rsquo;t far off&#x2013;I simply inverted the solution.  It was also nice to learn about a benefit of storing level geometry in a grid that I previously failed to appreciate.</p>
+
+<p>Heaping thanks to <a href="https://twitter.com/NoelFB/">@NoelFB</a> for helping explain the algorithm, instead of getting bent out of shape about my lame attempt to reverse engineer the inner workings of <a href="http://skytorn-game.com/">Skytorn</a> from a screenshot.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Raycast Lighting in Skytorn]]></title>
@@ -43,6 +80,10 @@
 <h2>That&rsquo;s all</h2>
 
 <p>That&rsquo;s it for this week.  Let me know if you have any insight into this or other lighting algorithms in the comments or on the tweets.</p>
+
+<h2>Update</h2>
+
+<p>After some feedback from @NoelFB, I&rsquo;ve updated the algorithm in the <a href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">following post</a>.</p>
 ]]></content>
   </entry>
   
@@ -1226,181 +1267,6 @@ dynamically update footer info in a variety of languages.</p>
 <blockquote><p>We believe that most value in the world comes through sharing, and that music is no exception. One of the benefits of sharing is that it makes learning much easier. For example, we often hear amazing sounds on albums and wonder how they were made. However, musicians rarely share their production methods. We release all the software we write, which includes our synthesiser designs, interaction abstractions, and compositional structures, under an open source license, and we distribute it to everyone through GitHub. This makes it free and easy for anybody to copy and recreate any aspect of our work. For example, when one of our fans is interested in the sound of one of the synths we&rsquo;re using, they can go to GitHub and download the synth design as text. They can email it to their friends, read it, study it, copy it, modify it and run it to recreate the exact sound.</p></blockquote>
 
 <p>&#x2013;Sam Aaron</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Simple Mind-reading Machine in Unity JavaScript]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/"/>
-    <updated>2014-12-13T14:38:20-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript</id>
-    <content type="html"><![CDATA[<p>I ported a cool toy from <a href="http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/">Alastair Aitchison&rsquo;s blog</a> to Unity JavaScript.  The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that attempts to guess whether the player will choose Left (by pressing the left arrow key) or Right (by pressing the right arrow key).</p>
-
-<!--more-->
-
-
-<h2>How does it work?</h2>
-
-<p>Aitchison&rsquo;s blog post describes how it works:</p>
-
-<blockquote><p>How does it work? Not by mind-reading, obviously, but by exploiting
-the fact that humans do not behave as &ldquo;randomly&rdquo; as they think they
-do. The computer maintains a very simple memory that records the
-pattern of results of the last two rounds – whether the player won or
-lost, whether they switched strategy, and then whether they then won
-or last the following round. The computer then uses this to choose its
-own best strategy based on the way the player behaved last time the
-current pattern occurred. If the computer loses twice in a row using
-the current strategy, it picks a random response in the next round.</p></blockquote>
-
-<p>The original idea came from some AI work by <a href="http://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a> and D. W. Hagelbarger. <a href="http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html">They describe the internal memory of the toy mind-reader</a> that we will model using a multidimensional array <code>v</code>:</p>
-
-<blockquote><p>There are 8 possible situations and two things the player can do at each one:</p>
-
-<ol>
-<li><p>player wins, plays same, wins. Then same or differently.</p></li>
-<li><p>player wins, plays same, loses. Then same or differently.</p></li>
-<li><p>player wins, plays differently, wins. Then same or differently.</p></li>
-<li><p>player wins, plays differently, loses.Then same or differently.</p></li>
-<li><p>player loses, plays same, wins.Then same or differently.</p></li>
-<li><p>player loses, plays same, loses.Then same or differently.</p></li>
-<li><p>player loses, plays differently, wins.Then same or differently.</p></li>
-<li><p>player loses, plays differently, loses.Then same or differently.</p></li>
-</ol>
-</blockquote>
-
-<h2>Why port it?</h2>
-
-<p>Why not just take a straightforward approach, running the code myself? First, I wanted to fully understand the algorithm the hard way, by coding it line for line myself. And second, I wanted to better familiarize myself with Unity JavaScript, including its differences from C#.</p>
-
-<p>The port was relatively simple, except for two small hiccups.  First, as far as I know, Unity JavaScript doesn&rsquo;t allow for initializing a multidimensional array.  So I looped over the cells in the array, filling them that way.  I have a hunch that the cells are initialized to the <code>int</code> <code>0</code> by default, but I wanted to be explicit.  Please let me know in the comments or <a href="https://twitter.com/zerosalife">via twitter</a> if I&rsquo;m way off base.</p>
-
-<pre><code>var v : int[2, 2, 2];
-for(var cell in v) {
-    cell = 0;
-}
-</code></pre>
-
-<p>I also encountered some unfamiliar syntax: the sonorously named Elvis operator, <a href="http://en.wikipedia.org/wiki/Conditional_operator">?:</a>.  It&rsquo;s also called the <a href="http://en.wikipedia.org/wiki/Ternary_operation">ternary operator</a>, when it&rsquo;s used with 3 arguments, as I&rsquo;ve used it here.  In C-like languages it allows for succinctly stating these kinds of conditional expressions. The example below illustrates how it&rsquo;s used.</p>
-
-<pre><code>// Is the current player's choice the same as the previous player's
-// choice?
-//
-// if (playerChoice == lastChoice)
-//     sameChoice = True;
-// else
-//     sameChoice = False;
-//
-// Using ternary operator:
-v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
-</code></pre>
-
-<h2>The code</h2>
-
-<p>The ported code for the mind-reader is reproduced below.</p>
-
-<pre><code>#pragma strict
-import System.Collections.Generic;
-
-// Used to record play history
-var v: int[,,];
-var lw1: int;
-var lw2: int;
-var losingStreak: int;
-
-// The prediction of the player's next turn
-var prediction: int;
-
-// Keep track of scores
-var cpuScore: int;
-var playerScore: int;
-
-var outText: String;
-
-function Start () {
-    // Initialize matrix to track state of play history
-
-    v = new int[2, 2, 2];
-
-    for(var cell in v) {
-        cell = 0;
-    }
-
-    // No prior knowledge, so set inital prediction based on random chance.
-    prediction = flip();
-
-    // Set scores to 0
-    cpuScore = 0;
-    playerScore = 0;
-
-    // Initialize previous play and play before last win-lost trackers
-    lw1 = 0;
-    lw2 = 0;
-
-    // Output
-    outText = "";
-}
-
-function TakeTurn(playerChoice: int) {
-    // Display player and computer's choices
-    var outTextString: String = "You pressed " + playerChoice + ", " + "I guessed " + prediction + "\n";
-
-    // Computer guessed correctly
-    if (playerChoice == prediction) {
-        cpuScore++;
-        losingStreak = 0;
-        outTextString += " I WIN!\n";
-    }
-    else {
-        playerScore++;
-        losingStreak++;
-        outTextString += " YOU WIN!\n";
-    }
-
-    outText = outTextString;
-
-    // Is the current player's choice the same as the previous player's
-    // choice?
-    //
-    // if (playerChoice == lastChoice)
-    //     sameChoice = True;
-    // else
-    //     sameChoice = False;
-    //
-    // Using ternary operator:
-    v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
-    v[lw2, lw1, 0] = playerChoice;
-    lw2 = lw1;
-    lw1 = playerChoice;
-
-    // If lost more than twice in present state, choose random
-    // strategy.  Otherwise keep the same strategy.
-    prediction = v[lw2, lw1, 1] == 1 &amp;&amp; losingStreak &lt; 2 ? v[lw2, lw1, 0] : flip();
-}
-
-function flip() : int {
-    // Simulate a coin flip to produce 50:50 chance of [0, 1]
-    return Random.Range(0, 2);
-}
-
-
-function Update () {
-    if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-        TakeTurn(0);
-    }
-    if (Input.GetKeyDown(KeyCode.RightArrow)) {
-        TakeTurn(1);
-    }
-}
-
-function OnGUI() {
-    var style : GUIStyle = new GUIStyle();
-    style.fontSize = 36;
-
-    GUI.Label(new Rect(0, 0, Screen.width, 100), outText, style);
-    GUI.Label(new Rect(0, 100, Screen.width, 200), "Player: " + playerScore + " CPU: " + cpuScore, style);
-}
-</code></pre>
 ]]></content>
   </entry>
   
