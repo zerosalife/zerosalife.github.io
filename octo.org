@@ -6201,8 +6201,7 @@ From what I can tell, the algorithm looks something like this:
    edge in the list defining the pink lines to form the polygon.
 
 ** More Skytorn Raycast Lighting Algorithm Details
-Thanks @NoelFB for explaining more details of the #Skytorn lighting
-algorithm
+Thanks @NoelFB for explaining more details of the #Skytorn lighting algorithm
 
 - lighting
 - design
