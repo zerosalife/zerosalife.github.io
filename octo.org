@@ -5952,7 +5952,8 @@ And LDTV is:
 More modern resolutions considered:
 [[http://gamedevelopment.tutsplus.com/articles/quick-tip-what-is-the-best-screen-resolution-for-your-game--gamedev-14723]]
 
-PS1: 320 pixel wide resolution.
+PS1: 320 pixel wide resolution.  SOTN: 356 pixels wide, tiling pattern
+consists of 16x16 blocks tiling with 16 colors each.
 
 So the Shovel Knight screen is 25 x 15 tiles.
 
@@ -6170,6 +6171,8 @@ that means that this introduces a subliminal pause that adds a kind of
 weight to the action.
 
 ** Raycast Lighting in Skytorn
+Discerning the lighting algorithm @NoelFB used for #Skytorn
+
 
 - lighting
 - design
@@ -6196,6 +6199,50 @@ From what I can tell, the algorithm looks something like this:
    light source.
 3. Finally construct a set of triangles by starting from the closest
    edge in the list defining the pink lines to form the polygon.
+
+** More Skytorn Raycast Lighting Algorithm Details
+Thanks @NoelFB for explaining more details of the #Skytorn lighting
+algorithm
+
+- lighting
+- design
+- mechanics
+- algorithms
+
+[[http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/][Last week]] I covered the lighting algorithm [[https://twitter.com/NoelFB][@NoelFB]] is implementing for
+[[http://skytorngame.com/][Skytorn]].  Noel was nice enough to correct my mistaken assumptions
+about the inner workings of the lighting algorithm.
+
+Looks like I kind of inverted the polarity of the raycasting with
+regard to the player and the level geometry.
+
+{% tweet 543586120731074561 %}
+
+*** The algorithm
+The algorithm doesn't raycast in the full 360° circle around
+player--that would be too costly.  Instead, it takes advantage of the
+fact that the level's ground collision geometry is stored in a grid.
+
+1. Given the player's location, there is a small list of collision
+   geometry in the 8 or so grid cells surrounding the player.
+2. The lighting algorithm raycasts from the corners of the level
+   geometry to the player, instead of from the player out to the
+   geometry.
+3. Then, to prevent the lighting from looking too triangular, the
+   algorithm adds a few more raycasts out from the player to the
+   geometry in between the other raycasts.
+
+*** That's actually all there is to it
+The algorithm I originally envisioned was naive and costly.  But, it's
+nice to hear that I wasn't far off--I simply inverted the solution.
+It was also nice to learn about a benefit of storing level geometry in
+a grid that I previously failed to appreciate.
+
+Heaping thanks to @NoelFB for helping explain the algorithm, instead
+of getting bent out of shape about my lame attempt to reverse engineer
+the inner workings of Skytorn from a screenshot.
+
+
 ** Chevy Ray's level design notes
 Documented some lovely notes from @ChevyRay
 
@@ -6249,6 +6296,40 @@ the [[https://twitter.com/mgc_gaming][Midwest Gaming Classic]].  I'll be attendi
 there hit me up [[http://twitter.com/zerosalife][@zerosalife]].
 
 ** Yarn by Infiniteammo and crew
+https://github.com/InfiniteAmmoInc/Yarn
+
+*** Sample JSON output
+#+BEGIN_SRC js
+  [
+    {
+      "title": "Start",
+      "tags": "",
+      "body": "Frank: Hey, it's me. Frank.\nSammy: W-who?\nFrank: Frank! Ya know?\nSammy: Umm. N-no, I don't... know?\n[[Why don't you know?|WhyNot]]\n[[Anyways, whatever.|Whatever]]",
+      "position": {
+        "x": 540,
+        "y": 260
+      }
+    },
+    {
+      "title": "WhyNot",
+      "tags": "",
+      "body": "Frank: Why not?\nSammy: Because this is stupid.",
+      "position": {
+        "x": 330,
+        "y": 505
+      }
+    },
+    {
+      "title": "Whatever",
+      "tags": "",
+      "body": "Frank: Whatever.\nSammy: That's the spirit!",
+      "position": {
+        "x": 785,
+        "y": 496
+      }
+    }
+  ]
+#+END_SRC
 
 ** Aurion and the Aurochs is out
 - game
@@ -6445,3 +6526,6 @@ of time.
 *** Conclusion
 So there you have it, go out there and try some of these games.  If
 you only have time to try one, check out /[[http://gamejolt.com/games/adventure/theropods/58684/][Theropods]]/.  It's groovy.
+
+** uTiled
+https://bitbucket.org/vinull/utiled/overview
