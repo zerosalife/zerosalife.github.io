@@ -7,6 +7,7 @@ categories:
 -   lighting
 -   design
 -   mechanics
+- algorithms
 ---
 [@NoelFB](https://twitter.com/NoelFB/) posted a [screenshot](https://twitter.com/NoelFB/status/543586120731074561/photo/1) showing how dynamic lighting works in [Skytorn](http://skytorn-game.com/).
 
@@ -27,3 +28,6 @@ From what I can tell, the algorithm looks something like this:
 ## That's all
 
 That's it for this week.  Let me know if you have any insight into this or other lighting algorithms in the comments or on the tweets.
+
+## Update
+After some feedback from @NoelFB, I've updated the algorithm in the [following post](http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/).
