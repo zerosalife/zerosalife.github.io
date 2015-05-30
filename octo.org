@@ -5700,7 +5700,7 @@ play session.
 Follow up next week
 
 ** Prototyping Rectangles in Unity 2D for Dummy
-Prototyping Rectangles in Unity 2D for Dummy
+Prototyping Rectangles in Unity 2D for Dummy (me)
 
 - Unity
 - design
