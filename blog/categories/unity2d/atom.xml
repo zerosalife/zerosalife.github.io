@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity2d | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity2d/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-05-16T11:16:20-05:00</updated>
+  <updated>2015-05-30T11:51:35-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,126 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Prototyping Rectangles in Unity 2D for Dummy]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/"/>
+    <updated>2015-05-30T09:57:58-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy</id>
+    <content type="html"><![CDATA[<p>Who&rsquo;s &ldquo;Dummy&rdquo;? I&rsquo;m the dummy.  Prototyping with 2d boxes in Unity JavaScript has proven surprisingly hard.  I think the difficulty I&rsquo;m having is that I&rsquo;m not exactly sure what I&rsquo;m trying to do.  What follows is an example of <strong>one</strong> way (notice that I didn&rsquo;t say THE <strong>RIGHT</strong> WAY) to prototype with 2d rectangles in Unity.  I&rsquo;m still too much of a noob to have strong opinions on the right way to go about doing this.  Expect more posts on this topic as I develop my expertise.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Discoverability">Discoverability</a> is something I prize in programming languages and environments, especially when I&rsquo;m learning them.  While Unity&rsquo;s documentation is thorough, the lack of congruence between the GUI environment and coding leads to poor discoverability.  There&rsquo;s not a one-to-one correspondence between the labels for <code>Components</code> in the GUI inspector and their names and attributes in code.</p>
+
+<!--more-->
+
+
+<p>Most of the time, Google is my method for discovering new functionality in Unity.  The problem with this method, and even the documentation, is that I&rsquo;m never quite sure if the solution I&rsquo;ve found is the best solution, the only way to do something, or the wrong way to do something.</p>
+
+<p>I&rsquo;m trying to get simple rectangular boxes to work in Unity 2d for prototyping movement, hitboxes for attacks, etc.  The information I can find either deals with real-deal-Holyfield sprites or <code>GUIBoxes</code>.</p>
+
+<p>It will be nice to work with <code>Sprites</code> eventually, but I just want to get a box that can walk around and jump, at this point.  <code>GUIBoxes</code> seem like the wrong type of boxes, if I want to prototype something that will eventually be a <code>Sprite</code>.</p>
+
+<p>As near as I can tell, the <code>Sprite</code> is a (relatively) new way of making a flat 2D <code>Plane</code> in Unity.  I couldn&rsquo;t seem to find anything dealing with <code>Sprites</code> without creating them in the Unity GUI interface.</p>
+
+<p>So, I started out following a Unity Answers question <a href="http://answers.unity3d.com/questions/139808/creating-a-plane-mesh-directly-from-code.html">here</a>.</p>
+
+<h2>Getting the Mesh to gel</h2>
+
+<p>First, I created a brand-spankin new Unity 2D project.  I had to create an empty <code>GameObject</code> to host my <code>PlaneTest.js</code> script <code>Component</code>.  I included a variable <code>size</code> to control the size of the box, so you can play around with that in the Editor interface.</p>
+
+<p>Next, I had to create a <code>Mesh</code> that would be the actual geometry of the plane.  Now, the <code>Mesh</code> I&rsquo;m making differs from the stock Unity <code>Plane</code> <code>GameObject</code>.  <a href="http://www.third-helix.com/2012/02/making-2d-games-with-unity/">This blog post</a> shows that Unity&rsquo;s <code>Plane</code> defaults to a 10 x 10 quad mesh with a couple hundred triangles.  A quad is just a square made of two triangle faces, <a href="http://blog.nobel-joergensen.com/2010/12/25/procedural-generated-mesh-in-unity/">this blog post</a> goes into more detail.</p>
+
+<p>Here we <a href="http://i.eho.st/pgtxqdii.gif">do it live</a> by defining a <code>name</code> <code>String</code>, an <code>array</code> of <code>Vector3</code> <code>vertices</code>, an <code>array</code> of <code>uv</code> texture coordinates, and an <code>array</code> of <code>triangles</code> faces.</p>
+
+<p>``` js
+var m: Mesh = new Mesh();
+m.name = &ldquo;Scripted_Plane_New_Mesh&rdquo;;
+m.vertices = [Vector3(-size, -size, 0.01),</p>
+
+<pre><code>          Vector3(size, -size, 0.01),
+          Vector3(size, size, 0.01),
+          Vector3(-size, size, 0.01)];
+</code></pre>
+
+<p>m.uv = [Vector2(0, 0),</p>
+
+<pre><code>    Vector2(0, 1),
+    Vector2(1, 1),
+    Vector2(1, 0)];
+</code></pre>
+
+<p>m.triangles = [0, 1, 2,</p>
+
+<pre><code>           0, 2, 3];
+</code></pre>
+
+<p>```</p>
+
+<h2>Who you calling normal?</h2>
+
+<p>At one point I thought I had to <code>RecalculateNormals</code>, according to the Unity Answers example above.  But it doesn&rsquo;t seem to make a difference.  Here&rsquo;s a great example of the Unity discoverability problem.  Since it doesn&rsquo;t <em>seem</em> to make a difference, I don&rsquo;t know whether to trust the Unity Answers that received 5 upvotes or to go with parsimony.</p>
+
+<p>A little more digging <a href="http://forum.unity3d.com/threads/210399-4-3-Sprites-and-Lighting">reveals</a> that normal maps are particularly important for lighting.  Since the <code>Sprite Shader</code> I intend to use doesn&rsquo;t use normal maps, we can leave it out.</p>
+
+<h2>OBJECTION!!</h2>
+
+<p>Time to create the <code>GameObject</code> that will hold a <code>MeshRenderer</code>, <code>MeshFilter</code>, and <code>MeshCollider</code>.  According to the <a href="http://docs.unity3d.com/Documentation/Components/class-MeshFilter.html">docs</a>, a <code>MeshFilter</code> takes a mesh, like the one we created above, and passes it to the <code>MeshRenderer</code> for rendering to the screen.  Not sure what it&rsquo;s <em>filtering</em> or why there&rsquo;s an intermediate <code>Component</code>, but there you go.</p>
+
+<p>The <a href="http://docs.unity3d.com/Documentation/Components/class-MeshRenderer.html">docs</a> say the <code>MeshRenderer</code> then takes the geometry from the <code>MeshFilter</code> and renders it on the screen at the position defined by the <code>GameObject</code>&rsquo;s <code>Transform</code>.</p>
+
+<p>``` js
+var obj: GameObject = new GameObject(&ldquo;New_Plane_From_Script&rdquo;,</p>
+
+<pre><code>                                 MeshRenderer,
+                                 MeshFilter,
+                                 MeshCollider);
+</code></pre>
+
+<p>obj.GetComponent(MeshFilter).mesh = m;
+```</p>
+
+<h2>Time for texture</h2>
+
+<p>Next we create a <code>Texture2D</code> to hold the color information, to really give the box some panache.  The <code>Texture2D</code> goes into the <code>MeshRenderer</code>&rsquo;s <code>mainTexture</code> slot.</p>
+
+<p><code>js
+var texture: Texture2D;
+texture = new Texture2D(size, size, TextureFormat.ARGB4444, false);
+obj.renderer.material.mainTexture = texture;
+</code></p>
+
+<p>I don&rsquo;t know too much about how <code>Texture2D</code> works right now, but there&rsquo;s plenty to read in the <a href="http://docs.unity3d.com/Documentation/ScriptReference/Texture2D.html">docs</a>.</p>
+
+<h2>A splash of color</h2>
+
+<p>Here we generate some random RGB values, normalize them for Unity&rsquo;s <code>0.0-1.0</code> colorspace and make a <code>Color</code> to put into the <code>MeshRenderer</code>&rsquo;s color slot.</p>
+
+<p><code>js
+var red: float = Random.Range(63, 255) / 255f;
+var green: float = Random.Range(63, 255) / 255f;
+var blue: float = Random.Range(63, 255) / 255f;
+var color = Color(red, green, blue);
+obj.renderer.material.color = color;
+</code></p>
+
+<h2>The crucial shader</h2>
+
+<p>At this point, I tested my code and got no errors. However, to my surprise I didn&rsquo;t see anything rendered on the screen.</p>
+
+<p>I learned that I needed to use a <code>Sprite Shader</code> to get the colored mesh to render properly.  Here&rsquo;s how I did it:</p>
+
+<p><code>js
+var spriteShader: Shader = Shader.Find("Sprites/Default");
+obj.renderer.material.shader = spriteShader;
+</code></p>
+
+<h2>Boxes for dummy</h2>
+
+<p>I don&rsquo;t feel so dumb anymore because this was a complex process.  And it wasn&rsquo;t until the very last crucial step that I saw anything remotely box-like.</p>
+
+<p>I&rsquo;ve posted the code to a gist <a href="https://gist.github.com/zerosalife/743cf797112d62978bec">here</a> so you can clone the script for yourself, to give it a whirl.  I found that setting <code>size</code> to 2 is a nice place to start.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Create a Dictionary with multiple keys in Unity C#]]></title>

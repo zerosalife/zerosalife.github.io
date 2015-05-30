@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Prototyping Rectangles in Unity 2D for Dummy - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="Who&rsquo;s &ldquo;Dummy&rdquo;? I&rsquo;m the dummy. Prototyping with 2d boxes in Unity JavaScript has proven surprisingly hard. I think the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Prototyping Rectangles in Unity 2D for Dummy</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-30T09:57:58-05:00" pubdate data-updated="true">May 30<span>th</span>, 2015</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Who&rsquo;s &ldquo;Dummy&rdquo;? I&rsquo;m the dummy.  Prototyping with 2d boxes in Unity JavaScript has proven surprisingly hard.  I think the difficulty I&rsquo;m having is that I&rsquo;m not exactly sure what I&rsquo;m trying to do.  What follows is an example of <strong>one</strong> way (notice that I didn&rsquo;t say THE <strong>RIGHT</strong> WAY) to prototype with 2d rectangles in Unity.  I&rsquo;m still too much of a noob to have strong opinions on the right way to go about doing this.  Expect more posts on this topic as I develop my expertise.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Discoverability">Discoverability</a> is something I prize in programming languages and environments, especially when I&rsquo;m learning them.  While Unity&rsquo;s documentation is thorough, the lack of congruence between the GUI environment and coding leads to poor discoverability.  There&rsquo;s not a one-to-one correspondence between the labels for <code>Components</code> in the GUI inspector and their names and attributes in code.</p>
+
+<!--more-->
+
+
+<p>Most of the time, Google is my method for discovering new functionality in Unity.  The problem with this method, and even the documentation, is that I&rsquo;m never quite sure if the solution I&rsquo;ve found is the best solution, the only way to do something, or the wrong way to do something.</p>
+
+<p>I&rsquo;m trying to get simple rectangular boxes to work in Unity 2d for prototyping movement, hitboxes for attacks, etc.  The information I can find either deals with real-deal-Holyfield sprites or <code>GUIBoxes</code>.</p>
+
+<p>It will be nice to work with <code>Sprites</code> eventually, but I just want to get a box that can walk around and jump, at this point.  <code>GUIBoxes</code> seem like the wrong type of boxes, if I want to prototype something that will eventually be a <code>Sprite</code>.</p>
+
+<p>As near as I can tell, the <code>Sprite</code> is a (relatively) new way of making a flat 2D <code>Plane</code> in Unity.  I couldn&rsquo;t seem to find anything dealing with <code>Sprites</code> without creating them in the Unity GUI interface.</p>
+
+<p>So, I started out following a Unity Answers question <a href="http://answers.unity3d.com/questions/139808/creating-a-plane-mesh-directly-from-code.html">here</a>.</p>
+
+<h2>Getting the Mesh to gel</h2>
+
+<p>First, I created a brand-spankin new Unity 2D project.  I had to create an empty <code>GameObject</code> to host my <code>PlaneTest.js</code> script <code>Component</code>.  I included a variable <code>size</code> to control the size of the box, so you can play around with that in the Editor interface.</p>
+
+<p>Next, I had to create a <code>Mesh</code> that would be the actual geometry of the plane.  Now, the <code>Mesh</code> I&rsquo;m making differs from the stock Unity <code>Plane</code> <code>GameObject</code>.  <a href="http://www.third-helix.com/2012/02/making-2d-games-with-unity/">This blog post</a> shows that Unity&rsquo;s <code>Plane</code> defaults to a 10 x 10 quad mesh with a couple hundred triangles.  A quad is just a square made of two triangle faces, <a href="http://blog.nobel-joergensen.com/2010/12/25/procedural-generated-mesh-in-unity/">this blog post</a> goes into more detail.</p>
+
+<p>Here we <a href="http://i.eho.st/pgtxqdii.gif">do it live</a> by defining a <code>name</code> <code>String</code>, an <code>array</code> of <code>Vector3</code> <code>vertices</code>, an <code>array</code> of <code>uv</code> texture coordinates, and an <code>array</code> of <code>triangles</code> faces.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">m</span><span class="o">:</span> <span class="nx">Mesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Mesh</span><span class="p">();</span>
+</span><span class='line'><span class="nx">m</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Scripted_Plane_New_Mesh&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nx">m</span><span class="p">.</span><span class="nx">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="nx">size</span><span class="p">,</span> <span class="o">-</span><span class="nx">size</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),</span>
+</span><span class='line'>              <span class="nx">Vector3</span><span class="p">(</span><span class="nx">size</span><span class="p">,</span> <span class="o">-</span><span class="nx">size</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),</span>
+</span><span class='line'>              <span class="nx">Vector3</span><span class="p">(</span><span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),</span>
+</span><span class='line'>              <span class="nx">Vector3</span><span class="p">(</span><span class="o">-</span><span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)];</span>
+</span><span class='line'><span class="nx">m</span><span class="p">.</span><span class="nx">uv</span> <span class="o">=</span> <span class="p">[</span><span class="nx">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+</span><span class='line'>        <span class="nx">Vector2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+</span><span class='line'>        <span class="nx">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+</span><span class='line'>        <span class="nx">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)];</span>
+</span><span class='line'><span class="nx">m</span><span class="p">.</span><span class="nx">triangles</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
+</span><span class='line'>               <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Who you calling normal?</h2>
+
+<p>At one point I thought I had to <code>RecalculateNormals</code>, according to the Unity Answers example above.  But it doesn&rsquo;t seem to make a difference.  Here&rsquo;s a great example of the Unity discoverability problem.  Since it doesn&rsquo;t <em>seem</em> to make a difference, I don&rsquo;t know whether to trust the Unity Answers that received 5 upvotes or to go with parsimony.</p>
+
+<p>A little more digging <a href="http://forum.unity3d.com/threads/210399-4-3-Sprites-and-Lighting">reveals</a> that normal maps are particularly important for lighting.  Since the <code>Sprite Shader</code> I intend to use doesn&rsquo;t use normal maps, we can leave it out.</p>
+
+<h2>OBJECTION!!</h2>
+
+<p>Time to create the <code>GameObject</code> that will hold a <code>MeshRenderer</code>, <code>MeshFilter</code>, and <code>MeshCollider</code>.  According to the <a href="http://docs.unity3d.com/Documentation/Components/class-MeshFilter.html">docs</a>, a <code>MeshFilter</code> takes a mesh, like the one we created above, and passes it to the <code>MeshRenderer</code> for rendering to the screen.  Not sure what it&rsquo;s <em>filtering</em> or why there&rsquo;s an intermediate <code>Component</code>, but there you go.</p>
+
+<p>The <a href="http://docs.unity3d.com/Documentation/Components/class-MeshRenderer.html">docs</a> say the <code>MeshRenderer</code> then takes the geometry from the <code>MeshFilter</code> and renders it on the screen at the position defined by the <code>GameObject</code>&rsquo;s <code>Transform</code>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">obj</span><span class="o">:</span> <span class="nx">GameObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GameObject</span><span class="p">(</span><span class="s2">&quot;New_Plane_From_Script&quot;</span><span class="p">,</span>
+</span><span class='line'>                                     <span class="nx">MeshRenderer</span><span class="p">,</span>
+</span><span class='line'>                                     <span class="nx">MeshFilter</span><span class="p">,</span>
+</span><span class='line'>                                     <span class="nx">MeshCollider</span><span class="p">);</span>
+</span><span class='line'><span class="nx">obj</span><span class="p">.</span><span class="nx">GetComponent</span><span class="p">(</span><span class="nx">MeshFilter</span><span class="p">).</span><span class="nx">mesh</span> <span class="o">=</span> <span class="nx">m</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Time for texture</h2>
+
+<p>Next we create a <code>Texture2D</code> to hold the color information, to really give the box some panache.  The <code>Texture2D</code> goes into the <code>MeshRenderer</code>&rsquo;s <code>mainTexture</code> slot.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">texture</span><span class="o">:</span> <span class="nx">Texture2D</span><span class="p">;</span>
+</span><span class='line'><span class="nx">texture</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Texture2D</span><span class="p">(</span><span class="nx">size</span><span class="p">,</span> <span class="nx">size</span><span class="p">,</span> <span class="nx">TextureFormat</span><span class="p">.</span><span class="nx">ARGB4444</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span><span class='line'><span class="nx">obj</span><span class="p">.</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">mainTexture</span> <span class="o">=</span> <span class="nx">texture</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I don&rsquo;t know too much about how <code>Texture2D</code> works right now, but there&rsquo;s plenty to read in the <a href="http://docs.unity3d.com/Documentation/ScriptReference/Texture2D.html">docs</a>.</p>
+
+<h2>A splash of color</h2>
+
+<p>Here we generate some random RGB values, normalize them for Unity&rsquo;s <code>0.0-1.0</code> colorspace and make a <code>Color</code> to put into the <code>MeshRenderer</code>&rsquo;s color slot.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">red</span><span class="o">:</span> <span class="kr">float</span> <span class="o">=</span> <span class="nx">Random</span><span class="p">.</span><span class="nx">Range</span><span class="p">(</span><span class="mi">63</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="o">/</span> <span class="mi">255</span><span class="nx">f</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">green</span><span class="o">:</span> <span class="kr">float</span> <span class="o">=</span> <span class="nx">Random</span><span class="p">.</span><span class="nx">Range</span><span class="p">(</span><span class="mi">63</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="o">/</span> <span class="mi">255</span><span class="nx">f</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">blue</span><span class="o">:</span> <span class="kr">float</span> <span class="o">=</span> <span class="nx">Random</span><span class="p">.</span><span class="nx">Range</span><span class="p">(</span><span class="mi">63</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="o">/</span> <span class="mi">255</span><span class="nx">f</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">Color</span><span class="p">(</span><span class="nx">red</span><span class="p">,</span> <span class="nx">green</span><span class="p">,</span> <span class="nx">blue</span><span class="p">);</span>
+</span><span class='line'><span class="nx">obj</span><span class="p">.</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>The crucial shader</h2>
+
+<p>At this point, I tested my code and got no errors. However, to my surprise I didn&rsquo;t see anything rendered on the screen.</p>
+
+<p>I learned that I needed to use a <code>Sprite Shader</code> to get the colored mesh to render properly.  Here&rsquo;s how I did it:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">spriteShader</span><span class="o">:</span> <span class="nx">Shader</span> <span class="o">=</span> <span class="nx">Shader</span><span class="p">.</span><span class="nx">Find</span><span class="p">(</span><span class="s2">&quot;Sprites/Default&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">obj</span><span class="p">.</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">shader</span> <span class="o">=</span> <span class="nx">spriteShader</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Boxes for dummy</h2>
+
+<p>I don&rsquo;t feel so dumb anymore because this was a complex process.  And it wasn&rsquo;t until the very last crucial step that I saw anything remotely box-like.</p>
+
+<p>I&rsquo;ve posted the code to a gist <a href="https://gist.github.com/zerosalife/743cf797112d62978bec">here</a> so you can clone the script for yourself, to give it a whirl.  I found that setting <code>size</code> to 2 is a nice place to start.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-30T09:57:58-05:00" pubdate data-updated="true">May 30<span>th</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/unity2d/'>Unity2d</a>, <a class='category' href='/blog/categories/unity3d/'>Unity3d</a>, <a class='category' href='/blog/categories/unityjs/'>UnityJS</a>, <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/prototype/'>prototype</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/" title="Previous Post: More Skytorn Raycast Lighting Algorithm Details">&laquo; More Skytorn Raycast Lighting Algorithm Details</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/">Prototyping Rectangles in Unity 2D for Dummy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">More Skytorn Raycast Lighting Algorithm Details</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/raycast-lighting-in-skytorn/">Raycast Lighting in Skytorn</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/02/adventurejam-reviews/">Adventurejam reviews</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/25/aurion-and-the-aurochs-post-mortem/">Aurion and the Aurochs Post-mortem</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 &ndash; 2015
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54217540-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
