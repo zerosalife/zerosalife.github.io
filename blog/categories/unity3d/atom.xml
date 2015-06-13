@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity3d | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity3d/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-05-30T11:55:02-05:00</updated>
+  <updated>2015-06-13T11:19:45-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,84 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creating a Dictionary of Lists in Unity JavaScript]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/"/>
+    <updated>2015-06-13T11:14:25-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript</id>
+    <content type="html"><![CDATA[<p>I ran into a few problems trying to create a <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_Dictionary">Dictionary</a> of <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_List">Lists</a> in Unity JavaScript.  So I thought I&rsquo;d share some of the tips I learned here.</p>
+
+<!--more-->
+
+
+<p>I&rsquo;m interested in creating a Dictionary to hold <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">Markov Chain information</a> in order to generate text.  So I&rsquo;d like to be able to create a Dictionary holding a variable length of items for each of its Keys.  I&rsquo;d also like to be able to update the mapping at runtime.</p>
+
+<p>It would look something like this:</p>
+
+<ul>
+<li><strong>Key1:</strong> Item1, Item2, Item3</li>
+<li><strong>Key2:</strong> Item4</li>
+</ul>
+
+
+<p>At runtime, I&rsquo;d like to be able to say: &ldquo;Append <code>Item5</code> to <code>Key2</code>.&rdquo;</p>
+
+<p>Here&rsquo;s what I came up with in Unity JavaScript.  I started out by initializing a <code>table</code> in my script prior to the <code>Start</code> function. The var <code>table</code> holds our mapping of Keys of type <code>String</code> to Values of type <code>List.&lt;int&gt;</code>, or Lists of integers.</p>
+
+<p><code>javascript
+import System.Collections.Generic;
+// White space matters.
+var table:Dictionary.&lt;String,List.&lt;int&gt; &gt; = new Dictionary.&lt;String,List.&lt;int&gt; &gt;();
+</code></p>
+
+<p>The first hiccup I ran into is that <a href="http://forum.unity3d.com/threads/80227-Creating-a-Dictionary-of-Lists-in-Javascript?p%3D513471&amp;viewfull%3D1#post513471">white space matters</a> when creating Generics in Unity JavaScript.  The compiler will throw an error if it sees two <code>&gt;&gt;</code> in a row.</p>
+
+<p>Then I fill the table with our test mappings.</p>
+
+<p><code>javascript
+// Fill our table with Lists containing ints using Arrays to intialize
+// the Lists.
+table["a"] = new List.&lt;int&gt;([1]);
+table["b"] = new List.&lt;int&gt;([2]);
+table["c"] = new List.&lt;int&gt;([3]);
+</code></p>
+
+<p>As you can see, you can <a href="http://answers.unity3d.com/questions/221476/javascript-array-to-generic-list.html">construct a List from an Array</a>.  Cool.</p>
+
+<p>In the <code>Start</code> function, I iterate over the Keys in the Dictionary, Add the item <code>4</code> to the Value of Key <code>c</code>, and print out the first item of each of the <code>values</code>.  Finally, we check to see whether <code>4</code> was appended to the desired entry.</p>
+
+<p>```javascript
+function Start () {</p>
+
+<pre><code>// Iterate over the Keys in our Dictionary.
+for(var str:String in table.Keys) {
+    // Get the value for our Key.
+    var value:List.&lt;int&gt; = table[str];
+
+    // If the Key is our desired Key, append to its list.
+    if (str == "c") {
+        value.Add(4);
+    }
+
+    // Print the first item in each of the Lists.
+    print(value[0]);
+}
+
+// Print the appended item to see that it worked.
+print(table["c"][1]);
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Then I attach this script to the Main Camera of a fresh Scene for testing purposes.  Bada bing, bada boom.</p>
+
+<p>Attaching the script to any old object in the scene would work.  I just chose the Main Camera because the camera object is there by default.</p>
+
+<p>This was all relatively straightforward, after I understood some of the quirks of Unity&rsquo;s JavaScript syntax.  You can find an example script using this code <a href="https://gist.github.com/zerosalife/f13eb62bf7bd57799db6">here</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Prototyping Rectangles in Unity 2D for Dummy]]></title>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-05-30T11:55:02-05:00</updated>
+  <updated>2015-06-13T11:19:45-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,84 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creating a Dictionary of Lists in Unity JavaScript]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/"/>
+    <updated>2015-06-13T11:14:25-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript</id>
+    <content type="html"><![CDATA[<p>I ran into a few problems trying to create a <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_Dictionary">Dictionary</a> of <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_List">Lists</a> in Unity JavaScript.  So I thought I&rsquo;d share some of the tips I learned here.</p>
+
+<!--more-->
+
+
+<p>I&rsquo;m interested in creating a Dictionary to hold <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">Markov Chain information</a> in order to generate text.  So I&rsquo;d like to be able to create a Dictionary holding a variable length of items for each of its Keys.  I&rsquo;d also like to be able to update the mapping at runtime.</p>
+
+<p>It would look something like this:</p>
+
+<ul>
+<li><strong>Key1:</strong> Item1, Item2, Item3</li>
+<li><strong>Key2:</strong> Item4</li>
+</ul>
+
+
+<p>At runtime, I&rsquo;d like to be able to say: &ldquo;Append <code>Item5</code> to <code>Key2</code>.&rdquo;</p>
+
+<p>Here&rsquo;s what I came up with in Unity JavaScript.  I started out by initializing a <code>table</code> in my script prior to the <code>Start</code> function. The var <code>table</code> holds our mapping of Keys of type <code>String</code> to Values of type <code>List.&lt;int&gt;</code>, or Lists of integers.</p>
+
+<p><code>javascript
+import System.Collections.Generic;
+// White space matters.
+var table:Dictionary.&lt;String,List.&lt;int&gt; &gt; = new Dictionary.&lt;String,List.&lt;int&gt; &gt;();
+</code></p>
+
+<p>The first hiccup I ran into is that <a href="http://forum.unity3d.com/threads/80227-Creating-a-Dictionary-of-Lists-in-Javascript?p%3D513471&amp;viewfull%3D1#post513471">white space matters</a> when creating Generics in Unity JavaScript.  The compiler will throw an error if it sees two <code>&gt;&gt;</code> in a row.</p>
+
+<p>Then I fill the table with our test mappings.</p>
+
+<p><code>javascript
+// Fill our table with Lists containing ints using Arrays to intialize
+// the Lists.
+table["a"] = new List.&lt;int&gt;([1]);
+table["b"] = new List.&lt;int&gt;([2]);
+table["c"] = new List.&lt;int&gt;([3]);
+</code></p>
+
+<p>As you can see, you can <a href="http://answers.unity3d.com/questions/221476/javascript-array-to-generic-list.html">construct a List from an Array</a>.  Cool.</p>
+
+<p>In the <code>Start</code> function, I iterate over the Keys in the Dictionary, Add the item <code>4</code> to the Value of Key <code>c</code>, and print out the first item of each of the <code>values</code>.  Finally, we check to see whether <code>4</code> was appended to the desired entry.</p>
+
+<p>```javascript
+function Start () {</p>
+
+<pre><code>// Iterate over the Keys in our Dictionary.
+for(var str:String in table.Keys) {
+    // Get the value for our Key.
+    var value:List.&lt;int&gt; = table[str];
+
+    // If the Key is our desired Key, append to its list.
+    if (str == "c") {
+        value.Add(4);
+    }
+
+    // Print the first item in each of the Lists.
+    print(value[0]);
+}
+
+// Print the appended item to see that it worked.
+print(table["c"][1]);
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Then I attach this script to the Main Camera of a fresh Scene for testing purposes.  Bada bing, bada boom.</p>
+
+<p>Attaching the script to any old object in the scene would work.  I just chose the Main Camera because the camera object is there by default.</p>
+
+<p>This was all relatively straightforward, after I understood some of the quirks of Unity&rsquo;s JavaScript syntax.  You can find an example script using this code <a href="https://gist.github.com/zerosalife/f13eb62bf7bd57799db6">here</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Prototyping Rectangles in Unity 2D for Dummy]]></title>
@@ -440,134 +518,6 @@ function OnGUI() {
 <h2>Save</h2>
 
 <p>Save the Scene and project for these changes to take effect.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Persistent Data in Unity]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity/"/>
-    <updated>2014-08-09T11:09:15-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/08/09/persistent-data-in-unity</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m interested in having some data remain available, even though I&rsquo;m switching Scenes in Unity.  In other words, I want this data to remain persistent.  As you&rsquo;ll see below I was tempted to use <code>PlayerPrefs</code> to store the data, but, according to <a href="https://www.youtube.com/watch?v%3DJ6FfcJpbPXE">this Unity Live Training on Data Persistence</a>, <code>PlayerPrefs</code> is not the best way to make data persist over multiple Scenes.  <code>PlayerPrefs</code> is an okay place to store non-critical data, like the audio volume, window size, full-screen state&#x2013;you know preferences.  I&rsquo;ll go ahead and show what I believe to be the correct way to store persistent data before talking about <code>PlayerPrefs</code> later.</p>
-
-<!--more-->
-
-
-<h2>Persistent data</h2>
-
-<p>To safely and reliably store persistent data, the Unity tutorials suggest that you need to assign a &ldquo;kinda&rdquo; Singleton design patterny script to an empty <code>GameObject</code> that will persist across Scenes.</p>
-
-<pre><code>using UnityEngine;
-using System.Collections;
-
-public class GameControl: MonoBehaviour {
-  public static GameControl control;
-
-  public float health;
-  public float experience;
-
-  void Awake() {
-    if(control == null){
-      DontDestroyOnLoad(gameObject);
-      control = this;
-    } else if(control != this) {
-      // There can be only one!
-      Destroy(gameObject);
-    }
-  }
-}
-</code></pre>
-
-<p>The <code>static</code> reference means that we can just access the values in the <code>GameControl</code> script.</p>
-
-<h2>How to access data in the GameController.</h2>
-
-<pre><code>GameController.control.health = 100;
-</code></pre>
-
-<h2>Writing persistent data to a binary file</h2>
-
-<p>The persistent data that&rsquo;s under the control of the <code>GameController</code> is perfectly happy hanging out when your application is running.  It will persist between Scenes when other data is wiped out by Unity&rsquo;s garbage collection.  But what if you want to maintain persistent data when the application is closed.</p>
-
-<p>Ah hah!  Finally, an answer to my nagging question about writing persistent data to plain text files, like <code>PlayerPrefs</code> or simply a file in a local directory.  Wouldn&rsquo;t a player be able to modify the data?</p>
-
-<p>Enter the binary format:</p>
-
-<pre><code>// Add two more libraries
-using System;
-using System.Runtime.Serialzation.Formatters.Binary;
-</code></pre>
-
-<p>Where do we save it?  The persistent data path: <code>Application.persistentDataPath</code>.  We&rsquo;ll need one more library to do some input and output to files:</p>
-
-<pre><code>// Requires one more library and we're ready to get cooking with some
-// methods
-using System.IO;
-
-public void Save() {
-  BinaryFormatter bf = new BinaryFormatter();
-  FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
-                              FileMode.Open);
-
-  PlayerData data = new PlayerData();
-  data.experiencePoints = experiencePoints;
-  data.playerLevel = playerLevel;
-
-  bf.Serialize(file, data);
-  file.Close();
-}
-
-public void Load() {
-  if(File.Exists(Application.persistentDataPath + "/gameInfo.dat")) {
-    BinaryFormatter bf = new BinaryFormatter();
-    FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat",
-                                FileMode.Open);
-    PlayerData data = (PlayerData)bf.Deserialize(file);
-    file.Close();
-
-    experiencePoints = data.experiencePoints;
-    playerLevel = data.playerLevel;
-  }
-}
-</code></pre>
-
-<p>Now we need to make the <code>PlayerData</code> class that we will tag with <code>[Serializable]</code> so Unity will know that we want to write this to a binary file at some point in the future.  This affects how Unity stores the data internally, but it doesn&rsquo;t really change how we interact with it.</p>
-
-<pre><code>[Serializable]
-class PlayerData {
-  // TODO: see about making gets and sets.
-  // TODO: automate the generation of this data structure.  See:
-  // http://forums.devx.com/showthread.php?170650-How-to-dynamically-add-property-to
-
-  // Add new variables for loading and saving here.
-  public int experiencePoints;
-  public int playerLevel;
-}
-</code></pre>
-
-<p>After writing up this article, I came across an older, possibly better article on Unity Gems.  Please check out that write-up and all of the great content on the site.  <a href="http://unitygems.com/saving-data-1-remember-me/">http://unitygems.com/saving-data-1-remember-me/</a></p>
-
-<p>My full <code>GameController</code> data persistence Singleton script is available in <a href="https://gist.github.com/zerosalife/6f6e811b27761d287ea5">this gist</a>.</p>
-
-<p>So, that&rsquo;s the best solution I&rsquo;ve found to date for having persistent data across scenes and play sessions.  I&rsquo;ve included my rough first stabs at the problem below.  Keep in mind that anything following this point is just included just to make my notes available, and it&rsquo;s not meant to be a guide.</p>
-
-<h2>Old notes: PlayerPrefs</h2>
-
-<p>In order to have persistent data between Scenes, I was previously going to make use of Unity&rsquo;s <code>PlayerPrefs</code>, a class that implements persistent data storage for <code>ints</code>, <code>floats</code>, and <code>strings</code>.  Notably absent are useful data types like <code>Vector3</code> to maintain, for example, <code>transform</code> data between Scenes.  Some of the solutions I found may still be helpful for more storing complex data types in <code>PlayerPrefs</code>.</p>
-
-<p>One potential solution is to simply set a <code>GameObject</code>&rsquo;s <code>transform.position</code> to some constant <code>Vector3</code> value in the freshly loaded Scene.  While this is possible in some applications, I&rsquo;m going to assume that eventually you&rsquo;ll want to transfer some dynamic position information between Scenes.</p>
-
-<p>Here are two potentially helpful sources to achieve this:</p>
-
-<p><a href="http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/">http://www.theappguruz.com/tutorial/store-vector3-data-easily-using-json-parsing-possible-using-playerprefs/</a>, based on work by Mehta Dakshil.  While JSON parsing looks interesting, it requires an external <code>.dll</code>, <code>JsonFx.Json.dll</code>.  And I&rsquo;m not interested in external dependencies here.  It may work great for you.</p>
-
-<p><a href="http://wiki.unity3d.com/index.php?title%3DArrayPrefs">&lt;http://wiki.unity3d.com/index.php?title=ArrayPrefs></a>, based on work by Mario Madureiera Fontes and Daniel P. Rossi.  (Note: since <code>GetVector3</code> depends on <code>GetFloatArray</code>, there could be some error due to <code>GetFloatArray</code> casting strings to floats.  But the error introduce in the resulting <code>Vector3</code> is unlikely to be noticeable.)</p>
-
-<p>Actually, see a more updated version here: <a href="http://wiki.unity3d.com/index.php/ArrayPrefs2">http://wiki.unity3d.com/index.php/ArrayPrefs2</a>, which is based on work by Eric Haines.</p>
-
-<p>According to the text, the script should be placed in the <code>Standard Assets</code> directory, so that it can be accessed from both <code>C#</code> and <code>Boo</code> scripts.</p>
-
-<p>To see a faster implementation for mobile devices, where the data to be saved in PlayerPrefs is cached in memory, see: <a href="http://www.previewlabs.com/writing-playerprefs-fast/">http://www.previewlabs.com/writing-playerprefs-fast/</a>.</p>
 ]]></content>
   </entry>
   
