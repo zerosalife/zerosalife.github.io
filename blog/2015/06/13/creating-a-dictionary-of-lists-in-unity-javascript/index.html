@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Creating a Dictionary of Lists in Unity JavaScript - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="I ran into a few problems trying to create a Dictionary of Lists in Unity JavaScript. So I thought I&rsquo;d share some of the tips I learned here. I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Creating a Dictionary of Lists in Unity JavaScript</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-13T11:14:25-05:00" pubdate data-updated="true">Jun 13<span>th</span>, 2015</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I ran into a few problems trying to create a <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_Dictionary">Dictionary</a> of <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_List">Lists</a> in Unity JavaScript.  So I thought I&rsquo;d share some of the tips I learned here.</p>
+
+<!--more-->
+
+
+<p>I&rsquo;m interested in creating a Dictionary to hold <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">Markov Chain information</a> in order to generate text.  So I&rsquo;d like to be able to create a Dictionary holding a variable length of items for each of its Keys.  I&rsquo;d also like to be able to update the mapping at runtime.</p>
+
+<p>It would look something like this:</p>
+
+<ul>
+<li><strong>Key1:</strong> Item1, Item2, Item3</li>
+<li><strong>Key2:</strong> Item4</li>
+</ul>
+
+
+<p>At runtime, I&rsquo;d like to be able to say: &ldquo;Append <code>Item5</code> to <code>Key2</code>.&rdquo;</p>
+
+<p>Here&rsquo;s what I came up with in Unity JavaScript.  I started out by initializing a <code>table</code> in my script prior to the <code>Start</code> function. The var <code>table</code> holds our mapping of Keys of type <code>String</code> to Values of type <code>List.&lt;int&gt;</code>, or Lists of integers.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kr">import</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Collections</span><span class="p">.</span><span class="nx">Generic</span><span class="p">;</span>
+</span><span class='line'><span class="c1">// White space matters.</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">table</span><span class="o">:</span><span class="nx">Dictionary</span><span class="p">.</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span><span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dictionary</span><span class="p">.</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span><span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">int</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The first hiccup I ran into is that <a href="http://forum.unity3d.com/threads/80227-Creating-a-Dictionary-of-Lists-in-Javascript?p%3D513471&amp;viewfull%3D1#post513471">white space matters</a> when creating Generics in Unity JavaScript.  The compiler will throw an error if it sees two <code>&gt;&gt;</code> in a row.</p>
+
+<p>Then I fill the table with our test mappings.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// Fill our table with Lists containing ints using Arrays to intialize</span>
+</span><span class='line'><span class="c1">// the Lists.</span>
+</span><span class='line'><span class="nx">table</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">int</span><span class="o">&gt;</span><span class="p">([</span><span class="mi">1</span><span class="p">]);</span>
+</span><span class='line'><span class="nx">table</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">int</span><span class="o">&gt;</span><span class="p">([</span><span class="mi">2</span><span class="p">]);</span>
+</span><span class='line'><span class="nx">table</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">int</span><span class="o">&gt;</span><span class="p">([</span><span class="mi">3</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see, you can <a href="http://answers.unity3d.com/questions/221476/javascript-array-to-generic-list.html">construct a List from an Array</a>.  Cool.</p>
+
+<p>In the <code>Start</code> function, I iterate over the Keys in the Dictionary, Add the item <code>4</code> to the Value of Key <code>c</code>, and print out the first item of each of the <code>values</code>.  Finally, we check to see whether <code>4</code> was appended to the desired entry.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">Start</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Iterate over the Keys in our Dictionary.</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">str</span><span class="o">:</span><span class="nb">String</span> <span class="k">in</span> <span class="nx">table</span><span class="p">.</span><span class="nx">Keys</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="c1">// Get the value for our Key.</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">value</span><span class="o">:</span><span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">int</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">table</span><span class="p">[</span><span class="nx">str</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// If the Key is our desired Key, append to its list.</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">str</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">value</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// Print the first item in each of the Lists.</span>
+</span><span class='line'>        <span class="nx">print</span><span class="p">(</span><span class="nx">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Print the appended item to see that it worked.</span>
+</span><span class='line'>    <span class="nx">print</span><span class="p">(</span><span class="nx">table</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then I attach this script to the Main Camera of a fresh Scene for testing purposes.  Bada bing, bada boom.</p>
+
+<p>Attaching the script to any old object in the scene would work.  I just chose the Main Camera because the camera object is there by default.</p>
+
+<p>This was all relatively straightforward, after I understood some of the quirks of Unity&rsquo;s JavaScript syntax.  You can find an example script using this code <a href="https://gist.github.com/zerosalife/f13eb62bf7bd57799db6">here</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-13T11:14:25-05:00" pubdate data-updated="true">Jun 13<span>th</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/unity3d/'>Unity3d</a>, <a class='category' href='/blog/categories/algorithms/'>algorithms</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/" title="Previous Post: Prototyping Rectangles in Unity 2D for Dummy">&laquo; Prototyping Rectangles in Unity 2D for Dummy</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/">Creating a Dictionary of Lists in Unity JavaScript</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/">Prototyping Rectangles in Unity 2D for Dummy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">More Skytorn Raycast Lighting Algorithm Details</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/raycast-lighting-in-skytorn/">Raycast Lighting in Skytorn</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/02/adventurejam-reviews/">Adventurejam reviews</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 &ndash; 2015
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54217540-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
