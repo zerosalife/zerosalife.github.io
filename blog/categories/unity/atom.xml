@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-06-13T11:19:45-05:00</updated>
+  <updated>2015-06-20T11:22:31-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp/"/>
+    <updated>2015-06-20T11:16:28-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/">Last week</a>, I published an article about creating a Dictionary of Lists in Unity using Unity&rsquo;s JavaScript.  Some of the syntax is changed in C#, but the overall algorithm is exactly the same.  I&rsquo;ve already mentioned the underlying motive, so I&rsquo;ll dive right in.</p>
+
+<!--more-->
+
+
+<p>Here&rsquo;s how to create a Dictionary of Lists in C# for Unity.</p>
+
+<p>```csharp
+Dictionary&lt;string, List<int>> table = new Dictionary&lt;string, List<int>>();</p>
+
+<p>void Start() {</p>
+
+<pre><code>// Fill our table with Lists containing ints using Arrays to intialize
+// the Lists.
+table["a"] = new List&lt;int&gt;(){1};
+table["b"] = new List&lt;int&gt;(){2};
+table["c"] = new List&lt;int&gt;(){3};
+
+foreach(string str in table.Keys) {
+    // Get the value for our Key.
+    List&lt;int&gt; value = table[str];
+
+    // If the Key is the desired Key, append to its list.
+    if(str == "c") {
+        value.Add(4);
+    }
+
+    // print the first item in each of the Lists.
+    Debug.Log(value[0]);
+}
+
+// Print the appended item to see that it worked.
+Debug.Log(table["c"][1]);
+</code></pre>
+
+<p>}
+```</p>
+
+<p>These are the main differences between the Unity JavaScript and C# code.  Take a look at the full file in a <a href="https://gist.github.com/zerosalife/e3882aa5ffd5dd614c9a">gist on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating a Dictionary of Lists in Unity JavaScript]]></title>
@@ -483,41 +530,6 @@ function OnGUI() {
     GUI.Label(new Rect(0, 100, Screen.width, 200), "Player: " + playerScore + " CPU: " + cpuScore, style);
 }
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Text encoding: further improvements to using git for Unity projects]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/"/>
-    <updated>2014-09-27T09:51:41-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects</id>
-    <content type="html"><![CDATA[<p>Brief note here.  Following a Summer of travel and visitors, posts should be returning to a more regular schedule soon.  It&rsquo;s great when I can post here regularly, but I&rsquo;m not going to get bent out of shape when I have other commitments.  So, if there are unannounced, prolonged absences, you can assume that it has something to do with spending my weekends traveling or socializing, which is undoubtedly a good thing.</p>
-
-<p>I recently came across <a href="http://stackoverflow.com/questions/18225126/how-to-use-git-for-unity3d-source-control">this stackoverflow answer</a> introducing git for version control in Unity projects.  Note, the question specifically refers to Unity3D, but this will work for Unity2D as well.</p>
-
-<p>I&rsquo;ve <a href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/">already written</a> about setting up a <code>.gitignore</code> file.  Here are some steps you can take to optimize the way Unity stores information, so git can track it.</p>
-
-<p>Git was built to work by <code>diffing</code> large files containing text, specifically code.  Git works just fine with binary files, but it defaults to a less efficient method to <code>diff</code> those files, which can result in bloated git repositories.  Nobody wants a bloated git repository.</p>
-
-<p>Here I&rsquo;ll summarize two of the steps from the answer that I found helpful, using Unity v4.5+.  It&rsquo;s worth noting that these steps will increase the size of your project&mdash;although I&rsquo;m unsure whether they affect the size of any deployed binaries.</p>
-
-<p>So if the size of the project on your development machine is a critical issue, you may want to think about keeping the default settings.  The project I tried the steps on went from 86.7 MB on disk (including its bloated git repository) to 86.9 MB, so it&rsquo;s probably not going to create an appreciable change in most projects.</p>
-
-<h2>Switch to Visible Meta Files</h2>
-
-<p>Switch to <code>Visible Meta Files</code> in the Edit → Project Settings → Editor → Version Control Mode Menu.</p>
-
-<p>If the <code>Visible Meta Files</code> option is turned on, the <code>.meta</code> files associated with parts of your project will have textual information rather than binary.</p>
-
-<h2>Switch to Force Text</h2>
-
-<p>Switch to <code>Force Text</code> in the Edit → Project Settings → Editor → Version Control Menu.</p>
-
-<p>If you choose <code>Force Text</code> this will cause Unity to use text to serialize assets that it would normally store as binary files.</p>
-
-<h2>Save</h2>
-
-<p>Save the Scene and project for these changes to take effect.</p>
 ]]></content>
   </entry>
   
