@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-06-20T11:22:31-05:00</updated>
+  <updated>2015-07-04T10:11:04-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,132 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/"/>
+    <updated>2015-07-04T09:56:33-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript</id>
+    <content type="html"><![CDATA[<p>The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: <a href="http://docs.unity3d.com/Manual/RandomNumbers.html">Choosing Items with Different Probabilities</a>).  In this post I&rsquo;ll show how to use a similar approach to generate random items with specific probabilities dictated by the environment.</p>
+
+<!--more-->
+
+
+<p>I want to be able to generate an item code, say <code>Red</code>, <code>Green</code>, or <code>Black</code>, given a list of floating point probabilities dictated by the current environmental area in my game, say for example <code>desert</code> or <code>grassland</code>.</p>
+
+<p>Varying the probability of encountering items will give each area a unique flavor.  If the player needs a <code>Red</code> item, the player will need to seek out areas in which the probability for encountering <code>Red</code> items is high.  I hope this will drive player exploration and investigation.</p>
+
+<p>I&rsquo;ll start by defining an array of possible item types.  (According to <a href="http://wiki.unity3d.com/index.php/Head_First_into_Unity_with_UnityScript#Use_enum">this introduction to Unity JavaScript</a>, I should prefer <code>enum</code>.)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">ents</span> <span class="o">:</span> <span class="nb">String</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="s2">&quot;Green&quot;</span><span class="p">,</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="s2">&quot;Orange&quot;</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Since this is a small example, I&rsquo;ll forego the efficiency and security that <code>enum</code>s provide for the convenience of using a simple <code>String</code> array.  I&rsquo;ll note that this is a good spot to do some refactoring in a real project where a variety of systems may have to interact with the item types.</p>
+
+<p>I then define a Dictionary <code>areas</code> of Lists of floating point probabilities.  These areas correspond to terrains that contain unique distributions of items. The <code>areas</code> Dictionary accepts <code>String</code>s specifying the desired terrain.</p>
+
+<p>It&rsquo;s important to note that the order of the probabilities correspond to the order of the item types in <code>ent</code>s.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">areas</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dictionary</span><span class="p">.</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">();</span>
+</span><span class='line'><span class="nx">areas</span><span class="p">[</span><span class="s2">&quot;desert&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">float</span><span class="o">&gt;</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.425</span><span class="p">,</span> <span class="mf">0.425</span><span class="p">]);</span>
+</span><span class='line'><span class="nx">areas</span><span class="p">[</span><span class="s2">&quot;grassland&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">float</span><span class="o">&gt;</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So, in the <code>grassland</code> area, there will be a 30% chance of choosing a <code>Red</code> item.</p>
+
+<p>Now that I&rsquo;ve defined the data, I need a function to choose the appropriate index given a List of probabilities.  This function is lifted with minor modifications from the <a href="http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html">Unity Documentation</a>.  Take a look at that documentation for a better visualization of the algorithm than I could do with words.  Really, do it!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">Choose</span><span class="p">(</span><span class="nx">probs</span> <span class="o">:</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">float</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">:</span> <span class="kr">int</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Returns the index of a probabilistically determined random</span>
+</span><span class='line'>    <span class="c1">// entity, given by the probability distributions in probs.</span>
+</span><span class='line'>    <span class="c1">// e.g.:</span>
+</span><span class='line'>    <span class="c1">// probs : List.&lt;float&gt;([0.5, 0.2, 0.1, 0.2]);</span>
+</span><span class='line'>    <span class="c1">// entity = entities[Choose(probs)];</span>
+</span><span class='line'>    <span class="c1">//</span>
+</span><span class='line'>    <span class="c1">// See http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Watch out!  If you fail to specify total&#39;s type as float, it</span>
+</span><span class='line'>    <span class="c1">// will add the probs using integer addition.  This will floor</span>
+</span><span class='line'>    <span class="c1">// each of the probs to 0.</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">total</span> <span class="o">:</span> <span class="kr">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="nx">probs</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">total</span> <span class="o">+=</span> <span class="nx">x</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">randomPoint</span> <span class="o">=</span> <span class="nx">Random</span><span class="p">.</span><span class="nx">value</span> <span class="o">*</span> <span class="nx">total</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">probs</span><span class="p">.</span><span class="nx">Count</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">randomPoint</span> <span class="o">&lt;</span> <span class="nx">probs</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+</span><span class='line'>            <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">else</span>
+</span><span class='line'>            <span class="c1">// Shift the strip down, adjusting the random point&#39;s</span>
+</span><span class='line'>            <span class="c1">// value to see whether it falls within the next prob.</span>
+</span><span class='line'>            <span class="nx">randomPoint</span> <span class="o">-=</span> <span class="nx">probs</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="c1">// Take care of possibility that randomPoint is 1.0 or 100% by</span>
+</span><span class='line'>    <span class="c1">// returning the last element of probs.  Avoids allowing Choose to</span>
+</span><span class='line'>    <span class="c1">// return a 0 probability event (which would be possible using the</span>
+</span><span class='line'>    <span class="c1">// &lt;= test).</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">probs</span><span class="p">.</span><span class="nx">Count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now to choose an item:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">ents</span><span class="p">[</span><span class="nx">Choose</span><span class="p">(</span><span class="nx">areas</span><span class="p">[</span><span class="s2">&quot;grassland&quot;</span><span class="p">])];</span>
+</span><span class='line'><span class="nx">Debug</span><span class="p">.</span><span class="nx">Log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s all there is to it. I&rsquo;ve put an <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example Unity project with this code on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
@@ -1289,231 +1415,6 @@ schedules and finding a time that works for everyone in your group.</p>
 <p>What we&rsquo;ve presented here are a set of guidelines.  There are no hard and fast rules or requirements for hosting your own #VGBC.  Want to talk about knitting?  Cool.  Want to discuss your favorite sporting moments?  Great.  Board games?  Lawn darts?  More power to you.</p>
 
 <p>So start up your own #VGBC and let us know how it goes in the comments or on the twitters <a href="http://twitter.com/zerosalife">@zerosalife</a> or <a href="http://twitter.com/involvingsalmon">@InvolvingSalmon</a>.  When I post about something from #VGBC on the blog, I&rsquo;ll tag it with <a href="http://zerosalife.github.io/blog/categories/vgbc/">VGBC</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Syntax highlighting for Octopress]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress/"/>
-    <updated>2015-01-17T11:12:37-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s relatively simple, but I always forget how it&rsquo;s done.  In the
-interest of documenting useful information for myself, here is how to
-use <a href="http://octopress.org/docs/blogging/code/">syntax highlighting with code blocks in Octopress</a>.</p>
-
-<!--more-->
-
-
-<p>Here are some examples of languages I typically use:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">private</span> <span class="n">IEnumerator</span> <span class="nf">GUIMoveToPosition</span><span class="p">(</span><span class="n">Vector3</span> <span class="n">newPosition</span><span class="p">,</span> <span class="kt">float</span> <span class="n">duration</span><span class="p">,</span> <span class="n">RectTransform</span> <span class="n">rect</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">float</span> <span class="n">elapsedTime</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">Vector3</span> <span class="n">startingPos</span> <span class="p">=</span> <span class="n">rect</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">elapsedTime</span> <span class="p">&lt;</span> <span class="n">duration</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">rect</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">Vector3</span><span class="p">.</span><span class="n">Lerp</span><span class="p">(</span><span class="n">startingPos</span><span class="p">,</span>
-</span><span class='line'>                                 <span class="n">newPosition</span><span class="p">,</span>
-</span><span class='line'>                                 <span class="n">elapsedTime</span> <span class="p">/</span> <span class="n">duration</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">elapsedTime</span> <span class="p">+=</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">yield</span> <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_elapsed</span><span class="p">):</span>
-</span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">tick</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">total_time</span> <span class="o">+=</span> <span class="n">time_elapsed</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">time_elapsed</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">valid-string?</span> <span class="p">[</span><span class="nv">s</span><span class="p">]</span>
-</span><span class='line'>  <span class="s">&quot;Valid strings are non-empty strings that do not contain</span>
-</span><span class='line'><span class="s">  [ (commonly used to denote parts of the song and which rappers are</span>
-</span><span class='line'><span class="s">  rapping) and : (commonly used in the album info and transcriber</span>
-</span><span class='line'><span class="s">  info).&quot;</span>
-</span><span class='line'>  <span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">contains-char?</span> <span class="nv">s</span> <span class="sc">\[</span><span class="p">))</span>
-</span><span class='line'>       <span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">contains-char?</span> <span class="nv">s</span> <span class="sc">\:</span><span class="p">))</span>
-</span><span class='line'>       <span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">contains-char?</span> <span class="nv">s</span> <span class="sc">\&quot;</span><span class="p">))</span>
-</span><span class='line'>       <span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">contains-char?</span> <span class="nv">s</span> <span class="sc">\(</span><span class="p">))</span>
-</span><span class='line'>       <span class="p">(</span><span class="nb">seq </span><span class="nv">s</span><span class="p">)))</span>
-</span><span class='line'><span class="c1">;;; http://clojuredocs.org/clojure_core/clojure.core/empty_q</span>
-</span><span class='line'><span class="c1">;;; Please use the idiom (seq x) rather than (not (empty? x))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Bonus: Help me refactor this code</h2>
-
-<p>I think there&rsquo;s some way to refactor these two similar functions so
-they don&rsquo;t share code, but I don&rsquo;t see it.  If you have a clever way
-to offload the common functionality, let me know in the comments
-(<a href="http://gist.github.com">gists</a> preferred).</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="c1">// NOTE: there are some differences between the two functions</span>
-</span><span class='line'><span class="c1">// because I&#39;m still adding funcitonality.  I think there should be</span>
-</span><span class='line'><span class="c1">// a way to pull out some of the common functionality so I don&#39;t</span>
-</span><span class='line'><span class="c1">// have two functions that share code.  Maybe by separating the</span>
-</span><span class='line'><span class="c1">// boundary checks from the actual &quot;counting&quot; steps?</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">void</span> <span class="nf">Countdown</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">iTargetHp</span> <span class="p">=</span> <span class="n">iHp</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// If the rolling hp reaches the hit point above iHp then we can</span>
-</span><span class='line'>  <span class="c1">// stop the rolling because each RollEvent effectively moves past</span>
-</span><span class='line'>  <span class="c1">// the current iRolHp.</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">==</span> <span class="n">iTargetHp</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// Start Coroutine to return reels to original positions</span>
-</span><span class='line'>    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">WaitAndResetReels</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Down</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">CancelInvoke</span><span class="p">(</span><span class="s">&quot;Countdown&quot;</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">WaitAndResetReels</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Down</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// TRUE DEATH!</span>
-</span><span class='line'>    <span class="n">CancelInvoke</span><span class="p">(</span><span class="s">&quot;Countdown&quot;</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="c1">// If the rolling HP is larger than the target HP and positive,</span>
-</span><span class='line'>  <span class="c1">// then roll down.</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">&gt;</span> <span class="n">iTargetHp</span> <span class="p">||</span> <span class="n">iRolHp</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">RollEvent</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Down</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">iRolHp</span> <span class="p">=</span> <span class="n">iRolHp</span> <span class="p">+</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Down</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">void</span> <span class="nf">Countup</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">iTargetHp</span> <span class="p">=</span> <span class="n">iHp</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// If the rolling hp reaches the hit point below iHp then we can</span>
-</span><span class='line'>  <span class="c1">// stop rolling because each RollEvent effectively moves past the</span>
-</span><span class='line'>  <span class="c1">// current iRolHp.</span>
-</span><span class='line'>  <span class="c1">//</span>
-</span><span class='line'>  <span class="c1">// Also take care of some nasty edge cases resulting in two calls</span>
-</span><span class='line'>  <span class="c1">// to WaitAndResetReels.</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">==</span> <span class="n">iTargetHp</span> <span class="p">&amp;</span> <span class="n">iRolHp</span> <span class="p">&lt;</span> <span class="n">iMaxHp</span> <span class="p">&amp;</span> <span class="n">iRolHp</span> <span class="p">!=</span> <span class="n">iMaxHp</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">WaitAndResetReels</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Up</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">CancelInvoke</span><span class="p">(</span><span class="s">&quot;Countup&quot;</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">&gt;=</span> <span class="n">iMaxHp</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">iHp</span> <span class="p">=</span> <span class="n">iMaxHp</span><span class="p">;</span>
-</span><span class='line'>    <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">WaitAndResetReels</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Up</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// Maxed out HP.</span>
-</span><span class='line'>    <span class="n">CancelInvoke</span><span class="p">(</span><span class="s">&quot;Countup&quot;</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// If the rolling HP is smaller than the target HP and less than</span>
-</span><span class='line'>  <span class="c1">// Max HP, then roll up.</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iRolHp</span> <span class="p">&lt;</span> <span class="n">iTargetHp</span> <span class="p">||</span> <span class="n">iRolHp</span> <span class="p">&lt;</span> <span class="n">iMaxHp</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">RollEvent</span><span class="p">(</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Up</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">iRolHp</span> <span class="p">=</span> <span class="n">iRolHp</span> <span class="p">+</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">RollDir</span><span class="p">.</span><span class="n">Up</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
 ]]></content>
   </entry>
   

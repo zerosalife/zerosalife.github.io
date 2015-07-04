@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-06-20T11:22:31-05:00</updated>
+  <updated>2015-07-04T10:11:04-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,93 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/"/>
+    <updated>2015-07-04T09:56:33-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript</id>
+    <content type="html"><![CDATA[<p>The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: <a href="http://docs.unity3d.com/Manual/RandomNumbers.html">Choosing Items with Different Probabilities</a>).  In this post I&rsquo;ll show how to use a similar approach to generate random items with specific probabilities dictated by the environment.</p>
+
+<!--more-->
+
+
+<p>I want to be able to generate an item code, say <code>Red</code>, <code>Green</code>, or <code>Black</code>, given a list of floating point probabilities dictated by the current environmental area in my game, say for example <code>desert</code> or <code>grassland</code>.</p>
+
+<p>Varying the probability of encountering items will give each area a unique flavor.  If the player needs a <code>Red</code> item, the player will need to seek out areas in which the probability for encountering <code>Red</code> items is high.  I hope this will drive player exploration and investigation.</p>
+
+<p>I&rsquo;ll start by defining an array of possible item types.  (According to <a href="http://wiki.unity3d.com/index.php/Head_First_into_Unity_with_UnityScript#Use_enum">this introduction to Unity JavaScript</a>, I should prefer <code>enum</code>.)</p>
+
+<p><code>javascript
+var ents : String[] = ["Red", "Green", "Black", "Orange"];
+</code></p>
+
+<p>Since this is a small example, I&rsquo;ll forego the efficiency and security that <code>enum</code>s provide for the convenience of using a simple <code>String</code> array.  I&rsquo;ll note that this is a good spot to do some refactoring in a real project where a variety of systems may have to interact with the item types.</p>
+
+<p>I then define a Dictionary <code>areas</code> of Lists of floating point probabilities.  These areas correspond to terrains that contain unique distributions of items. The <code>areas</code> Dictionary accepts <code>String</code>s specifying the desired terrain.</p>
+
+<p>It&rsquo;s important to note that the order of the probabilities correspond to the order of the item types in <code>ent</code>s.</p>
+
+<p><code>javascript
+var areas = new Dictionary.&lt;String, List.&lt;float&gt; &gt;();
+areas["desert"] = new List.&lt;float&gt;([0.1, 0.05, 0.425, 0.425]);
+areas["grassland"] = new List.&lt;float&gt;([0.3, 0.35, 0.1, 0.25]);
+</code></p>
+
+<p>So, in the <code>grassland</code> area, there will be a 30% chance of choosing a <code>Red</code> item.</p>
+
+<p>Now that I&rsquo;ve defined the data, I need a function to choose the appropriate index given a List of probabilities.  This function is lifted with minor modifications from the <a href="http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html">Unity Documentation</a>.  Take a look at that documentation for a better visualization of the algorithm than I could do with words.  Really, do it!</p>
+
+<p>``` javascript
+function Choose(probs : List.<float>) : int {</p>
+
+<pre><code>// Returns the index of a probabilistically determined random
+// entity, given by the probability distributions in probs.
+// e.g.:
+// probs : List.&lt;float&gt;([0.5, 0.2, 0.1, 0.2]);
+// entity = entities[Choose(probs)];
+//
+// See http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html
+
+// Watch out!  If you fail to specify total's type as float, it
+// will add the probs using integer addition.  This will floor
+// each of the probs to 0.
+var total : float = 0;
+
+for (x in probs) {
+    total += x;
+}
+
+var randomPoint = Random.value * total;
+
+for(var i = 0; i &lt; probs.Count; i++) {
+    if (randomPoint &lt; probs[i])
+        return i;
+    else
+        // Shift the strip down, adjusting the random point's
+        // value to see whether it falls within the next prob.
+        randomPoint -= probs[i];
+}
+// Take care of possibility that randomPoint is 1.0 or 100% by
+// returning the last element of probs.  Avoids allowing Choose to
+// return a 0 probability event (which would be possible using the
+// &lt;= test).
+return probs.Count - 1;
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Now to choose an item:</p>
+
+<p><code>javascript
+var item = ents[Choose(areas["grassland"])];
+Debug.Log(item);
+</code></p>
+
+<p>That&rsquo;s all there is to it. I&rsquo;ve put an <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example Unity project with this code on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
@@ -355,181 +442,6 @@ using Pair;</p>
 <p>I find the tuple key code way more readable than the Dictionary of Dictionaries code.  You can imagine how the legibility of the Dictionary of Dictionaries approach decreases with additional keys but the tuple key code legibility remains the same no matter how many keys you add.  This is probably a moot point for using two keys, as I have in this example, but I hope you can appreciate why I think the tuple approach is more elegant.</p>
 
 <p>If you have any insight into how to solve the <code>Using the generic type `Pair&lt;TFirst,TSecond&gt;' requires `2' type argument(s)</code> error I encountered using the <code>Pair</code> class, please let me know in the comments below or on <a href="http://twitter.com/zerosalife">twitter</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Simple Mind-reading Machine in Unity JavaScript]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/"/>
-    <updated>2014-12-13T14:38:20-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript</id>
-    <content type="html"><![CDATA[<p>I ported a cool toy from <a href="http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/">Alastair Aitchison&rsquo;s blog</a> to Unity JavaScript.  The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that attempts to guess whether the player will choose Left (by pressing the left arrow key) or Right (by pressing the right arrow key).</p>
-
-<!--more-->
-
-
-<h2>How does it work?</h2>
-
-<p>Aitchison&rsquo;s blog post describes how it works:</p>
-
-<blockquote><p>How does it work? Not by mind-reading, obviously, but by exploiting
-the fact that humans do not behave as &ldquo;randomly&rdquo; as they think they
-do. The computer maintains a very simple memory that records the
-pattern of results of the last two rounds – whether the player won or
-lost, whether they switched strategy, and then whether they then won
-or last the following round. The computer then uses this to choose its
-own best strategy based on the way the player behaved last time the
-current pattern occurred. If the computer loses twice in a row using
-the current strategy, it picks a random response in the next round.</p></blockquote>
-
-<p>The original idea came from some AI work by <a href="http://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a> and D. W. Hagelbarger. <a href="http://cs.stanford.edu/people/eroberts/courses/soco/projects/1999-00/information-theory/ai.html">They describe the internal memory of the toy mind-reader</a> that we will model using a multidimensional array <code>v</code>:</p>
-
-<blockquote><p>There are 8 possible situations and two things the player can do at each one:</p>
-
-<ol>
-<li><p>player wins, plays same, wins. Then same or differently.</p></li>
-<li><p>player wins, plays same, loses. Then same or differently.</p></li>
-<li><p>player wins, plays differently, wins. Then same or differently.</p></li>
-<li><p>player wins, plays differently, loses.Then same or differently.</p></li>
-<li><p>player loses, plays same, wins.Then same or differently.</p></li>
-<li><p>player loses, plays same, loses.Then same or differently.</p></li>
-<li><p>player loses, plays differently, wins.Then same or differently.</p></li>
-<li><p>player loses, plays differently, loses.Then same or differently.</p></li>
-</ol>
-</blockquote>
-
-<h2>Why port it?</h2>
-
-<p>Why not just take a straightforward approach, running the code myself? First, I wanted to fully understand the algorithm the hard way, by coding it line for line myself. And second, I wanted to better familiarize myself with Unity JavaScript, including its differences from C#.</p>
-
-<p>The port was relatively simple, except for two small hiccups.  First, as far as I know, Unity JavaScript doesn&rsquo;t allow for initializing a multidimensional array.  So I looped over the cells in the array, filling them that way.  I have a hunch that the cells are initialized to the <code>int</code> <code>0</code> by default, but I wanted to be explicit.  Please let me know in the comments or <a href="https://twitter.com/zerosalife">via twitter</a> if I&rsquo;m way off base.</p>
-
-<pre><code>var v : int[2, 2, 2];
-for(var cell in v) {
-    cell = 0;
-}
-</code></pre>
-
-<p>I also encountered some unfamiliar syntax: the sonorously named Elvis operator, <a href="http://en.wikipedia.org/wiki/Conditional_operator">?:</a>.  It&rsquo;s also called the <a href="http://en.wikipedia.org/wiki/Ternary_operation">ternary operator</a>, when it&rsquo;s used with 3 arguments, as I&rsquo;ve used it here.  In C-like languages it allows for succinctly stating these kinds of conditional expressions. The example below illustrates how it&rsquo;s used.</p>
-
-<pre><code>// Is the current player's choice the same as the previous player's
-// choice?
-//
-// if (playerChoice == lastChoice)
-//     sameChoice = True;
-// else
-//     sameChoice = False;
-//
-// Using ternary operator:
-v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
-</code></pre>
-
-<h2>The code</h2>
-
-<p>The ported code for the mind-reader is reproduced below.</p>
-
-<pre><code>#pragma strict
-import System.Collections.Generic;
-
-// Used to record play history
-var v: int[,,];
-var lw1: int;
-var lw2: int;
-var losingStreak: int;
-
-// The prediction of the player's next turn
-var prediction: int;
-
-// Keep track of scores
-var cpuScore: int;
-var playerScore: int;
-
-var outText: String;
-
-function Start () {
-    // Initialize matrix to track state of play history
-
-    v = new int[2, 2, 2];
-
-    for(var cell in v) {
-        cell = 0;
-    }
-
-    // No prior knowledge, so set inital prediction based on random chance.
-    prediction = flip();
-
-    // Set scores to 0
-    cpuScore = 0;
-    playerScore = 0;
-
-    // Initialize previous play and play before last win-lost trackers
-    lw1 = 0;
-    lw2 = 0;
-
-    // Output
-    outText = "";
-}
-
-function TakeTurn(playerChoice: int) {
-    // Display player and computer's choices
-    var outTextString: String = "You pressed " + playerChoice + ", " + "I guessed " + prediction + "\n";
-
-    // Computer guessed correctly
-    if (playerChoice == prediction) {
-        cpuScore++;
-        losingStreak = 0;
-        outTextString += " I WIN!\n";
-    }
-    else {
-        playerScore++;
-        losingStreak++;
-        outTextString += " YOU WIN!\n";
-    }
-
-    outText = outTextString;
-
-    // Is the current player's choice the same as the previous player's
-    // choice?
-    //
-    // if (playerChoice == lastChoice)
-    //     sameChoice = True;
-    // else
-    //     sameChoice = False;
-    //
-    // Using ternary operator:
-    v[lw2, lw1, 1] = (v[lw2, lw1, 0] == playerChoice ? 1 : 0);
-    v[lw2, lw1, 0] = playerChoice;
-    lw2 = lw1;
-    lw1 = playerChoice;
-
-    // If lost more than twice in present state, choose random
-    // strategy.  Otherwise keep the same strategy.
-    prediction = v[lw2, lw1, 1] == 1 &amp;&amp; losingStreak &lt; 2 ? v[lw2, lw1, 0] : flip();
-}
-
-function flip() : int {
-    // Simulate a coin flip to produce 50:50 chance of [0, 1]
-    return Random.Range(0, 2);
-}
-
-
-function Update () {
-    if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-        TakeTurn(0);
-    }
-    if (Input.GetKeyDown(KeyCode.RightArrow)) {
-        TakeTurn(1);
-    }
-}
-
-function OnGUI() {
-    var style : GUIStyle = new GUIStyle();
-    style.fontSize = 36;
-
-    GUI.Label(new Rect(0, 0, Screen.width, 100), outText, style);
-    GUI.Label(new Rect(0, 100, Screen.width, 200), "Player: " + playerScore + " CPU: " + cpuScore, style);
-}
-</code></pre>
 ]]></content>
   </entry>
   

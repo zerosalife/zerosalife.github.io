@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithms | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-06-20T11:22:31-05:00</updated>
+  <updated>2015-07-04T10:11:04-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,93 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/"/>
+    <updated>2015-07-04T09:56:33-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript</id>
+    <content type="html"><![CDATA[<p>The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: <a href="http://docs.unity3d.com/Manual/RandomNumbers.html">Choosing Items with Different Probabilities</a>).  In this post I&rsquo;ll show how to use a similar approach to generate random items with specific probabilities dictated by the environment.</p>
+
+<!--more-->
+
+
+<p>I want to be able to generate an item code, say <code>Red</code>, <code>Green</code>, or <code>Black</code>, given a list of floating point probabilities dictated by the current environmental area in my game, say for example <code>desert</code> or <code>grassland</code>.</p>
+
+<p>Varying the probability of encountering items will give each area a unique flavor.  If the player needs a <code>Red</code> item, the player will need to seek out areas in which the probability for encountering <code>Red</code> items is high.  I hope this will drive player exploration and investigation.</p>
+
+<p>I&rsquo;ll start by defining an array of possible item types.  (According to <a href="http://wiki.unity3d.com/index.php/Head_First_into_Unity_with_UnityScript#Use_enum">this introduction to Unity JavaScript</a>, I should prefer <code>enum</code>.)</p>
+
+<p><code>javascript
+var ents : String[] = ["Red", "Green", "Black", "Orange"];
+</code></p>
+
+<p>Since this is a small example, I&rsquo;ll forego the efficiency and security that <code>enum</code>s provide for the convenience of using a simple <code>String</code> array.  I&rsquo;ll note that this is a good spot to do some refactoring in a real project where a variety of systems may have to interact with the item types.</p>
+
+<p>I then define a Dictionary <code>areas</code> of Lists of floating point probabilities.  These areas correspond to terrains that contain unique distributions of items. The <code>areas</code> Dictionary accepts <code>String</code>s specifying the desired terrain.</p>
+
+<p>It&rsquo;s important to note that the order of the probabilities correspond to the order of the item types in <code>ent</code>s.</p>
+
+<p><code>javascript
+var areas = new Dictionary.&lt;String, List.&lt;float&gt; &gt;();
+areas["desert"] = new List.&lt;float&gt;([0.1, 0.05, 0.425, 0.425]);
+areas["grassland"] = new List.&lt;float&gt;([0.3, 0.35, 0.1, 0.25]);
+</code></p>
+
+<p>So, in the <code>grassland</code> area, there will be a 30% chance of choosing a <code>Red</code> item.</p>
+
+<p>Now that I&rsquo;ve defined the data, I need a function to choose the appropriate index given a List of probabilities.  This function is lifted with minor modifications from the <a href="http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html">Unity Documentation</a>.  Take a look at that documentation for a better visualization of the algorithm than I could do with words.  Really, do it!</p>
+
+<p>``` javascript
+function Choose(probs : List.<float>) : int {</p>
+
+<pre><code>// Returns the index of a probabilistically determined random
+// entity, given by the probability distributions in probs.
+// e.g.:
+// probs : List.&lt;float&gt;([0.5, 0.2, 0.1, 0.2]);
+// entity = entities[Choose(probs)];
+//
+// See http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html
+
+// Watch out!  If you fail to specify total's type as float, it
+// will add the probs using integer addition.  This will floor
+// each of the probs to 0.
+var total : float = 0;
+
+for (x in probs) {
+    total += x;
+}
+
+var randomPoint = Random.value * total;
+
+for(var i = 0; i &lt; probs.Count; i++) {
+    if (randomPoint &lt; probs[i])
+        return i;
+    else
+        // Shift the strip down, adjusting the random point's
+        // value to see whether it falls within the next prob.
+        randomPoint -= probs[i];
+}
+// Take care of possibility that randomPoint is 1.0 or 100% by
+// returning the last element of probs.  Avoids allowing Choose to
+// return a 0 probability event (which would be possible using the
+// &lt;= test).
+return probs.Count - 1;
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Now to choose an item:</p>
+
+<p><code>javascript
+var item = ents[Choose(areas["grassland"])];
+Debug.Log(item);
+</code></p>
+
+<p>That&rsquo;s all there is to it. I&rsquo;ve put an <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example Unity project with this code on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
@@ -201,19 +288,6 @@ print(table["c"][1]);
 <h2>Update</h2>
 
 <p>After some feedback from @NoelFB, I&rsquo;ve updated the algorithm in the <a href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">following post</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sharing Philosophy]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy/"/>
-    <updated>2014-12-27T08:01:01-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy</id>
-    <content type="html"><![CDATA[<p>From <a href="http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code">this interview</a> with <a href="https://twitter.com/samaaron">Sam Aaron</a>.  Aaron talks about sharing software to create music, but it applies just as well to games.</p>
-
-<blockquote><p>We believe that most value in the world comes through sharing, and that music is no exception. One of the benefits of sharing is that it makes learning much easier. For example, we often hear amazing sounds on albums and wonder how they were made. However, musicians rarely share their production methods. We release all the software we write, which includes our synthesiser designs, interaction abstractions, and compositional structures, under an open source license, and we distribute it to everyone through GitHub. This makes it free and easy for anybody to copy and recreate any aspect of our work. For example, when one of our fans is interested in the sound of one of the synths we&rsquo;re using, they can go to GitHub and download the synth design as text. They can email it to their friends, read it, study it, copy it, modify it and run it to recreate the exact sound.</p></blockquote>
-
-<p>&#x2013;Sam Aaron</p>
 ]]></content>
   </entry>
   
