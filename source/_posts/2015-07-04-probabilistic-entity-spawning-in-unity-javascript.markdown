@@ -74,7 +74,7 @@ function Choose(probs : List.<float>) : int {
     // returning the last element of probs.  Avoids allowing Choose to
     // return a 0 probability event (which would be possible using the
     // <= test).
-    return probs(probs.Count - 1);
+    return probs[probs.Count - 1];
 
 }
 ```
