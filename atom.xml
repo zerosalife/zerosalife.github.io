@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-06-13T11:19:45-05:00</updated>
+  <updated>2015-06-20T11:22:31-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp/"/>
+    <updated>2015-06-20T11:16:28-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/">Last week</a>, I published an article about creating a Dictionary of Lists in Unity using Unity&rsquo;s JavaScript.  Some of the syntax is changed in C#, but the overall algorithm is exactly the same.  I&rsquo;ve already mentioned the underlying motive, so I&rsquo;ll dive right in.</p>
+
+<!--more-->
+
+
+<p>Here&rsquo;s how to create a Dictionary of Lists in C# for Unity.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;&gt;</span> <span class="n">table</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;&gt;();</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">void</span> <span class="nf">Start</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Fill our table with Lists containing ints using Arrays to intialize</span>
+</span><span class='line'>    <span class="c1">// the Lists.</span>
+</span><span class='line'>    <span class="n">table</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(){</span><span class="m">1</span><span class="p">};</span>
+</span><span class='line'>    <span class="n">table</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(){</span><span class="m">2</span><span class="p">};</span>
+</span><span class='line'>    <span class="n">table</span><span class="p">[</span><span class="s">&quot;c&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(){</span><span class="m">3</span><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">foreach</span><span class="p">(</span><span class="kt">string</span> <span class="n">str</span> <span class="k">in</span> <span class="n">table</span><span class="p">.</span><span class="n">Keys</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="c1">// Get the value for our Key.</span>
+</span><span class='line'>        <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="k">value</span> <span class="p">=</span> <span class="n">table</span><span class="p">[</span><span class="n">str</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// If the Key is the desired Key, append to its list.</span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">str</span> <span class="p">==</span> <span class="s">&quot;c&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">value</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// print the first item in each of the Lists.</span>
+</span><span class='line'>        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="k">value</span><span class="p">[</span><span class="m">0</span><span class="p">]);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Print the appended item to see that it worked.</span>
+</span><span class='line'>    <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s">&quot;c&quot;</span><span class="p">][</span><span class="m">1</span><span class="p">]);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These are the main differences between the Unity JavaScript and C# code.  Take a look at the full file in a <a href="https://gist.github.com/zerosalife/e3882aa5ffd5dd614c9a">gist on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating a Dictionary of Lists in Unity JavaScript]]></title>
@@ -1445,28 +1514,6 @@ to offload the common functionality, let me know in the comments
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Previewing a post using Octopress]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress/"/>
-    <updated>2015-01-10T10:01:44-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s nice to preview some of my more complicated posts before I ship them out to the Internets.  Here&rsquo;s how I do it.</p>
-
-<h2>make preview</h2>
-
-<p>I <a href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/">previously posted</a> a <code>makefile</code> I use to automate deployment of my blog.  Here are the germane lines for previewing:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='make'><span class='line'><span class="nf">preview</span><span class="o">:</span>
-</span><span class='line'>  bundle <span class="nb">exec </span>rake generate <span class="o">&amp;&amp;</span> bundle <span class="nb">exec </span>rake preview
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So typing <code>make preview</code> at the command prompt will run start up <a href="https://github.com/ruby/rake">rake</a>&rsquo;s webserver at <code>http://localhost:4000</code>.  Then all I have to do is launch a browser, connect to that port, and voila: a preview of the blog that regenerates to match the changes I make live, as I make them.</p>
 ]]></content>
   </entry>
   

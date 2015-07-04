@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithms | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-06-13T11:19:45-05:00</updated>
+  <updated>2015-06-20T11:22:31-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp/"/>
+    <updated>2015-06-20T11:16:28-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/">Last week</a>, I published an article about creating a Dictionary of Lists in Unity using Unity&rsquo;s JavaScript.  Some of the syntax is changed in C#, but the overall algorithm is exactly the same.  I&rsquo;ve already mentioned the underlying motive, so I&rsquo;ll dive right in.</p>
+
+<!--more-->
+
+
+<p>Here&rsquo;s how to create a Dictionary of Lists in C# for Unity.</p>
+
+<p>```csharp
+Dictionary&lt;string, List<int>> table = new Dictionary&lt;string, List<int>>();</p>
+
+<p>void Start() {</p>
+
+<pre><code>// Fill our table with Lists containing ints using Arrays to intialize
+// the Lists.
+table["a"] = new List&lt;int&gt;(){1};
+table["b"] = new List&lt;int&gt;(){2};
+table["c"] = new List&lt;int&gt;(){3};
+
+foreach(string str in table.Keys) {
+    // Get the value for our Key.
+    List&lt;int&gt; value = table[str];
+
+    // If the Key is the desired Key, append to its list.
+    if(str == "c") {
+        value.Add(4);
+    }
+
+    // print the first item in each of the Lists.
+    Debug.Log(value[0]);
+}
+
+// Print the appended item to see that it worked.
+Debug.Log(table["c"][1]);
+</code></pre>
+
+<p>}
+```</p>
+
+<p>These are the main differences between the Unity JavaScript and C# code.  Take a look at the full file in a <a href="https://gist.github.com/zerosalife/e3882aa5ffd5dd614c9a">gist on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating a Dictionary of Lists in Unity JavaScript]]></title>
