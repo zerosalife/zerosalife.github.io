@@ -1386,6 +1386,15 @@ The Metroidvania genre is a microcosm of life's journey itself.
 *** Tagged items in Unity
 [[https://twitter.com/infinite_ammo/status/608583381949906944/photo/1]]
 
+*** Names matter
+[[http://subtractivedesign.blogspot.com/2013/02/making-platforming-games.html]]
+
+"Names Matter - What you call something when it is being created
+defines it. A level called generic level 01 has less potential to be
+good than one with a name like Laughing Bouncers. Words have power and
+they define things. When you hear words describing something they will
+inspire people to do more."
+
 ** STARTED DRAFTS
 
 
@@ -1872,21 +1881,31 @@ ensure that the developers receive the amount of money you intend.
 
 
 ** Probabilistic Entity Spawning in Unity JavaScript
+This week I show how to generate random items with specific
+probabilities dictated by the game environment in #unity3d
+#JavaScript.
+
+
 #unity3d
 
 - JavaScript
 - Unity
+- Unity3d
 - tools
 - algorithms
 
 The Unity documentation has an example showing how to generate random
-indexes satisfying a distribution of probabilities.  In this post I'll
-show you how to use a similar approach to generate random items with
-specific probabilities dictated by the environment.
+indexes satisfying a distribution of probabilities (see: [[http://docs.unity3d.com/Manual/RandomNumbers.html][Choosing
+Items with Different Probabilities]]).  In this post I'll show how to
+use a similar approach to generate random items with specific
+probabilities dictated by the environment.
+
+<!--more-->
 
 I want to be able to generate an item code, say =Red=, =Green=, or
 =Black=, given a list of floating point probabilities dictated by the
-current area, for example =desert= or =grassland=.
+current environmental area in my game, say for example =desert= or
+=grassland=.
 
 Varying the probability of encountering items will give each area a
 unique flavor.  If the player needs a =Red= item, the player will need
@@ -1901,13 +1920,19 @@ I'll start by defining an array of possible item types.  (According to
   var ents : String[] = ["Red", "Green", "Black", "Orange"];
 #+END_SRC
 
-Then I define a Dictionary =areas= of Lists of floating point
+Since this is a small example, I'll forego the efficiency and security
+that =enum=s provide for the convenience of using a simple =String=
+array.  I'll note that this is a good spot to do some refactoring in a
+real project where a variety of systems may have to interact with the
+item types.
+
+I then define a Dictionary =areas= of Lists of floating point
 probabilities.  These areas correspond to terrains that contain unique
-distributions of items. The =areas= Dictionary accepts =strings=
+distributions of items. The =areas= Dictionary accepts =String=s
 specifying the desired terrain.
 
 It's important to note that the order of the probabilities correspond
-to the order of the item types in =ents=.
+to the order of the item types in =ent=s.
 
 #+BEGIN_SRC javascript start:7
   var areas = new Dictionary.<String, List.<float> >();
@@ -1918,7 +1943,7 @@ to the order of the item types in =ents=.
 So, in the =grassland= area, there will be a 30% chance of choosing a
 =Red= item.
 
-Now that we've defined our data, we need a function to choose the
+Now that I've defined the data, I need a function to choose the
 appropriate index given a List of probabilities.  This function is
 lifted with minor modifications from the [[http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html][Unity Documentation]].  Take a
 look at that documentation for a better visualization of the algorithm
@@ -1969,9 +1994,14 @@ Now to choose an item:
   Debug.Log(item);
 #+END_SRC
 
-That's all there is to it. I've put an example Unity project with this
-code on github.
+That's all there is to it. I've put an [[https://github.com/zerosalife/ProbEntitySpawnExample][example Unity project with this
+code on github]].
 
+** Probabilistic entity spawning in Unity C#
+
+Last week I showed how to do probabilistic entity spawning in Unity
+JS.  This week I'll port that code over to C#.  Since I've already
+explained the Algorithm I will focus mainly on the differences in the code.
 ** Mobile Frame Football Association
 From The Game Design Workshop book:
 
