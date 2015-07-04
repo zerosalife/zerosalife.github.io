@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-06-20T11:22:31-05:00</updated>
+  <updated>2015-07-04T10:11:04-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,93 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/"/>
+    <updated>2015-07-04T09:56:33-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript</id>
+    <content type="html"><![CDATA[<p>The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: <a href="http://docs.unity3d.com/Manual/RandomNumbers.html">Choosing Items with Different Probabilities</a>).  In this post I&rsquo;ll show how to use a similar approach to generate random items with specific probabilities dictated by the environment.</p>
+
+<!--more-->
+
+
+<p>I want to be able to generate an item code, say <code>Red</code>, <code>Green</code>, or <code>Black</code>, given a list of floating point probabilities dictated by the current environmental area in my game, say for example <code>desert</code> or <code>grassland</code>.</p>
+
+<p>Varying the probability of encountering items will give each area a unique flavor.  If the player needs a <code>Red</code> item, the player will need to seek out areas in which the probability for encountering <code>Red</code> items is high.  I hope this will drive player exploration and investigation.</p>
+
+<p>I&rsquo;ll start by defining an array of possible item types.  (According to <a href="http://wiki.unity3d.com/index.php/Head_First_into_Unity_with_UnityScript#Use_enum">this introduction to Unity JavaScript</a>, I should prefer <code>enum</code>.)</p>
+
+<p><code>javascript
+var ents : String[] = ["Red", "Green", "Black", "Orange"];
+</code></p>
+
+<p>Since this is a small example, I&rsquo;ll forego the efficiency and security that <code>enum</code>s provide for the convenience of using a simple <code>String</code> array.  I&rsquo;ll note that this is a good spot to do some refactoring in a real project where a variety of systems may have to interact with the item types.</p>
+
+<p>I then define a Dictionary <code>areas</code> of Lists of floating point probabilities.  These areas correspond to terrains that contain unique distributions of items. The <code>areas</code> Dictionary accepts <code>String</code>s specifying the desired terrain.</p>
+
+<p>It&rsquo;s important to note that the order of the probabilities correspond to the order of the item types in <code>ent</code>s.</p>
+
+<p><code>javascript
+var areas = new Dictionary.&lt;String, List.&lt;float&gt; &gt;();
+areas["desert"] = new List.&lt;float&gt;([0.1, 0.05, 0.425, 0.425]);
+areas["grassland"] = new List.&lt;float&gt;([0.3, 0.35, 0.1, 0.25]);
+</code></p>
+
+<p>So, in the <code>grassland</code> area, there will be a 30% chance of choosing a <code>Red</code> item.</p>
+
+<p>Now that I&rsquo;ve defined the data, I need a function to choose the appropriate index given a List of probabilities.  This function is lifted with minor modifications from the <a href="http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html">Unity Documentation</a>.  Take a look at that documentation for a better visualization of the algorithm than I could do with words.  Really, do it!</p>
+
+<p>``` javascript
+function Choose(probs : List.<float>) : int {</p>
+
+<pre><code>// Returns the index of a probabilistically determined random
+// entity, given by the probability distributions in probs.
+// e.g.:
+// probs : List.&lt;float&gt;([0.5, 0.2, 0.1, 0.2]);
+// entity = entities[Choose(probs)];
+//
+// See http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html
+
+// Watch out!  If you fail to specify total's type as float, it
+// will add the probs using integer addition.  This will floor
+// each of the probs to 0.
+var total : float = 0;
+
+for (x in probs) {
+    total += x;
+}
+
+var randomPoint = Random.value * total;
+
+for(var i = 0; i &lt; probs.Count; i++) {
+    if (randomPoint &lt; probs[i])
+        return i;
+    else
+        // Shift the strip down, adjusting the random point's
+        // value to see whether it falls within the next prob.
+        randomPoint -= probs[i];
+}
+// Take care of possibility that randomPoint is 1.0 or 100% by
+// returning the last element of probs.  Avoids allowing Choose to
+// return a 0 probability event (which would be possible using the
+// &lt;= test).
+return probs.Count - 1;
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Now to choose an item:</p>
+
+<p><code>javascript
+var item = ents[Choose(areas["grassland"])];
+Debug.Log(item);
+</code></p>
+
+<p>That&rsquo;s all there is to it. I&rsquo;ve put an <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example Unity project with this code on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
@@ -273,162 +360,6 @@ $2 - ($2 * 0.1) - $0.05 - ($2 * 0.05) = $1.65
 <p>I&rsquo;d like to brand and personalize my itch.io page, but I don&rsquo;t think that the time for that is now.  Somewhere down the road, I&rsquo;ll look into itch.io&rsquo;s powerful customization tools.</p>
 
 <p>The obvious clear thing to do with my new itch.io account is to release a game.  Tune in next week for exactly that!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Syntax highlighting for Octopress]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress/"/>
-    <updated>2015-01-17T11:12:37-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s relatively simple, but I always forget how it&rsquo;s done.  In the
-interest of documenting useful information for myself, here is how to
-use <a href="http://octopress.org/docs/blogging/code/">syntax highlighting with code blocks in Octopress</a>.</p>
-
-<!--more-->
-
-
-<p>Here are some examples of languages I typically use:</p>
-
-<p>``` csharp
-private IEnumerator GUIMoveToPosition(Vector3 newPosition, float duration, RectTransform rect) {
-  float elapsedTime = 0;
-  Vector3 startingPos = rect.position;
-  while(elapsedTime &lt; duration) {</p>
-
-<pre><code>rect.position = Vector3.Lerp(startingPos,
-                             newPosition,
-                             elapsedTime / duration);
-elapsedTime += Time.deltaTime;
-yield return null;
-</code></pre>
-
-<p>  }
-}</p>
-
-<p>```</p>
-
-<p>``` python
-def update(self, time_elapsed):</p>
-
-<pre><code>self.tick += 1
-self.total_time += time_elapsed
-
-if self.mode:
-    self.mode.update(time_elapsed)
-</code></pre>
-
-<p>```</p>
-
-<p>``` clojure
-(defn valid-string? [s]
-  &ldquo;Valid strings are non-empty strings that do not contain
-  [ (commonly used to denote parts of the song and which rappers are
-  rapping) and : (commonly used in the album info and transcriber
-  info).&rdquo;
-  (and (not (contains-char? s [))</p>
-
-<pre><code>   (not (contains-char? s \:))
-   (not (contains-char? s \"))
-   (not (contains-char? s \())
-   (seq s)))
-</code></pre>
-
-<p>;;; <a href="http://clojuredocs.org/clojure_core/clojure.core/empty_q">http://clojuredocs.org/clojure_core/clojure.core/empty_q</a>
-;;; Please use the idiom (seq x) rather than (not (empty? x))
-```</p>
-
-<h2>Bonus: Help me refactor this code</h2>
-
-<p>I think there&rsquo;s some way to refactor these two similar functions so
-they don&rsquo;t share code, but I don&rsquo;t see it.  If you have a clever way
-to offload the common functionality, let me know in the comments
-(<a href="http://gist.github.com">gists</a> preferred).</p>
-
-<p>``` csharp
-// NOTE: there are some differences between the two functions
-// because I&rsquo;m still adding funcitonality.  I think there should be
-// a way to pull out some of the common functionality so I don&rsquo;t
-// have two functions that share code.  Maybe by separating the
-// boundary checks from the actual &ldquo;counting&rdquo; steps?</p>
-
-<p>void Countdown () {
-  int iTargetHp = iHp + 1;</p>
-
-<p>  // If the rolling hp reaches the hit point above iHp then we can
-  // stop the rolling because each RollEvent effectively moves past
-  // the current iRolHp.
-  if(iRolHp == iTargetHp) {</p>
-
-<pre><code>// Start Coroutine to return reels to original positions
-StartCoroutine(WaitAndResetReels(RollDir.Down));
-
-CancelInvoke("Countdown");
-</code></pre>
-
-<p>  }
-  if(iRolHp &lt;= 0) {</p>
-
-<pre><code>StartCoroutine(WaitAndResetReels(RollDir.Down));
-
-// TRUE DEATH!
-CancelInvoke("Countdown");
-</code></pre>
-
-<p>  }
-  // If the rolling HP is larger than the target HP and positive,
-  // then roll down.
-  if(iRolHp > iTargetHp || iRolHp > 0) {</p>
-
-<pre><code>RollEvent(RollDir.Down);
-</code></pre>
-
-<p>  }</p>
-
-<p>  iRolHp = iRolHp + (int)RollDir.Down;</p>
-
-<p>}</p>
-
-<p>void Countup() {
-  int iTargetHp = iHp &ndash; 1;</p>
-
-<p>  // If the rolling hp reaches the hit point below iHp then we can
-  // stop rolling because each RollEvent effectively moves past the
-  // current iRolHp.
-  //
-  // Also take care of some nasty edge cases resulting in two calls
-  // to WaitAndResetReels.
-  if(iRolHp == iTargetHp &amp; iRolHp &lt; iMaxHp &amp; iRolHp != iMaxHp) {</p>
-
-<pre><code>StartCoroutine(WaitAndResetReels(RollDir.Up));
-
-CancelInvoke("Countup");
-</code></pre>
-
-<p>  } else if(iRolHp >= iMaxHp) {</p>
-
-<pre><code>iHp = iMaxHp;
-StartCoroutine(WaitAndResetReels(RollDir.Up));
-
-// Maxed out HP.
-CancelInvoke("Countup");
-</code></pre>
-
-<p>  }</p>
-
-<p>  // If the rolling HP is smaller than the target HP and less than
-  // Max HP, then roll up.
-  if(iRolHp &lt; iTargetHp || iRolHp &lt; iMaxHp) {</p>
-
-<pre><code>RollEvent(RollDir.Up);
-</code></pre>
-
-<p>  }</p>
-
-<p>  iRolHp = iRolHp + (int)RollDir.Up;</p>
-
-<p>}
-```</p>
 ]]></content>
   </entry>
   
