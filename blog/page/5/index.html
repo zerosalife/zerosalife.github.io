@@ -9,7 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="The cinematically inspired Space Is Red is not so much a game as it is a visual novel. Out of the games I tried from the #spacecowboygamejam, it& &hellip;">
+  <meta name="description" content="According to the Ray Wenderlich Unity 2D tutorial by Christopher LaPollo, Unity&rsquo;s physics engine builds a simulation based on the Colliders &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,52 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/">Static and Dynamic Colliders in Unity</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-02T12:54:15-05:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2014</time>
+        
+         | <a href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>According to the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">Ray Wenderlich Unity 2D tutorial</a> by <a href="http://www.raywenderlich.com/u/clapollo">Christopher LaPollo</a>, Unity&rsquo;s physics engine builds a simulation based on the <a href="http://docs.unity3d.com/Manual/CollidersOverview.html">Colliders</a> present in a scene.  If some those <code>Colliders</code> are declared to be <code>static</code>, then the entire simulation is rebuilt when those colliders move.  Of course, rebuilding a physics simulation when it&rsquo;s unnecessary is inefficient.  By declaring objects to have <code>dynamic</code> <code>Colliders</code>, the physics engine does not have to rebuild the simulation at runtime, that is to say when the game is running.</p>
+
+<p>As with a lot of things in Unity, it is not immediately apparent how you should go about declaring a collider to be <code>static</code> or <code>dynamic</code>.  It would be great if there were just a checkbox in the <code>Collider</code> component.  But there isn&rsquo;t.  It appears that there are some complex things going on under the hood that preclude a simple declaration.</p>
+
+<p>By default a <code>GameObject</code> with a <code>Collider</code> component attached is treated as <code>static</code> by Unity&rsquo;s physics engine.  This would work for a non-moving wall or impassable bit of scenery, but for moving objects like enemies we need to mark them as <code>dynamic</code>.  In order for a <code>GameObject</code>&rsquo;s <code>Collider</code> to qualify as <code>dynamic</code> it requires a <a href="http://docs.unity3d.com/Manual/class-Rigidbody.html"><code>Rigidbody</code> component</a>.  If you don&rsquo;t want the normal features of the <code>Rigidbody</code>, i.e. conferring control of the <code>GameObject</code>&rsquo;s position to the physics system, then you can check the <code>Is Kinematic</code> checkbox.  A kinematic object&rsquo;s position is under the control of the attached scripts, rather than the physics system.</p>
+
+<p>One other trick from the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">tutorial</a> is to set the <code>Collider</code> component&rsquo;s <code>isTrigger</code> property to <code>true</code>.  This prevents the <code>Collider</code> from being treated as a solid object in the physics simulation, which could lead to unintended bumping and pushing among various <code>Colliders</code> in a scene.</p>
+
+<p><strong>Update:</strong> <a href="https://twitter.com/involvingsalmon">@InvolvingSalmon</a> points out that the instructions here depend on the version of Unity that you are using.  This article was written for Unity version <code>4.5.2f1</code>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -532,100 +578,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/">Clojure Rhizome Labeled Edge Tutorial</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-26T09:47:18-05:00" pubdate data-updated="true">Apr 26<span>th</span>, 2014</time>
-        
-         | <a href="/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
-
-<p>The existing Rhizome documentation shows simple examples for labeling the nodes of a directed graph.  In order to show the relationship between nodes on the graph, I&rsquo;d like to also label the edges, or the arrows connecting the nodes.</p>
-
-<p>Rhizome provides a keyword argument <code>:edge-&gt;descriptor</code> to most of its functions.  Consulting the source code and the tests for the Rhizome package, I learned that the functions expect <code>:edge-&gt;descriptor</code> to be a function accepting two arguments for each edge: <code>src</code>, the source node, and <code>dst</code>, the destination node.  In order to label the edges, the anonymous function I&rsquo;m binding to <code>:edge-&gt;descriptor</code> will return a dictionary containing the key <code>:label</code> and the value for the edge&rsquo;s label.</p>
-
-<p>Here&rsquo;s an example using the simple graph from the Rhizome documentation:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="ss">&#39;rhizome.viz</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">g</span>
-</span><span class='line'>    <span class="p">{</span><span class="ss">:a</span> <span class="p">[</span><span class="ss">:b</span> <span class="ss">:c</span><span class="p">]</span>
-</span><span class='line'>     <span class="ss">:b</span> <span class="p">[</span><span class="ss">:c</span><span class="p">]</span>
-</span><span class='line'>     <span class="ss">:c</span> <span class="p">[</span><span class="ss">:a</span><span class="p">]})</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="nf">view-graph</span> <span class="p">(</span><span class="nb">keys </span><span class="nv">g</span><span class="p">)</span> <span class="nv">g</span>
-</span><span class='line'>            <span class="ss">:node-&gt;descriptor</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">n</span><span class="p">]</span> <span class="p">{</span><span class="ss">:label</span> <span class="nv">n</span><span class="p">}))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="/images/assets/graph-unlabeled-edges.png"></p>
-
-<p>Now, I&rsquo;ll use a dictionary of dictionaries to associate the source and destination nodes with a label for each edge.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='clj'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">g-edges</span>
-</span><span class='line'>  <span class="p">{</span><span class="ss">:a</span> <span class="p">{</span><span class="ss">:b</span> <span class="ss">:makes</span>
-</span><span class='line'>       <span class="ss">:c</span> <span class="ss">:takes</span><span class="p">}</span>
-</span><span class='line'>   <span class="ss">:b</span> <span class="p">{</span><span class="ss">:c</span> <span class="ss">:takes</span><span class="p">}</span>
-</span><span class='line'>   <span class="ss">:c</span> <span class="p">{</span><span class="ss">:a</span> <span class="ss">:makes</span><span class="p">}})</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="nf">view-graph</span> <span class="p">(</span><span class="nb">keys </span><span class="nv">g</span><span class="p">)</span> <span class="nv">g</span>
-</span><span class='line'>            <span class="ss">:node-&gt;descriptor</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">n</span><span class="p">]</span> <span class="p">{</span><span class="ss">:label</span> <span class="nv">n</span><span class="p">})</span>
-</span><span class='line'>            <span class="ss">:edge-&gt;descriptor</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">src</span> <span class="nv">dst</span><span class="p">]</span> <span class="p">{</span><span class="ss">:label</span> <span class="p">(</span><span class="nf">dst</span> <span class="p">(</span><span class="nf">src</span> <span class="nv">g-edges</span><span class="p">))}))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="/images/assets/graph-labeled-edges.png"></p>
-
-<p>I&rsquo;ve submitted a <a href="https://github.com/ztellman/rhizome/pull/8">pull request</a> to Rhizome to add this example to the documentation.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -643,6 +595,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/">Probabilistic entity spawning in Unity C#</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Probabilistic Entity Spawning in Unity JavaScript</a>
       </li>
     
@@ -656,10 +612,6 @@
     
       <li class="post">
         <a href="/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/">Prototyping Rectangles in Unity 2D for Dummy</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">More Skytorn Raycast Lighting Algorithm Details</a>
       </li>
     
   </ul>
