@@ -1877,13 +1877,13 @@ ensure that the developers receive the amount of money you intend.
 
 *** Twine macro ecosystem
 
+*** Trace function for debugging
+
 * COMPLETED POSTS
 
 
 ** Probabilistic Entity Spawning in Unity JavaScript
-This week I show how to generate random items with specific
-probabilities dictated by the game environment in #unity3d
-#JavaScript.
+This week I show how to generate random items with specific probabilities dictated by the game environment in #unity3d #JavaScript.
 
 
 #unity3d
@@ -1998,10 +1998,39 @@ That's all there is to it. I've put an [[https://github.com/zerosalife/ProbEntit
 code on github]].
 
 ** Probabilistic entity spawning in Unity C#
+Quick post this week on porting probabilistic entity spawning code
+from JavaScript to CSharp
 
-Last week I showed how to do probabilistic entity spawning in Unity
-JS.  This week I'll port that code over to C#.  Since I've already
-explained the Algorithm I will focus mainly on the differences in the code.
+- C#
+- Unity
+- Unity3d
+- tools
+- algorithms
+
+[[http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/][Last week]] I showed how to do probabilistic entity spawning in Unity
+JS.  This week I'll port that code over to C#.  You can find examples
+of both the C# and JavaScript versions of the code in a [[https://github.com/zerosalife/ProbEntitySpawnExample][repository on
+github]].  Since I've already explained the Algorithm I will focus
+mainly on the differences in the code.
+
+There isn't syntactic sugar for Dictionary assignment in C# :( This
+required moving the assignment for the =areas= Dictionary into the
+=Start= function.  It's a move that enforces best practices, strictly
+speaking, but risks confusion about the content of the =areas=
+Dictionary at runtime.  If you'd like to read up on Dictionaries in
+C#, I found [[https://msdn.microsoft.com/en-us/library/fkbw11z0.aspx][this resource]] helpful.
+
+The =foreach= command requires a type. This is a case where a stricter
+language will save confusion in the long run.
+
+Lists can be created from specific arrays of the List's type, but not
+from some arbitrary array, as in JavaScript.  Again, this is a feature
+of a stricter language that causes some extra work up-front, but will
+make things more clear in the long run.
+
+For an in-depth tour of the algorithm for spawning entities, check out
+[[http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/][last week's post]] and the [[https://github.com/zerosalife/ProbEntitySpawnExample][example repository on github]].
+
 ** Mobile Frame Football Association
 From The Game Design Workshop book:
 
