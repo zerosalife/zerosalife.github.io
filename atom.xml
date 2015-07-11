@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-07-04T15:04:24-05:00</updated>
+  <updated>2015-07-04T15:22:11-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -120,7 +120,7 @@
 </span><span class='line'>    <span class="c1">// returning the last element of probs.  Avoids allowing Choose to</span>
 </span><span class='line'>    <span class="c1">// return a 0 probability event (which would be possible using the</span>
 </span><span class='line'>    <span class="c1">// &lt;= test).</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">probs</span><span class="p">[</span><span class="nx">probs</span><span class="p">.</span><span class="nx">Count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">probs</span><span class="p">.</span><span class="nx">Count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
 </span><span class='line'>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
