@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity3d | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity3d/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-07-04T15:22:11-05:00</updated>
+  <updated>2015-07-11T17:06:34-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Probabilistic entity spawning in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/"/>
+    <updated>2015-07-11T17:03:55-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Last week</a> I showed how to do probabilistic entity spawning in Unity JS.  This week I&rsquo;ll port that code over to C#.  You can find examples of both the C# and JavaScript versions of the code in a <a href="https://github.com/zerosalife/ProbEntitySpawnExample">repository on github</a>.  Since I&rsquo;ve already explained the Algorithm I will focus mainly on the differences in the code.</p>
+
+<p>There isn&rsquo;t syntactic sugar for Dictionary assignment in C# :( This required moving the assignment for the <code>areas</code> Dictionary into the <code>Start</code> function.  It&rsquo;s a move that enforces best practices, strictly speaking, but risks confusion about the content of the <code>areas</code> Dictionary at runtime.  If you&rsquo;d like to read up on Dictionaries in C#, I found <a href="https://msdn.microsoft.com/en-us/library/fkbw11z0.aspx">this resource</a> helpful.</p>
+
+<p>The <code>foreach</code> command requires a type. This is a case where a stricter language will save confusion in the long run.</p>
+
+<p>Lists can be created from specific arrays of the List&rsquo;s type, but not from some arbitrary array, as in JavaScript.  Again, this is a feature of a stricter language that causes some extra work up-front, but will make things more clear in the long run.</p>
+
+<p>For an in-depth tour of the algorithm for spawning entities, check out <a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">last week&rsquo;s post</a> and the <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example repository on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
@@ -342,74 +359,6 @@ obj.renderer.material.shader = spriteShader;
 <p>I don&rsquo;t feel so dumb anymore because this was a complex process.  And it wasn&rsquo;t until the very last crucial step that I saw anything remotely box-like.</p>
 
 <p>I&rsquo;ve posted the code to a gist <a href="https://gist.github.com/zerosalife/743cf797112d62978bec">here</a> so you can clone the script for yourself, to give it a whirl.  I found that setting <code>size</code> to 2 is a nice place to start.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Building Twine games from the command line]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/03/28/building-twine-games-from-the-command-line/"/>
-    <updated>2015-03-28T10:20:35-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/03/28/building-twine-games-from-the-command-line</id>
-    <content type="html"><![CDATA[<p>I got it in my craw to write a short <a href="http://twinery.org/">Twine</a> game a while back.  I wanted to familiarize myself with the language.  And writing a short game in Twine seemed to be lower hanging fruit than trying to implement my own text adventure framework for Unity or some other game engine.</p>
-
-<!--more-->
-
-
-<h2>Why not Unity?</h2>
-
-<p>That being said, there are other text adventure frameworks available in the Unity App Store and there&rsquo;s a very intriguing Twine parser for Unity called <a href="http://www.platoevolved.com/blog/unity-plugins/#!/~/product/category%3D2743024&amp;id%3D35627540">Yarn</a>.</p>
-
-<p>Yarn seems well suited to writing Bioware- and Black Isle-style dialogues, where individual characters' dialogues are stored in separate Twine files with scripts to load them at runtime.  It doesn&rsquo;t seem like it does anything to solve the woes of writing a larger (than one dialog tree) game in the usual Twine GUI.</p>
-
-<p>There&rsquo;s too much to be learned by implementing things available on the Unity App Store for me to pass that up in favor of saving time.  It&rsquo;s true that my time is the most valuable asset I have, but it&rsquo;s also very likely that I&rsquo;ll spend just as much time trying to figure out or modify a Unity plugin from the App Store as I would trying to implement something similar on my own.  That being said, in this case for what I wanted to do, Twine was the path of least resistance.</p>
-
-<h2>Why the command line?</h2>
-
-<p>I live in my text editor.  So, having to write in the Twine GUI tool&rsquo;s rudimentary text editor isn&rsquo;t really my bag.  I&rsquo;ve trained my muscle memory to use these short cuts without thinking.  In fact, I don&rsquo;t even bother to backspace to correct typos, I use the keyboard shortcut in my editor to automatically step through the suggested spelling corrections for the last word.  I&rsquo;m entrenched.</p>
-
-<p>Also, dealing with the visual clutter of the Twine GUI drives me nuts.  If I want 30 links from a single Twine Passage, I don&rsquo;t want to have to do that manually, and I certainly don&rsquo;t want to try to organize it so it&rsquo;s visually appealing.  There&rsquo;re algorithms for that visualizing stuff, and algorithms are better at it (than I am).</p>
-
-<h2>Getting started</h2>
-
-<p>The first step is to <a href="https://github.com/tweecode/twee">install <code>twee</code></a> the command line tool used to compile Twine files.</p>
-
-<p>Then <em>all</em> you have to do is write your story in the proper <a href="https://github.com/tweecode/TwineQuest/wiki/Twee-file-format">Twine file format</a>.  This is the hardest part, not because the syntax is complicated, but because you&rsquo;ve actually got to come up with an interesting and interactive story!</p>
-
-<h2>Compiling your twine files</h2>
-
-<p><code>Twee</code> will output files to HTML formatted in the usual Twine style.  It gets tedious to type commands over and over again, so I automate building the HTML with a Makefile.</p>
-
-<p>```make Makefile
-story.html : <em>.tw tweefiles/</em>.tw</p>
-
-<pre><code>    ~/twee/twee -t sugarcane $^ &gt; $@
-    open story.html
-</code></pre>
-
-<p>json: <em>.tw tweefiles/</em>.tw</p>
-
-<pre><code>    ~/twee/twee -t json $^ &gt; story.json
-</code></pre>
-
-<p>clean:</p>
-
-<pre><code>    rm -f story.html
-</code></pre>
-
-<p>.PHONY: json
-```</p>
-
-<p>Placing this Makefile in the root of your twine directory allows you to compile the HTML file by the commands <code>make clean; make</code>.  You can read more about the Makefile syntax in the <a href="http://www.gnu.org/software/make/manual/make.html#Rule-Syntax">GNU make manual</a>.  The Makefile looks for Twine file format ending in <code>.tw</code>, either in the root directory or a directory for <code>tweefiles/</code>.</p>
-
-<p>You can also compile to the JSON format by using <code>make json</code>.</p>
-
-<h2>Getting some of the newer Twine features to work</h2>
-
-<p>I <a href="https://github.com/tweecode/twee/issues/12">couldn&rsquo;t get some of the newer Twine features to work</a> when I compiled the twee code from the command line.  I think this stems from the twee command line tool failing to parse some of the newer features implemented in the Twine GUI.</p>
-
-<p>In order to get some of the newer features to work, use the <code>Makefile</code> to compile the twee code, then import the resulting <code>.html</code> file in the Twine GUI.  Finally export HTML from the Twine GUI.</p>
-
-<p>That being said, it was still nice to rapidly iterate through versions of a story without having to get bogged down in the Twine GUI.  I could write Twine code organized in files in a logical arrangement, then compile them into a single HTML file for testing and release.  Let me know if you have suggestions that would improve this Twine workflow or if you take a different approach.</p>
 ]]></content>
   </entry>
   

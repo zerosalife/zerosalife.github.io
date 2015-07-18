@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithms | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-07-04T15:22:11-05:00</updated>
+  <updated>2015-07-11T17:06:34-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Probabilistic entity spawning in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/"/>
+    <updated>2015-07-11T17:03:55-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Last week</a> I showed how to do probabilistic entity spawning in Unity JS.  This week I&rsquo;ll port that code over to C#.  You can find examples of both the C# and JavaScript versions of the code in a <a href="https://github.com/zerosalife/ProbEntitySpawnExample">repository on github</a>.  Since I&rsquo;ve already explained the Algorithm I will focus mainly on the differences in the code.</p>
+
+<p>There isn&rsquo;t syntactic sugar for Dictionary assignment in C# :( This required moving the assignment for the <code>areas</code> Dictionary into the <code>Start</code> function.  It&rsquo;s a move that enforces best practices, strictly speaking, but risks confusion about the content of the <code>areas</code> Dictionary at runtime.  If you&rsquo;d like to read up on Dictionaries in C#, I found <a href="https://msdn.microsoft.com/en-us/library/fkbw11z0.aspx">this resource</a> helpful.</p>
+
+<p>The <code>foreach</code> command requires a type. This is a case where a stricter language will save confusion in the long run.</p>
+
+<p>Lists can be created from specific arrays of the List&rsquo;s type, but not from some arbitrary array, as in JavaScript.  Again, this is a feature of a stricter language that causes some extra work up-front, but will make things more clear in the long run.</p>
+
+<p>For an in-depth tour of the algorithm for spawning entities, check out <a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">last week&rsquo;s post</a> and the <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example repository on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
@@ -255,39 +272,6 @@ print(table["c"][1]);
 <p>The algorithm I originally envisioned was naive and costly.  But, it&rsquo;s nice to hear that I wasn&rsquo;t far off&#x2013;I simply inverted the solution.  It was also nice to learn about a benefit of storing level geometry in a grid that I previously failed to appreciate.</p>
 
 <p>Heaping thanks to <a href="https://twitter.com/NoelFB/">@NoelFB</a> for helping explain the algorithm, instead of getting bent out of shape about my lame attempt to reverse engineer the inner workings of <a href="http://skytorn-game.com/">Skytorn</a> from a screenshot.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Raycast Lighting in Skytorn]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/"/>
-    <updated>2015-05-09T09:21:03-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn</id>
-    <content type="html"><![CDATA[<p><a href="https://twitter.com/NoelFB/">@NoelFB</a> posted a <a href="https://twitter.com/NoelFB/status/543586120731074561/photo/1">screenshot</a> showing how dynamic lighting works in <a href="http://skytorn-game.com/">Skytorn</a>.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<!--more-->
-
-
-<h2>The algorithm</h2>
-
-<p>From what I can tell, the algorithm looks something like this:</p>
-
-<ol>
-<li><p>Raycast out for 360° around the light source, starting in a clockwise direction.  If the rays encounter a collidable object, add it to the list of pink lines defining the polygonal shape of the lit area.  If the ray exceeds the distance of the light gradient, clamp the triangle edge defining the pink line at that distance.</p></li>
-<li><p>For each of the collidable objects encountered, extend a ray past their vertices until it hits another collidable to create the obscured lighting effect visible to down and to the right of the light source.</p></li>
-<li><p>Finally construct a set of triangles by starting from the closest edge in the list defining the pink lines to form the polygon.</p></li>
-</ol>
-
-
-<h2>That&rsquo;s all</h2>
-
-<p>That&rsquo;s it for this week.  Let me know if you have any insight into this or other lighting algorithms in the comments or on the tweets.</p>
-
-<h2>Update</h2>
-
-<p>After some feedback from @NoelFB, I&rsquo;ve updated the algorithm in the <a href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">following post</a>.</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-07-04T15:22:11-05:00</updated>
+  <updated>2015-07-11T17:06:34-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Probabilistic entity spawning in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/"/>
+    <updated>2015-07-11T17:03:55-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Last week</a> I showed how to do probabilistic entity spawning in Unity JS.  This week I&rsquo;ll port that code over to C#.  You can find examples of both the C# and JavaScript versions of the code in a <a href="https://github.com/zerosalife/ProbEntitySpawnExample">repository on github</a>.  Since I&rsquo;ve already explained the Algorithm I will focus mainly on the differences in the code.</p>
+
+<p>There isn&rsquo;t syntactic sugar for Dictionary assignment in C# :( This required moving the assignment for the <code>areas</code> Dictionary into the <code>Start</code> function.  It&rsquo;s a move that enforces best practices, strictly speaking, but risks confusion about the content of the <code>areas</code> Dictionary at runtime.  If you&rsquo;d like to read up on Dictionaries in C#, I found <a href="https://msdn.microsoft.com/en-us/library/fkbw11z0.aspx">this resource</a> helpful.</p>
+
+<p>The <code>foreach</code> command requires a type. This is a case where a stricter language will save confusion in the long run.</p>
+
+<p>Lists can be created from specific arrays of the List&rsquo;s type, but not from some arbitrary array, as in JavaScript.  Again, this is a feature of a stricter language that causes some extra work up-front, but will make things more clear in the long run.</p>
+
+<p>For an in-depth tour of the algorithm for spawning entities, check out <a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">last week&rsquo;s post</a> and the <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example repository on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
@@ -290,76 +307,6 @@ story.html : <em>.tw tweefiles/</em>.tw</p>
 <p>In order to get some of the newer features to work, use the <code>Makefile</code> to compile the twee code, then import the resulting <code>.html</code> file in the Twine GUI.  Finally export HTML from the Twine GUI.</p>
 
 <p>That being said, it was still nice to rapidly iterate through versions of a story without having to get bogged down in the Twine GUI.  I could write Twine code organized in files in a logical arrangement, then compile them into a single HTML file for testing and release.  Let me know if you have suggestions that would improve this Twine workflow or if you take a different approach.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hosting a game on itch.io: account set up and transaction fees]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/02/21/hosting-a-game-on-itch-dot-io-account-set-up-and-transaction-fees/"/>
-    <updated>2015-02-21T11:25:39-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/02/21/hosting-a-game-on-itch-dot-io-account-set-up-and-transaction-fees</id>
-    <content type="html"><![CDATA[<h2>What is itch.io?</h2>
-
-<p>According to the <a href="http://itch.io/about/faq">faq</a>, itch.io is a service for handling hosting and selling individual and bundled games, soundtracks, art, etc.  It has some handy features to <a href="http://itch.io/jams">manage and track gamejams</a> as well.  It was <a href="http://leafo.net/posts/introducing_itchio.html">created</a> by <a href="https://twitter.com/moonscript">@moonscript</a>.</p>
-
-<p>In this post I&rsquo;ll look at the fees charged itch.io and the supported payment platforms and how to set up an account.  The <a href="http://itch.io/about/faq">faq</a> covers these and other topics in more detail so make sure you peruse it.</p>
-
-<!--more-->
-
-
-<h2>Fees</h2>
-
-<p>There are a few payment options available on itch.io.  Here&rsquo;s how the fees break down.  I&rsquo;ll use the example of selling $5.00 and $2.00 games to show the revenue you could expect to receive after taking out the various fees.</p>
-
-<p>It&rsquo;s worth noting that, at of the time of this post, <strong>itch.io is not collecting fees</strong>.  I&rsquo;ll still present the revenue calculations with the itch.io slice factored in, but itch.io won&rsquo;t start collecting a percentage of the game price until a later, unspecified date.</p>
-
-<p>Itch.io currently provides three options for handling payments: <a href="http://payments.amazon.com/">Amazon Payments</a>, <a href="http://www.paypal.com/">PayPal</a> and <a href="http://stripe.com/">Stripe</a>.</p>
-
-<h3>Supported currencies</h3>
-
-<p>PayPal appears to be the least restrictive in terms of the countries and currencies it handles.  Stripe handles U.S., Canada, U.K., Australia, and Ireland.  Stripe has an <a href="https://support.stripe.com/questions/what-countries-does-stripe-support">open beta for some European countries</a>. Amazon Payments only handles U.S. currencies.  Non-U.S. purchases through Amazon Payments are <a href="https://payments.amazon.com/sdui/sdui/about?nodeId%3D77175#aspd_cost">only allowed via credit card transactions, and there&rsquo;s an additional charge</a>.</p>
-
-<h3>Fee structure</h3>
-
-<p>The fees for <a href="https://stripe.com/us/pricing">Stripe</a> and <a href="https://www.paypal.com/webapps/mpp/merchant-fees">PayPal</a> work similarly, assuming you&rsquo;re processing less than $3,000 monthly.  There&rsquo;s a base fee of $0.30 + 2.9% for each transaction.  Amazon Payments works similarly if the price is above $10.00, but below $9.99, there&rsquo;s a $0.05 surcharge + 5%.</p>
-
-<p>Itch.io will charge a 10% fee for each transaction, but currently this charge is waived.</p>
-
-<h3>Down and dirty</h3>
-
-<p>So let&rsquo;s do the math for the two example prices I mentioned above:</p>
-
-<p>For Stripe and PayPal the numbers look like this:</p>
-
-<pre><code>$5 - ($5 * 0.1) - $0.30 - ($5 * 0.029) = $4.055
-
-$2 - ($2 * 0.1) - $0.30 - ($2 * 0.029) = $1.442
-</code></pre>
-
-<p>I&rsquo;m not sure how the rounding works.  I will have to reach out to itch.io and the payment handling services to see how they handle tenths of a cent.</p>
-
-<p>For Amazon Payments the numbers look like:</p>
-
-<pre><code>$5 - ($5 * 0.1) - $0.05 - ($5 * 0.05) = $4.20
-
-$2 - ($2 * 0.1) - $0.05 - ($2 * 0.05) = $1.65
-</code></pre>
-
-<p>Keep in mind, for each of these calculations you&rsquo;ll get an extra $0.50 and $0.20, respectively, since the itch.io surcharge is not in effect.</p>
-
-<p>That&rsquo;s how the numbers breakdown for these price points.  I&rsquo;m not planning on charging money right now, but it&rsquo;s nice to see the real amounts you can expect to see.  I am really bad at reasoning about these sorts of percentages in the abstract.</p>
-
-<h2>Signing up</h2>
-
-<p><a href="http://itch.io/register">Registering for itch.io</a> was easy.  I created an account and checked <code>I'm interested in distributing games on itch.io</code>.  That&rsquo;s it.  It&rsquo;s very straightforward.</p>
-
-<p>Now I have a relatively spartan page at <a href="http://zerosalife.itch.io/">zerosalife.itch.io</a>.</p>
-
-<h2>The next step</h2>
-
-<p>I&rsquo;d like to brand and personalize my itch.io page, but I don&rsquo;t think that the time for that is now.  Somewhere down the road, I&rsquo;ll look into itch.io&rsquo;s powerful customization tools.</p>
-
-<p>The obvious clear thing to do with my new itch.io account is to release a game.  Tune in next week for exactly that!</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C# | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/c-number/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-07-04T15:22:11-05:00</updated>
+  <updated>2015-07-11T17:06:34-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Probabilistic entity spawning in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/"/>
+    <updated>2015-07-11T17:03:55-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Last week</a> I showed how to do probabilistic entity spawning in Unity JS.  This week I&rsquo;ll port that code over to C#.  You can find examples of both the C# and JavaScript versions of the code in a <a href="https://github.com/zerosalife/ProbEntitySpawnExample">repository on github</a>.  Since I&rsquo;ve already explained the Algorithm I will focus mainly on the differences in the code.</p>
+
+<p>There isn&rsquo;t syntactic sugar for Dictionary assignment in C# :( This required moving the assignment for the <code>areas</code> Dictionary into the <code>Start</code> function.  It&rsquo;s a move that enforces best practices, strictly speaking, but risks confusion about the content of the <code>areas</code> Dictionary at runtime.  If you&rsquo;d like to read up on Dictionaries in C#, I found <a href="https://msdn.microsoft.com/en-us/library/fkbw11z0.aspx">this resource</a> helpful.</p>
+
+<p>The <code>foreach</code> command requires a type. This is a case where a stricter language will save confusion in the long run.</p>
+
+<p>Lists can be created from specific arrays of the List&rsquo;s type, but not from some arbitrary array, as in JavaScript.  Again, this is a feature of a stricter language that causes some extra work up-front, but will make things more clear in the long run.</p>
+
+<p>For an in-depth tour of the algorithm for spawning entities, check out <a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">last week&rsquo;s post</a> and the <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example repository on github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>

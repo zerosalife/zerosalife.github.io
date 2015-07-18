@@ -9,7 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: Choosing Items with &hellip;">
+  <meta name="description" content="Last week I showed how to do probabilistic entity spawning in Unity JS. This week I&rsquo;ll port that code over to C#. You can find examples of both &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,52 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/">Probabilistic Entity Spawning in Unity C#</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-07-11T17:03:55-05:00" pubdate data-updated="true">Jul 11<span>th</span>, 2015</time>
+        
+         | <a href="/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Last week</a> I showed how to do probabilistic entity spawning in Unity JS.  This week I&rsquo;ll port that code over to C#.  You can find examples of both the C# and JavaScript versions of the code in a <a href="https://github.com/zerosalife/ProbEntitySpawnExample">repository on github</a>.  Since I&rsquo;ve already explained the Algorithm I will focus mainly on the differences in the code.</p>
+
+<p>There isn&rsquo;t syntactic sugar for Dictionary assignment in C# :( This required moving the assignment for the <code>areas</code> Dictionary into the <code>Start</code> function.  It&rsquo;s a move that enforces best practices, strictly speaking, but risks confusion about the content of the <code>areas</code> Dictionary at runtime.  If you&rsquo;d like to read up on Dictionaries in C#, I found <a href="https://msdn.microsoft.com/en-us/library/fkbw11z0.aspx">this resource</a> helpful.</p>
+
+<p>The <code>foreach</code> command requires a type. This is a case where a stricter language will save confusion in the long run.</p>
+
+<p>Lists can be created from specific arrays of the List&rsquo;s type, but not from some arbitrary array, as in JavaScript.  Again, this is a feature of a stricter language that causes some extra work up-front, but will make things more clear in the long run.</p>
+
+<p>For an in-depth tour of the algorithm for spawning entities, check out <a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">last week&rsquo;s post</a> and the <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example repository on github</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -470,50 +516,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/11/midway-through-adventurejam-im-attending-midwest-gaming-classic/">Midway Through Adventurejam I&#8217;m Attending Midwest Gaming Classic</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-11T08:22:57-05:00" pubdate data-updated="true">Apr 11<span>th</span>, 2015</time>
-        
-         | <a href="/blog/2015/04/11/midway-through-adventurejam-im-attending-midwest-gaming-classic/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Quick update on #adventurejam</h2>
-
-<p>I feel like my game is on track to finish next Friday.  I&rsquo;m happy to say it&rsquo;s feature complete.  I&rsquo;ll spend the next week polishing, various flavors of bughunting (maybe even some bugfishing and bugtrapping), and, most important of all, prosifying.  My goal is to come up with a little game that&rsquo;s compelling to play, rather than just a series of links to click.</p>
-
-<h2>Midwest Gaming Classic</h2>
-
-<p>Instead of a normal blog post, I want to take this time to shout out the <a href="http://twitter.com/MGC_gaming">@MGC_gaming</a>, <a href="https://twitter.com/mgc_gaming">Midwest Gaming Classic</a>.  I&rsquo;ll be attending today.  So if you&rsquo;re there hit me up <a href="http://twitter.com/zerosalife">@zerosalife</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -529,6 +531,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/">Probabilistic entity spawning in Unity C#</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Probabilistic Entity Spawning in Unity JavaScript</a>
       </li>
     
@@ -542,10 +548,6 @@
     
       <li class="post">
         <a href="/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/">Prototyping Rectangles in Unity 2D for Dummy</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">More Skytorn Raycast Lighting Algorithm Details</a>
       </li>
     
   </ul>
