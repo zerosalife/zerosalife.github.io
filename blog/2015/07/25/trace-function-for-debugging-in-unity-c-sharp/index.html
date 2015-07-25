@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Setting up Emacs-like key bindings in MonoDevelop - zero's a life</title>
+  <title>Trace function for debugging in Unity C# - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="I&rsquo;m playing around with Unity to try to learn how it works. Shout out to Infinite Ammo for the excellent video tutorials. Since I don&rsquo;t &hellip;">
+  <meta name="description" content="Inspired by a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers, I wanted to come up with a way &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Setting Up Emacs-like Key Bindings in MonoDevelop</h1>
+      <h1 class="entry-title">Trace Function for Debugging in Unity C#</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-02-22T08:14:40-06:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
+<time datetime="2015-07-25T09:00:31-05:00" pubdate data-updated="true">Jul 25<span>th</span>, 2015</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,26 +95,50 @@
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
+<div class="entry-content"><p>Inspired by <a href="https://www.youtube.com/watch?v=btN095elmh4&amp;feature=youtu.be&amp;t=1985">a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers</a>, I wanted to come up with a way of conditionally including debug statements in development code, but not in production.  Luckily I wasn&rsquo;t the first person to think of this.</p>
 
-<p>Since I don&rsquo;t know much about Unity, I&rsquo;m reluctantly using their included <a href="http://monodevelop.com/">MonoDevelop IDE</a>.  While I&rsquo;d heard that Emacs-like key bindings were included, in the build I installed they weren&rsquo;t present.</p>
+<p><a href="https://twitter.com/danpuzey">Dan Puzey</a> <a href="http://blog.puzey.net/simple-better-unity-logging/">wrote an abstraction layer</a> over Unity&rsquo;s built-in <code>Debug</code> library.  The library contains several functions for various types of logging.  The most important piece for me is <code>VerboseFormat</code>, which combines string formatting with conditional attributes.  I&rsquo;ll explain a bit more about how these pieces work below.</p>
 
-<p>MonoDevelop does not make it easy to import new key binding schemes (the <a href="http://mjhutchinson.com/journal/2011/02/06/key_bindings">blog post linked here</a> suggests submitting a bug report to propose new key bindings&#x2026;).  So, I did a little digging around on github and found the <a href="https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml">default emacs key binding scheme</a> that I imagine should have been included in the MonoDevelop build I installed.</p>
+<!--more-->
 
-<p>There was no way to add this key binding scheme to my available key bindings in MonoDevelop, so I hacked my Custom key binding file located at <code>~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml</code>.</p>
 
-<p>I started with some simple copypasta.  But then I found some useful
-navigation features were lacking.  So, I added key binds that
-immediately came to mind, like <code>Alt-f</code> for moving forward one word and
-<code>Alt-b</code> for backward word.  Yes, I know these are <code>M-f</code> in Emacs, but
-I&rsquo;m using MonoDevelop&rsquo;s syntax here.</p>
+<h2>String Formatting</h2>
 
-<p>My key bindings are available in the gist below.  I&rsquo;ll update this
-gist when I add key bindings, to keep a current working version
-available.</p>
+<p>To my surprise, Unity&rsquo;s C# implementation, Mono, doesn&rsquo;t use standard <code>printf</code>-like string formatting syntax.  Instead of <code>%s</code> or other commonly used formatting variables, C# uses curly braces around numbers to interpolate variables passed in to the <code>String.Format</code> call as arguments.</p>
 
-<script src="https://gist.github.com/zerosalife/9096788.js"></script>
+<p>Dan&rsquo;s <code>VerboseFormat</code> function wraps <code>String.Format</code>, so you can call <code>VerboseFormat</code> with C# formatting strings.</p>
 
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Assets.Phunk.Core</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">...</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Log</span><span class="p">.</span><span class="n">VerboseFormat</span><span class="p">(</span><span class="s">&quot;var1: {0}, var2: {1}&quot;</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">);</span>
+</span><span class='line'><span class="c1">// =&gt; [VERBOSE] var1: [var1], var2: [var2]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Conditional Attributes</h2>
+
+<p>Above some of the functions in Dan&rsquo;s code you&rsquo;ll see the following <a href="https://msdn.microsoft.com/en-us/library/system.diagnostics.conditionalattribute%28v=vs.110%29.aspx">conditional attributes</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="na">[System.Diagnostics.Conditional(&quot;DEBUG&quot;), System.Diagnostics.Conditional(&quot;UNITY_EDITOR&quot;)]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These two settings tell the C# compiler to only compile the code, in this case the <code>Verbose</code> logging functions, when compiling during development, i.e. <code>DEBUG</code> or <code>UNITY_EDITOR</code>.  That means all of the <code>Verbose</code> logging statements in your code will not be compiled in the production builds of your code.</p>
+
+<p>Cool, huh?  Good thinking, Dan.</p>
+
+<h2>That&rsquo;s it!</h2>
+
+<p>It&rsquo;s always great when you think that a tool would be useful and someone else has already implemented it for you.  Go on over and give <a href="http://puzey.net/">Dan&rsquo;s blog</a> a gander.</p>
 </div>
 
 
@@ -137,12 +161,12 @@ available.</p>
   
 
 
-<time datetime="2014-02-22T08:14:40-06:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
+<time datetime="2015-07-25T09:00:31-05:00" pubdate data-updated="true">Jul 25<span>th</span>, 2015</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/tools/'>tools</a>
+    <a class='category' href='/blog/categories/c-number/'>C#</a>, <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/unity3d/'>Unity3d</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -151,7 +175,7 @@ available.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/" >Tweet</a>
   
   
   
@@ -160,10 +184,8 @@ available.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/" title="Previous Post: Bunnies Don't Surf #flappyjam">&laquo; Bunnies Don't Surf #flappyjam</a>
+        <a class="basic-alignment left" href="/blog/2015/07/18/satoru-iwata/" title="Previous Post: Satoru Iwata">&laquo; Satoru Iwata</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/03/01/whats-in-a-name/" title="Next Post: What's in a name?">What's in a name? &raquo;</a>
       
     </p>
   </footer>
@@ -260,8 +282,8 @@ available.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/';
         var disqus_script = 'embed.js';
       
     (function () {
