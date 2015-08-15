@@ -856,6 +856,74 @@ Video games are meant to be just one thing. Fun. Fun for everyone.
 -- Satoru Iwata 1959-2015
 
 
+** Trace function for debugging in Unity C#
+
+This handy Unity C# function from @DanPuzey removes debug logging from
+production builds
+
+- Unity
+- Unity3d
+- C#
+- tools
+
+Inspired by [[https://www.youtube.com/watch?v%3DbtN095elmh4&feature%3Dyoutu.be&t%3D1985][a video from the excellent Double Fine Documentary
+interviews with Massive Chalice artists and developers]], I wanted to
+come up with a way of conditionally including debug statements in
+development code, but not in production.  Luckily I wasn't the first
+person to think of this.   [[http://blog.puzey.net/simple-better-unity-logging/]]
+
+[[https://twitter.com/danpuzey][Dan Puzey]] [[http://blog.puzey.net/simple-better-unity-logging/][wrote an abstraction layer]] over Unity's built-in =Debug=
+library.  The library contains several functions for various types of
+logging.  The most important piece for me is =VerboseFormat=, which
+combines string formatting with conditional attributes.  I'll explain
+a bit more about how these pieces work below.
+
+<!--more-->
+
+*** String Formatting
+
+To my surprise, Unity's C# implementation, Mono, doesn't use standard
+=printf=-like string formatting syntax.  Instead of =%s= or other
+commonly used formatting variables, C# uses curly braces around
+numbers to interpolate variables passed in to the =String.Format= call
+as arguments.
+
+Dan's =VerboseFormat= function wraps =String.Format=, so you can call
+=VerboseFormat= with C# formatting strings.
+
+#+BEGIN_SRC csharp
+  using Assets.Phunk.Core
+
+  ...
+
+  Log.VerboseFormat("var1: {0}, var2: {1}", var1, var2);
+  // => [VERBOSE] var1: [var1], var2: [var2]
+#+END_SRC
+
+*** Conditional Attributes
+Above some of the functions in Dan's code you'll see the following
+[[https://msdn.microsoft.com/en-us/library/system.diagnostics.conditionalattribute%2528v%3Dvs.110%2529.aspx][conditional attributes]]:
+
+#+BEGIN_SRC csharp
+  [System.Diagnostics.Conditional("DEBUG"), System.Diagnostics.Conditional("UNITY_EDITOR")]
+
+#+END_SRC
+
+These two settings tell the C# compiler, in this case the =Verbose=
+logging functions, to only compile the code when compiling during
+development, i.e. =DEBUG= or =UNITY_EDITOR=.  That means all of the
+=Verbose= logging statements in your code will not be compiled in the
+production builds of your code.
+
+Cool, huh?  Good thinking, Dan.
+
+*** That's it!
+
+It's always great when you think that a tool would be useful and
+someone else has already implemented it for you.  Go on over and give
+[[http://puzey.net/][Dan's blog]] a gander.
+
+
 
 * Business cards
 
@@ -2046,75 +2114,26 @@ ensure that the developers receive the amount of money you intend.
 
 * COMPLETED POSTS
 
+** What is or isn't a game?
+I've done it.  I've fallen prey to the temptation to write a
+ham-fisted article demarking what is and what isn't a game--and I'm
+not even part of the demographic that Pat Holleman eloquently calls
+out in the following tweets.
 
-** Trace function for debugging in Unity C#
+[[https://twitter.com/tgdfweb/status/624753749521645568]]
 
-A handy Unity C# function from @DanPuzey removes debug logging from
-production builds
+[[https://twitter.com/tgdfweb/status/624753990555709440]]
 
-- Unity
-- Unity3d
-- C#
-- tools
+I think Holleman's definition captures the essence of what [[http://zerosalife.github.io/blog/2015/07/18/satoru-iwata/][Iwata was
+talking about]].  Games are play, play is fun.  Don't overthink it, you
+won't invent anything new or constructive.
 
-Inspired by [[https://www.youtube.com/watch?v%3DbtN095elmh4&feature%3Dyoutu.be&t%3D1985][a video from the excellent Double Fine Documentary
-interviews with Massive Chalice artists and developers]], I wanted to
-come up with a way of conditionally including debug statements in
-development code, but not in production.  Luckily I wasn't the first
-person to think of this.   [[http://blog.puzey.net/simple-better-unity-logging/]]
 
-[[https://twitter.com/danpuzey][Dan Puzey]] [[http://blog.puzey.net/simple-better-unity-logging/][wrote an abstraction layer]] over Unity's built-in =Debug=
-library.  The library contains several functions for various types of
-logging.  The most important piece for me is =VerboseFormat=, which
-combines string formatting with conditional attributes.  I'll explain
-a bit more about how these pieces work below.
-
-<!--more-->
-
-*** String Formatting
-
-To my surprise, Unity's C# implementation, Mono, doesn't use standard
-=printf=-like string formatting syntax.  Instead of =%s= or other
-commonly used formatting variables, C# uses curly braces around
-numbers to interpolate variables passed in to the =String.Format= call
-as arguments.
-
-Dan's =VerboseFormat= function wraps =String.Format=, so you can call
-=VerboseFormat= with C# formatting strings.
-
-#+BEGIN_SRC csharp
-  using Assets.Phunk.Core
-
-  ...
-
-  Log.VerboseFormat("var1: {0}, var2: {1}", var1, var2);
-  // => [VERBOSE] var1: [var1], var2: [var2]
-#+END_SRC
-
-*** Conditional Attributes
-Above some of the functions in Dan's code you'll see the following
-[[https://msdn.microsoft.com/en-us/library/system.diagnostics.conditionalattribute%2528v%3Dvs.110%2529.aspx][conditional attributes]]:
-
-#+BEGIN_SRC csharp
-  [System.Diagnostics.Conditional("DEBUG"), System.Diagnostics.Conditional("UNITY_EDITOR")]
-
-#+END_SRC
-
-These two settings tell the C# compiler, in this case the =Verbose=
-logging functions, to only compile the code when compiling during
-development, i.e. =DEBUG= or =UNITY_EDITOR=.  That means all of the
-=Verbose= logging statements in your code will not be compiled in the
-production builds of your code.
-
-Cool, huh?  Good thinking, Dan.
-
-*** That's it!
-
-It's always great when you think that a tool would be useful and
-someone else has already implemented it for you.  Go on over and give
-[[http://puzey.net/][Dan's blog]] a gander.
 
 ** C# code blocks in Octopress
+I'm putting this here to remind myself how to do csharp code blocks in
+@octopress
+
 - Octopress
 - tools
 - C#
