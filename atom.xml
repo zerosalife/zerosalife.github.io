@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-07-18T16:12:27-05:00</updated>
+  <updated>2015-07-25T09:31:49-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Trace function for debugging in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/"/>
+    <updated>2015-07-25T09:00:31-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p>Inspired by <a href="https://www.youtube.com/watch?v=btN095elmh4&amp;feature=youtu.be&amp;t=1985">a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers</a>, I wanted to come up with a way of conditionally including debug statements in development code, but not in production.  Luckily I wasn&rsquo;t the first person to think of this.</p>
+
+<p><a href="https://twitter.com/danpuzey">Dan Puzey</a> <a href="http://blog.puzey.net/simple-better-unity-logging/">wrote an abstraction layer</a> over Unity&rsquo;s built-in <code>Debug</code> library.  The library contains several functions for various types of logging.  The most important piece for me is <code>VerboseFormat</code>, which combines string formatting with conditional attributes.  I&rsquo;ll explain a bit more about how these pieces work below.</p>
+
+<!--more-->
+
+
+<h2>String Formatting</h2>
+
+<p>To my surprise, Unity&rsquo;s C# implementation, Mono, doesn&rsquo;t use standard <code>printf</code>-like string formatting syntax.  Instead of <code>%s</code> or other commonly used formatting variables, C# uses curly braces around numbers to interpolate variables passed in to the <code>String.Format</code> call as arguments.</p>
+
+<p>Dan&rsquo;s <code>VerboseFormat</code> function wraps <code>String.Format</code>, so you can call <code>VerboseFormat</code> with C# formatting strings.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Assets.Phunk.Core</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">...</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Log</span><span class="p">.</span><span class="n">VerboseFormat</span><span class="p">(</span><span class="s">&quot;var1: {0}, var2: {1}&quot;</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">);</span>
+</span><span class='line'><span class="c1">// =&gt; [VERBOSE] var1: [var1], var2: [var2]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Conditional Attributes</h2>
+
+<p>Above some of the functions in Dan&rsquo;s code you&rsquo;ll see the following <a href="https://msdn.microsoft.com/en-us/library/system.diagnostics.conditionalattribute%28v=vs.110%29.aspx">conditional attributes</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="na">[System.Diagnostics.Conditional(&quot;DEBUG&quot;), System.Diagnostics.Conditional(&quot;UNITY_EDITOR&quot;)]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These two settings tell the C# compiler to only compile the code, in this case the <code>Verbose</code> logging functions, when compiling during development, i.e. <code>DEBUG</code> or <code>UNITY_EDITOR</code>.  That means all of the <code>Verbose</code> logging statements in your code will not be compiled in the production builds of your code.</p>
+
+<p>Cool, huh?  Good thinking, Dan.</p>
+
+<h2>That&rsquo;s it!</h2>
+
+<p>It&rsquo;s always great when you think that a tool would be useful and someone else has already implemented it for you.  Go on over and give <a href="http://puzey.net/">Dan&rsquo;s blog</a> a gander.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Satoru Iwata]]></title>
@@ -1207,54 +1259,6 @@ Meier: &ldquo;A game is a series of interesting choices.&rdquo;  It takes ideas 
 
 
 <p>Many thanks to the original authors of these articles.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[2014 Year In Review]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/02/07/2014-year-in-review/"/>
-    <updated>2015-02-07T10:15:45-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/02/07/2014-year-in-review</id>
-    <content type="html"><![CDATA[<p>This week is the anniversary of <a href="http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/">the first post on this blog</a>.  I&rsquo;d like to take a moment to reflect on the first year.</p>
-
-<p>A recent tweet by <a href="https://twitter.com/McFunkypants">@McFunkypants</a> sums up my approach to blogging:</p>
-
-<div class='embed tweet'><blockquote class="twitter-tweet"><p>What&#39;s the &quot;secret&quot; to get 120k followers?&#10;&#10;<a href="https://twitter.com/HobbyGameDev">@HobbyGameDev</a>: &quot;make 4 articles/videos every month for nearly 6 years: <a href="http://t.co/PsXwlW676N">http://t.co/PsXwlW676N</a></p>&mdash; Christer Kaitila (@McFunkypants) <a href="https://twitter.com/McFunkypants/status/562450390839353345">February 3, 2015</a></blockquote>
-<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
-
-<p>I&rsquo;m not vain enough to imagine a future of internet (in)famy and riches(?) to emerge as a product of this blog.  If I was linearly following the <a href="https://twitter.com/HobbyGameDev">@HobbyGameDev</a> trend, I should have around 20k followers by now.  I&rsquo;m nowhere near that total.  But, like <a href="https://twitter.com/HobbyGameDev">@HobbyGameDev</a>, I set out with a goal of publishing weekly content.  And with that in mind, I consider the first year a success.</p>
-
-<!--more-->
-
-
-<h2>Looking back</h2>
-
-<p>In the past year, I covered recently released games from <a href="http://zerosalife.github.io/blog/2014/02/01/some-thoughts-on-attack-of-the-friday-monsters/">major publishers</a> <a href="http://zerosalife.github.io/blog/2014/03/22/ice-ice-baby/">and</a> <a href="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/">game</a> <a href="http://zerosalife.github.io/blog/2014/07/26/space-is-read/">jams</a>.  I linked to useful <a href="http://zerosalife.github.io/blog/2014/03/29/a-twine-tutorial-in-twine/">tutorial</a> content and <a href="http://zerosalife.github.io/blog/2014/05/31/hammock-driven-creativity/">talks</a>.  I pointed out some of my <a href="http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/">favorite essays</a> about games.  And I released my own <a href="http://zerosalife.github.io/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/">games</a>, <a href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/">tools</a>, <a href="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/">and</a> <a href="http://zerosalife.github.io/blog/2014/03/08/cut-it-all-right-in-two-bisect-to-find-bugs/">tutorials</a>.</p>
-
-<h2>New year, new goals</h2>
-
-<p>Part of the motivation for creating this blog was to provide myself with a platform for regular publishing.  Failing a few travel-related <a href="http://en.wikipedia.org/wiki/Snafu">SNAFUs</a>, I&rsquo;ve maintained weekly posts.  And I think the weekly post on Saturday model works for me.</p>
-
-<p>In the coming year, I&rsquo;d like to focus on using Google Analytics and marketing tools to better publicize these posts.  I&rsquo;m not sure what this marketing push will look like.  I&rsquo;ll likely pursue it like an experiment.  Maybe one month I&rsquo;ll publicize the blog posts twice on the day of publication, or once on Saturday and once on Wednesday, then compare the traffic to months when I only publicize posts on Saturdays.  Of course, this doesn&rsquo;t control for variable interest in the content of the posts, but it&rsquo;s a start.  Posts have been most successful when they reach the people who are most interested in them, and it&rsquo;s easy to get lost in a sea of irrelevant hashtags.  I&rsquo;m looking for better ways to get the word out.</p>
-
-<h2>What worked?</h2>
-
-<h3>#procjam</h3>
-
-<p>My two most successful topics this year were <a href="http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/">#procjam</a> and an <a href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/">original article on the centrality of caves in game design</a>.</p>
-
-<p>I think #procjam was successful because I got a post out in front of the jam, the week before the jam started.  At that time it was a low-traffic hashtag.  People were just finding out about the gamejam, and my post was one of the only things written about #procjam, other than the announcement.  The jam also worked for me because I had a <a href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/">lot</a> of <a href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/">ideas</a> to jam out during the event, and I got a kick out of <a href="http://zerosalife.github.io/blog/2014/11/29/procjam-review/">reviewing</a> <a href="http://zerosalife.github.io/blog/2014/12/06/a-proper-review-of-dungen-star/">several of the entries</a> by others.  My projects, <a href="https://twitter.com/insceptahdeckwu">@INSceptahdeckWU</a> and <a href="https://github.com/zerosalife/patchwerk">Patchwerk</a>, were a ton of fun to work on.  I&rsquo;ll definitely plan on participating in #procjam next year.</p>
-
-<p>It would be worth my time to seek out other interesting gamejams to participate in this year.  It can be easy to miss gamejams, but I&rsquo;d like to get involved in at least one more, maybe if there&rsquo;s another <a href="http://itch.io/jam/space-cowboy-jam">Space Cowboy Jam</a>.  I&rsquo;m not sure there&rsquo;s a definitive resource for gamejams, but I reckon <a href="http://itch.io/jams">itch.io&rsquo;s list</a> is pretty good. One thing I&rsquo;d like to look into is pursuing <a href="http://itch.io/">itch.io</a> as a platform to release tools and games.</p>
-
-<h3>Cavernous worlds</h3>
-
-<p>My <a href="http://zerosalife.github.io/blog/2014/05/03/why-are-caves-central-to-so-many-games/">article on the centrality of caves</a> and <a href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/">the follow-up</a> involved a little bit of synthesis and a bit of serendipity.  I saw a series of tweets discussing the topic and set out to simply catalog the main themes in the discussion.  Once the themes were clear, it was impossible for me not to write the article.  I got some great <a href="http://zerosalife.github.io/blog/2014/05/10/follow-up-to-the-centrality-of-caves/">feedback</a> on twitter from the initial post that I turned into the follow-up article.  This pair of posts worked because there was a clear audience that I could make aware of the articles through mentions in the tweets announcing the publication on the blog.  I was lucky that the audience was vocal and willing to discuss the topic in depth with me and with others.</p>
-
-<h2>Conclusion</h2>
-
-<p>Overall, I&rsquo;m happy with the format of the blog covering a bit of the technical side and a bit of the design side.  In the coming year, I fully intend on releasing some more of my own original games and prototypes.  Hopefully I can find a receptive audience to kindle discussion and constructive feedback.</p>
 ]]></content>
   </entry>
   

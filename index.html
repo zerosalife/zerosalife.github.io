@@ -9,8 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Video games are meant to be just one thing. Fun. Fun for everyone. &#x2013; Satoru Iwata, 1959-2015
-">
+  <meta name="description" content="Inspired by a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers, I wanted to come up with a way &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +67,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/">Trace Function for Debugging in Unity C#</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-07-25T09:00:31-05:00" pubdate data-updated="true">Jul 25<span>th</span>, 2015</time>
+        
+         | <a href="/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Inspired by <a href="https://www.youtube.com/watch?v=btN095elmh4&amp;feature=youtu.be&amp;t=1985">a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers</a>, I wanted to come up with a way of conditionally including debug statements in development code, but not in production.  Luckily I wasn&rsquo;t the first person to think of this.</p>
+
+<p><a href="https://twitter.com/danpuzey">Dan Puzey</a> <a href="http://blog.puzey.net/simple-better-unity-logging/">wrote an abstraction layer</a> over Unity&rsquo;s built-in <code>Debug</code> library.  The library contains several functions for various types of logging.  The most important piece for me is <code>VerboseFormat</code>, which combines string formatting with conditional attributes.  I&rsquo;ll explain a bit more about how these pieces work below.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -472,51 +516,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/04/25/aurion-and-the-aurochs-post-mortem/">Aurion and the Aurochs Post-mortem</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-04-25T10:31:42-05:00" pubdate data-updated="true">Apr 25<span>th</span>, 2015</time>
-        
-         | <a href="/blog/2015/04/25/aurion-and-the-aurochs-post-mortem/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Join me as I look back on my <a href="http://jams.gamejolt.io/adventurejam">#adventurejam</a> game, <em><a href="http://jams.gamejolt.io/adventurejam/games/aurion-and-the-aurochs/60738">Aurion and the Aurochs</a></em>.  You can take a <a href="http://gamejolt.com/games/adventure/aurion-and-the-aurochs/60738/">look at the game</a> over on <a href="http://gamejolt.com">gamejolt</a> and you can <a href="https://github.com/zerosalife/aurion">view the sourcecode here</a>.  You can see all of the entries at <a href="http://jams.gamejolt.io/adventurejam/games">adventurejam&rsquo;s site</a>.</p>
-
-<p>I&rsquo;m going to look at things that worked, things that didn&rsquo;t, and the lessons I&rsquo;ll take with me moving forward.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/04/25/aurion-and-the-aurochs-post-mortem/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -532,6 +531,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/">Trace function for debugging in Unity C#</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/18/satoru-iwata/">Satoru Iwata</a>
       </li>
     
@@ -545,10 +548,6 @@
     
       <li class="post">
         <a href="/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp/">Create a Dictionary of Lists in Unity C#</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/">Creating a Dictionary of Lists in Unity JavaScript</a>
       </li>
     
   </ul>
