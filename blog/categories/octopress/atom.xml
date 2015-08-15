@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-07-25T09:31:49-05:00</updated>
+  <updated>2015-08-15T09:06:49-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[C# code blocks in Octopress]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/08/15/c-sharp-code-blocks-in-octopress/"/>
+    <updated>2015-08-15T08:59:19-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/08/15/c-sharp-code-blocks-in-octopress</id>
+    <content type="html"><![CDATA[<p><a href="http://octopress.org/">Octopress</a> supports <a href="http://octopress.org/docs/plugins/backtick-codeblock/">backtick code blocks</a> with <a href="http://pygments.org/docs/lexers/">Pygment lexers</a> handling syntax highlighting.  I always forget the syntax for using with bactick codeblocks with C#, leading to irritating failures when I build my Octopress blog.  Here&rsquo;s how you use them.</p>
+
+<pre><code>``` csharp
+[csharp code here]
+```
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Syntax highlighting for Octopress]]></title>
