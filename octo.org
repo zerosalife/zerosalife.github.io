@@ -924,6 +924,26 @@ someone else has already implemented it for you.  Go on over and give
 [[http://puzey.net/][Dan's blog]] a gander.
 
 
+** C# code blocks in Octopress
+I'm putting this here to remind myself how to do csharp code blocks in
+@octopress
+
+- Octopress
+- tools
+- C#
+
+[[http://octopress.org/][Octopress]] supports [[http://octopress.org/docs/plugins/backtick-codeblock/][backtick code blocks]] with [[http://pygments.org/docs/lexers/][Pygment lexers]] handling
+syntax highlighting.  I always forget the syntax for using them,
+leading to irritating failures when I build my Octopress blog.  Here's
+how you use them.  I'll use ='= instead of =`= for this example.
+
+#+BEGIN_SRC
+''' csharp
+[csharp code here]
+'''
+#+END_SRC
+
+
 
 * Business cards
 
@@ -1628,6 +1648,11 @@ inspire people to do more."
 *** Dungeon Generation
 [[http://www.gamesofgrey.com/blog/?p%3D236][http://www.gamesofgrey.com/blog/?p=236]]
 [[file:~/Downloads/dungeon-gen-thesis.pdf]]
+
+*** 2d pixel art shading in Unity
+[[http://antonkudin.tumblr.com/post/110198230014/pixellighting]]
+
+Pixel art is 11 x 16
 ** STARTED DRAFTS
 
 
@@ -2126,28 +2151,12 @@ out in the following tweets.
 
 I think Holleman's definition captures the essence of what [[http://zerosalife.github.io/blog/2015/07/18/satoru-iwata/][Iwata was
 talking about]].  Games are play, play is fun.  Don't overthink it, you
-won't invent anything new or constructive.
+won't invent anything new or constructive.  Everything doesn't have to
+fit in a tiny box of your arbitrary creation.  There is a place for
+lumping thigngs together in useful ways but for the most part this
+kind of genre parsing is not constructive.
 
 
-
-** C# code blocks in Octopress
-I'm putting this here to remind myself how to do csharp code blocks in
-@octopress
-
-- Octopress
-- tools
-- C#
-
-[[http://octopress.org/][Octopress]] supports [[http://octopress.org/docs/plugins/backtick-codeblock/][backtick code blocks]] with [[http://pygments.org/docs/lexers/][Pygment lexers]] handling
-syntax highlighting.  I always forget the syntax for using them,
-leading to irritating failures when I build my Octopress blog.  Here's
-how you use them.  I'll use ='= instead of =`= for this example.
-
-#+BEGIN_SRC
-''' csharp
-[csharp code here]
-'''
-#+END_SRC
 
 ** Mobile Frame Football Association
 From The Game Design Workshop book:
@@ -2896,17 +2905,23 @@ https://github.com/InfiniteAmmoInc/Yarn
 https://bitbucket.org/vinull/utiled/overview
 
 ** Cheeky Tinted Blobs
-Following along with @pentadact's tutorial video [[https://youtu.be/I5qxIhdEx28?t%3D1m33s][here]] (You can see the
-finished result around 6 minutes into the video).
+Porting @pentadact's GameMaker blobby nebula tutorial to Unity
+
+- Unity
+- Unity2d
+- algorithm
+
+I'm following along with [[https://twitter.com/pentadact][@pentadact]]'s tutorial video [[https://youtu.be/I5qxIhdEx28?t%3D1m33s][here]] (You can see
+the finished result around 6 minutes into the video).
 
 *** The goal
-We want to generate a splotchy blurred out nebular background.
-Without going into to too much detail, I'm interested in something
-that would go well underneath a procedurally generated space station
-map
+What we want to do here is to generate a splotchy blurred out nebular
+(-lous?)  background.  Without going into to too much detail, I'm
+interested in something that would go well underneath a procedurally
+generated space station map.
 
 *** The algorithm
-The algorithm @pentadact explains works like this:
+The algorithm [[https://twitter.com/pentadact][@pentadact]] describes works like this:
 
 1) Draw an extremely faint white *blob*
 2) Tint the *blob* one of two randomly generated *colors*
@@ -2993,6 +3008,7 @@ returns a random =float= between =0.0= and =1.0=, which we use to
 generate a new =Color=.
 
 Then the =BlobGenerator= gets into the main routine, =PlaceBlobs=.
+
 Briefly, =PlaceBlobs= instantiates clones of the blob prefab at random
 positions within the maximum and minimum boundaries we specify, makes
 the cloned blob a child of the parent Blobs =GameObject=, and sets the
@@ -3021,6 +3037,68 @@ That's all there is to it.
 *** Moving forward
 
 It would be nice to have more fine-grained control over the local
-density of the blobs in regions, so the map would become a little less
-uniform.  But I think the effect we've achieved works nice as a
-background.
+density of the blobs in certain regions, so the map would become a
+little less uniform, creating pockets of character in an otherwise
+featureless space.  But I think the effect we've achieved works nice
+as a background.
+
+** Using Anonymous LINQ functions or Lambda expressions in Unity C#
+http://www.dotnetperls.com/select
+[[https://en.wikipedia.org/wiki/Language_Integrated_Query]]
+
+[[http://www.dotnetperls.com/linq]]
+
+http://stackoverflow.com/questions/2629124/contains-on-a-list-of-custom-class-objects
+
+** Unity's Level Loading Lifecycle
+[[http://wiki.unity3d.com/index.php?title%3DLife_cycle][http://wiki.unity3d.com/index.php?title=Life_cycle]]
+
+[[http://docs.unity3d.com/Manual/ExecutionOrder.html]]
+
+** Unit Testing in Unity
+
+*** Setting it up
+Download the package
+
+*** Import the package
+We are going to need the =Common=, =Assertion=, and =UnitTesting= directories.
+
+*** Create a Tests directory
+We need a place for the tests to live
+
+*** Make a namespace
+
+*** Test attributes
+Use the =[TestFixture]= and =[Test]= attributes to let the Unity Test
+Tools Unit Test Runner know where your tests are.
+
+You can also use the =Category= attribute to add semantic labels to
+your tests.
+
+*** Making assertions
+http://www.nunit.org/index.php?p=assertions&r=2.2.10
+
+The Testing Framework uses an out of date NUnit version of 2.2.10
+
+*** Going further
+[[https://www.assetstore.unity3d.com/en/#!/content/13802][Unity Test Tools]] has support for Integration tests as well as
+assertions in addition to the plain old unit tests I described above.
+
+http://www.tallior.com/introduction-to-unity-test-tools/
+
+** Using images in Octopress posts
+How I store images on my @octopress blog.
+
+*** Storing the images
+- Octopress
+- tools
+
+I store images in =./images/assets/= in my Octopress install
+directory.  They get bundled up with all the other parts of my blog
+when I deploy.
+
+*** The Octopress image tag
+I use the [[http://octopress.org/docs/plugins/image-tag/][Octopress image tag]]
+
+The syntax is
+={[percent] img [class names] /path/to/image [width] [height] [title text [alt text]] [percent]}=
