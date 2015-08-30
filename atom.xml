@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-08-15T09:06:49-05:00</updated>
+  <updated>2015-08-29T20:01:47-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using images in Octopress posts]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/"/>
+    <updated>2015-08-29T17:20:05-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts</id>
+    <content type="html"><![CDATA[<h2>Storing the images</h2>
+
+<p>I store images in <code>./images/assets/</code> in my Octopress install directory.  They get bundled up with all the other parts of my blog when I deploy.</p>
+
+<h2>The Octopress image tag</h2>
+
+<p>I use the <a href="http://octopress.org/docs/plugins/image-tag/">Octopress image tag</a></p>
+
+<p>The syntax is:</p>
+
+<pre><code>{[%] img [class names] /path/to/image [width] [height] [title text [alt text]] [%]}
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[C# code blocks in Octopress]]></title>
@@ -1064,76 +1084,6 @@
 <h2>Conclusion</h2>
 
 <p>I&rsquo;m really interested in feedback, so <a href="http://zerosalife.itch.io/wuxingrps">give the game a try</a> and tell me what you think in the comments or on <a href="http://twitter.com/zerosalife">twitter</a>.  If you&rsquo;re an artist interested in gussying up my shameful attempts at UI and UX, please please please reach out to me.  I&rsquo;d love to improve this prototype.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hosting a game on itch.io: account set up and transaction fees]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/02/21/hosting-a-game-on-itch-dot-io-account-set-up-and-transaction-fees/"/>
-    <updated>2015-02-21T11:25:39-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/02/21/hosting-a-game-on-itch-dot-io-account-set-up-and-transaction-fees</id>
-    <content type="html"><![CDATA[<h2>What is itch.io?</h2>
-
-<p>According to the <a href="http://itch.io/about/faq">faq</a>, itch.io is a service for handling hosting and selling individual and bundled games, soundtracks, art, etc.  It has some handy features to <a href="http://itch.io/jams">manage and track gamejams</a> as well.  It was <a href="http://leafo.net/posts/introducing_itchio.html">created</a> by <a href="https://twitter.com/moonscript">@moonscript</a>.</p>
-
-<p>In this post I&rsquo;ll look at the fees charged itch.io and the supported payment platforms and how to set up an account.  The <a href="http://itch.io/about/faq">faq</a> covers these and other topics in more detail so make sure you peruse it.</p>
-
-<!--more-->
-
-
-<h2>Fees</h2>
-
-<p>There are a few payment options available on itch.io.  Here&rsquo;s how the fees break down.  I&rsquo;ll use the example of selling $5.00 and $2.00 games to show the revenue you could expect to receive after taking out the various fees.</p>
-
-<p>It&rsquo;s worth noting that, at of the time of this post, <strong>itch.io is not collecting fees</strong>.  I&rsquo;ll still present the revenue calculations with the itch.io slice factored in, but itch.io won&rsquo;t start collecting a percentage of the game price until a later, unspecified date.</p>
-
-<p>Itch.io currently provides three options for handling payments: <a href="http://payments.amazon.com/">Amazon Payments</a>, <a href="http://www.paypal.com/">PayPal</a> and <a href="http://stripe.com/">Stripe</a>.</p>
-
-<h3>Supported currencies</h3>
-
-<p>PayPal appears to be the least restrictive in terms of the countries and currencies it handles.  Stripe handles U.S., Canada, U.K., Australia, and Ireland.  Stripe has an <a href="https://support.stripe.com/questions/what-countries-does-stripe-support">open beta for some European countries</a>. Amazon Payments only handles U.S. currencies.  Non-U.S. purchases through Amazon Payments are <a href="https://payments.amazon.com/sdui/sdui/about?nodeId%3D77175#aspd_cost">only allowed via credit card transactions, and there&rsquo;s an additional charge</a>.</p>
-
-<h3>Fee structure</h3>
-
-<p>The fees for <a href="https://stripe.com/us/pricing">Stripe</a> and <a href="https://www.paypal.com/webapps/mpp/merchant-fees">PayPal</a> work similarly, assuming you&rsquo;re processing less than $3,000 monthly.  There&rsquo;s a base fee of $0.30 + 2.9% for each transaction.  Amazon Payments works similarly if the price is above $10.00, but below $9.99, there&rsquo;s a $0.05 surcharge + 5%.</p>
-
-<p>Itch.io will charge a 10% fee for each transaction, but currently this charge is waived.</p>
-
-<h3>Down and dirty</h3>
-
-<p>So let&rsquo;s do the math for the two example prices I mentioned above:</p>
-
-<p>For Stripe and PayPal the numbers look like this:</p>
-
-<pre><code>$5 - ($5 * 0.1) - $0.30 - ($5 * 0.029) = $4.055
-
-$2 - ($2 * 0.1) - $0.30 - ($2 * 0.029) = $1.442
-</code></pre>
-
-<p>I&rsquo;m not sure how the rounding works.  I will have to reach out to itch.io and the payment handling services to see how they handle tenths of a cent.</p>
-
-<p>For Amazon Payments the numbers look like:</p>
-
-<pre><code>$5 - ($5 * 0.1) - $0.05 - ($5 * 0.05) = $4.20
-
-$2 - ($2 * 0.1) - $0.05 - ($2 * 0.05) = $1.65
-</code></pre>
-
-<p>Keep in mind, for each of these calculations you&rsquo;ll get an extra $0.50 and $0.20, respectively, since the itch.io surcharge is not in effect.</p>
-
-<p>That&rsquo;s how the numbers breakdown for these price points.  I&rsquo;m not planning on charging money right now, but it&rsquo;s nice to see the real amounts you can expect to see.  I am really bad at reasoning about these sorts of percentages in the abstract.</p>
-
-<h2>Signing up</h2>
-
-<p><a href="http://itch.io/register">Registering for itch.io</a> was easy.  I created an account and checked <code>I'm interested in distributing games on itch.io</code>.  That&rsquo;s it.  It&rsquo;s very straightforward.</p>
-
-<p>Now I have a relatively spartan page at <a href="http://zerosalife.itch.io/">zerosalife.itch.io</a>.</p>
-
-<h2>The next step</h2>
-
-<p>I&rsquo;d like to brand and personalize my itch.io page, but I don&rsquo;t think that the time for that is now.  Somewhere down the road, I&rsquo;ll look into itch.io&rsquo;s powerful customization tools.</p>
-
-<p>The obvious clear thing to do with my new itch.io account is to release a game.  Tune in next week for exactly that!</p>
 ]]></content>
   </entry>
   

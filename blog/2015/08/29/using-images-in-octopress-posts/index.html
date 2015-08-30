@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The Fate of Adventure Games - zero's a life</title>
+  <title>Using images in Octopress posts - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Zoyə Street wrote a summary of an interesting PhD thesis by Jonathan Lessard. Lessard examines the history of adventure games, to see whence they& &hellip;">
+  <meta name="description" content="Storing the images I store images in ./images/assets/ in my Octopress install directory. They get bundled up with all the other parts of my blog when &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">The Fate of Adventure Games</h1>
+      <h1 class="entry-title">Using Images in Octopress Posts</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-04-12T09:16:59-05:00" pubdate data-updated="true">Apr 12<span>th</span>, 2014</time>
+<time datetime="2015-08-29T17:20:05-05:00" pubdate data-updated="true">Aug 29<span>th</span>, 2015</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,13 +95,18 @@
   </header>
 
 
-<div class="entry-content"><p>Zoyə Street wrote a <a href="https://medium.com/p/3e3c1e20cfd0">summary</a> of an interesting <a href="http://www.omnsh.org/ressources/527/histoire-formelle-du-jeu-daventure-sur-ordinateur-le-cas-de-lamerique-du-nord-de-1976">PhD thesis by Jonathan Lessard</a>.  Lessard examines the history of adventure games, to see whence they&rsquo;ve come and where they&rsquo;ve gone.  Like Street, I think this approach to thinking about video game design and genre provides useful perspective.</p>
+<div class="entry-content"><h2>Storing the images</h2>
 
-<p>Lessard concludes that the adventure game genre didn&rsquo;t vanish, it sublimated into, and was subsumed by, other modern multi-genre games.</p>
+<p>I store images in <code>./images/assets/</code> in my Octopress install directory.  They get bundled up with all the other parts of my blog when I deploy.</p>
 
-<p>For example, consider 3d RPGs incorporating first-person shooter perspective and playstyle.  I could be describing Skyrim or Titanfall, two dramatically different games.</p>
+<h2>The Octopress image tag</h2>
 
-<p>Lessard and Street argue, convincingly, that these sorts of games have all the hallmarks of adventure games, while evolving new forms and structures of play.</p>
+<p>I use the <a href="http://octopress.org/docs/plugins/image-tag/">Octopress image tag</a></p>
+
+<p>The syntax is:</p>
+
+<pre><code>{[%] img [class names] /path/to/image [width] [height] [title text [alt text]] [%]}
+</code></pre>
 </div>
 
 
@@ -124,12 +129,12 @@
   
 
 
-<time datetime="2014-04-12T09:16:59-05:00" pubdate data-updated="true">Apr 12<span>th</span>, 2014</time>
+<time datetime="2015-08-29T17:20:05-05:00" pubdate data-updated="true">Aug 29<span>th</span>, 2015</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/adventure-games/'>adventure games</a>, <a class='category' href='/blog/categories/design/'>design</a>
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -138,7 +143,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/" >Tweet</a>
   
   
   
@@ -147,10 +152,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/05/dont-fear-lack-of-content/" title="Previous Post: Don't Fear Lack of Content">&laquo; Don't Fear Lack of Content</a>
+        <a class="basic-alignment left" href="/blog/2015/08/15/c-sharp-code-blocks-in-octopress/" title="Previous Post: C# code blocks in Octopress">&laquo; C# code blocks in Octopress</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/04/19/styx-ebooks/" title="Next Post: styx_ebooks">styx_ebooks &raquo;</a>
       
     </p>
   </footer>
@@ -247,8 +250,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/04/12/the-fate-of-adventure-games/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-08-15T09:06:49-05:00</updated>
+  <updated>2015-08-29T20:01:47-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using images in Octopress posts]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/"/>
+    <updated>2015-08-29T17:20:05-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts</id>
+    <content type="html"><![CDATA[<h2>Storing the images</h2>
+
+<p>I store images in <code>./images/assets/</code> in my Octopress install directory.  They get bundled up with all the other parts of my blog when I deploy.</p>
+
+<h2>The Octopress image tag</h2>
+
+<p>I use the <a href="http://octopress.org/docs/plugins/image-tag/">Octopress image tag</a></p>
+
+<p>The syntax is:</p>
+
+<pre><code>{[%] img [class names] /path/to/image [width] [height] [title text [alt text]] [%]}
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[C# code blocks in Octopress]]></title>
@@ -232,57 +252,6 @@ dynamically update footer info in a variety of languages.</p>
 </p>
 
 <p>You can see the results at the bottom of this page.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Automating blog deployment with Octopress]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/"/>
-    <updated>2014-09-06T11:27:35-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress</id>
-    <content type="html"><![CDATA[<p>Based on Kevin van Zonneveld&rsquo;s (<a href="https://twitter.com/kvz">@kvz</a>) <a href="http://kvz.io/blog/2012/09/25/blog-with-octopress/">article</a> on setting up Octopress,
-I&rsquo;ve adapted a <code>Makefile</code> to make building my blog easier&#x2026; with
-<a href="http://www.gnu.org/software/make/">make</a>.  The following <code>Makefile</code> allows me to build and deploy my blog
-by typing <code>make blog</code> at the command prompt.</p>
-
-<!--more-->
-
-
-<pre><code>all: blog
-
-preview:
-        bundle exec rake generate &amp;&amp; bundle exec rake preview
-
-blog:
-        git pull &amp;&amp; \
-        bundle install &amp;&amp; \
-        bundle exec rake integrate &amp;&amp; \
-        bundle exec rake generate &amp;&amp; \
-        bundle exec rake deploy &amp;&amp; \
-        git add .; \
-        git commit -am "blog update $$(date +%Y-%m-%d)"; \
-        git push origin source
-
-.PHONY: blog                   # Force blog to run regardless of the changes to the files.
-</code></pre>
-
-<h2>Additional Notes</h2>
-
-<h3>rake build didn&rsquo;t work for me</h3>
-
-<p>I think this is because I haven&rsquo;t written any tasks that use <code>rake
-build</code>.</p>
-
-<h3>Remote for the source of my blog</h3>
-
-<p>I push the source code of my blog to a branch named <code>source</code> rather
-than <code>master</code>.</p>
-
-<h3>The percent symbol screwed everything up</h3>
-
-<p>Not sure exactly why, but including the <code>%</code> after blog on the line
-<code>.PHONY: blog%</code> gave me an error saying <code>make: `blog' is up to date.</code>.
-Removing the <code>%</code> allowed me to run <code>make blog</code> as expected.</p>
 ]]></content>
   </entry>
   
