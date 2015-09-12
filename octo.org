@@ -102,6 +102,22 @@ Could rewrite
 https://github.com/PartTimeLegend/octopress-flattr-donation-aside to
 use moonclerk.
 
+** Using images in Octopress posts
+How I store images on my @octopress blog.
+
+*** Storing the images
+- Octopress
+- tools
+
+I store images in =./images/assets/= in my Octopress install
+directory.  They get bundled up with all the other parts of my blog
+when I deploy.
+
+*** The Octopress image tag
+I use the [[http://octopress.org/docs/plugins/image-tag/][Octopress image tag]]
+
+The syntax is
+={[percent] img [class names] /path/to/image [width] [height] [title text [alt text]] [percent]}=
 * PUBLISHED
 ** Aurion and the Aurochs is out
 - game
@@ -963,6 +979,8 @@ Gaminess
 Pengin, incorporating aspects of the japanese: ペンギン
 
 Dai-su, dice-ooh, mascot: Big Sue.
+
+Maxwell or Maxwell Games with shield MW logo
 
 
 * IDEAS
@@ -2904,6 +2922,123 @@ https://github.com/InfiniteAmmoInc/Yarn
 ** uTiled
 https://bitbucket.org/vinull/utiled/overview
 
+** Using Anonymous LINQ functions or Lambda expressions in Unity C#
+http://www.dotnetperls.com/select
+[[https://en.wikipedia.org/wiki/Language_Integrated_Query]]
+
+[[http://www.dotnetperls.com/linq]]
+
+http://stackoverflow.com/questions/2629124/contains-on-a-list-of-custom-class-objects
+
+** Unity's Level Loading Lifecycle
+[[http://wiki.unity3d.com/index.php?title%3DLife_cycle][http://wiki.unity3d.com/index.php?title=Life_cycle]]
+
+[[http://docs.unity3d.com/Manual/ExecutionOrder.html]]
+
+** Priority Queue in Unity C#
+
+*** Moving forward
+There will need to be a separate implementation for an =ActionQueue=
+as described [[http://gamedevelopment.tutsplus.com/articles/how-to-build-a-jrpg-a-primer-for-game-developers--gamedev-6676#combat][here]] because the =PriorityQueue= does not allow for
+=priority= to change after the item has been =Enqueue=-d.  So if we
+want to "tick" down priorities in the queue, it constititutes a
+different enough implementation that it will require a different class
+to handle that.
+** Unit Testing in Unity
+
+*** Setting it up
+Download the package
+
+*** Import the package
+We are going to need the =Common=, =Assertion=, and =UnitTesting= directories.
+
+*** Create a Tests directory
+We need a place for the tests to live.
+
+One important thing to remember is that the scripts in this directory
+need to be accessible by the Unity Test Tools in the Editor so we'll
+put them in =./Tests/Editor/=.
+
+*** Make a namespace
+UnityTestTools will organize our tests by top-level =namespace=
+declarations defined in each of the tests' files.  Then we follow it
+up with a =Category= attribute that names the category of tests that
+live inside the =internal class= we define in the namespace.
+
+#+BEGIN_SRC csharp
+  namespace ExampleTests {
+      [Category("Example Tests")]
+      internal class ExampleTests {
+          // tests go here
+      }
+  }
+
+#+END_SRC
+
+*** Test attributes
+Use the =[TestFixture]= and =[Test]= attributes to let the Unity Test
+Tools Unit Test Runner know where your tests are.
+
+You can also use the =Category= attribute to add semantic labels to
+your tests.
+
+*** Making assertions
+http://www.nunit.org/index.php?p=assertions&r=2.2.10
+
+The Testing Framework uses an out of date NUnit version of 2.2.10
+
+*** Going further
+[[https://www.assetstore.unity3d.com/en/#!/content/13802][Unity Test Tools]] has support for Integration tests as well as
+assertions in addition to the plain old unit tests I described above.
+
+http://www.tallior.com/introduction-to-unity-test-tools/
+
+** Using Google Docs for mock-ups
+Pro-tip:  Google Docs is great for mock-ups.  Unfortunately Google
+Draw doesn't support animation or multiple pages.  Luckily the same
+suite of tools is available in Google's PowerPoint app.  If you don't
+like the PowerPoint interface, sketch your mock-ups in Draw and copy
+them over to PowerPoint.
+
+This way you can rapidly iterate on your mock-ups while keeping a
+record.  This approach is in keeping with Aaron Draplin's design
+philosophy that space is cheap feel free to experiment and keep
+everything because you never know what will influence the final
+design.
+
+** ROT.js  in Clojurescript
+
+
+In this series of posts, I'll be following along with the [[http://www.roguebasin.com/index.php?title%3DRot.js_tutorial,_part_1][ROT.js
+tutorial]] over on [[http://www.roguebasin.com/index.php?title%3DMain_Page][RogueBasin]].  [[http://ondras.github.io/rot.js/hp/][ROT.js]] is a colleciton of JavaScript
+libraries for creating roguelikes that run in the browser, it was
+created by [[https://twitter.com/0ndras][@0ndras]].
+
+*** A note before we begin
+I plan on following the tutorial almost to the letter when porting the
+Pedro and the Ananas game over to Clojurescript.  As a consequence of
+this constraint, I will be writing some Clojurescript code that is far
+from idiomatic.  Let me state that again, I would not recommend
+writing a fresh Clojurescript app this way.  I have chosen to follow
+the JavaScript implementation this closely because I want to gain a
+better understanding of the Clojurescript/JavaScript interoperation
+and also to refine my ability to debug the compiled Clojurescript, so
+that I can support idiomatic Clojurescript that much better.
+
+*** Rot.cljs part 0
+
+I will structure these posts to follow the tripartite structure of the
+ROT.js tutorial on Roguebasin.
+
+In this initial post, I'll show how I set up the Clojurescript project
+and how to get an initial ROT.js console output to render
+
+*** Project setup
+
+*** index.html
+
+*** Hello console
+
 ** Cheeky Tinted Blobs
 Porting @pentadact's GameMaker blobby nebula tutorial to Unity
 
@@ -2914,6 +3049,12 @@ Porting @pentadact's GameMaker blobby nebula tutorial to Unity
 I'm following along with [[https://twitter.com/pentadact][@pentadact]]'s tutorial video [[https://youtu.be/I5qxIhdEx28?t%3D1m33s][here]] (You can see
 the finished result around 6 minutes into the video).
 
+Insert screenshot here.  Make sure to add a screenshot to the
+README.org as well.
+
+
+{% img center /images/assets/tinted-blobs-screenshot.png 2868 2868 %}
+
 *** The goal
 What we want to do here is to generate a splotchy blurred out nebular
 (-lous?)  background.  Without going into to too much detail, I'm
@@ -2923,10 +3064,9 @@ generated space station map.
 *** The algorithm
 The algorithm [[https://twitter.com/pentadact][@pentadact]] describes works like this:
 
-1) Draw an extremely faint white *blob*
+1) Draw a faint white *blob*
 2) Tint the *blob* one of two randomly generated *colors*
 3) Randomly place the tinted *blobs*
-
 
 *** How it works
 The blobs are white, which is represented in RGB color as 100% in all
@@ -2974,9 +3114,9 @@ the scene.
 
 *** Backdrop
 
-I create an black =Background= UI object and set the =X scale= and =Y
-scale= to =1000=, to be sure Background covered the whole screen.  I
-then set the sorting layer of the sprite to =BG=.  Remember how I set
+We create a black =Background= UI object and set the =X scale= and =Y
+scale= to =1000=, to be sure Background covered the whole screen.  We
+then set the sorting layer of the sprite to =BG=.  Remember how we set
 that layer up earlier?  How prescient!
 
 *** One GameObject To Hold Them All
@@ -3032,73 +3172,13 @@ above.
 
 #+END_SRC
 
-That's all there is to it.
+That's all there is to it.  You can check out the full example project
+on [[https://github.com/zerosalife/tint-background][github]].
 
 *** Moving forward
 
 It would be nice to have more fine-grained control over the local
 density of the blobs in certain regions, so the map would become a
 little less uniform, creating pockets of character in an otherwise
-featureless space.  But I think the effect we've achieved works nice
-as a background.
-
-** Using Anonymous LINQ functions or Lambda expressions in Unity C#
-http://www.dotnetperls.com/select
-[[https://en.wikipedia.org/wiki/Language_Integrated_Query]]
-
-[[http://www.dotnetperls.com/linq]]
-
-http://stackoverflow.com/questions/2629124/contains-on-a-list-of-custom-class-objects
-
-** Unity's Level Loading Lifecycle
-[[http://wiki.unity3d.com/index.php?title%3DLife_cycle][http://wiki.unity3d.com/index.php?title=Life_cycle]]
-
-[[http://docs.unity3d.com/Manual/ExecutionOrder.html]]
-
-** Unit Testing in Unity
-
-*** Setting it up
-Download the package
-
-*** Import the package
-We are going to need the =Common=, =Assertion=, and =UnitTesting= directories.
-
-*** Create a Tests directory
-We need a place for the tests to live
-
-*** Make a namespace
-
-*** Test attributes
-Use the =[TestFixture]= and =[Test]= attributes to let the Unity Test
-Tools Unit Test Runner know where your tests are.
-
-You can also use the =Category= attribute to add semantic labels to
-your tests.
-
-*** Making assertions
-http://www.nunit.org/index.php?p=assertions&r=2.2.10
-
-The Testing Framework uses an out of date NUnit version of 2.2.10
-
-*** Going further
-[[https://www.assetstore.unity3d.com/en/#!/content/13802][Unity Test Tools]] has support for Integration tests as well as
-assertions in addition to the plain old unit tests I described above.
-
-http://www.tallior.com/introduction-to-unity-test-tools/
-
-** Using images in Octopress posts
-How I store images on my @octopress blog.
-
-*** Storing the images
-- Octopress
-- tools
-
-I store images in =./images/assets/= in my Octopress install
-directory.  They get bundled up with all the other parts of my blog
-when I deploy.
-
-*** The Octopress image tag
-I use the [[http://octopress.org/docs/plugins/image-tag/][Octopress image tag]]
-
-The syntax is
-={[percent] img [class names] /path/to/image [width] [height] [title text [alt text]] [percent]}=
+featureless space.  But I think the effect here works nice as a
+background.
