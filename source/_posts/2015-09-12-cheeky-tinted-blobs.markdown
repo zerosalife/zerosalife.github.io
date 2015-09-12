@@ -13,7 +13,7 @@ I'm following along with [@pentadact](https://twitter.com/pentadact)'s tutorial 
 Insert screenshot here.  Make sure to add a screenshot to the
 README.org as well.
 
-{% img center images/assets/tinted-blobs-screenshot.png 1434 1434 %}
+{% img center /images/assets/tinted-blobs-screenshot.png 1434 1434 %}
 
 <!--more-->
 
