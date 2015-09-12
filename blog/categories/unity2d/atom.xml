@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity2d | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity2d/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-08-29T20:01:47-05:00</updated>
+  <updated>2015-09-12T09:56:22-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,138 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cheeky Tinted Blobs: a procedurally generated Unity 2D background]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs/"/>
+    <updated>2015-09-12T09:47:50-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m following along with <a href="https://twitter.com/pentadact">@pentadact</a>&rsquo;s tutorial video <a href="https://youtu.be/I5qxIhdEx28?t%3D1m33s">here</a> (You can see the finished result around 6 minutes into the video).</p>
+
+<p>Insert screenshot here.  Make sure to add a screenshot to the
+README.org as well.</p>
+
+<p><img class="center" src="images/assets/tinted-blobs-screenshot.png" width="1434" height="1434"></p>
+
+<!--more-->
+
+
+<h2>The goal</h2>
+
+<p>What we want to do here is to generate a splotchy blurred out nebular (-lous?)  background.  Without going into to too much detail, I&rsquo;m interested in something that would go well underneath a procedurally generated space station map.</p>
+
+<h2>The algorithm</h2>
+
+<p>The algorithm <a href="https://twitter.com/pentadact">@pentadact</a> describes works like this:</p>
+
+<ol>
+<li>Draw a faint white <strong>blob</strong></li>
+<li>Tint the <strong>blob</strong> one of two randomly generated <strong>colors</strong></li>
+<li>Randomly place the tinted <strong>blobs</strong></li>
+</ol>
+
+
+<h2>How it works</h2>
+
+<p>The blobs are white, which is represented in RGB color as 100% in all three values (black is 0%).  This corresponds to 255 in 8-bit colorspace and <code>1.0</code> in Unity&rsquo;s colorspace.  Since the blobs are faint, the actual RGB values will approach, but not reach 100%.</p>
+
+<p>When we apply a tint to the blobs' sprites we are essentially multiplying each of the RGB values by our desired color&rsquo;s value.  The resulting value will approach the full <em>intensity</em> of the color as our raw blob approaches 100% white, if that makes sense.  So the result is a faint blob of any desired color we want.</p>
+
+<p>The colored blobs overlap each other, generating interesting patterns of lighter and darker mixtures of the two colors.</p>
+
+<h2>Blobonia</h2>
+
+<p>I fired up my favorite image editing program and made a 256 x 256 <code>png</code> blob sprite.  Using the airbrush tool, I plopped a blob in the middle of the canvas.</p>
+
+<p>The settings I used were:</p>
+
+<ul>
+<li>128 pixel diameter
+
+<ul>
+<li>To avoid any artifacts around the edges of the canvas</li>
+</ul>
+</li>
+<li>Very soft hardness
+
+<ul>
+<li>To avoid sharp edges</li>
+</ul>
+</li>
+<li>20% opacity
+
+<ul>
+<li>To help with blending later on</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Setting the scene, blob prefab</h2>
+
+<p>Back in Unity, create a fresh 2D project and imported the blob sprite.  We drag the sprite into the scene to create a <code>GameObject</code> with the blob sprite.</p>
+
+<p>We then add a <code>Sorting Layer</code> named <code>Blobs</code> and set the sprite&rsquo;s sorting layer to <code>Blobs</code>.  While we&rsquo;re at it, we also create a sorting layer named <code>BG</code> behind the <code>Blobs</code> layer for the background.</p>
+
+<p>We name the <code>GameObject</code> <code>Blob</code> and drag it to the <code>Prefabs</code> directory, creating a prefab from it.</p>
+
+<p>Blob prefab in hand, we still needed a couple more pieces to prepare the scene.</p>
+
+<h2>Backdrop</h2>
+
+<p>We create a black <code>Background</code> UI object and set the <code>X scale</code> and <code>Y scale</code> to <code>1000</code>, to be sure Background covered the whole screen.  We then set the sorting layer of the sprite to <code>BG</code>.  Remember how we set that layer up earlier?  How prescient!</p>
+
+<h2>One GameObject To Hold Them All</h2>
+
+<p>We&rsquo;re planning to create a whole metric ton of blobs, so we create a <code>Blobs</code> <code>GameObject</code> to hold all of the blobs.  By setting the instantiated blob&rsquo;s <code>transform.parent</code> to the <code>Blobs.transform</code> all of the instantiated blobs fall under the parent <code>Blobs</code> <code>GameObject</code> and it keeps the Hierarchy in our Scene nice and tidy.</p>
+
+<h2>BlobGen</h2>
+
+<p>We have a background, a Blob prefab and even a <code>GameObject</code> that will hold all of the blobs we plan to create. Now we just need to make a <code>BlobGenerator</code> script to randomly place the blobs.</p>
+
+<p>The <code>BlobGenerator</code> takes a reference to the Blob <code>Prefab</code>, a reference to the parent Blobs <code>GameObject</code>, an integer number of blobs to create, and maximum and minimum coordinates to control the spread of the created blobs.</p>
+
+<p>The <code>BlobGenerator</code> generates two random colors using a function called <code>RandomColor</code>,</p>
+
+<p>```csharp
+Color RandomColor() {</p>
+
+<pre><code>return new Color(Random.value, Random.value, Random.value);
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Which it then zips up into an array called <code>colors</code>.  <code>Random.value</code> returns a random <code>float</code> between <code>0.0</code> and <code>1.0</code>, which we use to generate a new <code>Color</code>.</p>
+
+<p>Then the <code>BlobGenerator</code> gets into the main routine, <code>PlaceBlobs</code>.</p>
+
+<p>Briefly, <code>PlaceBlobs</code> instantiates clones of the blob prefab at random positions within the maximum and minimum boundaries we specify, makes the cloned blob a child of the parent Blobs <code>GameObject</code>, and sets the color tint of the cloned blob to one of the two colors generated above.</p>
+
+<p>```csharp
+void PlaceBlobs() {</p>
+
+<pre><code>for (int i = 0; i &lt; numberOfBlobs; i++) {
+    GameObject blockClone = Instantiate(blobPrefab,
+                                        new Vector3(Random.Range(xMin, xMax),
+                                                    Random.Range(yMin, yMax),
+                                                    0f),
+                                        Quaternion.identity) as GameObject;
+    SpriteRenderer sprite = blockClone.GetComponent&lt;SpriteRenderer&gt;();
+    blockClone.transform.parent = blobs.transform;
+    sprite.color = colors[Random.Range(0, colors.Length)];
+}
+</code></pre>
+
+<p>}
+```
+That&rsquo;s all there is to it.  You can check out the full example project on <a href="https://github.com/zerosalife/tint-background">github</a>.</p>
+
+<h2>Moving forward</h2>
+
+<p>It would be nice to have more fine-grained control over the local density of the blobs in certain regions, so the map would become a little less uniform, creating pockets of character in an otherwise featureless space.  But I think the effect here works nice as a background.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Prototyping Rectangles in Unity 2D for Dummy]]></title>

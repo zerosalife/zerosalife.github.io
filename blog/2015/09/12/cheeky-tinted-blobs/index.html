@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Cheeky Tinted Blobs: a procedurally generated Unity 2D background - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="I&rsquo;m following along with @pentadact&rsquo;s tutorial video here (You can see the finished result around 6 minutes into the video). Insert &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Cheeky Tinted Blobs: A Procedurally Generated Unity 2D Background</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-09-12T09:47:50-05:00" pubdate data-updated="true">Sep 12<span>th</span>, 2015</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&rsquo;m following along with <a href="https://twitter.com/pentadact">@pentadact</a>&rsquo;s tutorial video <a href="https://youtu.be/I5qxIhdEx28?t%3D1m33s">here</a> (You can see the finished result around 6 minutes into the video).</p>
+
+<p>Insert screenshot here.  Make sure to add a screenshot to the
+README.org as well.</p>
+
+<p><img class="center" src="images/assets/tinted-blobs-screenshot.png" width="1434" height="1434"></p>
+
+<!--more-->
+
+
+<h2>The goal</h2>
+
+<p>What we want to do here is to generate a splotchy blurred out nebular (-lous?)  background.  Without going into to too much detail, I&rsquo;m interested in something that would go well underneath a procedurally generated space station map.</p>
+
+<h2>The algorithm</h2>
+
+<p>The algorithm <a href="https://twitter.com/pentadact">@pentadact</a> describes works like this:</p>
+
+<ol>
+<li>Draw a faint white <strong>blob</strong></li>
+<li>Tint the <strong>blob</strong> one of two randomly generated <strong>colors</strong></li>
+<li>Randomly place the tinted <strong>blobs</strong></li>
+</ol>
+
+
+<h2>How it works</h2>
+
+<p>The blobs are white, which is represented in RGB color as 100% in all three values (black is 0%).  This corresponds to 255 in 8-bit colorspace and <code>1.0</code> in Unity&rsquo;s colorspace.  Since the blobs are faint, the actual RGB values will approach, but not reach 100%.</p>
+
+<p>When we apply a tint to the blobs&#8217; sprites we are essentially multiplying each of the RGB values by our desired color&rsquo;s value.  The resulting value will approach the full <em>intensity</em> of the color as our raw blob approaches 100% white, if that makes sense.  So the result is a faint blob of any desired color we want.</p>
+
+<p>The colored blobs overlap each other, generating interesting patterns of lighter and darker mixtures of the two colors.</p>
+
+<h2>Blobonia</h2>
+
+<p>I fired up my favorite image editing program and made a 256 x 256 <code>png</code> blob sprite.  Using the airbrush tool, I plopped a blob in the middle of the canvas.</p>
+
+<p>The settings I used were:</p>
+
+<ul>
+<li>128 pixel diameter
+
+<ul>
+<li>To avoid any artifacts around the edges of the canvas</li>
+</ul>
+</li>
+<li>Very soft hardness
+
+<ul>
+<li>To avoid sharp edges</li>
+</ul>
+</li>
+<li>20% opacity
+
+<ul>
+<li>To help with blending later on</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Setting the scene, blob prefab</h2>
+
+<p>Back in Unity, create a fresh 2D project and imported the blob sprite.  We drag the sprite into the scene to create a <code>GameObject</code> with the blob sprite.</p>
+
+<p>We then add a <code>Sorting Layer</code> named <code>Blobs</code> and set the sprite&rsquo;s sorting layer to <code>Blobs</code>.  While we&rsquo;re at it, we also create a sorting layer named <code>BG</code> behind the <code>Blobs</code> layer for the background.</p>
+
+<p>We name the <code>GameObject</code> <code>Blob</code> and drag it to the <code>Prefabs</code> directory, creating a prefab from it.</p>
+
+<p>Blob prefab in hand, we still needed a couple more pieces to prepare the scene.</p>
+
+<h2>Backdrop</h2>
+
+<p>We create a black <code>Background</code> UI object and set the <code>X scale</code> and <code>Y scale</code> to <code>1000</code>, to be sure Background covered the whole screen.  We then set the sorting layer of the sprite to <code>BG</code>.  Remember how we set that layer up earlier?  How prescient!</p>
+
+<h2>One GameObject To Hold Them All</h2>
+
+<p>We&rsquo;re planning to create a whole metric ton of blobs, so we create a <code>Blobs</code> <code>GameObject</code> to hold all of the blobs.  By setting the instantiated blob&rsquo;s <code>transform.parent</code> to the <code>Blobs.transform</code> all of the instantiated blobs fall under the parent <code>Blobs</code> <code>GameObject</code> and it keeps the Hierarchy in our Scene nice and tidy.</p>
+
+<h2>BlobGen</h2>
+
+<p>We have a background, a Blob prefab and even a <code>GameObject</code> that will hold all of the blobs we plan to create. Now we just need to make a <code>BlobGenerator</code> script to randomly place the blobs.</p>
+
+<p>The <code>BlobGenerator</code> takes a reference to the Blob <code>Prefab</code>, a reference to the parent Blobs <code>GameObject</code>, an integer number of blobs to create, and maximum and minimum coordinates to control the spread of the created blobs.</p>
+
+<p>The <code>BlobGenerator</code> generates two random colors using a function called <code>RandomColor</code>,</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">Color</span> <span class="nf">RandomColor</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="k">new</span> <span class="nf">Color</span><span class="p">(</span><span class="n">Random</span><span class="p">.</span><span class="k">value</span><span class="p">,</span> <span class="n">Random</span><span class="p">.</span><span class="k">value</span><span class="p">,</span> <span class="n">Random</span><span class="p">.</span><span class="k">value</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which it then zips up into an array called <code>colors</code>.  <code>Random.value</code> returns a random <code>float</code> between <code>0.0</code> and <code>1.0</code>, which we use to generate a new <code>Color</code>.</p>
+
+<p>Then the <code>BlobGenerator</code> gets into the main routine, <code>PlaceBlobs</code>.</p>
+
+<p>Briefly, <code>PlaceBlobs</code> instantiates clones of the blob prefab at random positions within the maximum and minimum boundaries we specify, makes the cloned blob a child of the parent Blobs <code>GameObject</code>, and sets the color tint of the cloned blob to one of the two colors generated above.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">void</span> <span class="nf">PlaceBlobs</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">numberOfBlobs</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">GameObject</span> <span class="n">blockClone</span> <span class="p">=</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">blobPrefab</span><span class="p">,</span>
+</span><span class='line'>                                            <span class="k">new</span> <span class="nf">Vector3</span><span class="p">(</span><span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">xMin</span><span class="p">,</span> <span class="n">xMax</span><span class="p">),</span>
+</span><span class='line'>                                                        <span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="n">yMin</span><span class="p">,</span> <span class="n">yMax</span><span class="p">),</span>
+</span><span class='line'>                                                        <span class="m">0f</span><span class="p">),</span>
+</span><span class='line'>                                            <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">)</span> <span class="k">as</span> <span class="n">GameObject</span><span class="p">;</span>
+</span><span class='line'>        <span class="n">SpriteRenderer</span> <span class="n">sprite</span> <span class="p">=</span> <span class="n">blockClone</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">SpriteRenderer</span><span class="p">&gt;();</span>
+</span><span class='line'>        <span class="n">blockClone</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="p">=</span> <span class="n">blobs</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+</span><span class='line'>        <span class="n">sprite</span><span class="p">.</span><span class="n">color</span> <span class="p">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">Random</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">colors</span><span class="p">.</span><span class="n">Length</span><span class="p">)];</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s all there is to it.  You can check out the full example project on <a href="https://github.com/zerosalife/tint-background">github</a>.</p>
+
+<h2>Moving forward</h2>
+
+<p>It would be nice to have more fine-grained control over the local density of the blobs in certain regions, so the map would become a little less uniform, creating pockets of character in an otherwise featureless space.  But I think the effect here works nice as a background.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-09-12T09:47:50-05:00" pubdate data-updated="true">Sep 12<span>th</span>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/unity2d/'>Unity2d</a>, <a class='category' href='/blog/categories/algorithm/'>algorithm</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/08/29/using-images-in-octopress-posts/" title="Previous Post: Using images in Octopress posts">&laquo; Using images in Octopress posts</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/09/12/cheeky-tinted-blobs/">Cheeky Tinted Blobs: a procedurally generated Unity 2D background</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/29/using-images-in-octopress-posts/">Using images in Octopress posts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/15/c-sharp-code-blocks-in-octopress/">C# code blocks in Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/">Trace function for debugging in Unity C#</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/18/satoru-iwata/">Satoru Iwata</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 &ndash; 2015
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54217540-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
