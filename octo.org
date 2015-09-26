@@ -1102,6 +1102,31 @@ density of the blobs in certain regions, so the map would become a
 little less uniform, creating pockets of character in an otherwise
 featureless space.  But I think the effect here works nice as a
 background.
+** What defines a game?
+Summarizing my thoughts on @tgdfweb's eloquent definition of games as play
+
+- design
+
+I've done it.  I've fallen prey to the temptation to write a
+ham-fisted article demarking what is and what isn't a game--and I'm
+not even part of the demographic that Pat Holleman eloquently calls
+out in the following tweets.
+
+{% tweet https://twitter.com/tgdfweb/status/624753749521645568 %}
+
+{% tweet https://twitter.com/tgdfweb/status/624753990555709440 %}
+
+
+
+I think Holleman's definition captures the essence of what [[http://zerosalife.github.io/blog/2015/07/18/satoru-iwata/][Iwata was
+talking about]].  Games are play, play is fun.  Don't overthink it, you
+won't invent anything new or constructive.
+
+Everything doesn't have to fit in a tiny box of your arbitrary
+creation.  There is a use for lumping things together in useful ways
+but for the most part this kind tedious of genre-parsing is not
+constructive.
+
 * Business cards
 
 
@@ -2792,6 +2817,9 @@ scope.
 
 Axiom Verge: 480x270
 
+Mario Maker levels: 12 screens long by 2 screens tall, the longest
+level was 512 blocks.
+
 *** Backgrounds
 
 *** One comment on designer-player interaction through design
@@ -2963,7 +2991,8 @@ Pause the action for 20 ms when something cool happens.  That's about
 10% of [[http://www.humanbenchmark.com/tests/reactiontime/stats.php][average human reaction time]].  So, ignoring nonhuman players,
 that means that this introduces a subliminal pause that adds a kind of
 weight to the action.
-
+** Unity's Stats
+[[http://docs.unity3d.com/Manual/RenderingStatistics.html]]
 
 ** Chevy Ray's level design notes
 Documented some lovely notes from @ChevyRay
@@ -3137,28 +3166,6 @@ and how to get an initial ROT.js console output to render
 
 *** Hello console
 
-** Symbolic Links to Share Scripts Across Unity Projects
-I like to develop utility scripts in a common project where I can
-implement unit tests without cluttering up my game projects with
-UnityTestTools and duplicated test scripts.
-
-To share code between projects I use symlinks to link the files from
-my utility project to individual games.
-
-#+BEGIN_SRC sh
-  ln -s [source file] [destination file]
-#+END_SRC
-
-This command creates a symbolic link to the =[source file]= at the
-=[destination file]=.
-
-That way, my I know my games will always use the up-to-date code.
-
-
-One caveat I've noticed is that the symlinked files show up in my git
-version control as a blob of the path text instead of the actual code
-of the file.
-
 
 ** Unit Testing in Unity
 
@@ -3262,39 +3269,68 @@ existing game system, set a new player experience goal, and make
 changes to the system to meet that goal.
 #+END_QUOTE
 
+** Deleting a list of GameObjects in Unity
+
+** Deleting a list of GameObjects in Unity using LINQ queries and Lambda Expressions
+
+** Symbolic Links to Share Scripts Across Unity Projects
+- tools
+- Unity
+
+I like to develop utility scripts in a common project where I can
+implement unit tests without cluttering up my game projects with
+[[https://www.assetstore.unity3d.com/en/#!/content/13802][UnityTestTools]] and duplicated test scripts.
+
+To share code between projects I use [[https://en.wikipedia.org/wiki/Symbolic_link][symlinks]] to link the files from
+my utility project to individual games.
+
+<!--more-->
+
+I'm doing development on Mac OS X.  Other platforms may use different
+commands to create symbolic links.
+
+#+BEGIN_SRC sh
+  ln -s [source file] [destination file]
+#+END_SRC
+
+This command creates a symbolic link to the =[source file]= at the
+=[destination file]=.
+
+That way, my I know my games will always use the up-to-date code.
+
+*** git Gotcha
+One caveat I've noticed is that the symlinked files show up in my git
+version control as a blob of the path text instead of the actual code
+of the file.  This means that the symlinked files will not be tracked
+in the destination project's version control history.
+
+That's okay with me, because I plan on developing the symlinked files
+in a separate parallel test project with all of their unit tests etc.
+
 ** Using Google Docs for mock-ups
-Google Docs is great for mock-ups.  Unfortunately Google Draw doesn't
-support animation or multiple pages.  Luckily the same suite of tools
-is available in Google's PowerPoint app.  If you don't like the
-PowerPoint interface, sketch your mock-ups in Draw and copy them over
-to PowerPoint.
+Making animated mock-ups using Google Docs
 
-This way you can rapidly iterate on your mock-ups while keeping a
-record.  This approach is in keeping with Aaron Draplin's design
-philosophy that space is cheap feel, so free to experiment and keep
-everything because you never know what will influence the final
-design.
-
-** What is or isn't a game?
-Summarizing my thoughts on @tgdfweb's eloquent definition of games as
-play
-
+- tools
 - design
 
-I've done it.  I've fallen prey to the temptation to write a
-ham-fisted article demarking what is and what isn't a game--and I'm
-not even part of the demographic that Pat Holleman eloquently calls
-out in the following tweets.
+[[https://www.google.com/docs/about/][Google Docs]] is great for mock-ups.  Unfortunately [[http://drawings.google.com][Google Drawings]]
+doesn't support animation or multiple pages.  Luckily the same suite
+of tools is available in Google's [[https://www.google.com/slides/about/][Slides app]].
 
-{% tweet %}
+<!--more-->
 
-[[https://twitter.com/tgdfweb/status/624753749521645568]]
+*** My workflow
+I'm not a big fan of the cluttered Slides interface.
 
-[[https://twitter.com/tgdfweb/status/624753990555709440]]
+Thankfully, you can sketch your mock-ups in Draw and copy them over to
+Slides.  Then you can order the slides to provide rudimentary
+animation for your mock-ups.
 
-I think Holleman's definition captures the essence of what [[http://zerosalife.github.io/blog/2015/07/18/satoru-iwata/][Iwata was
-talking about]].  Games are play, play is fun.  Don't overthink it, you
-won't invent anything new or constructive.  Everything doesn't have to
-fit in a tiny box of your arbitrary creation.  There is a place for
-lumping thigngs together in useful ways but for the most part this
-kind of genre parsing is not constructive.
+Using this approach, I rapidly iterate on mock-ups in Draw while
+keeping a record of the good looking ones as slides in Slides.  As a
+bonus, I can then order the slides to animate dynamic designs.
+
+I find that this workflow is in keeping with [[http://draplin.com/][Draplin Design Co.]] owner
+[[https://vimeo.com/113751583][Aaron Draplin's design philosophy]]: space is cheap, so feel free to
+experiment and keep everything because you never know what will
+influence the final design.
