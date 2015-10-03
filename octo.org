@@ -1127,6 +1127,34 @@ creation.  There is a use for lumping things together in useful ways
 but for the most part this kind tedious of genre-parsing is not
 constructive.
 
+** Using Google Docs for mock-ups
+Making animated mock-ups using Google Docs
+
+- tools
+- design
+
+[[https://www.google.com/docs/about/][Google Docs]] is great for mock-ups.  Unfortunately [[http://drawings.google.com][Google Drawings]]
+doesn't support animation or multiple pages.  Luckily the same suite
+of tools is available in Google's [[https://www.google.com/slides/about/][Slides app]].
+
+<!--more-->
+
+*** My workflow
+I'm not a big fan of the cluttered Slides interface.
+
+Thankfully, you can sketch your mock-ups in Draw and copy them over to
+Slides.  Then you can order the slides to provide rudimentary
+animation for your mock-ups.
+
+Using this approach, I rapidly iterate on mock-ups in Draw while
+keeping a record of the good looking ones as slides in Slides.  As a
+bonus, I can then order the slides to animate dynamic designs.
+
+I find that this workflow is in keeping with [[http://draplin.com/][Draplin Design Co.]] owner
+[[https://vimeo.com/113751583][Aaron Draplin's design philosophy]]: space is cheap, so feel free to
+experiment and keep everything because you never know what will
+influence the final design.
+
 * Business cards
 
 
@@ -3274,6 +3302,8 @@ changes to the system to meet that goal.
 ** Deleting a list of GameObjects in Unity using LINQ queries and Lambda Expressions
 
 ** Symbolic Links to Share Scripts Across Unity Projects
+Using symlinks in Unity projects
+
 - tools
 - Unity
 
@@ -3306,31 +3336,3 @@ in the destination project's version control history.
 
 That's okay with me, because I plan on developing the symlinked files
 in a separate parallel test project with all of their unit tests etc.
-
-** Using Google Docs for mock-ups
-Making animated mock-ups using Google Docs
-
-- tools
-- design
-
-[[https://www.google.com/docs/about/][Google Docs]] is great for mock-ups.  Unfortunately [[http://drawings.google.com][Google Drawings]]
-doesn't support animation or multiple pages.  Luckily the same suite
-of tools is available in Google's [[https://www.google.com/slides/about/][Slides app]].
-
-<!--more-->
-
-*** My workflow
-I'm not a big fan of the cluttered Slides interface.
-
-Thankfully, you can sketch your mock-ups in Draw and copy them over to
-Slides.  Then you can order the slides to provide rudimentary
-animation for your mock-ups.
-
-Using this approach, I rapidly iterate on mock-ups in Draw while
-keeping a record of the good looking ones as slides in Slides.  As a
-bonus, I can then order the slides to animate dynamic designs.
-
-I find that this workflow is in keeping with [[http://draplin.com/][Draplin Design Co.]] owner
-[[https://vimeo.com/113751583][Aaron Draplin's design philosophy]]: space is cheap, so feel free to
-experiment and keep everything because you never know what will
-influence the final design.
