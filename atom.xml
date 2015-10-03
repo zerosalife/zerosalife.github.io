@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-09-19T09:10:11-05:00</updated>
+  <updated>2015-09-26T08:47:24-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using Google Docs for mock-ups]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups/"/>
+    <updated>2015-09-26T08:40:47-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups</id>
+    <content type="html"><![CDATA[<p><a href="https://www.google.com/docs/about/">Google Docs</a> is great for mock-ups.  But one major drawback is that <a href="http://drawings.google.com">Google Drawings</a> doesn&rsquo;t support animation or multiple pages.  Luckily, the same suite of tools is available in Google&rsquo;s <a href="https://www.google.com/slides/about/">Slides app</a>.</p>
+
+<!--more-->
+
+
+<h2>My workflow</h2>
+
+<p>Since I&rsquo;m not a big fan of the cluttered Slides interface, I sketch my mock-ups in Draw and copy them over to Slides.</p>
+
+<p>Using this approach, I rapidly iterate on mock-ups in Draw while keeping a record of the good looking ones as slides in Slides.  As a bonus, I can then shuffle the order of the slides to animate dynamic designs.</p>
+
+<p>I find that this workflow is in keeping with <a href="http://draplin.com/">Draplin Design Co.</a> owner <a href="https://vimeo.com/113751583">Aaron Draplin&rsquo;s design philosophy</a>: space is cheap, so feel free to experiment and keep everything because you never know what will influence the final design.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What defines a game?]]></title>
@@ -1106,72 +1126,6 @@
 <p>In order to get some of the newer features to work, use the <code>Makefile</code> to compile the twee code, then import the resulting <code>.html</code> file in the Twine GUI.  Finally export HTML from the Twine GUI.</p>
 
 <p>That being said, it was still nice to rapidly iterate through versions of a story without having to get bogged down in the Twine GUI.  I could write Twine code organized in files in a logical arrangement, then compile them into a single HTML file for testing and release.  Let me know if you have suggestions that would improve this Twine workflow or if you take a different approach.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[AdventureJam Prep]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/03/21/adventurejam-prep/"/>
-    <updated>2015-03-21T09:53:07-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/03/21/adventurejam-prep</id>
-    <content type="html"><![CDATA[<p>In <strong>two weeks</strong>, April 3 &ndash; April 17, <a href="https://twitter.com/fenderbenter">Cassie Benter</a> and <a href="https://twitter.com/stacydavidson">Stacy Davidson</a> are hosting a game jam focused on creating adventure games called <a href="http://adventurejam.org">#adventurejam</a>.  I share the organizers&#8217; love of point-and-click adventure games, and I&rsquo;m totally thrilled to announce my participation.  AdventureJam is a fortnight-long competition to create and adventurous game-ish experience.</p>
-
-<p>The <a href="http://jams.gamejolt.io/adventurejam/rules">rules</a> of AdventureJam are more strict than <a href="http://procjam.tumblr.com/">#procjam</a>, <a href="http://zerosalife.github.io/blog/2014/11/01/make-things-that-make-things-number-procjam-2014/">the jam I participated in last fall</a>.  They require that the work on a game take place over the two weeks of the AdventureJam competition.  I don&rsquo;t expect to have the time to create something that is truly competitive, but I may as well play along.  Like #procjam, I plan on spending the next series of blog posts covering AdventureJam-related content.</p>
-
-<p>So, click every pixel on the screen, grab everything in sight, exhaust every dialog option, and combine items in new and mysterious ways, it&rsquo;s <a href="https://twitter.com/hashtag/AdventureJam?src=hash">#adventurejam</a> time.</p>
-
-<!--more-->
-
-
-<p>I&rsquo;d like to spend the rest of this post exploring the options in terms of game engines for creating adventure games.  The website and forums were great resources for constructing this list.  And I suspect that I&rsquo;ll come across some new resources as the jam progresses.</p>
-
-<h2>Engines (Or, A Decidedly Unresearched and Perfunctory List)</h2>
-
-<h3>Graphical</h3>
-
-<h4>Windows</h4>
-
-<ul>
-<li><p><a href="http://www.adventuregamestudio.co.uk/">http://www.adventuregamestudio.co.uk/</a></p></li>
-<li><p><a href="http://dead-code.org/home/">http://dead-code.org/home/</a></p></li>
-</ul>
-
-
-<h4>Non-windows</h4>
-
-<ul>
-<li><p><a href="http://codecanyon.net/item/jaguar-lucasarts-adventure-game-engine/8753130">http://codecanyon.net/item/jaguar-lucasarts-adventure-game-engine/8753130</a></p></li>
-<li><p><a href="http://www.visionaire-studio.net/">Visionaire</a></p></li>
-<li><p><a href="http://www.alpacaengine.com/">http://www.alpacaengine.com/</a></p></li>
-</ul>
-
-
-<h4>Unity</h4>
-
-<ul>
-<li><p><a href="http://age.seccia.com/">http://age.seccia.com/</a></p></li>
-<li><p><a href="http://www.adventurecreator.org/">Adventure Creator</a></p></li>
-</ul>
-
-
-<h3>Text</h3>
-
-<ul>
-<li><p><a href="http://inform7.com/">Inform</a></p></li>
-<li><p><a href="http://textadventures.co.uk/quest">Quest</a></p></li>
-<li><p><a href="http://twinery.org/">Twine</a></p></li>
-</ul>
-
-
-<h2>The Adventure Jam Forums</h2>
-
-<p>The <a href="http://www.adventurejam.org/forums/">#adventurejam forums</a> were a great resource for constructing this overview of adventure game engines.  I only expect the information there to grow as the jam progresses.</p>
-
-<h2>My Plan</h2>
-
-<p>Given my workload, familiarity with and access to the tools listed above, and artistic abilities, I&rsquo;m going to go with Twine to get any real progress done in the time constraints.</p>
-
-<p>Like my <a href="http://zerosalife.github.io/blog/categories/procjam/">series of posts on #procjam</a>, I&rsquo;ll tag all the <a href="http://zerosalife.github.io/blog/categories/adventurejam/">posts related to AdventureJam</a> so they&rsquo;re easily accessible.</p>
 ]]></content>
   </entry>
   
