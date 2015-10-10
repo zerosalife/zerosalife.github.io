@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-10-03T10:06:17-05:00</updated>
+  <updated>2015-10-10T13:33:56-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Symbolic Links to Share Scripts Across Unity Projects]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects/"/>
+    <updated>2015-10-10T13:27:14-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects</id>
+    <content type="html"><![CDATA[<p>I like to develop utility scripts in a common project where I can implement unit tests without cluttering up my game projects with <a href="https://www.assetstore.unity3d.com/en/#!/content/13802">UnityTestTools</a> and duplicated test scripts.  If you&rsquo;re not sure what unit tests are, check out <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">this post I wrote about them</a>.</p>
+
+<p>To share code between projects I use <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> to link the files from my utility project to individual games.</p>
+
+<!--more-->
+
+
+<p>I&rsquo;m doing development on Mac OS X.  Other platforms may use different commands to create symbolic links.</p>
+
+<pre><code>ln -s [source file] [destination file]
+</code></pre>
+
+<p>This command creates a symbolic link to the <code>[source file]</code> at the <code>[destination file]</code>.</p>
+
+<p>That way, my I know my games will always use the up-to-date code.</p>
+
+<h2>git Gotcha</h2>
+
+<p>One caveat is that the symlinked files show up in git version control as a blob of the filepath text instead of the actual code of the file.  This means that the symlinked files will not be tracked in the destination project&rsquo;s version control history.</p>
+
+<p>That&rsquo;s okay with me, because I plan on developing the symlinked files in a separate parallel test project with all of their unit tests, etc.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Unit Testing in Unity]]></title>
@@ -180,54 +209,6 @@
 [csharp code here]
 ```
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Trace function for debugging in Unity C#]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/"/>
-    <updated>2015-07-25T09:00:31-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp</id>
-    <content type="html"><![CDATA[<p>Inspired by <a href="https://www.youtube.com/watch?v=btN095elmh4&amp;feature=youtu.be&amp;t=1985">a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers</a>, I wanted to come up with a way of conditionally including debug statements in development code, but not in production.  Luckily I wasn&rsquo;t the first person to think of this.</p>
-
-<p><a href="https://twitter.com/danpuzey">Dan Puzey</a> <a href="http://blog.puzey.net/simple-better-unity-logging/">wrote an abstraction layer</a> over Unity&rsquo;s built-in <code>Debug</code> library.  The library contains several functions for various types of logging.  The most important piece for me is <code>VerboseFormat</code>, which combines string formatting with conditional attributes.  I&rsquo;ll explain a bit more about how these pieces work below.</p>
-
-<!--more-->
-
-
-<h2>String Formatting</h2>
-
-<p>To my surprise, Unity&rsquo;s C# implementation, Mono, doesn&rsquo;t use standard <code>printf</code>-like string formatting syntax.  Instead of <code>%s</code> or other commonly used formatting variables, C# uses curly braces around numbers to interpolate variables passed in to the <code>String.Format</code> call as arguments.</p>
-
-<p>Dan&rsquo;s <code>VerboseFormat</code> function wraps <code>String.Format</code>, so you can call <code>VerboseFormat</code> with C# formatting strings.</p>
-
-<p>``` csharp
-using Assets.Phunk.Core</p>
-
-<p>&hellip;</p>
-
-<p>Log.VerboseFormat(&ldquo;var1: {0}, var2: {1}&rdquo;, var1, var2);
-// => [VERBOSE] var1: [var1], var2: [var2]
-```</p>
-
-<h2>Conditional Attributes</h2>
-
-<p>Above some of the functions in Dan&rsquo;s code you&rsquo;ll see the following <a href="https://msdn.microsoft.com/en-us/library/system.diagnostics.conditionalattribute%28v=vs.110%29.aspx">conditional attributes</a>:</p>
-
-<p>``` csharp</p>
-
-<pre><code>[System.Diagnostics.Conditional("DEBUG"), System.Diagnostics.Conditional("UNITY_EDITOR")]
-</code></pre>
-
-<p>```</p>
-
-<p>These two settings tell the C# compiler to only compile the code, in this case the <code>Verbose</code> logging functions, when compiling during development, i.e. <code>DEBUG</code> or <code>UNITY_EDITOR</code>.  That means all of the <code>Verbose</code> logging statements in your code will not be compiled in the production builds of your code.</p>
-
-<p>Cool, huh?  Good thinking, Dan.</p>
-
-<h2>That&rsquo;s it!</h2>
-
-<p>It&rsquo;s always great when you think that a tool would be useful and someone else has already implemented it for you.  Go on over and give <a href="http://puzey.net/">Dan&rsquo;s blog</a> a gander.</p>
 ]]></content>
   </entry>
   
