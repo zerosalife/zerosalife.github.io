@@ -1155,6 +1155,94 @@ I find that this workflow is in keeping with [[http://draplin.com/][Draplin Desi
 experiment and keep everything because you never know what will
 influence the final design.
 
+** Unit Testing in Unity
+
+- tools
+- Unity
+- C#
+
+How to use UnityTestTools to create unit tests for Unity CSharp
+
+<!--more-->
+
+*** Setting it up
+Download the [[https://www.assetstore.unity3d.com/en/#!/content/13802][UnityTestTools package]] from the Unity Asset Store.
+
+*** Import the package
+We are going to need the =Common=, =Assertion=, and =UnitTesting= directories.
+
+*** Create a Tests directory
+We need a place for the tests to live.
+
+One important thing to remember is that the scripts in this directory
+need to be accessible by the =UnityTestTools= in the Editor so we'll
+put them in =./Tests/Editor/=.
+
+*** Make a namespace
+=UnityTestTools= will organize our tests by top-level =namespace=
+declarations defined in each of the tests' files.  Then we follow it
+up with a =Category= attribute that names the category of tests that
+live inside the =internal class= we define in the namespace.
+
+#+BEGIN_SRC csharp
+  {% codeblock ./Tests/Editor/ExampleTests.cs %}
+  namespace ExampleTests {
+      [Category("Example Tests")]
+      internal class ExampleTests {
+          // tests go here
+      }
+  }
+
+#+END_SRC
+
+*** Test attributes
+Use the =[TestFixture]= and =[Test]= attributes to let the Unity Test
+Tools Unit Test Runner know where your tests are.
+
+You can also use the =Category= attribute to add semantic labels to
+your tests.
+
+*** Making assertions
+http://www.nunit.org/index.php?p=assertions&r=2.2.10
+
+The Testing Framework uses the out of date NUnit version of =2.2.10=
+
+*** An example test
+#+BEGIN_SRC csharp
+  {% codeblock ./Tests/Editor/ExampleTests.cs %}
+  namespace ExampleTests {
+      [Category("Example Tests")]
+      internal class ExampleTests {
+          [Test]
+          void Example() {
+              Assert.AreEqual(1 + 1, 2);
+          }
+      }
+  }
+
+#+END_SRC
+
+*** Actually run the tests
+Open the Unit Test window from the editor: click on the =Unity Test
+Tools= menu > select =Unit Test Runner=.
+
+You can also open the Unit Test Runner window with the keyboard
+shortcut =Alt-Cmd-Shift-U= on a Mac.
+
+Simply, click on the =Run All= button to run the tests.
+
+*** Going further
+[[https://www.assetstore.unity3d.com/en/#!/content/13802][Unity Test Tools]] has support for Integration tests as well as
+assertions in addition to the plain old unit tests I described above.
+
+There are plenty of features that I haven't covered here, so dig in to
+the examples that come with the Unity Test Tools package and let me
+know what you've learned in the comments below or on twitter
+[[http://twitter.com/zerosalife][@zerosalife]].
+
+http://www.tallior.com/introduction-to-unity-test-tools/
+
+
 * Business cards
 
 
@@ -3120,6 +3208,8 @@ Note: Actual level change happens in the beginning of the next frame at the Init
 
 *** What it does
 
+** Deconstructing a mockup
+[[https://twitter.com/BlendoGames/status/649980714583089152]]
 
 ** Feature Complete
 What makes a game feature complete?
@@ -3195,85 +3285,6 @@ and how to get an initial ROT.js console output to render
 *** Hello console
 
 
-** Unit Testing in Unity
-
-*** Setting it up
-Download the [[https://www.assetstore.unity3d.com/en/#!/content/13802][UnityTestTools package]] from the Unity Asset Store.
-
-*** Import the package
-We are going to need the =Common=, =Assertion=, and =UnitTesting= directories.
-
-*** Create a Tests directory
-We need a place for the tests to live.
-
-One important thing to remember is that the scripts in this directory
-need to be accessible by the =UnityTestTools= in the Editor so we'll
-put them in =./Tests/Editor/=.
-
-*** Make a namespace
-=UnityTestTools= will organize our tests by top-level =namespace=
-declarations defined in each of the tests' files.  Then we follow it
-up with a =Category= attribute that names the category of tests that
-live inside the =internal class= we define in the namespace.
-
-#+BEGIN_SRC csharp
-  {% codeblock ./Tests/Editor/ExampleTests.cs %}
-  namespace ExampleTests {
-      [Category("Example Tests")]
-      internal class ExampleTests {
-          // tests go here
-      }
-  }
-
-#+END_SRC
-
-*** Test attributes
-Use the =[TestFixture]= and =[Test]= attributes to let the Unity Test
-Tools Unit Test Runner know where your tests are.
-
-You can also use the =Category= attribute to add semantic labels to
-your tests.
-
-*** Making assertions
-http://www.nunit.org/index.php?p=assertions&r=2.2.10
-
-The Testing Framework uses the out of date NUnit version of =2.2.10=
-
-*** An example test
-#+BEGIN_SRC csharp
-  {% codeblock ./Tests/Editor/ExampleTests.cs %}
-  namespace ExampleTests {
-      [Category("Example Tests")]
-      internal class ExampleTests {
-          [Test]
-          void Example() {
-              Assert.AreEqual(1 + 1, 2);
-          }
-      }
-  }
-
-#+END_SRC
-
-*** Actually run the tests
-Open the Unit Test window from the editor: click on the =Unity Test
-Tools= menu > select =Unit Test Runner=.
-
-You can also open the Unit Test Runner window with the keyboard
-shortcut =Alt-Cmd-Shift-U= on a Mac.
-
-Simply, click on the =Run All= button to run the tests.
-
-*** Going further
-[[https://www.assetstore.unity3d.com/en/#!/content/13802][Unity Test Tools]] has support for Integration tests as well as
-assertions in addition to the plain old unit tests I described above.
-
-There are plenty of features that I haven't covered here, so dig in to
-the examples that come with the Unity Test Tools package and let me
-know what you've learned in the comments below or on twitter
-[[http://twitter.com/zerosalife][@zerosalife]].
-
-http://www.tallior.com/introduction-to-unity-test-tools/
-
 ** Mocking GameObjects in Unity Unit Tests
 
 *** Make a GameObject
@@ -3309,7 +3320,8 @@ Using symlinks in Unity projects
 
 I like to develop utility scripts in a common project where I can
 implement unit tests without cluttering up my game projects with
-[[https://www.assetstore.unity3d.com/en/#!/content/13802][UnityTestTools]] and duplicated test scripts.
+[[https://www.assetstore.unity3d.com/en/#!/content/13802][UnityTestTools]] and duplicated test scripts.  If you're not sure what
+unit tests are, check out [[http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/][this post I wrote about them]].
 
 To share code between projects I use [[https://en.wikipedia.org/wiki/Symbolic_link][symlinks]] to link the files from
 my utility project to individual games.
@@ -3329,10 +3341,10 @@ This command creates a symbolic link to the =[source file]= at the
 That way, my I know my games will always use the up-to-date code.
 
 *** git Gotcha
-One caveat I've noticed is that the symlinked files show up in my git
-version control as a blob of the path text instead of the actual code
-of the file.  This means that the symlinked files will not be tracked
-in the destination project's version control history.
+One caveat is that the symlinked files show up in git version control
+as a blob of the filepath text instead of the actual code of the file.
+This means that the symlinked files will not be tracked in the
+destination project's version control history.
 
 That's okay with me, because I plan on developing the symlinked files
-in a separate parallel test project with all of their unit tests etc.
+in a separate parallel test project with all of their unit tests, etc.
