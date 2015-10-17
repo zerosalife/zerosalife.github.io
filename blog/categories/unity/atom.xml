@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-10-03T10:06:17-05:00</updated>
+  <updated>2015-10-10T13:33:56-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Symbolic Links to Share Scripts Across Unity Projects]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects/"/>
+    <updated>2015-10-10T13:27:14-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects</id>
+    <content type="html"><![CDATA[<p>I like to develop utility scripts in a common project where I can implement unit tests without cluttering up my game projects with <a href="https://www.assetstore.unity3d.com/en/#!/content/13802">UnityTestTools</a> and duplicated test scripts.  If you&rsquo;re not sure what unit tests are, check out <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">this post I wrote about them</a>.</p>
+
+<p>To share code between projects I use <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> to link the files from my utility project to individual games.</p>
+
+<!--more-->
+
+
+<p>I&rsquo;m doing development on Mac OS X.  Other platforms may use different commands to create symbolic links.</p>
+
+<pre><code>ln -s [source file] [destination file]
+</code></pre>
+
+<p>This command creates a symbolic link to the <code>[source file]</code> at the <code>[destination file]</code>.</p>
+
+<p>That way, my I know my games will always use the up-to-date code.</p>
+
+<h2>git Gotcha</h2>
+
+<p>One caveat is that the symlinked files show up in git version control as a blob of the filepath text instead of the actual code of the file.  This means that the symlinked files will not be tracked in the destination project&rsquo;s version control history.</p>
+
+<p>That&rsquo;s okay with me, because I plan on developing the symlinked files in a separate parallel test project with all of their unit tests, etc.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Unit Testing in Unity]]></title>
@@ -320,93 +349,6 @@ using Assets.Phunk.Core</p>
 <p>Lists can be created from specific arrays of the List&rsquo;s type, but not from some arbitrary array, as in JavaScript.  Again, this is a feature of a stricter language that causes some extra work up-front, but will make things more clear in the long run.</p>
 
 <p>For an in-depth tour of the algorithm for spawning entities, check out <a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">last week&rsquo;s post</a> and the <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example repository on github</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/"/>
-    <updated>2015-07-04T09:56:33-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript</id>
-    <content type="html"><![CDATA[<p>The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: <a href="http://docs.unity3d.com/Manual/RandomNumbers.html">Choosing Items with Different Probabilities</a>).  In this post I&rsquo;ll show how to use a similar approach to generate random items with specific probabilities dictated by the environment.</p>
-
-<!--more-->
-
-
-<p>I want to be able to generate an item code, say <code>Red</code>, <code>Green</code>, or <code>Black</code>, given a list of floating point probabilities dictated by the current environmental area in my game, say for example <code>desert</code> or <code>grassland</code>.</p>
-
-<p>Varying the probability of encountering items will give each area a unique flavor.  If the player needs a <code>Red</code> item, the player will need to seek out areas in which the probability for encountering <code>Red</code> items is high.  I hope this will drive player exploration and investigation.</p>
-
-<p>I&rsquo;ll start by defining an array of possible item types.  (According to <a href="http://wiki.unity3d.com/index.php/Head_First_into_Unity_with_UnityScript#Use_enum">this introduction to Unity JavaScript</a>, I should prefer <code>enum</code>.)</p>
-
-<p><code>javascript
-var ents : String[] = ["Red", "Green", "Black", "Orange"];
-</code></p>
-
-<p>Since this is a small example, I&rsquo;ll forego the efficiency and security that <code>enum</code>s provide for the convenience of using a simple <code>String</code> array.  I&rsquo;ll note that this is a good spot to do some refactoring in a real project where a variety of systems may have to interact with the item types.</p>
-
-<p>I then define a Dictionary <code>areas</code> of Lists of floating point probabilities.  These areas correspond to terrains that contain unique distributions of items. The <code>areas</code> Dictionary accepts <code>String</code>s specifying the desired terrain.</p>
-
-<p>It&rsquo;s important to note that the order of the probabilities correspond to the order of the item types in <code>ent</code>s.</p>
-
-<p><code>javascript
-var areas = new Dictionary.&lt;String, List.&lt;float&gt; &gt;();
-areas["desert"] = new List.&lt;float&gt;([0.1, 0.05, 0.425, 0.425]);
-areas["grassland"] = new List.&lt;float&gt;([0.3, 0.35, 0.1, 0.25]);
-</code></p>
-
-<p>So, in the <code>grassland</code> area, there will be a 30% chance of choosing a <code>Red</code> item.</p>
-
-<p>Now that I&rsquo;ve defined the data, I need a function to choose the appropriate index given a List of probabilities.  This function is lifted with minor modifications from the <a href="http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html">Unity Documentation</a>.  Take a look at that documentation for a better visualization of the algorithm than I could do with words.  Really, do it!</p>
-
-<p>``` javascript
-function Choose(probs : List.<float>) : int {</p>
-
-<pre><code>// Returns the index of a probabilistically determined random
-// entity, given by the probability distributions in probs.
-// e.g.:
-// probs : List.&lt;float&gt;([0.5, 0.2, 0.1, 0.2]);
-// entity = entities[Choose(probs)];
-//
-// See http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html
-
-// Watch out!  If you fail to specify total's type as float, it
-// will add the probs using integer addition.  This will floor
-// each of the probs to 0.
-var total : float = 0;
-
-for (x in probs) {
-    total += x;
-}
-
-var randomPoint = Random.value * total;
-
-for(var i = 0; i &lt; probs.Count; i++) {
-    if (randomPoint &lt; probs[i])
-        return i;
-    else
-        // Shift the strip down, adjusting the random point's
-        // value to see whether it falls within the next prob.
-        randomPoint -= probs[i];
-}
-// Take care of possibility that randomPoint is 1.0 or 100% by
-// returning the last element of probs.  Avoids allowing Choose to
-// return a 0 probability event (which would be possible using the
-// &lt;= test).
-return probs.Count - 1;
-</code></pre>
-
-<p>}
-```</p>
-
-<p>Now to choose an item:</p>
-
-<p><code>javascript
-var item = ents[Choose(areas["grassland"])];
-Debug.Log(item);
-</code></p>
-
-<p>That&rsquo;s all there is to it. I&rsquo;ve put an <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example Unity project with this code on github</a>.</p>
 ]]></content>
   </entry>
   
