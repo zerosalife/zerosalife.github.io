@@ -1242,6 +1242,42 @@ know what you've learned in the comments below or on twitter
 
 http://www.tallior.com/introduction-to-unity-test-tools/
 
+** Symbolic Links to Share Scripts Across Unity Projects
+Using symlinks in Unity projects
+
+- tools
+- Unity
+
+I like to develop utility scripts in a common project where I can
+implement unit tests without cluttering up my game projects with
+[[https://www.assetstore.unity3d.com/en/#!/content/13802][UnityTestTools]] and duplicated test scripts.  If you're not sure what
+unit tests are, check out [[http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/][this post I wrote about them]].
+
+To share code between projects I use [[https://en.wikipedia.org/wiki/Symbolic_link][symlinks]] to link the files from
+my utility project to individual games.
+
+<!--more-->
+
+I'm doing development on Mac OS X.  Other platforms may use different
+commands to create symbolic links.
+
+#+BEGIN_SRC sh
+  ln -s [source file] [destination file]
+#+END_SRC
+
+This command creates a symbolic link to the =[source file]= at the
+=[destination file]=.
+
+That way, my I know my games will always use the up-to-date code.
+
+*** git Gotcha
+One caveat is that the symlinked files show up in git version control
+as a blob of the filepath text instead of the actual code of the file.
+This means that the symlinked files will not be tracked in the
+destination project's version control history.
+
+That's okay with me, because I plan on developing the symlinked files
+in a separate parallel test project with all of their unit tests, etc.
 
 * Business cards
 
@@ -3187,6 +3223,75 @@ http://www.dotnetperls.com/select
 
 http://stackoverflow.com/questions/2629124/contains-on-a-list-of-custom-class-objects
 
+Unity's C# environment includes access to .NET's powerful [[https://en.wikipedia.org/wiki/Language_Integrated_Query][LINQ
+querying expressions]].  In this post I'll show how to use LINQ
+expressions to call anonymous functions.
+
+*** Use the lambda
+In the following examples, I'll be using [[https://msdn.microsoft.com/en-us/library/bb397687.aspx][lambda expressions]] to specify
+anonymous functions that I will pass as arguments to the LINQ
+expressions.
+
+C# uses the ==>= symbol as an operator to create lambda expressions.
+For example,
+
+#+BEGIN_SRC csharp
+  x => x + 1;
+#+END_SRC
+
+says, create an anonymous function taking a single argument =x= and
+return the value of =x + 1=.
+
+*** Increment an array
+Say I want to use my anonymous function to increment an array of
+counters when a tick passes in my game.
+
+#+BEGIN_SRC csharp
+  int[] counters = new int[] {0, 1, 2, 3};
+
+  int[] tick(int[] counters) {
+      int[] ret = new int[counters.Length];
+      for(int i = 0; i < counters.Length; i++) {
+          ret[i] = counters[i] + 1;
+      }
+      return ret;
+  }
+
+  tick(counters);
+#+END_SRC
+
+
+I could iterate over the array, incrementing each of the counters one
+at a time.
+
+Or I could use LINQ expressions to map a function that increments an
+element over the array.
+
+#+BEGIN_SRC csharp
+  int[] tick(int[] counters) {
+      return counters.Select(x => x + 1).ToArray();
+  }
+#+END_SRC
+
+This approach has the benefit of avoiding an intermediate temporary
+variable to hold the returned array.  It also avoids potential errors
+in writing the =for= statement.  It will never be off by one.
+
+I find the use of higher order functional style, the LINQ expression,
+easier to read than the imperative style, the =for= statement.
+
+One final thing to point out is that =Select()= returns an
+=IEnumerable=, so you have to call its =.ToArray= method to return the
+proper integer array for the =tick= function.
+
+*** Conclusion
+Check out the [[https://gist.github.com/zerosalife/7abc16fb21dfb05dc771][example code on github]].
+
+I've only shown a tiny subset of the [[http://www.dotnetperls.com/linq][functionality that LINQ provides]].
+Feel free to let me know if you dig in and find more useful tips.
+
+
+
 ** Unity's Level Loading Lifecycle
 [[http://wiki.unity3d.com/index.php?title%3DLife_cycle][http://wiki.unity3d.com/index.php?title=Life_cycle]]
 
@@ -3311,40 +3416,3 @@ changes to the system to meet that goal.
 ** Deleting a list of GameObjects in Unity
 
 ** Deleting a list of GameObjects in Unity using LINQ queries and Lambda Expressions
-
-** Symbolic Links to Share Scripts Across Unity Projects
-Using symlinks in Unity projects
-
-- tools
-- Unity
-
-I like to develop utility scripts in a common project where I can
-implement unit tests without cluttering up my game projects with
-[[https://www.assetstore.unity3d.com/en/#!/content/13802][UnityTestTools]] and duplicated test scripts.  If you're not sure what
-unit tests are, check out [[http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/][this post I wrote about them]].
-
-To share code between projects I use [[https://en.wikipedia.org/wiki/Symbolic_link][symlinks]] to link the files from
-my utility project to individual games.
-
-<!--more-->
-
-I'm doing development on Mac OS X.  Other platforms may use different
-commands to create symbolic links.
-
-#+BEGIN_SRC sh
-  ln -s [source file] [destination file]
-#+END_SRC
-
-This command creates a symbolic link to the =[source file]= at the
-=[destination file]=.
-
-That way, my I know my games will always use the up-to-date code.
-
-*** git Gotcha
-One caveat is that the symlinked files show up in git version control
-as a blob of the filepath text instead of the actual code of the file.
-This means that the symlinked files will not be tracked in the
-destination project's version control history.
-
-That's okay with me, because I plan on developing the symlinked files
-in a separate parallel test project with all of their unit tests, etc.
