@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-10-10T13:33:56-05:00</updated>
+  <updated>2015-10-17T11:39:11-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,87 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using  LINQ queries and lambda expressions in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp/"/>
+    <updated>2015-10-17T11:26:32-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p>Unity&rsquo;s C# environment includes access to .NET&rsquo;s powerful <a href="https://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ querying expressions</a>.  In this post I&rsquo;ll show how to use LINQ expressions to call anonymous functions.</p>
+
+<!--more-->
+
+
+<h2>Use the lambda</h2>
+
+<p>In the following examples, I&rsquo;ll be using <a href="https://msdn.microsoft.com/en-us/library/bb397687.aspx">lambda expressions</a> to specify anonymous functions that I will pass as arguments to the LINQ expressions.</p>
+
+<p>C# uses the <code>=&gt;</code> symbol as an operator to create lambda expressions.</p>
+
+<p>For example,</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>says, create an anonymous function taking a single argument <code>x</code> and return the value of <code>x + 1</code>.</p>
+
+<h2>Increment an array</h2>
+
+<p>Say I want to use my anonymous function to increment an array of counters when a tick passes in my game.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="kt">int</span><span class="p">[]</span> <span class="n">counters</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span><span class="p">[]</span> <span class="nf">tick</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">counters</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span><span class="p">[]</span> <span class="n">ret</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">counters</span><span class="p">.</span><span class="n">Length</span><span class="p">];</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">counters</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">counters</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">tick</span><span class="p">(</span><span class="n">counters</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I could iterate over the array, incrementing each of the counters one at a time.</p>
+
+<p>Or I could use LINQ expressions to map a function that increments an element over the array.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="kt">int</span><span class="p">[]</span> <span class="nf">tick</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">counters</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">counters</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">).</span><span class="n">ToArray</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This approach has the benefit of avoiding an intermediate temporary variable to hold the returned array.  It also avoids potential errors in writing the <code>for</code> statement.  It will never be off by one.</p>
+
+<p>I find the use of higher order functional style, the LINQ expression, easier to read than the imperative style, the <code>for</code> statement.</p>
+
+<p>One final thing to point out is that <code>Select()</code> returns an <code>IEnumerable</code>, so you have to call its <code>.ToArray</code> method to return the proper integer array for the <code>tick</code> function.</p>
+
+<h2>Conclusion</h2>
+
+<p>Check out the <a href="https://gist.github.com/zerosalife/7abc16fb21dfb05dc771">example code on github</a>.</p>
+
+<p>I&rsquo;ve only shown a tiny subset of the <a href="http://www.dotnetperls.com/linq">functionality that LINQ provides</a>.  Feel free to let me know if you dig in and find more useful tips.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Symbolic Links to Share Scripts Across Unity Projects]]></title>
@@ -1109,21 +1190,6 @@
     <content type="html"><![CDATA[<p>I&rsquo;m happy to announce that my <a href="http://jams.gamejolt.io/adventurejam">#adventurejam</a> game is finished and released.  I&rsquo;ll do a more in-depth post-mortem next week.  In the coming weeks, before the 30-day voting deadline ends, I want to take a look at some of the <a href="http://jams.gamejolt.io/adventurejam/games">other submissions</a> that pique my interest.</p>
 
 <p>You can <a href="http://gamejolt.com/games/adventure/aurion-and-the-aurochs/60738/">play <em>Aurion and the Aurochs</em> on gamejolt</a> and you can <a href="https://github.com/zerosalife/aurion">view the source on github</a>.  Please leave me some feedback in the comments here or on twitter <a href="https://twitter.com/zerosalife">@zerosalife</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Midway through adventurejam I'm attending Midwest Gaming Classic]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/04/11/midway-through-adventurejam-im-attending-midwest-gaming-classic/"/>
-    <updated>2015-04-11T08:22:57-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/04/11/midway-through-adventurejam-im-attending-midwest-gaming-classic</id>
-    <content type="html"><![CDATA[<h2>Quick update on #adventurejam</h2>
-
-<p>I feel like my game is on track to finish next Friday.  I&rsquo;m happy to say it&rsquo;s feature complete.  I&rsquo;ll spend the next week polishing, various flavors of bughunting (maybe even some bugfishing and bugtrapping), and, most important of all, prosifying.  My goal is to come up with a little game that&rsquo;s compelling to play, rather than just a series of links to click.</p>
-
-<h2>Midwest Gaming Classic</h2>
-
-<p>Instead of a normal blog post, I want to take this time to shout out the <a href="http://twitter.com/MGC_gaming">@MGC_gaming</a>, <a href="https://twitter.com/mgc_gaming">Midwest Gaming Classic</a>.  I&rsquo;ll be attending today.  So if you&rsquo;re there hit me up <a href="http://twitter.com/zerosalife">@zerosalife</a>.</p>
 ]]></content>
   </entry>
   
