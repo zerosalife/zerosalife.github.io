@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C# | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/c-number/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-10-10T13:33:56-05:00</updated>
+  <updated>2015-10-17T11:39:11-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using  LINQ queries and lambda expressions in Unity C#]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp/"/>
+    <updated>2015-10-17T11:26:32-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp</id>
+    <content type="html"><![CDATA[<p>Unity&rsquo;s C# environment includes access to .NET&rsquo;s powerful <a href="https://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ querying expressions</a>.  In this post I&rsquo;ll show how to use LINQ expressions to call anonymous functions.</p>
+
+<!--more-->
+
+
+<h2>Use the lambda</h2>
+
+<p>In the following examples, I&rsquo;ll be using <a href="https://msdn.microsoft.com/en-us/library/bb397687.aspx">lambda expressions</a> to specify anonymous functions that I will pass as arguments to the LINQ expressions.</p>
+
+<p>C# uses the <code>=&gt;</code> symbol as an operator to create lambda expressions.</p>
+
+<p>For example,</p>
+
+<p><code>csharp
+x =&gt; x + 1;
+</code></p>
+
+<p>says, create an anonymous function taking a single argument <code>x</code> and return the value of <code>x + 1</code>.</p>
+
+<h2>Increment an array</h2>
+
+<p>Say I want to use my anonymous function to increment an array of counters when a tick passes in my game.</p>
+
+<p>```csharp
+int[] counters = new int[] {0, 1, 2, 3};</p>
+
+<p>int[] tick(int[] counters) {</p>
+
+<pre><code>int[] ret = new int[counters.Length];
+for(int i = 0; i &lt; counters.Length; i++) {
+    ret[i] = counters[i] + 1;
+}
+return ret;
+</code></pre>
+
+<p>}</p>
+
+<p>tick(counters);
+```</p>
+
+<p>I could iterate over the array, incrementing each of the counters one at a time.</p>
+
+<p>Or I could use LINQ expressions to map a function that increments an element over the array.</p>
+
+<p>```csharp
+int[] tick(int[] counters) {</p>
+
+<pre><code>return counters.Select(x =&gt; x + 1).ToArray();
+</code></pre>
+
+<p>}
+```</p>
+
+<p>This approach has the benefit of avoiding an intermediate temporary variable to hold the returned array.  It also avoids potential errors in writing the <code>for</code> statement.  It will never be off by one.</p>
+
+<p>I find the use of higher order functional style, the LINQ expression, easier to read than the imperative style, the <code>for</code> statement.</p>
+
+<p>One final thing to point out is that <code>Select()</code> returns an <code>IEnumerable</code>, so you have to call its <code>.ToArray</code> method to return the proper integer array for the <code>tick</code> function.</p>
+
+<h2>Conclusion</h2>
+
+<p>Check out the <a href="https://gist.github.com/zerosalife/7abc16fb21dfb05dc771">example code on github</a>.</p>
+
+<p>I&rsquo;ve only shown a tiny subset of the <a href="http://www.dotnetperls.com/linq">functionality that LINQ provides</a>.  Feel free to let me know if you dig in and find more useful tips.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Unit Testing in Unity]]></title>
@@ -205,53 +277,6 @@ using Assets.Phunk.Core</p>
 <p>Lists can be created from specific arrays of the List&rsquo;s type, but not from some arbitrary array, as in JavaScript.  Again, this is a feature of a stricter language that causes some extra work up-front, but will make things more clear in the long run.</p>
 
 <p>For an in-depth tour of the algorithm for spawning entities, check out <a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">last week&rsquo;s post</a> and the <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example repository on github</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp/"/>
-    <updated>2015-06-20T11:16:28-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp</id>
-    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/">Last week</a>, I published an article about creating a Dictionary of Lists in Unity using Unity&rsquo;s JavaScript.  Some of the syntax is changed in C#, but the overall algorithm is exactly the same.  I&rsquo;ve already mentioned the underlying motive, so I&rsquo;ll dive right in.</p>
-
-<!--more-->
-
-
-<p>Here&rsquo;s how to create a Dictionary of Lists in C# for Unity.</p>
-
-<p>```csharp
-Dictionary&lt;string, List<int>> table = new Dictionary&lt;string, List<int>>();</p>
-
-<p>void Start() {</p>
-
-<pre><code>// Fill our table with Lists containing ints using Arrays to intialize
-// the Lists.
-table["a"] = new List&lt;int&gt;(){1};
-table["b"] = new List&lt;int&gt;(){2};
-table["c"] = new List&lt;int&gt;(){3};
-
-foreach(string str in table.Keys) {
-    // Get the value for our Key.
-    List&lt;int&gt; value = table[str];
-
-    // If the Key is the desired Key, append to its list.
-    if(str == "c") {
-        value.Add(4);
-    }
-
-    // print the first item in each of the Lists.
-    Debug.Log(value[0]);
-}
-
-// Print the appended item to see that it worked.
-Debug.Log(table["c"][1]);
-</code></pre>
-
-<p>}
-```</p>
-
-<p>These are the main differences between the Unity JavaScript and C# code.  Take a look at the full file in a <a href="https://gist.github.com/zerosalife/e3882aa5ffd5dd614c9a">gist on github</a>.</p>
 ]]></content>
   </entry>
   
