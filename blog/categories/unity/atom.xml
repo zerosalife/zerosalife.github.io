@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-10-17T11:39:11-05:00</updated>
+  <updated>2015-10-31T09:16:03-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/"/>
+    <updated>2015-10-31T09:03:57-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests</id>
+    <content type="html"><![CDATA[<p>A while back, I wrote a post about <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
+
+<!--more-->
+
+
+<h2>Make a GameObject</h2>
+
+<p>We can create a <code>GameObject</code> inside a test just like we would normally inside a Unity script.</p>
+
+<p><code>csharp
+GameObject testGo = new GameObject("test");
+</code></p>
+
+<p>Passing a string to <a href="http://docs.unity3d.com/ScriptReference/GameObject-ctor.html">the <code>GameObject</code> constructor</a> gives the <code>GameObject</code> that name.</p>
+
+<h2>We can even Instantiate prefabs</h2>
+
+<p>Since our test is not inheriting <code>MonoBehaviour</code>, we&rsquo;ll have to call the Instantiate function directly, using the fully qualified namespace.</p>
+
+<p>Remember that prefabs are just stored <code>GameObject</code>s, so we can use the <code>testGo</code> created above as our prefab.</p>
+
+<p>``` csharp
+GameObject go = UnityEngine.Object.Instantiate(testGo,</p>
+
+<pre><code>                                           Vector3.zero,
+                                           Quaternion.identity) as GameObject;
+</code></pre>
+
+<p>```</p>
+
+<h2>Clean up</h2>
+
+<p>We can create <code>GameObject</code>s, but repeatedly running the test leaves our project cluttered up with old objects.  We want our tests to clean up all mocked objects after running.  We&rsquo;ll do that using by using the fully qualified <a href="http://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html"><code>DestroyImmediate</code> function</a>.</p>
+
+<p>We need to call <code>DestroyImmediate</code> instead of <code>Destroy</code> because the unit tests are running in the editor and delayed destruction won&rsquo;t be invoked.</p>
+
+<p><code>csharp
+UnityEngine.Object.DestroyImmediate(go);
+UnityEngine.Object.DestroyImmediate(testGo);
+</code></p>
+
+<h2>Mocking is easy</h2>
+
+<p>Following this pattern will give you the ability to mock objects to your hearts' delight as you unit test your Unity code.  As, always let me know if you have questions, comments, or concerns below or on twitter.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Using  LINQ queries and lambda expressions in Unity C#]]></title>
@@ -356,54 +408,6 @@ That&rsquo;s all there is to it.  You can check out the full example project on 
 <h2>Moving forward</h2>
 
 <p>It would be nice to have more fine-grained control over the local density of the blobs in certain regions, so the map would become a little less uniform, creating pockets of character in an otherwise featureless space.  But I think the effect here works nice as a background.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Trace function for debugging in Unity C#]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/"/>
-    <updated>2015-07-25T09:00:31-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp</id>
-    <content type="html"><![CDATA[<p>Inspired by <a href="https://www.youtube.com/watch?v=btN095elmh4&amp;feature=youtu.be&amp;t=1985">a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers</a>, I wanted to come up with a way of conditionally including debug statements in development code, but not in production.  Luckily I wasn&rsquo;t the first person to think of this.</p>
-
-<p><a href="https://twitter.com/danpuzey">Dan Puzey</a> <a href="http://blog.puzey.net/simple-better-unity-logging/">wrote an abstraction layer</a> over Unity&rsquo;s built-in <code>Debug</code> library.  The library contains several functions for various types of logging.  The most important piece for me is <code>VerboseFormat</code>, which combines string formatting with conditional attributes.  I&rsquo;ll explain a bit more about how these pieces work below.</p>
-
-<!--more-->
-
-
-<h2>String Formatting</h2>
-
-<p>To my surprise, Unity&rsquo;s C# implementation, Mono, doesn&rsquo;t use standard <code>printf</code>-like string formatting syntax.  Instead of <code>%s</code> or other commonly used formatting variables, C# uses curly braces around numbers to interpolate variables passed in to the <code>String.Format</code> call as arguments.</p>
-
-<p>Dan&rsquo;s <code>VerboseFormat</code> function wraps <code>String.Format</code>, so you can call <code>VerboseFormat</code> with C# formatting strings.</p>
-
-<p>``` csharp
-using Assets.Phunk.Core</p>
-
-<p>&hellip;</p>
-
-<p>Log.VerboseFormat(&ldquo;var1: {0}, var2: {1}&rdquo;, var1, var2);
-// => [VERBOSE] var1: [var1], var2: [var2]
-```</p>
-
-<h2>Conditional Attributes</h2>
-
-<p>Above some of the functions in Dan&rsquo;s code you&rsquo;ll see the following <a href="https://msdn.microsoft.com/en-us/library/system.diagnostics.conditionalattribute%28v=vs.110%29.aspx">conditional attributes</a>:</p>
-
-<p>``` csharp</p>
-
-<pre><code>[System.Diagnostics.Conditional("DEBUG"), System.Diagnostics.Conditional("UNITY_EDITOR")]
-</code></pre>
-
-<p>```</p>
-
-<p>These two settings tell the C# compiler to only compile the code, in this case the <code>Verbose</code> logging functions, when compiling during development, i.e. <code>DEBUG</code> or <code>UNITY_EDITOR</code>.  That means all of the <code>Verbose</code> logging statements in your code will not be compiled in the production builds of your code.</p>
-
-<p>Cool, huh?  Good thinking, Dan.</p>
-
-<h2>That&rsquo;s it!</h2>
-
-<p>It&rsquo;s always great when you think that a tool would be useful and someone else has already implemented it for you.  Go on over and give <a href="http://puzey.net/">Dan&rsquo;s blog</a> a gander.</p>
 ]]></content>
   </entry>
   

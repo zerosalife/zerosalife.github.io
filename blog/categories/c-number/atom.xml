@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C# | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/c-number/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-10-17T11:39:11-05:00</updated>
+  <updated>2015-10-31T09:16:03-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/"/>
+    <updated>2015-10-31T09:03:57-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests</id>
+    <content type="html"><![CDATA[<p>A while back, I wrote a post about <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
+
+<!--more-->
+
+
+<h2>Make a GameObject</h2>
+
+<p>We can create a <code>GameObject</code> inside a test just like we would normally inside a Unity script.</p>
+
+<p><code>csharp
+GameObject testGo = new GameObject("test");
+</code></p>
+
+<p>Passing a string to <a href="http://docs.unity3d.com/ScriptReference/GameObject-ctor.html">the <code>GameObject</code> constructor</a> gives the <code>GameObject</code> that name.</p>
+
+<h2>We can even Instantiate prefabs</h2>
+
+<p>Since our test is not inheriting <code>MonoBehaviour</code>, we&rsquo;ll have to call the Instantiate function directly, using the fully qualified namespace.</p>
+
+<p>Remember that prefabs are just stored <code>GameObject</code>s, so we can use the <code>testGo</code> created above as our prefab.</p>
+
+<p>``` csharp
+GameObject go = UnityEngine.Object.Instantiate(testGo,</p>
+
+<pre><code>                                           Vector3.zero,
+                                           Quaternion.identity) as GameObject;
+</code></pre>
+
+<p>```</p>
+
+<h2>Clean up</h2>
+
+<p>We can create <code>GameObject</code>s, but repeatedly running the test leaves our project cluttered up with old objects.  We want our tests to clean up all mocked objects after running.  We&rsquo;ll do that using by using the fully qualified <a href="http://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html"><code>DestroyImmediate</code> function</a>.</p>
+
+<p>We need to call <code>DestroyImmediate</code> instead of <code>Destroy</code> because the unit tests are running in the editor and delayed destruction won&rsquo;t be invoked.</p>
+
+<p><code>csharp
+UnityEngine.Object.DestroyImmediate(go);
+UnityEngine.Object.DestroyImmediate(testGo);
+</code></p>
+
+<h2>Mocking is easy</h2>
+
+<p>Following this pattern will give you the ability to mock objects to your hearts' delight as you unit test your Unity code.  As, always let me know if you have questions, comments, or concerns below or on twitter.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Using  LINQ queries and lambda expressions in Unity C#]]></title>
@@ -260,23 +312,6 @@ using Assets.Phunk.Core</p>
 <h2>That&rsquo;s it!</h2>
 
 <p>It&rsquo;s always great when you think that a tool would be useful and someone else has already implemented it for you.  Go on over and give <a href="http://puzey.net/">Dan&rsquo;s blog</a> a gander.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Probabilistic entity spawning in Unity C#]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/"/>
-    <updated>2015-07-11T17:03:55-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp</id>
-    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Last week</a> I showed how to do probabilistic entity spawning in Unity JS.  This week I&rsquo;ll port that code over to C#.  You can find examples of both the C# and JavaScript versions of the code in a <a href="https://github.com/zerosalife/ProbEntitySpawnExample">repository on github</a>.  Since I&rsquo;ve already explained the Algorithm I will focus mainly on the differences in the code.</p>
-
-<p>There isn&rsquo;t syntactic sugar for Dictionary assignment in C# :( This required moving the assignment for the <code>areas</code> Dictionary into the <code>Start</code> function.  It&rsquo;s a move that enforces best practices, strictly speaking, but risks confusion about the content of the <code>areas</code> Dictionary at runtime.  If you&rsquo;d like to read up on Dictionaries in C#, I found <a href="https://msdn.microsoft.com/en-us/library/fkbw11z0.aspx">this resource</a> helpful.</p>
-
-<p>The <code>foreach</code> command requires a type. This is a case where a stricter language will save confusion in the long run.</p>
-
-<p>Lists can be created from specific arrays of the List&rsquo;s type, but not from some arbitrary array, as in JavaScript.  Again, this is a feature of a stricter language that causes some extra work up-front, but will make things more clear in the long run.</p>
-
-<p>For an in-depth tour of the algorithm for spawning entities, check out <a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">last week&rsquo;s post</a> and the <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example repository on github</a>.</p>
 ]]></content>
   </entry>
   
