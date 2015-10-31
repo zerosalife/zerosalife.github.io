@@ -1279,6 +1279,87 @@ destination project's version control history.
 That's okay with me, because I plan on developing the symlinked files
 in a separate parallel test project with all of their unit tests, etc.
 
+** Using  LINQ queries and lambda expressions in Unity C#
+Using LINQ and lambda expressions for functional programming in Unity
+C#
+
+http://www.dotnetperls.com/select
+[[https://en.wikipedia.org/wiki/Language_Integrated_Query]]
+
+[[http://www.dotnetperls.com/linq]]
+
+http://stackoverflow.com/questions/2629124/contains-on-a-list-of-custom-class-objects
+
+Unity's C# environment includes access to .NET's powerful [[https://en.wikipedia.org/wiki/Language_Integrated_Query][LINQ
+querying expressions]].  In this post I'll show how to use LINQ
+expressions to call anonymous functions.
+
+*** Use the lambda
+In the following examples, I'll be using [[https://msdn.microsoft.com/en-us/library/bb397687.aspx][lambda expressions]] to specify
+anonymous functions that I will pass as arguments to the LINQ
+expressions.
+
+C# uses the ==>= symbol as an operator to create lambda expressions.
+For example,
+
+#+BEGIN_SRC csharp
+  x => x + 1;
+#+END_SRC
+
+says, create an anonymous function taking a single argument =x= and
+return the value of =x + 1=.
+
+*** Increment an array
+Say I want to use my anonymous function to increment an array of
+counters when a tick passes in my game.
+
+#+BEGIN_SRC csharp
+  int[] counters = new int[] {0, 1, 2, 3};
+
+  int[] tick(int[] counters) {
+      int[] ret = new int[counters.Length];
+      for(int i = 0; i < counters.Length; i++) {
+          ret[i] = counters[i] + 1;
+      }
+      return ret;
+  }
+
+  tick(counters);
+#+END_SRC
+
+
+I could iterate over the array, incrementing each of the counters one
+at a time.
+
+Or I could use LINQ expressions to map a function that increments an
+element over the array.
+
+#+BEGIN_SRC csharp
+  int[] tick(int[] counters) {
+      return counters.Select(x => x + 1).ToArray();
+  }
+#+END_SRC
+
+This approach has the benefit of avoiding an intermediate temporary
+variable to hold the returned array.  It also avoids potential errors
+in writing the =for= statement.  It will never be off by one.
+
+I find the use of higher order functional style, the LINQ expression,
+easier to read than the imperative style, the =for= statement.
+
+One final thing to point out is that =Select()= returns an
+=IEnumerable=, so you have to call its =.ToArray= method to return the
+proper integer array for the =tick= function.
+
+*** Conclusion
+Check out the [[https://gist.github.com/zerosalife/7abc16fb21dfb05dc771][example code on github]].
+
+I've only shown a tiny subset of the [[http://www.dotnetperls.com/linq][functionality that LINQ provides]].
+Feel free to let me know if you dig in and find more useful tips.
+
+
+
+
 * Business cards
 
 
@@ -3215,82 +3296,6 @@ https://github.com/InfiniteAmmoInc/Yarn
   ]
 #+END_SRC
 
-** Using Anonymous LINQ functions or Lambda expressions in Unity C#
-http://www.dotnetperls.com/select
-[[https://en.wikipedia.org/wiki/Language_Integrated_Query]]
-
-[[http://www.dotnetperls.com/linq]]
-
-http://stackoverflow.com/questions/2629124/contains-on-a-list-of-custom-class-objects
-
-Unity's C# environment includes access to .NET's powerful [[https://en.wikipedia.org/wiki/Language_Integrated_Query][LINQ
-querying expressions]].  In this post I'll show how to use LINQ
-expressions to call anonymous functions.
-
-*** Use the lambda
-In the following examples, I'll be using [[https://msdn.microsoft.com/en-us/library/bb397687.aspx][lambda expressions]] to specify
-anonymous functions that I will pass as arguments to the LINQ
-expressions.
-
-C# uses the ==>= symbol as an operator to create lambda expressions.
-For example,
-
-#+BEGIN_SRC csharp
-  x => x + 1;
-#+END_SRC
-
-says, create an anonymous function taking a single argument =x= and
-return the value of =x + 1=.
-
-*** Increment an array
-Say I want to use my anonymous function to increment an array of
-counters when a tick passes in my game.
-
-#+BEGIN_SRC csharp
-  int[] counters = new int[] {0, 1, 2, 3};
-
-  int[] tick(int[] counters) {
-      int[] ret = new int[counters.Length];
-      for(int i = 0; i < counters.Length; i++) {
-          ret[i] = counters[i] + 1;
-      }
-      return ret;
-  }
-
-  tick(counters);
-#+END_SRC
-
-
-I could iterate over the array, incrementing each of the counters one
-at a time.
-
-Or I could use LINQ expressions to map a function that increments an
-element over the array.
-
-#+BEGIN_SRC csharp
-  int[] tick(int[] counters) {
-      return counters.Select(x => x + 1).ToArray();
-  }
-#+END_SRC
-
-This approach has the benefit of avoiding an intermediate temporary
-variable to hold the returned array.  It also avoids potential errors
-in writing the =for= statement.  It will never be off by one.
-
-I find the use of higher order functional style, the LINQ expression,
-easier to read than the imperative style, the =for= statement.
-
-One final thing to point out is that =Select()= returns an
-=IEnumerable=, so you have to call its =.ToArray= method to return the
-proper integer array for the =tick= function.
-
-*** Conclusion
-Check out the [[https://gist.github.com/zerosalife/7abc16fb21dfb05dc771][example code on github]].
-
-I've only shown a tiny subset of the [[http://www.dotnetperls.com/linq][functionality that LINQ provides]].
-Feel free to let me know if you dig in and find more useful tips.
-
-
 
 ** Unity's Level Loading Lifecycle
 [[http://wiki.unity3d.com/index.php?title%3DLife_cycle][http://wiki.unity3d.com/index.php?title=Life_cycle]]
@@ -3391,13 +3396,65 @@ and how to get an initial ROT.js console output to render
 
 
 ** Mocking GameObjects in Unity Unit Tests
+- tools
+- algorithm
+- Unity
+- C#
+
+A while back, I wrote a post about [[http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/][unit testing in Unity]].  In this
+post, I'll go through a useful pattern to [[https://en.wikipedia.org/wiki/Mock_object][mock]] =GameObject=s in unit
+tests.
+
+
 
 *** Make a GameObject
+We can create a =GameObject= inside a test just like we would
+normally inside a Unity script.
 
-*** You can even instantiate
+#+BEGIN_SRC csharp
+  GameObject testGo = new GameObject("test");
+
+#+END_SRC
+
+Passing a string to [[http://docs.unity3d.com/ScriptReference/GameObject-ctor.html][the =GameObject= constructor]] gives the
+=GameObject= that name.
+
+*** We can even Instantiate prefabs
+Since our test is not inheriting =MonoBehaviour=, we'll have to call
+the Instantiate function directly, using the fully qualified
+namespace.
+
+Remember that prefabs are just stored =GameObject=s, so we can use the
+=testGo= created above as our prefab.
+
+#+BEGIN_SRC csharp
+  GameObject go = UnityEngine.Object.Instantiate(testGo,
+                                                 Vector3.zero,
+                                                 Quaternion.identity) as GameObject;
+
+#+END_SRC
 
 *** Clean up
-=UnityEngine.Object.DestroyImmediate=
+We can create =GameObjects=, but repeatedly running the test leaves
+our project cluttered up with old objects.  We want our tests to clean
+up all mocked objects after running.  We'll do that using by using the
+fully qualified [[http://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html][=DestroyImmediate= function]].
+
+We need to call =DestroyImmediate= instead of =Destroy= because the
+unit tests are running in the editor and delayed destruction won't be
+invoked.
+
+#+BEGIN_SRC csharp
+  UnityEngine.Object.DestroyImmediate(go);
+  UnityEngine.Object.DestroyImmediate(testGo);
+
+#+END_SRC
+
+*** Mocking is easy
+Following this pattern will give you the ability to mock objects to
+your hearts' delight as you unit test your Unity code.  As, always let
+me know if you have questions, comments, or concerns below or on
+twitter.
 
 ** Redesign exercise
 An exercise in redesigning existing games from @kinojabber
@@ -3414,5 +3471,31 @@ changes to the system to meet that goal.
 #+END_QUOTE
 
 ** Deleting a list of GameObjects in Unity
+
+As I write unit tests for Unity games, I often want to create a list
+of GameObjects for a specific test, then tear them down following
+successful completion of the test to ensure that I have a nice clean
+slate for the next test.
+
+Destroying the =GameObject=s needs to happen in two steps.  First, I
+go through and destroy all of the =GameObject=s.  Then, I clear the
+list, so we don't have any references to destroyed =GameObject=s.
+
+#+BEGIN_SRC csharp
+  foreach(GameObject go in objects) {
+      UnityEngine.Object.DestroyImmediate(go);
+  }
+  objects.Clear();
+#+END_SRC
+
+Confused about why I'm using =DestroyImmediate= like that?  Check out
+the previous post about mocking =GameObject=s in Unity C#.
+
+I use =foreach= here because mutating lists while iterating over them
+is bad, bad, bad.  There, when you're changing the length of the list
+while iterating over it, your =i= iterator variable no longer points
+to the same position you can skip over elements of the list or even
+run off the end.
+
 
 ** Deleting a list of GameObjects in Unity using LINQ queries and Lambda Expressions
