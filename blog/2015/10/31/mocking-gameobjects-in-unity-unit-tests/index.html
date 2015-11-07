@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Setting up Emacs-like key bindings in MonoDevelop - zero's a life</title>
+  <title>Mocking GameObjects in Unity Unit Tests - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="I&rsquo;m playing around with Unity to try to learn how it works. Shout out to Infinite Ammo for the excellent video tutorials. Since I don&rsquo;t &hellip;">
+  <meta name="description" content="A while back, I wrote a post about unit testing in Unity. In this post, I&rsquo;ll go through a useful pattern to mock GameObjects in unit tests. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Setting Up Emacs-like Key Bindings in MonoDevelop</h1>
+      <h1 class="entry-title">Mocking GameObjects in Unity Unit Tests</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-02-22T08:14:40-06:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
+<time datetime="2015-10-31T09:03:57-05:00" pubdate data-updated="true">Oct 31<span>st</span>, 2015</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,26 +95,53 @@
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
+<div class="entry-content"><p>A while back, I wrote a post about <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
 
-<p>Since I don&rsquo;t know much about Unity, I&rsquo;m reluctantly using their included <a href="http://monodevelop.com/">MonoDevelop IDE</a>.  While I&rsquo;d heard that Emacs-like key bindings were included, in the build I installed they weren&rsquo;t present.</p>
+<!--more-->
 
-<p>MonoDevelop does not make it easy to import new key binding schemes (the <a href="http://mjhutchinson.com/journal/2011/02/06/key_bindings">blog post linked here</a> suggests submitting a bug report to propose new key bindings&#x2026;).  So, I did a little digging around on github and found the <a href="https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml">default emacs key binding scheme</a> that I imagine should have been included in the MonoDevelop build I installed.</p>
 
-<p>There was no way to add this key binding scheme to my available key bindings in MonoDevelop, so I hacked my Custom key binding file located at <code>~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml</code>.</p>
+<h2>Make a GameObject</h2>
 
-<p>I started with some simple copypasta.  But then I found some useful
-navigation features were lacking.  So, I added key binds that
-immediately came to mind, like <code>Alt-f</code> for moving forward one word and
-<code>Alt-b</code> for backward word.  Yes, I know these are <code>M-f</code> in Emacs, but
-I&rsquo;m using MonoDevelop&rsquo;s syntax here.</p>
+<p>We can create a <code>GameObject</code> inside a test just like we would normally inside a Unity script.</p>
 
-<p>My key bindings are available in the gist below.  I&rsquo;ll update this
-gist when I add key bindings, to keep a current working version
-available.</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">GameObject</span> <span class="n">testGo</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GameObject</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<script src="https://gist.github.com/zerosalife/9096788.js"></script>
 
+<p>Passing a string to <a href="http://docs.unity3d.com/ScriptReference/GameObject-ctor.html">the <code>GameObject</code> constructor</a> gives the <code>GameObject</code> that name.</p>
+
+<h2>We can even Instantiate prefabs</h2>
+
+<p>Since our test is not inheriting <code>MonoBehaviour</code>, we&rsquo;ll have to call the Instantiate function directly, using the fully qualified namespace.</p>
+
+<p>Remember that prefabs are just stored <code>GameObject</code>s, so we can use the <code>testGo</code> created above as our prefab.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">GameObject</span> <span class="n">go</span> <span class="p">=</span> <span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">testGo</span><span class="p">,</span>
+</span><span class='line'>                                               <span class="n">Vector3</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span>
+</span><span class='line'>                                               <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">)</span> <span class="k">as</span> <span class="n">GameObject</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Clean up</h2>
+
+<p>We can create <code>GameObject</code>s, but repeatedly running the test leaves our project cluttered up with old objects.  We want our tests to clean up all mocked objects after running.  We&rsquo;ll do that using by using the fully qualified <a href="http://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html"><code>DestroyImmediate</code> function</a>.</p>
+
+<p>We need to call <code>DestroyImmediate</code> instead of <code>Destroy</code> because the unit tests are running in the editor and delayed destruction won&rsquo;t be invoked.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">DestroyImmediate</span><span class="p">(</span><span class="n">go</span><span class="p">);</span>
+</span><span class='line'><span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">DestroyImmediate</span><span class="p">(</span><span class="n">testGo</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Mocking is easy</h2>
+
+<p>Following this pattern will give you the ability to mock objects to your hearts&#8217; delight as you unit test your Unity code.  As, always let me know if you have questions, comments, or concerns below or on twitter.</p>
 </div>
 
 
@@ -137,12 +164,12 @@ available.</p>
   
 
 
-<time datetime="2014-02-22T08:14:40-06:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
+<time datetime="2015-10-31T09:03:57-05:00" pubdate data-updated="true">Oct 31<span>st</span>, 2015</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/tools/'>tools</a>
+    <a class='category' href='/blog/categories/c-number/'>C#</a>, <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -151,7 +178,7 @@ available.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/" >Tweet</a>
   
   
   
@@ -160,10 +187,8 @@ available.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/" title="Previous Post: Bunnies Don't Surf #flappyjam">&laquo; Bunnies Don't Surf #flappyjam</a>
+        <a class="basic-alignment left" href="/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp/" title="Previous Post: Using  LINQ queries and lambda expressions in Unity C#">&laquo; Using  LINQ queries and lambda expressions in Unity C#</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/03/01/whats-in-a-name/" title="Next Post: What's in a name?">What's in a name? &raquo;</a>
       
     </p>
   </footer>
@@ -260,8 +285,8 @@ available.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/';
         var disqus_script = 'embed.js';
       
     (function () {
