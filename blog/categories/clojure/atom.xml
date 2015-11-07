@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Clojure | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/clojure/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-10-31T09:16:03-05:00</updated>
+  <updated>2015-11-07T09:59:06-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,72 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Seeking artist for ProcJam 2015]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/11/07/seeking-artist-for-procjam-2015/"/>
+    <updated>2015-11-07T09:53:17-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/11/07/seeking-artist-for-procjam-2015</id>
+    <content type="html"><![CDATA[<p><a href="/images/assets/mvs-screenshot-full.png"><img class="center" src="/images/assets/mvs-screenshot-small.png" width="800" height="613"></a></p>
+
+<p>#ProcJam 2015 started yesterday.  I&rsquo;m working on a mech vehicle generator web app.  You can check it out at <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>. The prototype layout and generation code is complete.  What I need now is an artist to replace the placekitten pictures I&rsquo;m currently using.</p>
+
+<!--more-->
+
+
+<h2>The Roadmap</h2>
+
+<h3>Backend and client code</h3>
+
+<p>I&rsquo;m working on setting up the web app, but the underlying generator code is done.  I&rsquo;ve made it modular, so we can plug in as many or as few art assets as you like</p>
+
+<h3>Layout</h3>
+
+<p>Largely cribbed from old <a href="https://en.wikipedia.org/wiki/Heavy_Gear"><em>Heavy Gear</em></a> character sheets.  I&rsquo;m satisfied with it.  But if you have a better design, I&rsquo;m all ears.</p>
+
+<h3>Images</h3>
+
+<p>What I&rsquo;m looking for are images of mechs in whatever style you choose that can be broken into individual layers composed of:</p>
+
+<ul>
+<li>Head</li>
+<li>Torso</li>
+<li>Shoulders (left &amp; right)</li>
+<li>Arms (left &amp; right)</li>
+<li><p>Legs</p></li>
+<li><p>Weapons</p></li>
+</ul>
+
+
+<p>An example of what I&rsquo;m thinking of here are the mechs from the <em><a href="https://en.wikipedia.org/wiki/Front_Mission">Front Mission</a></em> series of games.  Mechs in that series had sprites that were composed of individual parts that composited together based on the customizations that you made to your mechs.  See this <a href="http://www.spriters-resource.com/snes/frontmiss/sheet/38202/">example from the original <em>Front Mission</em> on SNES</a>.</p>
+
+<h3>Image layout</h3>
+
+<p>I&rsquo;ll write code (likely CSS) that composites your drawings based on the output of the generator to create custom, procedurally generated pictures to go along with each of the mechs.</p>
+
+<h2>What I need from you</h2>
+
+<p>At the most basic level it would be nice to create several &ldquo;families&rdquo; of heads, torsos, shoulders, arms, and legs.  Creating cool weapons that map on to hard points, i.e. a shoulder mounted rocket launcher that could mount on the left shoulder, would be icing on the cake.</p>
+
+<p>I&rsquo;d like to work with an iterative process, if you&rsquo;re cool with that.  If you have rough sketches, pass them along.  They&rsquo;ll help with getting a sense for how to layout the composite images in CSS.  This thing doesn&rsquo;t have to be perfect, we can continually refine it as we go.</p>
+
+<p>Communication and coordination to make sure I have the latest versions of your art assets.</p>
+
+<h2>What I&rsquo;ll be working on</h2>
+
+<p>I&rsquo;ll be integrating the generator backend with the frontend, laying out any art assets, and extending the generator as time permits.</p>
+
+<h2>What we&rsquo;ll get</h2>
+
+<p>We&rsquo;ll come out of this with a cool little generator to play with, hopefully creating many hilarious mecha.  Who knows, down the road this could lead to more collaboration between the two of us and/or the generator could serve as a component of a larger mecha game.</p>
+
+<p>In any case, you will get equal billing on the generator itself and all blog posts about the generator.  You will retain all rights to the art you create.  Outside of the generator itself, I would only request to use the art assets in screenshots on the blog and twitter.</p>
+
+<h2>Sound good?</h2>
+
+<p>Sound good?  Let me know on <a href="https://twitter.com/zerosalife">twitter</a>, I&rsquo;m happy to communicate over DMs, in the comments below, or via email (my twitter handle at gmail)!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Patchwerk]]></title>
