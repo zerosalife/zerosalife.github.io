@@ -11,7 +11,7 @@ categories:
 
 [{% img center /images/assets/mvs-screenshot-small.png 800 613 %}](/images/assets/mvs-screenshot-full.png)
 
-\#ProcJam 2015 started yesterday.  I'm working on a mech vehicle generator web app.  You can check it out at [mech-vehicle-sheet.herokuapp.com](https://mech-vehicle-sheet.herokuapp.com/). The prototype layout and generation code is complete.  What I need now is an artist to replace the placekitten pictures I'm currently using.
+[\#ProcJam 2015](https://itch.io/jam/procjam) started yesterday.  I'm working on a mech vehicle generator web app.  You can check it out at [mech-vehicle-sheet.herokuapp.com](https://mech-vehicle-sheet.herokuapp.com/). The prototype layout and generation code is complete.  What I need now is an artist to replace the placekitten pictures I'm currently using.
 
 <!--more-->
 
