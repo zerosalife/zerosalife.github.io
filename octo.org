@@ -3500,6 +3500,15 @@ run off the end.
 
 ** Deleting a list of GameObjects in Unity using LINQ queries and Lambda Expressions
 
+** ProcJam 2015 update
+Updating my progress on #procjam.  Check out my work at
+[[https://mech-vehicle-sheet.herokuapp.com/]]
+
+- procjam
+
+Here's a brief update on [[http://www.procjam.com/category/procjam-2015/][#ProcJam 2015]].  I'm hard at work on the [[https://mech-vehicle-sheet.herokuapp.com/][Mech
+Generator]].  You can check out my progress at that link.  A more
+thorough write-up will come soon.
 ** Seeking artist for ProcJam 2015
 Seeking artist for #procjam to draw modular mecha pieces to replace
 adorable kitten #screenshotsaturday
