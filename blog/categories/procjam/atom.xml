@@ -4,7 +4,7 @@
   <title><![CDATA[Category: procjam | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/procjam/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-11-14T07:26:09-06:00</updated>
+  <updated>2015-12-05T13:17:58-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ProcJam 2015 Restrospective]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/"/>
+    <updated>2015-12-05T13:05:46-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective</id>
+    <content type="html"><![CDATA[<p><a href="/images/assets/mvs-screenshot-post-procjam.png"><img class="center" src="/images/assets/mvs-screenshot-post-procjam.png" width="2108" height="1942"></a>
+I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up on the web at <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.  The code is available on <a href="https://github.com/zerosalife/mech-vehicle-sheet">github</a>.</p>
+
+<!--more-->
+
+
+<h2>Clojure and Clojurescript</h2>
+
+<p>I used <a href="http://clojure.org/">Clojure</a> and <a href="https://github.com/clojure/clojurescript">ClojureScript</a> with <a href="https://github.com/omcljs/om">Om/React</a> via <a href="https://github.com/levand/quiescent">Quiescent</a> to make development quick and easy.  Refactorings, which I spent the majority of my time on, were a breeze compared to other languages I&rsquo;ve been developing in lately.  While this project doesn&rsquo;t have a fancy UI, choosing React made it straightforward to divide the UI into sensible chunks, which I implemented as components.</p>
+
+<h2>No artist</h2>
+
+<p>Didn&rsquo;t find an artist.  Although, starting to look for an artist the day after ProcJam started was inadvisable.  I think not finding an artist is actually a benefit.</p>
+
+<p>Not finding an artist pushed me to come up with the idea of not just choosing and laying out art assets proceedurally but allso generating the art proceduarlly.  I&rsquo;m thinking of somethign along the lines of what I&rsquo;ve seen @strangethink do.</p>
+
+<p>I want to generate symmetric parts for mechs based on the manufacturer.  Same thing for weapons, in the style of <a href="http://borderlands.wikia.com/wiki/Weapons#Weapon_Components">the Borderlands series</a>.</p>
+
+<p>You can see the beginnings of a template as part of the latest revisions on <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.</p>
+
+<h2>Not done yet</h2>
+
+<p>Going to keep developing this project in my spare time, possibly for participation in another gamejam or just for fun.  I&rsquo;ll post updates on the blog when I get major features implemented.</p>
+
+<p>My tentative to-do list is:</p>
+
+<ul>
+<li>Generate images for each mech part</li>
+<li>Add similar generation for the weapons</li>
+<li>Create different art styles based on manufacturer</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ProcJam 2015 update]]></title>
@@ -282,62 +322,6 @@ revisit when I can really dig into it.</li>
 </li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Patchwerk]]></title>
-    <link href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/"/>
-    <updated>2014-11-15T07:22:18-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2014/11/15/patchwerk</id>
-    <content type="html"><![CDATA[<h2>Procjam updates</h2>
-
-<p>I&rsquo;ve spent the week at a couple of major international conferences sponsored to some degree by old dead-tree journals.  I was struck, following last weekends' <a href="https://twitter.com/search?q%3Dprocjam">#procjam</a> <a href="http://www.twitch.tv/procjam">talks</a>, by the lack of openness.  None of these talks are going to be made freely available.  Photography and recording is actively discouraged.  The official conference hashtags, when provided, were silent or only used by those in attendance.  While this exclusivity may generate profits for the aforementioned dead-tree journals and give a leg up to those fortunate enough to be able to attend these conferences, I find it ethically reprehensible in the 21st century, given the tools that we have available.</p>
-
-<p>I&rsquo;d like to once again thank <a href="https://twitter.com/mtrc">@mtrc</a> for hosting <em>and streaming</em> #procjam.  Because conference was made freely available, I was able to interact with the attendees in a way that would be impossible if I was trying to divine through twitter what was going on behind closed doors.  I think this kind of openness can only generate more interest and ideas, regardless of the field of study.</p>
-
-<h2>Patchwerk</h2>
-
-<p>A <a href="https://github.com/quil/quil">Quil</a> sketch designed to generate patterns for quilts.  The code is <a href="https://github.com/zerosalife/patchwerk">available on github</a>.</p>
-
-<p><a href="https://github.com/zerosalife/patchwerk/blob/master/patchwerk-example.png"><img class="center" src="https://raw.githubusercontent.com/zerosalife/patchwerk/master/patchwerk-example.png"></a></p>
-
-<!--more-->
-
-
-<h2>What is Quil?</h2>
-
-<p>Quil is a port of <a href="http://processing.org">Processing</a> to <a href="http://clojure.org/">Clojure</a>.</p>
-
-<h2>Motivation</h2>
-
-<p>When I came across some interesting pictures of quilts, I was struck by the regularity of the shapes used to construct them.  A quilt is simply a grid of squares containing some pattern of simple shapes.  I thought it would be interesting to have an algorithm generate the grid (what I guess quilters probably call a pattern), so I set out to build some functions in Quil to draw a few simple shapes that I identified in the squares of the quilts and then to randomly draw them in a grid.</p>
-
-<h2>How to model a quilt</h2>
-
-<p>Using the fundamental assumption I already stated: a quilt is just a grid of squares.  My algorithm defines a <code>grid-width</code> and <code>grid-height</code> along with a <code>square-size</code> in pixels that determine the overall size of the quilt pattern to generate.  This allows you to generate an arbitrary number of quilt squares of a certain size.</p>
-
-<p>Each square contains a subgrid with a defined <code>sub-grid-width</code> and <code>sub-grid-height</code>.  In retrospect, it would probably be better to define one parameter because if the dimensions are not square, everything will be screwed up.</p>
-
-<p>I then define several basic drawing functions to fill the squares of the grid.  The procedural generation&rsquo;s <code>draw</code> algorithm knows about each of the drawing functions, called <code>pattern-funcs</code>, and picks one of the <code>patterns</code> to draw each square of the grid.</p>
-
-<h2>The drawing functions</h2>
-
-<p>The primary elements of the quilt squares that I wanted to replicate were large squares, smaller checkers, triangles, and a mixed pattern of small triangles with a square that I called &ldquo;fish&rdquo;.</p>
-
-<p>The squares (see the square second left from the top right) and the smaller checkers (see quilt square fourth down from the top left) use the same drawing function.  However, they differ in that they utilize different helper functions return the correctly sized vertices and support multiple calls for the smaller checkers.</p>
-
-<p>The triangles (see square in the top right) use a lookup table, <code>triangle-lookup-table</code>, to store information about the appropriate &ldquo;legs&rdquo; for a triangle with a point in a given corner.  By using a common syntax for the vertices, the <code>draw-triangle</code> algorithm can share the vertex lookup algorithm with the square routines.</p>
-
-<p>Then the culmination of my dastardly plan involves marrying a square from the smaller checker function with flanking triangles, based on the subgrid this time instead of the larger grid.  The result is a pattern that looks like a fish to me (see quilt square in the top left).  Because I built the abstract drawing functions, I simply have to take care of the four directional possibilities and let the drawing functions more fundamental handle the work.</p>
-
-<h2>Future plans: toward Patchwerk 1.0.0</h2>
-
-<p>The project is in need of a major refactoring session, when I can find the time.  I developed it in a single monolithic Clojure file for ease of testing in the REPL.  It will be easier to maintain and understand if I separate out the distinct functionalities into their own namespaces.  The ones that come to mind are <code>patchwerk.grid</code> to handle the generation of the grid, <code>patchwerk.patterns</code> to manage the drawing functions, and <code>patchwerk.util</code> to house the helper functions.  I&rsquo;d also like to make it clear which functions use the <code>quil.core</code> namespace instead of using <code>:refer :all</code>.</p>
-
-<p>There is also <a href="https://github.com/quil/quil/wiki/Functional-mode-(fun-mode">some interesting new functional middleware for Quil</a>).  It provides a framework for you to separate out the mutable state from your Quil functions so that you avoid side effects and can program pure functions, in Processing&rsquo;s typically imperative syntax.  To get this up and running, I imagine that I will have to represent the pixel grid in the <code>state</code> map.</p>
-
-<p>Eventually, and this is beyond the scope of 1.0.0, I&rsquo;m intrigued by the possibility of <a href="https://github.com/quil/quil/wiki/ClojureScript">porting this code over to Clojurescript</a> and creating a web-based version of the application.</p>
 ]]></content>
   </entry>
   
