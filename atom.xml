@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-11-07T10:02:39-06:00</updated>
+  <updated>2015-11-14T07:26:09-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ProcJam 2015 update]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/11/14/procjam-2015-update/"/>
+    <updated>2015-11-14T07:25:01-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/11/14/procjam-2015-update</id>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a brief update on <a href="http://www.procjam.com/category/procjam-2015/">#ProcJam 2015</a>.  I&rsquo;m hard at work on the <a href="https://mech-vehicle-sheet.herokuapp.com/">Mech Generator</a>.  You can check out my progress at that link.  A more thorough write-up will come soon.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Seeking artist for ProcJam 2015]]></title>
@@ -1150,80 +1159,6 @@
 <h2>Update</h2>
 
 <p>After some feedback from @NoelFB, I&rsquo;ve updated the algorithm in the <a href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">following post</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Adventurejam reviews]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/05/02/adventurejam-reviews/"/>
-    <updated>2015-05-02T13:51:55-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/05/02/adventurejam-reviews</id>
-    <content type="html"><![CDATA[<p>Here are some of my thoughts on my favorite entries to <a href="http://jams.gamejolt.io/adventurejam">#adventurejam</a> so far.  Voting ends in a little over two weeks.  So, I&rsquo;m not ruling out the possibility of looking at more games.</p>
-
-<!--more-->
-
-
-<h2><a href="http://jams.gamejolt.io/adventurejam/games/ree-s-ruined-earth-courier-service-shipment-delayed/60572">Ree&rsquo;s Ruined Earth Courier Service: Shipment Delayed</a></h2>
-
-<ul>
-<li>Amazing graphics.</li>
-<li>Loving the dialogue.</li>
-<li>I played the Unity version.</li>
-</ul>
-
-
-<p>I find the story, characters, and world-building totally compelling.</p>
-
-<p>Unfortunately interacting with the world is proving difficult.  I could use some indication of when I can walk offscreen.  I think that could help with some pathfinding issues.</p>
-
-<p>I&rsquo;d really like to see more work done on this game, and I&rsquo;d like to see more content in the Ree&rsquo;s universe.</p>
-
-<h2><a href="http://jams.gamejolt.io/adventurejam/games/the-endless-night-prelude/58725">The Endless Night</a></h2>
-
-<p>For as much as I wanted to play this game, I couldn&rsquo;t.  The platform restrictions kept me from trying this interesting looking game.  I think the graphics for this game look pretty cool.</p>
-
-<h2><a href="http://jams.gamejolt.io/adventurejam/games/speak-of-the-cloud/60613">Speak of the Cloud</a></h2>
-
-<ul>
-<li>Sound effects do a good job of situating the experience in a world.</li>
-<li>Loving the <em>Dr. Strangelove</em> allusions.</li>
-<li>Character animations are impressive, and jive well with the cartoon art style.</li>
-</ul>
-
-
-<p>Unfortunately, I couldn&rsquo;t play this game as much as I would have liked.  It&rsquo;s compelling, and the art design really sells intriguing, interactive spaces that make up for the ridiculous pixel-hunting puzzle I encountered.</p>
-
-<h2><a href="http://jams.gamejolt.io/adventurejam/games/walkman/60724">Walkman</a></h2>
-
-<p>Like the animation and the constraint of linear movement.</p>
-
-<h2><a href="http://jams.gamejolt.io/adventurejam/games/cascade/58292">Cascade</a></h2>
-
-<ul>
-<li>Got chills from this one.</li>
-<li>The sparse sound does a great job of communicating atmosphere.</li>
-<li>Got the sense that there was more to this game than there actually was (in a good way), I think due to the writing.</li>
-</ul>
-
-
-<p>Nice scoping for a two-week game jam.  I think this is my runner-up, based on the strength of its story.</p>
-
-<h2><a href="http://gamejolt.com/games/adventure/theropods/58684/">Therapods</a></h2>
-
-<ul>
-<li>Great art, animation.</li>
-<li>Loving the parallax and layering.</li>
-<li>Great sound design.</li>
-<li>Great overall design, love the inventory and interface.</li>
-<li>Great examples of one-screen puzzles.  The puzzles that I&rsquo;ve heard Tim Schafer call donkey and rider puzzles.</li>
-</ul>
-
-
-<p><em>Theropods</em> is my favorite game of the jam.  Not only did it scope the game correctly for the development team, it was also playable in a reasonable amount of time.</p>
-
-<h2>Conclusion</h2>
-
-<p>So there you have it, go out there and try some of these games.  If you only have time to try one, check out <em><a href="http://gamejolt.com/games/adventure/theropods/58684/">Theropods</a></em>.  It&rsquo;s groovy.</p>
 ]]></content>
   </entry>
   
