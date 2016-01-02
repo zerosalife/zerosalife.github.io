@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ClojureScript | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/clojurescript/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-11-14T07:26:09-06:00</updated>
+  <updated>2015-12-05T13:17:58-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ProcJam 2015 Restrospective]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/"/>
+    <updated>2015-12-05T13:05:46-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective</id>
+    <content type="html"><![CDATA[<p><a href="/images/assets/mvs-screenshot-post-procjam.png"><img class="center" src="/images/assets/mvs-screenshot-post-procjam.png" width="2108" height="1942"></a>
+I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up on the web at <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.  The code is available on <a href="https://github.com/zerosalife/mech-vehicle-sheet">github</a>.</p>
+
+<!--more-->
+
+
+<h2>Clojure and Clojurescript</h2>
+
+<p>I used <a href="http://clojure.org/">Clojure</a> and <a href="https://github.com/clojure/clojurescript">ClojureScript</a> with <a href="https://github.com/omcljs/om">Om/React</a> via <a href="https://github.com/levand/quiescent">Quiescent</a> to make development quick and easy.  Refactorings, which I spent the majority of my time on, were a breeze compared to other languages I&rsquo;ve been developing in lately.  While this project doesn&rsquo;t have a fancy UI, choosing React made it straightforward to divide the UI into sensible chunks, which I implemented as components.</p>
+
+<h2>No artist</h2>
+
+<p>Didn&rsquo;t find an artist.  Although, starting to look for an artist the day after ProcJam started was inadvisable.  I think not finding an artist is actually a benefit.</p>
+
+<p>Not finding an artist pushed me to come up with the idea of not just choosing and laying out art assets proceedurally but allso generating the art proceduarlly.  I&rsquo;m thinking of somethign along the lines of what I&rsquo;ve seen @strangethink do.</p>
+
+<p>I want to generate symmetric parts for mechs based on the manufacturer.  Same thing for weapons, in the style of <a href="http://borderlands.wikia.com/wiki/Weapons#Weapon_Components">the Borderlands series</a>.</p>
+
+<p>You can see the beginnings of a template as part of the latest revisions on <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.</p>
+
+<h2>Not done yet</h2>
+
+<p>Going to keep developing this project in my spare time, possibly for participation in another gamejam or just for fun.  I&rsquo;ll post updates on the blog when I get major features implemented.</p>
+
+<p>My tentative to-do list is:</p>
+
+<ul>
+<li>Generate images for each mech part</li>
+<li>Add similar generation for the weapons</li>
+<li>Create different art styles based on manufacturer</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Seeking artist for ProcJam 2015]]></title>

@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-11-14T07:26:09-06:00</updated>
+  <updated>2015-12-05T13:17:58-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ProcJam 2015 Restrospective]]></title>
+    <link href="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/"/>
+    <updated>2015-12-05T13:05:46-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective</id>
+    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/images/assets/mvs-screenshot-post-procjam.png"><img class="center" src="http://zerosalife.github.io/images/assets/mvs-screenshot-post-procjam.png" width="2108" height="1942"></a>
+I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up on the web at <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.  The code is available on <a href="https://github.com/zerosalife/mech-vehicle-sheet">github</a>.</p>
+
+<!--more-->
+
+
+<h2>Clojure and Clojurescript</h2>
+
+<p>I used <a href="http://clojure.org/">Clojure</a> and <a href="https://github.com/clojure/clojurescript">ClojureScript</a> with <a href="https://github.com/omcljs/om">Om/React</a> via <a href="https://github.com/levand/quiescent">Quiescent</a> to make development quick and easy.  Refactorings, which I spent the majority of my time on, were a breeze compared to other languages I&rsquo;ve been developing in lately.  While this project doesn&rsquo;t have a fancy UI, choosing React made it straightforward to divide the UI into sensible chunks, which I implemented as components.</p>
+
+<h2>No artist</h2>
+
+<p>Didn&rsquo;t find an artist.  Although, starting to look for an artist the day after ProcJam started was inadvisable.  I think not finding an artist is actually a benefit.</p>
+
+<p>Not finding an artist pushed me to come up with the idea of not just choosing and laying out art assets proceedurally but allso generating the art proceduarlly.  I&rsquo;m thinking of somethign along the lines of what I&rsquo;ve seen @strangethink do.</p>
+
+<p>I want to generate symmetric parts for mechs based on the manufacturer.  Same thing for weapons, in the style of <a href="http://borderlands.wikia.com/wiki/Weapons#Weapon_Components">the Borderlands series</a>.</p>
+
+<p>You can see the beginnings of a template as part of the latest revisions on <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.</p>
+
+<h2>Not done yet</h2>
+
+<p>Going to keep developing this project in my spare time, possibly for participation in another gamejam or just for fun.  I&rsquo;ll post updates on the blog when I get major features implemented.</p>
+
+<p>My tentative to-do list is:</p>
+
+<ul>
+<li>Generate images for each mech part</li>
+<li>Add similar generation for the weapons</li>
+<li>Create different art styles based on manufacturer</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ProcJam 2015 update]]></title>
@@ -1122,43 +1162,6 @@
 <p>The algorithm I originally envisioned was naive and costly.  But, it&rsquo;s nice to hear that I wasn&rsquo;t far off&#x2013;I simply inverted the solution.  It was also nice to learn about a benefit of storing level geometry in a grid that I previously failed to appreciate.</p>
 
 <p>Heaping thanks to <a href="https://twitter.com/NoelFB/">@NoelFB</a> for helping explain the algorithm, instead of getting bent out of shape about my lame attempt to reverse engineer the inner workings of <a href="http://skytorn-game.com/">Skytorn</a> from a screenshot.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Raycast Lighting in Skytorn]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/"/>
-    <updated>2015-05-09T09:21:03-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn</id>
-    <content type="html"><![CDATA[<p><a href="https://twitter.com/NoelFB/">@NoelFB</a> posted a <a href="https://twitter.com/NoelFB/status/543586120731074561/photo/1">screenshot</a> showing how dynamic lighting works in <a href="http://skytorn-game.com/">Skytorn</a>.</p>
-
-<div class='embed tweet'><blockquote class="twitter-tweet"><p lang="en" dir="ltr">What Raycast lighting (roughly) looks like in Skytorn. Each triangle is drawn with a gradient from color-&gt;transparent <a href="http://t.co/saqVkxxvgB">pic.twitter.com/saqVkxxvgB</a></p>&mdash; Noel Berry (@NoelFB) <a href="https://twitter.com/NoelFB/status/543586120731074561">December 13, 2014</a></blockquote>
-<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
-
-
-
-<!--more-->
-
-
-<h2>The algorithm</h2>
-
-<p>From what I can tell, the algorithm looks something like this:</p>
-
-<ol>
-<li><p>Raycast out for 360° around the light source, starting in a clockwise direction.  If the rays encounter a collidable object, add it to the list of pink lines defining the polygonal shape of the lit area.  If the ray exceeds the distance of the light gradient, clamp the triangle edge defining the pink line at that distance.</p></li>
-<li><p>For each of the collidable objects encountered, extend a ray past their vertices until it hits another collidable to create the obscured lighting effect visible to down and to the right of the light source.</p></li>
-<li><p>Finally construct a set of triangles by starting from the closest edge in the list defining the pink lines to form the polygon.</p></li>
-</ol>
-
-
-<h2>That&rsquo;s all</h2>
-
-<p>That&rsquo;s it for this week.  Let me know if you have any insight into this or other lighting algorithms in the comments or on the tweets.</p>
-
-<h2>Update</h2>
-
-<p>After some feedback from @NoelFB, I&rsquo;ve updated the algorithm in the <a href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">following post</a>.</p>
 ]]></content>
   </entry>
   

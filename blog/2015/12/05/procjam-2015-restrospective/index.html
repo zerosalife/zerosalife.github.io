@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Sharing Philosophy - zero's a life</title>
+  <title>ProcJam 2015 Restrospective - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="From this interview with Sam Aaron. Aaron talks about sharing software to create music, but it applies just as well to games. We believe that most &hellip;">
+  <meta name="description" content="I made a lot of progress on my mech generator for ProcJam 2015. It&rsquo;s up on the web at mech-vehicle-sheet.herokuapp.com. The code is available &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Sharing Philosophy</h1>
+      <h1 class="entry-title">ProcJam 2015 Restrospective</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-12-27T08:01:01-06:00" pubdate data-updated="true">Dec 27<span>th</span>, 2014</time>
+<time datetime="2015-12-05T13:05:46-06:00" pubdate data-updated="true">Dec 5<span>th</span>, 2015</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,11 +95,38 @@
   </header>
 
 
-<div class="entry-content"><p>From <a href="http://www.imperica.com/en/in-conversation-with/meta-ex-the-music-of-code">this interview</a> with <a href="https://twitter.com/samaaron">Sam Aaron</a>.  Aaron talks about sharing software to create music, but it applies just as well to games.</p>
+<div class="entry-content"><p><a href="/images/assets/mvs-screenshot-post-procjam.png"><img class="center" src="/images/assets/mvs-screenshot-post-procjam.png" width="2108" height="1942"></a>
+I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up on the web at <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.  The code is available on <a href="https://github.com/zerosalife/mech-vehicle-sheet">github</a>.</p>
 
-<blockquote><p>We believe that most value in the world comes through sharing, and that music is no exception. One of the benefits of sharing is that it makes learning much easier. For example, we often hear amazing sounds on albums and wonder how they were made. However, musicians rarely share their production methods. We release all the software we write, which includes our synthesiser designs, interaction abstractions, and compositional structures, under an open source license, and we distribute it to everyone through GitHub. This makes it free and easy for anybody to copy and recreate any aspect of our work. For example, when one of our fans is interested in the sound of one of the synths we&rsquo;re using, they can go to GitHub and download the synth design as text. They can email it to their friends, read it, study it, copy it, modify it and run it to recreate the exact sound.</p></blockquote>
+<!--more-->
 
-<p>&#x2013;Sam Aaron</p>
+
+<h2>Clojure and Clojurescript</h2>
+
+<p>I used <a href="http://clojure.org/">Clojure</a> and <a href="https://github.com/clojure/clojurescript">ClojureScript</a> with <a href="https://github.com/omcljs/om">Om/React</a> via <a href="https://github.com/levand/quiescent">Quiescent</a> to make development quick and easy.  Refactorings, which I spent the majority of my time on, were a breeze compared to other languages I&rsquo;ve been developing in lately.  While this project doesn&rsquo;t have a fancy UI, choosing React made it straightforward to divide the UI into sensible chunks, which I implemented as components.</p>
+
+<h2>No artist</h2>
+
+<p>Didn&rsquo;t find an artist.  Although, starting to look for an artist the day after ProcJam started was inadvisable.  I think not finding an artist is actually a benefit.</p>
+
+<p>Not finding an artist pushed me to come up with the idea of not just choosing and laying out art assets proceedurally but allso generating the art proceduarlly.  I&rsquo;m thinking of somethign along the lines of what I&rsquo;ve seen @strangethink do.</p>
+
+<p>I want to generate symmetric parts for mechs based on the manufacturer.  Same thing for weapons, in the style of <a href="http://borderlands.wikia.com/wiki/Weapons#Weapon_Components">the Borderlands series</a>.</p>
+
+<p>You can see the beginnings of a template as part of the latest revisions on <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.</p>
+
+<h2>Not done yet</h2>
+
+<p>Going to keep developing this project in my spare time, possibly for participation in another gamejam or just for fun.  I&rsquo;ll post updates on the blog when I get major features implemented.</p>
+
+<p>My tentative to-do list is:</p>
+
+<ul>
+<li>Generate images for each mech part</li>
+<li>Add similar generation for the weapons</li>
+<li>Create different art styles based on manufacturer</li>
+</ul>
+
 </div>
 
 
@@ -122,12 +149,12 @@
   
 
 
-<time datetime="2014-12-27T08:01:01-06:00" pubdate data-updated="true">Dec 27<span>th</span>, 2014</time>
+<time datetime="2015-12-05T13:05:46-06:00" pubdate data-updated="true">Dec 5<span>th</span>, 2015</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/algorithms/'>algorithms</a>, <a class='category' href='/blog/categories/ethics/'>ethics</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
+    <a class='category' href='/blog/categories/clojure/'>Clojure</a>, <a class='category' href='/blog/categories/clojurescript/'>ClojureScript</a>, <a class='category' href='/blog/categories/procjam/'>procjam</a>
   
 </span>
 
@@ -136,7 +163,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/" >Tweet</a>
   
   
   
@@ -145,10 +172,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/" title="Previous Post: Simple Mind-reading Machine in Unity JavaScript">&laquo; Simple Mind-reading Machine in Unity JavaScript</a>
+        <a class="basic-alignment left" href="/blog/2015/11/14/procjam-2015-update/" title="Previous Post: ProcJam 2015 update">&laquo; ProcJam 2015 update</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/01/03/new-year-new-footer/" title="Next Post: New Year, New Footer">New Year, New Footer &raquo;</a>
       
     </p>
   </footer>
@@ -245,8 +270,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/12/27/sharing-philosophy/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/';
         var disqus_script = 'embed.js';
       
     (function () {
