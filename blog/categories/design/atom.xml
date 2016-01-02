@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-12-05T13:17:58-06:00</updated>
+  <updated>2016-01-02T09:59:53-08:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,22 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Picasso on creativity]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/01/02/picasso-on-creativity/"/>
+    <updated>2016-01-02T09:56:50-08:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/01/02/picasso-on-creativity</id>
+    <content type="html"><![CDATA[<p>Closing the year with a quote from Picasso:</p>
+
+<blockquote><p>Learn the rules like a pro, so you can break them like an artist.</p></blockquote>
+
+<p>&mdash;Pablo Picasso</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Using Google Docs for mock-ups]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups/"/>
-    <updated>2015-09-26T08:40:47-05:00</updated>
+    <updated>2015-09-26T06:40:47-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups</id>
     <content type="html"><![CDATA[<p><a href="https://www.google.com/docs/about/">Google Docs</a> is great for mock-ups.  But one major drawback is that <a href="http://drawings.google.com">Google Drawings</a> doesn&rsquo;t support animation or multiple pages.  Luckily, the same suite of tools is available in Google&rsquo;s <a href="https://www.google.com/slides/about/">Slides app</a>.</p>
 
@@ -36,7 +49,7 @@
   <entry>
     <title type="html"><![CDATA[What defines a game?]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/19/what-defines-a-game/"/>
-    <updated>2015-09-19T09:03:24-05:00</updated>
+    <updated>2015-09-19T07:03:24-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/19/what-defines-a-game</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve done it.</p>
 
@@ -57,7 +70,7 @@
   <entry>
     <title type="html"><![CDATA[Satoru Iwata]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/18/satoru-iwata/"/>
-    <updated>2015-07-18T16:09:30-05:00</updated>
+    <updated>2015-07-18T14:09:30-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/18/satoru-iwata</id>
     <content type="html"><![CDATA[<blockquote><p>Video games are meant to be just one thing. Fun. Fun for everyone.</p></blockquote>
 
@@ -68,7 +81,7 @@
   <entry>
     <title type="html"><![CDATA[Prototyping Rectangles in Unity 2D for Dummy]]></title>
     <link href="http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/"/>
-    <updated>2015-05-30T09:57:58-05:00</updated>
+    <updated>2015-05-30T07:57:58-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy</id>
     <content type="html"><![CDATA[<p>Who&rsquo;s &ldquo;Dummy&rdquo;? I&rsquo;m the dummy.  Prototyping with 2d boxes in Unity JavaScript has proven surprisingly hard.  I think the difficulty I&rsquo;m having is that I&rsquo;m not exactly sure what I&rsquo;m trying to do.  What follows is an example of <strong>one</strong> way (notice that I didn&rsquo;t say THE <strong>RIGHT</strong> WAY) to prototype with 2d rectangles in Unity.  I&rsquo;m still too much of a noob to have strong opinions on the right way to go about doing this.  Expect more posts on this topic as I develop my expertise.</p>
 
@@ -182,39 +195,6 @@ obj.renderer.material.shader = spriteShader;
 <p>I don&rsquo;t feel so dumb anymore because this was a complex process.  And it wasn&rsquo;t until the very last crucial step that I saw anything remotely box-like.</p>
 
 <p>I&rsquo;ve posted the code to a gist <a href="https://gist.github.com/zerosalife/743cf797112d62978bec">here</a> so you can clone the script for yourself, to give it a whirl.  I found that setting <code>size</code> to 2 is a nice place to start.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[More Skytorn Raycast Lighting Algorithm Details]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/"/>
-    <updated>2015-05-16T11:10:29-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details</id>
-    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/">Last week</a> I covered the lighting algorithm <a href="https://twitter.com/NoelFB">@NoelFB</a> is implementing for <a href="http://skytorngame.com/">Skytorn</a>.  Noel was nice enough to correct my mistaken assumptions about the inner workings of the lighting algorithm.</p>
-
-<p>Looks like I kind of inverted the polarity of the raycasting with regard to the player and the level geometry.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<!--more-->
-
-
-<h2>The algorithm</h2>
-
-<p>The algorithm doesn&rsquo;t raycast in the full 360° circle around player&#x2013;that would be too costly.  Instead, it takes advantage of the fact that the level&rsquo;s ground collision geometry is stored in a grid.</p>
-
-<ol>
-<li><p>Given the player&rsquo;s location, there is a small list of collision geometry in the 8 or so grid cells surrounding the player.</p></li>
-<li><p>The lighting algorithm raycasts from the corners of the level geometry to the player, instead of from the player out to the geometry.</p></li>
-<li><p>Then, to prevent the lighting from looking too triangular, the algorithm adds a few more raycasts out from the player to the geometry in between the other raycasts.</p></li>
-</ol>
-
-
-<h2>That&rsquo;s actually all there is to it</h2>
-
-<p>The algorithm I originally envisioned was naive and costly.  But, it&rsquo;s nice to hear that I wasn&rsquo;t far off&#x2013;I simply inverted the solution.  It was also nice to learn about a benefit of storing level geometry in a grid that I previously failed to appreciate.</p>
-
-<p>Heaping thanks to <a href="https://twitter.com/NoelFB/">@NoelFB</a> for helping explain the algorithm, instead of getting bent out of shape about my lame attempt to reverse engineer the inner workings of <a href="http://skytorn-game.com/">Skytorn</a> from a screenshot.</p>
 ]]></content>
   </entry>
   

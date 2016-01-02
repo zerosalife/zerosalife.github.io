@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Makefile | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/makefile/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-12-05T13:17:58-06:00</updated>
+  <updated>2016-01-02T09:59:53-08:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Automating blog deployment with Octopress]]></title>
     <link href="http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress/"/>
-    <updated>2014-09-06T11:27:35-05:00</updated>
+    <updated>2014-09-06T09:27:35-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/09/06/automating-blog-deployment-with-octopress</id>
     <content type="html"><![CDATA[<p>Based on Kevin van Zonneveld&rsquo;s (<a href="https://twitter.com/kvz">@kvz</a>) <a href="http://kvz.io/blog/2012/09/25/blog-with-octopress/">article</a> on setting up Octopress,
 I&rsquo;ve adapted a <code>Makefile</code> to make building my blog easier&#x2026; with
