@@ -1460,6 +1460,58 @@ Here's a brief update on [[http://www.procjam.com/category/procjam-2015/][#ProcJ
 Generator]].  You can check out my progress at that link.  A more
 thorough write-up will come soon.
 
+** ProcJam 2015 retrospective
+Announcing the release of my #procjam mech vehicle generator mech-vehicle-sheet.herokuapp.com and retrospective #screenshotsaturday
+
+- procjam
+- Clojure
+- ClojureScript
+
+{% img center images/assets/mvs-screenshot-post-procjam.png 2108 1942 %}
+
+
+I made a lot of progress on my mech generator for ProcJam 2015.  It's
+up on the web at [[https://mech-vehicle-sheet.herokuapp.com/]].  The code
+is available on [[https://github.com/zerosalife/mech-vehicle-sheet][github]].
+
+*** Clojure and Clojurescript
+
+I used [[http://clojure.org/][Clojure]] and [[https://github.com/clojure/clojurescript][ClojureScript]] with [[https://github.com/omcljs/om][Om/React]] via [[https://github.com/levand/quiescent][Quiescent]] to make
+development quick and easy.  Refactorings, which I spent the majority
+of my time on, were a breeze compared to other languages I've been
+developing in lately.  While this project doesn't have a fancy UI,
+choosing React made it straightforward to divide the UI into sensible
+chunks, which  I implemented as components.
+
+*** No artist
+
+Didn't find an artist.  Although, starting to look for an artist the
+day after ProcJam started was inadvisable.  I think not finding an
+artist is actually a benefit.
+
+Not finding an artist pushed me to come up with the idea of not just
+choosing and laying out art assets proceedurally but allso generating
+the art proceduarlly.  I'm thinking of somethign along the lines of
+what I've seen @strangethink do.
+
+I want to generate symmetric parts for mechs based on the
+manufacturer.  Same thing for weapons, in the style of
+[[http://borderlands.wikia.com/wiki/Weapons#Weapon_Components]].
+
+You can see the beginnings of a template as part of the latest
+revisions on https://mech-vehicle-sheet.herokuapp.com/.
+
+*** Not done yet
+
+Going to keep developing this project in my spare time, possibly for
+participation in another gamejam or just for fun.  I'll post updates
+on the blog when I get major features implemented.
+
+My tentative to-do list is
+
+- [ ] Generate images for each mech part
+- [ ] Add similar generation for the weapons
+- [ ] Create different art styles based on manufacturer
 
 * Business cards
 
@@ -3082,6 +3134,19 @@ minibosses, bosses, or cannonfodder.  The designer rarely has a chance
 to see how the game will be played before the ability to refine or
 modify the design is long gone.
 
+** Five Gameplay Types
+
+From https://youtu.be/_ODNMBG4MUA?t=3365
+
+*** Precision (not used as much in 3d)
+
+*** Puzzle
+
+*** Combat
+
+*** Timing
+
+*** Rhythm
 ** Shovel Knight's Old-school Tricks
 - design
 - mechanics
@@ -3490,10 +3555,140 @@ In this initial post, I'll show how I set up the Clojurescript project
 and how to get an initial ROT.js console output to render
 
 *** Project setup
+I ran [[https://github.com/technomancy/leiningen][=lein new=]] to create a Clojure project.  I would probably make
+it from scratch now, but that's how I did it back then.  Among other
+things, Leiningen creates a =project.clj= and a namespaced =core.clj=.
+
+I modified the =project.clj= to include =lein-cljsbuild= and
+=clojurescript= to handle building the ClojureScript into JavaScript.
+I'm telling the compiler to use handy source mapping and pretty
+printing to make debugging in development easier.
+
+#+BEGIN_SRC clojure
+  (defproject rotcljs-tutorial "0.1.0-SNAPSHOT"
+    :description "A clojurescript implementation of a rot.js tutorial"
+    :url "http://zerosalife.github.io"
+    :license {:name "Eclipse Public License"
+              :url "http://www.eclipse.org/legal/epl-v10.html"}
+    :source-paths ["src/clj" "src/cljs"]
+    :dependencies [[org.clojure/clojure "1.7.0"]
+                   [org.clojure/clojurescript "1.7.28"]]
+
+    :plugins [[lein-cljsbuild "1.0.6"]]
+
+    :cljsbuild {:builds
+                [{:source-paths ["src/cljs"]
+                  :compiler {:output-to "resources/public/js/game.js"
+                             :optimizations :whitespace
+                             :pretty-print true
+                             :source-map true
+                             :pretty-print true}}]})
+#+END_SRC
+
 
 *** index.html
+The index page lives under =resources/public/= and it looks like this:
+
+#+BEGIN_SRC html
+  <!doctype html>
+  <html>
+    <head>
+      <title>Ananas aus Caracas: rot.js tutorial game</title>
+      <script src="https://ondras.github.io/rot.js/rot.js"></script>
+      <script src="js/out/goog/base.js"></script>
+      <script src="js/game.js"></script>
+    </head>
+    <body onload="rotcljs_tutorial.game.Game.init()">
+      <h1>Ananas aus Caracas</h1>
+    </body>
+  </html>
+#+END_SRC
+
+I'm including the ROT.js library, the google closure compiler output,
+and the processed javascript from the =game.cljs=
 
 *** Hello console
+To get a simple hello world working, I created a =game.cljs= file in
+=src/cljs/rotcljs_tutorial/=.
+
+#+BEGIN_SRC clojure
+  (ns rotcljs-tutorial.game
+    (:require [goog.object :as o]))
+
+  (def Game
+    #js
+    {:display nil
+     :init (fn [] (.log js/console "Hello World"))})
+
+#+END_SRC
+
+*** Displaying the ROT.js display
+#+BEGIN_SRC clojure
+  (def Game
+    #js
+    {:display nil
+     :init (this-as this
+                    (fn []
+                      (o/set this "display" (ROT.Display.))
+                      (.. js/document
+                          -body
+                          (appendChild (.getContainer (.-display this))))))})
+
+#+END_SRC
+*** A note about style
+I've chosen to use a relatively naive style as an exercise here.  I'm
+attempting to, as closely as possible, duplicate the style of
+JavaScript written in the ROT.js tutorial.  It's not idiomatic
+ClojureScript.  Hell, it's not even idiomatic JavaScript.  Needless to
+say, I chose to do this as an exercise, it's not a particularly clean
+or elegant way to implement this code.
+
+I may undertake as a future exercise, attempting to program this in a
+more idiomatic, functional style.
+
+** Redesign exercise
+An exercise in redesigning existing games from @kinojabber
+
+- design
+
+From [[http://www.gamedesignworkshop.com/][The Game Design Workshop book]]:
+
+#+BEGIN_QUOTE
+One good way to train yourself in the design of game mechanics is to
+challenge yourself with controlled design exercises in which you take
+an existing game system, set a new player experience goal, and make
+changes to the system to meet that goal.
+#+END_QUOTE
+
+** Deleting a list of GameObjects in Unity
+
+As I write unit tests for Unity games, I often want to create a list
+of GameObjects for a specific test, then tear them down following
+successful completion of the test to ensure that I have a nice clean
+slate for the next test.
+
+Destroying the =GameObject=s needs to happen in two steps.  First, I
+go through and destroy all of the =GameObject=s.  Then, I clear the
+list, so we don't have any references to destroyed =GameObject=s.
+
+#+BEGIN_SRC csharp
+  foreach(GameObject go in objects) {
+      UnityEngine.Object.DestroyImmediate(go);
+  }
+  objects.Clear();
+#+END_SRC
+
+Confused about why I'm using =DestroyImmediate= like that?  Check out
+the previous post about mocking =GameObject=s in Unity C#.
+
+I use =foreach= here because mutating lists while iterating over them
+is bad, bad, bad.  There, when you're changing the length of the list
+while iterating over it, your =i= iterator variable no longer points
+to the same position you can skip over elements of the list or even
+run off the end.
+
+
+** Deleting a list of GameObjects in Unity using LINQ queries and Lambda Expressions
 
 
 ** Mocking GameObjects in Unity Unit Tests
@@ -3555,103 +3750,16 @@ invoked.
 Following this pattern will give you the ability to mock objects to
 your hearts' delight as you unit test your Unity code.  As, always let
 me know if you have questions, comments, or concerns below or on
-twitter.
+[[//twitter.com/zerosalife][twitter]].
 
-** Redesign exercise
-An exercise in redesigning existing games from @kinojabber
+** ProcJam NanoGenMo review
+[[https://emshort.wordpress.com/2015/12/07/procjam-entries-nanogenmo-and-my-generated-generation-guidebook/]]
 
-- design
-
-From [[http://www.gamedesignworkshop.com/][The Game Design Workshop book]]:
+** Picasso on creativity
+Closing the year with a quote from Picasso:
 
 #+BEGIN_QUOTE
-One good way to train yourself in the design of game mechanics is to
-challenge urself with controlled design exercises in which you take an
-existing game system, set a new player experience goal, and make
-changes to the system to meet that goal.
+Learn the rules like a pro, so you can break them like an artist.
 #+END_QUOTE
 
-** Deleting a list of GameObjects in Unity
-
-As I write unit tests for Unity games, I often want to create a list
-of GameObjects for a specific test, then tear them down following
-successful completion of the test to ensure that I have a nice clean
-slate for the next test.
-
-Destroying the =GameObject=s needs to happen in two steps.  First, I
-go through and destroy all of the =GameObject=s.  Then, I clear the
-list, so we don't have any references to destroyed =GameObject=s.
-
-#+BEGIN_SRC csharp
-  foreach(GameObject go in objects) {
-      UnityEngine.Object.DestroyImmediate(go);
-  }
-  objects.Clear();
-#+END_SRC
-
-Confused about why I'm using =DestroyImmediate= like that?  Check out
-the previous post about mocking =GameObject=s in Unity C#.
-
-I use =foreach= here because mutating lists while iterating over them
-is bad, bad, bad.  There, when you're changing the length of the list
-while iterating over it, your =i= iterator variable no longer points
-to the same position you can skip over elements of the list or even
-run off the end.
-
-
-** Deleting a list of GameObjects in Unity using LINQ queries and Lambda Expressions
-
-
-** ProcJam 2015 retrospective
-Announcing the release of my #procjam mech vehicle generator
-mech-vehicle-sheet.herokuapp.com and retrospective #screenshotsaturday
-
-- procjam
-- Clojure
-- ClojureScript
-
-{% img center images/assets/mvs-screenshot-post-procjam.png 2108 1942 %}
-
-
-I made a lot of progress on my mech generator for ProcJam 2015.  It's
-up on the web at [[https://mech-vehicle-sheet.herokuapp.com/]].  The code
-is available on [[https://github.com/zerosalife/mech-vehicle-sheet][github]].
-
-*** Clojure and Clojurescript
-
-I used [[http://clojure.org/][Clojure]] and [[https://github.com/clojure/clojurescript][ClojureScript]] with [[https://github.com/omcljs/om][Om/React]] via [[https://github.com/levand/quiescent][Quiescent]] to make
-development quick and easy.  Refactorings, which I spent the majority
-of my time on, were a breeze compared to other languages I've been
-developing in lately.  While this project doesn't have a fancy UI,
-choosing React made it straightforward to divide the UI into sensible
-chunks, which  I implemented as components.
-
-*** No artist
-
-Didn't find an artist.  Although, starting to look for an artist the
-day after ProcJam started was inadvisable.  I think not finding an
-artist is actually a benefit.
-
-Not finding an artist pushed me to come up with the idea of not just
-choosing and laying out art assets proceedurally but allso generating
-the art proceduarlly.  I'm thinking of somethign along the lines of
-what I've seen @strangethink do.
-
-I want to generate symmetric parts for mechs based on the
-manufacturer.  Same thing for weapons, in the style of
-[[http://borderlands.wikia.com/wiki/Weapons#Weapon_Components]].
-
-You can see the beginnings of a template as part of the latest
-revisions on https://mech-vehicle-sheet.herokuapp.com/.
-
-*** Not done yet
-
-Going to keep developing this project in my spare time, possibly for
-participation in another gamejam or just for fun.  I'll post updates
-on the blog when I get major features implemented.
-
-My tentative to-do list is
-
-- [ ] Generate images for each mech part
-- [ ] Add similar generation for the weapons
-- [ ] Create different art styles based on manufacturer
+- Pablo Picasso
