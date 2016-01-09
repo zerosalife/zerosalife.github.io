@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-12-05T13:17:58-06:00</updated>
+  <updated>2016-01-02T09:59:53-08:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[More Skytorn Raycast Lighting Algorithm Details]]></title>
     <link href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/"/>
-    <updated>2015-05-16T11:10:29-05:00</updated>
+    <updated>2015-05-16T09:10:29-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details</id>
     <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/">Last week</a> I covered the lighting algorithm <a href="https://twitter.com/NoelFB">@NoelFB</a> is implementing for <a href="http://skytorngame.com/">Skytorn</a>.  Noel was nice enough to correct my mistaken assumptions about the inner workings of the lighting algorithm.</p>
 
@@ -49,7 +49,7 @@
   <entry>
     <title type="html"><![CDATA[Raycast Lighting in Skytorn]]></title>
     <link href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/"/>
-    <updated>2015-05-09T09:21:03-05:00</updated>
+    <updated>2015-05-09T07:21:03-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn</id>
     <content type="html"><![CDATA[<p><a href="https://twitter.com/NoelFB/">@NoelFB</a> posted a <a href="https://twitter.com/NoelFB/status/543586120731074561/photo/1">screenshot</a> showing how dynamic lighting works in <a href="http://skytorn-game.com/">Skytorn</a>.</p>
 
@@ -82,7 +82,7 @@
   <entry>
     <title type="html"><![CDATA[Math Team Hearts]]></title>
     <link href="http://zerosalife.github.io/blog/2015/03/14/math-team-hearts/"/>
-    <updated>2015-03-14T14:14:29-05:00</updated>
+    <updated>2015-03-14T12:14:29-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/03/14/math-team-hearts</id>
     <content type="html"><![CDATA[<p>Math Team Hearts is a speedy modification to Hearts that ironically involves less math than the vanilla game.</p>
 
@@ -125,7 +125,7 @@
   <entry>
     <title type="html"><![CDATA[Simple Mind-reading Machine in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/"/>
-    <updated>2014-12-13T14:38:20-06:00</updated>
+    <updated>2014-12-13T12:38:20-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>I ported a cool toy from <a href="http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/">Alastair Aitchison&rsquo;s blog</a> to Unity JavaScript.  The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that attempts to guess whether the player will choose Left (by pressing the left arrow key) or Right (by pressing the right arrow key).</p>
 
@@ -300,7 +300,7 @@ function OnGUI() {
   <entry>
     <title type="html"><![CDATA[Procjam review]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/29/procjam-review/"/>
-    <updated>2014-11-29T09:33:47-06:00</updated>
+    <updated>2014-11-29T07:33:47-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/29/procjam-review</id>
     <content type="html"><![CDATA[<p>Looking through the entries, I could only spend a minute or two with each entry.  It helped if the game ran in my browser, so HTML and Unity were big.  Here are some of the games that caught my eye.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-12-05T13:17:58-06:00</updated>
+  <updated>2016-01-02T09:59:53-08:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,22 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Picasso on creativity]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/01/02/picasso-on-creativity/"/>
+    <updated>2016-01-02T09:56:50-08:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/01/02/picasso-on-creativity</id>
+    <content type="html"><![CDATA[<p>Closing the year with a quote from Picasso:</p>
+
+<blockquote><p>Learn the rules like a pro, so you can break them like an artist.</p></blockquote>
+
+<p>&mdash;Pablo Picasso</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[ProcJam 2015 Restrospective]]></title>
     <link href="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/"/>
-    <updated>2015-12-05T13:05:46-06:00</updated>
+    <updated>2015-12-05T11:05:46-08:00</updated>
     <id>http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective</id>
     <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/images/assets/mvs-screenshot-post-procjam.png"><img class="center" src="http://zerosalife.github.io/images/assets/mvs-screenshot-post-procjam.png" width="2108" height="1942"></a>
 I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up on the web at <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.  The code is available on <a href="https://github.com/zerosalife/mech-vehicle-sheet">github</a>.</p>
@@ -56,7 +69,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[ProcJam 2015 update]]></title>
     <link href="http://zerosalife.github.io/blog/2015/11/14/procjam-2015-update/"/>
-    <updated>2015-11-14T07:25:01-06:00</updated>
+    <updated>2015-11-14T05:25:01-08:00</updated>
     <id>http://zerosalife.github.io/blog/2015/11/14/procjam-2015-update</id>
     <content type="html"><![CDATA[<p>Here&rsquo;s a brief update on <a href="http://www.procjam.com/category/procjam-2015/">#ProcJam 2015</a>.  I&rsquo;m hard at work on the <a href="https://mech-vehicle-sheet.herokuapp.com/">Mech Generator</a>.  You can check out my progress at that link.  A more thorough write-up will come soon.</p>
 ]]></content>
@@ -65,7 +78,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Seeking artist for ProcJam 2015]]></title>
     <link href="http://zerosalife.github.io/blog/2015/11/07/seeking-artist-for-procjam-2015/"/>
-    <updated>2015-11-07T09:53:17-06:00</updated>
+    <updated>2015-11-07T07:53:17-08:00</updated>
     <id>http://zerosalife.github.io/blog/2015/11/07/seeking-artist-for-procjam-2015</id>
     <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/images/assets/mvs-screenshot-full.png"><img class="center" src="http://zerosalife.github.io/images/assets/mvs-screenshot-small.png" width="800" height="613"></a></p>
 
@@ -131,7 +144,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/"/>
-    <updated>2015-10-31T09:03:57-05:00</updated>
+    <updated>2015-10-31T07:03:57-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests</id>
     <content type="html"><![CDATA[<p>A while back, I wrote a post about <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
 
@@ -186,7 +199,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Using  LINQ queries and lambda expressions in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp/"/>
-    <updated>2015-10-17T11:26:32-05:00</updated>
+    <updated>2015-10-17T09:26:32-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp</id>
     <content type="html"><![CDATA[<p>Unity&rsquo;s C# environment includes access to .NET&rsquo;s powerful <a href="https://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ querying expressions</a>.  In this post I&rsquo;ll show how to use LINQ expressions to call anonymous functions.</p>
 
@@ -267,7 +280,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Symbolic Links to Share Scripts Across Unity Projects]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects/"/>
-    <updated>2015-10-10T13:27:14-05:00</updated>
+    <updated>2015-10-10T11:27:14-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects</id>
     <content type="html"><![CDATA[<p>I like to develop utility scripts in a common project where I can implement unit tests without cluttering up my game projects with <a href="https://www.assetstore.unity3d.com/en/#!/content/13802">UnityTestTools</a> and duplicated test scripts.  If you&rsquo;re not sure what unit tests are, check out <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">this post I wrote about them</a>.</p>
 
@@ -296,7 +309,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Unit Testing in Unity]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/"/>
-    <updated>2015-10-03T09:44:58-05:00</updated>
+    <updated>2015-10-03T07:44:58-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity</id>
     <content type="html"><![CDATA[<p>How to use UnityTestTools to create unit tests for Unity CSharp</p>
 
@@ -398,7 +411,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Using Google Docs for mock-ups]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups/"/>
-    <updated>2015-09-26T08:40:47-05:00</updated>
+    <updated>2015-09-26T06:40:47-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups</id>
     <content type="html"><![CDATA[<p><a href="https://www.google.com/docs/about/">Google Docs</a> is great for mock-ups.  But one major drawback is that <a href="http://drawings.google.com">Google Drawings</a> doesn&rsquo;t support animation or multiple pages.  Luckily, the same suite of tools is available in Google&rsquo;s <a href="https://www.google.com/slides/about/">Slides app</a>.</p>
 
@@ -418,7 +431,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[What defines a game?]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/19/what-defines-a-game/"/>
-    <updated>2015-09-19T09:03:24-05:00</updated>
+    <updated>2015-09-19T07:03:24-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/19/what-defines-a-game</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve done it.</p>
 
@@ -445,7 +458,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Cheeky Tinted Blobs: a procedurally generated Unity 2D background]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs/"/>
-    <updated>2015-09-12T09:47:50-05:00</updated>
+    <updated>2015-09-12T07:47:50-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs</id>
     <content type="html"><![CDATA[<p>I&rsquo;m following along with <a href="https://twitter.com/pentadact">@pentadact</a>&rsquo;s tutorial video <a href="https://youtu.be/I5qxIhdEx28?t%3D1m33s">here</a> (You can see the finished result around 6 minutes into the video).</p>
 
@@ -584,7 +597,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Using images in Octopress posts]]></title>
     <link href="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/"/>
-    <updated>2015-08-29T17:20:05-05:00</updated>
+    <updated>2015-08-29T15:20:05-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts</id>
     <content type="html"><![CDATA[<h2>Storing the images</h2>
 
@@ -604,7 +617,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[C# code blocks in Octopress]]></title>
     <link href="http://zerosalife.github.io/blog/2015/08/15/c-sharp-code-blocks-in-octopress/"/>
-    <updated>2015-08-15T08:59:19-05:00</updated>
+    <updated>2015-08-15T06:59:19-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/08/15/c-sharp-code-blocks-in-octopress</id>
     <content type="html"><![CDATA[<p><a href="http://octopress.org/">Octopress</a> supports <a href="http://octopress.org/docs/plugins/backtick-codeblock/">backtick code blocks</a> with <a href="http://pygments.org/docs/lexers/">Pygment lexers</a> handling syntax highlighting.  I always forget the syntax for using with bactick codeblocks with C#, leading to irritating failures when I build my Octopress blog.  Here&rsquo;s how you use them.</p>
 
@@ -618,7 +631,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Trace function for debugging in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/"/>
-    <updated>2015-07-25T09:00:31-05:00</updated>
+    <updated>2015-07-25T07:00:31-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp</id>
     <content type="html"><![CDATA[<p>Inspired by <a href="https://www.youtube.com/watch?v=btN095elmh4&amp;feature=youtu.be&amp;t=1985">a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers</a>, I wanted to come up with a way of conditionally including debug statements in development code, but not in production.  Luckily I wasn&rsquo;t the first person to think of this.</p>
 
@@ -670,7 +683,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Satoru Iwata]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/18/satoru-iwata/"/>
-    <updated>2015-07-18T16:09:30-05:00</updated>
+    <updated>2015-07-18T14:09:30-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/18/satoru-iwata</id>
     <content type="html"><![CDATA[<blockquote><p>Video games are meant to be just one thing. Fun. Fun for everyone.</p></blockquote>
 
@@ -681,7 +694,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Probabilistic entity spawning in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/"/>
-    <updated>2015-07-11T17:03:55-05:00</updated>
+    <updated>2015-07-11T15:03:55-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp</id>
     <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Last week</a> I showed how to do probabilistic entity spawning in Unity JS.  This week I&rsquo;ll port that code over to C#.  You can find examples of both the C# and JavaScript versions of the code in a <a href="https://github.com/zerosalife/ProbEntitySpawnExample">repository on github</a>.  Since I&rsquo;ve already explained the Algorithm I will focus mainly on the differences in the code.</p>
 
@@ -698,7 +711,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/"/>
-    <updated>2015-07-04T09:56:33-05:00</updated>
+    <updated>2015-07-04T07:56:33-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: <a href="http://docs.unity3d.com/Manual/RandomNumbers.html">Choosing Items with Different Probabilities</a>).  In this post I&rsquo;ll show how to use a similar approach to generate random items with specific probabilities dictated by the environment.</p>
 
@@ -824,7 +837,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp/"/>
-    <updated>2015-06-20T11:16:28-05:00</updated>
+    <updated>2015-06-20T09:16:28-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp</id>
     <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/">Last week</a>, I published an article about creating a Dictionary of Lists in Unity using Unity&rsquo;s JavaScript.  Some of the syntax is changed in C#, but the overall algorithm is exactly the same.  I&rsquo;ve already mentioned the underlying motive, so I&rsquo;ll dive right in.</p>
 
@@ -893,7 +906,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Creating a Dictionary of Lists in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/"/>
-    <updated>2015-06-13T11:14:25-05:00</updated>
+    <updated>2015-06-13T09:14:25-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>I ran into a few problems trying to create a <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_Dictionary">Dictionary</a> of <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_List">Lists</a> in Unity JavaScript.  So I thought I&rsquo;d share some of the tips I learned here.</p>
 
@@ -996,7 +1009,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Prototyping Rectangles in Unity 2D for Dummy]]></title>
     <link href="http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/"/>
-    <updated>2015-05-30T09:57:58-05:00</updated>
+    <updated>2015-05-30T07:57:58-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy</id>
     <content type="html"><![CDATA[<p>Who&rsquo;s &ldquo;Dummy&rdquo;? I&rsquo;m the dummy.  Prototyping with 2d boxes in Unity JavaScript has proven surprisingly hard.  I think the difficulty I&rsquo;m having is that I&rsquo;m not exactly sure what I&rsquo;m trying to do.  What follows is an example of <strong>one</strong> way (notice that I didn&rsquo;t say THE <strong>RIGHT</strong> WAY) to prototype with 2d rectangles in Unity.  I&rsquo;m still too much of a noob to have strong opinions on the right way to go about doing this.  Expect more posts on this topic as I develop my expertise.</p>
 
@@ -1125,43 +1138,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 <p>I don&rsquo;t feel so dumb anymore because this was a complex process.  And it wasn&rsquo;t until the very last crucial step that I saw anything remotely box-like.</p>
 
 <p>I&rsquo;ve posted the code to a gist <a href="https://gist.github.com/zerosalife/743cf797112d62978bec">here</a> so you can clone the script for yourself, to give it a whirl.  I found that setting <code>size</code> to 2 is a nice place to start.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[More Skytorn Raycast Lighting Algorithm Details]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/"/>
-    <updated>2015-05-16T11:10:29-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details</id>
-    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/">Last week</a> I covered the lighting algorithm <a href="https://twitter.com/NoelFB">@NoelFB</a> is implementing for <a href="http://skytorngame.com/">Skytorn</a>.  Noel was nice enough to correct my mistaken assumptions about the inner workings of the lighting algorithm.</p>
-
-<p>Looks like I kind of inverted the polarity of the raycasting with regard to the player and the level geometry.</p>
-
-<div class='embed tweet'><blockquote class="twitter-tweet"><p lang="en" dir="ltr">What Raycast lighting (roughly) looks like in Skytorn. Each triangle is drawn with a gradient from color-&gt;transparent <a href="http://t.co/saqVkxxvgB">pic.twitter.com/saqVkxxvgB</a></p>&mdash; Noel Berry (@NoelFB) <a href="https://twitter.com/NoelFB/status/543586120731074561">December 13, 2014</a></blockquote>
-<script async src="http://zerosalife.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-
-
-
-
-<!--more-->
-
-
-<h2>The algorithm</h2>
-
-<p>The algorithm doesn&rsquo;t raycast in the full 360° circle around player&#x2013;that would be too costly.  Instead, it takes advantage of the fact that the level&rsquo;s ground collision geometry is stored in a grid.</p>
-
-<ol>
-<li><p>Given the player&rsquo;s location, there is a small list of collision geometry in the 8 or so grid cells surrounding the player.</p></li>
-<li><p>The lighting algorithm raycasts from the corners of the level geometry to the player, instead of from the player out to the geometry.</p></li>
-<li><p>Then, to prevent the lighting from looking too triangular, the algorithm adds a few more raycasts out from the player to the geometry in between the other raycasts.</p></li>
-</ol>
-
-
-<h2>That&rsquo;s actually all there is to it</h2>
-
-<p>The algorithm I originally envisioned was naive and costly.  But, it&rsquo;s nice to hear that I wasn&rsquo;t far off&#x2013;I simply inverted the solution.  It was also nice to learn about a benefit of storing level geometry in a grid that I previously failed to appreciate.</p>
-
-<p>Heaping thanks to <a href="https://twitter.com/NoelFB/">@NoelFB</a> for helping explain the algorithm, instead of getting bent out of shape about my lame attempt to reverse engineer the inner workings of <a href="http://skytorn-game.com/">Skytorn</a> from a screenshot.</p>
 ]]></content>
   </entry>
   

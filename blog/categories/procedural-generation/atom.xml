@@ -4,7 +4,7 @@
   <title><![CDATA[Category: procedural generation | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/procedural-generation/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-12-05T13:17:58-06:00</updated>
+  <updated>2016-01-02T09:59:53-08:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[procjam comedown]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/22/procjam-comedown/"/>
-    <updated>2014-11-22T13:26:16-06:00</updated>
+    <updated>2014-11-22T11:26:16-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/22/procjam-comedown</id>
     <content type="html"><![CDATA[<p>Now that two weeks have passed (a geologic era in internet time), I&rsquo;m ready begin to look back on the <a href="https://twitter.com/hashtag/procjam">#procjam</a> talks and the entries to the jam that caught my eye.  I&rsquo;ve been very busy lately working on my own submissions <a href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/">INSceptahdeckwu</a> and <a href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/">Patchwerk</a>, among other commitments, so this is by no means an exhaustive look at everything in #procjam.</p>
 
@@ -146,7 +146,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[INSceptahdeckWU]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/"/>
-    <updated>2014-11-08T08:28:39-06:00</updated>
+    <updated>2014-11-08T06:28:39-08:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu</id>
     <content type="html"><![CDATA[<h2>#procjam updates</h2>
 
@@ -218,7 +218,7 @@ the same tools to the player can be fun</li>
   <entry>
     <title type="html"><![CDATA[styx_ebooks]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/"/>
-    <updated>2014-04-19T14:05:03-05:00</updated>
+    <updated>2014-04-19T12:05:03-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/19/styx-ebooks</id>
     <content type="html"><![CDATA[<p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-12-05T13:17:58-06:00</updated>
+  <updated>2016-01-02T09:59:53-08:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Text encoding: further improvements to using git for Unity projects]]></title>
     <link href="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/"/>
-    <updated>2014-09-27T09:51:41-05:00</updated>
+    <updated>2014-09-27T07:51:41-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects</id>
     <content type="html"><![CDATA[<p>Brief note here.  Following a Summer of travel and visitors, posts should be returning to a more regular schedule soon.  It&rsquo;s great when I can post here regularly, but I&rsquo;m not going to get bent out of shape when I have other commitments.  So, if there are unannounced, prolonged absences, you can assume that it has something to do with spending my weekends traveling or socializing, which is undoubtedly a good thing.</p>
 
@@ -51,7 +51,7 @@
   <entry>
     <title type="html"><![CDATA[.gitignore for Unity projects]]></title>
     <link href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/"/>
-    <updated>2014-05-17T11:48:06-05:00</updated>
+    <updated>2014-05-17T09:48:06-07:00</updated>
     <id>http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects</id>
     <content type="html"><![CDATA[<p>I found a solution on the <a href="http://answers.unity3d.com/questions/369755/unity-on-github.html">Unity website</a> that pointed me toward <a href="http://t-machine.org/index.php/2012/07/03/unity-git-source-control-a-basic-gitignore/">this blogpost</a>.  But a better solution is out there.  The Double Fine Game Club&rsquo;s Bad Golf Community Edition <a href="https://github.com/Double-Fine-Game-Club/bad-golf-community-edition/blob/master/.gitignore">.gitignore</a> looks like this:</p>
 

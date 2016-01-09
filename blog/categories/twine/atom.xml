@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Twine | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/twine/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-12-05T13:17:58-06:00</updated>
+  <updated>2016-01-02T09:59:53-08:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Building Twine games from the command line]]></title>
     <link href="http://zerosalife.github.io/blog/2015/03/28/building-twine-games-from-the-command-line/"/>
-    <updated>2015-03-28T10:20:35-05:00</updated>
+    <updated>2015-03-28T08:20:35-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/03/28/building-twine-games-from-the-command-line</id>
     <content type="html"><![CDATA[<p>I got it in my craw to write a short <a href="http://twinery.org/">Twine</a> game a while back.  I wanted to familiarize myself with the language.  And writing a short game in Twine seemed to be lower hanging fruit than trying to implement my own text adventure framework for Unity or some other game engine.</p>
 

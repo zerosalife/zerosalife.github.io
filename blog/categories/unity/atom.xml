@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2015-12-05T13:17:58-06:00</updated>
+  <updated>2016-01-02T09:59:53-08:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/"/>
-    <updated>2015-10-31T09:03:57-05:00</updated>
+    <updated>2015-10-31T07:03:57-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests</id>
     <content type="html"><![CDATA[<p>A while back, I wrote a post about <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
 
@@ -68,7 +68,7 @@ UnityEngine.Object.DestroyImmediate(testGo);
   <entry>
     <title type="html"><![CDATA[Using  LINQ queries and lambda expressions in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp/"/>
-    <updated>2015-10-17T11:26:32-05:00</updated>
+    <updated>2015-10-17T09:26:32-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp</id>
     <content type="html"><![CDATA[<p>Unity&rsquo;s C# environment includes access to .NET&rsquo;s powerful <a href="https://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ querying expressions</a>.  In this post I&rsquo;ll show how to use LINQ expressions to call anonymous functions.</p>
 
@@ -140,7 +140,7 @@ int[] tick(int[] counters) {</p>
   <entry>
     <title type="html"><![CDATA[Symbolic Links to Share Scripts Across Unity Projects]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects/"/>
-    <updated>2015-10-10T13:27:14-05:00</updated>
+    <updated>2015-10-10T11:27:14-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects</id>
     <content type="html"><![CDATA[<p>I like to develop utility scripts in a common project where I can implement unit tests without cluttering up my game projects with <a href="https://www.assetstore.unity3d.com/en/#!/content/13802">UnityTestTools</a> and duplicated test scripts.  If you&rsquo;re not sure what unit tests are, check out <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">this post I wrote about them</a>.</p>
 
@@ -169,7 +169,7 @@ int[] tick(int[] counters) {</p>
   <entry>
     <title type="html"><![CDATA[Unit Testing in Unity]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/"/>
-    <updated>2015-10-03T09:44:58-05:00</updated>
+    <updated>2015-10-03T07:44:58-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity</id>
     <content type="html"><![CDATA[<p>How to use UnityTestTools to create unit tests for Unity CSharp</p>
 
@@ -285,7 +285,7 @@ int[] tick(int[] counters) {</p>
   <entry>
     <title type="html"><![CDATA[Cheeky Tinted Blobs: a procedurally generated Unity 2D background]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs/"/>
-    <updated>2015-09-12T09:47:50-05:00</updated>
+    <updated>2015-09-12T07:47:50-07:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs</id>
     <content type="html"><![CDATA[<p>I&rsquo;m following along with <a href="https://twitter.com/pentadact">@pentadact</a>&rsquo;s tutorial video <a href="https://youtu.be/I5qxIhdEx28?t%3D1m33s">here</a> (You can see the finished result around 6 minutes into the video).</p>
 
