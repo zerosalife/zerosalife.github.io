@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Using images in Octopress posts - zero's a life</title>
+  <title>Mocking GameObjects in Unity Unit Tests - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Storing the images I store images in ./images/assets/ in my Octopress install directory. They get bundled up with all the other parts of my blog when &hellip;">
+  <meta name="description" content="A while back, I wrote a post about unit testing in Unity. In this post, I&rsquo;ll go through a useful pattern to mock GameObjects in unit tests. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Using Images in Octopress Posts</h1>
+      <h1 class="entry-title">Mocking GameObjects in Unity Unit Tests</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2015-08-29T17:20:05-05:00" pubdate data-updated="true">Aug 29<span>th</span>, 2015</time>
+<time datetime="2016-01-09T10:52:49-06:00" pubdate data-updated="true">Jan 9<span>th</span>, 2016</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,18 +95,53 @@
   </header>
 
 
-<div class="entry-content"><h2>Storing the images</h2>
+<div class="entry-content"><p>A while back, I wrote a post about <a href="https://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
 
-<p>I store images in <code>./images/assets/</code> in my Octopress install directory.  They get bundled up with all the other parts of my blog when I deploy.</p>
+<!--more-->
 
-<h2>The Octopress image tag</h2>
 
-<p>I use the <a href="http://octopress.org/docs/plugins/image-tag/">Octopress image tag</a></p>
+<h2>Make a GameObject</h2>
 
-<p>The syntax is:</p>
+<p>We can create a <code>GameObject</code> inside a test just like we would normally inside a Unity script.</p>
 
-<pre><code>{[%] img [class names] /path/to/image [width] [height] [title text [alt text]] [%]}
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">GameObject</span> <span class="n">testGo</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GameObject</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Passing a string to <a href="https://docs.unity3d.com/ScriptReference/GameObject-ctor.html">the <code>GameObject</code> constructor</a> gives the <code>GameObject</code> that name.</p>
+
+<h2>We can even Instantiate prefabs</h2>
+
+<p>Since our test is not inheriting <code>MonoBehaviour</code>, we&rsquo;ll have to call the Instantiate function directly, using the fully qualified namespace.</p>
+
+<p>Remember that prefabs are just stored <code>GameObject</code>s, so we can use the <code>testGo</code> created above as our prefab.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">GameObject</span> <span class="n">go</span> <span class="p">=</span> <span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">testGo</span><span class="p">,</span>
+</span><span class='line'>                                               <span class="n">Vector3</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span>
+</span><span class='line'>                                               <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">)</span> <span class="k">as</span> <span class="n">GameObject</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Clean up</h2>
+
+<p>We can create <code>GameObjects</code>, but repeatedly running the test leaves our project cluttered up with old objects.  We want our tests to clean up all mocked objects after running.  We&rsquo;ll do that using by using the fully qualified <a href="https://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html"><code>DestroyImmediate</code> function</a>.</p>
+
+<p>We need to call <code>DestroyImmediate</code> instead of <code>Destroy</code> because the unit tests are running in the editor and delayed destruction won&rsquo;t be invoked.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">DestroyImmediate</span><span class="p">(</span><span class="n">go</span><span class="p">);</span>
+</span><span class='line'><span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">DestroyImmediate</span><span class="p">(</span><span class="n">testGo</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Mocking is easy</h2>
+
+<p>Following this pattern will give you the ability to mock objects to your hearts&#8217; delight as you unit test your Unity code.  As, always let me know if you have questions, comments, or concerns below or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 </div>
 
 
@@ -129,12 +164,12 @@
   
 
 
-<time datetime="2015-08-29T17:20:05-05:00" pubdate data-updated="true">Aug 29<span>th</span>, 2015</time>
+<time datetime="2016-01-09T10:52:49-06:00" pubdate data-updated="true">Jan 9<span>th</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
+    <a class='category' href='/blog/categories/c-number/'>C#</a>, <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -143,7 +178,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests/" >Tweet</a>
   
   
   
@@ -152,10 +187,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/08/15/c-sharp-code-blocks-in-octopress/" title="Previous Post: C# code blocks in Octopress">&laquo; C# code blocks in Octopress</a>
+        <a class="basic-alignment left" href="/blog/2016/01/02/picasso-on-creativity/" title="Previous Post: Picasso on creativity">&laquo; Picasso on creativity</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/09/12/cheeky-tinted-blobs/" title="Next Post: Cheeky Tinted Blobs: a procedurally generated Unity 2D background">Cheeky Tinted Blobs: a procedurally generated Unity 2D background &raquo;</a>
       
     </p>
   </footer>
@@ -252,8 +285,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity3d | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity3d/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-01-02T09:59:53-08:00</updated>
+  <updated>2016-01-09T10:58:20-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Trace function for debugging in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/"/>
-    <updated>2015-07-25T07:00:31-07:00</updated>
+    <updated>2015-07-25T09:00:31-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp</id>
     <content type="html"><![CDATA[<p>Inspired by <a href="https://www.youtube.com/watch?v=btN095elmh4&amp;feature=youtu.be&amp;t=1985">a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers</a>, I wanted to come up with a way of conditionally including debug statements in development code, but not in production.  Luckily I wasn&rsquo;t the first person to think of this.</p>
 
@@ -64,7 +64,7 @@ using Assets.Phunk.Core</p>
   <entry>
     <title type="html"><![CDATA[Probabilistic entity spawning in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp/"/>
-    <updated>2015-07-11T15:03:55-07:00</updated>
+    <updated>2015-07-11T17:03:55-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/11/probabilistic-entity-spawning-in-unity-c-sharp</id>
     <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">Last week</a> I showed how to do probabilistic entity spawning in Unity JS.  This week I&rsquo;ll port that code over to C#.  You can find examples of both the C# and JavaScript versions of the code in a <a href="https://github.com/zerosalife/ProbEntitySpawnExample">repository on github</a>.  Since I&rsquo;ve already explained the Algorithm I will focus mainly on the differences in the code.</p>
 
@@ -81,7 +81,7 @@ using Assets.Phunk.Core</p>
   <entry>
     <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/"/>
-    <updated>2015-07-04T07:56:33-07:00</updated>
+    <updated>2015-07-04T09:56:33-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: <a href="http://docs.unity3d.com/Manual/RandomNumbers.html">Choosing Items with Different Probabilities</a>).  In this post I&rsquo;ll show how to use a similar approach to generate random items with specific probabilities dictated by the environment.</p>
 
@@ -168,7 +168,7 @@ Debug.Log(item);
   <entry>
     <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp/"/>
-    <updated>2015-06-20T09:16:28-07:00</updated>
+    <updated>2015-06-20T11:16:28-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp</id>
     <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/">Last week</a>, I published an article about creating a Dictionary of Lists in Unity using Unity&rsquo;s JavaScript.  Some of the syntax is changed in C#, but the overall algorithm is exactly the same.  I&rsquo;ve already mentioned the underlying motive, so I&rsquo;ll dive right in.</p>
 
@@ -215,7 +215,7 @@ Debug.Log(table["c"][1]);
   <entry>
     <title type="html"><![CDATA[Creating a Dictionary of Lists in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/"/>
-    <updated>2015-06-13T09:14:25-07:00</updated>
+    <updated>2015-06-13T11:14:25-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>I ran into a few problems trying to create a <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_Dictionary">Dictionary</a> of <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_List">Lists</a> in Unity JavaScript.  So I thought I&rsquo;d share some of the tips I learned here.</p>
 
