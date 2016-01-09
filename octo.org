@@ -3692,6 +3692,8 @@ run off the end.
 
 
 ** Mocking GameObjects in Unity Unit Tests
+How I create GameObjects for Unity unit testing
+
 - tools
 - algorithm
 - Unity
@@ -3700,8 +3702,6 @@ run off the end.
 A while back, I wrote a post about [[http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/][unit testing in Unity]].  In this
 post, I'll go through a useful pattern to [[https://en.wikipedia.org/wiki/Mock_object][mock]] =GameObject=s in unit
 tests.
-
-
 
 *** Make a GameObject
 We can create a =GameObject= inside a test just like we would
