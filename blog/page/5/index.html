@@ -9,7 +9,9 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="From this interview with Sam Aaron. Aaron talks about sharing software to create music, but it applies just as well to games. We believe that most &hellip;">
+  <meta name="description" content="It&rsquo;s 2015. Time to update my footer. I came across a link to a
+website called, updateyourfooter.com. It describes ways to
+dynamically update &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +69,60 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/03/new-year-new-footer/">New Year, New Footer</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-03T09:17:24-06:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2015</time>
+        
+         | <a href="/blog/2015/01/03/new-year-new-footer/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s 2015.  Time to update my footer.  I came across a link to a
+website called, <a href="http://updateyourfooter.com/">updateyourfooter.com</a>.  It describes ways to
+dynamically update footer info in a variety of languages.</p>
+
+<p>I set out to intrepidly implement one of the JavaScript snippets from the website in the <code>source/_includes/custom/footer.html</code> file in my <a href="http://octopress.org/">Octopress</a> install.  But, to my surprise, there was a bit of code in the footer that already dynamically generated the date timestamp for the footer.</p>
+
+<p>The code looks like this:</p>
+
+<p><code>{{ site.time | date: "%Y" }}</code></p>
+
+<p>Ready for this?  Octopress is a framework built on top of <a href="https://github.com/jekyll/jekyll">Jekyll</a>.  Jekyll uses <a href="http://docs.shopify.com/themes/liquid-documentation/basics">Shopify&rsquo;s Liquid Template Engine</a>.  All of that is a fancy way of saying that this code is compiled into useful stuff for my site.</p>
+
+<p>All I had to do was preface that with the year my blog was established, and badabing, no-mess dynamic footer.  Now the relevant section of the footer looks like this:</p>
+
+<p><code>Copyright &amp;copy; 2014 &amp;ndash; {{ site.time | date: "%Y" }}</code></p>
+
+<p>You can see the results at the bottom of this page.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -497,63 +553,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/10/11/betting-in-super-smash-bros-spectator-mode/">Betting in Super Smash Bros. Spectator Mode</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-11T08:51:13-05:00" pubdate data-updated="true">Oct 11<span>th</span>, 2014</time>
-        
-         | <a href="/blog/2014/10/11/betting-in-super-smash-bros-spectator-mode/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Today I&rsquo;d like to look at how to bet in the spectator mode of <em>Super Smash Bros. on 3DS</em>.  I&rsquo;m surprised by how much I enjoy /Super Smash Bros.&lsquo;/ spectator mode.  It adds the thrill of a horse race alongside an already great game.</p>
-
-<p>Here are some of the betting strategies I&rsquo;ve found useful:</p>
-
-<ul>
-<li>Always bet the full amount</li>
-<li>Always bet your earnings</li>
-<li>Bet the odds</li>
-<li>Don&rsquo;t be afraid to take your money and run</li>
-<li>Know the metagame</li>
-<li>Know the good players, you may see them again.</li>
-<li>Set limits</li>
-<li>Trust your judgment</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/10/11/betting-in-super-smash-bros-spectator-mode/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -571,6 +570,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/16/peter-venkman-fate-example-character/">Peter Venkman FATE example character</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests/">Mocking GameObjects in Unity Unit Tests</a>
       </li>
     
@@ -584,10 +587,6 @@
     
       <li class="post">
         <a href="/blog/2015/11/14/procjam-2015-update/">ProcJam 2015 update</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/07/seeking-artist-for-procjam-2015/">Seeking artist for ProcJam 2015</a>
       </li>
     
   </ul>
