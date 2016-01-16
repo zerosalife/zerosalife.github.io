@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-01-02T09:59:53-08:00</updated>
+  <updated>2016-01-09T10:58:20-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Picasso on creativity]]></title>
     <link href="http://zerosalife.github.io/blog/2016/01/02/picasso-on-creativity/"/>
-    <updated>2016-01-02T09:56:50-08:00</updated>
+    <updated>2016-01-02T11:56:50-06:00</updated>
     <id>http://zerosalife.github.io/blog/2016/01/02/picasso-on-creativity</id>
     <content type="html"><![CDATA[<p>Closing the year with a quote from Picasso:</p>
 
@@ -29,7 +29,7 @@
   <entry>
     <title type="html"><![CDATA[Using Google Docs for mock-ups]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups/"/>
-    <updated>2015-09-26T06:40:47-07:00</updated>
+    <updated>2015-09-26T08:40:47-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups</id>
     <content type="html"><![CDATA[<p><a href="https://www.google.com/docs/about/">Google Docs</a> is great for mock-ups.  But one major drawback is that <a href="http://drawings.google.com">Google Drawings</a> doesn&rsquo;t support animation or multiple pages.  Luckily, the same suite of tools is available in Google&rsquo;s <a href="https://www.google.com/slides/about/">Slides app</a>.</p>
 
@@ -49,7 +49,7 @@
   <entry>
     <title type="html"><![CDATA[What defines a game?]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/19/what-defines-a-game/"/>
-    <updated>2015-09-19T07:03:24-07:00</updated>
+    <updated>2015-09-19T09:03:24-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/19/what-defines-a-game</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve done it.</p>
 
@@ -70,7 +70,7 @@
   <entry>
     <title type="html"><![CDATA[Satoru Iwata]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/18/satoru-iwata/"/>
-    <updated>2015-07-18T14:09:30-07:00</updated>
+    <updated>2015-07-18T16:09:30-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/18/satoru-iwata</id>
     <content type="html"><![CDATA[<blockquote><p>Video games are meant to be just one thing. Fun. Fun for everyone.</p></blockquote>
 
@@ -81,7 +81,7 @@
   <entry>
     <title type="html"><![CDATA[Prototyping Rectangles in Unity 2D for Dummy]]></title>
     <link href="http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/"/>
-    <updated>2015-05-30T07:57:58-07:00</updated>
+    <updated>2015-05-30T09:57:58-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy</id>
     <content type="html"><![CDATA[<p>Who&rsquo;s &ldquo;Dummy&rdquo;? I&rsquo;m the dummy.  Prototyping with 2d boxes in Unity JavaScript has proven surprisingly hard.  I think the difficulty I&rsquo;m having is that I&rsquo;m not exactly sure what I&rsquo;m trying to do.  What follows is an example of <strong>one</strong> way (notice that I didn&rsquo;t say THE <strong>RIGHT</strong> WAY) to prototype with 2d rectangles in Unity.  I&rsquo;m still too much of a noob to have strong opinions on the right way to go about doing this.  Expect more posts on this topic as I develop my expertise.</p>
 
