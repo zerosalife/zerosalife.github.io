@@ -1513,6 +1513,75 @@ My tentative to-do list is
 - [ ] Add similar generation for the weapons
 - [ ] Create different art styles based on manufacturer
 
+** Picasso on creativity
+Closing the year with a quote from Picasso:
+
+#+BEGIN_QUOTE
+Learn the rules like a pro, so you can break them like an artist.
+#+END_QUOTE
+
+- Pablo Picasso
+** Mocking GameObjects in Unity Unit Tests
+How I create GameObjects for Unity unit testing
+
+- tools
+- algorithm
+- Unity
+- C#
+
+A while back, I wrote a post about [[http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/][unit testing in Unity]].  In this
+post, I'll go through a useful pattern to [[https://en.wikipedia.org/wiki/Mock_object][mock]] =GameObject=s in unit
+tests.
+
+*** Make a GameObject
+We can create a =GameObject= inside a test just like we would
+normally inside a Unity script.
+
+#+BEGIN_SRC csharp
+  GameObject testGo = new GameObject("test");
+
+#+END_SRC
+
+Passing a string to [[http://docs.unity3d.com/ScriptReference/GameObject-ctor.html][the =GameObject= constructor]] gives the
+=GameObject= that name.
+
+*** We can even Instantiate prefabs
+Since our test is not inheriting =MonoBehaviour=, we'll have to call
+the Instantiate function directly, using the fully qualified
+namespace.
+
+Remember that prefabs are just stored =GameObject=s, so we can use the
+=testGo= created above as our prefab.
+
+#+BEGIN_SRC csharp
+  GameObject go = UnityEngine.Object.Instantiate(testGo,
+                                                 Vector3.zero,
+                                                 Quaternion.identity) as GameObject;
+
+#+END_SRC
+
+*** Clean up
+We can create =GameObjects=, but repeatedly running the test leaves
+our project cluttered up with old objects.  We want our tests to clean
+up all mocked objects after running.  We'll do that using by using the
+fully qualified [[http://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html][=DestroyImmediate= function]].
+
+We need to call =DestroyImmediate= instead of =Destroy= because the
+unit tests are running in the editor and delayed destruction won't be
+invoked.
+
+#+BEGIN_SRC csharp
+  UnityEngine.Object.DestroyImmediate(go);
+  UnityEngine.Object.DestroyImmediate(testGo);
+
+#+END_SRC
+
+*** Mocking is easy
+Following this pattern will give you the ability to mock objects to
+your hearts' delight as you unit test your Unity code.  As, always let
+me know if you have questions, comments, or concerns below or on
+[[//twitter.com/zerosalife][twitter]].
+
 * Business cards
 
 
@@ -2979,13 +3048,33 @@ green for movement) is a good way to distinguish /movement scale/ and
 *** Licensing note
 This rules expansion for Mobile Frame Zero is made in accordance to
 the license of the original game.
+
+** Game-icons.net
+Brief post linking to @GameIcons.  What a useful resource!
+
+- design
+- tools
+
+Here's a handy resource that I will be sure to use in the future:
+[[//game-icons.net/][game-icons.net]].
+
+The site has thousands of icons available under a [[//creativecommons.org/licenses/by/3.0/][CC by 3.0 license]].
+I am not a lawyer, but by my read this means you can reuse,
+redistribute, and remix the icons provided you give appropriate
+credit, indicate if changes were made, and provide a link to the
+license.
+
+Check the site out and [[//twitter.com/zerosalife][tweet me]] if you use or have used the icons in
+your game.
 ** Proportion Types
 - design
 [[http://androidarts.com/misc/proportions_types.jpg]]
 
-Arne over at Android Arts codified a taxonomy of proportion types in
-character design.  I've kept track of a few examples I've come across
+[[https://twitter.com/androidarts][Arne]] over at [[http://www.androidarts.com/][Android Arts]] [[http://androidarts.com/misc/proportions_types.jpg][codified a taxonomy of proportion types in
+character design]].  I've kept track of a few examples I've come across
 to share with you below.
+
+<!--more-->
 
 *** Ninja Star
 - Bravely Default
@@ -3218,6 +3307,8 @@ Axiom Verge: 480x270
 
 Mario Maker levels: 12 screens long by 2 screens tall, the longest
 level was 512 blocks.
+
+Vita is 960x544
 
 *** Backgrounds
 
@@ -3691,75 +3782,6 @@ run off the end.
 ** Deleting a list of GameObjects in Unity using LINQ queries and Lambda Expressions
 
 
-** Mocking GameObjects in Unity Unit Tests
-How I create GameObjects for Unity unit testing
-
-- tools
-- algorithm
-- Unity
-- C#
-
-A while back, I wrote a post about [[http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/][unit testing in Unity]].  In this
-post, I'll go through a useful pattern to [[https://en.wikipedia.org/wiki/Mock_object][mock]] =GameObject=s in unit
-tests.
-
-*** Make a GameObject
-We can create a =GameObject= inside a test just like we would
-normally inside a Unity script.
-
-#+BEGIN_SRC csharp
-  GameObject testGo = new GameObject("test");
-
-#+END_SRC
-
-Passing a string to [[http://docs.unity3d.com/ScriptReference/GameObject-ctor.html][the =GameObject= constructor]] gives the
-=GameObject= that name.
-
-*** We can even Instantiate prefabs
-Since our test is not inheriting =MonoBehaviour=, we'll have to call
-the Instantiate function directly, using the fully qualified
-namespace.
-
-Remember that prefabs are just stored =GameObject=s, so we can use the
-=testGo= created above as our prefab.
-
-#+BEGIN_SRC csharp
-  GameObject go = UnityEngine.Object.Instantiate(testGo,
-                                                 Vector3.zero,
-                                                 Quaternion.identity) as GameObject;
-
-#+END_SRC
-
-*** Clean up
-We can create =GameObjects=, but repeatedly running the test leaves
-our project cluttered up with old objects.  We want our tests to clean
-up all mocked objects after running.  We'll do that using by using the
-fully qualified [[http://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html][=DestroyImmediate= function]].
-
-We need to call =DestroyImmediate= instead of =Destroy= because the
-unit tests are running in the editor and delayed destruction won't be
-invoked.
-
-#+BEGIN_SRC csharp
-  UnityEngine.Object.DestroyImmediate(go);
-  UnityEngine.Object.DestroyImmediate(testGo);
-
-#+END_SRC
-
-*** Mocking is easy
-Following this pattern will give you the ability to mock objects to
-your hearts' delight as you unit test your Unity code.  As, always let
-me know if you have questions, comments, or concerns below or on
-[[//twitter.com/zerosalife][twitter]].
 
 ** ProcJam NanoGenMo review
 [[https://emshort.wordpress.com/2015/12/07/procjam-entries-nanogenmo-and-my-generated-generation-guidebook/]]
-
-** Picasso on creativity
-Closing the year with a quote from Picasso:
-
-#+BEGIN_QUOTE
-Learn the rules like a pro, so you can break them like an artist.
-#+END_QUOTE
-
-- Pablo Picasso
