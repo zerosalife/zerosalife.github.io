@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-01-16T10:19:03-06:00</updated>
+  <updated>2016-01-30T12:11:56-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[game-icons.net]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net/"/>
+    <updated>2016-01-30T12:09:34-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net</id>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="file:////game-icons.net/">game-icons.net</a>.</p>
+
+<p>The site has thousands of icons available under a <a href="file:////creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
+
+<p>Check the site out and <a href="file:////twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Peter Venkman FATE example character]]></title>
@@ -139,17 +152,6 @@ Ghostbusters</p>
 <p>Don&rsquo;t overthink it.  You won&rsquo;t invent an argument that is new or constructive.</p>
 
 <p>Everything doesn&rsquo;t have to fit in a tiny box of your arbitrary creation.  There is a use for lumping things together in useful ways but for the most part this kind tedious of genre-parsing is not constructive.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Satoru Iwata]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/07/18/satoru-iwata/"/>
-    <updated>2015-07-18T16:09:30-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/07/18/satoru-iwata</id>
-    <content type="html"><![CDATA[<blockquote><p>Video games are meant to be just one thing. Fun. Fun for everyone.</p></blockquote>
-
-<p>&#x2013; Satoru Iwata, 1959-2015</p>
 ]]></content>
   </entry>
   
