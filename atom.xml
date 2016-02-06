@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-01-30T12:11:56-06:00</updated>
+  <updated>2016-02-06T08:14:11-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,15 +14,106 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Brainstorming a Hexcrawl application]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application/"/>
+    <updated>2016-02-06T08:00:40-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application</id>
+    <content type="html"><![CDATA[<p>Here are some notes brainstorming an application to support hexcrawl
+campaigns in the spirit of the <a href="http://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/">West Marches</a>.</p>
+
+<p>This is a snapshot of a living document.  I will continue working on
+it in a <a href="https://gist.github.com/zerosalife/22ac247a275a9835c2fa">gist</a>.</p>
+
+<!--more-->
+
+
+<h2>Views</h2>
+
+<h3>Map</h3>
+
+<p><a href="http://4.bp.blogspot.com/-5X3gz-42PrE/TsCPATXPONI/AAAAAAAACQA/s0XggyFIGXY/s1600/HCC06+-+Troll+Hills.png">Example image</a></p>
+
+<ol>
+<li><p>Notification of Map Code and URL to share</p></li>
+<li><p>Collection of tiles</p></li>
+<li><p>Background image?</p></li>
+<li><p>Regions?</p></li>
+</ol>
+
+
+<h3>Tile</h3>
+
+<ol>
+<li><p>Revealed / Generated</p>
+
+<ol>
+<li><p>Biome</p></li>
+<li><p>Region</p></li>
+<li><p>Data</p></li>
+<li><p>Tile icon</p></li>
+<li><p>Notes</p></li>
+</ol>
+</li>
+<li><p>Hidden</p></li>
+</ol>
+
+
+<h3>Hierarchy</h3>
+
+<ol>
+<li><p>Map</p>
+
+<ol>
+<li>Tile</li>
+</ol>
+</li>
+</ol>
+
+
+<h2>Actions</h2>
+
+<h3>Choose map from PIN</h3>
+
+<h3>Drill down to tile (map)</h3>
+
+<h3>Drill up to map (tile)</h3>
+
+<h3>Reveal tile</h3>
+
+<h3>Regenerate tile</h3>
+
+<h3>Regenerate data entry</h3>
+
+<h3>Save tile notes</h3>
+
+<h2>Persistence</h2>
+
+<h3>Monolithic</h3>
+
+<h3>Per User</h3>
+
+<h3>Per Map</h3>
+
+<h3>Bloom Filters to prevent code collisions</h3>
+
+<ol>
+<li><p>Cache on startup</p></li>
+<li><p>Append on world create</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[game-icons.net]]></title>
     <link href="http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net/"/>
     <updated>2016-01-30T12:09:34-06:00</updated>
     <id>http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net</id>
-    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="file:////game-icons.net/">game-icons.net</a>.</p>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="http://zerosalife.github.io//game-icons.net/">game-icons.net</a>.</p>
 
-<p>The site has thousands of icons available under a <a href="file:////creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
+<p>The site has thousands of icons available under a <a href="http://zerosalife.github.io//creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
 
-<p>Check the site out and <a href="file:////twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
+<p>Check the site out and <a href="http://zerosalife.github.io//twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
 ]]></content>
   </entry>
   
@@ -848,132 +939,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 <p>Lists can be created from specific arrays of the List&rsquo;s type, but not from some arbitrary array, as in JavaScript.  Again, this is a feature of a stricter language that causes some extra work up-front, but will make things more clear in the long run.</p>
 
 <p>For an in-depth tour of the algorithm for spawning entities, check out <a href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/">last week&rsquo;s post</a> and the <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example repository on github</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/"/>
-    <updated>2015-07-04T09:56:33-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript</id>
-    <content type="html"><![CDATA[<p>The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: <a href="http://docs.unity3d.com/Manual/RandomNumbers.html">Choosing Items with Different Probabilities</a>).  In this post I&rsquo;ll show how to use a similar approach to generate random items with specific probabilities dictated by the environment.</p>
-
-<!--more-->
-
-
-<p>I want to be able to generate an item code, say <code>Red</code>, <code>Green</code>, or <code>Black</code>, given a list of floating point probabilities dictated by the current environmental area in my game, say for example <code>desert</code> or <code>grassland</code>.</p>
-
-<p>Varying the probability of encountering items will give each area a unique flavor.  If the player needs a <code>Red</code> item, the player will need to seek out areas in which the probability for encountering <code>Red</code> items is high.  I hope this will drive player exploration and investigation.</p>
-
-<p>I&rsquo;ll start by defining an array of possible item types.  (According to <a href="http://wiki.unity3d.com/index.php/Head_First_into_Unity_with_UnityScript#Use_enum">this introduction to Unity JavaScript</a>, I should prefer <code>enum</code>.)</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">ents</span> <span class="o">:</span> <span class="nb">String</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="s2">&quot;Green&quot;</span><span class="p">,</span> <span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="s2">&quot;Orange&quot;</span><span class="p">];</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Since this is a small example, I&rsquo;ll forego the efficiency and security that <code>enum</code>s provide for the convenience of using a simple <code>String</code> array.  I&rsquo;ll note that this is a good spot to do some refactoring in a real project where a variety of systems may have to interact with the item types.</p>
-
-<p>I then define a Dictionary <code>areas</code> of Lists of floating point probabilities.  These areas correspond to terrains that contain unique distributions of items. The <code>areas</code> Dictionary accepts <code>String</code>s specifying the desired terrain.</p>
-
-<p>It&rsquo;s important to note that the order of the probabilities correspond to the order of the item types in <code>ent</code>s.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">areas</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dictionary</span><span class="p">.</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">();</span>
-</span><span class='line'><span class="nx">areas</span><span class="p">[</span><span class="s2">&quot;desert&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">float</span><span class="o">&gt;</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.425</span><span class="p">,</span> <span class="mf">0.425</span><span class="p">]);</span>
-</span><span class='line'><span class="nx">areas</span><span class="p">[</span><span class="s2">&quot;grassland&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">float</span><span class="o">&gt;</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So, in the <code>grassland</code> area, there will be a 30% chance of choosing a <code>Red</code> item.</p>
-
-<p>Now that I&rsquo;ve defined the data, I need a function to choose the appropriate index given a List of probabilities.  This function is lifted with minor modifications from the <a href="http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html">Unity Documentation</a>.  Take a look at that documentation for a better visualization of the algorithm than I could do with words.  Really, do it!</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">Choose</span><span class="p">(</span><span class="nx">probs</span> <span class="o">:</span> <span class="nx">List</span><span class="p">.</span><span class="o">&lt;</span><span class="kr">float</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">:</span> <span class="kr">int</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// Returns the index of a probabilistically determined random</span>
-</span><span class='line'>    <span class="c1">// entity, given by the probability distributions in probs.</span>
-</span><span class='line'>    <span class="c1">// e.g.:</span>
-</span><span class='line'>    <span class="c1">// probs : List.&lt;float&gt;([0.5, 0.2, 0.1, 0.2]);</span>
-</span><span class='line'>    <span class="c1">// entity = entities[Choose(probs)];</span>
-</span><span class='line'>    <span class="c1">//</span>
-</span><span class='line'>    <span class="c1">// See http://docs.unity3d.com/Documentation/Manual/RandomNumbers.html</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// Watch out!  If you fail to specify total&#39;s type as float, it</span>
-</span><span class='line'>    <span class="c1">// will add the probs using integer addition.  This will floor</span>
-</span><span class='line'>    <span class="c1">// each of the probs to 0.</span>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">total</span> <span class="o">:</span> <span class="kr">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="nx">probs</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="nx">total</span> <span class="o">+=</span> <span class="nx">x</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">randomPoint</span> <span class="o">=</span> <span class="nx">Random</span><span class="p">.</span><span class="nx">value</span> <span class="o">*</span> <span class="nx">total</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">probs</span><span class="p">.</span><span class="nx">Count</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">randomPoint</span> <span class="o">&lt;</span> <span class="nx">probs</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
-</span><span class='line'>            <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
-</span><span class='line'>        <span class="k">else</span>
-</span><span class='line'>            <span class="c1">// Shift the strip down, adjusting the random point&#39;s</span>
-</span><span class='line'>            <span class="c1">// value to see whether it falls within the next prob.</span>
-</span><span class='line'>            <span class="nx">randomPoint</span> <span class="o">-=</span> <span class="nx">probs</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="c1">// Take care of possibility that randomPoint is 1.0 or 100% by</span>
-</span><span class='line'>    <span class="c1">// returning the last element of probs.  Avoids allowing Choose to</span>
-</span><span class='line'>    <span class="c1">// return a 0 probability event (which would be possible using the</span>
-</span><span class='line'>    <span class="c1">// &lt;= test).</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">probs</span><span class="p">.</span><span class="nx">Count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now to choose an item:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">ents</span><span class="p">[</span><span class="nx">Choose</span><span class="p">(</span><span class="nx">areas</span><span class="p">[</span><span class="s2">&quot;grassland&quot;</span><span class="p">])];</span>
-</span><span class='line'><span class="nx">Debug</span><span class="p">.</span><span class="nx">Log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That&rsquo;s all there is to it. I&rsquo;ve put an <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example Unity project with this code on github</a>.</p>
 ]]></content>
   </entry>
   

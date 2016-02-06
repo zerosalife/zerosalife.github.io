@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-01-30T12:11:56-06:00</updated>
+  <updated>2016-02-06T08:14:11-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,15 +14,106 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Brainstorming a Hexcrawl application]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application/"/>
+    <updated>2016-02-06T08:00:40-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application</id>
+    <content type="html"><![CDATA[<p>Here are some notes brainstorming an application to support hexcrawl
+campaigns in the spirit of the <a href="http://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/">West Marches</a>.</p>
+
+<p>This is a snapshot of a living document.  I will continue working on
+it in a <a href="https://gist.github.com/zerosalife/22ac247a275a9835c2fa">gist</a>.</p>
+
+<!--more-->
+
+
+<h2>Views</h2>
+
+<h3>Map</h3>
+
+<p><a href="http://4.bp.blogspot.com/-5X3gz-42PrE/TsCPATXPONI/AAAAAAAACQA/s0XggyFIGXY/s1600/HCC06+-+Troll+Hills.png">Example image</a></p>
+
+<ol>
+<li><p>Notification of Map Code and URL to share</p></li>
+<li><p>Collection of tiles</p></li>
+<li><p>Background image?</p></li>
+<li><p>Regions?</p></li>
+</ol>
+
+
+<h3>Tile</h3>
+
+<ol>
+<li><p>Revealed / Generated</p>
+
+<ol>
+<li><p>Biome</p></li>
+<li><p>Region</p></li>
+<li><p>Data</p></li>
+<li><p>Tile icon</p></li>
+<li><p>Notes</p></li>
+</ol>
+</li>
+<li><p>Hidden</p></li>
+</ol>
+
+
+<h3>Hierarchy</h3>
+
+<ol>
+<li><p>Map</p>
+
+<ol>
+<li>Tile</li>
+</ol>
+</li>
+</ol>
+
+
+<h2>Actions</h2>
+
+<h3>Choose map from PIN</h3>
+
+<h3>Drill down to tile (map)</h3>
+
+<h3>Drill up to map (tile)</h3>
+
+<h3>Reveal tile</h3>
+
+<h3>Regenerate tile</h3>
+
+<h3>Regenerate data entry</h3>
+
+<h3>Save tile notes</h3>
+
+<h2>Persistence</h2>
+
+<h3>Monolithic</h3>
+
+<h3>Per User</h3>
+
+<h3>Per Map</h3>
+
+<h3>Bloom Filters to prevent code collisions</h3>
+
+<ol>
+<li><p>Cache on startup</p></li>
+<li><p>Append on world create</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[game-icons.net]]></title>
     <link href="http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net/"/>
     <updated>2016-01-30T12:09:34-06:00</updated>
     <id>http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net</id>
-    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="file:////game-icons.net/">game-icons.net</a>.</p>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="//game-icons.net/">game-icons.net</a>.</p>
 
-<p>The site has thousands of icons available under a <a href="file:////creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
+<p>The site has thousands of icons available under a <a href="//creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
 
-<p>Check the site out and <a href="file:////twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
+<p>Check the site out and <a href="//twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
 ]]></content>
   </entry>
   
@@ -131,27 +222,6 @@ Ghostbusters</p>
 <p>Using this approach, I rapidly iterate on mock-ups in Draw while keeping a record of the good looking ones as slides in Slides.  As a bonus, I can then shuffle the order of the slides to animate dynamic designs.</p>
 
 <p>I find that this workflow is in keeping with <a href="http://draplin.com/">Draplin Design Co.</a> owner <a href="https://vimeo.com/113751583">Aaron Draplin&rsquo;s design philosophy</a>: space is cheap, so feel free to experiment and keep everything because you never know what will influence the final design.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[What defines a game?]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/09/19/what-defines-a-game/"/>
-    <updated>2015-09-19T09:03:24-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/09/19/what-defines-a-game</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve done it.</p>
-
-<p>I&rsquo;ve fallen prey to the temptation to write a ham-fisted article demarking what is, and what isn&rsquo;t, a game&mdash;and I&rsquo;m not even part of the demographic that <a href="https://twitter.com/tgdfweb">Pat Holleman</a> eloquently calls out in the following tweets.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<p>I think Holleman&rsquo;s definition captures the essence of what <a href="http://zerosalife.github.io/blog/2015/07/18/satoru-iwata/">Iwata was talking about</a>.  Games are play.  Play is fun.</p>
-
-<p>Don&rsquo;t overthink it.  You won&rsquo;t invent an argument that is new or constructive.</p>
-
-<p>Everything doesn&rsquo;t have to fit in a tiny box of your arbitrary creation.  There is a use for lumping things together in useful ways but for the most part this kind tedious of genre-parsing is not constructive.</p>
 ]]></content>
   </entry>
   
