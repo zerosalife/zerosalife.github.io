@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-01-16T10:19:03-06:00</updated>
+  <updated>2016-01-30T12:11:56-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[game-icons.net]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net/"/>
+    <updated>2016-01-30T12:09:34-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net</id>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="file:////game-icons.net/">game-icons.net</a>.</p>
+
+<p>The site has thousands of icons available under a <a href="file:////creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
+
+<p>Check the site out and <a href="file:////twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Peter Venkman FATE example character]]></title>
@@ -961,75 +974,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 
 
 <p>That&rsquo;s all there is to it. I&rsquo;ve put an <a href="https://github.com/zerosalife/ProbEntitySpawnExample">example Unity project with this code on github</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Create a Dictionary of Lists in Unity C#]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp/"/>
-    <updated>2015-06-20T11:16:28-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/06/20/create-a-dictionary-of-lists-in-unity-c-sharp</id>
-    <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/">Last week</a>, I published an article about creating a Dictionary of Lists in Unity using Unity&rsquo;s JavaScript.  Some of the syntax is changed in C#, but the overall algorithm is exactly the same.  I&rsquo;ve already mentioned the underlying motive, so I&rsquo;ll dive right in.</p>
-
-<!--more-->
-
-
-<p>Here&rsquo;s how to create a Dictionary of Lists in C# for Unity.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;&gt;</span> <span class="n">table</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;&gt;();</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">void</span> <span class="nf">Start</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// Fill our table with Lists containing ints using Arrays to intialize</span>
-</span><span class='line'>    <span class="c1">// the Lists.</span>
-</span><span class='line'>    <span class="n">table</span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(){</span><span class="m">1</span><span class="p">};</span>
-</span><span class='line'>    <span class="n">table</span><span class="p">[</span><span class="s">&quot;b&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(){</span><span class="m">2</span><span class="p">};</span>
-</span><span class='line'>    <span class="n">table</span><span class="p">[</span><span class="s">&quot;c&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(){</span><span class="m">3</span><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">foreach</span><span class="p">(</span><span class="kt">string</span> <span class="n">str</span> <span class="k">in</span> <span class="n">table</span><span class="p">.</span><span class="n">Keys</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="c1">// Get the value for our Key.</span>
-</span><span class='line'>        <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="k">value</span> <span class="p">=</span> <span class="n">table</span><span class="p">[</span><span class="n">str</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="c1">// If the Key is the desired Key, append to its list.</span>
-</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">str</span> <span class="p">==</span> <span class="s">&quot;c&quot;</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>            <span class="k">value</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="c1">// print the first item in each of the Lists.</span>
-</span><span class='line'>        <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="k">value</span><span class="p">[</span><span class="m">0</span><span class="p">]);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// Print the appended item to see that it worked.</span>
-</span><span class='line'>    <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s">&quot;c&quot;</span><span class="p">][</span><span class="m">1</span><span class="p">]);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>These are the main differences between the Unity JavaScript and C# code.  Take a look at the full file in a <a href="https://gist.github.com/zerosalife/e3882aa5ffd5dd614c9a">gist on github</a>.</p>
 ]]></content>
   </entry>
   

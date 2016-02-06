@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-01-16T10:19:03-06:00</updated>
+  <updated>2016-01-30T12:11:56-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[game-icons.net]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net/"/>
+    <updated>2016-01-30T12:09:34-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net</id>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="file:////game-icons.net/">game-icons.net</a>.</p>
+
+<p>The site has thousands of icons available under a <a href="file:////creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
+
+<p>Check the site out and <a href="file:////twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
@@ -215,122 +228,6 @@ int[] tick(int[] counters) {</p>
 <p>One caveat is that the symlinked files show up in git version control as a blob of the filepath text instead of the actual code of the file.  This means that the symlinked files will not be tracked in the destination project&rsquo;s version control history.</p>
 
 <p>That&rsquo;s okay with me, because I plan on developing the symlinked files in a separate parallel test project with all of their unit tests, etc.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Unit Testing in Unity]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/"/>
-    <updated>2015-10-03T09:44:58-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity</id>
-    <content type="html"><![CDATA[<p>How to use UnityTestTools to create unit tests for Unity CSharp</p>
-
-<!--more-->
-
-
-<h2>Setting it up</h2>
-
-<p>Download the <a href="https://www.assetstore.unity3d.com/en/#!/content/13802">UnityTestTools package</a> from the Unity Asset Store.</p>
-
-<h2>Import the package</h2>
-
-<p>We are going to need the <code>Common</code>, <code>Assertion</code>, and <code>UnitTesting</code> directories.</p>
-
-<h2>Create a Tests directory</h2>
-
-<p>We need a place for the tests to live.</p>
-
-<p>One important thing to remember is that the scripts in the <code>Tests</code> directory need to be accessible by the <code>UnityTestTools</code> in the Editor so we&rsquo;ll put them in <code>./Tests/Editor/</code>.</p>
-
-<h2>Make a namespace</h2>
-
-<p><code>UnityTestTools</code> will organize our tests by top-level <code>namespace</code> declarations defined in each of the tests' files.  Then we follow it up with a <code>Category</code> attribute that names the category of tests that live inside the <code>internal class</code> we define in the namespace.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>./Tests/Editor/ExampleTests.cs </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">namespace</span> <span class="nn">ExampleTests</span> <span class="p">{&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;[</span><span class="n">Category</span><span class="p">(</span><span class="s">&quot;Example Tests&quot;</span><span class="p">)]</span>
-</span><span class='line'><span class="k">internal</span> <span class="k">class</span> <span class="nc">ExampleTests</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// tests go here</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h2>Test attributes</h2>
-
-<p>Use the <code>[TestFixture]</code> and <code>[Test]</code> attributes to let the Unity Test Tools Unit Test Runner know where your tests are.</p>
-
-<p>You can also use the <code>[Category]</code> attribute to add semantic labels to your tests.</p>
-
-<h2>Making assertions</h2>
-
-<p>The Testing Framework uses the out of date NUnit version <code>2.2.10</code></p>
-
-<p>For reference see: <a href="http://www.nunit.org/index.php?p=assertions&amp;r=2.2.10">http://www.nunit.org/index.php?p=assertions&amp;r=2.2.10</a></p>
-
-<h2>An example test</h2>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>./Tests/Editor/ExampleTests.cs </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">namespace</span> <span class="nn">ExampleTests</span> <span class="p">{&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;[</span><span class="n">Category</span><span class="p">(</span><span class="s">&quot;Example Tests&quot;</span><span class="p">)]</span>
-</span><span class='line'><span class="k">internal</span> <span class="k">class</span> <span class="nc">ExampleTests</span> <span class="p">{</span>
-</span><span class='line'><span class="na">    [Test]</span>
-</span><span class='line'>    <span class="k">void</span> <span class="nf">Example</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>        <span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="m">1</span> <span class="p">+</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;}&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h2>Actually run the tests</h2>
-
-<p>Open the Unit Test window from the editor:</p>
-
-<ul>
-<li>Click on the <code>Unity Test Tools</code> menu</li>
-<li>Select <code>Unit Test Runner</code></li>
-</ul>
-
-
-<p>You can also open the Unit Test Runner window with the keyboard shortcut <code>Alt-Cmd-Shift-U</code> on a Mac.</p>
-
-<p>Simply, click on the <code>Run All</code> button to run the tests.</p>
-
-<h2>Going further</h2>
-
-<p><a href="https://www.assetstore.unity3d.com/en/#!/content/13802">Unity Test Tools</a> has support for Integration tests and assertions in addition to the vanilla unit test I described above.</p>
-
-<p>There are plenty of features that I haven&rsquo;t covered here, so dig in to the examples that come with the Unity Test Tools package and let me know what you&rsquo;ve learned in the comments below or on twitter <a href="http://twitter.com/zerosalife">@zerosalife</a>.</p>
 ]]></content>
   </entry>
   
