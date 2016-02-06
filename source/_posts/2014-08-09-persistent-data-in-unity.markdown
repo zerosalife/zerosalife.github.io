@@ -52,7 +52,7 @@ Enter the binary format:
 
     // Add two more libraries
     using System;
-    using System.Runtime.Serialzation.Formatters.Binary;
+    using System.Runtime.Serialization.Formatters.Binary;
 
 Where do we save it?  The persistent data path: `Application.persistentDataPath`.  We'll need one more library to do some input and output to files:
 

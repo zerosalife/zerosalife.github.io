@@ -3785,3 +3785,64 @@ run off the end.
 
 ** ProcJam NanoGenMo review
 [[https://emshort.wordpress.com/2015/12/07/procjam-entries-nanogenmo-and-my-generated-generation-guidebook/]]
+
+** Brainstorming a Hexcrawl application
+- design
+- tools
+
+Here are some notes brainstorming an application to support hexcrawl
+campaigns in the spirit of the [[http://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/][West Marches]].
+
+This is a snapshot of a living document.  I will continue working on
+it in a [[https://gist.github.com/zerosalife/22ac247a275a9835c2fa][gist]].
+
+*** Views
+
+**** Map
+[[http://4.bp.blogspot.com/-5X3gz-42PrE/TsCPATXPONI/AAAAAAAACQA/s0XggyFIGXY/s1600/HCC06+-+Troll+Hills.png][Example image]]
+
+***** Notification of Map Code and URL to share
+
+***** Collection of tiles
+***** Background image?
+
+***** Regions?
+**** Tile
+***** Revealed / Generated
+
+****** Biome
+
+****** Region
+
+****** Data
+
+****** Tile icon
+****** Notes
+
+***** Hidden
+
+**** Hierarchy
+***** Map
+****** Tile
+*** Actions
+**** Choose map from PIN
+**** Drill down to tile (map)
+**** Drill up to map (tile)
+**** Reveal tile
+**** Regenerate tile
+**** Regenerate data entry
+**** Save tile notes
+
+*** Persistence
+
+**** Monolithic
+
+**** Per User
+
+**** Per Map
+
+**** Bloom Filters to prevent code collisions
+
+***** Cache on startup
+
+***** Append on world create
