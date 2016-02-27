@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Trace function for debugging in Unity C# - zero's a life</title>
+  <title>Brainstorming a Hexcrawl application - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Inspired by a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers, I wanted to come up with a way &hellip;">
+  <meta name="description" content="Here are some notes brainstorming an application to support hexcrawl
+campaigns in the spirit of the West Marches. This is a snapshot of a living &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +71,7 @@
   
   <header>
     
-      <h1 class="entry-title">Trace Function for Debugging in Unity C#</h1>
+      <h1 class="entry-title">Brainstorming a Hexcrawl Application</h1>
     
     
       <p class="meta">
@@ -86,7 +87,7 @@
   
 
 
-<time datetime="2015-07-25T09:00:31-05:00" pubdate data-updated="true">Jul 25<span>th</span>, 2015</time>
+<time datetime="2016-02-06T08:00:40-06:00" pubdate data-updated="true">Feb 6<span>th</span>, 2016</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,50 +96,89 @@
   </header>
 
 
-<div class="entry-content"><p>Inspired by <a href="https://www.youtube.com/watch?v=btN095elmh4&amp;feature=youtu.be&amp;t=1985">a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers</a>, I wanted to come up with a way of conditionally including debug statements in development code, but not in production.  Luckily I wasn&rsquo;t the first person to think of this.</p>
+<div class="entry-content"><p>Here are some notes brainstorming an application to support hexcrawl
+campaigns in the spirit of the <a href="http://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/">West Marches</a>.</p>
 
-<p><a href="https://twitter.com/danpuzey">Dan Puzey</a> <a href="http://blog.puzey.net/simple-better-unity-logging/">wrote an abstraction layer</a> over Unity&rsquo;s built-in <code>Debug</code> library.  The library contains several functions for various types of logging.  The most important piece for me is <code>VerboseFormat</code>, which combines string formatting with conditional attributes.  I&rsquo;ll explain a bit more about how these pieces work below.</p>
+<p>This is a snapshot of a living document.  I will continue working on
+it in a <a href="https://gist.github.com/zerosalife/22ac247a275a9835c2fa">gist</a>.</p>
 
 <!--more-->
 
 
-<h2>String Formatting</h2>
+<h2>Views</h2>
 
-<p>To my surprise, Unity&rsquo;s C# implementation, Mono, doesn&rsquo;t use standard <code>printf</code>-like string formatting syntax.  Instead of <code>%s</code> or other commonly used formatting variables, C# uses curly braces around numbers to interpolate variables passed in to the <code>String.Format</code> call as arguments.</p>
+<h3>Map</h3>
 
-<p>Dan&rsquo;s <code>VerboseFormat</code> function wraps <code>String.Format</code>, so you can call <code>VerboseFormat</code> with C# formatting strings.</p>
+<p><a href="http://4.bp.blogspot.com/-5X3gz-42PrE/TsCPATXPONI/AAAAAAAACQA/s0XggyFIGXY/s1600/HCC06+-+Troll+Hills.png">Example image</a></p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Assets.Phunk.Core</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">...</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">Log</span><span class="p">.</span><span class="n">VerboseFormat</span><span class="p">(</span><span class="s">&quot;var1: {0}, var2: {1}&quot;</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">);</span>
-</span><span class='line'><span class="c1">// =&gt; [VERBOSE] var1: [var1], var2: [var2]</span>
-</span></code></pre></td></tr></table></div></figure>
+<ol>
+<li><p>Notification of Map Code and URL to share</p></li>
+<li><p>Collection of tiles</p></li>
+<li><p>Background image?</p></li>
+<li><p>Regions?</p></li>
+</ol>
 
 
-<h2>Conditional Attributes</h2>
+<h3>Tile</h3>
 
-<p>Above some of the functions in Dan&rsquo;s code you&rsquo;ll see the following <a href="https://msdn.microsoft.com/en-us/library/system.diagnostics.conditionalattribute%28v=vs.110%29.aspx">conditional attributes</a>:</p>
+<ol>
+<li><p>Revealed / Generated</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="na">[System.Diagnostics.Conditional(&quot;DEBUG&quot;), System.Diagnostics.Conditional(&quot;UNITY_EDITOR&quot;)]</span>
-</span></code></pre></td></tr></table></div></figure>
+<ol>
+<li><p>Biome</p></li>
+<li><p>Region</p></li>
+<li><p>Data</p></li>
+<li><p>Tile icon</p></li>
+<li><p>Notes</p></li>
+</ol>
+</li>
+<li><p>Hidden</p></li>
+</ol>
 
 
-<p>These two settings tell the C# compiler to only compile the code, in this case the <code>Verbose</code> logging functions, when compiling during development, i.e. <code>DEBUG</code> or <code>UNITY_EDITOR</code>.  That means all of the <code>Verbose</code> logging statements in your code will not be compiled in the production builds of your code.</p>
+<h3>Hierarchy</h3>
 
-<p>Cool, huh?  Good thinking, Dan.</p>
+<ol>
+<li><p>Map</p>
 
-<h2>That&rsquo;s it!</h2>
+<ol>
+<li>Tile</li>
+</ol>
+</li>
+</ol>
 
-<p>It&rsquo;s always great when you think that a tool would be useful and someone else has already implemented it for you.  Go on over and give <a href="http://puzey.net/">Dan&rsquo;s blog</a> a gander.</p>
+
+<h2>Actions</h2>
+
+<h3>Choose map from PIN</h3>
+
+<h3>Drill down to tile (map)</h3>
+
+<h3>Drill up to map (tile)</h3>
+
+<h3>Reveal tile</h3>
+
+<h3>Regenerate tile</h3>
+
+<h3>Regenerate data entry</h3>
+
+<h3>Save tile notes</h3>
+
+<h2>Persistence</h2>
+
+<h3>Monolithic</h3>
+
+<h3>Per User</h3>
+
+<h3>Per Map</h3>
+
+<h3>Bloom Filters to prevent code collisions</h3>
+
+<ol>
+<li><p>Cache on startup</p></li>
+<li><p>Append on world create</p></li>
+</ol>
+
 </div>
 
 
@@ -161,12 +201,12 @@
   
 
 
-<time datetime="2015-07-25T09:00:31-05:00" pubdate data-updated="true">Jul 25<span>th</span>, 2015</time>
+<time datetime="2016-02-06T08:00:40-06:00" pubdate data-updated="true">Feb 6<span>th</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/c-number/'>C#</a>, <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/unity3d/'>Unity3d</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
+    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -175,7 +215,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application/" >Tweet</a>
   
   
   
@@ -184,10 +224,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/07/18/satoru-iwata/" title="Previous Post: Satoru Iwata">&laquo; Satoru Iwata</a>
+        <a class="basic-alignment left" href="/blog/2016/01/30/game-icons-dot-net/" title="Previous Post: game-icons.net">&laquo; game-icons.net</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/08/15/c-sharp-code-blocks-in-octopress/" title="Next Post: C# code blocks in Octopress">C# code blocks in Octopress &raquo;</a>
       
     </p>
   </footer>
@@ -284,8 +322,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application/';
         var disqus_script = 'embed.js';
       
     (function () {

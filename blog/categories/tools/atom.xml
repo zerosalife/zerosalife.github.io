@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-01-30T12:11:56-06:00</updated>
+  <updated>2016-02-06T08:14:11-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,15 +14,106 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Brainstorming a Hexcrawl application]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application/"/>
+    <updated>2016-02-06T08:00:40-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application</id>
+    <content type="html"><![CDATA[<p>Here are some notes brainstorming an application to support hexcrawl
+campaigns in the spirit of the <a href="http://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/">West Marches</a>.</p>
+
+<p>This is a snapshot of a living document.  I will continue working on
+it in a <a href="https://gist.github.com/zerosalife/22ac247a275a9835c2fa">gist</a>.</p>
+
+<!--more-->
+
+
+<h2>Views</h2>
+
+<h3>Map</h3>
+
+<p><a href="http://4.bp.blogspot.com/-5X3gz-42PrE/TsCPATXPONI/AAAAAAAACQA/s0XggyFIGXY/s1600/HCC06+-+Troll+Hills.png">Example image</a></p>
+
+<ol>
+<li><p>Notification of Map Code and URL to share</p></li>
+<li><p>Collection of tiles</p></li>
+<li><p>Background image?</p></li>
+<li><p>Regions?</p></li>
+</ol>
+
+
+<h3>Tile</h3>
+
+<ol>
+<li><p>Revealed / Generated</p>
+
+<ol>
+<li><p>Biome</p></li>
+<li><p>Region</p></li>
+<li><p>Data</p></li>
+<li><p>Tile icon</p></li>
+<li><p>Notes</p></li>
+</ol>
+</li>
+<li><p>Hidden</p></li>
+</ol>
+
+
+<h3>Hierarchy</h3>
+
+<ol>
+<li><p>Map</p>
+
+<ol>
+<li>Tile</li>
+</ol>
+</li>
+</ol>
+
+
+<h2>Actions</h2>
+
+<h3>Choose map from PIN</h3>
+
+<h3>Drill down to tile (map)</h3>
+
+<h3>Drill up to map (tile)</h3>
+
+<h3>Reveal tile</h3>
+
+<h3>Regenerate tile</h3>
+
+<h3>Regenerate data entry</h3>
+
+<h3>Save tile notes</h3>
+
+<h2>Persistence</h2>
+
+<h3>Monolithic</h3>
+
+<h3>Per User</h3>
+
+<h3>Per Map</h3>
+
+<h3>Bloom Filters to prevent code collisions</h3>
+
+<ol>
+<li><p>Cache on startup</p></li>
+<li><p>Append on world create</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[game-icons.net]]></title>
     <link href="http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net/"/>
     <updated>2016-01-30T12:09:34-06:00</updated>
     <id>http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net</id>
-    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="file:////game-icons.net/">game-icons.net</a>.</p>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="//game-icons.net/">game-icons.net</a>.</p>
 
-<p>The site has thousands of icons available under a <a href="file:////creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
+<p>The site has thousands of icons available under a <a href="//creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
 
-<p>Check the site out and <a href="file:////twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
+<p>Check the site out and <a href="//twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
 ]]></content>
   </entry>
   
@@ -199,35 +290,6 @@ int[] tick(int[] counters) {</p>
 <p>Check out the <a href="https://gist.github.com/zerosalife/7abc16fb21dfb05dc771">example code on github</a>.</p>
 
 <p>I&rsquo;ve only shown a tiny subset of the <a href="http://www.dotnetperls.com/linq">functionality that LINQ provides</a>.  Feel free to let me know if you dig in and find more useful tips.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Symbolic Links to Share Scripts Across Unity Projects]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects/"/>
-    <updated>2015-10-10T13:27:14-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects</id>
-    <content type="html"><![CDATA[<p>I like to develop utility scripts in a common project where I can implement unit tests without cluttering up my game projects with <a href="https://www.assetstore.unity3d.com/en/#!/content/13802">UnityTestTools</a> and duplicated test scripts.  If you&rsquo;re not sure what unit tests are, check out <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">this post I wrote about them</a>.</p>
-
-<p>To share code between projects I use <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> to link the files from my utility project to individual games.</p>
-
-<!--more-->
-
-
-<p>I&rsquo;m doing development on Mac OS X.  Other platforms may use different commands to create symbolic links.</p>
-
-<pre><code>ln -s [source file] [destination file]
-</code></pre>
-
-<p>This command creates a symbolic link to the <code>[source file]</code> at the <code>[destination file]</code>.</p>
-
-<p>That way, my I know my games will always use the up-to-date code.</p>
-
-<h2>git Gotcha</h2>
-
-<p>One caveat is that the symlinked files show up in git version control as a blob of the filepath text instead of the actual code of the file.  This means that the symlinked files will not be tracked in the destination project&rsquo;s version control history.</p>
-
-<p>That&rsquo;s okay with me, because I plan on developing the symlinked files in a separate parallel test project with all of their unit tests, etc.</p>
 ]]></content>
   </entry>
   
