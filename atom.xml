@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-03-05T12:54:05-06:00</updated>
+  <updated>2016-03-19T09:35:12-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How Dungeonmans teaches diagonal movement]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/"/>
+    <updated>2016-03-19T09:25:44-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement</id>
+    <content type="html"><![CDATA[<p>Listening to <a href="http://www.roguelikeradio.com/2016/01/episode-114-gameplay-orientated.html">Roguelike Radio</a>, I heard the creator of <a href="https://twitter.com/dungeonmans">Dungeonmans</a> talk about designing levels to teach gameplay concepts.</p>
+
+<!--more-->
+
+
+<p><a href="http://www.dungeonmans.com/">Dungeonmans</a> has an interesting strategy to teach players to move diagonally early in the game, without requiring a wordy tutorial.</p>
+
+<p>The first level has caves with loot inside.  Some caves are straightforward, allowing players to reach loot without needing to perform a diagonal step.</p>
+
+<pre><code>###
+#o#
+#.#
+</code></pre>
+
+<p>But other caves are different, requiring diagonal movement to get the loot.</p>
+
+<pre><code>###
+#o#
+##.
+</code></pre>
+
+<p>Presenting the diagonal movement mechanic this way is easy and low risk.  If you don&rsquo;t pick it up, it&rsquo;s ok.  You won&rsquo;t die, you just miss out on some loot.</p>
+
+<p>It&rsquo;s also low disturbance.  There&rsquo;s no dialog popping up saying, &ldquo;Hey!  Listen!&rdquo;  The players will either get a kick out of figuring out how to get that pesky loot or simply move on and play more of the game.</p>
+
+<p>It&rsquo;s a win-win situation.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Proportion Types]]></title>
@@ -1173,58 +1207,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 [csharp code here]
 ```
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Trace function for debugging in Unity C#]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp/"/>
-    <updated>2015-07-25T09:00:31-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/07/25/trace-function-for-debugging-in-unity-c-sharp</id>
-    <content type="html"><![CDATA[<p>Inspired by <a href="https://www.youtube.com/watch?v=btN095elmh4&amp;feature=youtu.be&amp;t=1985">a video from the excellent Double Fine Documentary interviews with Massive Chalice artists and developers</a>, I wanted to come up with a way of conditionally including debug statements in development code, but not in production.  Luckily I wasn&rsquo;t the first person to think of this.</p>
-
-<p><a href="https://twitter.com/danpuzey">Dan Puzey</a> <a href="http://blog.puzey.net/simple-better-unity-logging/">wrote an abstraction layer</a> over Unity&rsquo;s built-in <code>Debug</code> library.  The library contains several functions for various types of logging.  The most important piece for me is <code>VerboseFormat</code>, which combines string formatting with conditional attributes.  I&rsquo;ll explain a bit more about how these pieces work below.</p>
-
-<!--more-->
-
-
-<h2>String Formatting</h2>
-
-<p>To my surprise, Unity&rsquo;s C# implementation, Mono, doesn&rsquo;t use standard <code>printf</code>-like string formatting syntax.  Instead of <code>%s</code> or other commonly used formatting variables, C# uses curly braces around numbers to interpolate variables passed in to the <code>String.Format</code> call as arguments.</p>
-
-<p>Dan&rsquo;s <code>VerboseFormat</code> function wraps <code>String.Format</code>, so you can call <code>VerboseFormat</code> with C# formatting strings.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">using</span> <span class="nn">Assets.Phunk.Core</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">...</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">Log</span><span class="p">.</span><span class="n">VerboseFormat</span><span class="p">(</span><span class="s">&quot;var1: {0}, var2: {1}&quot;</span><span class="p">,</span> <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">);</span>
-</span><span class='line'><span class="c1">// =&gt; [VERBOSE] var1: [var1], var2: [var2]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Conditional Attributes</h2>
-
-<p>Above some of the functions in Dan&rsquo;s code you&rsquo;ll see the following <a href="https://msdn.microsoft.com/en-us/library/system.diagnostics.conditionalattribute%28v=vs.110%29.aspx">conditional attributes</a>:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="na">[System.Diagnostics.Conditional(&quot;DEBUG&quot;), System.Diagnostics.Conditional(&quot;UNITY_EDITOR&quot;)]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>These two settings tell the C# compiler to only compile the code, in this case the <code>Verbose</code> logging functions, when compiling during development, i.e. <code>DEBUG</code> or <code>UNITY_EDITOR</code>.  That means all of the <code>Verbose</code> logging statements in your code will not be compiled in the production builds of your code.</p>
-
-<p>Cool, huh?  Good thinking, Dan.</p>
-
-<h2>That&rsquo;s it!</h2>
-
-<p>It&rsquo;s always great when you think that a tool would be useful and someone else has already implemented it for you.  Go on over and give <a href="http://puzey.net/">Dan&rsquo;s blog</a> a gander.</p>
 ]]></content>
   </entry>
   

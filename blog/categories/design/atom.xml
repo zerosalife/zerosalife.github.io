@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-03-05T12:54:05-06:00</updated>
+  <updated>2016-03-19T09:35:12-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How Dungeonmans teaches diagonal movement]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/"/>
+    <updated>2016-03-19T09:25:44-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement</id>
+    <content type="html"><![CDATA[<p>Listening to <a href="http://www.roguelikeradio.com/2016/01/episode-114-gameplay-orientated.html">Roguelike Radio</a>, I heard the creator of <a href="https://twitter.com/dungeonmans">Dungeonmans</a> talk about designing levels to teach gameplay concepts.</p>
+
+<!--more-->
+
+
+<p><a href="http://www.dungeonmans.com/">Dungeonmans</a> has an interesting strategy to teach players to move diagonally early in the game, without requiring a wordy tutorial.</p>
+
+<p>The first level has caves with loot inside.  Some caves are straightforward, allowing players to reach loot without needing to perform a diagonal step.</p>
+
+<pre><code>###
+#o#
+#.#
+</code></pre>
+
+<p>But other caves are different, requiring diagonal movement to get the loot.</p>
+
+<pre><code>###
+#o#
+##.
+</code></pre>
+
+<p>Presenting the diagonal movement mechanic this way is easy and low risk.  If you don&rsquo;t pick it up, it&rsquo;s ok.  You won&rsquo;t die, you just miss out on some loot.</p>
+
+<p>It&rsquo;s also low disturbance.  There&rsquo;s no dialog popping up saying, &ldquo;Hey!  Listen!&rdquo;  The players will either get a kick out of figuring out how to get that pesky loot or simply move on and play more of the game.</p>
+
+<p>It&rsquo;s a win-win situation.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Proportion Types]]></title>
@@ -428,81 +462,6 @@ it in a <a href="https://gist.github.com/zerosalife/22ac247a275a9835c2fa">gist</
 <p>The site has thousands of icons available under a <a href="//creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
 
 <p>Check the site out and <a href="//twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Peter Venkman FATE example character]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/01/16/peter-venkman-fate-example-character/"/>
-    <updated>2016-01-16T10:04:14-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/01/16/peter-venkman-fate-example-character</id>
-    <content type="html"><![CDATA[<p>I made a sample character so players would get a handle for the <a href="http://www.faterpg.com/">FATE system</a>.  I&rsquo;m using <a href="http://fate-srd.com/fate-accelerated/get-started">FATE Accelerated</a> to run a <a href="https://en.wikipedia.org/wiki/Ghostbusters_%28role-playing_game%29">Ghostbusters International</a>-inspired game.</p>
-
-<!--more-->
-
-
-<h1>Dr. Peter Venkman</h1>
-
-<h2>High Concept</h2>
-
-<p>Womanizing failed psychiatrist cofounder of the original
-Ghostbusters</p>
-
-<h2>Trouble</h2>
-
-<p>Always put my foot in my mouth around women</p>
-
-<h2>Other Aspects (one required, up to two more optional)</h2>
-
-<ul>
-<li>Lothario</li>
-<li>Paranormal skeptic</li>
-<li>Scientific charlatan</li>
-</ul>
-
-
-<h2>Approaches</h2>
-
-<ul>
-<li><strong>Careful:</strong> Mediocre (+0)</li>
-<li><strong>Clever:</strong> Good (+3)</li>
-<li><strong>Flashy:</strong> Fair (+2)</li>
-<li><strong>Forceful:</strong> Average (+1)</li>
-<li><strong>Quick:</strong> Average (+1)</li>
-<li><strong>Sneaky:</strong> Fair (+2)</li>
-</ul>
-
-
-<h2>Stunts</h2>
-
-<ul>
-<li><strong>Proton Pack:</strong> Because I am a ghostbuster, I have a proton pack that gives me +2 bonus to Forcefully create an advantage or discover an aspect when attempting to zap a ghost.</li>
-</ul>
-
-
-<p>(May take up to two more stunts without reducing refresh)</p>
-
-<h2>Stress</h2>
-
-<ul>
-<li>[ ]</li>
-<li>[ ]</li>
-<li>[ ]</li>
-</ul>
-
-
-<h2>Consequences</h2>
-
-<ul>
-<li><strong>Mild (2):</strong></li>
-<li><strong>Moderate (4):</strong></li>
-<li><strong>Severe (6):</strong></li>
-</ul>
-
-
-<h2>Refresh</h2>
-
-<p>3</p>
 ]]></content>
   </entry>
   
