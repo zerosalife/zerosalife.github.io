@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-02-27T09:44:05-06:00</updated>
+  <updated>2016-03-05T12:54:05-06:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Proportion Types]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/03/05/proportion-types/"/>
+    <updated>2016-03-05T12:52:00-06:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/03/05/proportion-types</id>
+    <content type="html"><![CDATA[<p><a href="https://twitter.com/androidarts">Arne</a> over at <a href="http://www.androidarts.com/">Android Arts</a> <a href="http://androidarts.com/misc/proportions_types.jpg">codified a taxonomy of proportion types in character design</a>.  I&rsquo;ve kept track of a few examples I&rsquo;ve come across to share with you below.</p>
+
+<!--more-->
+
+
+<h2>Ninja Star</h2>
+
+<ul>
+<li>Bravely Default</li>
+<li>Fire Emblem</li>
+<li>Miis</li>
+<li>Fez</li>
+<li>Super Mario Bros.</li>
+<li>Mischief Makers</li>
+<li>Gunstar Heroes</li>
+<li>Monument Valley</li>
+</ul>
+
+
+<h2>Cross</h2>
+
+<ul>
+<li>Call of Duty Advanced Warfare</li>
+<li>Minecraft</li>
+<li>N++</li>
+<li>Gears of War</li>
+<li>Warhammer</li>
+<li>Last of Us</li>
+<li>Uncharted</li>
+</ul>
+
+
+<h2>Maltese cross</h2>
+
+<ul>
+<li>Mega Man</li>
+<li>Mobile Suit Gundam</li>
+<li>Mazinger Z</li>
+<li>Getter Robo</li>
+<li>Armored Trooper Votoms</li>
+<li>Practically everything from Super Robot Wars</li>
+<li>Ratchet and Clank</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Library]]></title>
@@ -451,19 +503,6 @@ Ghostbusters</p>
 <h2>Refresh</h2>
 
 <p>3</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Picasso on creativity]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/01/02/picasso-on-creativity/"/>
-    <updated>2016-01-02T11:56:50-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/01/02/picasso-on-creativity</id>
-    <content type="html"><![CDATA[<p>Closing the year with a quote from Picasso:</p>
-
-<blockquote><p>Learn the rules like a pro, so you can break them like an artist.</p></blockquote>
-
-<p>&mdash;Pablo Picasso</p>
 ]]></content>
   </entry>
   
