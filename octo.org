@@ -1582,6 +1582,124 @@ your hearts' delight as you unit test your Unity code.  As, always let
 me know if you have questions, comments, or concerns below or on
 [[//twitter.com/zerosalife][twitter]].
 
+** Game-icons.net
+Brief post linking to @GameIcons.  What a useful resource!
+
+- design
+- tools
+
+Here's a handy resource that I will be sure to use in the future:
+[[//game-icons.net/][game-icons.net]].
+
+The site has thousands of icons available under a [[//creativecommons.org/licenses/by/3.0/][CC by 3.0 license]].
+I am not a lawyer, but by my read this means you can reuse,
+redistribute, and remix the icons provided you give appropriate
+credit, indicate if changes were made, and provide a link to the
+license.
+
+Check the site out and [[//twitter.com/zerosalife][tweet me]] if you use or have used the icons in
+your game.
+
+** Brainstorming a Hexcrawl application
+- design
+- tools
+
+Here are some notes brainstorming an application to support hexcrawl
+campaigns in the spirit of the [[http://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/][West Marches]].
+
+This is a snapshot of a living document.  I will continue working on
+it in a [[https://gist.github.com/zerosalife/22ac247a275a9835c2fa][gist]].
+
+*** Views
+
+**** Map
+[[http://4.bp.blogspot.com/-5X3gz-42PrE/TsCPATXPONI/AAAAAAAACQA/s0XggyFIGXY/s1600/HCC06+-+Troll+Hills.png][Example image]]
+
+***** Notification of Map Code and URL to share
+
+***** Collection of tiles
+***** Background image?
+
+***** Regions?
+**** Tile
+***** Revealed / Generated
+
+****** Biome
+
+****** Region
+
+****** Data
+
+****** Tile icon
+****** Notes
+
+***** Hidden
+
+**** Hierarchy
+***** Map
+****** Tile
+*** Actions
+**** Choose map from PIN
+**** Drill down to tile (map)
+**** Drill up to map (tile)
+**** Reveal tile
+**** Regenerate tile
+**** Regenerate data entry
+**** Save tile notes
+
+*** Persistence
+
+**** Monolithic
+
+**** Per User
+
+**** Per Map
+
+**** Bloom Filters to prevent code collisions
+
+***** Cache on startup
+
+***** Append on world create
+
+** Proportion Types
+- design
+[[http://androidarts.com/misc/proportions_types.jpg]]
+
+[[https://twitter.com/androidarts][Arne]] over at [[http://www.androidarts.com/][Android Arts]] [[http://androidarts.com/misc/proportions_types.jpg][codified a taxonomy of proportion types in
+character design]].  I've kept track of a few examples I've come across
+to share with you below.
+
+<!--more-->
+
+*** Ninja Star
+- Bravely Default
+- Fire Emblem
+- Miis
+- Fez
+- Super Mario Bros.
+- Mischief Makers
+- Gunstar Heroes
+- Monument Valley
+
+*** Cross
+- Call of Duty Advanced Warfare
+- Minecraft
+- N++
+- Gears of War
+- Warhammer
+- Last of Us
+- Uncharted
+
+*** Maltese cross
+- Mega Man
+- Mobile Suit Gundam
+- Mazinger Z
+- Getter Robo
+- Armored Trooper Votoms
+- Practically everything from Super Robot Wars
+- Ratchet and Clank
+
+
 * Business cards
 
 
@@ -3049,61 +3167,6 @@ green for movement) is a good way to distinguish /movement scale/ and
 This rules expansion for Mobile Frame Zero is made in accordance to
 the license of the original game.
 
-** Game-icons.net
-Brief post linking to @GameIcons.  What a useful resource!
-
-- design
-- tools
-
-Here's a handy resource that I will be sure to use in the future:
-[[//game-icons.net/][game-icons.net]].
-
-The site has thousands of icons available under a [[//creativecommons.org/licenses/by/3.0/][CC by 3.0 license]].
-I am not a lawyer, but by my read this means you can reuse,
-redistribute, and remix the icons provided you give appropriate
-credit, indicate if changes were made, and provide a link to the
-license.
-
-Check the site out and [[//twitter.com/zerosalife][tweet me]] if you use or have used the icons in
-your game.
-** Proportion Types
-- design
-[[http://androidarts.com/misc/proportions_types.jpg]]
-
-[[https://twitter.com/androidarts][Arne]] over at [[http://www.androidarts.com/][Android Arts]] [[http://androidarts.com/misc/proportions_types.jpg][codified a taxonomy of proportion types in
-character design]].  I've kept track of a few examples I've come across
-to share with you below.
-
-<!--more-->
-
-*** Ninja Star
-- Bravely Default
-- Fire Emblem
-- Miis
-- Fez
-- Super Mario Bros.
-- Mischief Makers
-- Gunstar Heroes
-- Monument Valley
-
-*** Cross
-- Call of Duty Advanced Warfare
-- Minecraft
-- N++
-- Gears of War
-- Warhammer
-- Last of Us
-- Uncharted
-
-*** Maltese cross
-- Mega Man
-- Mobile Suit Gundam
-- Mazinger Z
-- Getter Robo
-- Armored Trooper Votoms
-- Practically everything from Super Robot Wars
-- Ratchet and Clank
-
 ** Improvisation vs Preparation
 This week I look at how games from JoshuaACNewman, handle
 Improvisation vs Preparation as modes of play
@@ -3178,14 +3241,28 @@ players to take turns serving as protagonists, antagonists, or neutral
 third parties.  These examples go a long way toward what I mean by
 preparation as play, but I don't think they've captured it entirely.
 
-What I'm looking for is a separate /asynchronous/ type of game, where
-preparation has its own mechanics that boil down to a solo game unto
-itself.  The results of the each player's solo game(s) are then
-somehow incorporated and allowed to influence the collaborative group
-play session.
+What I'm interested in seeing is a separate /asynchronous/ type of
+game, where preparation has its own mechanics that boil down to a solo
+game unto itself.  The results of the each player's solo game(s) are
+then somehow incorporated and allowed to influence the collaborative
+group play session.
 
 *** Microscope
 Follow up next week
+
+** Redesign exercise
+An exercise in redesigning existing games from @kinojabber
+
+- design
+
+From [[http://www.gamedesignworkshop.com/][The Game Design Workshop book]]:
+
+#+BEGIN_QUOTE
+One good way to train yourself in the design of game mechanics is to
+challenge yourself with controlled design exercises in which you take
+an existing game system, set a new player experience goal, and make
+changes to the system to meet that goal.
+#+END_QUOTE
 
 ** The map and the territory.
 - design
@@ -3586,8 +3663,8 @@ particular project in question.  This list of features required to
 make /Threes/ feature complete comes from early on in the published
 emails about the game's development.
 
-The final product has certainly received many times more polish than
-the time spent implementing these features and the list may have
+The final product has certainly received many times over more polish
+than the time spent implementing these features and the list may have
 changed.  But, from time to time, it's nice to see what other
 successful projects have deemed necessary to get a better sense of how
 to plan for your own projects.
@@ -3737,20 +3814,6 @@ or elegant way to implement this code.
 I may undertake as a future exercise, attempting to program this in a
 more idiomatic, functional style.
 
-** Redesign exercise
-An exercise in redesigning existing games from @kinojabber
-
-- design
-
-From [[http://www.gamedesignworkshop.com/][The Game Design Workshop book]]:
-
-#+BEGIN_QUOTE
-One good way to train yourself in the design of game mechanics is to
-challenge yourself with controlled design exercises in which you take
-an existing game system, set a new player experience goal, and make
-changes to the system to meet that goal.
-#+END_QUOTE
-
 ** Deleting a list of GameObjects in Unity
 
 As I write unit tests for Unity games, I often want to create a list
@@ -3786,63 +3849,80 @@ run off the end.
 ** ProcJam NanoGenMo review
 [[https://emshort.wordpress.com/2015/12/07/procjam-entries-nanogenmo-and-my-generated-generation-guidebook/]]
 
-** Brainstorming a Hexcrawl application
-- design
-- tools
 
-Here are some notes brainstorming an application to support hexcrawl
-campaigns in the spirit of the [[http://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/][West Marches]].
+** Superhot as bullet hell shmup
 
-This is a snapshot of a living document.  I will continue working on
-it in a [[https://gist.github.com/zerosalife/22ac247a275a9835c2fa][gist]].
+*** Movement based time steps
 
-*** Views
+*** Ramping difficulty, level design
+Whereas Superhot has varying level geometry to provide variety for
+level design, a top-down shmup would need to use enemy variety to
+create interesting levels.
 
-**** Map
-[[http://4.bp.blogspot.com/-5X3gz-42PrE/TsCPATXPONI/AAAAAAAACQA/s0XggyFIGXY/s1600/HCC06+-+Troll+Hills.png][Example image]]
+A variety of enemies would have the same effect of fighting the plain
+enemies wielding different weapons in Superhot.  You'd have to plan
+carefully to have the same elegant difficulty curve that Superhot
+presents.
 
-***** Notification of Map Code and URL to share
+*** Multiple weapon types, pickups and drops, play with time
 
-***** Collection of tiles
-***** Background image?
+** How Dungeonmans teaches diagonal movement
 
-***** Regions?
-**** Tile
-***** Revealed / Generated
+Listening to [[http://www.roguelikeradio.com/2016/01/episode-114-gameplay-orientated.html][Roguelike Radio]], I heard the creator of [[https://twitter.com/dungeonmans][Dungeonmans]] talk
+about designing levels to teach gameplay concepts.
 
-****** Biome
+<!--more-->
 
-****** Region
+[[http://www.dungeonmans.com/][Dungeonmans]] has an interesting strategy to teach players to move
+diagonally early in the game, without requiring a wordy tutorial.
 
-****** Data
+The first level has caves with loot inside.  Some caves are
+straightforward, allowing players to reach loot without needing to
+perform a diagonal step.
 
-****** Tile icon
-****** Notes
+#+BEGIN_SRC
+###
+#o#
+#.#
+#+END_SRC
 
-***** Hidden
 
-**** Hierarchy
-***** Map
-****** Tile
-*** Actions
-**** Choose map from PIN
-**** Drill down to tile (map)
-**** Drill up to map (tile)
-**** Reveal tile
-**** Regenerate tile
-**** Regenerate data entry
-**** Save tile notes
+But other caves are different.  They require diagonal movement to get
+the loot.
 
-*** Persistence
+#+BEGIN_SRC
+###
+#o#
+##.
+#+END_SRC
 
-**** Monolithic
+Presenting the diagonal movement mechanic this way is easy and low
+risk.  If you don't pick it up, it's ok.  You won't die, you just miss
+out on some loot.
 
-**** Per User
+It's also low disturbance.  There's no dialog popping up saying, "Hey!
+Listen!"  The players will either get a kick out of figuring out how
+to get that pesky loot or simply move on and play more of the game.
 
-**** Per Map
 
-**** Bloom Filters to prevent code collisions
+It's a win-win situation.
 
-***** Cache on startup
+** How the Five-Room dungeon follows a Three-Act Structure
 
-***** Append on world create
+[[http://roleplayingtips.com/readissue.php?number%3D156#1][http://roleplayingtips.com/readissue.php?number=156#1]]
+
+- Room 1: Introduction & Hook
+- Room 2: Rising Action: Puzzle or Challenge
+- Room 3: Twist: red herring or trick
+- Room 4: Climax: Puzzle or Challenge
+- Room 5: Denouement or plot twist: advancement or preview next hook
+
+- First act: Intro
+- Second act: Middle
+- Third act: Conclusion
+
+- Room 1 - First act
+- Room 2 - Second act
+- Room 3 - Second act
+- Room 4 - Third act
+- Room 5 - Third act
