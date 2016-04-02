@@ -3852,7 +3852,7 @@ run off the end.
 
 ** Superhot as bullet hell shmup
 
-*** Movement based time steps
+*** Movement based on time steps
 
 *** Ramping difficulty, level design
 Whereas Superhot has varying level geometry to provide variety for
@@ -3863,6 +3863,14 @@ A variety of enemies would have the same effect of fighting the plain
 enemies wielding different weapons in Superhot.  You'd have to plan
 carefully to have the same elegant difficulty curve that Superhot
 presents.
+
+Think about how Superhot's first level explicitly teaches movement and
+mechanics via popup messages, while implicitly teaching players to
+lead shots via a single stationary enemy leading the player closer to
+a moving enemy approaching from the player's side.  The first enemy
+teaches the player to shoot without a popup telling you to shoot
+enemies, while the second teaches the player to lead shots while
+controlling time with movement.
 
 *** Multiple weapon types, pickups and drops, play with time
 
@@ -3887,8 +3895,8 @@ perform a diagonal step.
 #+END_SRC
 
 
-But other caves are different.  They require diagonal movement to get
-the loot.
+But other caves are different, requiring diagonal movement to get the
+loot.
 
 #+BEGIN_SRC
 ###
@@ -3926,3 +3934,30 @@ It's a win-win situation.
 - Room 3 - Second act
 - Room 4 - Third act
 - Room 5 - Third act
+
+
+** The Original Diablo Pitch
+
+[[https://twitter.com/davidbrevik/status/711420722225106945][David Brevik]], one of the original developers of Diablo has released the [[http://graybeardgames.blogspot.com/2016/03/original-diablo-pitch-document.html][original
+pitch document]].  Check it out!
+
+*** Anatomy of Diablo's pitch document
+
+- Summary
+- Game Design
+  - Overview
+  - Plot and Setting
+  - Gameplay
+- Marketing
+- Development
+
+In addition to illuminating how to write these documents in general, I
+find interesting to see how the Diablo devs were planning on
+leveraging the success of Magic: The Gathering's business model to
+sell DLC.
+
+** Ink scripting language from around the world in 80 days
+[[https://github.com/inkle/ink]]
+
+** Coyote Time
+[[https://twitter.com/Slaktus/status/711919549218689025]]
