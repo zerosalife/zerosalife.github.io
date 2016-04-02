@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Setting up Emacs-like key bindings in MonoDevelop - zero's a life</title>
+  <title>How Dungeonmans teaches diagonal movement - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="I&rsquo;m playing around with Unity to try to learn how it works. Shout out to Infinite Ammo for the excellent video tutorials. Since I don&rsquo;t &hellip;">
+  <meta name="description" content="Listening to Roguelike Radio, I heard the creator of Dungeonmans talk about designing levels to teach gameplay concepts. Dungeonmans has an &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Setting Up Emacs-like Key Bindings in MonoDevelop</h1>
+      <h1 class="entry-title">How Dungeonmans Teaches Diagonal Movement</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-02-22T08:14:40-06:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
+<time datetime="2016-03-19T09:25:44-05:00" pubdate data-updated="true">Mar 19<span>th</span>, 2016</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,26 +95,32 @@
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
+<div class="entry-content"><p>Listening to <a href="http://www.roguelikeradio.com/2016/01/episode-114-gameplay-orientated.html">Roguelike Radio</a>, I heard the creator of <a href="https://twitter.com/dungeonmans">Dungeonmans</a> talk about designing levels to teach gameplay concepts.</p>
 
-<p>Since I don&rsquo;t know much about Unity, I&rsquo;m reluctantly using their included <a href="http://monodevelop.com/">MonoDevelop IDE</a>.  While I&rsquo;d heard that Emacs-like key bindings were included, in the build I installed they weren&rsquo;t present.</p>
+<!--more-->
 
-<p>MonoDevelop does not make it easy to import new key binding schemes (the <a href="http://mjhutchinson.com/journal/2011/02/06/key_bindings">blog post linked here</a> suggests submitting a bug report to propose new key bindings&#x2026;).  So, I did a little digging around on github and found the <a href="https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml">default emacs key binding scheme</a> that I imagine should have been included in the MonoDevelop build I installed.</p>
 
-<p>There was no way to add this key binding scheme to my available key bindings in MonoDevelop, so I hacked my Custom key binding file located at <code>~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml</code>.</p>
+<p><a href="http://www.dungeonmans.com/">Dungeonmans</a> has an interesting strategy to teach players to move diagonally early in the game, without requiring a wordy tutorial.</p>
 
-<p>I started with some simple copypasta.  But then I found some useful
-navigation features were lacking.  So, I added key binds that
-immediately came to mind, like <code>Alt-f</code> for moving forward one word and
-<code>Alt-b</code> for backward word.  Yes, I know these are <code>M-f</code> in Emacs, but
-I&rsquo;m using MonoDevelop&rsquo;s syntax here.</p>
+<p>The first level has caves with loot inside.  Some caves are straightforward, allowing players to reach loot without needing to perform a diagonal step.</p>
 
-<p>My key bindings are available in the gist below.  I&rsquo;ll update this
-gist when I add key bindings, to keep a current working version
-available.</p>
+<pre><code>###
+#o#
+#.#
+</code></pre>
 
-<script src="https://gist.github.com/zerosalife/9096788.js"></script>
+<p>But other caves are different, requiring diagonal movement to get the loot.</p>
 
+<pre><code>###
+#o#
+##.
+</code></pre>
+
+<p>Presenting the diagonal movement mechanic this way is easy and low risk.  If you don&rsquo;t pick it up, it&rsquo;s ok.  You won&rsquo;t die, you just miss out on some loot.</p>
+
+<p>It&rsquo;s also low disturbance.  There&rsquo;s no dialog popping up saying, &ldquo;Hey!  Listen!&rdquo;  The players will either get a kick out of figuring out how to get that pesky loot or simply move on and play more of the game.</p>
+
+<p>It&rsquo;s a win-win situation.</p>
 </div>
 
 
@@ -137,12 +143,12 @@ available.</p>
   
 
 
-<time datetime="2014-02-22T08:14:40-06:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
+<time datetime="2016-03-19T09:25:44-05:00" pubdate data-updated="true">Mar 19<span>th</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/tools/'>tools</a>
+    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -151,7 +157,7 @@ available.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/" >Tweet</a>
   
   
   
@@ -160,10 +166,8 @@ available.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/02/15/bunnies-dont-surf-number-flappyjam/" title="Previous Post: Bunnies Don't Surf #flappyjam">&laquo; Bunnies Don't Surf #flappyjam</a>
+        <a class="basic-alignment left" href="/blog/2016/03/05/proportion-types/" title="Previous Post: Proportion Types">&laquo; Proportion Types</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/03/01/whats-in-a-name/" title="Next Post: What's in a name?">What's in a name? &raquo;</a>
       
     </p>
   </footer>
@@ -260,8 +264,8 @@ available.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/';
         var disqus_script = 'embed.js';
       
     (function () {

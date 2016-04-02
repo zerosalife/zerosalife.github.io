@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-03-05T12:54:05-06:00</updated>
+  <updated>2016-03-19T09:35:12-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How Dungeonmans teaches diagonal movement]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/"/>
+    <updated>2016-03-19T09:25:44-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement</id>
+    <content type="html"><![CDATA[<p>Listening to <a href="http://www.roguelikeradio.com/2016/01/episode-114-gameplay-orientated.html">Roguelike Radio</a>, I heard the creator of <a href="https://twitter.com/dungeonmans">Dungeonmans</a> talk about designing levels to teach gameplay concepts.</p>
+
+<!--more-->
+
+
+<p><a href="http://www.dungeonmans.com/">Dungeonmans</a> has an interesting strategy to teach players to move diagonally early in the game, without requiring a wordy tutorial.</p>
+
+<p>The first level has caves with loot inside.  Some caves are straightforward, allowing players to reach loot without needing to perform a diagonal step.</p>
+
+<pre><code>###
+#o#
+#.#
+</code></pre>
+
+<p>But other caves are different, requiring diagonal movement to get the loot.</p>
+
+<pre><code>###
+#o#
+##.
+</code></pre>
+
+<p>Presenting the diagonal movement mechanic this way is easy and low risk.  If you don&rsquo;t pick it up, it&rsquo;s ok.  You won&rsquo;t die, you just miss out on some loot.</p>
+
+<p>It&rsquo;s also low disturbance.  There&rsquo;s no dialog popping up saying, &ldquo;Hey!  Listen!&rdquo;  The players will either get a kick out of figuring out how to get that pesky loot or simply move on and play more of the game.</p>
+
+<p>It&rsquo;s a win-win situation.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Brainstorming a Hexcrawl application]]></title>
@@ -218,78 +252,6 @@ UnityEngine.Object.DestroyImmediate(testGo);
 <h2>Mocking is easy</h2>
 
 <p>Following this pattern will give you the ability to mock objects to your hearts' delight as you unit test your Unity code.  As, always let me know if you have questions, comments, or concerns below or on twitter.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Using  LINQ queries and lambda expressions in Unity C#]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp/"/>
-    <updated>2015-10-17T11:26:32-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp</id>
-    <content type="html"><![CDATA[<p>Unity&rsquo;s C# environment includes access to .NET&rsquo;s powerful <a href="https://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ querying expressions</a>.  In this post I&rsquo;ll show how to use LINQ expressions to call anonymous functions.</p>
-
-<!--more-->
-
-
-<h2>Use the lambda</h2>
-
-<p>In the following examples, I&rsquo;ll be using <a href="https://msdn.microsoft.com/en-us/library/bb397687.aspx">lambda expressions</a> to specify anonymous functions that I will pass as arguments to the LINQ expressions.</p>
-
-<p>C# uses the <code>=&gt;</code> symbol as an operator to create lambda expressions.</p>
-
-<p>For example,</p>
-
-<p><code>csharp
-x =&gt; x + 1;
-</code></p>
-
-<p>says, create an anonymous function taking a single argument <code>x</code> and return the value of <code>x + 1</code>.</p>
-
-<h2>Increment an array</h2>
-
-<p>Say I want to use my anonymous function to increment an array of counters when a tick passes in my game.</p>
-
-<p>```csharp
-int[] counters = new int[] {0, 1, 2, 3};</p>
-
-<p>int[] tick(int[] counters) {</p>
-
-<pre><code>int[] ret = new int[counters.Length];
-for(int i = 0; i &lt; counters.Length; i++) {
-    ret[i] = counters[i] + 1;
-}
-return ret;
-</code></pre>
-
-<p>}</p>
-
-<p>tick(counters);
-```</p>
-
-<p>I could iterate over the array, incrementing each of the counters one at a time.</p>
-
-<p>Or I could use LINQ expressions to map a function that increments an element over the array.</p>
-
-<p>```csharp
-int[] tick(int[] counters) {</p>
-
-<pre><code>return counters.Select(x =&gt; x + 1).ToArray();
-</code></pre>
-
-<p>}
-```</p>
-
-<p>This approach has the benefit of avoiding an intermediate temporary variable to hold the returned array.  It also avoids potential errors in writing the <code>for</code> statement.  It will never be off by one.</p>
-
-<p>I find the use of higher order functional style, the LINQ expression, easier to read than the imperative style, the <code>for</code> statement.</p>
-
-<p>One final thing to point out is that <code>Select()</code> returns an <code>IEnumerable</code>, so you have to call its <code>.ToArray</code> method to return the proper integer array for the <code>tick</code> function.</p>
-
-<h2>Conclusion</h2>
-
-<p>Check out the <a href="https://gist.github.com/zerosalife/7abc16fb21dfb05dc771">example code on github</a>.</p>
-
-<p>I&rsquo;ve only shown a tiny subset of the <a href="http://www.dotnetperls.com/linq">functionality that LINQ provides</a>.  Feel free to let me know if you dig in and find more useful tips.</p>
 ]]></content>
   </entry>
   
