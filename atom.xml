@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-03-19T09:35:12-05:00</updated>
+  <updated>2016-04-02T09:51:11-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Original Diablo Pitch]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/04/02/the-original-diablo-pitch/"/>
+    <updated>2016-04-02T09:48:33-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/04/02/the-original-diablo-pitch</id>
+    <content type="html"><![CDATA[<p><a href="https://twitter.com/davidbrevik/status/711420722225106945">David Brevik</a>, one of the original developers of Diablo has released the <a href="http://graybeardgames.blogspot.com/2016/03/original-diablo-pitch-document.html">original pitch document</a>.  Check it out!</p>
+
+<!--more-->
+
+
+<h2>Anatomy of Diablo&rsquo;s pitch document</h2>
+
+<ul>
+<li>Summary</li>
+<li>Game Design
+
+<ul>
+<li>Overview</li>
+<li>Plot and Setting</li>
+<li>Gameplay</li>
+</ul>
+</li>
+<li>Marketing</li>
+<li>Development</li>
+</ul>
+
+
+<p>In addition to illuminating how to write these documents in general, I find interesting to see how the Diablo devs were planning on leveraging the success of <em>Magic: The Gathering</em>&rsquo;s business model to sell DLC.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How Dungeonmans teaches diagonal movement]]></title>
@@ -1192,20 +1223,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 <p>The syntax is:</p>
 
 <pre><code>{[%] img [class names] /path/to/image [width] [height] [title text [alt text]] [%]}
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[C# code blocks in Octopress]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/08/15/c-sharp-code-blocks-in-octopress/"/>
-    <updated>2015-08-15T08:59:19-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/08/15/c-sharp-code-blocks-in-octopress</id>
-    <content type="html"><![CDATA[<p><a href="http://octopress.org/">Octopress</a> supports <a href="http://octopress.org/docs/plugins/backtick-codeblock/">backtick code blocks</a> with <a href="http://pygments.org/docs/lexers/">Pygment lexers</a> handling syntax highlighting.  I always forget the syntax for using with bactick codeblocks with C#, leading to irritating failures when I build my Octopress blog.  Here&rsquo;s how you use them.</p>
-
-<pre><code>``` csharp
-[csharp code here]
-```
 </code></pre>
 ]]></content>
   </entry>
