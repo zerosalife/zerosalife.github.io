@@ -3168,87 +3168,86 @@ This rules expansion for Mobile Frame Zero is made in accordance to
 the license of the original game.
 
 ** Improvisation vs Preparation
-This week I look at how games from JoshuaACNewman, handle
-Improvisation vs Preparation as modes of play
+This week I look at how games from @JoshuaACNewman among others,
+handle Improvisation vs Preparation as modes of play
 
 - design
 - mechanics
 
 Or preparation as play.
 
-This post was inspired by hearing about long set-up times eating into
-time-crunched play time for busy adults.
+This post was inspired by long set-up times eating into time-crunched
+play time for busy adults.
 
-As young adults with minimal time commitment it was nothing to spend
-hours preparing for a gaming session among friends.  There was little
-concern for an hour or two spent setting up a wargaming afternoon.
-But as adults these time commitments quickly eat-in to or completely
-consume any time that would otherwise be spent having fun, gaming with
-your friends.
+As a young adult with minimal time commitment I had no problem
+spending hours preparing for a gaming session among friends.  And
+there was little concern for an hour or two spent setting up a
+wargaming afternoon.  But in adulthood these time commitments quickly
+eat-in to or completely consume any time that would otherwise be spent
+having fun, gaming with your friends.
 
-Certain games lend themselves more to the /preparation/ side of things
-than the /improvisation/ side.
+Certain games are suited more to the /preparation/ side of things than
+the /improvisation/ side.
+
+<!--more-->
 
 Consider the examples I mentioned above, a gamemaster driven
 roleplaying game and a tabletop war game.  Certainly these are fun
 pastimes but they require preparation on the part of the individual or
-all parties involved.  Roleplaying games require, at least initially,
-the generation of player characters for all involved, potentially
-consuming the entire first play session.  The gamemaster is required
+all parties involved.
+
+Roleplaying games require, at least initially, the generation of
+player characters for all involved, potentially consuming the entire
+first play session.  The gamemaster is, at least ostensibly, required
 to plot out a scenario for each play session, necessitating an
 substantial noninteractive time investment outside of the normal play
-session.  For war games, players must spend time constructing armies,
-generally away from the normal interaction at the table.
+session.
 
-In the thick of the actual game, both roleplaying and tabletop gaming
-can be fun and improvisiational in the same way as the sorts of games
-I'm calling /improvisiational/.  I don't deny that.
+For war games, players must spend time constructing armies, generally
+away from the interaction at the table.
 
 How does this differ from say playing stickball or baseball with your
 friends in an alley or a field with just a stick and a ball?  The game
-starts when the minimally necessary instruments arrive and continues
-even as players come and go.  It's almost heinous to interrupt these
-sorts of improvised games, hence the saying "taking the ball and going
+starts when the minimally necessary instruments arrive, and continues
+even as players come and go.  Interrupting these improvised games is
+an almost heinous offense, hence the saying "taking the ball and going
 home."
 
-To stretch this metaphor beyond its limit: in this syllogism, the
-polar opposite of pickup baseball or basketball would be ice hockey,
-something requiring potentially hours of preparation by a Zambonist to
-prepare the playing surface so the players can play for a relatively
-short time.
-
-Some roleplaying games provide hook generation tables.  Sometimes
-rolling on random tables to generate encounters can feel like play,
-but it's a relatively lifeless mechanic.
+To stretch this metaphor beyond the breaking point: in this syllogism,
+the polar opposite of pickup baseball or basketball would be ice
+hockey, something requiring potentially hours of preparation by a
+Zambonist to prepare the playing surface so the players can play for a
+relatively short time.
 
 There are a few games that get preparation as play mechanics right,
 but I think there is still room for improvement.
 
-  - Shock
+  - [[http://glyphpress.com/talk/shock-pdf][Shock]]
 
-  - Fate Core
+  - [[http://www.evilhat.com/home/fate-core/][Fate]]
 
-  - Prime Time Adventures
+  - [[http://www.dog-eared-designs.com/primetime-adventures/][Primetime Adventures]]
 
-  - Microscope
+  - [[http://www.lamemage.com/microscope/][Microscope]]
 
-  - How to Host a Dungeon
+  - [[http://planet-thirteen.com/Dungeon.aspx][How to Host a Dungeon]]
+
+  - [[http://bullypulpitgames.com/games/fiasco/][Fiasco]]
 
 These games all turn the world gen and character background into an
 gameplay activity, typically performed during the first group play
-session.  Shock even does away with the necessity of a GM, allowing
-players to take turns serving as protagonists, antagonists, or neutral
-third parties.  These examples go a long way toward what I mean by
-preparation as play, but I don't think they've captured it entirely.
+session.  Shock and Fiasco even do away with the necessity of a GM,
+allowing players to take turns serving as protagonists, antagonists,
+or third parties.  These examples go a long way toward what I mean by
+preparation as play, but I don't think the games have captured the
+concept entirely.
 
-What I'm interested in seeing is a separate /asynchronous/ type of
-game, where preparation has its own mechanics that boil down to a solo
-game unto itself.  The results of the each player's solo game(s) are
-then somehow incorporated and allowed to influence the collaborative
-group play session.
-
-*** Microscope
-Follow up next week
+What I would be interested in seeing is a separate /asynchronous/ type
+of game, where the preparation has mechanics that boil down to a solo
+game.  The results of the each player's solo game(s) are then somehow
+incorporated and allowed to influence the collaborative group play
+session.  If you know of such a game, drop me a line in the comments
+or on [[https://twitter.com/zerosalife][twitter]].
 
 ** Redesign exercise
 An exercise in redesigning existing games from @kinojabber
@@ -3961,3 +3960,67 @@ sell DLC.
 
 ** Coyote Time
 [[https://twitter.com/Slaktus/status/711919549218689025]]
+
+** A better view of a Post mortem meta study
+http://www.gamasutra.com/view/news/269064/Study_combs_through_155_Gamasutra_postmortems_to_find_out_what_went_right_and_wrong.php
+
+** Improv dice
+http://tinysolitarysoldiers.blogspot.jp/2012/04/solo-rpg.html
+
+** Procedural generation of social networks
+
+I've been thinking about how to run a hexcrawl style campaign in a
+cyberpunk world.  Mobility is easy, so a spatially distributed
+procedurally generated map doesn't make much sense.  Characters could
+easily just look up information on an unfamiliar section of the map on
+whatever flavor of the internet exists in that world and buy a plane
+ticket or book a taxi ride to get there.
+
+Transportation is cheap and the Sprawl has largely been explored.
+This is not to say that a typical hexcrawl-style campaign couldn't
+work in a VR hacking setting.  Look no further than Uplink to see a
+wonderful example.
+
+In a cyberpunk setting the thing to be explored becomes the web of
+intrigue among the movers and the shakers in the campaign.  Crosses
+and double crosses become the shifting landscapes and wandering
+monster encounters of the political landscape.
+
+https://en.wikipedia.org/wiki/Barksdale_Organization#/media/File:Barksdale2.jpg
+
+[[images/assets/social-network.svg][{% img images/assets/social-network.svg %}]]
+
+<!--more-->
+
+After looking at a few good resources, I took this stab at crafting a
+social network generator:
+
+*** Defining connection types
+
+*** Making the connections
+
+*** Graphing it
+
+** Special Missions' Story Pattern
+Interested in Larry Hama's GI Joe Special Missions' influence on Metal
+Gear and Metal Gear Solid, I want to look at the pattern of story
+telling that seems to emerge consistently in Special Missions' issues.
+
+- A
+- A
+- B
+- A
+- B
+- A
+- B
+- A
+- A
+- B
+- A
+- A
+- B
+- A
+- A
+- A
+- A
+- A
