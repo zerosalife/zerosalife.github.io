@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-03-19T09:35:12-05:00</updated>
+  <updated>2016-04-02T09:51:11-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Original Diablo Pitch]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/04/02/the-original-diablo-pitch/"/>
+    <updated>2016-04-02T09:48:33-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/04/02/the-original-diablo-pitch</id>
+    <content type="html"><![CDATA[<p><a href="https://twitter.com/davidbrevik/status/711420722225106945">David Brevik</a>, one of the original developers of Diablo has released the <a href="http://graybeardgames.blogspot.com/2016/03/original-diablo-pitch-document.html">original pitch document</a>.  Check it out!</p>
+
+<!--more-->
+
+
+<h2>Anatomy of Diablo&rsquo;s pitch document</h2>
+
+<ul>
+<li>Summary</li>
+<li>Game Design
+
+<ul>
+<li>Overview</li>
+<li>Plot and Setting</li>
+<li>Gameplay</li>
+</ul>
+</li>
+<li>Marketing</li>
+<li>Development</li>
+</ul>
+
+
+<p>In addition to illuminating how to write these documents in general, I find interesting to see how the Diablo devs were planning on leveraging the success of <em>Magic: The Gathering</em>&rsquo;s business model to sell DLC.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How Dungeonmans teaches diagonal movement]]></title>
@@ -449,19 +480,6 @@ it in a <a href="https://gist.github.com/zerosalife/22ac247a275a9835c2fa">gist</
 <li><p>Append on world create</p></li>
 </ol>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[game-icons.net]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net/"/>
-    <updated>2016-01-30T12:09:34-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net</id>
-    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="//game-icons.net/">game-icons.net</a>.</p>
-
-<p>The site has thousands of icons available under a <a href="//creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
-
-<p>Check the site out and <a href="//twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
 ]]></content>
   </entry>
   
