@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-04-23T10:18:41-05:00</updated>
+  <updated>2016-04-30T08:51:39-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mario Design Interview]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/04/30/mario-design-interview/"/>
+    <updated>2016-04-30T08:48:07-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/04/30/mario-design-interview</id>
+    <content type="html"><![CDATA[<p>In the interest of preserving an interview that could easily vanish into the ether following a Nintendo website redesign, I&rsquo;m going to collect some wisdom from <a href="http://iwataasks.nintendo.com/interviews/#/wii/nsmb/0/0">an Iwata Asks with Shigeru Miyamoto</a>.</p>
+
+<!--more-->
+
+
+<h2>Elements of a fun game</h2>
+
+<ul>
+<li>&ldquo;A fun game should be easy to understand &#x2013; you should be able to take one look at it and know what you have to do straight away.&rdquo;</li>
+<li>&ldquo;It should be so well constructed that you can tell at a glance what your goal is and, even if you don&rsquo;t succeed, you&rsquo;ll blame yourself rather than the game.&rdquo;</li>
+<li>&ldquo;The people standing around watching the game have also got to be able to enjoy it.&rdquo;</li>
+</ul>
+
+
+<h2>Form follows function</h2>
+
+<p>A repeated theme that emerges in the interview is that constraints of the hardware or display technology restricted the designs.  Miyamoto and crew had to come up with simple, evocative designs that communicate the function for each of the entities in the game world.</p>
+
+<p>Following the maxim that a fun game should be easy to understand, straightforward designs that show an entity&rsquo;s purpose in an easily recognizable manner communicate the designer&rsquo;s intent to the player.</p>
+
+<h2>Try it and see</h2>
+
+<p>Gameplay staples from the Mario series that seem unequivocally well-designed emerged from a simple iterative prototyping process.</p>
+
+<p>The designers had an idea, for example, &ldquo;What if we double the size of our main character?&rdquo;  They then implemented it in a development build of the game, and tested it out to see if it was fun.  By testing this particular design choice, the designers came up with the idea for a mechanic in the game to double the size of the main character as the result of picking up a power-up.</p>
+
+<h2>Communicating through design</h2>
+
+<p>The simple introduction of the mushroom power-up is a clever bit of communication through the design of a level.  By this point the player has likely learned that stomping on Goombas squashes them.  The placement of a power-up block above the player situates it so you have no choice but to hit it when you try to squash the Goomba.  By keeping the player trapped under a line of blocks, the power-up has time to bounce off of a pipe (blatantly informing the player that power-ups can bounce) and the player is likely to run into it, thus discovering the power-up&rsquo;s purpose.</p>
+
+<p>Notice how the construction of the level (one of the elements of fun), its design, makes it easy to understand (another element of fun) the function of these power-ups.  At no point is it necessary to wrest control of the player to blabber on about what power-ups are, why the player may want to pick them up, what other power-ups exist in the world, <em>et cetera, ad infinitum, ad nauseum</em>.</p>
+
+<h2>Feel and smell</h2>
+
+<p>These two terms refer to the subjective aesthetic impression of the perceptual and interactive elements of a game.  These can be a nice way to distinguish your game from the others out there.</p>
+
+<p>Miyamoto uses the term smell to refer to the overall impression that a game leaves on your senses.  By really making a distinct impression on the player, the experience is likely to stick, leading to replayability.</p>
+
+<p>The feel of a game refers to the subjective feeling the player gets when pressing buttons on the controller.  Every game uses the same controller (more or less), but the feeling that a player gets upon pressing a button can differ drastically depending on the game.  Miyamoto mentions, and I agree, that sound effects have a huge impact on the feel of a game.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Improvisation vs Preparation]]></title>
@@ -208,268 +255,6 @@ or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 <li>Ratchet and Clank</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Library]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/02/27/the-library/"/>
-    <updated>2016-02-27T09:28:58-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/02/27/the-library</id>
-    <content type="html"><![CDATA[<p>An introductory FATE Accelerated Edition (FAE) adventure in the spirit
-of Ghostbusters International</p>
-
-<!--more-->
-
-
-<h1>Dramatis Personae</h1>
-
-<h2>The Library Supervisor</h2>
-
-<p>Has a problem the players need to solve</p>
-
-<h2>The Librarian</h2>
-
-<p>+2 to Poltergeistery, Attacking people with overdue books
--2 to Yelling, doing anything outside of the library</p>
-
-<h3>Stress</h3>
-
-<ul>
-<li>[ ]</li>
-<li>[ ]</li>
-</ul>
-
-
-<h2>The Summoner</h2>
-
-<p>Andrea Runyon, daughter of Poke Runyon, high priestess of Astarte</p>
-
-<h2>Rock Lions</h2>
-
-<p>+2 to growling
--2 to acid rain</p>
-
-<h3>Stress</h3>
-
-<ul>
-<li>[ ]</li>
-</ul>
-
-
-<h2>Bat Books</h2>
-
-<p>+2 to flapping around
--2 to preventing combustion</p>
-
-<h3>Stress</h3>
-
-<p>None (first hit takes them out)</p>
-
-<h2>The Lieutenants</h2>
-
-<p>The players will encounter these if the pacing feels a little fast
-when they approach the summoning circle in the basement.  Be careful,
-because the lieutenants are tough.</p>
-
-<p>First lieutenants of Bael&rsquo;s legion</p>
-
-<h3>Stress</h3>
-
-<ul>
-<li>[ ]</li>
-<li>[ ]</li>
-</ul>
-
-
-<h2>Clan'thael</h2>
-
-<p>&ldquo;Clancy&rdquo;
-Second Lieutenant of the 23rd Legion of Spirits under Bael&rsquo;s rule</p>
-
-<p>+2 to Slurping, phasing between walls
--2 to resisting hunger</p>
-
-<p>Cross between a toad and Slimer.</p>
-
-<h3>Stress</h3>
-
-<ul>
-<li>[ ]</li>
-<li>[ ]</li>
-</ul>
-
-
-<h1>At the shop</h1>
-
-<p>Introduce the characters, awarding fate points / discovering aspects
-about the setting as appropriate.</p>
-
-<h1>Call to action</h1>
-
-<p>The players get a call to investigate a disturbance at the Library.
-The Library Supervisor has ordered the library evacuated because
-patrons have reported a ghostly apparition.</p>
-
-<p>The Library Supervisor says</p>
-
-<blockquote><p>You have to help us.  There&rsquo;s no one else to call.  It was horrible.
-Books were flying everywhere.  One patron was knocked out.  And those
-cries from the office, &lsquo;Overdue&#x2026;. Overdue&#x2026;&rsquo;  They sounded so
-menacing&#x2026; I didn&rsquo;t even get my briefcase before evacuating everyone.</p></blockquote>
-
-<h1>Arriving at the library</h1>
-
-<p>Two statues of lions at the front steps of the library come alive.</p>
-
-<p>Read the following text when the players arrive at the library:</p>
-
-<blockquote><p>You pull up at the entrance to the library. Tall marble columns cap
-the staircase leading to the door. At the foot of the staircase sit
-two marble statues.</p></blockquote>
-
-<p>If the players approach the entrance, the statues come to life.</p>
-
-<p>Read the following text when the statues come to life</p>
-
-<blockquote><p>You hear cracking and scraping as the lion statues come to life,
-stepping down from their pedestals with a graceful thud. The lions
-mouths open as if giving mighty roars but no sounds escape the
-statues' throats.</p></blockquote>
-
-<h1>First floor</h1>
-
-<h2>The circulation desk</h2>
-
-<p>The desk is full of books. In closer inspection each book has been
-marked overdue. The desk also has overdue stamps all over it as well
-as if someone went completely wild stamping everything in sight.</p>
-
-<h2>The office</h2>
-
-<p>Read the following flavor text when the players enter the office</p>
-
-<blockquote><p>The walls are lined with books.  There is a desk with a large office
-chair on the far side of the room.</p></blockquote>
-
-<p>If the players haven&rsquo;t encountered the Librarian, read this flavor
-text</p>
-
-<blockquote><p>The office chair is facing away from the doorway.  It slowly turns
-around revealing the wrinkle-creased face of the Librarian.  In an
-instant the Librarian&rsquo;s face morphs into a ghastly visage.  You feel
-wind blowing as if the Librarian is sucking the energy from the room.</p></blockquote>
-
-<h3>Capturing the Librarian</h3>
-
-<h2>The Stacks</h2>
-
-<p>The library has been evacuated.</p>
-
-<p>If the players don&rsquo;t wander over to the stacks, the characters start
-to hear books dropping.  That should entice the players to explore the
-stacks.</p>
-
-<p>When the characters arrive, they are attacked by book bats.  If the
-pacing feels too fast, increase the challenge by having more books
-turn into book bats.</p>
-
-<h3>Book bats</h3>
-
-<h1>The Basement</h1>
-
-<h2>Stairway</h2>
-
-<p>One of the characters becomes paralyzed by a hidden magical circle on
-the staircase.  The character who gets paralyzed is left up to the
-GM&rsquo;s discretion.</p>
-
-<p>This is a trap set by the Summoner to act as a sort of alarm, alerting
-the Summoner to approaching people who may intrude on the summoning.
-When the trap is triggered, the Summoner gives up on the invocation
-and flees the library.</p>
-
-<p>Read the following flavor text as the characters descend the stairs.</p>
-
-<blockquote><p>As you descend the staircase your limbs grow heavier.  It&rsquo;s as if
-you&rsquo;re walking through mud.  Your eyes grow wide as your feet stick to
-the floor and your arms freeze.</p></blockquote>
-
-<p>Characters looking for traps on the staircase may notice some markings
-on the stairs, but the magical circle that is the source of the
-paralysis spell is only visible when you stand on it, ensuring that
-the trap will be sprung.</p>
-
-<p>The other characters may attempt to free the paralyzed character by
-using some knowledge of the paranormal.</p>
-
-<p>The characters will be released after the Summoner has fled the
-Library because the Summoner is no longer able to maintain the spell.</p>
-
-<h2>Hallway</h2>
-
-<h3>Encounter with partially summoned ghost</h3>
-
-<p>The partially summoned ghost slimes the first player, retreating into
-the walls of the hallway. As the players move on the spirit comes out
-again clinging to the slimes player. The spirit blabbers and cries,
-begging for help. The spirit is lost and will be unable to survive if
-left alone.</p>
-
-<p>The spirit will become incorporeal if left too long without a human
-anchor to reality.  Clancy is on the run from two other lieutenants of
-Bael&rsquo;s legion. The lieutenants will kill any malformed spirit and
-promote one of their vassals to fill Clancys position</p>
-
-<p>If the players befriend Clancy then they encounter the lieutenants. If
-they do not believe Clancy then it turns out that the spirit was Lying
-and then they proceed directly to the summoning circle.</p>
-
-<p>After sliming a character, and clinging to the character, the
-partially summoned ghost will reach into any threatening character&rsquo;s
-body and pull out a fate token.</p>
-
-<blockquote><p>The toad-like spirit mutters something about being nicer to it.  It
-reaches out toward your chest.  To your surprise its hand goes into
-your body.  You feel a strange sensation as it pulls out a shining bit
-of your energy.  You lose a fate token.</p></blockquote>
-
-<h2>Summoning Circle</h2>
-
-<h3>The interrupted summoning</h3>
-
-<p>Read this flavor text when the characters arrive in the summoning
-circle room</p>
-
-<blockquote><p>There is a circle of salt on the ground here.  In the middle you can
-see strange symbols that look like they were hastily brushed away,
-leaving behind streaks of salt.  The far side of the circle is broken
-by footprints heading toward the library&rsquo;s loading dock.</p></blockquote>
-
-<p>If the characters search around they find small amounts of earth, wax,
-primrose, and jasmine.  These are elements the summoner was using.
-The characters may know purveyors of these items in town.</p>
-
-<p>If the players have befriended Clancy, the partially summoned spirit,
-Clancy can make out that the faded symbols are the marking of the
-spirit&rsquo;s King, Bael.</p>
-
-<p>The next adventure may involve tracking down where these items come
-from, in order to track down the summoner.</p>
-
-<h1>Denouement</h1>
-
-<h2>Character advancement</h2>
-
-<p>If the players capture the Librarian they may gain one minor milestone</p>
-
-<p>If the players gain any information about the summoner the characers
-who uncovered the information gain an additional minor milestone</p>
-
-<p>If the players befriend Clancy, the player who first encountered
-Clancy gets to add Clancy as a free stunt.  This is a significant
-milestone.  The player does not have to pay any refresh points, if the
-player already has 3 stunts.</p>
 ]]></content>
   </entry>
   
