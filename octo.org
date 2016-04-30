@@ -3483,12 +3483,14 @@ A repeated theme that emerges in the interview is that constraints of
 the hardware or display technology restricted the designs.  Miyamoto
 and crew had to come up with simple, evocative designs that
 communicate the function for each of the entities in the game world.
+
 Following the maxim that a fun game should be easy to understand,
 straightforward designs that show an entity's purpose in an easily
 recognizable manner communicate the designer's intent to the player.
 *** Try it and see
 Gameplay staples from the Mario series that seem unequivocally
 well-designed emerged from a simple iterative prototyping process.
+
 The designers had an idea, for example, "What if we double the size of
 our main character?"  They then implemented it in a development build
 of the game, and tested it out to see if it was fun.  By testing this
@@ -3504,14 +3506,14 @@ no choice but to hit it when you try to squash the Goomba.  By keeping
 the player trapped under a line of blocks, the power-up has time to
 bounce off of a pipe (blatantly informing the player that power-ups
 can bounce) and the player is likely to run into it, thus discovering
-its purpose.
+the power-up's purpose.
 
 Notice how the construction of the level (one of the elements of fun),
 its design, makes it easy to understand (another element of fun) the
 function of these power-ups.  At no point is it necessary to wrest
 control of the player to blabber on about what power-ups are, why the
 player may want to pick them up, what other power-ups exist in the
-world, /et cetera ad infinitum ad nauseum/.
+world, /et cetera, ad infinitum, ad nauseum/.
 *** Feel and smell
 These two terms refer to the subjective aesthetic impression of the
 perceptual and interactive elements of a game.  These can be a nice
@@ -3986,6 +3988,8 @@ intrigue among the movers and the shakers in the campaign.  Crosses
 and double crosses become the shifting landscapes and wandering
 monster encounters of the political landscape.
 
+[[http://monstersandmanuals.blogspot.com/2011/08/cyberpunk-sandbox.html]]
+
 https://en.wikipedia.org/wiki/Barksdale_Organization#/media/File:Barksdale2.jpg
 
 [[images/assets/social-network.svg][{% img images/assets/social-network.svg %}]]
@@ -3996,11 +4000,34 @@ After looking at a few good resources, I took this stab at crafting a
 social network generator:
 
 *** Defining connection types
+Based on
+[[http://monstersandmanuals.blogspot.com/2011/08/relationship-hexmap.html]]
+I defined links as follows
+
+- Black :: Strong positive link
+- Orange :: Communication (past or present)
+- Yellow :: Awareness
+- Red :: Hostility
 
 *** Making the connections
+For my initial attempts, I've found that a social network with 8
+actors is complex enough to get some interesting relationships.  I
+make twice as many random connections between the actors as there are
+actors.  So in this case, we're working with 16 random connections.
 
+This means that some actors could have several connection sand some
+could have none.  On average there may be 1 or 2 connections between
+most of the actors in the network.
 *** Graphing it
+I've [[http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/][used rhizome in the past]] to graph stuff.  This time around, I
+wanted more control over the characteristics of the resulting graph,
+so I went with [[https://github.com/Macroz/tangle][tangle]].
 
+Tangle lets me change the node shape and edge colors, which is exactly
+what I needed to represent the types of connections in this social
+network.
+
+You can see the resulting image above the fold.
 ** Special Missions' Story Pattern
 Interested in Larry Hama's GI Joe Special Missions' influence on Metal
 Gear and Metal Gear Solid, I want to look at the pattern of story
@@ -4024,3 +4051,6 @@ telling that seems to emerge consistently in Special Missions' issues.
 - A
 - A
 - A
+
+** Reigns' swipe controls
+http://www.devolverdigital.com/blog/view/reigns-to-impose-its-will-on-ios-android-and-pc
