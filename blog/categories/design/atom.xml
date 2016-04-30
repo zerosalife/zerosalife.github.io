@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-04-02T09:51:11-05:00</updated>
+  <updated>2016-04-23T10:18:41-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,87 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Improvisation vs Preparation]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/04/23/improvisation-vs-preparation/"/>
+    <updated>2016-04-23T09:44:50-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/04/23/improvisation-vs-preparation</id>
+    <content type="html"><![CDATA[<p><em>Or preparation as play.</em></p>
+
+<p>This post was inspired by long set-up times eating into time-crunched
+play time for busy adults.</p>
+
+<p>As a young adult with minimal time commitment I had no problem
+spending hours preparing for a gaming session among friends.  And
+there was little concern for an hour or two spent setting up a
+wargaming afternoon.  But in adulthood these time commitments quickly
+eat-in to or completely consume any time that would otherwise be spent
+having fun, gaming with your friends.</p>
+
+<p>Certain games are suited more to the <em>preparation</em> side of things than
+the <em>improvisation</em> side.</p>
+
+<!--more-->
+
+
+<p>Consider the examples I mentioned above, a gamemaster driven
+roleplaying game and a tabletop war game.  Certainly these are fun
+pastimes but they require preparation on the part of the individual or
+all parties involved.</p>
+
+<p>Roleplaying games require, at least initially, the generation of
+player characters for all involved, potentially consuming the entire
+first play session.  The gamemaster is, at least ostensibly, required
+to plot out a scenario for each play session, necessitating an
+substantial noninteractive time investment outside of the normal play
+session.</p>
+
+<p>For war games, players must spend time constructing armies, generally
+away from the interaction at the table.</p>
+
+<p>How does this differ from say playing stickball or baseball with your
+friends in an alley or a field with just a stick and a ball?  The game
+starts when the minimally necessary instruments arrive, and continues
+even as players come and go.  Interrupting these improvised games is
+an almost heinous offense, hence the saying &ldquo;taking the ball and going
+home.&rdquo;</p>
+
+<p>To stretch this metaphor beyond the breaking point: in this syllogism,
+the polar opposite of pickup baseball or basketball would be ice
+hockey, something requiring potentially hours of preparation by a
+Zambonist to prepare the playing surface so the players can play for a
+relatively short time.</p>
+
+<p>There are a few games that get preparation as play mechanics right,
+but I think there is still room for improvement.</p>
+
+<ul>
+<li><p><a href="http://glyphpress.com/talk/shock-pdf">Shock</a></p></li>
+<li><p><a href="http://www.evilhat.com/home/fate-core/">Fate</a></p></li>
+<li><p><a href="http://www.dog-eared-designs.com/primetime-adventures/">Primetime Adventures</a></p></li>
+<li><p><a href="http://www.lamemage.com/microscope/">Microscope</a></p></li>
+<li><p><a href="http://planet-thirteen.com/Dungeon.aspx">How to Host a Dungeon</a></p></li>
+<li><p><a href="http://bullypulpitgames.com/games/fiasco/">Fiasco</a></p></li>
+</ul>
+
+
+<p>These games all turn the world gen and character background into an
+gameplay activity, typically performed during the first group play
+session.  Shock and Fiasco even do away with the necessity of a GM,
+allowing players to take turns serving as protagonists, antagonists,
+or third parties.  These examples go a long way toward what I mean by
+preparation as play, but I don&rsquo;t think the games have captured the
+concept entirely.</p>
+
+<p>What I would be interested in seeing is a separate <em>asynchronous</em> type
+of game, where the preparation has mechanics that boil down to a solo
+game.  The results of the each player&rsquo;s solo game(s) are then somehow
+incorporated and allowed to influence the collaborative group play
+session.  If you know of such a game, drop me a line in the comments
+or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Original Diablo Pitch]]></title>
@@ -389,97 +470,6 @@ who uncovered the information gain an additional minor milestone</p>
 Clancy gets to add Clancy as a free stunt.  This is a significant
 milestone.  The player does not have to pay any refresh points, if the
 player already has 3 stunts.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Brainstorming a Hexcrawl application]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application/"/>
-    <updated>2016-02-06T08:00:40-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application</id>
-    <content type="html"><![CDATA[<p>Here are some notes brainstorming an application to support hexcrawl
-campaigns in the spirit of the <a href="http://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/">West Marches</a>.</p>
-
-<p>This is a snapshot of a living document.  I will continue working on
-it in a <a href="https://gist.github.com/zerosalife/22ac247a275a9835c2fa">gist</a>.</p>
-
-<!--more-->
-
-
-<h2>Views</h2>
-
-<h3>Map</h3>
-
-<p><a href="http://4.bp.blogspot.com/-5X3gz-42PrE/TsCPATXPONI/AAAAAAAACQA/s0XggyFIGXY/s1600/HCC06+-+Troll+Hills.png">Example image</a></p>
-
-<ol>
-<li><p>Notification of Map Code and URL to share</p></li>
-<li><p>Collection of tiles</p></li>
-<li><p>Background image?</p></li>
-<li><p>Regions?</p></li>
-</ol>
-
-
-<h3>Tile</h3>
-
-<ol>
-<li><p>Revealed / Generated</p>
-
-<ol>
-<li><p>Biome</p></li>
-<li><p>Region</p></li>
-<li><p>Data</p></li>
-<li><p>Tile icon</p></li>
-<li><p>Notes</p></li>
-</ol>
-</li>
-<li><p>Hidden</p></li>
-</ol>
-
-
-<h3>Hierarchy</h3>
-
-<ol>
-<li><p>Map</p>
-
-<ol>
-<li>Tile</li>
-</ol>
-</li>
-</ol>
-
-
-<h2>Actions</h2>
-
-<h3>Choose map from PIN</h3>
-
-<h3>Drill down to tile (map)</h3>
-
-<h3>Drill up to map (tile)</h3>
-
-<h3>Reveal tile</h3>
-
-<h3>Regenerate tile</h3>
-
-<h3>Regenerate data entry</h3>
-
-<h3>Save tile notes</h3>
-
-<h2>Persistence</h2>
-
-<h3>Monolithic</h3>
-
-<h3>Per User</h3>
-
-<h3>Per Map</h3>
-
-<h3>Bloom Filters to prevent code collisions</h3>
-
-<ol>
-<li><p>Cache on startup</p></li>
-<li><p>Append on world create</p></li>
-</ol>
-
 ]]></content>
   </entry>
   
