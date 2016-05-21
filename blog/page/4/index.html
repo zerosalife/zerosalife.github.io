@@ -9,7 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="@NoelFB posted a screenshot showing how dynamic lighting works in Skytorn. What Raycast lighting (roughly) looks like in Skytorn. Each triangle is &hellip;">
+  <meta name="description" content="Last week I covered the lighting algorithm @NoelFB is implementing for Skytorn. Noel was nice enough to correct my mistaken assumptions about the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,57 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">More Skytorn Raycast Lighting Algorithm Details</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-16T11:10:29-05:00" pubdate data-updated="true">May 16<span>th</span>, 2015</time>
+        
+         | <a href="/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/">Last week</a> I covered the lighting algorithm <a href="https://twitter.com/NoelFB">@NoelFB</a> is implementing for <a href="http://skytorngame.com/">Skytorn</a>.  Noel was nice enough to correct my mistaken assumptions about the inner workings of the lighting algorithm.</p>
+
+<p>Looks like I kind of inverted the polarity of the raycasting with regard to the player and the level geometry.</p>
+
+<div class='embed tweet'><blockquote class="twitter-tweet"><p lang="en" dir="ltr">What Raycast lighting (roughly) looks like in Skytorn. Each triangle is drawn with a gradient from color-&gt;transparent <a href="http://t.co/saqVkxxvgB">pic.twitter.com/saqVkxxvgB</a></p>&mdash; Noel Berry (@NoelFB) <a href="https://twitter.com/NoelFB/status/543586120731074561">December 13, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -473,70 +524,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/02/28/wuxingrps-elemental-rock-paper-scissors/">WuXingRPS: Elemental Rock Paper Scissors</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-02-28T10:13:28-06:00" pubdate data-updated="true">Feb 28<span>th</span>, 2015</time>
-        
-         | <a href="/blog/2015/02/28/wuxingrps-elemental-rock-paper-scissors/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="center" src="/images/assets/WuXing-screenshot.png"></p>
-
-<p><a href="http://zerosalife.itch.io/wuxingrps">WuXingRPS</a> is a prototype 5-way rock paper scissors game.  The eventual purpose for the prototype is to serve as a minigame to teach elemental interactions in an RPG battle system.</p>
-
-<p>I chose WuXing elements because they provide a nontraditional (in terms of typical RPGs) series of interesting interactions.</p>
-
-<h2>The Five Elements</h2>
-
-<p><img class="center" src="/images/assets/WuXing-interactions.png"></p>
-
-<p>The five elements are Earth (yellow), Metal (silver), Water (black), Wood (green), and Fire (red).  They have two levels of interactions that you can look at anytime by pressing the <code>?</code> button in the bottom right corner.</p>
-
-<p>The <strong>Destruction</strong> interaction, indicated by red arrows, shows that, for example, Metal chops Wood.  So Metal beats Wood.</p>
-
-<p>The <strong>Generation</strong> interaction shows that, for example, Water grows Wood.  So Wood &ldquo;eats&rdquo; Water.</p>
-
-<p>That&rsquo;s all there is to it.  Click those element disks and try to get more points than the computer.</p>
-
-<h2>Surprise: iteration to find mechanics</h2>
-
-<p>In an earlier version of the prototype the player and enemy choices that resulted in a generation relationship interaction led to a draw.  This meant that 3/5 interactions were draws.  The prototype was less exciting than the current version.  This iteration was critical in achieving a sense of fun in this prototype, as well as fleshing out the goals of an eventual RPG battle system using the elemental mechanic.</p>
-
-<p>So making this prototype led to unexpected value.  Let that be a lesson to keep it simple, because <em>sometimes the simple things that are achievable within your current skillset can lead to surprising results</em>.</p>
-
-<h2>Conclusion</h2>
-
-<p>I&rsquo;m really interested in feedback, so <a href="http://zerosalife.itch.io/wuxingrps">give the game a try</a> and tell me what you think in the comments or on <a href="http://twitter.com/zerosalife">twitter</a>.  If you&rsquo;re an artist interested in gussying up my shameful attempts at UI and UX, please please please reach out to me.  I&rsquo;d love to improve this prototype.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -554,6 +541,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/30/mario-design-interview/">Mario Design Interview</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/23/improvisation-vs-preparation/">Improvisation vs Preparation</a>
       </li>
     
@@ -567,10 +558,6 @@
     
       <li class="post">
         <a href="/blog/2016/03/05/proportion-types/">Proportion Types</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/02/27/the-library/">The Library</a>
       </li>
     
   </ul>
