@@ -3657,12 +3657,12 @@ Note: Actual level change happens in the beginning of the next frame at the Init
 [[https://twitter.com/BlendoGames/status/649980714583089152]]
 
 ** Feature Complete
-What makes a game feature complete?
+What makes a game feature complete?  Using @ThreesGame as an example
 
 Of course the makeup of a list of game features depend on the
 particular project in question.  This list of features required to
-make /Threes/ feature complete comes from early on in the published
-emails about the game's development.
+make /Threes/ feature complete comes from [[http://asherv.com/threes/threemails/#threemails][early on in the published
+emails about the game's development]].
 
 The final product has certainly received many times over more polish
 than the time spent implementing these features and the list may have
@@ -3970,6 +3970,12 @@ http://www.gamasutra.com/view/news/269064/Study_combs_through_155_Gamasutra_post
 http://tinysolitarysoldiers.blogspot.jp/2012/04/solo-rpg.html
 
 ** Procedural generation of social networks
+Procedurally generating #procgen social networks for a social rather
+than spatial hexcrawl campaign
+
+https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/
+http://maetl.net/talks/narrative-anxiety
+http://maetl.net/notes/storyboard/narrative-graph-models
 
 I've been thinking about how to run a hexcrawl style campaign in a
 cyberpunk world.  Mobility is easy, so a spatially distributed
@@ -4054,3 +4060,9 @@ telling that seems to emerge consistently in Special Missions' issues.
 
 ** Reigns' swipe controls
 http://www.devolverdigital.com/blog/view/reigns-to-impose-its-will-on-ios-android-and-pc
+
+** Cool romhacks
+[[http://www.shopflashbackgames.com/]]
+
+** Playcanvas
+https://playcanvas.com/
