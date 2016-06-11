@@ -3656,10 +3656,10 @@ Note: Actual level change happens in the beginning of the next frame at the Init
 ** Deconstructing a mockup
 [[https://twitter.com/BlendoGames/status/649980714583089152]]
 
-** Feature Complete
+** What makes a game feature complete?
 What makes a game feature complete?  Using @ThreesGame as an example
 
-Of course the makeup of a list of game features depend on the
+Of course, the makeup of a list of game features depend on the
 particular project in question.  This list of features required to
 make /Threes/ feature complete comes from [[http://asherv.com/threes/threemails/#threemails][early on in the published
 emails about the game's development]].
