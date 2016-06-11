@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-04-30T08:51:39-05:00</updated>
+  <updated>2016-05-21T09:54:01-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What makes a game feature complete?]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/05/21/what-makes-a-game-feature-complete/"/>
+    <updated>2016-05-21T09:47:38-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/05/21/what-makes-a-game-feature-complete</id>
+    <content type="html"><![CDATA[<p>Of course, the makeup of a list of game features depend on the particular project in question.  This list of features required to make <a href="http://asherv.com/threes/"><em>Threes</em></a> feature complete comes from <a href="http://asherv.com/threes/threemails/#threemails">early on in the published emails about the game&rsquo;s development</a>.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Core Game</li>
+<li>Tutorial</li>
+<li>Menu Flow</li>
+<li>Music</li>
+<li>SFX</li>
+<li>Monster Animation</li>
+<li>Game Rotation (for the iPad/PC)</li>
+<li>Leaderboards</li>
+<li>Achievements</li>
+<li>Twitter</li>
+<li>Skin Packs</li>
+<li>IAP</li>
+<li>(Undos?)</li>
+<li>Puzzlejuice Cross-promotion</li>
+</ul>
+
+
+<p>The final product has certainly received many times over more polish than the time spent implementing these features and the list may have changed.  But, from time to time, it&rsquo;s nice to see what other successful projects have deemed necessary to get a better sense of how to plan for your own projects.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mario Design Interview]]></title>
@@ -203,58 +234,6 @@ or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 <p>It&rsquo;s also low disturbance.  There&rsquo;s no dialog popping up saying, &ldquo;Hey!  Listen!&rdquo;  The players will either get a kick out of figuring out how to get that pesky loot or simply move on and play more of the game.</p>
 
 <p>It&rsquo;s a win-win situation.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Proportion Types]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/03/05/proportion-types/"/>
-    <updated>2016-03-05T12:52:00-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/03/05/proportion-types</id>
-    <content type="html"><![CDATA[<p><a href="https://twitter.com/androidarts">Arne</a> over at <a href="http://www.androidarts.com/">Android Arts</a> <a href="http://androidarts.com/misc/proportions_types.jpg">codified a taxonomy of proportion types in character design</a>.  I&rsquo;ve kept track of a few examples I&rsquo;ve come across to share with you below.</p>
-
-<!--more-->
-
-
-<h2>Ninja Star</h2>
-
-<ul>
-<li>Bravely Default</li>
-<li>Fire Emblem</li>
-<li>Miis</li>
-<li>Fez</li>
-<li>Super Mario Bros.</li>
-<li>Mischief Makers</li>
-<li>Gunstar Heroes</li>
-<li>Monument Valley</li>
-</ul>
-
-
-<h2>Cross</h2>
-
-<ul>
-<li>Call of Duty Advanced Warfare</li>
-<li>Minecraft</li>
-<li>N++</li>
-<li>Gears of War</li>
-<li>Warhammer</li>
-<li>Last of Us</li>
-<li>Uncharted</li>
-</ul>
-
-
-<h2>Maltese cross</h2>
-
-<ul>
-<li>Mega Man</li>
-<li>Mobile Suit Gundam</li>
-<li>Mazinger Z</li>
-<li>Getter Robo</li>
-<li>Armored Trooper Votoms</li>
-<li>Practically everything from Super Robot Wars</li>
-<li>Ratchet and Clank</li>
-</ul>
-
 ]]></content>
   </entry>
   
