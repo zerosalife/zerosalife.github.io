@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-05-21T09:54:01-05:00</updated>
+  <updated>2016-06-11T10:14:14-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Redesign exercise]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/06/11/redesign-exercise/"/>
+    <updated>2016-06-11T10:13:29-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/06/11/redesign-exercise</id>
+    <content type="html"><![CDATA[<p>From <a href="http://www.gamedesignworkshop.com/">The Game Design Workshop book</a>:</p>
+
+<blockquote><p>One good way to train yourself in the design of game mechanics is to
+challenge yourself with controlled design exercises in which you take
+an existing game system, set a new player experience goal, and make
+changes to the system to meet that goal.</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What makes a game feature complete?]]></title>
@@ -1177,26 +1191,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 <p><a href="https://www.assetstore.unity3d.com/en/#!/content/13802">Unity Test Tools</a> has support for Integration tests and assertions in addition to the vanilla unit test I described above.</p>
 
 <p>There are plenty of features that I haven&rsquo;t covered here, so dig in to the examples that come with the Unity Test Tools package and let me know what you&rsquo;ve learned in the comments below or on twitter <a href="http://twitter.com/zerosalife">@zerosalife</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Using Google Docs for mock-ups]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups/"/>
-    <updated>2015-09-26T08:40:47-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/09/26/using-google-docs-for-mock-ups</id>
-    <content type="html"><![CDATA[<p><a href="https://www.google.com/docs/about/">Google Docs</a> is great for mock-ups.  But one major drawback is that <a href="http://drawings.google.com">Google Drawings</a> doesn&rsquo;t support animation or multiple pages.  Luckily, the same suite of tools is available in Google&rsquo;s <a href="https://www.google.com/slides/about/">Slides app</a>.</p>
-
-<!--more-->
-
-
-<h2>My workflow</h2>
-
-<p>Since I&rsquo;m not a big fan of the cluttered Slides interface, I sketch my mock-ups in Draw and copy them over to Slides.</p>
-
-<p>Using this approach, I rapidly iterate on mock-ups in Draw while keeping a record of the good looking ones as slides in Slides.  As a bonus, I can then shuffle the order of the slides to animate dynamic designs.</p>
-
-<p>I find that this workflow is in keeping with <a href="http://draplin.com/">Draplin Design Co.</a> owner <a href="https://vimeo.com/113751583">Aaron Draplin&rsquo;s design philosophy</a>: space is cheap, so feel free to experiment and keep everything because you never know what will influence the final design.</p>
 ]]></content>
   </entry>
   
