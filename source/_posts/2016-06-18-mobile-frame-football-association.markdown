@@ -4,8 +4,6 @@ title: "Mobile Frame Football Association"
 date: 2016-06-18 11:35:49 -0500
 comments: true
 categories:
-# Mobile Frame Football Association
-
 -   design
 -   game
 ---
