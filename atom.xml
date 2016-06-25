@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-06-18T11:50:26-05:00</updated>
+  <updated>2016-06-25T09:56:52-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[/r/proceduralgeneration's spaceship challenge]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/06/25/slash-r-slash-proceduralgenerations-spaceship-challenge/"/>
+    <updated>2016-06-25T09:53:41-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/06/25/slash-r-slash-proceduralgenerations-spaceship-challenge</id>
+    <content type="html"><![CDATA[<p>The June contest on <a href="https://www.reddit.com/r/proceduralgeneration/">/r/proceduralgeneration</a> is to create a <a href="https://www.reddit.com/r/proceduralgeneration/comments/4mn9gj/monthly_challenge_7_june_2016_procedural/">ProceduralSpaceship/Fleet generator</a>.</p>
+
+<p>Here&rsquo;s a look at some of the entries, so far.</p>
+
+<!--more-->
+
+
+<h2>a1studmuffin</h2>
+
+<p><a href="https://github.com/a1studmuffin/SpaceshipGenerator">a1studmuffin&rsquo;s</a> entry is a Python script that interfaces with Blender to create 3d spaceships.  I&rsquo;m digging the choices with textures.  I also appreciate that a1studmuffin has commented to describe the phenotype of some of the parameters.  I feel like this code would be good for a future deep dive explaining it.</p>
+
+<h2>Ladus</h2>
+
+<p><a href="http://i.imgur.com/rgs0b5y.png">Ladus&#8217;</a> entry is only shown in a screenshot and a WIP video available on the reddit thread.  The 3d ships rendered in Unreal engine look good.  More of a stylized look in contrast to a1studmuffin&rsquo;s gritty ships.</p>
+
+<h2>NoDownvotesPlease</h2>
+
+<p><a href="http://i.imgur.com/MrjkVU3.gif">NoDownvotesPlease&rsquo;s</a> entry gets bonus points for creating a galaxy for 2d spaceships to explore.</p>
+
+<h2>Hans_Meiser_Koeln</h2>
+
+<p><a href="http://i.imgur.com/XcCBnoh.png">Hans_Meiser_Koeln&rsquo;s</a> entry has some good looking 2d ships.</p>
+
+<h2>green_meklar</h2>
+
+<p><a href="http://imgur.com/a/OZqSv">green_meklar&rsquo;s</a> entry has some nicely <a href="https://en.wikipedia.org/wiki/Greeble">greebled</a> 2d ships made in JavaScript/HTML5.  I&rsquo;d be interested in seeing the code.</p>
+
+<h2>Conclusion</h2>
+
+<p>I&rsquo;m excited to revisit a1studmuffin&rsquo;s code after the contest ends.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mobile Frame Football Association]]></title>
@@ -1246,35 +1284,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 <p>Check out the <a href="https://gist.github.com/zerosalife/7abc16fb21dfb05dc771">example code on github</a>.</p>
 
 <p>I&rsquo;ve only shown a tiny subset of the <a href="http://www.dotnetperls.com/linq">functionality that LINQ provides</a>.  Feel free to let me know if you dig in and find more useful tips.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Symbolic Links to Share Scripts Across Unity Projects]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects/"/>
-    <updated>2015-10-10T13:27:14-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects</id>
-    <content type="html"><![CDATA[<p>I like to develop utility scripts in a common project where I can implement unit tests without cluttering up my game projects with <a href="https://www.assetstore.unity3d.com/en/#!/content/13802">UnityTestTools</a> and duplicated test scripts.  If you&rsquo;re not sure what unit tests are, check out <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">this post I wrote about them</a>.</p>
-
-<p>To share code between projects I use <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> to link the files from my utility project to individual games.</p>
-
-<!--more-->
-
-
-<p>I&rsquo;m doing development on Mac OS X.  Other platforms may use different commands to create symbolic links.</p>
-
-<pre><code>ln -s [source file] [destination file]
-</code></pre>
-
-<p>This command creates a symbolic link to the <code>[source file]</code> at the <code>[destination file]</code>.</p>
-
-<p>That way, my I know my games will always use the up-to-date code.</p>
-
-<h2>git Gotcha</h2>
-
-<p>One caveat is that the symlinked files show up in git version control as a blob of the filepath text instead of the actual code of the file.  This means that the symlinked files will not be tracked in the destination project&rsquo;s version control history.</p>
-
-<p>That&rsquo;s okay with me, because I plan on developing the symlinked files in a separate parallel test project with all of their unit tests, etc.</p>
 ]]></content>
   </entry>
   
