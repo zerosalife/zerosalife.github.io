@@ -2260,6 +2260,49 @@ to plan for your own projects.
 - (Undos?)
 - Puzzlejuice Cross-promotion
 
+** /r/proceduralgeneration's spaceship challenge
+A look at the entries to /r/proceduralgeneration's June Monthly challenge #screenshotsaturday
+
+- design
+- procedural generation
+
+The June contest on [[https://www.reddit.com/r/proceduralgeneration/][/r/proceduralgeneration]] is to create a [[https://www.reddit.com/r/proceduralgeneration/comments/4mn9gj/monthly_challenge_7_june_2016_procedural/][ProceduralSpaceship/Fleet generator]].
+
+Here's a look at some of the entries, so far.
+
+<!--more-->
+
+*** a1studmuffin
+
+[[https://github.com/a1studmuffin/SpaceshipGenerator][a1studmuffin's]] entry is a Python script that interfaces with Blender
+to create 3d spaceships.  I'm digging the choices with textures.  I
+also appreciate that a1studmuffin has commented to describe the
+phenotype of some of the parameters.  I feel like this code would be
+good for a future deep dive explaining it.
+
+*** Ladus
+[[http://i.imgur.com/rgs0b5y.png][Ladus']] entry is only shown in a screenshot and a WIP video available
+on the reddit thread.  The 3d ships rendered in Unreal engine look
+good.  More of a stylized look in contrast to a1studmuffin's gritty
+ships.
+
+*** NoDownvotesPlease
+[[http://i.imgur.com/MrjkVU3.gif][NoDownvotesPlease's]] entry gets bonus points for creating a galaxy for
+2d spaceships to explore.
+
+*** Hans_Meiser_Koeln
+[[http://i.imgur.com/XcCBnoh.png][Hans_Meiser_Koeln's]] entry has some good looking 2d ships.
+
+*** green_meklar
+[[http://imgur.com/a/OZqSv][green_meklar's]] entry has some nicely [[https://en.wikipedia.org/wiki/Greeble][greebled]] 2d ships made in
+JavaScript/HTML5.  I'd be interested in seeing the code.
+
+*** Conclusion
+
+I'm excited to revisit a1studmuffin's code after the contest ends.
+
+
+
 
 * Business cards
 
@@ -4096,50 +4139,11 @@ https://playcanvas.com/
 ** World gen as game
 [[https://thecollaborativegamer.wordpress.com/worlds/a-system-for-creating-fantasy-worlds/]]
 
-** /r/proceduralgeneration's spaceship challenge
-A look at the entries to /r/proceduralgeneration's June Monthly
-challenge #screenshotsaturday
-
-- design
-- procedural generation
-
-The June contest on [[https://www.reddit.com/r/proceduralgeneration/][/r/proceduralgeneration]] is to create a [[https://www.reddit.com/r/proceduralgeneration/comments/4mn9gj/monthly_challenge_7_june_2016_procedural/][ProceduralSpaceship/Fleet generator]].
-
-Here's a look at some of the entries, so far.
-
-<!--more-->
-
-*** a1studmuffin
-
-[[https://github.com/a1studmuffin/SpaceshipGenerator][a1studmuffin's]] entry is a Python script that interfaces with Blender
-to create 3d spaceships.  I'm digging the choices with textures.  I
-also appreciate that a1studmuffin has commented to describe the
-phenotype of some of the parameters.  I feel like this code would be
-good for a future deep dive explaining it.
-
-*** Ladus
-[[http://i.imgur.com/rgs0b5y.png][Ladus']] entry is only shown in a screenshot and a WIP video available
-on the reddit thread.  The 3d ships rendered in Unreal engine look
-good.  More of a stylized look in contrast to a1studmuffin's gritty
-ships.
-
-*** NoDownvotesPlease
-[[http://i.imgur.com/MrjkVU3.gif][NoDownvotesPlease's]] entry gets bonus points for creating a galaxy for
-2d spaceships to explore.
-
-*** Hans_Meiser_Koeln
-[[http://i.imgur.com/XcCBnoh.png][Hans_Meiser_Koeln's]] entry has some good looking 2d ships.
-
-*** green_meklar
-[[http://imgur.com/a/OZqSv][green_meklar's]] entry has some nicely [[https://en.wikipedia.org/wiki/Greeble][greebled]] 2d ships made in
-JavaScript/HTML5.  I'd be interested in seeing the code.
-
-*** Conclusion
-
-I'm excited to revisit a1studmuffin's code after the contest ends.
-
 ** a1studmuffin's SpaceshipGenerator
 [[https://github.com/a1studmuffin/SpaceshipGenerator]]
+
+** Playable slinky worm in 79 seconds
+[[https://twitter.com/lexaloffle/status/742109814663176192/photo/1]]
 
 ** Adding minigames to RPG combat
 - Aiming in steamworld heist
@@ -4147,3 +4151,78 @@ I'm excited to revisit a1studmuffin's code after the contest ends.
 - Mother 3 rhythm game
 - Undertale
 - [[https://twitter.com/Element_105/status/741761339194900482/video/1]]
+
+** How I am Setsuna uses a State Stack: Map and Dialog
+
+I recently watched [[https://www.youtube.com/watch?v%3DGUwmNnMXd4A][some footage of /I Am Setsuna/ from E3]].
+
+Here's my analysis of the evolving [[https://en.wikipedia.org/wiki/Stack_(abstract_data_type)][state stack]], as you play this
+spritual successor to the classic RPG [[https://en.wikipedia.org/wiki/Chrono_Trigger][/Chrono Trigger/]].
+
+*** Map and Dialog
+There's likely a catch-all map state in which characters can run
+around, interacting with the world by opening chests, entering doors
+and new areas, and talking to NPCs.
+
+The gameplay starts in a snowy forest.  So, there's a =Map= state pushed
+onto the state stack that has a reference to the map for this snowy forest.
+
+| Map |
+
+As the player wanders around the forest, the player encounters talking
+NPCs.  These NPCs likely have triggers that push a =Dialog= state
+with a reference to the NPC's dialog onto the stack.
+
+| Dialog ←PUSH |
+| Map          |
+
+As the player advances and completes the dialog, the player is
+returned to the previous state, the snowy forest =Map=.
+
+| Dialog →POP |
+
+| Map |
+
+The gameplay is controlled by the current state at the top of the
+state stack.  This provides a more convenient way to track the
+appropriate controls and UI elements than to sprinkle a bunch of
+complicated conditionals throughout some monolithic game code.
+
+Next time I'll talk about combat.
+
+** How I am Setsuna uses a State Stack: Combat
+The previous post looked at how /I am Setsuna/ uses a state stack to
+allow players to move around on a map and interact with NPCs via
+dialog.  This time around, I'll show you how combat can be handled by
+adding another state to the stack.
+
+This approach decreases the need to pass information between the
+various parts of your code handling the various states of your game.
+So it's preferable compared to costly serialization and
+deserialization to pass information to wholly separate code every time
+the game state changes.  Instead you simply change the way that the
+game's code runs.
+
+*** Combat
+After the player converses with an NPC, combat with a gnarly looking
+bear begins.  Here's what likely happens.
+
+| Combat ←push |
+| Map          |
+
+The player fights the enemy.  Then the combat state pops off the
+stack, returning the player to the snowy forest map.
+
+| Combat →pop |
+
+| Map |
+
+Note that the combat state may have substates that handle in-combat
+messages, player turns, and experience and item rewards at the end of
+combat.  Designing these substates depends on the specific
+requirements of your combat system.  That makes it hard to tell what
+the developers are using from this brief clip of /I am Setsuna/.
+
+*** Interiors
+
+*** Overworld
