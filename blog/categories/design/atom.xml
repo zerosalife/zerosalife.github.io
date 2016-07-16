@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-07-02T09:58:09-05:00</updated>
+  <updated>2016-07-16T10:26:46-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Combat]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/"/>
+    <updated>2016-07-16T10:14:59-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat</id>
+    <content type="html"><![CDATA[<p>The previous post looked at how <em>I am Setsuna</em> uses a state stack to allow players to move around on a map and interact with NPCs via dialog.  This time around, I&rsquo;ll show you how combat can be handled by adding another state to the stack.</p>
+
+<!--more-->
+
+
+<p>This approach decreases the need to pass information between the various parts of your code handling the various states of your game.  So it&rsquo;s preferable compared to costly serialization and deserialization to pass information to wholly separate code every time the game state changes.  Instead you simply change the way that the game&rsquo;s code runs.</p>
+
+<h2>Combat</h2>
+
+<p>After the player converses with an NPC, combat with a gnarly looking bear begins.  Here&rsquo;s what likely happens.</p>
+
+<pre><code>| Combat ←push |
+| Map          |
+</code></pre>
+
+<p>The player fights the enemy.  Then the combat state pops off the stack, returning the player to the snowy forest map.</p>
+
+<pre><code>| Combat →pop |
+
+| Map |
+</code></pre>
+
+<p>Note that the combat state may have substates that handle in-combat messages, player turns, and experience and item rewards at the end of combat.  Designing these substates depends on the specific requirements of your combat system.  That makes it hard to tell what the developers are using from <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">this brief clip of <em>I am Setsuna</em></a>.</p>
+
+<p>That&rsquo;s all there is to it.  The modularity of this state stack approach allows developers to customize the flow of gameplay as desired.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Map and Dialog]]></title>
@@ -288,37 +321,6 @@ already been explored.</p>
 challenge yourself with controlled design exercises in which you take
 an existing game system, set a new player experience goal, and make
 changes to the system to meet that goal.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[What makes a game feature complete?]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/05/21/what-makes-a-game-feature-complete/"/>
-    <updated>2016-05-21T09:47:38-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/05/21/what-makes-a-game-feature-complete</id>
-    <content type="html"><![CDATA[<p>Of course, the makeup of a list of game features depend on the particular project in question.  This list of features required to make <a href="http://asherv.com/threes/"><em>Threes</em></a> feature complete comes from <a href="http://asherv.com/threes/threemails/#threemails">early on in the published emails about the game&rsquo;s development</a>.</p>
-
-<h2>Features</h2>
-
-<ul>
-<li>Core Game</li>
-<li>Tutorial</li>
-<li>Menu Flow</li>
-<li>Music</li>
-<li>SFX</li>
-<li>Monster Animation</li>
-<li>Game Rotation (for the iPad/PC)</li>
-<li>Leaderboards</li>
-<li>Achievements</li>
-<li>Twitter</li>
-<li>Skin Packs</li>
-<li>IAP</li>
-<li>(Undos?)</li>
-<li>Puzzlejuice Cross-promotion</li>
-</ul>
-
-
-<p>The final product has certainly received many times over more polish than the time spent implementing these features and the list may have changed.  But, from time to time, it&rsquo;s nice to see what other successful projects have deemed necessary to get a better sense of how to plan for your own projects.</p>
 ]]></content>
   </entry>
   

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>WuXingRPS: Elemental Rock Paper Scissors - zero's a life</title>
+  <title>How I am Setsuna uses a State Stack: Combat - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="WuXingRPS is a prototype 5-way rock paper scissors game. The eventual purpose for the prototype is to serve as a minigame to teach elemental &hellip;">
+  <meta name="description" content="The previous post looked at how I am Setsuna uses a state stack to allow players to move around on a map and interact with NPCs via dialog. This time &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/02/28/wuxingrps-elemental-rock-paper-scissors">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">WuXingRPS: Elemental Rock Paper Scissors</h1>
+      <h1 class="entry-title">How I Am Setsuna Uses a State Stack: Combat</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2015-02-28T10:13:28-06:00" pubdate data-updated="true">Feb 28<span>th</span>, 2015</time>
+<time datetime="2016-07-16T10:14:59-05:00" pubdate data-updated="true">Jul 16<span>th</span>, 2016</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,33 +95,31 @@
   </header>
 
 
-<div class="entry-content"><p><img class="center" src="/images/assets/WuXing-screenshot.png"></p>
+<div class="entry-content"><p>The previous post looked at how <em>I am Setsuna</em> uses a state stack to allow players to move around on a map and interact with NPCs via dialog.  This time around, I&rsquo;ll show you how combat can be handled by adding another state to the stack.</p>
 
-<p><a href="http://zerosalife.itch.io/wuxingrps">WuXingRPS</a> is a prototype 5-way rock paper scissors game.  The eventual purpose for the prototype is to serve as a minigame to teach elemental interactions in an RPG battle system.</p>
+<!--more-->
 
-<p>I chose WuXing elements because they provide a nontraditional (in terms of typical RPGs) series of interesting interactions.</p>
 
-<h2>The Five Elements</h2>
+<p>This approach decreases the need to pass information between the various parts of your code handling the various states of your game.  So it&rsquo;s preferable compared to costly serialization and deserialization to pass information to wholly separate code every time the game state changes.  Instead you simply change the way that the game&rsquo;s code runs.</p>
 
-<p><img class="center" src="/images/assets/WuXing-interactions.png"></p>
+<h2>Combat</h2>
 
-<p>The five elements are Earth (yellow), Metal (silver), Water (black), Wood (green), and Fire (red).  They have two levels of interactions that you can look at anytime by pressing the <code>?</code> button in the bottom right corner.</p>
+<p>After the player converses with an NPC, combat with a gnarly looking bear begins.  Here&rsquo;s what likely happens.</p>
 
-<p>The <strong>Destruction</strong> interaction, indicated by red arrows, shows that, for example, Metal chops Wood.  So Metal beats Wood.</p>
+<pre><code>| Combat ←push |
+| Map          |
+</code></pre>
 
-<p>The <strong>Generation</strong> interaction shows that, for example, Water grows Wood.  So Wood &ldquo;eats&rdquo; Water.</p>
+<p>The player fights the enemy.  Then the combat state pops off the stack, returning the player to the snowy forest map.</p>
 
-<p>That&rsquo;s all there is to it.  Click those element disks and try to get more points than the computer.</p>
+<pre><code>| Combat →pop |
 
-<h2>Surprise: iteration to find mechanics</h2>
+| Map |
+</code></pre>
 
-<p>In an earlier version of the prototype the player and enemy choices that resulted in a generation relationship interaction led to a draw.  This meant that 3/5 interactions were draws.  The prototype was less exciting than the current version.  This iteration was critical in achieving a sense of fun in this prototype, as well as fleshing out the goals of an eventual RPG battle system using the elemental mechanic.</p>
+<p>Note that the combat state may have substates that handle in-combat messages, player turns, and experience and item rewards at the end of combat.  Designing these substates depends on the specific requirements of your combat system.  That makes it hard to tell what the developers are using from <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">this brief clip of <em>I am Setsuna</em></a>.</p>
 
-<p>So making this prototype led to unexpected value.  Let that be a lesson to keep it simple, because <em>sometimes the simple things that are achievable within your current skillset can lead to surprising results</em>.</p>
-
-<h2>Conclusion</h2>
-
-<p>I&rsquo;m really interested in feedback, so <a href="http://zerosalife.itch.io/wuxingrps">give the game a try</a> and tell me what you think in the comments or on <a href="http://twitter.com/zerosalife">twitter</a>.  If you&rsquo;re an artist interested in gussying up my shameful attempts at UI and UX, please please please reach out to me.  I&rsquo;d love to improve this prototype.</p>
+<p>That&rsquo;s all there is to it.  The modularity of this state stack approach allows developers to customize the flow of gameplay as desired.</p>
 </div>
 
 
@@ -144,12 +142,12 @@
   
 
 
-<time datetime="2015-02-28T10:13:28-06:00" pubdate data-updated="true">Feb 28<span>th</span>, 2015</time>
+<time datetime="2016-07-16T10:14:59-05:00" pubdate data-updated="true">Jul 16<span>th</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/ui/'>UI</a>, <a class='category' href='/blog/categories/ux/'>UX</a>, <a class='category' href='/blog/categories/game/'>game</a>
+    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -158,7 +156,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/02/28/wuxingrps-elemental-rock-paper-scissors/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/02/28/wuxingrps-elemental-rock-paper-scissors/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/" >Tweet</a>
   
   
   
@@ -167,10 +165,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/02/21/hosting-a-game-on-itch-dot-io-account-set-up-and-transaction-fees/" title="Previous Post: Hosting a game on itch.io: account set up and transaction fees">&laquo; Hosting a game on itch.io: account set up and transaction fees</a>
+        <a class="basic-alignment left" href="/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/" title="Previous Post: How I am Setsuna uses a State Stack: Map and Dialog">&laquo; How I am Setsuna uses a State Stack: Map and Dialog</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/03/14/math-team-hearts/" title="Next Post: Math Team Hearts">Math Team Hearts &raquo;</a>
       
     </p>
   </footer>
@@ -267,8 +263,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/02/28/wuxingrps-elemental-rock-paper-scissors/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2015/02/28/wuxingrps-elemental-rock-paper-scissors/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/';
         var disqus_script = 'embed.js';
       
     (function () {
