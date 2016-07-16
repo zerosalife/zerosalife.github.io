@@ -4167,21 +4167,27 @@ and new areas, and talking to NPCs.
 The gameplay starts in a snowy forest.  So, there's a =Map= state pushed
 onto the state stack that has a reference to the map for this snowy forest.
 
+#+BEGIN_SRC
 | Map |
+#+END_SRC
 
 As the player wanders around the forest, the player encounters talking
 NPCs.  These NPCs likely have triggers that push a =Dialog= state
 with a reference to the NPC's dialog onto the stack.
 
+#+BEGIN_SRC
 | Dialog ←PUSH |
 | Map          |
+#+END_SRC
 
 As the player advances and completes the dialog, the player is
 returned to the previous state, the snowy forest =Map=.
 
+#+BEGIN_SRC
 | Dialog →POP |
 
 | Map |
+#+END_SRC
 
 The gameplay is controlled by the current state at the top of the
 state stack.  This provides a more convenient way to track the
@@ -4191,6 +4197,9 @@ complicated conditionals throughout some monolithic game code.
 Next time I'll talk about combat.
 
 ** How I am Setsuna uses a State Stack: Combat
+- design
+- tools
+
 The previous post looked at how /I am Setsuna/ uses a state stack to
 allow players to move around on a map and interact with NPCs via
 dialog.  This time around, I'll show you how combat can be handled by
@@ -4207,15 +4216,21 @@ game's code runs.
 After the player converses with an NPC, combat with a gnarly looking
 bear begins.  Here's what likely happens.
 
+#+BEGIN_SRC
 | Combat ←push |
 | Map          |
+
+#+END_SRC
 
 The player fights the enemy.  Then the combat state pops off the
 stack, returning the player to the snowy forest map.
 
+#+BEGIN_SRC
 | Combat →pop |
 
 | Map |
+
+#+END_SRC
 
 Note that the combat state may have substates that handle in-combat
 messages, player turns, and experience and item rewards at the end of
@@ -4223,6 +4238,37 @@ combat.  Designing these substates depends on the specific
 requirements of your combat system.  That makes it hard to tell what
 the developers are using from this brief clip of /I am Setsuna/.
 
-*** Interiors
+That's all there is to it.  The modularity of this state stack
+approach allows developers to customize the flow of gameplay as
+desired.
 
-*** Overworld
+** How I am Setsuna uses a State Stack: Interiors
+- design
+- tools
+
+About [[https://youtu.be/GUwmNnMXd4A?t%3D5m36s][a quarter of the way through this playthrough]] of /I am Setsuna/
+at E3, the player enters a house.
+
+*** Interiors
+The player enters a house, which triggers a special case of the Map
+state, the Interior state to be pushed onto the stack.
+
+#+BEGIN_SRC
+| Interior ←push |
+| Map            |
+
+#+END_SRC
+
+It's hard to tell how the interior state differs from the town map and
+the forest map from the beginning of the video.  In fact, I think that
+you could cover similar features with a simple Map state that knows
+where triggers (for, for example, Dialog or Treasure) and exits are
+placed.
+
+So, it's likely ethat the I am Setsuna devs are using a gneeralized
+Map state to cover tehse cases
+
+This leads us to the final state I want to explore, a state to capture
+the Overworld.
+
+** Overworld
