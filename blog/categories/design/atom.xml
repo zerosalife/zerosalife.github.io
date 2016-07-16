@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-06-25T09:56:52-05:00</updated>
+  <updated>2016-07-02T09:58:09-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Map and Dialog]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/"/>
+    <updated>2016-07-02T09:48:42-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog</id>
+    <content type="html"><![CDATA[<p>I recently watched <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">some footage of <em>I Am Setsuna</em> from E3</a>.</p>
+
+<p>Here&rsquo;s my analysis of the evolving <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">state stack</a>, as you play this spritual successor to the classic RPG <a href="https://en.wikipedia.org/wiki/Chrono_Trigger"><em>Chrono Trigger</em></a>.</p>
+
+<!--more-->
+
+
+<h2>Map and Dialog</h2>
+
+<p>There&rsquo;s likely a catch-all map state in which characters can run around, interacting with the world by opening chests, entering doors and new areas, and talking to NPCs.</p>
+
+<p>The gameplay starts in a snowy forest.  So, there&rsquo;s a <code>Map</code> state pushed onto the state stack that has a reference to the map for this snowy forest.</p>
+
+<pre><code>| Map |
+</code></pre>
+
+<p>As the player wanders around the forest, the player encounters talking NPCs.  These NPCs likely have triggers that push a <code>Dialog</code> state with a reference to the NPC&rsquo;s dialog onto the stack.</p>
+
+<pre><code>| Dialog ←PUSH |
+| Map          |
+</code></pre>
+
+<p>As the player advances and completes the dialog, the player is returned to the previous state, the snowy forest <code>Map</code>.</p>
+
+<pre><code>| Dialog →POP |
+
+| Map |
+</code></pre>
+
+<p>The gameplay is controlled by the current state at the top of the state stack.  This provides a more convenient way to track the appropriate controls and UI elements than to sprinkle a bunch of complicated conditionals throughout some monolithic game code.</p>
+
+<p>Next time I&rsquo;ll talk about combat.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[/r/proceduralgeneration's spaceship challenge]]></title>
@@ -279,53 +319,6 @@ changes to the system to meet that goal.</p></blockquote>
 
 
 <p>The final product has certainly received many times over more polish than the time spent implementing these features and the list may have changed.  But, from time to time, it&rsquo;s nice to see what other successful projects have deemed necessary to get a better sense of how to plan for your own projects.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mario Design Interview]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/04/30/mario-design-interview/"/>
-    <updated>2016-04-30T08:48:07-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/04/30/mario-design-interview</id>
-    <content type="html"><![CDATA[<p>In the interest of preserving an interview that could easily vanish into the ether following a Nintendo website redesign, I&rsquo;m going to collect some wisdom from <a href="http://iwataasks.nintendo.com/interviews/#/wii/nsmb/0/0">an Iwata Asks with Shigeru Miyamoto</a>.</p>
-
-<!--more-->
-
-
-<h2>Elements of a fun game</h2>
-
-<ul>
-<li>&ldquo;A fun game should be easy to understand &#x2013; you should be able to take one look at it and know what you have to do straight away.&rdquo;</li>
-<li>&ldquo;It should be so well constructed that you can tell at a glance what your goal is and, even if you don&rsquo;t succeed, you&rsquo;ll blame yourself rather than the game.&rdquo;</li>
-<li>&ldquo;The people standing around watching the game have also got to be able to enjoy it.&rdquo;</li>
-</ul>
-
-
-<h2>Form follows function</h2>
-
-<p>A repeated theme that emerges in the interview is that constraints of the hardware or display technology restricted the designs.  Miyamoto and crew had to come up with simple, evocative designs that communicate the function for each of the entities in the game world.</p>
-
-<p>Following the maxim that a fun game should be easy to understand, straightforward designs that show an entity&rsquo;s purpose in an easily recognizable manner communicate the designer&rsquo;s intent to the player.</p>
-
-<h2>Try it and see</h2>
-
-<p>Gameplay staples from the Mario series that seem unequivocally well-designed emerged from a simple iterative prototyping process.</p>
-
-<p>The designers had an idea, for example, &ldquo;What if we double the size of our main character?&rdquo;  They then implemented it in a development build of the game, and tested it out to see if it was fun.  By testing this particular design choice, the designers came up with the idea for a mechanic in the game to double the size of the main character as the result of picking up a power-up.</p>
-
-<h2>Communicating through design</h2>
-
-<p>The simple introduction of the mushroom power-up is a clever bit of communication through the design of a level.  By this point the player has likely learned that stomping on Goombas squashes them.  The placement of a power-up block above the player situates it so you have no choice but to hit it when you try to squash the Goomba.  By keeping the player trapped under a line of blocks, the power-up has time to bounce off of a pipe (blatantly informing the player that power-ups can bounce) and the player is likely to run into it, thus discovering the power-up&rsquo;s purpose.</p>
-
-<p>Notice how the construction of the level (one of the elements of fun), its design, makes it easy to understand (another element of fun) the function of these power-ups.  At no point is it necessary to wrest control of the player to blabber on about what power-ups are, why the player may want to pick them up, what other power-ups exist in the world, <em>et cetera, ad infinitum, ad nauseum</em>.</p>
-
-<h2>Feel and smell</h2>
-
-<p>These two terms refer to the subjective aesthetic impression of the perceptual and interactive elements of a game.  These can be a nice way to distinguish your game from the others out there.</p>
-
-<p>Miyamoto uses the term smell to refer to the overall impression that a game leaves on your senses.  By really making a distinct impression on the player, the experience is likely to stick, leading to replayability.</p>
-
-<p>The feel of a game refers to the subjective feeling the player gets when pressing buttons on the controller.  Every game uses the same controller (more or less), but the feeling that a player gets upon pressing a button can differ drastically depending on the game.  Miyamoto mentions, and I agree, that sound effects have a huge impact on the feel of a game.</p>
 ]]></content>
   </entry>
   

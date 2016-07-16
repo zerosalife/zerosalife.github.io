@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-06-25T09:56:52-05:00</updated>
+  <updated>2016-07-02T09:58:09-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Map and Dialog]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/"/>
+    <updated>2016-07-02T09:48:42-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog</id>
+    <content type="html"><![CDATA[<p>I recently watched <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">some footage of <em>I Am Setsuna</em> from E3</a>.</p>
+
+<p>Here&rsquo;s my analysis of the evolving <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">state stack</a>, as you play this spritual successor to the classic RPG <a href="https://en.wikipedia.org/wiki/Chrono_Trigger"><em>Chrono Trigger</em></a>.</p>
+
+<!--more-->
+
+
+<h2>Map and Dialog</h2>
+
+<p>There&rsquo;s likely a catch-all map state in which characters can run around, interacting with the world by opening chests, entering doors and new areas, and talking to NPCs.</p>
+
+<p>The gameplay starts in a snowy forest.  So, there&rsquo;s a <code>Map</code> state pushed onto the state stack that has a reference to the map for this snowy forest.</p>
+
+<pre><code>| Map |
+</code></pre>
+
+<p>As the player wanders around the forest, the player encounters talking NPCs.  These NPCs likely have triggers that push a <code>Dialog</code> state with a reference to the NPC&rsquo;s dialog onto the stack.</p>
+
+<pre><code>| Dialog ←PUSH |
+| Map          |
+</code></pre>
+
+<p>As the player advances and completes the dialog, the player is returned to the previous state, the snowy forest <code>Map</code>.</p>
+
+<pre><code>| Dialog →POP |
+
+| Map |
+</code></pre>
+
+<p>The gameplay is controlled by the current state at the top of the state stack.  This provides a more convenient way to track the appropriate controls and UI elements than to sprinkle a bunch of complicated conditionals throughout some monolithic game code.</p>
+
+<p>Next time I&rsquo;ll talk about combat.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[/r/proceduralgeneration's spaceship challenge]]></title>
@@ -1203,87 +1243,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 <h2>Mocking is easy</h2>
 
 <p>Following this pattern will give you the ability to mock objects to your hearts&#8217; delight as you unit test your Unity code.  As, always let me know if you have questions, comments, or concerns below or on twitter.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Using  LINQ queries and lambda expressions in Unity C#]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp/"/>
-    <updated>2015-10-17T11:26:32-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp</id>
-    <content type="html"><![CDATA[<p>Unity&rsquo;s C# environment includes access to .NET&rsquo;s powerful <a href="https://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ querying expressions</a>.  In this post I&rsquo;ll show how to use LINQ expressions to call anonymous functions.</p>
-
-<!--more-->
-
-
-<h2>Use the lambda</h2>
-
-<p>In the following examples, I&rsquo;ll be using <a href="https://msdn.microsoft.com/en-us/library/bb397687.aspx">lambda expressions</a> to specify anonymous functions that I will pass as arguments to the LINQ expressions.</p>
-
-<p>C# uses the <code>=&gt;</code> symbol as an operator to create lambda expressions.</p>
-
-<p>For example,</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>says, create an anonymous function taking a single argument <code>x</code> and return the value of <code>x + 1</code>.</p>
-
-<h2>Increment an array</h2>
-
-<p>Say I want to use my anonymous function to increment an array of counters when a tick passes in my game.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="kt">int</span><span class="p">[]</span> <span class="n">counters</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span><span class="p">[]</span> <span class="nf">tick</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">counters</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kt">int</span><span class="p">[]</span> <span class="n">ret</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">counters</span><span class="p">.</span><span class="n">Length</span><span class="p">];</span>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">counters</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">counters</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">tick</span><span class="p">(</span><span class="n">counters</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I could iterate over the array, incrementing each of the counters one at a time.</p>
-
-<p>Or I could use LINQ expressions to map a function that increments an element over the array.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="kt">int</span><span class="p">[]</span> <span class="nf">tick</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">counters</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">counters</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">).</span><span class="n">ToArray</span><span class="p">();</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This approach has the benefit of avoiding an intermediate temporary variable to hold the returned array.  It also avoids potential errors in writing the <code>for</code> statement.  It will never be off by one.</p>
-
-<p>I find the use of higher order functional style, the LINQ expression, easier to read than the imperative style, the <code>for</code> statement.</p>
-
-<p>One final thing to point out is that <code>Select()</code> returns an <code>IEnumerable</code>, so you have to call its <code>.ToArray</code> method to return the proper integer array for the <code>tick</code> function.</p>
-
-<h2>Conclusion</h2>
-
-<p>Check out the <a href="https://gist.github.com/zerosalife/7abc16fb21dfb05dc771">example code on github</a>.</p>
-
-<p>I&rsquo;ve only shown a tiny subset of the <a href="http://www.dotnetperls.com/linq">functionality that LINQ provides</a>.  Feel free to let me know if you dig in and find more useful tips.</p>
 ]]></content>
   </entry>
   

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Playable Call For Papers - zero's a life</title>
+  <title>How I am Setsuna uses a State Stack: Map and Dialog - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Michael Cook made a &ldquo;needlessly interactive&rdquo; playable call for papers for the Experimental AI in Games conference, taking place in &hellip;">
+  <meta name="description" content="I recently watched some footage of I Am Setsuna from E3. Here&rsquo;s my analysis of the evolving state stack, as you play this spritual successor to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Playable Call for Papers</h1>
+      <h1 class="entry-title">How I Am Setsuna Uses a State Stack: Map and Dialog</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-06-21T10:20:23-05:00" pubdate data-updated="true">Jun 21<span>st</span>, 2014</time>
+<time datetime="2016-07-02T09:48:42-05:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2016</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,13 +95,38 @@
   </header>
 
 
-<div class="entry-content"><p><a href="http://www.twitter.com/mtrc">Michael Cook</a> made a &ldquo;needlessly interactive&rdquo; <a href="http://www.exag.org/playablecfp/">playable call for papers</a> for the <a href="http://www.exag.org/">Experimental AI in Games conference</a>, taking place in October in Raleigh, NC.  It&rsquo;s a minimally expressive Twine story, with really one simple interactive experience of role-playing the interaction a recipient feels upon receiving yet another CFP email, <em>click</em>.</p>
+<div class="entry-content"><p>I recently watched <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">some footage of <em>I Am Setsuna</em> from E3</a>.</p>
 
-<p>It&rsquo;s a tricky thing to get right.  While it makes sense for a game-related conference to have a text adventure announcement, I don&rsquo;t want to have to play a game of Frogger to purchase movie tickets from the automated kiosk at the movie theater.  It would be nice if the playable CFP included prominent and consistent links to exit the game, in order to read the ordinary CFP on the conference website.</p>
+<p>Here&rsquo;s my analysis of the evolving <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">state stack</a>, as you play this spritual successor to the classic RPG <a href="https://en.wikipedia.org/wiki/Chrono_Trigger"><em>Chrono Trigger</em></a>.</p>
 
-<p>I believe the motivating idea is sound.  Turning banal daily routine into a playful interactive experience is a worthy goal for game design.  It has the ability to startle the player into paying more attention to mundane activities, which I think is the intended goal&mdash;for a CFP to stand out from piles of other CFP emails.</p>
+<!--more-->
 
-<p>Let me know if you&rsquo;ve come across games in strange places.  I don&rsquo;t mean finding a boxed copy of Mario Kart at the flea market&mdash;I mean conceptually strange places.  Hit me up on twitter if you&rsquo;ve got ideas like this to discuss, because I think this approach of creating small play experiences to &ldquo;gamify&rdquo; mundane tasks is an emerging theme of design.</p>
+
+<h2>Map and Dialog</h2>
+
+<p>There&rsquo;s likely a catch-all map state in which characters can run around, interacting with the world by opening chests, entering doors and new areas, and talking to NPCs.</p>
+
+<p>The gameplay starts in a snowy forest.  So, there&rsquo;s a <code>Map</code> state pushed onto the state stack that has a reference to the map for this snowy forest.</p>
+
+<pre><code>| Map |
+</code></pre>
+
+<p>As the player wanders around the forest, the player encounters talking NPCs.  These NPCs likely have triggers that push a <code>Dialog</code> state with a reference to the NPC&rsquo;s dialog onto the stack.</p>
+
+<pre><code>| Dialog ←PUSH |
+| Map          |
+</code></pre>
+
+<p>As the player advances and completes the dialog, the player is returned to the previous state, the snowy forest <code>Map</code>.</p>
+
+<pre><code>| Dialog →POP |
+
+| Map |
+</code></pre>
+
+<p>The gameplay is controlled by the current state at the top of the state stack.  This provides a more convenient way to track the appropriate controls and UI elements than to sprinkle a bunch of complicated conditionals throughout some monolithic game code.</p>
+
+<p>Next time I&rsquo;ll talk about combat.</p>
 </div>
 
 
@@ -124,12 +149,12 @@
   
 
 
-<time datetime="2014-06-21T10:20:23-05:00" pubdate data-updated="true">Jun 21<span>st</span>, 2014</time>
+<time datetime="2016-07-02T09:48:42-05:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/design/'>design</a>
+    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -138,7 +163,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/" >Tweet</a>
   
   
   
@@ -147,10 +172,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/06/07/why-you-should-start-simple/" title="Previous Post: Why you should start simple">&laquo; Why you should start simple</a>
+        <a class="basic-alignment left" href="/blog/2016/06/25/slash-r-slash-proceduralgenerations-spaceship-challenge/" title="Previous Post: /r/proceduralgeneration's spaceship challenge">&laquo; /r/proceduralgeneration's spaceship challenge</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/07/19/the-strength-of-the-pitch-jodorowskys-dune/" title="Next Post: The Strength of the Pitch: Jodorowsky's Dune">The Strength of the Pitch: Jodorowsky's Dune &raquo;</a>
       
     </p>
   </footer>
@@ -247,8 +270,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/06/21/playable-call-for-papers/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/';
         var disqus_script = 'embed.js';
       
     (function () {
