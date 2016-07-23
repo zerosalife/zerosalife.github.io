@@ -4272,3 +4272,43 @@ This leads us to the final state I want to explore, a state to capture
 the Overworld.
 
 ** Overworld
+The overworld ties together all of the states I previously discussed
+based on my watching of this playthrough of /I am Setsuna/.
+
+*** Overworld
+
+I think that the =Overworld= can serve as the base =Map= state I used
+in my previous examples.  This allows the Overworld to serve two
+purposes.  First, the Overworld state holds all of the map and area
+entrance data to allow characters to move about the overworld.  And
+second, the Overworld state can store information about the state of
+the game for use in the other states.
+
+*** Area information
+
+*** Gameplay information
+
+** State
+** Character design in Aevee's WKTD
+The character outline structure Aevee uses breaks down character
+design into the following sections
+
+[[https://medium.com/mammon-machine-zeal/how-to-make-a-plan-to-write-a-visual-novel-in-a-month-so-you-can-finish-it-in-three-and-a-half-b5200f46ce1a#.wz5qs12gi]]
+
+*** Character Theme
+
+*** Visual
+
+*** Presence
+
+*** Talks Like
+
+*** Wants
+
+*** History
+
+*** With Character 2 / 3
+
+*** Unforgiven
+
+*** Sundry Textures
