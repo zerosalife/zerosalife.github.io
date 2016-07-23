@@ -19,8 +19,8 @@ The player enters a house, which triggers a special case of the Map state, the I
     | Interior ←push |
     | Map            |
 
-It's hard to tell how the interior state differs from the town map and the forest map from the beginning of the video.  In fact, I think that you could cover similar features with a simple Map state that knows where triggers (for, for example, Dialog or Treasure) and exits are placed.
+It's hard to tell how the interior state differs from the town map and the forest map from the beginning of the video.  In fact, I think that you could cover similar features with a simple `Map` state that knows where triggers (for, for example, Dialog or Treasure) and exits are placed.
 
-So, it's likely ethat the I am Setsuna devs are using a gneeralized Map state to cover tehse cases
+So, it's likely that the *I am Setsuna* developers are using a generalized `Map` state to cover these cases.
 
 This leads us to the final state I want to explore, a state to capture the Overworld.
