@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-07-23T10:06:02-05:00</updated>
+  <updated>2016-07-23T10:09:11-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -31,9 +31,9 @@
 | Map            |
 </code></pre>
 
-<p>It&rsquo;s hard to tell how the interior state differs from the town map and the forest map from the beginning of the video.  In fact, I think that you could cover similar features with a simple Map state that knows where triggers (for, for example, Dialog or Treasure) and exits are placed.</p>
+<p>It&rsquo;s hard to tell how the interior state differs from the town map and the forest map from the beginning of the video.  In fact, I think that you could cover similar features with a simple <code>Map</code> state that knows where triggers (for, for example, Dialog or Treasure) and exits are placed.</p>
 
-<p>So, it&rsquo;s likely ethat the I am Setsuna devs are using a gneeralized Map state to cover tehse cases</p>
+<p>So, it&rsquo;s likely that the <em>I am Setsuna</em> developers are using a generalized <code>Map</code> state to cover these cases.</p>
 
 <p>This leads us to the final state I want to explore, a state to capture the Overworld.</p>
 ]]></content>
