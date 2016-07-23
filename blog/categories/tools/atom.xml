@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-07-16T10:26:46-05:00</updated>
+  <updated>2016-07-23T10:06:02-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Interiors]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/"/>
+    <updated>2016-07-23T10:01:13-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors</id>
+    <content type="html"><![CDATA[<p>About <a href="https://youtu.be/GUwmNnMXd4A?t%3D5m36s">a quarter of the way through this playthrough</a> of <em>I am Setsuna</em> at E3, the player enters a house.</p>
+
+<!--more-->
+
+
+<h2>Interiors</h2>
+
+<p>The player enters a house, which triggers a special case of the Map state, the Interior state to be pushed onto the stack.</p>
+
+<pre><code>| Interior ←push |
+| Map            |
+</code></pre>
+
+<p>It&rsquo;s hard to tell how the interior state differs from the town map and the forest map from the beginning of the video.  In fact, I think that you could cover similar features with a simple Map state that knows where triggers (for, for example, Dialog or Treasure) and exits are placed.</p>
+
+<p>So, it&rsquo;s likely ethat the I am Setsuna devs are using a gneeralized Map state to cover tehse cases</p>
+
+<p>This leads us to the final state I want to explore, a state to capture the Overworld.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Combat]]></title>
@@ -148,97 +174,6 @@
 <p>It&rsquo;s also low disturbance.  There&rsquo;s no dialog popping up saying, &ldquo;Hey!  Listen!&rdquo;  The players will either get a kick out of figuring out how to get that pesky loot or simply move on and play more of the game.</p>
 
 <p>It&rsquo;s a win-win situation.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Brainstorming a Hexcrawl application]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application/"/>
-    <updated>2016-02-06T08:00:40-06:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/02/06/brainstorming-a-hexcrawl-application</id>
-    <content type="html"><![CDATA[<p>Here are some notes brainstorming an application to support hexcrawl
-campaigns in the spirit of the <a href="http://arsludi.lamemage.com/index.php/78/grand-experiments-west-marches/">West Marches</a>.</p>
-
-<p>This is a snapshot of a living document.  I will continue working on
-it in a <a href="https://gist.github.com/zerosalife/22ac247a275a9835c2fa">gist</a>.</p>
-
-<!--more-->
-
-
-<h2>Views</h2>
-
-<h3>Map</h3>
-
-<p><a href="http://4.bp.blogspot.com/-5X3gz-42PrE/TsCPATXPONI/AAAAAAAACQA/s0XggyFIGXY/s1600/HCC06+-+Troll+Hills.png">Example image</a></p>
-
-<ol>
-<li><p>Notification of Map Code and URL to share</p></li>
-<li><p>Collection of tiles</p></li>
-<li><p>Background image?</p></li>
-<li><p>Regions?</p></li>
-</ol>
-
-
-<h3>Tile</h3>
-
-<ol>
-<li><p>Revealed / Generated</p>
-
-<ol>
-<li><p>Biome</p></li>
-<li><p>Region</p></li>
-<li><p>Data</p></li>
-<li><p>Tile icon</p></li>
-<li><p>Notes</p></li>
-</ol>
-</li>
-<li><p>Hidden</p></li>
-</ol>
-
-
-<h3>Hierarchy</h3>
-
-<ol>
-<li><p>Map</p>
-
-<ol>
-<li>Tile</li>
-</ol>
-</li>
-</ol>
-
-
-<h2>Actions</h2>
-
-<h3>Choose map from PIN</h3>
-
-<h3>Drill down to tile (map)</h3>
-
-<h3>Drill up to map (tile)</h3>
-
-<h3>Reveal tile</h3>
-
-<h3>Regenerate tile</h3>
-
-<h3>Regenerate data entry</h3>
-
-<h3>Save tile notes</h3>
-
-<h2>Persistence</h2>
-
-<h3>Monolithic</h3>
-
-<h3>Per User</h3>
-
-<h3>Per Map</h3>
-
-<h3>Bloom Filters to prevent code collisions</h3>
-
-<ol>
-<li><p>Cache on startup</p></li>
-<li><p>Append on world create</p></li>
-</ol>
-
 ]]></content>
   </entry>
   
