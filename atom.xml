@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-07-02T09:58:09-05:00</updated>
+  <updated>2016-07-16T10:26:46-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Combat]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/"/>
+    <updated>2016-07-16T10:14:59-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat</id>
+    <content type="html"><![CDATA[<p>The previous post looked at how <em>I am Setsuna</em> uses a state stack to allow players to move around on a map and interact with NPCs via dialog.  This time around, I&rsquo;ll show you how combat can be handled by adding another state to the stack.</p>
+
+<!--more-->
+
+
+<p>This approach decreases the need to pass information between the various parts of your code handling the various states of your game.  So it&rsquo;s preferable compared to costly serialization and deserialization to pass information to wholly separate code every time the game state changes.  Instead you simply change the way that the game&rsquo;s code runs.</p>
+
+<h2>Combat</h2>
+
+<p>After the player converses with an NPC, combat with a gnarly looking bear begins.  Here&rsquo;s what likely happens.</p>
+
+<pre><code>| Combat ←push |
+| Map          |
+</code></pre>
+
+<p>The player fights the enemy.  Then the combat state pops off the stack, returning the player to the snowy forest map.</p>
+
+<pre><code>| Combat →pop |
+
+| Map |
+</code></pre>
+
+<p>Note that the combat state may have substates that handle in-combat messages, player turns, and experience and item rewards at the end of combat.  Designing these substates depends on the specific requirements of your combat system.  That makes it hard to tell what the developers are using from <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">this brief clip of <em>I am Setsuna</em></a>.</p>
+
+<p>That&rsquo;s all there is to it.  The modularity of this state stack approach allows developers to customize the flow of gameplay as desired.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Map and Dialog]]></title>
@@ -1188,61 +1221,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 <h2>Sound good?</h2>
 
 <p>Sound good?  Let me know on <a href="https://twitter.com/zerosalife">twitter</a>, I&rsquo;m happy to communicate over DMs, in the comments below, or via email (my twitter handle at gmail)!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/"/>
-    <updated>2015-10-31T09:03:57-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests</id>
-    <content type="html"><![CDATA[<p>A while back, I wrote a post about <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
-
-<!--more-->
-
-
-<h2>Make a GameObject</h2>
-
-<p>We can create a <code>GameObject</code> inside a test just like we would normally inside a Unity script.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">GameObject</span> <span class="n">testGo</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GameObject</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Passing a string to <a href="http://docs.unity3d.com/ScriptReference/GameObject-ctor.html">the <code>GameObject</code> constructor</a> gives the <code>GameObject</code> that name.</p>
-
-<h2>We can even Instantiate prefabs</h2>
-
-<p>Since our test is not inheriting <code>MonoBehaviour</code>, we&rsquo;ll have to call the Instantiate function directly, using the fully qualified namespace.</p>
-
-<p>Remember that prefabs are just stored <code>GameObject</code>s, so we can use the <code>testGo</code> created above as our prefab.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">GameObject</span> <span class="n">go</span> <span class="p">=</span> <span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">testGo</span><span class="p">,</span>
-</span><span class='line'>                                               <span class="n">Vector3</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span>
-</span><span class='line'>                                               <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">)</span> <span class="k">as</span> <span class="n">GameObject</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Clean up</h2>
-
-<p>We can create <code>GameObject</code>s, but repeatedly running the test leaves our project cluttered up with old objects.  We want our tests to clean up all mocked objects after running.  We&rsquo;ll do that using by using the fully qualified <a href="http://docs.unity3d.com/ScriptReference/Object.DestroyImmediate.html"><code>DestroyImmediate</code> function</a>.</p>
-
-<p>We need to call <code>DestroyImmediate</code> instead of <code>Destroy</code> because the unit tests are running in the editor and delayed destruction won&rsquo;t be invoked.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">DestroyImmediate</span><span class="p">(</span><span class="n">go</span><span class="p">);</span>
-</span><span class='line'><span class="n">UnityEngine</span><span class="p">.</span><span class="n">Object</span><span class="p">.</span><span class="n">DestroyImmediate</span><span class="p">(</span><span class="n">testGo</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Mocking is easy</h2>
-
-<p>Following this pattern will give you the ability to mock objects to your hearts&#8217; delight as you unit test your Unity code.  As, always let me know if you have questions, comments, or concerns below or on twitter.</p>
 ]]></content>
   </entry>
   
