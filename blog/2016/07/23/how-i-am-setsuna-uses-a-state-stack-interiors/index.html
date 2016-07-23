@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Aurion and the Aurochs is out - zero's a life</title>
+  <title>How I am Setsuna uses a State Stack: Interiors - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="I&rsquo;m happy to announce that my #adventurejam game is finished and released. I&rsquo;ll do a more in-depth post-mortem next week. In the coming &hellip;">
+  <meta name="description" content="About a quarter of the way through this playthrough of I am Setsuna at E3, the player enters a house. Interiors The player enters a house, which &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2015/04/18/aurion-and-the-aurochs-is-out">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Aurion and the Aurochs Is Out</h1>
+      <h1 class="entry-title">How I Am Setsuna Uses a State Stack: Interiors</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2015-04-18T12:43:49-05:00" pubdate data-updated="true">Apr 18<span>th</span>, 2015</time>
+<time datetime="2016-07-23T10:01:13-05:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2016</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,9 +95,24 @@
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;m happy to announce that my <a href="http://jams.gamejolt.io/adventurejam">#adventurejam</a> game is finished and released.  I&rsquo;ll do a more in-depth post-mortem next week.  In the coming weeks, before the 30-day voting deadline ends, I want to take a look at some of the <a href="http://jams.gamejolt.io/adventurejam/games">other submissions</a> that pique my interest.</p>
+<div class="entry-content"><p>About <a href="https://youtu.be/GUwmNnMXd4A?t%3D5m36s">a quarter of the way through this playthrough</a> of <em>I am Setsuna</em> at E3, the player enters a house.</p>
 
-<p>You can <a href="http://gamejolt.com/games/adventure/aurion-and-the-aurochs/60738/">play <em>Aurion and the Aurochs</em> on gamejolt</a> and you can <a href="https://github.com/zerosalife/aurion">view the source on github</a>.  Please leave me some feedback in the comments here or on twitter <a href="https://twitter.com/zerosalife">@zerosalife</a>.</p>
+<!--more-->
+
+
+<h2>Interiors</h2>
+
+<p>The player enters a house, which triggers a special case of the Map state, the Interior state to be pushed onto the stack.</p>
+
+<pre><code>| Interior ←push |
+| Map            |
+</code></pre>
+
+<p>It&rsquo;s hard to tell how the interior state differs from the town map and the forest map from the beginning of the video.  In fact, I think that you could cover similar features with a simple Map state that knows where triggers (for, for example, Dialog or Treasure) and exits are placed.</p>
+
+<p>So, it&rsquo;s likely ethat the I am Setsuna devs are using a gneeralized Map state to cover tehse cases</p>
+
+<p>This leads us to the final state I want to explore, a state to capture the Overworld.</p>
 </div>
 
 
@@ -120,12 +135,12 @@
   
 
 
-<time datetime="2015-04-18T12:43:49-05:00" pubdate data-updated="true">Apr 18<span>th</span>, 2015</time>
+<time datetime="2016-07-23T10:01:13-05:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/adventurejam/'>adventurejam</a>, <a class='category' href='/blog/categories/game/'>game</a>
+    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -134,7 +149,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2015/04/18/aurion-and-the-aurochs-is-out/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2015/04/18/aurion-and-the-aurochs-is-out/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/" >Tweet</a>
   
   
   
@@ -143,10 +158,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/04/11/midway-through-adventurejam-im-attending-midwest-gaming-classic/" title="Previous Post: Midway through adventurejam I'm attending Midwest Gaming Classic">&laquo; Midway through adventurejam I'm attending Midwest Gaming Classic</a>
+        <a class="basic-alignment left" href="/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/" title="Previous Post: How I am Setsuna uses a State Stack: Combat">&laquo; How I am Setsuna uses a State Stack: Combat</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/04/25/aurion-and-the-aurochs-post-mortem/" title="Next Post: Aurion and the Aurochs Post-mortem">Aurion and the Aurochs Post-mortem &raquo;</a>
       
     </p>
   </footer>
@@ -243,8 +256,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2015/04/18/aurion-and-the-aurochs-is-out/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2015/04/18/aurion-and-the-aurochs-is-out/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/';
         var disqus_script = 'embed.js';
       
     (function () {
