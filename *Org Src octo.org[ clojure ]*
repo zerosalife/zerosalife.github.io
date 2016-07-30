@@ -1,0 +1,5 @@
+(defrecord Weapon [name
+                   type
+                   hit-percent
+                   attack
+                   cost])
