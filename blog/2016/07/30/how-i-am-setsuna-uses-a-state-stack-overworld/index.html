@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Peter Venkman FATE example character - zero's a life</title>
+  <title>How I am Setsuna uses a State Stack: Overworld - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="I made a sample character so players would get a handle for the FATE system. I&rsquo;m using FATE Accelerated to run a Ghostbusters International- &hellip;">
+  <meta name="description" content="The Overworld state ties together all of the states I previously discussed based on watching this playthrough of I am Setsuna. Overworld I think that &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/01/16/peter-venkman-fate-example-character">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Peter Venkman FATE Example Character</h1>
+      <h1 class="entry-title">How I Am Setsuna Uses a State Stack: Overworld</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2016-01-16T10:04:14-06:00" pubdate data-updated="true">Jan 16<span>th</span>, 2016</time>
+<time datetime="2016-07-30T09:47:19-05:00" pubdate data-updated="true">Jul 30<span>th</span>, 2016</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,73 +95,49 @@
   </header>
 
 
-<div class="entry-content"><p>I made a sample character so players would get a handle for the <a href="http://www.faterpg.com/">FATE system</a>.  I&rsquo;m using <a href="http://fate-srd.com/fate-accelerated/get-started">FATE Accelerated</a> to run a <a href="https://en.wikipedia.org/wiki/Ghostbusters_%28role-playing_game%29">Ghostbusters International</a>-inspired game.</p>
+<div class="entry-content"><p>The <code>Overworld</code> state ties together all of the states I previously discussed based on watching <a href="https://youtu.be/GUwmNnMXd4A">this playthrough</a> of <em>I am Setsuna</em>.</p>
 
 <!--more-->
 
 
-<h1>Dr. Peter Venkman</h1>
+<h2>Overworld</h2>
 
-<h2>High Concept</h2>
+<p>I think that the <code>Overworld</code> can serve as the base <code>Map</code> state I used in my previous examples.  This allows the <code>Overworld</code> to serve two purposes.  First, the <code>Overworld</code> state holds all of the map and area entrance data to allow characters to move about the overworld.  And second, the <code>Overworld</code> state can store information about the state of the game for use in the other states.</p>
 
-<p>Womanizing failed psychiatrist cofounder of the original
-Ghostbusters</p>
+<h2>Area information</h2>
 
-<h2>Trouble</h2>
+<pre><code>| Overworld |
+</code></pre>
 
-<p>Always put my foot in my mouth around women</p>
+<p>The <code>Overworld</code> contains all of the data necessary to render the overworld map, including the assets for rendering the map and the location and the target map data on triggers for entering towns, caves, and other <code>Maps</code>.</p>
 
-<h2>Other Aspects (one required, up to two more optional)</h2>
+<h2>Gameplay information</h2>
 
-<ul>
-<li>Lothario</li>
-<li>Paranormal skeptic</li>
-<li>Scientific charlatan</li>
-</ul>
+<pre><code>| Menu ←    |
+| Overworld |
+</code></pre>
 
+<p>The <code>Overworld</code> also contains the sorts of information you see in the main menu, such as the character&rsquo;s state, inventory, money.  Serializing a snapshot of this information and the characters&#8217; position saves the game&rsquo;s state and can be used to reload the game later.</p>
 
-<h2>Approaches</h2>
+<p>The states added to the stack on top of the <code>Overworld</code> state can access this data for consumption and updating.</p>
 
-<ul>
-<li><strong>Careful:</strong> Mediocre (+0)</li>
-<li><strong>Clever:</strong> Good (+3)</li>
-<li><strong>Flashy:</strong> Fair (+2)</li>
-<li><strong>Forceful:</strong> Average (+1)</li>
-<li><strong>Quick:</strong> Average (+1)</li>
-<li><strong>Sneaky:</strong> Fair (+2)</li>
-</ul>
+<pre><code>| Shop menu  |
+| Map (Shop) |
+| Map (Town) |
+| Overworld  |
+</code></pre>
 
+<p>For instance, a shop in town may access the inventory and money to allow the player to purchase items.</p>
 
-<h2>Stunts</h2>
+<pre><code>| Combat   |
+| Overwold |
+</code></pre>
 
-<ul>
-<li><strong>Proton Pack:</strong> Because I am a ghostbuster, I have a proton pack that gives me +2 bonus to Forcefully create an advantage or discover an aspect when attempting to zap a ghost.</li>
-</ul>
+<p>Similarly, the combat state may access the characters&#8217; stats, equipment and inventory to track health, damage output, and item use in battle.</p>
 
+<h2>Summary</h2>
 
-<p>(May take up to two more stunts without reducing refresh)</p>
-
-<h2>Stress</h2>
-
-<ul>
-<li>[ ]</li>
-<li>[ ]</li>
-<li>[ ]</li>
-</ul>
-
-
-<h2>Consequences</h2>
-
-<ul>
-<li><strong>Mild (2):</strong></li>
-<li><strong>Moderate (4):</strong></li>
-<li><strong>Severe (6):</strong></li>
-</ul>
-
-
-<h2>Refresh</h2>
-
-<p>3</p>
+<p>I hope that <a href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/">the</a> <a href="//zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/">last</a> <a href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/">few posts</a> have given you an overview of how the state stack could work for supporting an RPG like <em>I am Setsuna</em>.</p>
 </div>
 
 
@@ -184,12 +160,12 @@ Ghostbusters</p>
   
 
 
-<time datetime="2016-01-16T10:04:14-06:00" pubdate data-updated="true">Jan 16<span>th</span>, 2016</time>
+<time datetime="2016-07-30T09:47:19-05:00" pubdate data-updated="true">Jul 30<span>th</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/design/'>design</a>
+    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -198,7 +174,7 @@ Ghostbusters</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/01/16/peter-venkman-fate-example-character/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/01/16/peter-venkman-fate-example-character/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/" >Tweet</a>
   
   
   
@@ -207,10 +183,8 @@ Ghostbusters</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests/" title="Previous Post: Mocking GameObjects in Unity Unit Tests">&laquo; Mocking GameObjects in Unity Unit Tests</a>
+        <a class="basic-alignment left" href="/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/" title="Previous Post: How I am Setsuna uses a State Stack: Interiors">&laquo; How I am Setsuna uses a State Stack: Interiors</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2016/01/30/game-icons-dot-net/" title="Next Post: game-icons.net">game-icons.net &raquo;</a>
       
     </p>
   </footer>
@@ -307,8 +281,8 @@ Ghostbusters</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/01/16/peter-venkman-fate-example-character/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2016/01/16/peter-venkman-fate-example-character/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/';
         var disqus_script = 'embed.js';
       
     (function () {
