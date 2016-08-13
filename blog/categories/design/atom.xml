@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-07-23T10:09:11-05:00</updated>
+  <updated>2016-07-30T09:51:27-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Overworld]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/"/>
+    <updated>2016-07-30T09:47:19-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld</id>
+    <content type="html"><![CDATA[<p>The <code>Overworld</code> state ties together all of the states I previously discussed based on watching <a href="https://youtu.be/GUwmNnMXd4A">this playthrough</a> of <em>I am Setsuna</em>.</p>
+
+<!--more-->
+
+
+<h2>Overworld</h2>
+
+<p>I think that the <code>Overworld</code> can serve as the base <code>Map</code> state I used in my previous examples.  This allows the <code>Overworld</code> to serve two purposes.  First, the <code>Overworld</code> state holds all of the map and area entrance data to allow characters to move about the overworld.  And second, the <code>Overworld</code> state can store information about the state of the game for use in the other states.</p>
+
+<h2>Area information</h2>
+
+<pre><code>| Overworld |
+</code></pre>
+
+<p>The <code>Overworld</code> contains all of the data necessary to render the overworld map, including the assets for rendering the map and the location and the target map data on triggers for entering towns, caves, and other <code>Maps</code>.</p>
+
+<h2>Gameplay information</h2>
+
+<pre><code>| Menu ←    |
+| Overworld |
+</code></pre>
+
+<p>The <code>Overworld</code> also contains the sorts of information you see in the main menu, such as the character&rsquo;s state, inventory, money.  Serializing a snapshot of this information and the characters' position saves the game&rsquo;s state and can be used to reload the game later.</p>
+
+<p>The states added to the stack on top of the <code>Overworld</code> state can access this data for consumption and updating.</p>
+
+<pre><code>| Shop menu  |
+| Map (Shop) |
+| Map (Town) |
+| Overworld  |
+</code></pre>
+
+<p>For instance, a shop in town may access the inventory and money to allow the player to purchase items.</p>
+
+<pre><code>| Combat   |
+| Overwold |
+</code></pre>
+
+<p>Similarly, the combat state may access the characters' stats, equipment and inventory to track health, damage output, and item use in battle.</p>
+
+<h2>Summary</h2>
+
+<p>I hope that <a href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/">the</a> <a href="//zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/">last</a> <a href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/">few posts</a> have given you an overview of how the state stack could work for supporting an RPG like <em>I am Setsuna</em>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Interiors]]></title>
@@ -147,192 +198,6 @@
 <h2>Conclusion</h2>
 
 <p>I&rsquo;m excited to revisit a1studmuffin&rsquo;s code after the contest ends.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mobile Frame Football Association]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/06/18/mobile-frame-football-association/"/>
-    <updated>2016-06-18T11:35:49-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/06/18/mobile-frame-football-association</id>
-    <content type="html"><![CDATA[<h2>Inspiration</h2>
-
-<p>I asked myself the question, in a universe where mecha are used for primarily for military-industrial applications, how did the technology
-get to that point?</p>
-
-<p>Sure, some routes for technical advancement are funded purely by governments, but think of the racing sport&rsquo;s influence on the
-automobile industry.</p>
-
-<p>So I asked the question, what if mecha became a dominant technology because of sports applications?</p>
-
-<p>In which kind of sports could mecha thrive?  There have previously been pugilistic representations of robots, but I deemed these as too
-costly and too on the nose for the future military application.</p>
-
-<p>Likewise, pure racing, while plausible, seemed to be ground that had
-already been explored.</p>
-
-<p>I settled on the possibility that the military-industrial applications mecha technology and piloting ability of the Mobile Frame Zero universe grew out of a pursuit of the world&rsquo;s (universe&rsquo;s?) most popular sport, (Association) Football a.k.a. Soccer.</p>
-
-<p>Thus, the Mobile Frame Football Association, a rules mod for <a href="https://twitter.com/JoshuaACNewman">Joshua AC Newman&rsquo;s</a> <a href="http://mobileframezero.com/mfz/">Mobile Frame Zero</a>, was born.</p>
-
-<!--more-->
-
-
-<h2>Football games</h2>
-
-<h3>Duration of play</h3>
-
-<p>Mobile Frame Football Association (MFFA) sanctioned games last 6 turns, consisting of two equal 3-turn halves.  MFFA rules do not allow for the countdown mechanic from the vanilla Mobile Frame Zero (MF0) rules.</p>
-
-<h3>Objective</h3>
-
-<p>When time expires, the player with the highest number of goals scored wins.</p>
-
-<h3>Teams</h3>
-
-<p>Games are played between teams consisting of equal numbers of frames.  Frames may have up to 4 systems installed, with the usual vanilla MF0 benefits for fewer than 4 installed systems (see, e.g., MF0 p. 64).  For more explanation see <em>Dice Systems</em>.</p>
-
-<h3>Field of Play</h3>
-
-<p>The game field should be approximately the size of a normal MF0 table, with goals the size of 1 <em>movement scale</em> on each end of the field.  Lines should be laid out to clearly mark the in bounds/out of bounds boundary.  There should be at least 1" of space on the sidelines, to allow for units to be positioned outside of the field during out of bounds situations.</p>
-
-<p>The size of your available Field of Play can dictate the Movement and Shooting Scales for your game.  The suggested defaults are based on a normal MF0 table, your mileage may vary.</p>
-
-<h2>Deployment</h2>
-
-<p>During the deployment phase, you may place your units anywhere on the field in a legal formation.  Cool your servos, I&rsquo;ll describe the legal formations in just a sec.</p>
-
-<h3>Beginning of play</h3>
-
-<p>At the beginning of the game, at the beginning of the second half, or at a kickoff following a goal, players take turns placing units in bounds, in the half of the field that has been assigned (See: Determining possession).  The player in possession of the ball, the <em>offensive player</em>, goes first.  The ball, represented by a d12, is placed at the center of the field. The offensive player must place a unit next to the ball, this unit is in possession of the ball.</p>
-
-<ol>
-<li><p>Maintaining possession of the ball</p>
-
-<p>A unit possesses the ball if the ball is in contact with its base (i.e. its legs).  If two opposing units are in contact with the ball the unit in possession of the ball first maintains possession unless the opposing unit steals or tackles.  Similarly if two units on the same side are in contact with the ball, the unit in possession of the ball first maintains possession unless it passes successfully to the second unit.</p></li>
-<li><p>Determining possession at kickoff</p>
-
-<p>A coin flip determines possession at the beginning of the game, with the winning player electing to be on offense or defense first.  The losing player gets to determine the side of the field in which to deploy.</p>
-
-<p>At the half, the possession and sides switch.  Following a scored goal, the player who was scored on gains possession of the ball at the kickoff.</p></li>
-</ol>
-
-
-<h3>After a dead ball situation</h3>
-
-<p>Play is stopped due to a foul, an out of bounds ball. This is called a <em>dead ball</em> situation.</p>
-
-<ol>
-<li><p>Out of bounds</p>
-
-<p>Out of bounds balls force a turnover of possession. The ball is placed on the sideline where it went out of bounds.</p>
-
-<p>Both players may redeploy their units, however the offensive player may not place a unit beyond the defensive unit closest to the goal.  The defensive player places first, and must move the unit closest to the goal first, if it will be moved in the redeployment.  Players alternate placing units.  The offensive player must place a unit next to the ball.</p>
-
-<p>After the offensive player redeploys the last unit, play resumes with the unit next to the ball immediately taking its turn, regardless of its initiative roll.  If the unit next to the ball has an initiative die, remove it.</p>
-
-<ol>
-<li><p>Corner Kicks and Goal Kicks</p>
-
-<p>Corner kicks occur when a defending unit kicks the ball out of bounds on the sideline running on its own &lsquo;goal&rsquo; side of the field.  The ball is placed on the corner sideline on the side it went out of bounds.</p>
-
-<p>Goal kicks occur when an offensive unit kicks the ball out of bounds on the sideline of the defensive units' &lsquo;goal&rsquo; side of the field.  The ball is placed in front of the goal.</p></li>
-</ol>
-</li>
-<li><p>Fouls</p>
-
-<p>Fouls do not force a turnover of possession.  Redeployment following a foul occurs the same as in the Out of bounds situation.</p></li>
-<li><p>Redeployment and units that have already taken turns</p>
-
-<p>Redeployment does not normally reset whether a unit has taken its turn.  If the unit placed next to the ball in a dead ball situation has already taken its turn, it gets a free turn taken immediately following deployment, when play resumes.</p></li>
-</ol>
-
-
-<h2>Initiative</h2>
-
-<p>For the time being, MFFA uses the older per-unit turn order from MF0 (p. 136).  Enough with the hutching bellyaching, you yabbies.</p>
-
-<p>Players roll 1d10 for each unit, placing the die next to the unit.  Initiative starts at 1 and counts up.  When you reach a unit&rsquo;s initiative roll in the count, remove the initiative die next to the unit, that unit takes its turn.</p>
-
-<p>If two units have the same roll, when their number is reached, reroll the initiative dice. Lowest roll goes first with the next highest reroll going immediately after.  Once all of the rerolled ties have been resolved, the initiative count continues as normal.</p>
-
-<p>In a dead ball situation, the initiative count does not reset.</p>
-
-<h3>Coaching</h3>
-
-<p>Coaching adds a layer of complexity to initiative determination.  It may slow down the game a bit, but it allows for extra tactical decisions.</p>
-
-<p>Coaching allows players to take control of the assignment of initiative to each of their units.  Both players roll a number of initiative dice equal to their units, then take turns assigning to initiative dice to their units. The defensive player chooses first.  After initiatives are assigned, the initiative count starts and counts up as normal.</p>
-
-<h2>Dice systems</h2>
-
-<p>As in MF0, frames have 2 white dice representing the frame chassis plus other dice representing up to 4 additional systems.  Frames get the usual vanilla MF0 benefits for having fewer than 4 installed systems (see, e.g., MF0 p. 64).</p>
-
-<h3>Red dice</h3>
-
-<p>Red dice represent the ability of a frame to shoot or pass the ball on offense.  Unlike the vanilla MF0 rules, there are two legal ranges for red dice on offense: direct and artillery.  Systems granting hand to hand dice are not rolled on offense.</p>
-
-<p>When shooting, you must score a successful hit on the goal using the difficulty table from MF0 to score a goal.  When passing you must score a successful hit on your ally to successfully pass the ball. You must declare the range you will be targeting at the beginning of your turn.</p>
-
-<p>On defense, red dice represent steals (hand to hand range) and slide tackles (direct range).  Systems granting artillery dice are not rolled on defense.</p>
-
-<p>Red dice use a special scale that is different from the movement scale.  See Movement Scale and Shooting Scale</p>
-
-<ol>
-<li><p>Passing and shooting</p>
-
-<p>When in range for a shot or a pass, the player must roll a number of <em>hit dice</em> equal to the <em>shot value</em> minus the blue <em>defense value</em> of any units in the line of fire.  Any units in the line of the pass or shot act as cover, using the normal MF0 cover rules.  If there is doubt, consult the MF0 cover rules to determine if a unit is in the line of fire.</p>
-
-<p>If the rolled hit dice successfully <em>score a hit</em>, then the ball goes where the offensive player wants, into the goal or into the possession of another unit.  Use Damage chart 2 from the MF0 rules (Hit target on a 5 or 6) if there is no other unit between the shooter and the target.  Use Damage chart 4 if there is a unit between the shooter and the target. (Hit target on a 6)</p>
-
-<p>Failure to score a hit is called a <em>fumble</em>, and causes the ball to go wide somewhere in the range of the shot at the opposing player&rsquo;s discretion (be reasonable here, it&rsquo;s not going to <em>fly backwards</em>).  This may cause the ball to go out of bounds, into the possession of a unit, into the goal, or into the field of play.</p></li>
-<li><p>Stealing and slide tackling</p>
-
-<p>When stealing or slide tackling, <em>scoring a hit</em> results in the ball coming into the stealing or tackling unit&rsquo;s possession.  The stealing or tackling unit&rsquo;s player rolls a number of <em>hit dice</em> equal to its red <em>shot value</em> for the steal or tackle attack minus the blue <em>defense value</em> of the unit in possession of the ball.</p>
-
-<p>Always use Damage chart 2 for stealing and slide tackling. On a roll of 5 or 6, the steal or slide tackle scores a hit.  Possible rule: the player who slide tackles to steal the ball may choose to destroy a system on the opposing player&rsquo;s unit.</p>
-
-<p>Failure to score a hit is a <em>fumble</em>.  Nothing special happens, unless the player rolls a 1 on one of the hit dice.</p>
-
-<p>Rolling a 1 on a hit die during a fumble results in a foul.  See <em>Fouls</em>.</p></li>
-</ol>
-
-
-<h3>Blue Dice</h3>
-
-<p>Blue dice systems remain the same as blue dice systems in the normal MF0 rules.  However, rather than representing armor, they represent the ability of a unit to gain or maintain control of the ball.</p>
-
-<h3>Yellow Dice and Green Dice</h3>
-
-<p>Yellow and green dice systems remain the same as vanilla MF0.</p>
-
-<h3>Hot rodding</h3>
-
-<p>A player may choose to hotrod a unit&rsquo;s system by sacrificing a system to gain a free action with one of the other systems after the unit has taken its turn.</p>
-
-<h2>Taking a turn</h2>
-
-<p>Taking a turn begins with target declaration.  For the defensive units this will generally be the unit in possession of the ball.  For the offensive unit in possession of the ball, this could be targeting a fellow offensive unit for a pass or targeting the opposing goal.</p>
-
-<p>Attacks don&rsquo;t do anything to units without the ball.  Save that animosity for the war.</p>
-
-<p>The turn proceeds as per the vanilla MF0 rules. Any unit that would be activated with the normal MF0 turn rules, i.e. the target of a steal attempt or a pass, takes its turn as per those rules.</p>
-
-<p>For example: If a unit equipped with a blue system is in the line of fire and has not rolled to determine the blue <em>defense value</em> this turn, defending player must declare a target for the unit, roll all of the unit&rsquo;s dice, and assign a <em>defense value</em>.  The unit takes its turn as normal when its initiative dictates.</p>
-
-<h2>Movement Scale and Shooting Scale</h2>
-
-<p>Normal vanilla MF0 scale is 2".  <em>Shooting scale</em> for MFFA is 2".  <em>Movement scale</em> is double that, 4", to represent the agility of these hot-rodded sportsframes.</p>
-
-<p>Using two different colored rulers (e.g., 1 red for shooting and 1 green for movement) is a good way to distinguish <em>movement scale</em> and <em>shooting scale</em>.</p>
-
-<h2>Licensing note</h2>
-
-<p>This rules expansion for Mobile Frame Zero is made in accordance to the Creative Commons, Non-commercial, Share-Alike license of the original game.</p>
-
-<h2>Playtesting</h2>
-
-<p>If you&rsquo;re interested in playtesting these rules go for it.  I&rsquo;d love to hear suggestions and reports here in the comments or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 ]]></content>
   </entry>
   

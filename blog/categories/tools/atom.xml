@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-07-23T10:09:11-05:00</updated>
+  <updated>2016-07-30T09:51:27-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Overworld]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/"/>
+    <updated>2016-07-30T09:47:19-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld</id>
+    <content type="html"><![CDATA[<p>The <code>Overworld</code> state ties together all of the states I previously discussed based on watching <a href="https://youtu.be/GUwmNnMXd4A">this playthrough</a> of <em>I am Setsuna</em>.</p>
+
+<!--more-->
+
+
+<h2>Overworld</h2>
+
+<p>I think that the <code>Overworld</code> can serve as the base <code>Map</code> state I used in my previous examples.  This allows the <code>Overworld</code> to serve two purposes.  First, the <code>Overworld</code> state holds all of the map and area entrance data to allow characters to move about the overworld.  And second, the <code>Overworld</code> state can store information about the state of the game for use in the other states.</p>
+
+<h2>Area information</h2>
+
+<pre><code>| Overworld |
+</code></pre>
+
+<p>The <code>Overworld</code> contains all of the data necessary to render the overworld map, including the assets for rendering the map and the location and the target map data on triggers for entering towns, caves, and other <code>Maps</code>.</p>
+
+<h2>Gameplay information</h2>
+
+<pre><code>| Menu ←    |
+| Overworld |
+</code></pre>
+
+<p>The <code>Overworld</code> also contains the sorts of information you see in the main menu, such as the character&rsquo;s state, inventory, money.  Serializing a snapshot of this information and the characters' position saves the game&rsquo;s state and can be used to reload the game later.</p>
+
+<p>The states added to the stack on top of the <code>Overworld</code> state can access this data for consumption and updating.</p>
+
+<pre><code>| Shop menu  |
+| Map (Shop) |
+| Map (Town) |
+| Overworld  |
+</code></pre>
+
+<p>For instance, a shop in town may access the inventory and money to allow the player to purchase items.</p>
+
+<pre><code>| Combat   |
+| Overwold |
+</code></pre>
+
+<p>Similarly, the combat state may access the characters' stats, equipment and inventory to track health, damage output, and item use in battle.</p>
+
+<h2>Summary</h2>
+
+<p>I hope that <a href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/">the</a> <a href="//zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/">last</a> <a href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/">few posts</a> have given you an overview of how the state stack could work for supporting an RPG like <em>I am Setsuna</em>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Interiors]]></title>
@@ -140,40 +191,6 @@
 
 
 <p>In addition to illuminating how to write these documents in general, I find interesting to see how the Diablo devs were planning on leveraging the success of <em>Magic: The Gathering</em>&rsquo;s business model to sell DLC.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How Dungeonmans teaches diagonal movement]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/"/>
-    <updated>2016-03-19T09:25:44-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement</id>
-    <content type="html"><![CDATA[<p>Listening to <a href="http://www.roguelikeradio.com/2016/01/episode-114-gameplay-orientated.html">Roguelike Radio</a>, I heard the creator of <a href="https://twitter.com/dungeonmans">Dungeonmans</a> talk about designing levels to teach gameplay concepts.</p>
-
-<!--more-->
-
-
-<p><a href="http://www.dungeonmans.com/">Dungeonmans</a> has an interesting strategy to teach players to move diagonally early in the game, without requiring a wordy tutorial.</p>
-
-<p>The first level has caves with loot inside.  Some caves are straightforward, allowing players to reach loot without needing to perform a diagonal step.</p>
-
-<pre><code>###
-#o#
-#.#
-</code></pre>
-
-<p>But other caves are different, requiring diagonal movement to get the loot.</p>
-
-<pre><code>###
-#o#
-##.
-</code></pre>
-
-<p>Presenting the diagonal movement mechanic this way is easy and low risk.  If you don&rsquo;t pick it up, it&rsquo;s ok.  You won&rsquo;t die, you just miss out on some loot.</p>
-
-<p>It&rsquo;s also low disturbance.  There&rsquo;s no dialog popping up saying, &ldquo;Hey!  Listen!&rdquo;  The players will either get a kick out of figuring out how to get that pesky loot or simply move on and play more of the game.</p>
-
-<p>It&rsquo;s a win-win situation.</p>
 ]]></content>
   </entry>
   
