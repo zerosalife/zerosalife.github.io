@@ -4272,8 +4272,8 @@ This leads us to the final state I want to explore, a state to capture
 the Overworld.
 
 ** How I am Setsuna uses a State Stack: Overworld
-The Overworld ties together all of the states I previously discussed
-based on watching [[https://youtu.be/GUwmNnMXd4A][this playthrough]] of /I am Setsuna/.
+The =Overworld= state ties together all of the states I previously
+discussed based on watching [[https://youtu.be/GUwmNnMXd4A][this playthrough]] of /I am Setsuna/.
 
 *** Overworld
 
@@ -4372,8 +4372,6 @@ medium at the time that required using the passive voice?  Below I'll
 dig into the disassembled Pokemon Red source code to answer the
 question of why Pokemon Go uses passive voice.
 
-*** ItemUseBallText05
-
 [[https://github.com/pret/pokered/blob/master/text.asm#L2793-L2798][This code]] shows the text that is displayed when the player
 successfully uses a pokeball to capture a pokemon.  I'll break it down
 for you, using the [[https://github.com/pret/pokered/blob/master/macros.asm#L221][text macros]] for reference.
@@ -4404,24 +4402,25 @@ Is there a technical reason for choosing to use passive voice?
 
 Maybe =TX_RAM= can only be used with a =text= macro.  Based on a
 cursory glance over the [[https://github.com/pret/pokered/blob/master/text.asm][text]], I'd say that this is likely to be the
-case.  But that doesn't preclude the developers from choosing to say
+case.  But that doesn't prevent the developers from choosing to say
 
 #+BEGIN_SRC
 You caught
 Pikachu!
 #+END_SRC
 
-Could it have been more active?  Yes!  Refer to this [[https://github.com/pret/pokered/blob/master/text.asm#L1130][link battle text]]
-for an example of =TX_RAM= beginning a dialogue.
+Could the developers have used a more active voice?  Yes!  Refer to
+this [[https://github.com/pret/pokered/blob/master/text.asm#L1130][link battle text]] for an example of =TX_RAM= beginning a dialogue.
 
 The word "you" occurs [[https://github.com/pret/pokered/search?utf8%3D%25E2%259C%2593&q%3Dyou][171 times in the Pokemon red codebase]], without
 controlling for contents of text strings vs method and variable names.
 
 There seems to be a general tendency to use "you" to refer to things
-that the player does rather than the player's character in the game.
-So that could have been a good reason to choose the passive voice.
-Also, there could be some reasoning behind matching the original
-Japanese text that I'm missing here.
+that the player does, such as connecting the link cable between two
+Gameboys to trade pokemon, rather than the player character's actions
+in the game.  So that could have been a good reason to choose the
+passive voice.  Also, there could be some reasoning behind matching
+the original Japanese text that I'm missing here.
 
 http://i1079.photobucket.com/albums/w519/bigjonathan91/PisforPokemon/pokemon-mewtwo-pokeball_zpsced0e41c.jpg
 
@@ -4456,3 +4455,30 @@ http://finalfantasy.wikia.com/wiki/List_of_Final_Fantasy_VI_weapons
 
 ** Avoiding hiring bias on a small team
 Use metrics on your small game development team
+
+** A Grammar of Procedural Platformer Levels
+- design
+- tools
+
+Brief post this week linking to a couple of great articles about
+elements of platformer game design.  I think these articles make great
+resources for a procedural platformer level generator.  Brevity and
+procedural focus stem at least partially from the release of the
+captivating /[[http://www.no-mans-sky.com/][No Man's Sky]]/.
+
+*** Platformer Level Design
+[[https://twitter.com/gamedevprof][Ken Bowen]]'s 2012 article covering [[http://gamedevprofessor.com/sidescroller-level-design/][2D Sidescroller Level Design]] has
+some great tips.  I especially like the section called Define your
+Building Blocks.  I think this will require some revisiting in a
+future post.
+
+*** Fundamental Physics for Platformers
+[[https://github.com/error454][Zachary Burke]]'s article about [[http://error454.com/2013/10/23/platformer-physics-101-and-the-3-fundamental-equations-of-platformers/][Platformer Physics]] is a nice resource
+that explains the fundamentals in great mathematical detail.  It also
+provides inverse solutions for deriving physics based on descriptive
+parameters for jump height and timing.
+
+Taken together these articles suggest, to me, that we could achieve a
+fully descriptive grammar of platformer games to generate a variety of
+levels constructed from basic building blocks, with constraints
+ensuring fun and responsive gameplay physics.
