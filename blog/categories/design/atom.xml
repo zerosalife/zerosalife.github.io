@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-07-30T09:51:27-05:00</updated>
+  <updated>2016-08-13T09:47:15-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A Grammar of Procedural Platformer Levels]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/"/>
+    <updated>2016-08-13T09:43:49-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels</id>
+    <content type="html"><![CDATA[<p>Brief post this week linking to a couple of great articles about elements of platformer game design.  I think these articles make great resources for a procedural platformer level generator.  Brevity and procedural focus stem at least partially from the release of the captivating <em><a href="http://www.no-mans-sky.com/">No Man&rsquo;s Sky</a></em>.</p>
+
+<h2>Platformer Level Design</h2>
+
+<p><a href="https://twitter.com/gamedevprof">Ken Bowen</a>&rsquo;s 2012 article covering <a href="http://gamedevprofessor.com/sidescroller-level-design/">2D Sidescroller Level Design</a> has some great tips.  I especially like the section called Define your Building Blocks.  I think this will require some revisiting in a future post.</p>
+
+<h2>Fundamental Physics for Platformers</h2>
+
+<p><a href="https://github.com/error454">Zachary Burke</a>&rsquo;s article about <a href="http://error454.com/2013/10/23/platformer-physics-101-and-the-3-fundamental-equations-of-platformers/">Platformer Physics</a> is a nice resource that explains the fundamentals in great mathematical detail.  It also provides inverse solutions for deriving physics based on descriptive parameters for jump height and timing.</p>
+
+<p>Taken together these articles suggest, to me, that we could achieve a fully descriptive grammar of platformer games to generate a variety of levels constructed from basic building blocks, with constraints ensuring fun and responsive gameplay physics.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Overworld]]></title>
@@ -160,44 +179,6 @@
 <p>The gameplay is controlled by the current state at the top of the state stack.  This provides a more convenient way to track the appropriate controls and UI elements than to sprinkle a bunch of complicated conditionals throughout some monolithic game code.</p>
 
 <p>Next time I&rsquo;ll talk about combat.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[/r/proceduralgeneration's spaceship challenge]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/06/25/slash-r-slash-proceduralgenerations-spaceship-challenge/"/>
-    <updated>2016-06-25T09:53:41-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/06/25/slash-r-slash-proceduralgenerations-spaceship-challenge</id>
-    <content type="html"><![CDATA[<p>The June contest on <a href="https://www.reddit.com/r/proceduralgeneration/">/r/proceduralgeneration</a> is to create a <a href="https://www.reddit.com/r/proceduralgeneration/comments/4mn9gj/monthly_challenge_7_june_2016_procedural/">ProceduralSpaceship/Fleet generator</a>.</p>
-
-<p>Here&rsquo;s a look at some of the entries, so far.</p>
-
-<!--more-->
-
-
-<h2>a1studmuffin</h2>
-
-<p><a href="https://github.com/a1studmuffin/SpaceshipGenerator">a1studmuffin&rsquo;s</a> entry is a Python script that interfaces with Blender to create 3d spaceships.  I&rsquo;m digging the choices with textures.  I also appreciate that a1studmuffin has commented to describe the phenotype of some of the parameters.  I feel like this code would be good for a future deep dive explaining it.</p>
-
-<h2>Ladus</h2>
-
-<p><a href="http://i.imgur.com/rgs0b5y.png">Ladus'</a> entry is only shown in a screenshot and a WIP video available on the reddit thread.  The 3d ships rendered in Unreal engine look good.  More of a stylized look in contrast to a1studmuffin&rsquo;s gritty ships.</p>
-
-<h2>NoDownvotesPlease</h2>
-
-<p><a href="http://i.imgur.com/MrjkVU3.gif">NoDownvotesPlease&rsquo;s</a> entry gets bonus points for creating a galaxy for 2d spaceships to explore.</p>
-
-<h2>Hans_Meiser_Koeln</h2>
-
-<p><a href="http://i.imgur.com/XcCBnoh.png">Hans_Meiser_Koeln&rsquo;s</a> entry has some good looking 2d ships.</p>
-
-<h2>green_meklar</h2>
-
-<p><a href="http://imgur.com/a/OZqSv">green_meklar&rsquo;s</a> entry has some nicely <a href="https://en.wikipedia.org/wiki/Greeble">greebled</a> 2d ships made in JavaScript/HTML5.  I&rsquo;d be interested in seeing the code.</p>
-
-<h2>Conclusion</h2>
-
-<p>I&rsquo;m excited to revisit a1studmuffin&rsquo;s code after the contest ends.</p>
 ]]></content>
   </entry>
   

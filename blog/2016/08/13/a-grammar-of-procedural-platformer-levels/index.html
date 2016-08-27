@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>styx_ebooks - zero's a life</title>
+  <title>A Grammar of Procedural Platformer Levels - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="And now for something completely different: a markov chain text generation twitter bot. Styx_ebooks tweets random text generated from a corpus of &hellip;">
+  <meta name="description" content="Brief post this week linking to a couple of great articles about elements of platformer game design. I think these articles make great resources for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Styx_ebooks</h1>
+      <h1 class="entry-title">A Grammar of Procedural Platformer Levels</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-04-19T14:05:03-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2014</time>
+<time datetime="2016-08-13T09:43:49-05:00" pubdate data-updated="true">Aug 13<span>th</span>, 2016</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,17 +95,17 @@
   </header>
 
 
-<div class="entry-content"><p>And now for something completely different: a <a href="http://en.wikipedia.org/wiki/Markov_chain#Markov_text_generators">markov chain text generation</a> twitter bot.  Styx_ebooks tweets random text generated from a corpus of Bangsian fantasy novels.  Its name comes from <a href="http://en.wikipedia.org/wiki/John_Kendrick_Bangs">John Kendrick Bangs</a>&lsquo; novel <em><a href="http://en.wikipedia.org/wiki/A_House-Boat_on_the_Styx">A House-boat on the Styx</a></em> and the general <a href="http://knowyourmeme.com/memes/horse_ebooks">twitter ebooks meme</a>.</p>
+<div class="entry-content"><p>Brief post this week linking to a couple of great articles about elements of platformer game design.  I think these articles make great resources for a procedural platformer level generator.  Brevity and procedural focus stem at least partially from the release of the captivating <em><a href="http://www.no-mans-sky.com/">No Man&rsquo;s Sky</a></em>.</p>
 
-<p>I forked it from an earlier project by <a href="https://github.com/jiko">@jiko</a>, <a href="https://github.com/jiko/lovecraft_ebooks">lovecraft_ebooks</a>.  There were some minor implementation hurdles, mainly related to Twitter&rsquo;s API and oauth.  Reading the <a href="https://pypi.python.org/pypi/twitter">python <code>twitter</code> package</a> <code>twitter.oauth</code> docstring set me straight.  You can check out the code in <a href="https://github.com/zerosalife/styx_ebooks">my fork on github</a>.</p>
+<h2>Platformer Level Design</h2>
 
-<p>This sort of text generation algorithm isn&rsquo;t just useful for making annoying twitter bots.  You could alter some of the in-game text or dialog based on a corpus fed into a markov chain text generator. Especially in the case of a Lovecraftian horror game, I can see how this text could serve a thematic purpose in the story.</p>
+<p><a href="https://twitter.com/gamedevprof">Ken Bowen</a>&rsquo;s 2012 article covering <a href="http://gamedevprofessor.com/sidescroller-level-design/">2D Sidescroller Level Design</a> has some great tips.  I especially like the section called Define your Building Blocks.  I think this will require some revisiting in a future post.</p>
 
-<p>Say you&rsquo;ve got a Lovecraftian horror game in which the player is an investigator who is trying to figure out what is happening to citizens of Innsmouth.  By interacting with NPCs, the player encounters hand written dialog, with occasional markov-generated gibberish thrown in. The amount of gibberish depends on how corrupted the individual denizens of Innsmouth are becoming.  If the player is not clever enough to determine who is corrupt, the player will be killed.  If the player determines the source of the corruption, the player wins.</p>
+<h2>Fundamental Physics for Platformers</h2>
 
-<p>Along the same line of reasoning, the concept I&rsquo;m describing here mimics the game <a href="http://www.newgrounds.com/portal/view/634905">ALZ</a>, a touching short, playable in 2 or 3 minutes, which uses glitchy graphics to convey a sense of what it&rsquo;s like to live with Alzheimer&rsquo;s disease to the player.  I came across Dylan Carter&rsquo;s ALZ in a <a href="http://www.animalnewyork.com/2014/making-alz-glitch-fueled-game-alzheimers/">post on the ANIMAL blog</a>.  This approach of literally altering the player&rsquo;s experience of the game world to mimic the subjective experience of characters in the game is ripe for exploration.  I&rsquo;d love to hear about more examples.</p>
+<p><a href="https://github.com/error454">Zachary Burke</a>&rsquo;s article about <a href="http://error454.com/2013/10/23/platformer-physics-101-and-the-3-fundamental-equations-of-platformers/">Platformer Physics</a> is a nice resource that explains the fundamentals in great mathematical detail.  It also provides inverse solutions for deriving physics based on descriptive parameters for jump height and timing.</p>
 
-<p>You can check out my bot, <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>, on twitter, happily tweeting the day away.</p>
+<p>Taken together these articles suggest, to me, that we could achieve a fully descriptive grammar of platformer games to generate a variety of levels constructed from basic building blocks, with constraints ensuring fun and responsive gameplay physics.</p>
 </div>
 
 
@@ -128,12 +128,12 @@
   
 
 
-<time datetime="2014-04-19T14:05:03-05:00" pubdate data-updated="true">Apr 19<span>th</span>, 2014</time>
+<time datetime="2016-08-13T09:43:49-05:00" pubdate data-updated="true">Aug 13<span>th</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/game/'>game</a>, <a class='category' href='/blog/categories/mechanics/'>mechanics</a>, <a class='category' href='/blog/categories/procedural-generation/'>procedural generation</a>
+    <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/procedural-generation/'>procedural generation</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
   
 </span>
 
@@ -142,7 +142,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/" >Tweet</a>
   
   
   
@@ -151,10 +151,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/12/the-fate-of-adventure-games/" title="Previous Post: The Fate of Adventure Games">&laquo; The Fate of Adventure Games</a>
+        <a class="basic-alignment left" href="/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/" title="Previous Post: How I am Setsuna uses a State Stack: Overworld">&laquo; How I am Setsuna uses a State Stack: Overworld</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/" title="Next Post: Clojure Rhizome Labeled Edge Tutorial">Clojure Rhizome Labeled Edge Tutorial &raquo;</a>
       
     </p>
   </footer>
@@ -251,8 +249,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/';
         var disqus_script = 'embed.js';
       
     (function () {
