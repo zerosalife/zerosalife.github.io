@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Text encoding: further improvements to using git for Unity projects - zero's a life</title>
+  <title>Why does Pokemon GO use passive voice? - zero's a life</title>
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Brief note here. Following a Summer of travel and visitors, posts should be returning to a more regular schedule soon. It&rsquo;s great when I can &hellip;">
+  <meta name="description" content="A colleague of mine wondered why Pokemon GO uses the passive voice when reporting, Pikachu was caught! The simple reason is nostalgia&mdash;that& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects">
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
@@ -70,7 +70,7 @@
   
   <header>
     
-      <h1 class="entry-title">Text Encoding: Further Improvements to Using Git for Unity Projects</h1>
+      <h1 class="entry-title">Why Does Pokemon GO Use Passive Voice?</h1>
     
     
       <p class="meta">
@@ -86,7 +86,7 @@
   
 
 
-<time datetime="2014-09-27T09:51:41-05:00" pubdate data-updated="true">Sep 27<span>th</span>, 2014</time>
+<time datetime="2016-08-27T09:21:50-05:00" pubdate data-updated="true">Aug 27<span>th</span>, 2016</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -95,33 +95,44 @@
   </header>
 
 
-<div class="entry-content"><p>Brief note here.  Following a Summer of travel and visitors, posts should be returning to a more regular schedule soon.  It&rsquo;s great when I can post here regularly, but I&rsquo;m not going to get bent out of shape when I have other commitments.  So, if there are unannounced, prolonged absences, you can assume that it has something to do with spending my weekends traveling or socializing, which is undoubtedly a good thing.</p>
+<div class="entry-content"><p>A colleague of mine wondered why <a href="http://www.pokemon.com/us/pokemon-video-games/pokemon-go/">Pokemon GO</a> uses the passive voice when reporting,</p>
 
-<p>I recently came across <a href="http://stackoverflow.com/questions/18225126/how-to-use-git-for-unity3d-source-control">this stackoverflow answer</a> introducing git for version control in Unity projects.  Note, the question specifically refers to Unity3D, but this will work for Unity2D as well.</p>
+<blockquote><p>Pikachu was caught!</p></blockquote>
 
-<p>I&rsquo;ve <a href="http://zerosalife.github.io/blog/2014/05/17/dot-gitignore-for-unity-projects/">already written</a> about setting up a <code>.gitignore</code> file.  Here are some steps you can take to optimize the way Unity stores information, so git can track it.</p>
+<p>The simple reason is nostalgia&mdash;that&rsquo;s the phrasing from the original <a href="http://bulbapedia.bulbagarden.net/wiki/Generation_I">Generation 1 Pokemon games</a>.</p>
 
-<p>Git was built to work by <code>diffing</code> large files containing text, specifically code.  Git works just fine with binary files, but it defaults to a less efficient method to <code>diff</code> those files, which can result in bloated git repositories.  Nobody wants a bloated git repository.</p>
+<p>Was there a limitation inherent in the medium at the time that required using the passive voice?  Below I&rsquo;ll dig into the <a href="https://github.com/pret/pokered">disassembled Pokemon Red source code</a> to answer the question of why Pokemon Go uses passive voice.</p>
 
-<p>Here I&rsquo;ll summarize two of the steps from the answer that I found helpful, using Unity v4.5+.  It&rsquo;s worth noting that these steps will increase the size of your project&mdash;although I&rsquo;m unsure whether they affect the size of any deployed binaries.</p>
+<!--more-->
 
-<p>So if the size of the project on your development machine is a critical issue, you may want to think about keeping the default settings.  The project I tried the steps on went from 86.7 MB on disk (including its bloated git repository) to 86.9 MB, so it&rsquo;s probably not going to create an appreciable change in most projects.</p>
 
-<h2>Switch to Visible Meta Files</h2>
+<p><a href="https://github.com/pret/pokered/blob/master/text.asm#L2793-L2798">This code</a> shows the text that is displayed when the player successfully uses a pokeball to capture a pokemon.  I&rsquo;ll break it down for you, using the <a href="https://github.com/pret/pokered/blob/master/macros.asm#L221">text macros</a> for reference.</p>
 
-<p>Switch to <code>Visible Meta Files</code> in the Edit → Project Settings → Editor → Version Control Mode Menu.</p>
+<p>The <code>text</code> macro starts writing text, printing out the string <code>"All right!"</code>.  Then the <code>line</code> macro prints a special character <code>"@"</code> at the beginning of the bottom line in the text box.  The <code>TX_RAM</code> macro looks up a stored chunk of text based on the address stored in <code>wEnemyMonNick</code>, which points at the current enemy pokemon&rsquo;s name, and prints the name in the text box.  Then another <code>text</code> macro starts writing <code>" was"</code> following the enemy pokemon&rsquo;s name. And finally, the <code>cont</code> macro scrolls text to the next line, printing <code>"caught!@@"</code>.</p>
 
-<p>If the <code>Visible Meta Files</code> option is turned on, the <code>.meta</code> files associated with parts of your project will have textual information rather than binary.</p>
+<p>I couldn&rsquo;t find a good reference, but I&rsquo;m pretty sure that the <code>@</code> character is acting as a <a href="https://en.wikipedia.org/wiki/Newline">newline character</a>, more commonly <code>\n</code> these days.</p>
 
-<h2>Switch to Force Text</h2>
+<p>The final text looks something like:</p>
 
-<p>Switch to <code>Force Text</code> in the Edit → Project Settings → Editor → Version Control Menu.</p>
+<pre><code>All right!\n
+Pikachu was
+caught!!\n
+\n
+</code></pre>
 
-<p>If you choose <code>Force Text</code> this will cause Unity to use text to serialize assets that it would normally store as binary files.</p>
+<p>Now you&rsquo;ve seen the implementation of the text for catching pokemon.  Is there a technical reason for choosing to use passive voice?</p>
 
-<h2>Save</h2>
+<p>Maybe <code>TX_RAM</code> can only be used with a <code>text</code> macro.  Based on a cursory glance over the <a href="https://github.com/pret/pokered/blob/master/text.asm">text</a>, I&rsquo;d say that this is likely to be the case.  But that doesn&rsquo;t prevent the developers from choosing to say</p>
 
-<p>Save the Scene and project for these changes to take effect.</p>
+<pre><code>You caught
+Pikachu!
+</code></pre>
+
+<p>Could the developers have used a more active voice?  Yes!  Refer to this <a href="https://github.com/pret/pokered/blob/master/text.asm#L1130">link battle text</a> for an example of <code>TX_RAM</code> beginning a dialogue.</p>
+
+<p>The word &ldquo;you&rdquo; occurs <a href="https://github.com/pret/pokered/search?utf8%3D%25E2%259C%2593&amp;q%3Dyou">171 times in the Pokemon red codebase</a>, without controlling for contents of text strings vs method and variable names.</p>
+
+<p>There seems to be a general tendency to use &ldquo;you&rdquo; to refer to things that the player does, such as connecting the link cable between two Gameboys to trade pokemon, rather than the player character&rsquo;s actions in the game.  So that could have been a good reason to choose the passive voice.  Also, there could be some reasoning behind matching the original Japanese text that I&rsquo;m missing here.</p>
 </div>
 
 
@@ -144,12 +155,12 @@
   
 
 
-<time datetime="2014-09-27T09:51:41-05:00" pubdate data-updated="true">Sep 27<span>th</span>, 2014</time>
+<time datetime="2016-08-27T09:21:50-05:00" pubdate data-updated="true">Aug 27<span>th</span>, 2016</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/unity/'>Unity</a>, <a class='category' href='/blog/categories/unity3d/'>Unity3D</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/tools/'>tools</a>, <a class='category' href='/blog/categories/version-control/'>version control</a>
+    <a class='category' href='/blog/categories/design/'>design</a>
   
 </span>
 
@@ -158,7 +169,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/" >Tweet</a>
   
   
   
@@ -167,10 +178,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/09/06/automating-blog-deployment-with-octopress/" title="Previous Post: Automating blog deployment with Octopress">&laquo; Automating blog deployment with Octopress</a>
+        <a class="basic-alignment left" href="/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/" title="Previous Post: A Grammar of Procedural Platformer Levels">&laquo; A Grammar of Procedural Platformer Levels</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/10/04/do-ethics-matter-in-game-design/" title="Next Post: Do ethics matter in game design?">Do ethics matter in game design? &raquo;</a>
       
     </p>
   </footer>
@@ -267,8 +276,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/';
-        var disqus_url = 'http://zerosalife.github.io/blog/2014/09/27/text-encoding-further-improvements-to-using-git-for-unity-projects/';
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/';
         var disqus_script = 'embed.js';
       
     (function () {
