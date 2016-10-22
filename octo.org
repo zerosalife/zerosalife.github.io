@@ -4096,9 +4096,10 @@ network.
 
 You can see the resulting image above the fold.
 ** Special Missions' Story Pattern
-Interested in Larry Hama's GI Joe Special Missions' influence on Metal
-Gear and Metal Gear Solid, I want to look at the pattern of story
-telling that seems to emerge consistently in Special Missions' issues.
+I'm interested in Larry Hama's [[https://en.wikipedia.org/wiki/G.I._Joe_(comics)#G.I._Joe:_Special_Missions][/GI Joe Special Missions/]]' influence on
+Metal Gear and Metal Gear Solid.  I want to look at the pattern of
+story telling that seems to emerge consistently in Special Missions'
+issues.
 
 - A
 - A
@@ -4119,13 +4120,15 @@ telling that seems to emerge consistently in Special Missions' issues.
 - A
 - A
 
-Notice how this follows a three act structure.  In the first three
-pages we establish a scenario, the first act of the story.  In the
-following pages we rapidly cross cut between the primary story (A) and
-the secondary story (B), forming the bulk of the story, the second
-act.  Finally the secondary story may be resolved or cross over to
-join the primary story, which takes over for the last five pages,
-forming the climax and resolution, the third act of the story.
+Notice how this follows a three act structure.
+
+In the first three pages we establish a scenario, the first act of the
+story.  In the following pages we rapidly cross cut between the
+primary story (A) and the secondary story (B), forming the bulk of the
+story, the second act.  Finally the secondary story may be resolved or
+cross over to join the primary story, which takes over for the last
+five pages, forming the climax and resolution, the third act of the
+story.
 
 ** Reigns' swipe controls
 http://www.devolverdigital.com/blog/view/reigns-to-impose-its-will-on-ios-android-and-pc
@@ -4489,3 +4492,23 @@ ensuring fun and responsive gameplay physics.
 
 ** Dick Marcinko's influence on Metal Gear
 /Metal Gear??/  That's right.
+
+** Cat Burglar
+
+Guide a team of up to 4 agents through the named streets of a
+procedurally generated city as they attempt to witness crimes
+committed by a gang of cat burglars in order to collect enough
+evidence points to lock the gang up for good. Tail increasingly speedy
+and crafty cat burglar AI, but watch out!  If the cat burglars spot
+one of your agents, that agent will gain heat.  Gain too much heat and
+your agent will be made.  Made agents can no longer tail the cat
+burglars--they're out of the game.  If all of your agents are made the
+cat burglars win.
+
+Each cat burglar AI has a prior wrap sheet, which dictates a different
+threshold of evidence required to lock them up.  Gather more evidence
+points than the required evidence threshold to lock them up and win
+the round.  You can replay rounds to try to increase your score.
+
+** Roguelike rating
+[[http://bp.io/howroguelike/]]
