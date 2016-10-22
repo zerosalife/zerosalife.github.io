@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-13T09:47:15-05:00</updated>
+  <updated>2016-08-27T09:29:51-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Why does Pokemon GO use passive voice?]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/"/>
+    <updated>2016-08-27T09:21:50-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice</id>
+    <content type="html"><![CDATA[<p>A colleague of mine wondered why <a href="http://www.pokemon.com/us/pokemon-video-games/pokemon-go/">Pokemon GO</a> uses the passive voice when reporting,</p>
+
+<blockquote><p>Pikachu was caught!</p></blockquote>
+
+<p>The simple reason is nostalgia&mdash;that&rsquo;s the phrasing from the original <a href="http://bulbapedia.bulbagarden.net/wiki/Generation_I">Generation 1 Pokemon games</a>.</p>
+
+<p>Was there a limitation inherent in the medium at the time that required using the passive voice?  Below I&rsquo;ll dig into the <a href="https://github.com/pret/pokered">disassembled Pokemon Red source code</a> to answer the question of why Pokemon Go uses passive voice.</p>
+
+<!--more-->
+
+
+<p><a href="https://github.com/pret/pokered/blob/master/text.asm#L2793-L2798">This code</a> shows the text that is displayed when the player successfully uses a pokeball to capture a pokemon.  I&rsquo;ll break it down for you, using the <a href="https://github.com/pret/pokered/blob/master/macros.asm#L221">text macros</a> for reference.</p>
+
+<p>The <code>text</code> macro starts writing text, printing out the string <code>"All right!"</code>.  Then the <code>line</code> macro prints a special character <code>"@"</code> at the beginning of the bottom line in the text box.  The <code>TX_RAM</code> macro looks up a stored chunk of text based on the address stored in <code>wEnemyMonNick</code>, which points at the current enemy pokemon&rsquo;s name, and prints the name in the text box.  Then another <code>text</code> macro starts writing <code>" was"</code> following the enemy pokemon&rsquo;s name. And finally, the <code>cont</code> macro scrolls text to the next line, printing <code>"caught!@@"</code>.</p>
+
+<p>I couldn&rsquo;t find a good reference, but I&rsquo;m pretty sure that the <code>@</code> character is acting as a <a href="https://en.wikipedia.org/wiki/Newline">newline character</a>, more commonly <code>\n</code> these days.</p>
+
+<p>The final text looks something like:</p>
+
+<pre><code>All right!\n
+Pikachu was
+caught!!\n
+\n
+</code></pre>
+
+<p>Now you&rsquo;ve seen the implementation of the text for catching pokemon.  Is there a technical reason for choosing to use passive voice?</p>
+
+<p>Maybe <code>TX_RAM</code> can only be used with a <code>text</code> macro.  Based on a cursory glance over the <a href="https://github.com/pret/pokered/blob/master/text.asm">text</a>, I&rsquo;d say that this is likely to be the case.  But that doesn&rsquo;t prevent the developers from choosing to say</p>
+
+<pre><code>You caught
+Pikachu!
+</code></pre>
+
+<p>Could the developers have used a more active voice?  Yes!  Refer to this <a href="https://github.com/pret/pokered/blob/master/text.asm#L1130">link battle text</a> for an example of <code>TX_RAM</code> beginning a dialogue.</p>
+
+<p>The word &ldquo;you&rdquo; occurs <a href="https://github.com/pret/pokered/search?utf8%3D%25E2%259C%2593&amp;q%3Dyou">171 times in the Pokemon red codebase</a>, without controlling for contents of text strings vs method and variable names.</p>
+
+<p>There seems to be a general tendency to use &ldquo;you&rdquo; to refer to things that the player does, such as connecting the link cable between two Gameboys to trade pokemon, rather than the player character&rsquo;s actions in the game.  So that could have been a good reason to choose the passive voice.  Also, there could be some reasoning behind matching the original Japanese text that I&rsquo;m missing here.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A Grammar of Procedural Platformer Levels]]></title>
@@ -139,46 +185,6 @@
 <p>Note that the combat state may have substates that handle in-combat messages, player turns, and experience and item rewards at the end of combat.  Designing these substates depends on the specific requirements of your combat system.  That makes it hard to tell what the developers are using from <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">this brief clip of <em>I am Setsuna</em></a>.</p>
 
 <p>That&rsquo;s all there is to it.  The modularity of this state stack approach allows developers to customize the flow of gameplay as desired.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Map and Dialog]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/"/>
-    <updated>2016-07-02T09:48:42-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog</id>
-    <content type="html"><![CDATA[<p>I recently watched <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">some footage of <em>I Am Setsuna</em> from E3</a>.</p>
-
-<p>Here&rsquo;s my analysis of the evolving <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">state stack</a>, as you play this spritual successor to the classic RPG <a href="https://en.wikipedia.org/wiki/Chrono_Trigger"><em>Chrono Trigger</em></a>.</p>
-
-<!--more-->
-
-
-<h2>Map and Dialog</h2>
-
-<p>There&rsquo;s likely a catch-all map state in which characters can run around, interacting with the world by opening chests, entering doors and new areas, and talking to NPCs.</p>
-
-<p>The gameplay starts in a snowy forest.  So, there&rsquo;s a <code>Map</code> state pushed onto the state stack that has a reference to the map for this snowy forest.</p>
-
-<pre><code>| Map |
-</code></pre>
-
-<p>As the player wanders around the forest, the player encounters talking NPCs.  These NPCs likely have triggers that push a <code>Dialog</code> state with a reference to the NPC&rsquo;s dialog onto the stack.</p>
-
-<pre><code>| Dialog ←PUSH |
-| Map          |
-</code></pre>
-
-<p>As the player advances and completes the dialog, the player is returned to the previous state, the snowy forest <code>Map</code>.</p>
-
-<pre><code>| Dialog →POP |
-
-| Map |
-</code></pre>
-
-<p>The gameplay is controlled by the current state at the top of the state stack.  This provides a more convenient way to track the appropriate controls and UI elements than to sprinkle a bunch of complicated conditionals throughout some monolithic game code.</p>
-
-<p>Next time I&rsquo;ll talk about combat.</p>
 ]]></content>
   </entry>
   
