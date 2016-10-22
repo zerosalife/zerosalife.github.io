@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[A Grammar of Procedural Platformer Levels]]></title>
     <link href="http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/"/>
-    <updated>2016-08-13T09:43:49-05:00</updated>
+    <updated>2016-08-13T10:43:49-04:00</updated>
     <id>http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels</id>
     <content type="html"><![CDATA[<p>Brief post this week linking to a couple of great articles about elements of platformer game design.  I think these articles make great resources for a procedural platformer level generator.  Brevity and procedural focus stem at least partially from the release of the captivating <em><a href="http://www.no-mans-sky.com/">No Man&rsquo;s Sky</a></em>.</p>
 
@@ -35,7 +35,7 @@
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Overworld]]></title>
     <link href="http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/"/>
-    <updated>2016-07-30T09:47:19-05:00</updated>
+    <updated>2016-07-30T10:47:19-04:00</updated>
     <id>http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld</id>
     <content type="html"><![CDATA[<p>The <code>Overworld</code> state ties together all of the states I previously discussed based on watching <a href="https://youtu.be/GUwmNnMXd4A">this playthrough</a> of <em>I am Setsuna</em>.</p>
 
@@ -86,7 +86,7 @@
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Interiors]]></title>
     <link href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/"/>
-    <updated>2016-07-23T10:01:13-05:00</updated>
+    <updated>2016-07-23T11:01:13-04:00</updated>
     <id>http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors</id>
     <content type="html"><![CDATA[<p>About <a href="https://youtu.be/GUwmNnMXd4A?t%3D5m36s">a quarter of the way through this playthrough</a> of <em>I am Setsuna</em> at E3, the player enters a house.</p>
 
@@ -112,7 +112,7 @@
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Combat]]></title>
     <link href="http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/"/>
-    <updated>2016-07-16T10:14:59-05:00</updated>
+    <updated>2016-07-16T11:14:59-04:00</updated>
     <id>http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat</id>
     <content type="html"><![CDATA[<p>The previous post looked at how <em>I am Setsuna</em> uses a state stack to allow players to move around on a map and interact with NPCs via dialog.  This time around, I&rsquo;ll show you how combat can be handled by adding another state to the stack.</p>
 
@@ -145,7 +145,7 @@
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Map and Dialog]]></title>
     <link href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/"/>
-    <updated>2016-07-02T09:48:42-05:00</updated>
+    <updated>2016-07-02T10:48:42-04:00</updated>
     <id>http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog</id>
     <content type="html"><![CDATA[<p>I recently watched <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">some footage of <em>I Am Setsuna</em> from E3</a>.</p>
 

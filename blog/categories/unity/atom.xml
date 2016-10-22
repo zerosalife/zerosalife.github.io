@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
     <link href="http://zerosalife.github.io/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests/"/>
-    <updated>2016-01-09T10:52:49-06:00</updated>
+    <updated>2016-01-09T11:52:49-05:00</updated>
     <id>http://zerosalife.github.io/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests</id>
     <content type="html"><![CDATA[<p>A while back, I wrote a post about <a href="https://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
 
@@ -68,7 +68,7 @@ UnityEngine.Object.DestroyImmediate(testGo);
   <entry>
     <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/"/>
-    <updated>2015-10-31T09:03:57-05:00</updated>
+    <updated>2015-10-31T10:03:57-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests</id>
     <content type="html"><![CDATA[<p>A while back, I wrote a post about <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
 
@@ -120,7 +120,7 @@ UnityEngine.Object.DestroyImmediate(testGo);
   <entry>
     <title type="html"><![CDATA[Using  LINQ queries and lambda expressions in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp/"/>
-    <updated>2015-10-17T11:26:32-05:00</updated>
+    <updated>2015-10-17T12:26:32-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/17/using-linq-queries-and-lambda-expressions-in-unity-c-sharp</id>
     <content type="html"><![CDATA[<p>Unity&rsquo;s C# environment includes access to .NET&rsquo;s powerful <a href="https://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ querying expressions</a>.  In this post I&rsquo;ll show how to use LINQ expressions to call anonymous functions.</p>
 
@@ -192,7 +192,7 @@ int[] tick(int[] counters) {</p>
   <entry>
     <title type="html"><![CDATA[Symbolic Links to Share Scripts Across Unity Projects]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects/"/>
-    <updated>2015-10-10T13:27:14-05:00</updated>
+    <updated>2015-10-10T14:27:14-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/10/symbolic-links-to-share-scripts-across-unity-projects</id>
     <content type="html"><![CDATA[<p>I like to develop utility scripts in a common project where I can implement unit tests without cluttering up my game projects with <a href="https://www.assetstore.unity3d.com/en/#!/content/13802">UnityTestTools</a> and duplicated test scripts.  If you&rsquo;re not sure what unit tests are, check out <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">this post I wrote about them</a>.</p>
 
@@ -221,7 +221,7 @@ int[] tick(int[] counters) {</p>
   <entry>
     <title type="html"><![CDATA[Unit Testing in Unity]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/"/>
-    <updated>2015-10-03T09:44:58-05:00</updated>
+    <updated>2015-10-03T10:44:58-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity</id>
     <content type="html"><![CDATA[<p>How to use UnityTestTools to create unit tests for Unity CSharp</p>
 

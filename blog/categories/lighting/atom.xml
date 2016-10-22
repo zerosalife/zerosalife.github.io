@@ -4,7 +4,7 @@
   <title><![CDATA[Category: lighting | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/lighting/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[More Skytorn Raycast Lighting Algorithm Details]]></title>
     <link href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/"/>
-    <updated>2015-05-16T11:10:29-05:00</updated>
+    <updated>2015-05-16T12:10:29-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details</id>
     <content type="html"><![CDATA[<p><a href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/">Last week</a> I covered the lighting algorithm <a href="https://twitter.com/NoelFB">@NoelFB</a> is implementing for <a href="http://skytorngame.com/">Skytorn</a>.  Noel was nice enough to correct my mistaken assumptions about the inner workings of the lighting algorithm.</p>
 
@@ -49,7 +49,7 @@
   <entry>
     <title type="html"><![CDATA[Raycast Lighting in Skytorn]]></title>
     <link href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/"/>
-    <updated>2015-05-09T09:21:03-05:00</updated>
+    <updated>2015-05-09T10:21:03-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn</id>
     <content type="html"><![CDATA[<p><a href="https://twitter.com/NoelFB/">@NoelFB</a> posted a <a href="https://twitter.com/NoelFB/status/543586120731074561/photo/1">screenshot</a> showing how dynamic lighting works in <a href="http://skytorn-game.com/">Skytorn</a>.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: UnityJS | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unityjs/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Prototyping Rectangles in Unity 2D for Dummy]]></title>
     <link href="http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/"/>
-    <updated>2015-05-30T09:57:58-05:00</updated>
+    <updated>2015-05-30T10:57:58-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy</id>
     <content type="html"><![CDATA[<p>Who&rsquo;s &ldquo;Dummy&rdquo;? I&rsquo;m the dummy.  Prototyping with 2d boxes in Unity JavaScript has proven surprisingly hard.  I think the difficulty I&rsquo;m having is that I&rsquo;m not exactly sure what I&rsquo;m trying to do.  What follows is an example of <strong>one</strong> way (notice that I didn&rsquo;t say THE <strong>RIGHT</strong> WAY) to prototype with 2d rectangles in Unity.  I&rsquo;m still too much of a noob to have strong opinions on the right way to go about doing this.  Expect more posts on this topic as I develop my expertise.</p>
 

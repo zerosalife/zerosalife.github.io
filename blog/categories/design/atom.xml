@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -14,9 +14,47 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Special Missions' Story Pattern]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/10/22/special-missions-story-pattern/"/>
+    <updated>2016-10-22T09:22:43-04:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/10/22/special-missions-story-pattern</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m interested in Larry Hama&rsquo;s <a href="https://en.wikipedia.org/wiki/G.I._Joe_%28comics%29#G.I._Joe:_Special_Missions"><em>GI Joe Special Missions'</em></a> influence on Metal Gear and Metal Gear Solid.  I want to look at the pattern of story telling that seems to emerge consistently in Special Missions' issues.</p>
+
+<!--more-->
+
+
+<ul>
+<li>A</li>
+<li>A</li>
+<li>B</li>
+<li>A</li>
+<li>B</li>
+<li>A</li>
+<li>B</li>
+<li>A</li>
+<li>A</li>
+<li>B</li>
+<li>A</li>
+<li>A</li>
+<li>B</li>
+<li>A</li>
+<li>A</li>
+<li>A</li>
+<li>A</li>
+<li>A</li>
+</ul>
+
+
+<p>Notice how this follows a three act structure.</p>
+
+<p>In the first three pages we establish a scenario, the first act of the story.  In the following pages we rapidly cross cut between the primary story (A) and the secondary story (B), forming the bulk of the story, the second act.  Finally the secondary story may be resolved or cross over to join the primary story, which takes over for the last five pages, forming the climax and resolution, the third act of the story.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Why does Pokemon GO use passive voice?]]></title>
     <link href="http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/"/>
-    <updated>2016-08-27T09:21:50-05:00</updated>
+    <updated>2016-08-27T10:21:50-04:00</updated>
     <id>http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice</id>
     <content type="html"><![CDATA[<p>A colleague of mine wondered why <a href="http://www.pokemon.com/us/pokemon-video-games/pokemon-go/">Pokemon GO</a> uses the passive voice when reporting,</p>
 
@@ -62,7 +100,7 @@ Pikachu!
   <entry>
     <title type="html"><![CDATA[A Grammar of Procedural Platformer Levels]]></title>
     <link href="http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/"/>
-    <updated>2016-08-13T09:43:49-05:00</updated>
+    <updated>2016-08-13T10:43:49-04:00</updated>
     <id>http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels</id>
     <content type="html"><![CDATA[<p>Brief post this week linking to a couple of great articles about elements of platformer game design.  I think these articles make great resources for a procedural platformer level generator.  Brevity and procedural focus stem at least partially from the release of the captivating <em><a href="http://www.no-mans-sky.com/">No Man&rsquo;s Sky</a></em>.</p>
 
@@ -81,7 +119,7 @@ Pikachu!
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Overworld]]></title>
     <link href="http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/"/>
-    <updated>2016-07-30T09:47:19-05:00</updated>
+    <updated>2016-07-30T10:47:19-04:00</updated>
     <id>http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld</id>
     <content type="html"><![CDATA[<p>The <code>Overworld</code> state ties together all of the states I previously discussed based on watching <a href="https://youtu.be/GUwmNnMXd4A">this playthrough</a> of <em>I am Setsuna</em>.</p>
 
@@ -132,7 +170,7 @@ Pikachu!
   <entry>
     <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Interiors]]></title>
     <link href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/"/>
-    <updated>2016-07-23T10:01:13-05:00</updated>
+    <updated>2016-07-23T11:01:13-04:00</updated>
     <id>http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors</id>
     <content type="html"><![CDATA[<p>About <a href="https://youtu.be/GUwmNnMXd4A?t%3D5m36s">a quarter of the way through this playthrough</a> of <em>I am Setsuna</em> at E3, the player enters a house.</p>
 
@@ -152,39 +190,6 @@ Pikachu!
 <p>So, it&rsquo;s likely that the <em>I am Setsuna</em> developers are using a generalized <code>Map</code> state to cover these cases.</p>
 
 <p>This leads us to the final state I want to explore, a state to capture the Overworld.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Combat]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/"/>
-    <updated>2016-07-16T10:14:59-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat</id>
-    <content type="html"><![CDATA[<p>The previous post looked at how <em>I am Setsuna</em> uses a state stack to allow players to move around on a map and interact with NPCs via dialog.  This time around, I&rsquo;ll show you how combat can be handled by adding another state to the stack.</p>
-
-<!--more-->
-
-
-<p>This approach decreases the need to pass information between the various parts of your code handling the various states of your game.  So it&rsquo;s preferable compared to costly serialization and deserialization to pass information to wholly separate code every time the game state changes.  Instead you simply change the way that the game&rsquo;s code runs.</p>
-
-<h2>Combat</h2>
-
-<p>After the player converses with an NPC, combat with a gnarly looking bear begins.  Here&rsquo;s what likely happens.</p>
-
-<pre><code>| Combat ←push |
-| Map          |
-</code></pre>
-
-<p>The player fights the enemy.  Then the combat state pops off the stack, returning the player to the snowy forest map.</p>
-
-<pre><code>| Combat →pop |
-
-| Map |
-</code></pre>
-
-<p>Note that the combat state may have substates that handle in-combat messages, player turns, and experience and item rewards at the end of combat.  Designing these substates depends on the specific requirements of your combat system.  That makes it hard to tell what the developers are using from <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">this brief clip of <em>I am Setsuna</em></a>.</p>
-
-<p>That&rsquo;s all there is to it.  The modularity of this state stack approach allows developers to customize the flow of gameplay as desired.</p>
 ]]></content>
   </entry>
   

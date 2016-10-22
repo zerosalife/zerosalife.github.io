@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unity2d | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/unity2d/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Cheeky Tinted Blobs: a procedurally generated Unity 2D background]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs/"/>
-    <updated>2015-09-12T09:47:50-05:00</updated>
+    <updated>2015-09-12T10:47:50-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs</id>
     <content type="html"><![CDATA[<p>I&rsquo;m following along with <a href="https://twitter.com/pentadact">@pentadact</a>&rsquo;s tutorial video <a href="https://youtu.be/I5qxIhdEx28?t%3D1m33s">here</a> (You can see the finished result around 6 minutes into the video).</p>
 
@@ -145,7 +145,7 @@ That&rsquo;s all there is to it.  You can check out the full example project on 
   <entry>
     <title type="html"><![CDATA[Prototyping Rectangles in Unity 2D for Dummy]]></title>
     <link href="http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy/"/>
-    <updated>2015-05-30T09:57:58-05:00</updated>
+    <updated>2015-05-30T10:57:58-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/05/30/prototyping-rectangles-in-unity-2d-for-dummy</id>
     <content type="html"><![CDATA[<p>Who&rsquo;s &ldquo;Dummy&rdquo;? I&rsquo;m the dummy.  Prototyping with 2d boxes in Unity JavaScript has proven surprisingly hard.  I think the difficulty I&rsquo;m having is that I&rsquo;m not exactly sure what I&rsquo;m trying to do.  What follows is an example of <strong>one</strong> way (notice that I didn&rsquo;t say THE <strong>RIGHT</strong> WAY) to prototype with 2d rectangles in Unity.  I&rsquo;m still too much of a noob to have strong opinions on the right way to go about doing this.  Expect more posts on this topic as I develop my expertise.</p>
 
@@ -265,7 +265,7 @@ obj.renderer.material.shader = spriteShader;
   <entry>
     <title type="html"><![CDATA[Create a Dictionary with multiple keys in Unity C#]]></title>
     <link href="http://zerosalife.github.io/blog/2015/01/31/create-a-dictionary-with-multiple-keys-in-unity-c-number/"/>
-    <updated>2015-01-31T11:03:42-06:00</updated>
+    <updated>2015-01-31T12:03:42-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/01/31/create-a-dictionary-with-multiple-keys-in-unity-c-number</id>
     <content type="html"><![CDATA[<p>I want to create a lookup table for comparing a player choice and an enemy choice.  Each pair of choices can lead to a variety of outcomes.  So, in order to map the relationship between choice pair and outcome, I&rsquo;ve decided to use a Dictionary with choice pairs as keys and outcomes as values.</p>
 
