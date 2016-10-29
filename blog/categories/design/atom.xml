@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-10-22T09:36:09-04:00</updated>
+  <updated>2016-10-29T09:55:55-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Procjam 2016 Talks]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/10/29/procjam-2016-talks/"/>
+    <updated>2016-10-29T09:51:02-04:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/10/29/procjam-2016-talks</id>
+    <content type="html"><![CDATA[<p>Last weekend <a href="https://twitter.com/mtrc">@mtrc</a> put on a <a href="https://www.youtube.com/watch?v%3D3wcpLwvBTYo">series of talks</a> leading up to <a href="https://twitter.com/hashtag/procjam">#procjam</a> 2016 at Falmouth University in Cornwall.  You can <a href="https://itch.io/jam/procjam">read more about the jam at itch.io</a>.</p>
+
+<p>Here are some links to interesting resources that stood out to me:</p>
+
+<!--more-->
+
+
+<h2>The Video Game Level Corpus</h2>
+
+<p><a href="https://arxiv.org/abs/1606.07487">https://arxiv.org/abs/1606.07487</a></p>
+
+<h2>PCG book</h2>
+
+<p><a href="http://pcgbook.com/">http://pcgbook.com/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Special Missions' Story Pattern]]></title>
@@ -164,32 +186,6 @@ Pikachu!
 <h2>Summary</h2>
 
 <p>I hope that <a href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/">the</a> <a href="//zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/">last</a> <a href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/">few posts</a> have given you an overview of how the state stack could work for supporting an RPG like <em>I am Setsuna</em>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Interiors]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/"/>
-    <updated>2016-07-23T11:01:13-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors</id>
-    <content type="html"><![CDATA[<p>About <a href="https://youtu.be/GUwmNnMXd4A?t%3D5m36s">a quarter of the way through this playthrough</a> of <em>I am Setsuna</em> at E3, the player enters a house.</p>
-
-<!--more-->
-
-
-<h2>Interiors</h2>
-
-<p>The player enters a house, which triggers a special case of the Map state, the Interior state to be pushed onto the stack.</p>
-
-<pre><code>| Interior ←push |
-| Map            |
-</code></pre>
-
-<p>It&rsquo;s hard to tell how the interior state differs from the town map and the forest map from the beginning of the video.  In fact, I think that you could cover similar features with a simple <code>Map</code> state that knows where triggers (for, for example, Dialog or Treasure) and exits are placed.</p>
-
-<p>So, it&rsquo;s likely that the <em>I am Setsuna</em> developers are using a generalized <code>Map</code> state to cover these cases.</p>
-
-<p>This leads us to the final state I want to explore, a state to capture the Overworld.</p>
 ]]></content>
   </entry>
   

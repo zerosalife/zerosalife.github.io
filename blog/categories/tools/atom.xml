@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-10-22T09:36:09-04:00</updated>
+  <updated>2016-10-29T09:55:55-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Procjam 2016 Talks]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/10/29/procjam-2016-talks/"/>
+    <updated>2016-10-29T09:51:02-04:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/10/29/procjam-2016-talks</id>
+    <content type="html"><![CDATA[<p>Last weekend <a href="https://twitter.com/mtrc">@mtrc</a> put on a <a href="https://www.youtube.com/watch?v%3D3wcpLwvBTYo">series of talks</a> leading up to <a href="https://twitter.com/hashtag/procjam">#procjam</a> 2016 at Falmouth University in Cornwall.  You can <a href="https://itch.io/jam/procjam">read more about the jam at itch.io</a>.</p>
+
+<p>Here are some links to interesting resources that stood out to me:</p>
+
+<!--more-->
+
+
+<h2>The Video Game Level Corpus</h2>
+
+<p><a href="https://arxiv.org/abs/1606.07487">https://arxiv.org/abs/1606.07487</a></p>
+
+<h2>PCG book</h2>
+
+<p><a href="http://pcgbook.com/">http://pcgbook.com/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A Grammar of Procedural Platformer Levels]]></title>
@@ -139,46 +161,6 @@
 <p>Note that the combat state may have substates that handle in-combat messages, player turns, and experience and item rewards at the end of combat.  Designing these substates depends on the specific requirements of your combat system.  That makes it hard to tell what the developers are using from <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">this brief clip of <em>I am Setsuna</em></a>.</p>
 
 <p>That&rsquo;s all there is to it.  The modularity of this state stack approach allows developers to customize the flow of gameplay as desired.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Map and Dialog]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/"/>
-    <updated>2016-07-02T10:48:42-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog</id>
-    <content type="html"><![CDATA[<p>I recently watched <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">some footage of <em>I Am Setsuna</em> from E3</a>.</p>
-
-<p>Here&rsquo;s my analysis of the evolving <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">state stack</a>, as you play this spritual successor to the classic RPG <a href="https://en.wikipedia.org/wiki/Chrono_Trigger"><em>Chrono Trigger</em></a>.</p>
-
-<!--more-->
-
-
-<h2>Map and Dialog</h2>
-
-<p>There&rsquo;s likely a catch-all map state in which characters can run around, interacting with the world by opening chests, entering doors and new areas, and talking to NPCs.</p>
-
-<p>The gameplay starts in a snowy forest.  So, there&rsquo;s a <code>Map</code> state pushed onto the state stack that has a reference to the map for this snowy forest.</p>
-
-<pre><code>| Map |
-</code></pre>
-
-<p>As the player wanders around the forest, the player encounters talking NPCs.  These NPCs likely have triggers that push a <code>Dialog</code> state with a reference to the NPC&rsquo;s dialog onto the stack.</p>
-
-<pre><code>| Dialog ←PUSH |
-| Map          |
-</code></pre>
-
-<p>As the player advances and completes the dialog, the player is returned to the previous state, the snowy forest <code>Map</code>.</p>
-
-<pre><code>| Dialog →POP |
-
-| Map |
-</code></pre>
-
-<p>The gameplay is controlled by the current state at the top of the state stack.  This provides a more convenient way to track the appropriate controls and UI elements than to sprinkle a bunch of complicated conditionals throughout some monolithic game code.</p>
-
-<p>Next time I&rsquo;ll talk about combat.</p>
 ]]></content>
   </entry>
   
