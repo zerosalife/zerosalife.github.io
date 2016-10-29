@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ClojureScript | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/clojurescript/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[ProcJam 2015 Restrospective]]></title>
     <link href="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/"/>
-    <updated>2015-12-05T13:05:46-06:00</updated>
+    <updated>2015-12-05T14:05:46-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective</id>
     <content type="html"><![CDATA[<p><a href="/images/assets/mvs-screenshot-post-procjam.png"><img class="center" src="/images/assets/mvs-screenshot-post-procjam.png" width="2108" height="1942"></a>
 I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up on the web at <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.  The code is available on <a href="https://github.com/zerosalife/mech-vehicle-sheet">github</a>.</p>
@@ -56,7 +56,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Seeking artist for ProcJam 2015]]></title>
     <link href="http://zerosalife.github.io/blog/2015/11/07/seeking-artist-for-procjam-2015/"/>
-    <updated>2015-11-07T09:53:17-06:00</updated>
+    <updated>2015-11-07T10:53:17-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/11/07/seeking-artist-for-procjam-2015</id>
     <content type="html"><![CDATA[<p><a href="/images/assets/mvs-screenshot-full.png"><img class="center" src="/images/assets/mvs-screenshot-small.png" width="800" height="613"></a></p>
 

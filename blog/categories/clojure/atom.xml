@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Clojure | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/clojure/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[ProcJam 2015 Restrospective]]></title>
     <link href="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/"/>
-    <updated>2015-12-05T13:05:46-06:00</updated>
+    <updated>2015-12-05T14:05:46-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective</id>
     <content type="html"><![CDATA[<p><a href="/images/assets/mvs-screenshot-post-procjam.png"><img class="center" src="/images/assets/mvs-screenshot-post-procjam.png" width="2108" height="1942"></a>
 I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up on the web at <a href="https://mech-vehicle-sheet.herokuapp.com/">mech-vehicle-sheet.herokuapp.com</a>.  The code is available on <a href="https://github.com/zerosalife/mech-vehicle-sheet">github</a>.</p>
@@ -56,7 +56,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Seeking artist for ProcJam 2015]]></title>
     <link href="http://zerosalife.github.io/blog/2015/11/07/seeking-artist-for-procjam-2015/"/>
-    <updated>2015-11-07T09:53:17-06:00</updated>
+    <updated>2015-11-07T10:53:17-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/11/07/seeking-artist-for-procjam-2015</id>
     <content type="html"><![CDATA[<p><a href="/images/assets/mvs-screenshot-full.png"><img class="center" src="/images/assets/mvs-screenshot-small.png" width="800" height="613"></a></p>
 
@@ -122,7 +122,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Patchwerk]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/"/>
-    <updated>2014-11-15T07:22:18-06:00</updated>
+    <updated>2014-11-15T08:22:18-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/15/patchwerk</id>
     <content type="html"><![CDATA[<h2>Procjam updates</h2>
 
@@ -178,7 +178,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[INSceptahdeckWU]]></title>
     <link href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/"/>
-    <updated>2014-11-08T08:28:39-06:00</updated>
+    <updated>2014-11-08T09:28:39-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu</id>
     <content type="html"><![CDATA[<h2>#procjam updates</h2>
 
@@ -250,7 +250,7 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
   <entry>
     <title type="html"><![CDATA[Clojure Rhizome Labeled Edge Tutorial]]></title>
     <link href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/"/>
-    <updated>2014-04-26T09:47:18-05:00</updated>
+    <updated>2014-04-26T10:47:18-04:00</updated>
     <id>http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial</id>
     <content type="html"><![CDATA[<p>I&rsquo;m using the <a href="https://github.com/ztellman/rhizome">Rhizome package</a> for Clojure to rapidly prototype the dependency graph for a crafting system.  It&rsquo;s nice to be able to add and remove components while generating visualizations on-the-fly.  Clojure&rsquo;s simple, composable syntax, aided by <a href="https://www.youtube.com/watch?v=D6h5dFyyUX0">paredit</a>, makes shuffling around key-value pairs, and even whole dictionaries, quick and easy.</p>
 

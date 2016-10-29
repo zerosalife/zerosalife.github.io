@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Probabilistic Entity Spawning in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript/"/>
-    <updated>2015-07-04T09:56:33-05:00</updated>
+    <updated>2015-07-04T10:56:33-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/07/04/probabilistic-entity-spawning-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>The Unity documentation has an example showing how to generate random indexes satisfying a distribution of probabilities (see: <a href="http://docs.unity3d.com/Manual/RandomNumbers.html">Choosing Items with Different Probabilities</a>).  In this post I&rsquo;ll show how to use a similar approach to generate random items with specific probabilities dictated by the environment.</p>
 
@@ -103,7 +103,7 @@ Debug.Log(item);
   <entry>
     <title type="html"><![CDATA[Creating a Dictionary of Lists in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript/"/>
-    <updated>2015-06-13T11:14:25-05:00</updated>
+    <updated>2015-06-13T12:14:25-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/06/13/creating-a-dictionary-of-lists-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>I ran into a few problems trying to create a <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_Dictionary">Dictionary</a> of <a href="http://wiki.unity3d.com/index.php?title%3DWhich_Kind_Of_Array_Or_Collection_Should_I_Use%253F#Generic_List">Lists</a> in Unity JavaScript.  So I thought I&rsquo;d share some of the tips I learned here.</p>
 
@@ -181,7 +181,7 @@ print(table["c"][1]);
   <entry>
     <title type="html"><![CDATA[Simple Mind-reading Machine in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/"/>
-    <updated>2014-12-13T14:38:20-06:00</updated>
+    <updated>2014-12-13T15:38:20-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>I ported a cool toy from <a href="http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/">Alastair Aitchison&rsquo;s blog</a> to Unity JavaScript.  The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that attempts to guess whether the player will choose Left (by pressing the left arrow key) or Right (by pressing the right arrow key).</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
     <link href="http://zerosalife.github.io/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests/"/>
-    <updated>2016-01-09T10:52:49-06:00</updated>
+    <updated>2016-01-09T11:52:49-05:00</updated>
     <id>http://zerosalife.github.io/blog/2016/01/09/mocking-gameobjects-in-unity-unit-tests</id>
     <content type="html"><![CDATA[<p>A while back, I wrote a post about <a href="https://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
 
@@ -68,7 +68,7 @@ UnityEngine.Object.DestroyImmediate(testGo);
   <entry>
     <title type="html"><![CDATA[Mocking GameObjects in Unity Unit Tests]]></title>
     <link href="http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests/"/>
-    <updated>2015-10-31T09:03:57-05:00</updated>
+    <updated>2015-10-31T10:03:57-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/10/31/mocking-gameobjects-in-unity-unit-tests</id>
     <content type="html"><![CDATA[<p>A while back, I wrote a post about <a href="http://zerosalife.github.io/blog/2015/10/03/unit-testing-in-unity/">unit testing in Unity</a>.  In this post, I&rsquo;ll go through a useful pattern to <a href="https://en.wikipedia.org/wiki/Mock_object">mock</a> <code>GameObject</code>s in unit tests.</p>
 
@@ -120,7 +120,7 @@ UnityEngine.Object.DestroyImmediate(testGo);
   <entry>
     <title type="html"><![CDATA[Cheeky Tinted Blobs: a procedurally generated Unity 2D background]]></title>
     <link href="http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs/"/>
-    <updated>2015-09-12T09:47:50-05:00</updated>
+    <updated>2015-09-12T10:47:50-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/09/12/cheeky-tinted-blobs</id>
     <content type="html"><![CDATA[<p>I&rsquo;m following along with <a href="https://twitter.com/pentadact">@pentadact</a>&rsquo;s tutorial video <a href="https://youtu.be/I5qxIhdEx28?t%3D1m33s">here</a> (You can see the finished result around 6 minutes into the video).</p>
 
@@ -249,7 +249,7 @@ That&rsquo;s all there is to it.  You can check out the full example project on 
   <entry>
     <title type="html"><![CDATA[Syntax highlighting for Octopress]]></title>
     <link href="http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress/"/>
-    <updated>2015-01-17T11:12:37-06:00</updated>
+    <updated>2015-01-17T12:12:37-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress</id>
     <content type="html"><![CDATA[<p>It&rsquo;s relatively simple, but I always forget how it&rsquo;s done.  In the
 interest of documenting useful information for myself, here is how to
@@ -405,7 +405,7 @@ CancelInvoke("Countup");
   <entry>
     <title type="html"><![CDATA[Simple Mind-reading Machine in Unity JavaScript]]></title>
     <link href="http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript/"/>
-    <updated>2014-12-13T14:38:20-06:00</updated>
+    <updated>2014-12-13T15:38:20-05:00</updated>
     <id>http://zerosalife.github.io/blog/2014/12/13/simple-mind-reading-machine-in-unity-javascript</id>
     <content type="html"><![CDATA[<p>I ported a cool toy from <a href="http://alastaira.wordpress.com/2014/03/15/a-simple-mind-reading-machine/">Alastair Aitchison&rsquo;s blog</a> to Unity JavaScript.  The toy implements a simple &lsquo;mind-reading&rsquo; algorithm that attempts to guess whether the player will choose Left (by pressing the left arrow key) or Right (by pressing the right arrow key).</p>
 

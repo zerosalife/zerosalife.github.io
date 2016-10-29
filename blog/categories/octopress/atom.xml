@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-08-27T09:29:51-05:00</updated>
+  <updated>2016-10-22T09:36:09-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Using images in Octopress posts]]></title>
     <link href="http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts/"/>
-    <updated>2015-08-29T17:20:05-05:00</updated>
+    <updated>2015-08-29T18:20:05-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/08/29/using-images-in-octopress-posts</id>
     <content type="html"><![CDATA[<h2>Storing the images</h2>
 
@@ -36,7 +36,7 @@
   <entry>
     <title type="html"><![CDATA[C# code blocks in Octopress]]></title>
     <link href="http://zerosalife.github.io/blog/2015/08/15/c-sharp-code-blocks-in-octopress/"/>
-    <updated>2015-08-15T08:59:19-05:00</updated>
+    <updated>2015-08-15T09:59:19-04:00</updated>
     <id>http://zerosalife.github.io/blog/2015/08/15/c-sharp-code-blocks-in-octopress</id>
     <content type="html"><![CDATA[<p><a href="http://octopress.org/">Octopress</a> supports <a href="http://octopress.org/docs/plugins/backtick-codeblock/">backtick code blocks</a> with <a href="http://pygments.org/docs/lexers/">Pygment lexers</a> handling syntax highlighting.  I always forget the syntax for using with bactick codeblocks with C#, leading to irritating failures when I build my Octopress blog.  Here&rsquo;s how you use them.</p>
 
@@ -50,7 +50,7 @@
   <entry>
     <title type="html"><![CDATA[Syntax highlighting for Octopress]]></title>
     <link href="http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress/"/>
-    <updated>2015-01-17T11:12:37-06:00</updated>
+    <updated>2015-01-17T12:12:37-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/01/17/syntax-highlighting-for-octopress</id>
     <content type="html"><![CDATA[<p>It&rsquo;s relatively simple, but I always forget how it&rsquo;s done.  In the
 interest of documenting useful information for myself, here is how to
@@ -206,7 +206,7 @@ CancelInvoke("Countup");
   <entry>
     <title type="html"><![CDATA[Previewing a post using Octopress]]></title>
     <link href="http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress/"/>
-    <updated>2015-01-10T10:01:44-06:00</updated>
+    <updated>2015-01-10T11:01:44-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/01/10/previewing-a-post-using-octopress</id>
     <content type="html"><![CDATA[<p>It&rsquo;s nice to preview some of my more complicated posts before I ship them out to the Internets.  Here&rsquo;s how I do it.</p>
 
@@ -229,7 +229,7 @@ preview:</p>
   <entry>
     <title type="html"><![CDATA[New Year, New Footer]]></title>
     <link href="http://zerosalife.github.io/blog/2015/01/03/new-year-new-footer/"/>
-    <updated>2015-01-03T09:17:24-06:00</updated>
+    <updated>2015-01-03T10:17:24-05:00</updated>
     <id>http://zerosalife.github.io/blog/2015/01/03/new-year-new-footer</id>
     <content type="html"><![CDATA[<p>It&rsquo;s 2015.  Time to update my footer.  I came across a link to a
 website called, <a href="http://updateyourfooter.com/">updateyourfooter.com</a>.  It describes ways to
