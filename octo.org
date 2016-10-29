@@ -4512,3 +4512,21 @@ the round.  You can replay rounds to try to increase your score.
 
 ** Roguelike rating
 [[http://bp.io/howroguelike/]]
+
+** Procjam 2016 talks
+- design
+- tools
+
+Last weekend [[https://twitter.com/mtrc][@mtrc]] put on a [[https://www.youtube.com/watch?v%3D3wcpLwvBTYo][series of talks]] leading up to [[https://twitter.com/hashtag/procjam][#procjam]]
+2016 at Falmouth University in Cornwall.  You can [[https://itch.io/jam/procjam][read more about the
+jam at itch.io]].
+
+Here are some links to interesting resources that stood out to me:
+
+<!--more-->
+
+*** The video game level corpus
+[[https://arxiv.org/abs/1606.07487]]
+
+*** PCG book
+[[http://pcgbook.com/]]
