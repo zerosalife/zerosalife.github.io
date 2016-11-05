@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Procjam 2016"
+date: 2016-11-05 10:36:10 -0400
+comments: true
+categories:
+-   procjam
+---
+
+I'm announcing my participation in [#procjam 2016](https://itch.io/jam/procjam), which kicked off
+yesterday.
+
+This is my third year participating.
+
+You can look back at my previous entries from 2014
+here: [Insceptahdeckwu](http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/), [Patchwerk](http://zerosalife.github.io/blog/2014/11/15/patchwerk/) and from 2015 here: [Mech Sheet Generator](http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/).

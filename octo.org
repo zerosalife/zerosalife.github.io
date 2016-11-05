@@ -4530,3 +4530,11 @@ Here are some links to interesting resources that stood out to me:
 
 *** PCG book
 [[http://pcgbook.com/]]
+
+** Procjam 2016
+I'm announcing my participation in #procjam 2016, which kicked off
+yesterday.  This is my third year participating.  You can look back at
+my previous entries from 2014 here: [Insceptahdeckwu]({% post_url
+2014-11-08-insceptahdeckwu %}), [Patchwerk]({% post_url
+2014-11-15-patchwerk %}) and from 2015 here: [Mech Sheet Generator]({%
+post_url 2015-12-05-procjam-2015-restrospective %}).

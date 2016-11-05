@@ -6,6 +6,7 @@ comments: true
 categories:
 -   design
 -   tools
+-   procjam
 ---
 Last weekend [@mtrc](https://twitter.com/mtrc) put on a [series of talks](https://www.youtube.com/watch?v%3D3wcpLwvBTYo) leading up to [#procjam](https://twitter.com/hashtag/procjam) 2016 at Falmouth University in Cornwall.  You can [read more about the jam at itch.io](https://itch.io/jam/procjam).
 
