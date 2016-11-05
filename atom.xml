@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-10-29T09:55:55-04:00</updated>
+  <updated>2016-11-05T10:44:30-04:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Procjam 2016]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/11/05/procjam-2016/"/>
+    <updated>2016-11-05T10:36:10-04:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/11/05/procjam-2016</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m announcing my participation in <a href="https://itch.io/jam/procjam">#procjam 2016</a>, which kicked off
+yesterday.</p>
+
+<p>This is my third year participating.</p>
+
+<p>You can look back at my previous entries from 2014
+here: <a href="http://zerosalife.github.io/blog/2014/11/08/insceptahdeckwu/">Insceptahdeckwu</a>, <a href="http://zerosalife.github.io/blog/2014/11/15/patchwerk/">Patchwerk</a> and from 2015 here: <a href="http://zerosalife.github.io/blog/2015/12/05/procjam-2015-restrospective/">Mech Sheet Generator</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Procjam 2016 Talks]]></title>
@@ -1152,19 +1167,6 @@ it in a <a href="https://gist.github.com/zerosalife/22ac247a275a9835c2fa">gist</
 <li><p>Append on world create</p></li>
 </ol>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[game-icons.net]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net/"/>
-    <updated>2016-01-30T13:09:34-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/01/30/game-icons-dot-net</id>
-    <content type="html"><![CDATA[<p>Here&rsquo;s a handy resource that I will be sure to use in the future: <a href="http://zerosalife.github.io//game-icons.net/">game-icons.net</a>.</p>
-
-<p>The site has thousands of icons available under a <a href="http://zerosalife.github.io//creativecommons.org/licenses/by/3.0/">CC by 3.0 license</a>.  I am not a lawyer, but by my read this means you can reuse, redistribute, and remix the icons provided you give appropriate credit, indicate if changes were made, and provide a link to the license.</p>
-
-<p>Check the site out and <a href="http://zerosalife.github.io//twitter.com/zerosalife">tweet me</a> if you use or have used the icons in your game.</p>
 ]]></content>
   </entry>
   
