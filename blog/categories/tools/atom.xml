@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-11-05T10:44:30-04:00</updated>
+  <updated>2016-11-12T11:15:40-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Arcana: Procedurally Generated Tarot Decks]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/"/>
+    <updated>2016-11-12T11:04:16-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks</id>
+    <content type="html"><![CDATA[<p>Why not make some art?</p>
+
+<p><a href="/images/assets/arcana-screenshot.png"><img class="center" src="/images/assets/arcana-screenshot.png" width="1278"></a></p>
+
+<!--more-->
+
+
+<p>Here&rsquo;s <a href="https://random-arcana.herokuapp.com/">Arcana</a>, one of the projects I&rsquo;m working for <a href="https://twitter.com/hashtag/procjam">#procjam 2016</a>.</p>
+
+<p>Arcana generates a full deck of Tarot cards based on data from <a href="https://twitter.com/tinysubversions">Darius Kazemi&rsquo;s</a> <a href="https://github.com/dariusk/corpora">corpora project</a>.</p>
+
+<ul>
+<li><p>Click on the cards to expand each card&rsquo;s meaning.</p></li>
+<li><p>Click the button in the corner for a three-card spread from the current deck.</p></li>
+<li><p>Click the title, Arcana, in the title bar to regenerate a fresh deck.</p></li>
+</ul>
+
+
+<p><a href="/images/assets/arcana-spread-screenshot.png"><img class="center" src="/images/assets/arcana-spread-screenshot.png" width="2374"></a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Procjam 2016 Talks]]></title>
@@ -128,39 +155,6 @@
 <p>So, it&rsquo;s likely that the <em>I am Setsuna</em> developers are using a generalized <code>Map</code> state to cover these cases.</p>
 
 <p>This leads us to the final state I want to explore, a state to capture the Overworld.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Combat]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/"/>
-    <updated>2016-07-16T11:14:59-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat</id>
-    <content type="html"><![CDATA[<p>The previous post looked at how <em>I am Setsuna</em> uses a state stack to allow players to move around on a map and interact with NPCs via dialog.  This time around, I&rsquo;ll show you how combat can be handled by adding another state to the stack.</p>
-
-<!--more-->
-
-
-<p>This approach decreases the need to pass information between the various parts of your code handling the various states of your game.  So it&rsquo;s preferable compared to costly serialization and deserialization to pass information to wholly separate code every time the game state changes.  Instead you simply change the way that the game&rsquo;s code runs.</p>
-
-<h2>Combat</h2>
-
-<p>After the player converses with an NPC, combat with a gnarly looking bear begins.  Here&rsquo;s what likely happens.</p>
-
-<pre><code>| Combat ←push |
-| Map          |
-</code></pre>
-
-<p>The player fights the enemy.  Then the combat state pops off the stack, returning the player to the snowy forest map.</p>
-
-<pre><code>| Combat →pop |
-
-| Map |
-</code></pre>
-
-<p>Note that the combat state may have substates that handle in-combat messages, player turns, and experience and item rewards at the end of combat.  Designing these substates depends on the specific requirements of your combat system.  That makes it hard to tell what the developers are using from <a href="https://www.youtube.com/watch?v%3DGUwmNnMXd4A">this brief clip of <em>I am Setsuna</em></a>.</p>
-
-<p>That&rsquo;s all there is to it.  The modularity of this state stack approach allows developers to customize the flow of gameplay as desired.</p>
 ]]></content>
   </entry>
   
