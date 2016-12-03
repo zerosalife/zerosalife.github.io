@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-11-12T11:15:40-05:00</updated>
+  <updated>2016-12-03T12:42:01-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Procedural Generation of Social Networks]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/"/>
+    <updated>2016-12-03T12:21:41-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been thinking about how to run a hexcrawl style campaign in a cyberpunk world.  Mobility is easy, so a spatially distributed procedurally generated map doesn&rsquo;t make much sense.  Characters could easily just look up information on an unfamiliar section of the map on whatever flavor of the internet exists in that world and buy a plane ticket or book a taxi ride to get there.</p>
+
+<p>Transportation is cheap and the Sprawl has largely been explored.  This is not to say that a typical hexcrawl-style campaign couldn&rsquo;t work in a VR hacking setting.  Look no further than <em><a href="http://www.ambrosiasw.com/games/uplink/">Uplink</a></em> to see a wonderful example.</p>
+
+<p>In a cyberpunk setting the thing to be explored becomes the web of intrigue among the movers and the shakers in the campaign.  Crosses and double crosses become the shifting landscapes and wandering monster encounters of the political landscape.  See for, example this <a href="http://monstersandmanuals.blogspot.com/2011/08/cyberpunk-sandbox.html">blog post at Monsters and Manuals</a> and <a href="https://en.wikipedia.org/wiki/Barksdale_Organization#/media/File:Barksdale2.jpg">the organization chart from <em>The Wire</em></a>.</p>
+
+<p><img class="center" src="http://zerosalife.github.io/images/assets/social-network.svg" title="" ></p>
+
+<!--more-->
+
+
+<p>After looking at a few good resources, I took this stab at crafting a social network generator:</p>
+
+<h2>Defining connection types</h2>
+
+<p>Based on <a href="http://monstersandmanuals.blogspot.com/2011/08/relationship-hexmap.html">this Monsters and Manuals blog post</a> I defined links as follows:</p>
+
+<ul>
+<li><strong>Black:</strong> Strong positive link</li>
+<li><strong>Orange:</strong> Communication (past or present)</li>
+<li><strong>Yellow:</strong> Awareness</li>
+<li><strong>Red:</strong> Hostility</li>
+</ul>
+
+
+<h2>Making the connections</h2>
+
+<p>For my initial attempts, I&rsquo;ve found that a social network with 8 actors is complex enough to get some interesting relationships.  I make twice as many random connections between the actors as there are actors.  So in this case, we&rsquo;re working with 16 random connections.</p>
+
+<p>This means that some actors could have several connection sand some could have none.  On average there may be 1 or 2 connections between most of the actors in the network.</p>
+
+<h2>Graphing it</h2>
+
+<p>I&rsquo;ve <a href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/">used rhizome in the past</a> to graph stuff.  This time around, I wanted more control over the characteristics of the resulting graph, so I went with <a href="https://github.com/Macroz/tangle">tangle</a>.</p>
+
+<p>Tangle lets me change the node shape and edge colors, which is exactly what I needed to represent the types of connections in this social network.</p>
+
+<p>You can see the resulting image above the fold.</p>
+
+<h2>Additional resources</h2>
+
+<p>Here are a few additional resources worth noting:</p>
+
+<ul>
+<li><a href="https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/">https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/</a></li>
+<li><a href="http://maetl.net/talks/narrative-anxiety">http://maetl.net/talks/narrative-anxiety</a></li>
+<li><a href="http://maetl.net/notes/storyboard/narrative-graph-models">http://maetl.net/notes/storyboard/narrative-graph-models</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Arcana: Procedurally Generated Tarot Decks]]></title>
@@ -840,268 +897,6 @@ or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 <li>Ratchet and Clank</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Library]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/02/27/the-library/"/>
-    <updated>2016-02-27T10:28:58-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/02/27/the-library</id>
-    <content type="html"><![CDATA[<p>An introductory FATE Accelerated Edition (FAE) adventure in the spirit
-of Ghostbusters International</p>
-
-<!--more-->
-
-
-<h1>Dramatis Personae</h1>
-
-<h2>The Library Supervisor</h2>
-
-<p>Has a problem the players need to solve</p>
-
-<h2>The Librarian</h2>
-
-<p>+2 to Poltergeistery, Attacking people with overdue books
--2 to Yelling, doing anything outside of the library</p>
-
-<h3>Stress</h3>
-
-<ul>
-<li>[ ]</li>
-<li>[ ]</li>
-</ul>
-
-
-<h2>The Summoner</h2>
-
-<p>Andrea Runyon, daughter of Poke Runyon, high priestess of Astarte</p>
-
-<h2>Rock Lions</h2>
-
-<p>+2 to growling
--2 to acid rain</p>
-
-<h3>Stress</h3>
-
-<ul>
-<li>[ ]</li>
-</ul>
-
-
-<h2>Bat Books</h2>
-
-<p>+2 to flapping around
--2 to preventing combustion</p>
-
-<h3>Stress</h3>
-
-<p>None (first hit takes them out)</p>
-
-<h2>The Lieutenants</h2>
-
-<p>The players will encounter these if the pacing feels a little fast
-when they approach the summoning circle in the basement.  Be careful,
-because the lieutenants are tough.</p>
-
-<p>First lieutenants of Bael&rsquo;s legion</p>
-
-<h3>Stress</h3>
-
-<ul>
-<li>[ ]</li>
-<li>[ ]</li>
-</ul>
-
-
-<h2>Clan&#8217;thael</h2>
-
-<p>&ldquo;Clancy&rdquo;
-Second Lieutenant of the 23rd Legion of Spirits under Bael&rsquo;s rule</p>
-
-<p>+2 to Slurping, phasing between walls
--2 to resisting hunger</p>
-
-<p>Cross between a toad and Slimer.</p>
-
-<h3>Stress</h3>
-
-<ul>
-<li>[ ]</li>
-<li>[ ]</li>
-</ul>
-
-
-<h1>At the shop</h1>
-
-<p>Introduce the characters, awarding fate points / discovering aspects
-about the setting as appropriate.</p>
-
-<h1>Call to action</h1>
-
-<p>The players get a call to investigate a disturbance at the Library.
-The Library Supervisor has ordered the library evacuated because
-patrons have reported a ghostly apparition.</p>
-
-<p>The Library Supervisor says</p>
-
-<blockquote><p>You have to help us.  There&rsquo;s no one else to call.  It was horrible.
-Books were flying everywhere.  One patron was knocked out.  And those
-cries from the office, &lsquo;Overdue&#x2026;. Overdue&#x2026;&rsquo;  They sounded so
-menacing&#x2026; I didn&rsquo;t even get my briefcase before evacuating everyone.</p></blockquote>
-
-<h1>Arriving at the library</h1>
-
-<p>Two statues of lions at the front steps of the library come alive.</p>
-
-<p>Read the following text when the players arrive at the library:</p>
-
-<blockquote><p>You pull up at the entrance to the library. Tall marble columns cap
-the staircase leading to the door. At the foot of the staircase sit
-two marble statues.</p></blockquote>
-
-<p>If the players approach the entrance, the statues come to life.</p>
-
-<p>Read the following text when the statues come to life</p>
-
-<blockquote><p>You hear cracking and scraping as the lion statues come to life,
-stepping down from their pedestals with a graceful thud. The lions
-mouths open as if giving mighty roars but no sounds escape the
-statues&#8217; throats.</p></blockquote>
-
-<h1>First floor</h1>
-
-<h2>The circulation desk</h2>
-
-<p>The desk is full of books. In closer inspection each book has been
-marked overdue. The desk also has overdue stamps all over it as well
-as if someone went completely wild stamping everything in sight.</p>
-
-<h2>The office</h2>
-
-<p>Read the following flavor text when the players enter the office</p>
-
-<blockquote><p>The walls are lined with books.  There is a desk with a large office
-chair on the far side of the room.</p></blockquote>
-
-<p>If the players haven&rsquo;t encountered the Librarian, read this flavor
-text</p>
-
-<blockquote><p>The office chair is facing away from the doorway.  It slowly turns
-around revealing the wrinkle-creased face of the Librarian.  In an
-instant the Librarian&rsquo;s face morphs into a ghastly visage.  You feel
-wind blowing as if the Librarian is sucking the energy from the room.</p></blockquote>
-
-<h3>Capturing the Librarian</h3>
-
-<h2>The Stacks</h2>
-
-<p>The library has been evacuated.</p>
-
-<p>If the players don&rsquo;t wander over to the stacks, the characters start
-to hear books dropping.  That should entice the players to explore the
-stacks.</p>
-
-<p>When the characters arrive, they are attacked by book bats.  If the
-pacing feels too fast, increase the challenge by having more books
-turn into book bats.</p>
-
-<h3>Book bats</h3>
-
-<h1>The Basement</h1>
-
-<h2>Stairway</h2>
-
-<p>One of the characters becomes paralyzed by a hidden magical circle on
-the staircase.  The character who gets paralyzed is left up to the
-GM&rsquo;s discretion.</p>
-
-<p>This is a trap set by the Summoner to act as a sort of alarm, alerting
-the Summoner to approaching people who may intrude on the summoning.
-When the trap is triggered, the Summoner gives up on the invocation
-and flees the library.</p>
-
-<p>Read the following flavor text as the characters descend the stairs.</p>
-
-<blockquote><p>As you descend the staircase your limbs grow heavier.  It&rsquo;s as if
-you&rsquo;re walking through mud.  Your eyes grow wide as your feet stick to
-the floor and your arms freeze.</p></blockquote>
-
-<p>Characters looking for traps on the staircase may notice some markings
-on the stairs, but the magical circle that is the source of the
-paralysis spell is only visible when you stand on it, ensuring that
-the trap will be sprung.</p>
-
-<p>The other characters may attempt to free the paralyzed character by
-using some knowledge of the paranormal.</p>
-
-<p>The characters will be released after the Summoner has fled the
-Library because the Summoner is no longer able to maintain the spell.</p>
-
-<h2>Hallway</h2>
-
-<h3>Encounter with partially summoned ghost</h3>
-
-<p>The partially summoned ghost slimes the first player, retreating into
-the walls of the hallway. As the players move on the spirit comes out
-again clinging to the slimes player. The spirit blabbers and cries,
-begging for help. The spirit is lost and will be unable to survive if
-left alone.</p>
-
-<p>The spirit will become incorporeal if left too long without a human
-anchor to reality.  Clancy is on the run from two other lieutenants of
-Bael&rsquo;s legion. The lieutenants will kill any malformed spirit and
-promote one of their vassals to fill Clancys position</p>
-
-<p>If the players befriend Clancy then they encounter the lieutenants. If
-they do not believe Clancy then it turns out that the spirit was Lying
-and then they proceed directly to the summoning circle.</p>
-
-<p>After sliming a character, and clinging to the character, the
-partially summoned ghost will reach into any threatening character&rsquo;s
-body and pull out a fate token.</p>
-
-<blockquote><p>The toad-like spirit mutters something about being nicer to it.  It
-reaches out toward your chest.  To your surprise its hand goes into
-your body.  You feel a strange sensation as it pulls out a shining bit
-of your energy.  You lose a fate token.</p></blockquote>
-
-<h2>Summoning Circle</h2>
-
-<h3>The interrupted summoning</h3>
-
-<p>Read this flavor text when the characters arrive in the summoning
-circle room</p>
-
-<blockquote><p>There is a circle of salt on the ground here.  In the middle you can
-see strange symbols that look like they were hastily brushed away,
-leaving behind streaks of salt.  The far side of the circle is broken
-by footprints heading toward the library&rsquo;s loading dock.</p></blockquote>
-
-<p>If the characters search around they find small amounts of earth, wax,
-primrose, and jasmine.  These are elements the summoner was using.
-The characters may know purveyors of these items in town.</p>
-
-<p>If the players have befriended Clancy, the partially summoned spirit,
-Clancy can make out that the faded symbols are the marking of the
-spirit&rsquo;s King, Bael.</p>
-
-<p>The next adventure may involve tracking down where these items come
-from, in order to track down the summoner.</p>
-
-<h1>Denouement</h1>
-
-<h2>Character advancement</h2>
-
-<p>If the players capture the Librarian they may gain one minor milestone</p>
-
-<p>If the players gain any information about the summoner the characers
-who uncovered the information gain an additional minor milestone</p>
-
-<p>If the players befriend Clancy, the player who first encountered
-Clancy gets to add Clancy as a free stunt.  This is a significant
-milestone.  The player does not have to pay any refresh points, if the
-player already has 3 stunts.</p>
 ]]></content>
   </entry>
   
