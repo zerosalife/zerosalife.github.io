@@ -13,7 +13,6 @@ Why not make some art?
 [{% img center /images/assets/arcana-screenshot.png 1278 875 %}](/images/assets/arcana-screenshot.png)
 
 <!--more-->
-
 Here's [Arcana](https://random-arcana.herokuapp.com/), one of the projects I'm working for [#procjam 2016](https://twitter.com/hashtag/procjam).
 
 Arcana generates a full deck of Tarot cards based on data from [Darius Kazemi's](https://twitter.com/tinysubversions) [corpora project](https://github.com/dariusk/corpora).

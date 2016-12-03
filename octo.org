@@ -4034,10 +4034,6 @@ http://tinysolitarysoldiers.blogspot.jp/2012/04/solo-rpg.html
 Procedurally generating #procgen social networks for a social rather
 than spatial hexcrawl campaign
 
-https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/
-http://maetl.net/talks/narrative-anxiety
-http://maetl.net/notes/storyboard/narrative-graph-models
-
 I've been thinking about how to run a hexcrawl style campaign in a
 cyberpunk world.  Mobility is easy, so a spatially distributed
 procedurally generated map doesn't make much sense.  Characters could
@@ -4053,11 +4049,13 @@ wonderful example.
 In a cyberpunk setting the thing to be explored becomes the web of
 intrigue among the movers and the shakers in the campaign.  Crosses
 and double crosses become the shifting landscapes and wandering
-monster encounters of the political landscape.
+monster encounters of the political landscape.  See for, example this
+[[http://monstersandmanuals.blogspot.com/2011/08/cyberpunk-sandbox.html][blog post at Monsters and Manuals]] and [[https://en.wikipedia.org/wiki/Barksdale_Organization#/media/File:Barksdale2.jpg][the organization chart from /The
+Wire/]].
 
-[[http://monstersandmanuals.blogspot.com/2011/08/cyberpunk-sandbox.html]]
 
-https://en.wikipedia.org/wiki/Barksdale_Organization#/media/File:Barksdale2.jpg
+
+
 
 [[images/assets/social-network.svg][{% img images/assets/social-network.svg %}]]
 
@@ -4067,9 +4065,8 @@ After looking at a few good resources, I took this stab at crafting a
 social network generator:
 
 *** Defining connection types
-Based on
-[[http://monstersandmanuals.blogspot.com/2011/08/relationship-hexmap.html]]
-I defined links as follows
+Based on [[http://monstersandmanuals.blogspot.com/2011/08/relationship-hexmap.html][this Monsters and Manuals blog post]] I defined links as
+follows:
 
 - Black :: Strong positive link
 - Orange :: Communication (past or present)
@@ -4095,6 +4092,14 @@ what I needed to represent the types of connections in this social
 network.
 
 You can see the resulting image above the fold.
+*** Additional resources
+Here are a few additional resources worth noting:
+
+- https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/
+- http://maetl.net/talks/narrative-anxiety
+- http://maetl.net/notes/storyboard/narrative-graph-models
+
+
 ** Special Missions' Story Pattern
 I'm interested in Larry Hama's [[https://en.wikipedia.org/wiki/G.I._Joe_(comics)#G.I._Joe:_Special_Missions][/GI Joe Special Missions/]]' influence on
 Metal Gear and Metal Gear Solid.  I want to look at the pattern of
@@ -4542,8 +4547,7 @@ my previous entries from 2014 here: [Insceptahdeckwu]({% post_url
 post_url 2015-12-05-procjam-2015-restrospective %}).
 
 ** Arcana: Procedurally Generated Tarot Decks
-Arcana, random-arcana.herokuapp.com, my #procjam entry based on data
-from @tinysubversions corpora project.
+Arcana, random-arcana.herokuapp.com, my #procjam entry based on data from @tinysubversions corpora project.
 
 - procjam
 - design
@@ -4569,3 +4573,37 @@ Kazemi's]] [[https://github.com/dariusk/corpora][corpora project]].
   deck.
 
 You can check out the entry on the project page here.
+
+Spread screenshot
+
+** Time-based mechanics in turn-based paper prototypes
+
+I had an idea that involves time-based cooldowns.  I was getting
+bogged down with implementation details when I simply wanted to try
+out some ideas for mechanics that I could later implement.  After
+digging for a couple of resources, such as
+https://adamsmith.as/papers/Smith_Nelson_Mateas_-_Play_Testing_-_AIIDE09.pdf,
+https://learn.canvas.net/courses/3/pages/level-5-dot-5-prototyping-real-time-systems?module_item_id=44550,
+and
+http://www.gamedev.net/topic/671104-paper-based-prototyping-simulating-real-time/,
+I was inclined to simply model a single second in real-time as a turn
+in turn-time.
+
+Since I was already thinking about cooldowns in terms of integer
+numbers of seconds (for now), it was easy to convert a cooldown of two
+seconds to two turns.  I was immediately reminded of examples from
+console RPGs like /[[http://vignette3.wikia.nocookie.net/finalfantasy/images/c/ce/FFT_CTB.png/revision/latest?cb%3D20110510000626][Final Fantasy Tactics]]/ and /[[http://gamersonlyolder.com/wp-content/uploads/radianthistoria_screenshots_32.bmp][Radiant Historia]]/ in
+which the upcoming turn order is displayed (more or less) and
+characters get to act when their turn "pops" off the top of the turn
+queue.
+
+I modeled the cooldown by laying out playing cards A-5.  I made a
+two-sided card for each ability, one side for the disabled ability
+under cooldown and one side for the ready-to-use ability.  I also made
+a card for tracking the remaining cooldown time for each ability.
+
+So if an ability has a two turn cooldown (corresponding loosely for
+now to 2 seconds in the eventual real-time game), then I place the
+cooldown counter on the 2 card.  After each turn, I move the cooldowns
+up the playing card tracker, flipping to the active side the
+corresponding ability cards for any counters that go off the top.
