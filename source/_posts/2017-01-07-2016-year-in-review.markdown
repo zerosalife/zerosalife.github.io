@@ -1,0 +1,23 @@
+---
+layout: post
+title: "2016 Year in Review"
+date: 2017-01-07 10:22:54 -0500
+comments: true
+categories:
+-   design
+-   mechanics
+-   tools
+-   game
+---
+
+Here are some highlights from the previous year:
+
+-   [How Dungeonmans Teaches Diagonal Movement](http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/)
+-   [Proportion Types](http://zerosalife.github.io/blog/2016/03/05/proportion-types/)
+-   [Improv vs Preparation](http://zerosalife.github.io/blog/2016/04/23/improvisation-vs-preparation/)
+    -   This could be a conference talk!
+-   [Mobile Frame Football Association](http://zerosalife.github.io/blog/2016/06/18/mobile-frame-football-association/)
+    -   Needs playtesting
+-   [Why Does Pokemon GO Use Passive Voice?](http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/)
+-   [Arcana: Procedurally Generated Tarot Decks](http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/)
+-   [Procedural Generation of Social Networks](http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/)

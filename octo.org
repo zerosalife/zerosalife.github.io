@@ -4031,8 +4031,7 @@ http://www.gamasutra.com/view/news/269064/Study_combs_through_155_Gamasutra_post
 http://tinysolitarysoldiers.blogspot.jp/2012/04/solo-rpg.html
 
 ** Procedural generation of social networks
-Procedurally generating #procgen social networks for a social rather
-than spatial hexcrawl campaign
+Procedurally generating #procgen social networks for a social rather than spatial hexcrawl campaign
 
 I've been thinking about how to run a hexcrawl style campaign in a
 cyberpunk world.  Mobility is easy, so a spatially distributed
@@ -4607,3 +4606,20 @@ now to 2 seconds in the eventual real-time game), then I place the
 cooldown counter on the 2 card.  After each turn, I move the cooldowns
 up the playing card tracker, flipping to the active side the
 corresponding ability cards for any counters that go off the top.
+** 2016 Year In Review
+- design
+- mechanics
+- tools
+- game
+
+Here are some highlights from the previous year:
+
+- [[http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/][How Dungeonmans Teaches Diagonal Movement]]
+- [[http://zerosalife.github.io/blog/2016/03/05/proportion-types/][Proportion Types]]
+- [[http://zerosalife.github.io/blog/2016/04/23/improvisation-vs-preparation/][Improv vs Preparation]]
+  - This could be a conference talk!
+- [[http://zerosalife.github.io/blog/2016/06/18/mobile-frame-football-association/][Mobile Frame Football Association]]
+  - Needs playtesting
+- [[http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/][Why Does Pokemon GO Use Passive Voice?]]
+- [[http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/][Arcana: Procedurally Generated Tarot Decks]]
+- [[http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/][Procedural Generation of Social Networks]]
