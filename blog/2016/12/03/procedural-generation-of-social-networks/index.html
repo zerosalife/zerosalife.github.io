@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Procedural Generation of Social Networks - zero's a life</title>
+  <meta name="author" content="zerosalife">
+
+  
+  <meta name="description" content="I&rsquo;ve been thinking about how to run a hexcrawl style campaign in a cyberpunk world. Mobility is easy, so a spatially distributed procedurally &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="zero's a life" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">zero's a life</a></h1>
+  
+    <h2>An extra chance.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zerosalife.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="http://twitter.com/zerosalife">@zerosalife</a>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Procedural Generation of Social Networks</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-12-03T12:21:41-05:00" pubdate data-updated="true">Dec 3<span>rd</span>, 2016</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&rsquo;ve been thinking about how to run a hexcrawl style campaign in a cyberpunk world.  Mobility is easy, so a spatially distributed procedurally generated map doesn&rsquo;t make much sense.  Characters could easily just look up information on an unfamiliar section of the map on whatever flavor of the internet exists in that world and buy a plane ticket or book a taxi ride to get there.</p>
+
+<p>Transportation is cheap and the Sprawl has largely been explored.  This is not to say that a typical hexcrawl-style campaign couldn&rsquo;t work in a VR hacking setting.  Look no further than <em><a href="http://www.ambrosiasw.com/games/uplink/">Uplink</a></em> to see a wonderful example.</p>
+
+<p>In a cyberpunk setting the thing to be explored becomes the web of intrigue among the movers and the shakers in the campaign.  Crosses and double crosses become the shifting landscapes and wandering monster encounters of the political landscape.  See for, example this <a href="http://monstersandmanuals.blogspot.com/2011/08/cyberpunk-sandbox.html">blog post at Monsters and Manuals</a> and <a href="https://en.wikipedia.org/wiki/Barksdale_Organization#/media/File:Barksdale2.jpg">the organization chart from <em>The Wire</em></a>.</p>
+
+<p><img class="center" src="/images/assets/social-network.svg" title="" ></p>
+
+<!--more-->
+
+
+<p>After looking at a few good resources, I took this stab at crafting a social network generator:</p>
+
+<h2>Defining connection types</h2>
+
+<p>Based on <a href="http://monstersandmanuals.blogspot.com/2011/08/relationship-hexmap.html">this Monsters and Manuals blog post</a> I defined links as follows:</p>
+
+<ul>
+<li><strong>Black:</strong> Strong positive link</li>
+<li><strong>Orange:</strong> Communication (past or present)</li>
+<li><strong>Yellow:</strong> Awareness</li>
+<li><strong>Red:</strong> Hostility</li>
+</ul>
+
+
+<h2>Making the connections</h2>
+
+<p>For my initial attempts, I&rsquo;ve found that a social network with 8 actors is complex enough to get some interesting relationships.  I make twice as many random connections between the actors as there are actors.  So in this case, we&rsquo;re working with 16 random connections.</p>
+
+<p>This means that some actors could have several connection sand some could have none.  On average there may be 1 or 2 connections between most of the actors in the network.</p>
+
+<h2>Graphing it</h2>
+
+<p>I&rsquo;ve <a href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/">used rhizome in the past</a> to graph stuff.  This time around, I wanted more control over the characteristics of the resulting graph, so I went with <a href="https://github.com/Macroz/tangle">tangle</a>.</p>
+
+<p>Tangle lets me change the node shape and edge colors, which is exactly what I needed to represent the types of connections in this social network.</p>
+
+<p>You can see the resulting image above the fold.</p>
+
+<h2>Additional resources</h2>
+
+<p>Here are a few additional resources worth noting:</p>
+
+<ul>
+<li><a href="https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/">https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/</a></li>
+<li><a href="http://maetl.net/talks/narrative-anxiety">http://maetl.net/talks/narrative-anxiety</a></li>
+<li><a href="http://maetl.net/notes/storyboard/narrative-graph-models">http://maetl.net/notes/storyboard/narrative-graph-models</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">zerosalife</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-12-03T12:21:41-05:00" pubdate data-updated="true">Dec 3<span>rd</span>, 2016</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/procjam/'>procjam</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/" data-via="zerosalife" data-counturl="http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/" title="Previous Post: Arcana: Procedurally Generated Tarot Decks">&laquo; Arcana: Procedurally Generated Tarot Decks</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/12/03/procedural-generation-of-social-networks/">Procedural Generation of Social Networks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/">Arcana: Procedurally Generated Tarot Decks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/11/05/procjam-2016/">Procjam 2016</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/10/29/procjam-2016-talks/">Procjam 2016 Talks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/10/22/special-missions-story-pattern/">Special Missions' Story Pattern</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/zerosalife">@zerosalife</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zerosalife',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 &ndash; 2016
+  - <a href="https://twitter.com/zerosalife">zerosalife</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'zerosalife';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/';
+        var disqus_url = 'http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54217540-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</body>
+</html>

@@ -490,7 +490,13 @@
         <loc>
             http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/
         </loc>
-        <lastmod>2016-11-12T11:15:09-05:00</lastmod>
+        <lastmod>2016-11-12T16:20:13-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/
+        </loc>
+        <lastmod>2016-12-03T12:41:27-05:00</lastmod>
     </url>
     <url>
         <loc>http://zerosalife.github.io/about/</loc>
@@ -498,11 +504,11 @@
     </url>
     <url>
         <loc>http://zerosalife.github.io/blog/archives/</loc>
-        <lastmod>2016-11-12T11:15:09-05:00</lastmod>
+        <lastmod>2016-12-03T12:41:27-05:00</lastmod>
     </url>
     <url>
         <loc>http://zerosalife.github.io/</loc>
-        <lastmod>2016-11-12T11:15:09-05:00</lastmod>
+        <lastmod>2016-12-03T12:41:27-05:00</lastmod>
     </url>
     <url>
         <loc>http://zerosalife.github.io/robots.txt</loc>

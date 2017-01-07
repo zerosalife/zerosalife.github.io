@@ -4,7 +4,7 @@
   <title><![CDATA[Category: procjam | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/procjam/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-11-12T11:15:40-05:00</updated>
+  <updated>2016-12-03T12:42:01-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Procedural Generation of Social Networks]]></title>
+    <link href="http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/"/>
+    <updated>2016-12-03T12:21:41-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been thinking about how to run a hexcrawl style campaign in a cyberpunk world.  Mobility is easy, so a spatially distributed procedurally generated map doesn&rsquo;t make much sense.  Characters could easily just look up information on an unfamiliar section of the map on whatever flavor of the internet exists in that world and buy a plane ticket or book a taxi ride to get there.</p>
+
+<p>Transportation is cheap and the Sprawl has largely been explored.  This is not to say that a typical hexcrawl-style campaign couldn&rsquo;t work in a VR hacking setting.  Look no further than <em><a href="http://www.ambrosiasw.com/games/uplink/">Uplink</a></em> to see a wonderful example.</p>
+
+<p>In a cyberpunk setting the thing to be explored becomes the web of intrigue among the movers and the shakers in the campaign.  Crosses and double crosses become the shifting landscapes and wandering monster encounters of the political landscape.  See for, example this <a href="http://monstersandmanuals.blogspot.com/2011/08/cyberpunk-sandbox.html">blog post at Monsters and Manuals</a> and <a href="https://en.wikipedia.org/wiki/Barksdale_Organization#/media/File:Barksdale2.jpg">the organization chart from <em>The Wire</em></a>.</p>
+
+<p><img class="center" src="/images/assets/social-network.svg" title="" ></p>
+
+<!--more-->
+
+
+<p>After looking at a few good resources, I took this stab at crafting a social network generator:</p>
+
+<h2>Defining connection types</h2>
+
+<p>Based on <a href="http://monstersandmanuals.blogspot.com/2011/08/relationship-hexmap.html">this Monsters and Manuals blog post</a> I defined links as follows:</p>
+
+<ul>
+<li><strong>Black:</strong> Strong positive link</li>
+<li><strong>Orange:</strong> Communication (past or present)</li>
+<li><strong>Yellow:</strong> Awareness</li>
+<li><strong>Red:</strong> Hostility</li>
+</ul>
+
+
+<h2>Making the connections</h2>
+
+<p>For my initial attempts, I&rsquo;ve found that a social network with 8 actors is complex enough to get some interesting relationships.  I make twice as many random connections between the actors as there are actors.  So in this case, we&rsquo;re working with 16 random connections.</p>
+
+<p>This means that some actors could have several connection sand some could have none.  On average there may be 1 or 2 connections between most of the actors in the network.</p>
+
+<h2>Graphing it</h2>
+
+<p>I&rsquo;ve <a href="http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/">used rhizome in the past</a> to graph stuff.  This time around, I wanted more control over the characteristics of the resulting graph, so I went with <a href="https://github.com/Macroz/tangle">tangle</a>.</p>
+
+<p>Tangle lets me change the node shape and edge colors, which is exactly what I needed to represent the types of connections in this social network.</p>
+
+<p>You can see the resulting image above the fold.</p>
+
+<h2>Additional resources</h2>
+
+<p>Here are a few additional resources worth noting:</p>
+
+<ul>
+<li><a href="https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/">https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/</a></li>
+<li><a href="http://maetl.net/talks/narrative-anxiety">http://maetl.net/talks/narrative-anxiety</a></li>
+<li><a href="http://maetl.net/notes/storyboard/narrative-graph-models">http://maetl.net/notes/storyboard/narrative-graph-models</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Arcana: Procedurally Generated Tarot Decks]]></title>
@@ -113,15 +170,6 @@ I made a lot of progress on my mech generator for ProcJam 2015.  It&rsquo;s up o
 <li>Create different art styles based on manufacturer</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ProcJam 2015 update]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/11/14/procjam-2015-update/"/>
-    <updated>2015-11-14T08:25:01-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/11/14/procjam-2015-update</id>
-    <content type="html"><![CDATA[<p>Here&rsquo;s a brief update on <a href="http://www.procjam.com/category/procjam-2015/">#ProcJam 2015</a>.  I&rsquo;m hard at work on the <a href="https://mech-vehicle-sheet.herokuapp.com/">Mech Generator</a>.  You can check out my progress at that link.  A more thorough write-up will come soon.</p>
 ]]></content>
   </entry>
   

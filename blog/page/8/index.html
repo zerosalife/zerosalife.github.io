@@ -9,7 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="I&rsquo;m thrilled to announce that I&rsquo;m going to participate in the upcoming procedural game jam called #procjam. #procjam is a global game jam &hellip;">
+  <meta name="description" content="#procjam updates #procjam is upon us. The conference is on and popping, streaming at http://www.twitch.tv/procjam. I&rsquo;ll try to precede my # &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,61 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/08/insceptahdeckwu/">INSceptahdeckWU</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-08T09:28:39-05:00" pubdate data-updated="true">Nov 8<span>th</span>, 2014</time>
+        
+         | <a href="/blog/2014/11/08/insceptahdeckwu/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>#procjam updates</h2>
+
+<p><a href="https://twitter.com/search?q%3Dprocjam">#procjam</a> is upon us.  The conference is on and popping, streaming at <a href="http://www.twitch.tv/procjam">http://www.twitch.tv/procjam</a>.  I&rsquo;ll try to precede my #procjam posts with a little update on some of the cool things I&rsquo;ve seen that need pointing out during the jam itself.</p>
+
+<p><a href="https://twitter.com/GalaxyKate">@GalaxyKate</a> will be streaming <a href="http://vimeo.com/111272682">some tutorials</a> today, following the conference.</p>
+
+<p><a href="https://twitter.com/SudoRossy">@sudorossy</a> is currently streaming some development and modeling at <a href="http://www.twitch.tv/sudorossy">http://www.twitch.tv/sudorossy</a>.  I imagine that sudorossy will continue this throughout the jam.</p>
+
+<p>The <a href="https://twitter.com/search?q%3D7dfps">#7dfps</a> jam is also going on this week.  So, I&rsquo;ve decided to release my third person procedural tweeter.  Or maybe it&rsquo;s a fourth person tweeter, third person once removed.</p>
+
+<h2>Fourth-person tweets</h2>
+
+<p>I&rsquo;m at it again, <a href="http://zerosalife.github.io/blog/2014/04/19/styx-ebooks/">making a twitter bot</a> like <a href="https://twitter.com/styx_ebooks">@styx_ebooks</a>.  Only this time it&rsquo;s in a completely different language and it&rsquo;s got a completely different corpus.  Corpus is a Latin way of saying text, in case you forgot.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/11/08/insceptahdeckwu/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -534,52 +589,6 @@ by typing <code>make blog</code> at the command prompt.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/">Static and Dynamic Colliders in Unity</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-02T13:54:15-04:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2014</time>
-        
-         | <a href="/blog/2014/08/02/static-and-dynamic-colliders-in-unity/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>According to the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">Ray Wenderlich Unity 2D tutorial</a> by <a href="http://www.raywenderlich.com/u/clapollo">Christopher LaPollo</a>, Unity&rsquo;s physics engine builds a simulation based on the <a href="http://docs.unity3d.com/Manual/CollidersOverview.html">Colliders</a> present in a scene.  If some those <code>Colliders</code> are declared to be <code>static</code>, then the entire simulation is rebuilt when those colliders move.  Of course, rebuilding a physics simulation when it&rsquo;s unnecessary is inefficient.  By declaring objects to have <code>dynamic</code> <code>Colliders</code>, the physics engine does not have to rebuild the simulation at runtime, that is to say when the game is running.</p>
-
-<p>As with a lot of things in Unity, it is not immediately apparent how you should go about declaring a collider to be <code>static</code> or <code>dynamic</code>.  It would be great if there were just a checkbox in the <code>Collider</code> component.  But there isn&rsquo;t.  It appears that there are some complex things going on under the hood that preclude a simple declaration.</p>
-
-<p>By default a <code>GameObject</code> with a <code>Collider</code> component attached is treated as <code>static</code> by Unity&rsquo;s physics engine.  This would work for a non-moving wall or impassable bit of scenery, but for moving objects like enemies we need to mark them as <code>dynamic</code>.  In order for a <code>GameObject</code>&rsquo;s <code>Collider</code> to qualify as <code>dynamic</code> it requires a <a href="http://docs.unity3d.com/Manual/class-Rigidbody.html"><code>Rigidbody</code> component</a>.  If you don&rsquo;t want the normal features of the <code>Rigidbody</code>, i.e. conferring control of the <code>GameObject</code>&rsquo;s position to the physics system, then you can check the <code>Is Kinematic</code> checkbox.  A kinematic object&rsquo;s position is under the control of the attached scripts, rather than the physics system.</p>
-
-<p>One other trick from the <a href="http://www.raywenderlich.com/70344/unity-2d-tutorial-physics-and-screen-sizes">tutorial</a> is to set the <code>Collider</code> component&rsquo;s <code>isTrigger</code> property to <code>true</code>.  This prevents the <code>Collider</code> from being treated as a solid object in the physics simulation, which could lead to unintended bumping and pushing among various <code>Colliders</code> in a scene.</p>
-
-<p><strong>Update:</strong> <a href="https://twitter.com/involvingsalmon">@InvolvingSalmon</a> points out that the instructions here depend on the version of Unity that you are using.  This article was written for Unity version <code>4.5.2f1</code>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/9/">&larr; Older</a>
@@ -597,6 +606,10 @@ by typing <code>make blog</code> at the command prompt.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/12/03/procedural-generation-of-social-networks/">Procedural Generation of Social Networks</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/">Arcana: Procedurally Generated Tarot Decks</a>
       </li>
     
@@ -610,10 +623,6 @@ by typing <code>make blog</code> at the command prompt.</p>
     
       <li class="post">
         <a href="/blog/2016/10/22/special-missions-story-pattern/">Special Missions&#8217; Story Pattern</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/">Why does Pokemon GO use passive voice?</a>
       </li>
     
   </ul>
