@@ -9,7 +9,7 @@
   <meta name="author" content="zerosalife">
 
   
-  <meta name="description" content="Here&rsquo;s a WIP FlappyBird-like game prototype for #flappyjam: Bunnies Don&rsquo;t Surf. You are an unfortunate rabbit whose warren is being &hellip;">
+  <meta name="description" content="I&rsquo;m playing around with Unity to try to learn how it works. Shout out to Infinite Ammo for the excellent video tutorials. Since I don&rsquo;t &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +67,63 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/">Setting Up Emacs-like Key Bindings in MonoDevelop</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-22T09:14:40-05:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2014</time>
+        
+         | <a href="/blog/2014/02/22/setting-up-emacs-like-key-bindings-in-monodevelop/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m playing around with <a href="http://unity3d.com/">Unity</a> to try to learn how it works.  Shout out to <a href="http://infiniteammo.ca/">Infinite Ammo</a> for the excellent <a href="http://www.youtube.com/playlist?list=PLEEAEA1E6B11B4DAE">video tutorials</a>.</p>
+
+<p>Since I don&rsquo;t know much about Unity, I&rsquo;m reluctantly using their included <a href="http://monodevelop.com/">MonoDevelop IDE</a>.  While I&rsquo;d heard that Emacs-like key bindings were included, in the build I installed they weren&rsquo;t present.</p>
+
+<p>MonoDevelop does not make it easy to import new key binding schemes (the <a href="http://mjhutchinson.com/journal/2011/02/06/key_bindings">blog post linked here</a> suggests submitting a bug report to propose new key bindings&#x2026;).  So, I did a little digging around on github and found the <a href="https://github.com/mono/monodevelop/blob/master/main/src/core/MonoDevelop.Ide/options/KeyBindingSchemeEmacs.xml">default emacs key binding scheme</a> that I imagine should have been included in the MonoDevelop build I installed.</p>
+
+<p>There was no way to add this key binding scheme to my available key bindings in MonoDevelop, so I hacked my Custom key binding file located at <code>~/Library/MonoDevelop-Unity-4.0/KeyBindings/Custom.mac-kb.xml</code>.</p>
+
+<p>I started with some simple copypasta.  But then I found some useful
+navigation features were lacking.  So, I added key binds that
+immediately came to mind, like <code>Alt-f</code> for moving forward one word and
+<code>Alt-b</code> for backward word.  Yes, I know these are <code>M-f</code> in Emacs, but
+I&rsquo;m using MonoDevelop&rsquo;s syntax here.</p>
+
+<p>My key bindings are available in the gist below.  I&rsquo;ll update this
+gist when I add key bindings, to keep a current working version
+available.</p>
+
+<script src="https://gist.github.com/zerosalife/9096788.js"></script>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -325,6 +382,10 @@ games by creator, Kaz Ayabe.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2017/01/07/2016-year-in-review/">2016 Year in Review</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/12/03/procedural-generation-of-social-networks/">Procedural Generation of Social Networks</a>
       </li>
     
@@ -338,10 +399,6 @@ games by creator, Kaz Ayabe.</p>
     
       <li class="post">
         <a href="/blog/2016/10/29/procjam-2016-talks/">Procjam 2016 Talks</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/10/22/special-missions-story-pattern/">Special Missions&#8217; Story Pattern</a>
       </li>
     
   </ul>
@@ -386,7 +443,7 @@ games by creator, Kaz Ayabe.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 &ndash; 2016
+  Copyright &copy; 2014 &ndash; 2017
   - <a href="https://twitter.com/zerosalife">zerosalife</a> -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
 </p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-12-03T12:42:01-05:00</updated>
+  <updated>2017-01-07T10:30:43-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2016 Year in Review]]></title>
+    <link href="http://zerosalife.github.io/blog/2017/01/07/2016-year-in-review/"/>
+    <updated>2017-01-07T10:22:54-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2017/01/07/2016-year-in-review</id>
+    <content type="html"><![CDATA[<p>Here are some highlights from the previous year:</p>
+
+<ul>
+<li><a href="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/">How Dungeonmans Teaches Diagonal Movement</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/03/05/proportion-types/">Proportion Types</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/04/23/improvisation-vs-preparation/">Improv vs Preparation</a>
+
+<ul>
+<li>This could be a conference talk!</li>
+</ul>
+</li>
+<li><a href="http://zerosalife.github.io/blog/2016/06/18/mobile-frame-football-association/">Mobile Frame Football Association</a>
+
+<ul>
+<li>Needs playtesting</li>
+</ul>
+</li>
+<li><a href="http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/">Why Does Pokemon GO Use Passive Voice?</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/">Arcana: Procedurally Generated Tarot Decks</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/">Procedural Generation of Social Networks</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Arcana: Procedurally Generated Tarot Decks]]></title>
@@ -143,25 +173,6 @@ Pikachu!
 <p>The word &ldquo;you&rdquo; occurs <a href="https://github.com/pret/pokered/search?utf8%3D%25E2%259C%2593&amp;q%3Dyou">171 times in the Pokemon red codebase</a>, without controlling for contents of text strings vs method and variable names.</p>
 
 <p>There seems to be a general tendency to use &ldquo;you&rdquo; to refer to things that the player does, such as connecting the link cable between two Gameboys to trade pokemon, rather than the player character&rsquo;s actions in the game.  So that could have been a good reason to choose the passive voice.  Also, there could be some reasoning behind matching the original Japanese text that I&rsquo;m missing here.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A Grammar of Procedural Platformer Levels]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/"/>
-    <updated>2016-08-13T10:43:49-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels</id>
-    <content type="html"><![CDATA[<p>Brief post this week linking to a couple of great articles about elements of platformer game design.  I think these articles make great resources for a procedural platformer level generator.  Brevity and procedural focus stem at least partially from the release of the captivating <em><a href="http://www.no-mans-sky.com/">No Man&rsquo;s Sky</a></em>.</p>
-
-<h2>Platformer Level Design</h2>
-
-<p><a href="https://twitter.com/gamedevprof">Ken Bowen</a>&rsquo;s 2012 article covering <a href="http://gamedevprofessor.com/sidescroller-level-design/">2D Sidescroller Level Design</a> has some great tips.  I especially like the section called Define your Building Blocks.  I think this will require some revisiting in a future post.</p>
-
-<h2>Fundamental Physics for Platformers</h2>
-
-<p><a href="https://github.com/error454">Zachary Burke</a>&rsquo;s article about <a href="http://error454.com/2013/10/23/platformer-physics-101-and-the-3-fundamental-equations-of-platformers/">Platformer Physics</a> is a nice resource that explains the fundamentals in great mathematical detail.  It also provides inverse solutions for deriving physics based on descriptive parameters for jump height and timing.</p>
-
-<p>Taken together these articles suggest, to me, that we could achieve a fully descriptive grammar of platformer games to generate a variety of levels constructed from basic building blocks, with constraints ensuring fun and responsive gameplay physics.</p>
 ]]></content>
   </entry>
   
