@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2017-01-07T10:30:43-05:00</updated>
+  <updated>2017-01-28T11:27:10-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Every Week a Dev]]></title>
+    <link href="http://zerosalife.github.io/blog/2017/01/28/every-week-a-dev/"/>
+    <updated>2017-01-28T11:21:35-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2017/01/28/every-week-a-dev</id>
+    <content type="html"><![CDATA[<p><a href="https://twitter.com/everyweekadev">Every Week a Dev</a> is a twitter bot created by <a href="https://twitter.com/tha_rami">Rami Ismail</a> that spotlights a new person involved in game development every week.  Check out the archives and follow it if you haven&rsquo;t already.  The bot&rsquo;s a great aggregator for gamedev wisdom.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2016 Year in Review]]></title>
@@ -108,57 +117,6 @@
 <p><a href="https://github.com/error454">Zachary Burke</a>&rsquo;s article about <a href="http://error454.com/2013/10/23/platformer-physics-101-and-the-3-fundamental-equations-of-platformers/">Platformer Physics</a> is a nice resource that explains the fundamentals in great mathematical detail.  It also provides inverse solutions for deriving physics based on descriptive parameters for jump height and timing.</p>
 
 <p>Taken together these articles suggest, to me, that we could achieve a fully descriptive grammar of platformer games to generate a variety of levels constructed from basic building blocks, with constraints ensuring fun and responsive gameplay physics.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How I am Setsuna uses a State Stack: Overworld]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld/"/>
-    <updated>2016-07-30T10:47:19-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/07/30/how-i-am-setsuna-uses-a-state-stack-overworld</id>
-    <content type="html"><![CDATA[<p>The <code>Overworld</code> state ties together all of the states I previously discussed based on watching <a href="https://youtu.be/GUwmNnMXd4A">this playthrough</a> of <em>I am Setsuna</em>.</p>
-
-<!--more-->
-
-
-<h2>Overworld</h2>
-
-<p>I think that the <code>Overworld</code> can serve as the base <code>Map</code> state I used in my previous examples.  This allows the <code>Overworld</code> to serve two purposes.  First, the <code>Overworld</code> state holds all of the map and area entrance data to allow characters to move about the overworld.  And second, the <code>Overworld</code> state can store information about the state of the game for use in the other states.</p>
-
-<h2>Area information</h2>
-
-<pre><code>| Overworld |
-</code></pre>
-
-<p>The <code>Overworld</code> contains all of the data necessary to render the overworld map, including the assets for rendering the map and the location and the target map data on triggers for entering towns, caves, and other <code>Maps</code>.</p>
-
-<h2>Gameplay information</h2>
-
-<pre><code>| Menu ←    |
-| Overworld |
-</code></pre>
-
-<p>The <code>Overworld</code> also contains the sorts of information you see in the main menu, such as the character&rsquo;s state, inventory, money.  Serializing a snapshot of this information and the characters' position saves the game&rsquo;s state and can be used to reload the game later.</p>
-
-<p>The states added to the stack on top of the <code>Overworld</code> state can access this data for consumption and updating.</p>
-
-<pre><code>| Shop menu  |
-| Map (Shop) |
-| Map (Town) |
-| Overworld  |
-</code></pre>
-
-<p>For instance, a shop in town may access the inventory and money to allow the player to purchase items.</p>
-
-<pre><code>| Combat   |
-| Overwold |
-</code></pre>
-
-<p>Similarly, the combat state may access the characters' stats, equipment and inventory to track health, damage output, and item use in battle.</p>
-
-<h2>Summary</h2>
-
-<p>I hope that <a href="http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/">the</a> <a href="//zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/">last</a> <a href="http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/">few posts</a> have given you an overview of how the state stack could work for supporting an RPG like <em>I am Setsuna</em>.</p>
 ]]></content>
   </entry>
   

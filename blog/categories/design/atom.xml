@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2017-01-07T10:30:43-05:00</updated>
+  <updated>2017-01-28T11:27:10-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Every Week a Dev]]></title>
+    <link href="http://zerosalife.github.io/blog/2017/01/28/every-week-a-dev/"/>
+    <updated>2017-01-28T11:21:35-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2017/01/28/every-week-a-dev</id>
+    <content type="html"><![CDATA[<p><a href="https://twitter.com/everyweekadev">Every Week a Dev</a> is a twitter bot created by <a href="https://twitter.com/tha_rami">Rami Ismail</a> that spotlights a new person involved in game development every week.  Check out the archives and follow it if you haven&rsquo;t already.  The bot&rsquo;s a great aggregator for gamedev wisdom.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2016 Year in Review]]></title>
@@ -127,52 +136,6 @@
 <p>Notice how this follows a three act structure.</p>
 
 <p>In the first three pages we establish a scenario, the first act of the story.  In the following pages we rapidly cross cut between the primary story (A) and the secondary story (B), forming the bulk of the story, the second act.  Finally the secondary story may be resolved or cross over to join the primary story, which takes over for the last five pages, forming the climax and resolution, the third act of the story.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Why does Pokemon GO use passive voice?]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/"/>
-    <updated>2016-08-27T10:21:50-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice</id>
-    <content type="html"><![CDATA[<p>A colleague of mine wondered why <a href="http://www.pokemon.com/us/pokemon-video-games/pokemon-go/">Pokemon GO</a> uses the passive voice when reporting,</p>
-
-<blockquote><p>Pikachu was caught!</p></blockquote>
-
-<p>The simple reason is nostalgia&mdash;that&rsquo;s the phrasing from the original <a href="http://bulbapedia.bulbagarden.net/wiki/Generation_I">Generation 1 Pokemon games</a>.</p>
-
-<p>Was there a limitation inherent in the medium at the time that required using the passive voice?  Below I&rsquo;ll dig into the <a href="https://github.com/pret/pokered">disassembled Pokemon Red source code</a> to answer the question of why Pokemon Go uses passive voice.</p>
-
-<!--more-->
-
-
-<p><a href="https://github.com/pret/pokered/blob/master/text.asm#L2793-L2798">This code</a> shows the text that is displayed when the player successfully uses a pokeball to capture a pokemon.  I&rsquo;ll break it down for you, using the <a href="https://github.com/pret/pokered/blob/master/macros.asm#L221">text macros</a> for reference.</p>
-
-<p>The <code>text</code> macro starts writing text, printing out the string <code>"All right!"</code>.  Then the <code>line</code> macro prints a special character <code>"@"</code> at the beginning of the bottom line in the text box.  The <code>TX_RAM</code> macro looks up a stored chunk of text based on the address stored in <code>wEnemyMonNick</code>, which points at the current enemy pokemon&rsquo;s name, and prints the name in the text box.  Then another <code>text</code> macro starts writing <code>" was"</code> following the enemy pokemon&rsquo;s name. And finally, the <code>cont</code> macro scrolls text to the next line, printing <code>"caught!@@"</code>.</p>
-
-<p>I couldn&rsquo;t find a good reference, but I&rsquo;m pretty sure that the <code>@</code> character is acting as a <a href="https://en.wikipedia.org/wiki/Newline">newline character</a>, more commonly <code>\n</code> these days.</p>
-
-<p>The final text looks something like:</p>
-
-<pre><code>All right!\n
-Pikachu was
-caught!!\n
-\n
-</code></pre>
-
-<p>Now you&rsquo;ve seen the implementation of the text for catching pokemon.  Is there a technical reason for choosing to use passive voice?</p>
-
-<p>Maybe <code>TX_RAM</code> can only be used with a <code>text</code> macro.  Based on a cursory glance over the <a href="https://github.com/pret/pokered/blob/master/text.asm">text</a>, I&rsquo;d say that this is likely to be the case.  But that doesn&rsquo;t prevent the developers from choosing to say</p>
-
-<pre><code>You caught
-Pikachu!
-</code></pre>
-
-<p>Could the developers have used a more active voice?  Yes!  Refer to this <a href="https://github.com/pret/pokered/blob/master/text.asm#L1130">link battle text</a> for an example of <code>TX_RAM</code> beginning a dialogue.</p>
-
-<p>The word &ldquo;you&rdquo; occurs <a href="https://github.com/pret/pokered/search?utf8%3D%25E2%259C%2593&amp;q%3Dyou">171 times in the Pokemon red codebase</a>, without controlling for contents of text strings vs method and variable names.</p>
-
-<p>There seems to be a general tendency to use &ldquo;you&rdquo; to refer to things that the player does, such as connecting the link cable between two Gameboys to trade pokemon, rather than the player character&rsquo;s actions in the game.  So that could have been a good reason to choose the passive voice.  Also, there could be some reasoning behind matching the original Japanese text that I&rsquo;m missing here.</p>
 ]]></content>
   </entry>
   
