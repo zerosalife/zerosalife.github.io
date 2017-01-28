@@ -2303,6 +2303,475 @@ I'm excited to revisit a1studmuffin's code after the contest ends.
 
 
 
+** 2016 Year In Review
+- design
+- mechanics
+- tools
+- game
+
+Here are some highlights from the previous year:
+
+- [[http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/][How Dungeonmans Teaches Diagonal Movement]]
+- [[http://zerosalife.github.io/blog/2016/03/05/proportion-types/][Proportion Types]]
+- [[http://zerosalife.github.io/blog/2016/04/23/improvisation-vs-preparation/][Improv vs Preparation]]
+  - This could be a conference talk!
+- [[http://zerosalife.github.io/blog/2016/06/18/mobile-frame-football-association/][Mobile Frame Football Association]]
+  - Needs playtesting
+- [[http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/][Why Does Pokemon GO Use Passive Voice?]]
+- [[http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/][Arcana: Procedurally Generated Tarot Decks]]
+- [[http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/][Procedural Generation of Social Networks]]
+
+** Procedural generation of social networks
+Procedurally generating #procgen social networks for a social rather than spatial hexcrawl campaign
+
+I've been thinking about how to run a hexcrawl style campaign in a
+cyberpunk world.  Mobility is easy, so a spatially distributed
+procedurally generated map doesn't make much sense.  Characters could
+easily just look up information on an unfamiliar section of the map on
+whatever flavor of the internet exists in that world and buy a plane
+ticket or book a taxi ride to get there.
+
+Transportation is cheap and the Sprawl has largely been explored.
+This is not to say that a typical hexcrawl-style campaign couldn't
+work in a VR hacking setting.  Look no further than Uplink to see a
+wonderful example.
+
+In a cyberpunk setting the thing to be explored becomes the web of
+intrigue among the movers and the shakers in the campaign.  Crosses
+and double crosses become the shifting landscapes and wandering
+monster encounters of the political landscape.  See for, example this
+[[http://monstersandmanuals.blogspot.com/2011/08/cyberpunk-sandbox.html][blog post at Monsters and Manuals]] and [[https://en.wikipedia.org/wiki/Barksdale_Organization#/media/File:Barksdale2.jpg][the organization chart from /The
+Wire/]].
+
+
+
+
+
+[[images/assets/social-network.svg][{% img images/assets/social-network.svg %}]]
+
+<!--more-->
+
+After looking at a few good resources, I took this stab at crafting a
+social network generator:
+
+*** Defining connection types
+Based on [[http://monstersandmanuals.blogspot.com/2011/08/relationship-hexmap.html][this Monsters and Manuals blog post]] I defined links as
+follows:
+
+- Black :: Strong positive link
+- Orange :: Communication (past or present)
+- Yellow :: Awareness
+- Red :: Hostility
+
+*** Making the connections
+For my initial attempts, I've found that a social network with 8
+actors is complex enough to get some interesting relationships.  I
+make twice as many random connections between the actors as there are
+actors.  So in this case, we're working with 16 random connections.
+
+This means that some actors could have several connection sand some
+could have none.  On average there may be 1 or 2 connections between
+most of the actors in the network.
+*** Graphing it
+I've [[http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/][used rhizome in the past]] to graph stuff.  This time around, I
+wanted more control over the characteristics of the resulting graph,
+so I went with [[https://github.com/Macroz/tangle][tangle]].
+
+Tangle lets me change the node shape and edge colors, which is exactly
+what I needed to represent the types of connections in this social
+network.
+
+You can see the resulting image above the fold.
+*** Additional resources
+Here are a few additional resources worth noting:
+
+- https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/
+- http://maetl.net/talks/narrative-anxiety
+- http://maetl.net/notes/storyboard/narrative-graph-models
+
+
+** Arcana: Procedurally Generated Tarot Decks
+Arcana, random-arcana.herokuapp.com, my #procjam entry based on data from @tinysubversions corpora project.
+
+- procjam
+- design
+- tools
+
+Why not make some art?
+
+Screenshot
+
+<!--more-->
+
+Here's [[https://random-arcana.herokuapp.com/][Arcana]], one of the projects I'm working for #procjam 2016.
+
+Arcana generates a full deck of Tarot cards based on data from [[https://twitter.com/tinysubversions][Darius
+Kazemi's]] [[https://github.com/dariusk/corpora][corpora project]].
+
+- Click on the cards to expand each card's meaning.
+
+- Click the button in the corner for a three-card spread from the
+  current deck.
+
+- Click the title, Arcana, in the title bar to regenerate a fresh
+  deck.
+
+You can check out the entry on the project page here.
+
+Spread screenshot
+
+
+** Procjam 2016
+- procjam
+
+I'm announcing my participation in [[https://itch.io/jam/procjam][#procjam 2016]], which kicked off
+yesterday.  This is my third year participating.  You can look back at
+my previous entries from 2014 here: [Insceptahdeckwu]({% post_url
+2014-11-08-insceptahdeckwu %}), [Patchwerk]({% post_url
+2014-11-15-patchwerk %}) and from 2015 here: [Mech Sheet Generator]({%
+post_url 2015-12-05-procjam-2015-restrospective %}).
+
+** Procjam 2016 talks
+- design
+- tools
+
+Last weekend [[https://twitter.com/mtrc][@mtrc]] put on a [[https://www.youtube.com/watch?v%3D3wcpLwvBTYo][series of talks]] leading up to [[https://twitter.com/hashtag/procjam][#procjam]]
+2016 at Falmouth University in Cornwall.  You can [[https://itch.io/jam/procjam][read more about the
+jam at itch.io]].
+
+Here are some links to interesting resources that stood out to me:
+
+<!--more-->
+
+*** The video game level corpus
+[[https://arxiv.org/abs/1606.07487]]
+
+*** PCG book
+[[http://pcgbook.com/]]
+
+** Special Missions' Story Pattern
+I'm interested in Larry Hama's [[https://en.wikipedia.org/wiki/G.I._Joe_(comics)#G.I._Joe:_Special_Missions][/GI Joe Special Missions/]]' influence on
+Metal Gear and Metal Gear Solid.  I want to look at the pattern of
+story telling that seems to emerge consistently in Special Missions'
+issues.
+
+- A
+- A
+- B
+- A
+- B
+- A
+- B
+- A
+- A
+- B
+- A
+- A
+- B
+- A
+- A
+- A
+- A
+- A
+
+Notice how this follows a three act structure.
+
+In the first three pages we establish a scenario, the first act of the
+story.  In the following pages we rapidly cross cut between the
+primary story (A) and the secondary story (B), forming the bulk of the
+story, the second act.  Finally the secondary story may be resolved or
+cross over to join the primary story, which takes over for the last
+five pages, forming the climax and resolution, the third act of the
+story.
+
+** Why does Pokemon GO use passive voice?
+- design
+
+A colleague of mine wondered why Pokemon GO uses the passive voice
+when reporting,
+
+#+BEGIN_QUOTE
+Pikachu was caught!
+#+END_QUOTE
+
+The simple reason is nostalgia.  That's the phrasing from the original
+Generation 1 Pokemon games.
+
+Was there a limitation inherent in the medium at the time that
+required using the passive voice?  Below I'll dig into the
+disassembled Pokemon Red source code to answer the question of why
+Pokemon Go uses passive voice.
+
+[[https://github.com/pret/pokered/blob/master/text.asm#L2793-L2798][This code]] shows the text that is displayed when the player
+successfully uses a pokeball to capture a pokemon.  I'll break it down
+for you, using the [[https://github.com/pret/pokered/blob/master/macros.asm#L221][text macros]] for reference.
+
+The =text= macro starts writing text, printing out the string ="All
+right!"=.  Then the =line= macro prints a special character ="@"= at
+the beginning of the bottom line in the text box.  The =TX_RAM= macro
+looks up a stored chunk of text based on the address stored in
+=wEnemyMonNick=, which points at the current enemy pokemon's name, and
+prints the name in the text box.  Then another =text= macro starts
+writing =" was"= following the enemy pokemon's name. And finally, the
+=cont= macro scrolls text to the next line, printing ="caught!@@"=.
+
+I couldn't find a good reference, but I'm pretty sure that the =@=
+character is acting as a [[https://en.wikipedia.org/wiki/Newline][newline character]], more commonly =\n= these
+days.
+
+The final text looks something like:
+#+BEGIN_SRC
+All right!\n
+Pikachu was
+caught!!\n
+\n
+#+END_SRC
+
+Now you've seen the implementation of the text for catching pokemon.
+Is there a technical reason for choosing to use passive voice?
+
+Maybe =TX_RAM= can only be used with a =text= macro.  Based on a
+cursory glance over the [[https://github.com/pret/pokered/blob/master/text.asm][text]], I'd say that this is likely to be the
+case.  But that doesn't prevent the developers from choosing to say
+
+#+BEGIN_SRC
+You caught
+Pikachu!
+#+END_SRC
+
+Could the developers have used a more active voice?  Yes!  Refer to
+this [[https://github.com/pret/pokered/blob/master/text.asm#L1130][link battle text]] for an example of =TX_RAM= beginning a dialogue.
+
+The word "you" occurs [[https://github.com/pret/pokered/search?utf8%3D%25E2%259C%2593&q%3Dyou][171 times in the Pokemon red codebase]], without
+controlling for contents of text strings vs method and variable names.
+
+There seems to be a general tendency to use "you" to refer to things
+that the player does, such as connecting the link cable between two
+Gameboys to trade pokemon, rather than the player character's actions
+in the game.  So that could have been a good reason to choose the
+passive voice.  Also, there could be some reasoning behind matching
+the original Japanese text that I'm missing here.
+
+http://i1079.photobucket.com/albums/w519/bigjonathan91/PisforPokemon/pokemon-mewtwo-pokeball_zpsced0e41c.jpg
+
+https://github.com/pret/pokered/blob/bfaabd08be0a790dff961276d76af3e1af4e6e24/wram.asm#L1583
+http://www.ibm.com/support/knowledgecenter/SSLTBW_2.1.0/com.ibm.zos.v2r1.asma400/ds.htm
+
+https://github.com/pret/pokered/blob/master/macros.asm#L233
+
+Could it have been more active?  Yes:
+https://github.com/pret/pokered/blob/master/text.asm#L1130.  Texts can
+start with interpolated text from =TX_RAM=
+
+** A Grammar of Procedural Platformer Levels
+- design
+- tools
+
+Brief post this week linking to a couple of great articles about
+elements of platformer game design.  I think these articles make great
+resources for a procedural platformer level generator.  Brevity and
+procedural focus stem at least partially from the release of the
+captivating /[[http://www.no-mans-sky.com/][No Man's Sky]]/.
+
+*** Platformer Level Design
+[[https://twitter.com/gamedevprof][Ken Bowen]]'s 2012 article covering [[http://gamedevprofessor.com/sidescroller-level-design/][2D Sidescroller Level Design]] has
+some great tips.  I especially like the section called Define your
+Building Blocks.  I think this will require some revisiting in a
+future post.
+
+*** Fundamental Physics for Platformers
+[[https://github.com/error454][Zachary Burke]]'s article about [[http://error454.com/2013/10/23/platformer-physics-101-and-the-3-fundamental-equations-of-platformers/][Platformer Physics]] is a nice resource
+that explains the fundamentals in great mathematical detail.  It also
+provides inverse solutions for deriving physics based on descriptive
+parameters for jump height and timing.
+
+Taken together these articles suggest, to me, that we could achieve a
+fully descriptive grammar of platformer games to generate a variety of
+levels constructed from basic building blocks, with constraints
+ensuring fun and responsive gameplay physics.
+
+** How I am Setsuna uses a State Stack: Map and Dialog
+
+I recently watched [[https://www.youtube.com/watch?v%3DGUwmNnMXd4A][some footage of /I Am Setsuna/ from E3]].
+
+Here's my analysis of the evolving [[https://en.wikipedia.org/wiki/Stack_(abstract_data_type)][state stack]], as you play this
+spritual successor to the classic RPG [[https://en.wikipedia.org/wiki/Chrono_Trigger][/Chrono Trigger/]].
+
+*** Map and Dialog
+There's likely a catch-all map state in which characters can run
+around, interacting with the world by opening chests, entering doors
+and new areas, and talking to NPCs.
+
+The gameplay starts in a snowy forest.  So, there's a =Map= state pushed
+onto the state stack that has a reference to the map for this snowy forest.
+
+#+BEGIN_SRC
+| Map |
+#+END_SRC
+
+As the player wanders around the forest, the player encounters talking
+NPCs.  These NPCs likely have triggers that push a =Dialog= state
+with a reference to the NPC's dialog onto the stack.
+
+#+BEGIN_SRC
+| Dialog ←PUSH |
+| Map          |
+#+END_SRC
+
+As the player advances and completes the dialog, the player is
+returned to the previous state, the snowy forest =Map=.
+
+#+BEGIN_SRC
+| Dialog →POP |
+
+| Map |
+#+END_SRC
+
+The gameplay is controlled by the current state at the top of the
+state stack.  This provides a more convenient way to track the
+appropriate controls and UI elements than to sprinkle a bunch of
+complicated conditionals throughout some monolithic game code.
+
+Next time I'll talk about combat.
+
+** How I am Setsuna uses a State Stack: Combat
+- design
+- tools
+
+The previous post looked at how /I am Setsuna/ uses a state stack to
+allow players to move around on a map and interact with NPCs via
+dialog.  This time around, I'll show you how combat can be handled by
+adding another state to the stack.
+
+This approach decreases the need to pass information between the
+various parts of your code handling the various states of your game.
+So it's preferable compared to costly serialization and
+deserialization to pass information to wholly separate code every time
+the game state changes.  Instead you simply change the way that the
+game's code runs.
+
+*** Combat
+After the player converses with an NPC, combat with a gnarly looking
+bear begins.  Here's what likely happens.
+
+#+BEGIN_SRC
+| Combat ←push |
+| Map          |
+
+#+END_SRC
+
+The player fights the enemy.  Then the combat state pops off the
+stack, returning the player to the snowy forest map.
+
+#+BEGIN_SRC
+| Combat →pop |
+
+| Map |
+
+#+END_SRC
+
+Note that the combat state may have substates that handle in-combat
+messages, player turns, and experience and item rewards at the end of
+combat.  Designing these substates depends on the specific
+requirements of your combat system.  That makes it hard to tell what
+the developers are using from this brief clip of /I am Setsuna/.
+
+That's all there is to it.  The modularity of this state stack
+approach allows developers to customize the flow of gameplay as
+desired.
+
+** How I am Setsuna uses a State Stack: Interiors
+- design
+- tools
+
+About [[https://youtu.be/GUwmNnMXd4A?t%3D5m36s][a quarter of the way through this playthrough]] of /I am Setsuna/
+at E3, the player enters a house.
+
+*** Interiors
+The player enters a house, which triggers a special case of the Map
+state, the Interior state to be pushed onto the stack.
+
+#+BEGIN_SRC
+| Interior ←push |
+| Map            |
+
+#+END_SRC
+
+It's hard to tell how the interior state differs from the town map and
+the forest map from the beginning of the video.  In fact, I think that
+you could cover similar features with a simple Map state that knows
+where triggers (for, for example, Dialog or Treasure) and exits are
+placed.
+
+So, it's likely ethat the I am Setsuna devs are using a gneeralized
+Map state to cover tehse cases
+
+This leads us to the final state I want to explore, a state to capture
+the Overworld.
+
+** How I am Setsuna uses a State Stack: Overworld
+The =Overworld= state ties together all of the states I previously
+discussed based on watching [[https://youtu.be/GUwmNnMXd4A][this playthrough]] of /I am Setsuna/.
+
+*** Overworld
+
+I think that the =Overworld= can serve as the base =Map= state I used
+in my previous examples.  This allows the =Overworld= to serve two
+purposes.  First, the =Overworld= state holds all of the map and area
+entrance data to allow characters to move about the overworld.  And
+second, the =Overworld= state can store information about the state of
+the game for use in the other states.
+
+*** Area information
+#+BEGIN_SRC
+| Overworld |
+
+#+END_SRC
+
+The =Overworld= contains all of the data necessary to render the
+overworld map, including the assets for rendering the map and the
+location and the target map data on triggers for entering towns,
+caves, and other =Maps=.
+
+*** Gameplay information
+#+BEGIN_SRC
+| Menu ←    |
+| Overworld |
+
+#+END_SRC
+The =Overworld= also contains the sorts of information you see in the
+main menu, such as the character's state, inventory, money.
+Serializing a snapshot of this information and the characters'
+position saves the game's state and can be used to reload the game
+later.
+
+The states added to the stack on top of the =Overworld= state can
+access this data for consumption and updating.
+
+#+BEGIN_SRC
+| Shop menu  |
+| Map (Shop) |
+| Map (Town) |
+| Overworld  |
+#+END_SRC
+
+For instance, a shop in town may access the inventory and money to
+allow the player to purchase items.
+
+#+BEGIN_SRC
+| Combat   |
+| Overwold |
+#+END_SRC
+
+Similarly, the combat state may access the characters' stats,
+equipment and inventory to track health, damage output, and item use
+in battle.
+
+*** Summary
+
+I hope that [[http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/][the]] [[Http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/][last]] [[http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/][few posts]] have given you an overview of how the
+state stack could work for supporting an RPG like /I am Setsuna/.
+
 
 * Business cards
 
@@ -4030,109 +4499,6 @@ http://www.gamasutra.com/view/news/269064/Study_combs_through_155_Gamasutra_post
 ** Improv dice
 http://tinysolitarysoldiers.blogspot.jp/2012/04/solo-rpg.html
 
-** Procedural generation of social networks
-Procedurally generating #procgen social networks for a social rather than spatial hexcrawl campaign
-
-I've been thinking about how to run a hexcrawl style campaign in a
-cyberpunk world.  Mobility is easy, so a spatially distributed
-procedurally generated map doesn't make much sense.  Characters could
-easily just look up information on an unfamiliar section of the map on
-whatever flavor of the internet exists in that world and buy a plane
-ticket or book a taxi ride to get there.
-
-Transportation is cheap and the Sprawl has largely been explored.
-This is not to say that a typical hexcrawl-style campaign couldn't
-work in a VR hacking setting.  Look no further than Uplink to see a
-wonderful example.
-
-In a cyberpunk setting the thing to be explored becomes the web of
-intrigue among the movers and the shakers in the campaign.  Crosses
-and double crosses become the shifting landscapes and wandering
-monster encounters of the political landscape.  See for, example this
-[[http://monstersandmanuals.blogspot.com/2011/08/cyberpunk-sandbox.html][blog post at Monsters and Manuals]] and [[https://en.wikipedia.org/wiki/Barksdale_Organization#/media/File:Barksdale2.jpg][the organization chart from /The
-Wire/]].
-
-
-
-
-
-[[images/assets/social-network.svg][{% img images/assets/social-network.svg %}]]
-
-<!--more-->
-
-After looking at a few good resources, I took this stab at crafting a
-social network generator:
-
-*** Defining connection types
-Based on [[http://monstersandmanuals.blogspot.com/2011/08/relationship-hexmap.html][this Monsters and Manuals blog post]] I defined links as
-follows:
-
-- Black :: Strong positive link
-- Orange :: Communication (past or present)
-- Yellow :: Awareness
-- Red :: Hostility
-
-*** Making the connections
-For my initial attempts, I've found that a social network with 8
-actors is complex enough to get some interesting relationships.  I
-make twice as many random connections between the actors as there are
-actors.  So in this case, we're working with 16 random connections.
-
-This means that some actors could have several connection sand some
-could have none.  On average there may be 1 or 2 connections between
-most of the actors in the network.
-*** Graphing it
-I've [[http://zerosalife.github.io/blog/2014/04/26/clojure-rhizome-labeled-edge-tutorial/][used rhizome in the past]] to graph stuff.  This time around, I
-wanted more control over the characteristics of the resulting graph,
-so I went with [[https://github.com/Macroz/tangle][tangle]].
-
-Tangle lets me change the node shape and edge colors, which is exactly
-what I needed to represent the types of connections in this social
-network.
-
-You can see the resulting image above the fold.
-*** Additional resources
-Here are a few additional resources worth noting:
-
-- https://emshort.wordpress.com/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/
-- http://maetl.net/talks/narrative-anxiety
-- http://maetl.net/notes/storyboard/narrative-graph-models
-
-
-** Special Missions' Story Pattern
-I'm interested in Larry Hama's [[https://en.wikipedia.org/wiki/G.I._Joe_(comics)#G.I._Joe:_Special_Missions][/GI Joe Special Missions/]]' influence on
-Metal Gear and Metal Gear Solid.  I want to look at the pattern of
-story telling that seems to emerge consistently in Special Missions'
-issues.
-
-- A
-- A
-- B
-- A
-- B
-- A
-- B
-- A
-- A
-- B
-- A
-- A
-- B
-- A
-- A
-- A
-- A
-- A
-
-Notice how this follows a three act structure.
-
-In the first three pages we establish a scenario, the first act of the
-story.  In the following pages we rapidly cross cut between the
-primary story (A) and the secondary story (B), forming the bulk of the
-story, the second act.  Finally the secondary story may be resolved or
-cross over to join the primary story, which takes over for the last
-five pages, forming the climax and resolution, the third act of the
-story.
 
 ** Reigns' swipe controls
 http://www.devolverdigital.com/blog/view/reigns-to-impose-its-will-on-ios-android-and-pc
@@ -4159,188 +4525,6 @@ https://playcanvas.com/
 - Undertale
 - [[https://twitter.com/Element_105/status/741761339194900482/video/1]]
 
-** How I am Setsuna uses a State Stack: Map and Dialog
-
-I recently watched [[https://www.youtube.com/watch?v%3DGUwmNnMXd4A][some footage of /I Am Setsuna/ from E3]].
-
-Here's my analysis of the evolving [[https://en.wikipedia.org/wiki/Stack_(abstract_data_type)][state stack]], as you play this
-spritual successor to the classic RPG [[https://en.wikipedia.org/wiki/Chrono_Trigger][/Chrono Trigger/]].
-
-*** Map and Dialog
-There's likely a catch-all map state in which characters can run
-around, interacting with the world by opening chests, entering doors
-and new areas, and talking to NPCs.
-
-The gameplay starts in a snowy forest.  So, there's a =Map= state pushed
-onto the state stack that has a reference to the map for this snowy forest.
-
-#+BEGIN_SRC
-| Map |
-#+END_SRC
-
-As the player wanders around the forest, the player encounters talking
-NPCs.  These NPCs likely have triggers that push a =Dialog= state
-with a reference to the NPC's dialog onto the stack.
-
-#+BEGIN_SRC
-| Dialog ←PUSH |
-| Map          |
-#+END_SRC
-
-As the player advances and completes the dialog, the player is
-returned to the previous state, the snowy forest =Map=.
-
-#+BEGIN_SRC
-| Dialog →POP |
-
-| Map |
-#+END_SRC
-
-The gameplay is controlled by the current state at the top of the
-state stack.  This provides a more convenient way to track the
-appropriate controls and UI elements than to sprinkle a bunch of
-complicated conditionals throughout some monolithic game code.
-
-Next time I'll talk about combat.
-
-** How I am Setsuna uses a State Stack: Combat
-- design
-- tools
-
-The previous post looked at how /I am Setsuna/ uses a state stack to
-allow players to move around on a map and interact with NPCs via
-dialog.  This time around, I'll show you how combat can be handled by
-adding another state to the stack.
-
-This approach decreases the need to pass information between the
-various parts of your code handling the various states of your game.
-So it's preferable compared to costly serialization and
-deserialization to pass information to wholly separate code every time
-the game state changes.  Instead you simply change the way that the
-game's code runs.
-
-*** Combat
-After the player converses with an NPC, combat with a gnarly looking
-bear begins.  Here's what likely happens.
-
-#+BEGIN_SRC
-| Combat ←push |
-| Map          |
-
-#+END_SRC
-
-The player fights the enemy.  Then the combat state pops off the
-stack, returning the player to the snowy forest map.
-
-#+BEGIN_SRC
-| Combat →pop |
-
-| Map |
-
-#+END_SRC
-
-Note that the combat state may have substates that handle in-combat
-messages, player turns, and experience and item rewards at the end of
-combat.  Designing these substates depends on the specific
-requirements of your combat system.  That makes it hard to tell what
-the developers are using from this brief clip of /I am Setsuna/.
-
-That's all there is to it.  The modularity of this state stack
-approach allows developers to customize the flow of gameplay as
-desired.
-
-** How I am Setsuna uses a State Stack: Interiors
-- design
-- tools
-
-About [[https://youtu.be/GUwmNnMXd4A?t%3D5m36s][a quarter of the way through this playthrough]] of /I am Setsuna/
-at E3, the player enters a house.
-
-*** Interiors
-The player enters a house, which triggers a special case of the Map
-state, the Interior state to be pushed onto the stack.
-
-#+BEGIN_SRC
-| Interior ←push |
-| Map            |
-
-#+END_SRC
-
-It's hard to tell how the interior state differs from the town map and
-the forest map from the beginning of the video.  In fact, I think that
-you could cover similar features with a simple Map state that knows
-where triggers (for, for example, Dialog or Treasure) and exits are
-placed.
-
-So, it's likely ethat the I am Setsuna devs are using a gneeralized
-Map state to cover tehse cases
-
-This leads us to the final state I want to explore, a state to capture
-the Overworld.
-
-** How I am Setsuna uses a State Stack: Overworld
-The =Overworld= state ties together all of the states I previously
-discussed based on watching [[https://youtu.be/GUwmNnMXd4A][this playthrough]] of /I am Setsuna/.
-
-*** Overworld
-
-I think that the =Overworld= can serve as the base =Map= state I used
-in my previous examples.  This allows the =Overworld= to serve two
-purposes.  First, the =Overworld= state holds all of the map and area
-entrance data to allow characters to move about the overworld.  And
-second, the =Overworld= state can store information about the state of
-the game for use in the other states.
-
-*** Area information
-#+BEGIN_SRC
-| Overworld |
-
-#+END_SRC
-
-The =Overworld= contains all of the data necessary to render the
-overworld map, including the assets for rendering the map and the
-location and the target map data on triggers for entering towns,
-caves, and other =Maps=.
-
-*** Gameplay information
-#+BEGIN_SRC
-| Menu ←    |
-| Overworld |
-
-#+END_SRC
-The =Overworld= also contains the sorts of information you see in the
-main menu, such as the character's state, inventory, money.
-Serializing a snapshot of this information and the characters'
-position saves the game's state and can be used to reload the game
-later.
-
-The states added to the stack on top of the =Overworld= state can
-access this data for consumption and updating.
-
-#+BEGIN_SRC
-| Shop menu  |
-| Map (Shop) |
-| Map (Town) |
-| Overworld  |
-#+END_SRC
-
-For instance, a shop in town may access the inventory and money to
-allow the player to purchase items.
-
-#+BEGIN_SRC
-| Combat   |
-| Overwold |
-#+END_SRC
-
-Similarly, the combat state may access the characters' stats,
-equipment and inventory to track health, damage output, and item use
-in battle.
-
-*** Summary
-
-I hope that [[http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/][the]] [[Http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/][last]] [[http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/][few posts]] have given you an overview of how the
-state stack could work for supporting an RPG like /I am Setsuna/.
-
 ** Character design in Aevee's WKTD
 The character outline structure Aevee uses breaks down character
 design into the following sections
@@ -4365,85 +4549,6 @@ design into the following sections
 
 *** Sundry Textures
 
-** Why does Pokemon GO use passive voice?
-- design
-
-A colleague of mine wondered why Pokemon GO uses the passive voice
-when reporting,
-
-#+BEGIN_QUOTE
-Pikachu was caught!
-#+END_QUOTE
-
-The simple reason is nostalgia.  That's the phrasing from the original
-Generation 1 Pokemon games.
-
-Was there a limitation inherent in the medium at the time that
-required using the passive voice?  Below I'll dig into the
-disassembled Pokemon Red source code to answer the question of why
-Pokemon Go uses passive voice.
-
-[[https://github.com/pret/pokered/blob/master/text.asm#L2793-L2798][This code]] shows the text that is displayed when the player
-successfully uses a pokeball to capture a pokemon.  I'll break it down
-for you, using the [[https://github.com/pret/pokered/blob/master/macros.asm#L221][text macros]] for reference.
-
-The =text= macro starts writing text, printing out the string ="All
-right!"=.  Then the =line= macro prints a special character ="@"= at
-the beginning of the bottom line in the text box.  The =TX_RAM= macro
-looks up a stored chunk of text based on the address stored in
-=wEnemyMonNick=, which points at the current enemy pokemon's name, and
-prints the name in the text box.  Then another =text= macro starts
-writing =" was"= following the enemy pokemon's name. And finally, the
-=cont= macro scrolls text to the next line, printing ="caught!@@"=.
-
-I couldn't find a good reference, but I'm pretty sure that the =@=
-character is acting as a [[https://en.wikipedia.org/wiki/Newline][newline character]], more commonly =\n= these
-days.
-
-The final text looks something like:
-#+BEGIN_SRC
-All right!\n
-Pikachu was
-caught!!\n
-\n
-#+END_SRC
-
-Now you've seen the implementation of the text for catching pokemon.
-Is there a technical reason for choosing to use passive voice?
-
-Maybe =TX_RAM= can only be used with a =text= macro.  Based on a
-cursory glance over the [[https://github.com/pret/pokered/blob/master/text.asm][text]], I'd say that this is likely to be the
-case.  But that doesn't prevent the developers from choosing to say
-
-#+BEGIN_SRC
-You caught
-Pikachu!
-#+END_SRC
-
-Could the developers have used a more active voice?  Yes!  Refer to
-this [[https://github.com/pret/pokered/blob/master/text.asm#L1130][link battle text]] for an example of =TX_RAM= beginning a dialogue.
-
-The word "you" occurs [[https://github.com/pret/pokered/search?utf8%3D%25E2%259C%2593&q%3Dyou][171 times in the Pokemon red codebase]], without
-controlling for contents of text strings vs method and variable names.
-
-There seems to be a general tendency to use "you" to refer to things
-that the player does, such as connecting the link cable between two
-Gameboys to trade pokemon, rather than the player character's actions
-in the game.  So that could have been a good reason to choose the
-passive voice.  Also, there could be some reasoning behind matching
-the original Japanese text that I'm missing here.
-
-http://i1079.photobucket.com/albums/w519/bigjonathan91/PisforPokemon/pokemon-mewtwo-pokeball_zpsced0e41c.jpg
-
-https://github.com/pret/pokered/blob/bfaabd08be0a790dff961276d76af3e1af4e6e24/wram.asm#L1583
-http://www.ibm.com/support/knowledgecenter/SSLTBW_2.1.0/com.ibm.zos.v2r1.asma400/ds.htm
-
-https://github.com/pret/pokered/blob/master/macros.asm#L233
-
-Could it have been more active?  Yes:
-https://github.com/pret/pokered/blob/master/text.asm#L1130.  Texts can
-start with interpolated text from =TX_RAM=
-
 ** Modeling FF VI combat mechanics in Clojure
 http://www.rpglegion.com/ff6/items/weapons.htm
 http://www.rpglegion.com/ff6/algs/algs.htm
@@ -4466,33 +4571,6 @@ http://finalfantasy.wikia.com/wiki/List_of_Final_Fantasy_VI_weapons
 
 ** Avoiding hiring bias on a small team
 Use metrics on your small game development team
-
-** A Grammar of Procedural Platformer Levels
-- design
-- tools
-
-Brief post this week linking to a couple of great articles about
-elements of platformer game design.  I think these articles make great
-resources for a procedural platformer level generator.  Brevity and
-procedural focus stem at least partially from the release of the
-captivating /[[http://www.no-mans-sky.com/][No Man's Sky]]/.
-
-*** Platformer Level Design
-[[https://twitter.com/gamedevprof][Ken Bowen]]'s 2012 article covering [[http://gamedevprofessor.com/sidescroller-level-design/][2D Sidescroller Level Design]] has
-some great tips.  I especially like the section called Define your
-Building Blocks.  I think this will require some revisiting in a
-future post.
-
-*** Fundamental Physics for Platformers
-[[https://github.com/error454][Zachary Burke]]'s article about [[http://error454.com/2013/10/23/platformer-physics-101-and-the-3-fundamental-equations-of-platformers/][Platformer Physics]] is a nice resource
-that explains the fundamentals in great mathematical detail.  It also
-provides inverse solutions for deriving physics based on descriptive
-parameters for jump height and timing.
-
-Taken together these articles suggest, to me, that we could achieve a
-fully descriptive grammar of platformer games to generate a variety of
-levels constructed from basic building blocks, with constraints
-ensuring fun and responsive gameplay physics.
 
 ** Dick Marcinko's influence on Metal Gear
 /Metal Gear??/  That's right.
@@ -4517,63 +4595,6 @@ the round.  You can replay rounds to try to increase your score.
 ** Roguelike rating
 [[http://bp.io/howroguelike/]]
 
-** Procjam 2016 talks
-- design
-- tools
-
-Last weekend [[https://twitter.com/mtrc][@mtrc]] put on a [[https://www.youtube.com/watch?v%3D3wcpLwvBTYo][series of talks]] leading up to [[https://twitter.com/hashtag/procjam][#procjam]]
-2016 at Falmouth University in Cornwall.  You can [[https://itch.io/jam/procjam][read more about the
-jam at itch.io]].
-
-Here are some links to interesting resources that stood out to me:
-
-<!--more-->
-
-*** The video game level corpus
-[[https://arxiv.org/abs/1606.07487]]
-
-*** PCG book
-[[http://pcgbook.com/]]
-
-** Procjam 2016
-- procjam
-
-I'm announcing my participation in [[https://itch.io/jam/procjam][#procjam 2016]], which kicked off
-yesterday.  This is my third year participating.  You can look back at
-my previous entries from 2014 here: [Insceptahdeckwu]({% post_url
-2014-11-08-insceptahdeckwu %}), [Patchwerk]({% post_url
-2014-11-15-patchwerk %}) and from 2015 here: [Mech Sheet Generator]({%
-post_url 2015-12-05-procjam-2015-restrospective %}).
-
-** Arcana: Procedurally Generated Tarot Decks
-Arcana, random-arcana.herokuapp.com, my #procjam entry based on data from @tinysubversions corpora project.
-
-- procjam
-- design
-- tools
-
-Why not make some art?
-
-Screenshot
-
-<!--more-->
-
-Here's [[https://random-arcana.herokuapp.com/][Arcana]], one of the projects I'm working for #procjam 2016.
-
-Arcana generates a full deck of Tarot cards based on data from [[https://twitter.com/tinysubversions][Darius
-Kazemi's]] [[https://github.com/dariusk/corpora][corpora project]].
-
-- Click on the cards to expand each card's meaning.
-
-- Click the button in the corner for a three-card spread from the
-  current deck.
-
-- Click the title, Arcana, in the title bar to regenerate a fresh
-  deck.
-
-You can check out the entry on the project page here.
-
-Spread screenshot
 
 ** Time-based mechanics in turn-based paper prototypes
 
@@ -4606,20 +4627,22 @@ now to 2 seconds in the eventual real-time game), then I place the
 cooldown counter on the 2 card.  After each turn, I move the cooldowns
 up the playing card tracker, flipping to the active side the
 corresponding ability cards for any counters that go off the top.
-** 2016 Year In Review
+** Creator Questions
+http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/
+http://opentranscripts.org/wp-content/uploads/2016/12/allison-parrish-programming-forgetting-26.png
+** Zelda BG planning sheet
 - design
-- mechanics
+https://cdn02.nintendo-europe.com/media/downloads/games_8/wiiu_supermariomaker_1/Super_Mario_Bros_sheets.pdf
+
+Width: 240
+Height: 224
+** Every Week a Dev
+- design
 - tools
-- game
+- mechanics
 
-Here are some highlights from the previous year:
-
-- [[http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/][How Dungeonmans Teaches Diagonal Movement]]
-- [[http://zerosalife.github.io/blog/2016/03/05/proportion-types/][Proportion Types]]
-- [[http://zerosalife.github.io/blog/2016/04/23/improvisation-vs-preparation/][Improv vs Preparation]]
-  - This could be a conference talk!
-- [[http://zerosalife.github.io/blog/2016/06/18/mobile-frame-football-association/][Mobile Frame Football Association]]
-  - Needs playtesting
-- [[http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/][Why Does Pokemon GO Use Passive Voice?]]
-- [[http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/][Arcana: Procedurally Generated Tarot Decks]]
-- [[http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/][Procedural Generation of Social Networks]]
+[[https://twitter.com/everyweekadev][Every Week a Dev]] is a twitter bot created by [[https://twitter.com/tha_rami][Rami Ismail]] that
+spotlights a new person involved in game development every week.
+Check out the archives and follow it if you haven't already.  The
+bot's a great aggregator for gamedev wisdom.
+** ironic vs narrative instructions in games. see ffvi reverse design
