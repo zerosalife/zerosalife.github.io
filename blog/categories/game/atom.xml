@@ -4,7 +4,7 @@
   <title><![CDATA[Category: game | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/game/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-12-03T12:42:01-05:00</updated>
+  <updated>2017-01-07T10:30:43-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2016 Year in Review]]></title>
+    <link href="http://zerosalife.github.io/blog/2017/01/07/2016-year-in-review/"/>
+    <updated>2017-01-07T10:22:54-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2017/01/07/2016-year-in-review</id>
+    <content type="html"><![CDATA[<p>Here are some highlights from the previous year:</p>
+
+<ul>
+<li><a href="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/">How Dungeonmans Teaches Diagonal Movement</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/03/05/proportion-types/">Proportion Types</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/04/23/improvisation-vs-preparation/">Improv vs Preparation</a>
+
+<ul>
+<li>This could be a conference talk!</li>
+</ul>
+</li>
+<li><a href="http://zerosalife.github.io/blog/2016/06/18/mobile-frame-football-association/">Mobile Frame Football Association</a>
+
+<ul>
+<li>Needs playtesting</li>
+</ul>
+</li>
+<li><a href="http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/">Why Does Pokemon GO Use Passive Voice?</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/">Arcana: Procedurally Generated Tarot Decks</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/">Procedural Generation of Social Networks</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mobile Frame Football Association]]></title>
@@ -608,17 +638,6 @@ player already has 3 stunts.</p>
 <h2>Conclusion</h2>
 
 <p>Well, that&rsquo;s it.  I have some good perspective going forward.  In the coming weeks, I&rsquo;m going to look at some of my favorite submissions and finalize my votes for the contest.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Aurion and the Aurochs is out]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/04/18/aurion-and-the-aurochs-is-out/"/>
-    <updated>2015-04-18T13:43:49-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/04/18/aurion-and-the-aurochs-is-out</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m happy to announce that my <a href="http://jams.gamejolt.io/adventurejam">#adventurejam</a> game is finished and released.  I&rsquo;ll do a more in-depth post-mortem next week.  In the coming weeks, before the 30-day voting deadline ends, I want to take a look at some of the <a href="http://jams.gamejolt.io/adventurejam/games">other submissions</a> that pique my interest.</p>
-
-<p>You can <a href="http://gamejolt.com/games/adventure/aurion-and-the-aurochs/60738/">play <em>Aurion and the Aurochs</em> on gamejolt</a> and you can <a href="https://github.com/zerosalife/aurion">view the source on github</a>.  Please leave me some feedback in the comments here or on twitter <a href="https://twitter.com/zerosalife">@zerosalife</a>.</p>
 ]]></content>
   </entry>
   

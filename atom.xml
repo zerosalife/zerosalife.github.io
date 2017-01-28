@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2016-12-03T12:42:01-05:00</updated>
+  <updated>2017-01-07T10:30:43-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2016 Year in Review]]></title>
+    <link href="http://zerosalife.github.io/blog/2017/01/07/2016-year-in-review/"/>
+    <updated>2017-01-07T10:22:54-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2017/01/07/2016-year-in-review</id>
+    <content type="html"><![CDATA[<p>Here are some highlights from the previous year:</p>
+
+<ul>
+<li><a href="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/">How Dungeonmans Teaches Diagonal Movement</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/03/05/proportion-types/">Proportion Types</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/04/23/improvisation-vs-preparation/">Improv vs Preparation</a>
+
+<ul>
+<li>This could be a conference talk!</li>
+</ul>
+</li>
+<li><a href="http://zerosalife.github.io/blog/2016/06/18/mobile-frame-football-association/">Mobile Frame Football Association</a>
+
+<ul>
+<li>Needs playtesting</li>
+</ul>
+</li>
+<li><a href="http://zerosalife.github.io/blog/2016/08/27/why-does-pokemon-go-use-passive-voice/">Why Does Pokemon GO Use Passive Voice?</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/11/12/arcana-procedurally-generated-tarot-decks/">Arcana: Procedurally Generated Tarot Decks</a></li>
+<li><a href="http://zerosalife.github.io/blog/2016/12/03/procedural-generation-of-social-networks/">Procedural Generation of Social Networks</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Procedural Generation of Social Networks]]></title>
@@ -845,58 +875,6 @@ or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 <p>It&rsquo;s also low disturbance.  There&rsquo;s no dialog popping up saying, &ldquo;Hey!  Listen!&rdquo;  The players will either get a kick out of figuring out how to get that pesky loot or simply move on and play more of the game.</p>
 
 <p>It&rsquo;s a win-win situation.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Proportion Types]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/03/05/proportion-types/"/>
-    <updated>2016-03-05T13:52:00-05:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/03/05/proportion-types</id>
-    <content type="html"><![CDATA[<p><a href="https://twitter.com/androidarts">Arne</a> over at <a href="http://www.androidarts.com/">Android Arts</a> <a href="http://androidarts.com/misc/proportions_types.jpg">codified a taxonomy of proportion types in character design</a>.  I&rsquo;ve kept track of a few examples I&rsquo;ve come across to share with you below.</p>
-
-<!--more-->
-
-
-<h2>Ninja Star</h2>
-
-<ul>
-<li>Bravely Default</li>
-<li>Fire Emblem</li>
-<li>Miis</li>
-<li>Fez</li>
-<li>Super Mario Bros.</li>
-<li>Mischief Makers</li>
-<li>Gunstar Heroes</li>
-<li>Monument Valley</li>
-</ul>
-
-
-<h2>Cross</h2>
-
-<ul>
-<li>Call of Duty Advanced Warfare</li>
-<li>Minecraft</li>
-<li>N++</li>
-<li>Gears of War</li>
-<li>Warhammer</li>
-<li>Last of Us</li>
-<li>Uncharted</li>
-</ul>
-
-
-<h2>Maltese cross</h2>
-
-<ul>
-<li>Mega Man</li>
-<li>Mobile Suit Gundam</li>
-<li>Mazinger Z</li>
-<li>Getter Robo</li>
-<li>Armored Trooper Votoms</li>
-<li>Practically everything from Super Robot Wars</li>
-<li>Ratchet and Clank</li>
-</ul>
-
 ]]></content>
   </entry>
   
