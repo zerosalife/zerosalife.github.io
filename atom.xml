@@ -4,7 +4,7 @@
   <title><![CDATA[zero's a life]]></title>
   <link href="http://zerosalife.github.io/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2017-01-07T10:30:43-05:00</updated>
+  <updated>2017-01-28T11:27:10-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Every Week a Dev]]></title>
+    <link href="http://zerosalife.github.io/blog/2017/01/28/every-week-a-dev/"/>
+    <updated>2017-01-28T11:21:35-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2017/01/28/every-week-a-dev</id>
+    <content type="html"><![CDATA[<p><a href="https://twitter.com/everyweekadev">Every Week a Dev</a> is a twitter bot created by <a href="https://twitter.com/tha_rami">Rami Ismail</a> that spotlights a new person involved in game development every week.  Check out the archives and follow it if you haven&rsquo;t already.  The bot&rsquo;s a great aggregator for gamedev wisdom.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2016 Year in Review]]></title>
@@ -841,40 +850,6 @@ or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 
 
 <p>In addition to illuminating how to write these documents in general, I find interesting to see how the Diablo devs were planning on leveraging the success of <em>Magic: The Gathering</em>&rsquo;s business model to sell DLC.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How Dungeonmans teaches diagonal movement]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement/"/>
-    <updated>2016-03-19T10:25:44-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/03/19/how-dungeonmans-teaches-diagonal-movement</id>
-    <content type="html"><![CDATA[<p>Listening to <a href="http://www.roguelikeradio.com/2016/01/episode-114-gameplay-orientated.html">Roguelike Radio</a>, I heard the creator of <a href="https://twitter.com/dungeonmans">Dungeonmans</a> talk about designing levels to teach gameplay concepts.</p>
-
-<!--more-->
-
-
-<p><a href="http://www.dungeonmans.com/">Dungeonmans</a> has an interesting strategy to teach players to move diagonally early in the game, without requiring a wordy tutorial.</p>
-
-<p>The first level has caves with loot inside.  Some caves are straightforward, allowing players to reach loot without needing to perform a diagonal step.</p>
-
-<pre><code>###
-#o#
-#.#
-</code></pre>
-
-<p>But other caves are different, requiring diagonal movement to get the loot.</p>
-
-<pre><code>###
-#o#
-##.
-</code></pre>
-
-<p>Presenting the diagonal movement mechanic this way is easy and low risk.  If you don&rsquo;t pick it up, it&rsquo;s ok.  You won&rsquo;t die, you just miss out on some loot.</p>
-
-<p>It&rsquo;s also low disturbance.  There&rsquo;s no dialog popping up saying, &ldquo;Hey!  Listen!&rdquo;  The players will either get a kick out of figuring out how to get that pesky loot or simply move on and play more of the game.</p>
-
-<p>It&rsquo;s a win-win situation.</p>
 ]]></content>
   </entry>
   
