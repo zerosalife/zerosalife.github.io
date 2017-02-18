@@ -2772,6 +2772,16 @@ in battle.
 I hope that [[http://zerosalife.github.io/blog/2016/07/02/how-i-am-setsuna-uses-a-state-stack-map-and-dialog/][the]] [[Http://zerosalife.github.io/blog/2016/07/16/how-i-am-setsuna-uses-a-state-stack-combat/][last]] [[http://zerosalife.github.io/blog/2016/07/23/how-i-am-setsuna-uses-a-state-stack-interiors/][few posts]] have given you an overview of how the
 state stack could work for supporting an RPG like /I am Setsuna/.
 
+** Every Week a Dev
+- design
+- tools
+- mechanics
+
+[[https://twitter.com/everyweekadev][Every Week a Dev]] is a twitter bot created by [[https://twitter.com/tha_rami][Rami Ismail]] that
+spotlights a new person involved in game development every week.
+Check out the archives and follow it if you haven't already.  The
+bot's a great aggregator for gamedev wisdom.
+
 
 * Business cards
 
@@ -4628,21 +4638,41 @@ cooldown counter on the 2 card.  After each turn, I move the cooldowns
 up the playing card tracker, flipping to the active side the
 corresponding ability cards for any counters that go off the top.
 ** Creator Questions
-http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/
-http://opentranscripts.org/wp-content/uploads/2016/12/allison-parrish-programming-forgetting-26.png
+Taking inspiration from [[http://www.decontextualize.com/][Allison Parrish's]] talk: [[http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/][Programming is
+Forgetting: Toward a New Hacker Ethic]], here's my version of Parrish's
+new hacker ethic for creators.
+
+*** Creator Questions
+- Who gets to use what I make?  Who am I leaving out?  How does what I
+  make facilitate or hinder access?
+- What assets am I using?  Whose labor produced them and what biases
+  and assumptions are built in?  What do the assets leave out?
+- What systems of authority am I enacting through what I make?  What
+  systems of support do I rely on?  How does what I make support other
+  people?
+- What kind of community am I assuming?  What community do I invite
+  through what I make?   How are my personal values reflected in what
+  I make?
+
+Watch [[%20out][Allison Parrish's talk]] for more background on why these sorts of
+updates are critical for shaping a more welcoming community.
 ** Zelda BG planning sheet
 - design
 https://cdn02.nintendo-europe.com/media/downloads/games_8/wiiu_supermariomaker_1/Super_Mario_Bros_sheets.pdf
 
 Width: 240
 Height: 224
-** Every Week a Dev
-- design
-- tools
-- mechanics
-
-[[https://twitter.com/everyweekadev][Every Week a Dev]] is a twitter bot created by [[https://twitter.com/tha_rami][Rami Ismail]] that
-spotlights a new person involved in game development every week.
-Check out the archives and follow it if you haven't already.  The
-bot's a great aggregator for gamedev wisdom.
 ** ironic vs narrative instructions in games. see ffvi reverse design
+** Using d3 for plotting with bl.ocks.org and octopress
+*** .block file
+YAML configuration customizing the appearance of the Block.  See [[https://bl.ocks.org/-/about][the
+about page]] for more information.
+
+e.g.
+#+BEGIN_SRC
+license: none
+#+END_SRC
+*** Formula
+#+BEGIN_SRC
+y = 8x^2
+#+END_SRC

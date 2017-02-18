@@ -4,7 +4,6 @@ preview:
 	bundle exec rake generate && bundle exec rake preview
 
 blog:
-	sudo ssh-add ~/.ssh/id_rsa && \
 	git pull && \
 	bundle install && \
 	bundle exec rake integrate && \
