@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2017-01-28T11:27:10-05:00</updated>
+  <updated>2017-02-18T10:27:28-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creator Questions]]></title>
+    <link href="http://zerosalife.github.io/blog/2017/02/18/creator-questions/"/>
+    <updated>2017-02-18T10:23:42-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2017/02/18/creator-questions</id>
+    <content type="html"><![CDATA[<p>Taking inspiration from <a href="http://www.decontextualize.com/">Allison Parrish&rsquo;s</a> talk: <a href="http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/">Programming is Forgetting: Toward a New Hacker Ethic</a>, here&rsquo;s my version of Parrish&rsquo;s new hacker ethic for creators:</p>
+
+<h2>Creator Questions</h2>
+
+<ul>
+<li>Who gets to use what I make?  Who am I leaving out?  How does what I make facilitate or hinder access?</li>
+<li>What assets am I using?  Whose labor produced them and what biases and assumptions are built in?  What do the assets leave out?</li>
+<li>What systems of authority am I enacting through what I make?  What systems of support do I rely on?  How does what I make support other people?</li>
+<li>What kind of community am I assuming?  What community do I invite through what I make?   How are my personal values reflected in what I make?</li>
+</ul>
+
+
+<p>Watch Allison Parrish&rsquo;s talk for more background on why these sorts of updates are critical for shaping a more welcoming community.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Every Week a Dev]]></title>
@@ -98,44 +119,6 @@
 <h2>PCG book</h2>
 
 <p><a href="http://pcgbook.com/">http://pcgbook.com/</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Special Missions' Story Pattern]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/10/22/special-missions-story-pattern/"/>
-    <updated>2016-10-22T09:22:43-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/10/22/special-missions-story-pattern</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m interested in Larry Hama&rsquo;s <a href="https://en.wikipedia.org/wiki/G.I._Joe_%28comics%29#G.I._Joe:_Special_Missions"><em>GI Joe Special Missions'</em></a> influence on Metal Gear and Metal Gear Solid.  I want to look at the pattern of story telling that seems to emerge consistently in Special Missions' issues.</p>
-
-<!--more-->
-
-
-<ul>
-<li>A</li>
-<li>A</li>
-<li>B</li>
-<li>A</li>
-<li>B</li>
-<li>A</li>
-<li>B</li>
-<li>A</li>
-<li>A</li>
-<li>B</li>
-<li>A</li>
-<li>A</li>
-<li>B</li>
-<li>A</li>
-<li>A</li>
-<li>A</li>
-<li>A</li>
-<li>A</li>
-</ul>
-
-
-<p>Notice how this follows a three act structure.</p>
-
-<p>In the first three pages we establish a scenario, the first act of the story.  In the following pages we rapidly cross cut between the primary story (A) and the secondary story (B), forming the bulk of the story, the second act.  Finally the secondary story may be resolved or cross over to join the primary story, which takes over for the last five pages, forming the climax and resolution, the third act of the story.</p>
 ]]></content>
   </entry>
   
