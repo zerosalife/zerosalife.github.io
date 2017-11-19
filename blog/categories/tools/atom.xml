@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2017-01-28T11:27:10-05:00</updated>
+  <updated>2017-02-18T10:27:28-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creator Questions]]></title>
+    <link href="http://zerosalife.github.io/blog/2017/02/18/creator-questions/"/>
+    <updated>2017-02-18T10:23:42-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2017/02/18/creator-questions</id>
+    <content type="html"><![CDATA[<p>Taking inspiration from <a href="http://www.decontextualize.com/">Allison Parrish&rsquo;s</a> talk: <a href="http://opentranscripts.org/transcript/programming-forgetting-new-hacker-ethic/">Programming is Forgetting: Toward a New Hacker Ethic</a>, here&rsquo;s my version of Parrish&rsquo;s new hacker ethic for creators:</p>
+
+<h2>Creator Questions</h2>
+
+<ul>
+<li>Who gets to use what I make?  Who am I leaving out?  How does what I make facilitate or hinder access?</li>
+<li>What assets am I using?  Whose labor produced them and what biases and assumptions are built in?  What do the assets leave out?</li>
+<li>What systems of authority am I enacting through what I make?  What systems of support do I rely on?  How does what I make support other people?</li>
+<li>What kind of community am I assuming?  What community do I invite through what I make?   How are my personal values reflected in what I make?</li>
+</ul>
+
+
+<p>Watch Allison Parrish&rsquo;s talk for more background on why these sorts of updates are critical for shaping a more welcoming community.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Every Week a Dev]]></title>
@@ -98,25 +119,6 @@
 <h2>PCG book</h2>
 
 <p><a href="http://pcgbook.com/">http://pcgbook.com/</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A Grammar of Procedural Platformer Levels]]></title>
-    <link href="http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels/"/>
-    <updated>2016-08-13T10:43:49-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2016/08/13/a-grammar-of-procedural-platformer-levels</id>
-    <content type="html"><![CDATA[<p>Brief post this week linking to a couple of great articles about elements of platformer game design.  I think these articles make great resources for a procedural platformer level generator.  Brevity and procedural focus stem at least partially from the release of the captivating <em><a href="http://www.no-mans-sky.com/">No Man&rsquo;s Sky</a></em>.</p>
-
-<h2>Platformer Level Design</h2>
-
-<p><a href="https://twitter.com/gamedevprof">Ken Bowen</a>&rsquo;s 2012 article covering <a href="http://gamedevprofessor.com/sidescroller-level-design/">2D Sidescroller Level Design</a> has some great tips.  I especially like the section called Define your Building Blocks.  I think this will require some revisiting in a future post.</p>
-
-<h2>Fundamental Physics for Platformers</h2>
-
-<p><a href="https://github.com/error454">Zachary Burke</a>&rsquo;s article about <a href="http://error454.com/2013/10/23/platformer-physics-101-and-the-3-fundamental-equations-of-platformers/">Platformer Physics</a> is a nice resource that explains the fundamentals in great mathematical detail.  It also provides inverse solutions for deriving physics based on descriptive parameters for jump height and timing.</p>
-
-<p>Taken together these articles suggest, to me, that we could achieve a fully descriptive grammar of platformer games to generate a variety of levels constructed from basic building blocks, with constraints ensuring fun and responsive gameplay physics.</p>
 ]]></content>
   </entry>
   
