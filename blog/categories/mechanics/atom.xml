@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mechanics | zero's a life]]></title>
   <link href="http://zerosalife.github.io/blog/categories/mechanics/atom.xml" rel="self"/>
   <link href="http://zerosalife.github.io/"/>
-  <updated>2017-02-18T10:27:28-05:00</updated>
+  <updated>2017-11-19T11:00:35-05:00</updated>
   <id>http://zerosalife.github.io/</id>
   <author>
     <name><![CDATA[zerosalife]]></name>
@@ -12,6 +12,118 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Shovel Knight's Old-school Tricks]]></title>
+    <link href="http://zerosalife.github.io/blog/2017/11/18/shovel-knights-old-school-tricks/"/>
+    <updated>2017-11-18T10:43:14-05:00</updated>
+    <id>http://zerosalife.github.io/blog/2017/11/18/shovel-knights-old-school-tricks</id>
+    <content type="html"><![CDATA[<p>Here&rsquo;s a collection of relatively disorganized notes looking at <a href="http://yachtclubgames.com/shovel-knight/">Shovel Knight&rsquo;s</a> design.</p>
+
+<!--more-->
+
+
+<p>Great article about parallax scrolling and plenty of other stuff from Shovel Knight: <a href="http://gamasutra.com/blogs/DavidDAngelo/20140625/219383/Breaking_the_NES_for_Shovel_Knight.php">http://gamasutra.com/blogs/DavidDAngelo/20140625/219383/Breaking_the_NES_for_Shovel_Knight.php</a></p>
+
+<p>Even some indies are getting into the spirit: <a href="https://twitter.com/NoelFB/status/487185061972680705/photo/1">https://twitter.com/NoelFB/status/487185061972680705/photo/1</a></p>
+
+<p>Interview with the Shovel Knight creators Yacht Club Games: <a href="https://www.nintendoworldreport.com/connectivity/38203/episode-144-ive-seen-some-badass-canes">https://www.nintendoworldreport.com/connectivity/38203/episode-144-ive-seen-some-badass-canes</a>.  The interview starts about 28 minutes into the podcast.</p>
+
+<h2>Resolution</h2>
+
+<p>Shovel Knight runs on displays meant to run 1080p down to pocket-sized 3DS screens.  The fine article mentions that scaling Shovel Knight&rsquo;s NES-style graphics up to 1080p results in virtual pixels of about 4.5 x 4.5 1080p pixels.  It also mentions that the effective resolution
+they shoot for is 400 x 240, resulting in an aspect ratio of 5:3.</p>
+
+<p>According to the fine article and <a href="http://en.wikipedia.org/wiki/Nintendo_Entertainment_System_technical_specifications">wikipedia</a>, that&rsquo;s pretty close to a stretched out version of the original NES resolution.</p>
+
+<p>For no other purpose than my own reference here, the DS' resolution is 256 x 192, according to <a href="http://www.usgamer.net/articles/final-fantasy-iii-pc-port">this article</a>.  The Gameboy is 160 x 144 according to <a href="http://jams.gamejolt.io/gbjam3">#gbajam</a>.  Typical NES background tiles are 16 x 16 pixels, foreground sprites are either 8 x 8 or 8 x 16 (Sources: <a href="http://wayofthepixel.net/index.php?topic%3D10784.5%3Bwap2">&lt;http://wayofthepixel.net/index.php?topic=10784.5;wap2></a>; <a href="http://en.wikipedia.org/wiki/Nintendo_Entertainment_System_technical_specifications">http://en.wikipedia.org/wiki/Nintendo_Entertainment_System_technical_specifications</a>).  For reference, Link&rsquo;s sprite in Legend of Zelda, an NES game, is 16 x 16, Link&rsquo;s sprite in Link&rsquo;s Awakening, a gameboy game, is 16 x 16, and Link&rsquo;s sprite in A Link to the Past, an SNES game, is 32 x 32.</p>
+
+<p><a href="http://www.fortressofdoors.com/the-quest-to-upscale-pixel-art/">http://www.fortressofdoors.com/the-quest-to-upscale-pixel-art/</a></p>
+
+<p>And <a href="http://en.wikipedia.org/wiki/Neo_Geo_(system">NeoGeo</a>) is:</p>
+
+<blockquote><p>Display resolution: 320×224 (many games only used the centermost 304 pixels)</p>
+
+<p>Color palette: 65,536 (16-bit) (Not RGB565, but RGB666, where the lowest bit of each channel is shared with one bit)</p>
+
+<p>Maximum colors on screen: 4,096 (12-bit)</p>
+
+<p>Maximum sprites on screen: 380</p>
+
+<p>Minimum sprite size: 1×2</p>
+
+<p>Maximum sprite size: 16×512</p>
+
+<p>Maximum sprites per scanline: 96</p>
+
+<p>Simultaneous scroll planes: 3</p>
+
+<p>Aspect ratio: 4:3</p></blockquote>
+
+<p>And LDTV is: <a href="http://en.wikipedia.org/wiki/Low-definition_television#References">http://en.wikipedia.org/wiki/Low-definition_television#References</a></p>
+
+<p>More modern resolutions considered: <a href="http://gamedevelopment.tutsplus.com/articles/quick-tip-what-is-the-best-screen-resolution-for-your-game--gamedev-14723">http://gamedevelopment.tutsplus.com/articles/quick-tip-what-is-the-best-screen-resolution-for-your-game--gamedev-14723</a></p>
+
+<p>PS1: 320 pixel wide resolution.  SOTN: 356 pixels wide, tiling pattern consists of 16x16 blocks tiling with 16 colors each.</p>
+
+<p>So the Shovel Knight screen is 25 x 15 tiles.</p>
+
+<p>I find choosing an aesthetically pleasing aspect ratio to be a crucial design decision; one that I often approach on a trial and error basis.  Knowing what others have&mdash;in my humble opinion successfully&mdash;chosen gives a nice starting point <em>a priori</em> for projects with similar scope.</p>
+
+<p>Mighty Gunvolt: <a href="http://2-dimensions.com/2014/08/20/mighty-gunvolt-fine/">http://2-dimensions.com/2014/08/20/mighty-gunvolt-fine/</a></p>
+
+<p>Axiom Verge: 480x270</p>
+
+<p>Mario Maker levels: 12 screens long by 2 screens tall, the longest
+level was 512 blocks.</p>
+
+<p>Vita is 960x544</p>
+
+<h2>One comment on designer-player interaction through design</h2>
+
+<p>According to <a href="http://www.usgamer.net/articles/inside-shovel-knights-launch">this article</a> by Chris Holt, the Shovel Knight designers were realtively wishy washy about including the fishing pole.  For the record, I like the addition of yet another superfluous minigame.  And it&rsquo;s useful for fishing up money bags left in pits when you die, so there.</p>
+
+<p>The use of sparkles to mark pits containing potential fishing spoils illustrates a clever bit of design and interaction with the player through design.  You, the player, will notice that the pit in the fish-themed level has the sparkles.  So, naturally, you&rsquo;re very likely to fish there.  Bada-bing bada-boom: fish spoils.  The designers have communicated what the sparkles in the pits mean without having to resort to lame exposition from a tutorial or a helper character.</p>
+
+<p>The great games of the NES-era that Shovel Knight emulates were littered with these kinds of ingenious communicative design patterns.  Here&rsquo;s <a href="http://iwataasks.nintendo.com/interviews/#/wii/nsmb/0/3">an interview with Shigeru Miyamoto</a> talking about the deliberate design behind communicating the purpose of the iconic mushroom power-up in Super Mario Bros.</p>
+
+<h2>Another fine example of introducing new mechanic in Shovel Knight.</h2>
+
+<p>In Treasure Knight&rsquo;s level you come across rocket platforms that fly horizontally when you activate a lever by hitting it with your shovel.  For my play-through this was the first time I encountered these platforms.</p>
+
+<p>Since they are your means of conveyance to avoid spikes below, the devs could have been mischievous about it. As your intrepid game design blogger is well versed in virtual button pressing, my first reaction is to hop on the platform and press boot-ton&mdash;viciously strike the lever with the shovel. Ah, but doing so leads to a spikey death for those with slow reaction times&mdash;your intrepid blogger, yeah, yeah.</p>
+
+<p>The second time through YIB, meaning me, and likely you, meaning you, would be more wary; carefully timing the necessary jump to avoid the spikes. The devs, in their wise and studied ways, saw fit to embed a dig-able reward nugget in the wall. It&rsquo;s lodged in such a way that when you knock it loose it lands just so, so when you shovel it to dislodge the pecuniary treats within, you also hit the lever, activating te rocket platform. Now you know to look ahead and carefully time your jump. No harm no foul. No wordy tutorial, telling you, &ldquo;Hey, listen. This platform shoots off when you hit the lever.&rdquo;</p>
+
+<p>You learned the new mechanic, and thus the behavior necessary to interact with it, through previously ingrained behavior beaten into your head with a thousand gem pickups.  It&rsquo;s devilishly clever.</p>
+
+<h2>Shovel Knight&rsquo;s toolset</h2>
+
+<h3>Physics</h3>
+
+<p>Box2D</p>
+
+<h3>Level Editor</h3>
+
+<p>Tiled Map Editor</p>
+
+<h3>Pixel Editor</h3>
+
+<p>Pro Motion</p>
+
+<h3>Audio Engine</h3>
+
+<p>FMOD Sound System</p>
+
+<h3>Rendering</h3>
+
+<p>Angle</p>
+
+<h3>Rendering and Input</h3>
+
+<p>SDL</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Every Week a Dev]]></title>
@@ -163,39 +275,6 @@ or on <a href="https://twitter.com/zerosalife">twitter</a>.</p>
 <p>The algorithm I originally envisioned was naive and costly.  But, it&rsquo;s nice to hear that I wasn&rsquo;t far off&#x2013;I simply inverted the solution.  It was also nice to learn about a benefit of storing level geometry in a grid that I previously failed to appreciate.</p>
 
 <p>Heaping thanks to <a href="https://twitter.com/NoelFB/">@NoelFB</a> for helping explain the algorithm, instead of getting bent out of shape about my lame attempt to reverse engineer the inner workings of <a href="http://skytorn-game.com/">Skytorn</a> from a screenshot.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Raycast Lighting in Skytorn]]></title>
-    <link href="http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn/"/>
-    <updated>2015-05-09T10:21:03-04:00</updated>
-    <id>http://zerosalife.github.io/blog/2015/05/09/raycast-lighting-in-skytorn</id>
-    <content type="html"><![CDATA[<p><a href="https://twitter.com/NoelFB/">@NoelFB</a> posted a <a href="https://twitter.com/NoelFB/status/543586120731074561/photo/1">screenshot</a> showing how dynamic lighting works in <a href="http://skytorn-game.com/">Skytorn</a>.</p>
-
-<p><div class='embed tweet'>Tweet could not be processed</div></p>
-
-<!--more-->
-
-
-<h2>The algorithm</h2>
-
-<p>From what I can tell, the algorithm looks something like this:</p>
-
-<ol>
-<li><p>Raycast out for 360° around the light source, starting in a clockwise direction.  If the rays encounter a collidable object, add it to the list of pink lines defining the polygonal shape of the lit area.  If the ray exceeds the distance of the light gradient, clamp the triangle edge defining the pink line at that distance.</p></li>
-<li><p>For each of the collidable objects encountered, extend a ray past their vertices until it hits another collidable to create the obscured lighting effect visible to down and to the right of the light source.</p></li>
-<li><p>Finally construct a set of triangles by starting from the closest edge in the list defining the pink lines to form the polygon.</p></li>
-</ol>
-
-
-<h2>That&rsquo;s all</h2>
-
-<p>That&rsquo;s it for this week.  Let me know if you have any insight into this or other lighting algorithms in the comments or on the tweets.</p>
-
-<h2>Update</h2>
-
-<p>After some feedback from @NoelFB, I&rsquo;ve updated the algorithm in the <a href="http://zerosalife.github.io/blog/2015/05/16/more-skytorn-raycast-lighting-algorithm-details/">following post</a>.</p>
 ]]></content>
   </entry>
   
